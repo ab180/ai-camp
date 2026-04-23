@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S18 Compound 사이클</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; gap: 12pt; }
+  .h-large { font-size: 26pt; }
+  .cycle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10pt; margin-top: 6pt; }
+  .step { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 6pt; }
+  .step.b { background: #ebe1d2; }
+  .step.u { background: #e5d4b9; }
+  .step.n { background: #d4a480; }
+  .step.f { background: #c56a4a; color: #f7efe4; }
+  .step .num { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .step.f .num { color: #f2cdb4; }
+  .step h3 { font-size: 18pt; font-weight: 600; color: #2b2520; letter-spacing: -0.01em; line-height: 1.2; }
+  .step.f h3 { color: #fff; }
+  .step p { font-size: 10.5pt; color: #42332a; line-height: 1.5; }
+  .step.f p { color: #f5e4d4; }
+  .step p strong { color: #2b2520; font-weight: 600; }
+  .step.f p strong { color: #fff; }
+  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; max-width: 640pt; margin-top: auto; }
+  .foot strong { color: #b45a34; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="eyebrow">Compound Engineering</div>
+    <div class="h-large">Build &rarr; Use &rarr; Notice &rarr; Fix</div>
+  </div>
+  <div class="cycle">
+    <div class="step b">
+      <div class="num">1 · Build</div>
+      <h3>일단 만든다</h3>
+      <p>완성도 60%면 된다. Day 3에서 한 게 <strong>Build</strong>.</p>
+    </div>
+    <div class="step u">
+      <div class="num">2 · Use</div>
+      <h3>실제로 쓴다</h3>
+      <p>진짜 고객 · 진짜 상황에. 예비 상황이 아니라 <strong>실사용</strong>.</p>
+    </div>
+    <div class="step n">
+      <div class="num">3 · Notice</div>
+      <h3>불편함 잡는다</h3>
+      <p>매번 수정하는 문장 · 반복되는 지적 · 누락 패턴을 <strong>적어둔다</strong>.</p>
+    </div>
+    <div class="step f">
+      <div class="num">4 · Fix</div>
+      <h3>rules에 박는다</h3>
+      <p>한 번에 한 가지. CLAUDE.md · 스킬 템플릿 · 에이전트 프롬프트에 <strong>되먹인다</strong>.</p>
+    </div>
+  </div>
+  <div class="foot">첫 한 바퀴가 중요하지 않다. <strong>매주 한 바퀴</strong>가 중요하다. 3달 뒤 스킬은 1주차 버전과 완전히 다른 물건이 된다.</div>
+</body>
+</html>

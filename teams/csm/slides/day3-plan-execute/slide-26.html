@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 3 · S26 3요소 · 키워드</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .badge { display: inline-flex; align-items: center; gap: 8pt; margin-top: 3pt; }
+  .badge .n { background: #c56a4a; color: #fff; font-size: 11pt; font-weight: 700; padding: 3pt 9pt; border-radius: 999pt; letter-spacing: 0.08em; }
+  .badge .txt { font-size: 11pt; color: #b45a34; font-weight: 600; letter-spacing: 0.08em; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .col { padding: 14pt 18pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 7pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .label { color: #b45a34; }
+  .col.terra .label { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col .kw-block { margin-top: 5pt; }
+  .col .kw-title { font-size: 9pt; letter-spacing: 0.15em; font-weight: 700; text-transform: uppercase; margin-bottom: 3pt; }
+  .col.cream .kw-title { color: #7d6b5a; }
+  .col.terra .kw-title { color: #f2cdb4; }
+  .col .kw-list { font-size: 10pt; line-height: 1.6; }
+  .col.cream .kw-list { color: #42332a; }
+  .col.terra .kw-list { color: #f5e4d4; }
+  .col .kw-list strong { font-weight: 600; }
+  .col.cream .kw-list strong { color: #b45a34; }
+  .col.terra .kw-list strong { color: #fff; }
+  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">수정 3요소 · 3/3</div>
+  <div class="badge"><span class="n">03</span><span class="txt">키워드</span></div>
+  <div class="h-large">수정 포인트 3 — <em>금지 · 필수 키워드</em></div>
+  <div class="rule"></div>
+  <div class="intro">"쓰면 안 되는 말"과 "반드시 들어가야 할 말" — CSM에게 <strong>가장 영향 큰 3요소</strong>. 회피 표현 하나가 고객 신뢰를 좌우한다.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="label">Before · 베이스</div>
+      <h3>키워드 규칙 없음</h3>
+      <div class="kw-block">
+        <div class="kw-title">금지어</div>
+        <div class="kw-list">(정의 안 됨 — 기본 템플릿 톤에만 의존)</div>
+      </div>
+      <div class="kw-block">
+        <div class="kw-title">필수 키워드</div>
+        <div class="kw-list">(정의 안 됨)</div>
+      </div>
+    </div>
+    <div class="col terra">
+      <div class="label">After · 내 맥락</div>
+      <h3>금지 · 필수 명시</h3>
+      <div class="kw-block">
+        <div class="kw-title">금지어</div>
+        <div class="kw-list">
+          · <strong>"죄송합니다"</strong> 단독 사용<br>
+          · <strong>"확인 중입니다"</strong>로 메일 마무리<br>
+          · 내부 프로젝트 코드네임 노출
+        </div>
+      </div>
+      <div class="kw-block">
+        <div class="kw-title">필수 키워드</div>
+        <div class="kw-list">
+          · <strong>다음 액션 날짜</strong> · 담당자 이름 · 관련 문서 링크 1개
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="closing">3요소(담당 고객 · 톤 · 키워드)만 맞추면 베이스 스킬은 <strong>내 것의 70%</strong>까지 간다. 나머지 30%는 반복 사용 후 추가.</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S08 리더가 먼저</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .reasons { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .reason { padding: 16pt 18pt; border-radius: 12pt; display: flex; flex-direction: column; background: #ebe1d2; }
+  .reason.hilite { background: #c56a4a; color: #f7efe4; }
+  .reason .num { font-size: 30pt; font-weight: 500; color: #c56a4a; line-height: 1; letter-spacing: -0.02em; }
+  .reason.hilite .num { color: #fff; opacity: 0.7; }
+  .reason .lead { font-size: 13pt; font-weight: 600; color: #2b2520; margin-top: 8pt; line-height: 1.35; }
+  .reason.hilite .lead { color: #fff; }
+  .reason .body { font-size: 10.5pt; line-height: 1.6; color: #42332a; margin-top: 8pt; }
+  .reason.hilite .body { color: #f5e4d4; }
+  .reason .body strong { color: #b45a34; }
+  .reason.hilite .body strong { color: #fff; }
+  .foot { margin-top: 8pt; padding: 6pt 0 0 0; font-size: 10pt; color: #7d6b5a; border-top: 1px dashed #d4c4ac; line-height: 1.55; }
+  .foot strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">왜 리더 먼저</div>
+  <div class="h-large">이 감각은 팀원에게 <em>"설명"으로 전달되지 않는다</em></div>
+  <div class="rule"></div>
+  <div class="intro">"AI 활용은 좋은 것 같으니 팀원한테 맡겨보자"는 접근이 실패하는 이유는 공감 부재가 아니다. 체감이 없는 리더가 상한선을 못 잡기 때문이다.</div>
+  <div class="reasons">
+    <div class="reason">
+      <div class="num">01</div>
+      <div class="lead">상한선을 아는 사람이 리더여야 한다.</div>
+      <div class="body">리더가 "이 업무는 AI가 15분에 끝낸다"를 모르면, 팀원이 같은 일을 4시간에 끝내도 <strong>칭찬만 할 수 있다.</strong> 무엇이 가능한지를 체감으로 쥐고 있어야 속도를 판단한다.</div>
+    </div>
+    <div class="reason hilite">
+      <div class="num">02</div>
+      <div class="lead">"해봐"가 아니라 "그건 이렇게 짜면 돼"가<br>되어야 한다.</div>
+      <div class="body">팀원이 "이건 AI로 될까요?" 물을 때, 리더의 답이 <strong>"해봐"가 아니라 "그건 이렇게 짜면 돼"</strong>일 때 조직 재설계가 시작된다. 방법을 아는 사람이 조직의 구조를 바꿀 수 있다.</div>
+    </div>
+  </div>
+</body>
+</html>

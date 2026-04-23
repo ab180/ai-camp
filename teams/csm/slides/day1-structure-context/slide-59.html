@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S29 Day 2 미리보기 · 오늘 밤 MCP 과제</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
+  .col { padding: 13pt 15pt; border-radius: 14pt; display: flex; flex-direction: column; overflow: hidden; }
+  .col:not(.terra) { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col:not(.terra) .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 14pt; font-weight: 600; margin-top: 3pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .col:not(.terra) h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col .label { font-size: 9pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase; margin-top: 8pt; }
+  .col:not(.terra) .label { color: #a0917e; }
+  .col.terra .label { color: #f2cdb4; }
+  .col .body { font-size: 10pt; line-height: 1.5; margin-top: 4pt; }
+  .col:not(.terra) .body { color: #42332a; }
+  .col.terra .body { color: #f5e4d4; }
+  .col .body strong { color: #b45a34; }
+  .col.terra .body strong { color: #fff; }
+  .col ul { list-style: none; margin-top: 3pt; display: flex; flex-direction: column; gap: 3pt; }
+  .col li { font-size: 9.5pt; line-height: 1.55; padding-left: 10pt; position: relative; }
+  .col:not(.terra) li { color: #42332a; }
+  .col.terra li { color: #f5e4d4; }
+  .col li::before { content: '·'; position: absolute; left: 2pt; top: -2pt; font-weight: 700; font-size: 11pt; }
+  .col:not(.terra) li::before { color: #b45a34; }
+  .col.terra li::before { color: #f2cdb4; }
+  .col li strong { font-weight: 600; }
+  .col:not(.terra) li strong { color: #b45a34; }
+  .col.terra li strong { color: #fff; }
+  .deliverable { margin-top: auto; padding-top: 6pt; border-top: 1px dashed #d4c4ac; font-size: 8.5pt; color: #7d6b5a; line-height: 1.45; }
+  .terra .deliverable { border-top: 1px dashed rgba(255,255,255,0.3); color: #f2cdb4; }
+  .deliverable strong { color: #b45a34; }
+  .terra .deliverable strong { color: #fff; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">내일 준비물</div>
+  <div class="h-large">Day 2 · MCP로 맥락 확장 · <em>오늘 밤 미리 연결</em></div>
+  <div class="rule"></div>
+  <div class="intro">내일은 CLAUDE.md(고정 기본값) 위에 <strong>MCP(변하는 정보)</strong>를 얹는다. 시작 전에 연결을 돌려놓으면 내일 120분이 전부 실습에 쓰인다.</div>
+  <div class="two">
+    <div class="col">
+      <div class="tag">Day 2 · 미리보기</div>
+      <h3>축 2 · 맥락 — 외부 데이터 직접 연결</h3>
+      <div class="body">SFDC · Slack · Notion을 AI가 <strong>직접 읽게</strong> 만드는 날.</div>
+      <div class="label">핵심 블록</div>
+      <ul>
+        <li>맥락의 힘 — 고객 A · B 비교 체험</li>
+        <li>CSM 도구 맵 — SFDC · Plain · Notion · Gmail</li>
+        <li>MCP 연결 실습 — <strong>1~2개 직접</strong></li>
+        <li>Context Sync — 고객사 X 맥락 통합 수집</li>
+      </ul>
+      <div class="deliverable">산출물 — CSM 실무 도구 MCP <strong>1개 이상</strong> 연결 완료.</div>
+    </div>
+    <div class="col terra">
+      <div class="tag">오늘 밤 · 30분 이내</div>
+      <h3>MCP 사전 연결 — 2개 시도</h3>
+      <div class="body"><strong>실패해도 OK.</strong> 내일 첫 15분에 운영진이 트러블슈팅.</div>
+      <div class="label">해볼 일</div>
+      <ul>
+        <li>claude.ai 웹에서 <strong>Gmail 또는 Notion</strong> MCP 1개 연결</li>
+        <li>Claude Code 세션에서 <strong>/mcp</strong> 입력 · 확인</li>
+      </ul>
+      <div class="label">준비물</div>
+      <ul>
+        <li>팀별 <strong>SFDC 계정 권한</strong> 확인</li>
+        <li><strong>Plain 접근</strong> 확인 — 관리자 문의</li>
+      </ul>
+      <div class="deliverable">Day 2 첫 15분 = <strong>과제 점검 + 실패 사례 공유</strong>. 시도가 핵심.</div>
+    </div>
+  </div>
+</body>
+</html>

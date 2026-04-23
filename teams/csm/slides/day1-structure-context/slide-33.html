@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S23 질문 뒤집기</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .flip { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
+  .side { padding: 14pt 18pt; border-radius: 14pt; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+  .side.old { background: #ebe1d2; }
+  .side.new { background: #c56a4a; color: #f7efe4; }
+  .side .label { font-size: 10pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .side.old .label { color: #a0917e; }
+  .side.new .label { color: #f2cdb4; }
+  .side .quote { font-size: 18pt; font-weight: 500; margin-top: 8pt; letter-spacing: -0.01em; line-height: 1.3; }
+  .side.old .quote { color: #7d6b5a; }
+  .side.new .quote { color: #fff; }
+  .side .note { font-size: 10pt; line-height: 1.55; margin-top: 10pt; }
+  .side.old .note { color: #7d6b5a; }
+  .side.new .note { color: #f5e4d4; }
+  .closing { margin-top: 10pt; padding: 10pt 16pt; background: #ebe1d2; border-radius: 12pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
+  .closing strong { color: #b45a34; }
+  .foot { margin-top: 8pt; padding: 6pt 0 0 0; font-size: 10pt; color: #7d6b5a; border-top: 1px dashed #d4c4ac; line-height: 1.55; }
+  .foot strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">왜 리더</div>
+  <div class="h-large">방금 만든 CLAUDE.md를 <em>보고 나서</em></div>
+  <div class="rule"></div>
+  <div class="intro">30분 동안 당신은 AI가 당신처럼 일할 수 있는 <strong>기본값을 깔았다.</strong> 남은 질문은 "무엇까지 넘길 수 있는가"다. 여기서 질문의 방향이 바뀐다.</div>
+  <div class="flip">
+    <div class="side old">
+      <div class="label">보통의 질문</div>
+      <div class="quote">"이건 내가 해야 하는 거 아닌가?"</div>
+      <div class="note">업무 단위로 "내 몫"을 쪼개는 방식. AI는 "남는 시간에 도와주는 도구" 위치에 머문다.</div>
+    </div>
+    <div class="side new">
+      <div class="label">뒤집힌 질문</div>
+      <div class="quote">"이건 AI가 왜 안 하고 있지?"</div>
+      <div class="note">업무 기본값을 먼저 AI에게 설정하고 나서, <strong style="color:#fff;">"남은 것만 내가 집는다"</strong>로 역전. 조직 재설계의 출발점.</div>
+    </div>
+  </div>
+  <div class="closing">방금 만든 <strong>담당 고객 · 톤 · 금지어</strong> 한 장이 이 질문을 가능하게 만든다. 기본값이 준비됐으니 이제 <strong>넘길 문제를 한 장의 모양으로</strong> 꺼낼 차례다.</div>
+</body>
+</html>

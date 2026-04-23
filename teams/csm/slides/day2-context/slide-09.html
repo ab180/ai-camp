@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S09 맥락이 바꾸는 건 정답 (STEP 4/4)</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .step-badge {
+    position: absolute; top: 10pt; right: 16pt;
+    font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;
+    color: #a0917e; padding: 3pt 9pt; border: 1px solid #d4c4ac; border-radius: 20pt;
+    white-space: nowrap;
+  }
+  .step-badge strong { color: #b45a34; font-weight: 700; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 4pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .insights { display: flex; flex-direction: column; gap: 9pt; flex: 1; margin-top: 14pt; }
+  .ins { padding: 14pt 18pt; border-radius: 12pt; background: #ebe1d2; display: grid; grid-template-columns: 36pt 1fr; gap: 14pt; align-items: center; }
+  .ins.key { background: #c56a4a; color: #f7efe4; }
+  .ins .num { font-size: 24pt; font-weight: 500; color: #c56a4a; line-height: 1; letter-spacing: -0.02em; text-align: center; }
+  .ins.key .num { color: #fff; opacity: 0.75; }
+  .ins .body { font-size: 13pt; line-height: 1.5; font-weight: 500; color: #2b2520; letter-spacing: -0.005em; }
+  .ins.key .body { color: #fff; }
+  .ins .body strong { color: #b45a34; font-weight: 700; }
+  .ins.key .body strong { color: #fff; font-weight: 700; }
+  .ins .body em { font-style: normal; color: #b45a34; font-weight: 600; }
+  .ins.key .body em { color: #ffdfc9; }
+</style>
+</head>
+<body>
+  <div class="step-badge">STEP <strong>4</strong> / 4</div>
+  <div class="eyebrow">결론</div>
+  <div class="h-large">같은 스킬 + 다른 맥락 = <em>다른 정답</em></div>
+  <div class="rule"></div>
+  <div class="intro">고객 A와 B는 같은 프롬프트를 받았지만 답이 <strong>완전히 달라야</strong> 한다. 차이는 AI 능력이 아니라 — AI가 무엇을 읽을 수 있는가.</div>
+  <div class="insights">
+    <div class="ins">
+      <div class="num">01</div>
+      <div class="body">정답은 프롬프트에 있지 않다. <strong>맥락에 있다.</strong></div>
+    </div>
+    <div class="ins">
+      <div class="num">02</div>
+      <div class="body">맥락은 <em>CLAUDE.md에도</em> 있지만 — 대부분은 <strong>도구 안</strong>에 있다.</div>
+    </div>
+    <div class="ins key">
+      <div class="num">03</div>
+      <div class="body">SFDC · Slack · Notion · Gmail을 AI가 직접 읽게 하려면 — <em>다음 블록부터 MCP.</em></div>
+    </div>
+  </div>
+</body>
+</html>

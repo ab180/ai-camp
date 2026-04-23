@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S06 CSM 과부하</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 12.5pt; line-height: 1.75; color: #42332a; margin-top: 4pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .threads { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14pt; flex: 1; margin-top: 16pt; }
+  .thread { padding: 18pt 18pt; background: #ebe1d2; border-radius: 14pt; display: flex; flex-direction: column; }
+  .thread .no { font-size: 10pt; letter-spacing: 0.25em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
+  .thread .name { font-size: 18pt; font-weight: 600; color: #2b2520; margin-top: 6pt; letter-spacing: -0.005em; }
+  .thread .desc { font-size: 11pt; line-height: 1.65; color: #42332a; margin-top: 10pt; }
+  .closing { margin-top: 16pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; font-size: 13pt; line-height: 1.65; }
+  .closing strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">문제의 구조</div>
+  <div class="h-large">CSM은 <em>왜 과부하인가</em></div>
+  <div class="rule"></div>
+  <div class="intro">CSM 한 명이 동시에 <strong>15개 고객</strong>을 담당한다. 각 고객마다 서로 다른 3가지 스레드가 동시에 돌고 있다.</div>
+  <div class="threads">
+    <div class="thread">
+      <div class="no">Thread 1</div>
+      <div class="name">리캡</div>
+      <div class="desc">최근 미팅 내용·합의사항·다음 스텝을 고객마다 기억한다. 한 주에 2~3개 미팅이면 고객마다 누적 기록 필요.</div>
+    </div>
+    <div class="thread">
+      <div class="no">Thread 2</div>
+      <div class="name">문의</div>
+      <div class="desc">Slack·Plain·이메일로 들어오는 질문에 고객별 맥락 위에서 답변. 같은 질문도 고객 A/B에 따라 답이 다르다.</div>
+    </div>
+    <div class="thread">
+      <div class="no">Thread 3</div>
+      <div class="name">맥락 유지</div>
+      <div class="desc">지난 달 논의·내부 팀 변경·고객사 조직 구조 업데이트까지 추적. 놓치면 다음 미팅에서 티가 난다.</div>
+    </div>
+  </div>
+  <div class="closing">15 × 3 = 동시에 유지해야 하는 <strong>45개의 상태</strong>. 놓치는 게 당연한 구조다.</div>
+</body>
+</html>

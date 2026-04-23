@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S51 좋은 CLAUDE.md의 5가지 원칙</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .items { display: flex; flex-direction: column; gap: 5pt; flex: 1; margin-top: 9pt; min-height: 0; }
+  .item { display: grid; grid-template-columns: 28pt 1fr; gap: 12pt; padding: 7pt 14pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
+  .item .num { font-size: 18pt; font-weight: 600; color: #b45a34; text-align: center; letter-spacing: -0.02em; }
+  .item .body { display: grid; grid-template-columns: 1fr 1.3fr; gap: 12pt; align-items: center; }
+  .item .t { font-size: 11pt; line-height: 1.35; color: #2b2520; font-weight: 600; }
+  .item .t strong { color: #b45a34; }
+  .item .d { font-size: 9.5pt; line-height: 1.45; color: #42332a; padding-left: 10pt; border-left: 2pt solid #d4c4ac; }
+  .item .d strong { color: #b45a34; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Best Practices · 1/5</div>
+  <div class="h-large">좋은 CLAUDE.md의 <em>5가지 원칙</em></div>
+  <div class="rule"></div>
+  <div class="intro">1기·2기 경험과 <strong>Anthropic 공식 가이드</strong>에서 추린 다섯 가지. 쓰면서 계속 돌아와 점검한다.</div>
+  <div class="items">
+    <div class="item">
+      <div class="num">1</div>
+      <div class="body">
+        <div class="t">짧게 유지 <strong>(~200줄)</strong></div>
+        <div class="d">넘으면 <strong>AI 성능 저하</strong> + 사람도 유지 못 한다. 길어지면 분리할 신호.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">2</div>
+      <div class="body">
+        <div class="t">지도 역할, <strong>내용은 밖으로</strong></div>
+        <div class="d">실제 규칙은 <strong>.claude/rules/</strong>, 비즈니스 지식은 <strong>docs/</strong>, CLAUDE.md는 포인팅만.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">3</div>
+      <div class="body">
+        <div class="t">고정 vs <strong>변하는 정보 분리</strong></div>
+        <div class="d">CLAUDE.md는 <strong>안 변하는 것</strong>(팀·톤·금지어). 변하는 건 MCP로 얹는다.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">4</div>
+      <div class="body">
+        <div class="t">금지어엔 반드시 <strong>"왜"</strong></div>
+        <div class="d">이유 없으면 어긴다. 이유 있으면 AI가 피로 없이 <strong>일관되게</strong> 지킨다.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">5</div>
+      <div class="body">
+        <div class="t">팀이 <strong>함께 편집 가능해야</strong></div>
+        <div class="d">개인 선호와 팀 규칙 섞이면 오염. <strong>User / Project / Folder</strong> 계층으로 분리한다.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

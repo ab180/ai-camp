@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S21 개인 실습 30분</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .mission { padding: 14pt 20pt; margin-top: 12pt; background: #c56a4a; color: #f7efe4; border-radius: 14pt; display: flex; justify-content: space-between; align-items: center; gap: 20pt; }
+  .mission .label { font-size: 10pt; letter-spacing: 0.25em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .mission .goal { font-size: 17pt; font-weight: 600; color: #fff; margin-top: 3pt; letter-spacing: -0.005em; line-height: 1.3; }
+  .mission .time { font-family: 'SF Mono', 'Menlo', monospace; font-size: 32pt; font-weight: 500; color: #fff; letter-spacing: -0.02em; }
+  .mission .time-sub { font-size: 10pt; color: #f2cdb4; letter-spacing: 0.1em; text-align: right; margin-top: 2pt; }
+  .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .box { padding: 16pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .box .tag { font-size: 10pt; letter-spacing: 0.22em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
+  .box h4 { font-size: 14pt; font-weight: 600; color: #2b2520; margin-top: 4pt; line-height: 1.3; }
+  .box .list { margin-top: 10pt; display: flex; flex-direction: column; gap: 8pt; }
+  .box .item { font-size: 10.5pt; line-height: 1.55; color: #42332a; padding-left: 20pt; position: relative; }
+  .box .item .n { position: absolute; left: 0; top: 0; font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; font-weight: 600; color: #b45a34; }
+  .box .item strong { color: #b45a34; }
+  .box.bonus { background: #ebe1d2; }
+  .box.bonus .tag { color: #a0917e; }
+  .foot { margin-top: 10pt; padding: 6pt 0 0 0; font-size: 10pt; color: #7d6b5a; border-top: 1px dashed #d4c4ac; line-height: 1.55; }
+  .foot strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실습 · 30분</div>
+  <div class="h-large">내 CLAUDE.md <em>첫 초안</em> 만들기</div>
+  <div class="rule"></div>
+  <div class="intro">완벽한 문서 X — 오늘은 <strong>첫 초안</strong>이 목표. 필수 3건만 채우면 다음 블록으로 진입 가능. 보너스는 여유 있을 때.</div>
+  <div class="mission">
+    <div>
+      <div class="label">Mission</div>
+      <div class="goal">담당 고객 · 톤앤매너 · 금지어를 내 CLAUDE.md에 담기</div>
+    </div>
+    <div>
+      <div class="time">30:00</div>
+      <div class="time-sub">개인 작업</div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="box">
+      <div class="tag">필수 · Must have</div>
+      <h4>3건 채워서 제출 가능 상태로</h4>
+      <div class="list">
+        <div class="item"><span class="n">01</span><strong>담당 고객</strong> — 섹션 안에 <strong>3줄 이상</strong>. 대표 유형·계약 구조·주요 이슈.</div>
+        <div class="item"><span class="n">02</span><strong>톤앤매너</strong> — <strong>DO 2건 / DON'T 2건</strong>. 실제 내가 자주 쓰는 표현으로.</div>
+        <div class="item"><span class="n">03</span><strong>금지어</strong> — <strong>3건 이상</strong>. 각 항목에 "왜 쓰지 말라는지" 한 줄 이유.</div>
+      </div>
+    </div>
+    <div class="box bonus">
+      <div class="tag">보너스 · Nice to have</div>
+      <h4>여유 있으면 2건 더</h4>
+      <div class="list">
+        <div class="item"><span class="n">04</span><strong>워크플로우</strong> — 주간 반복 업무 한 줄.</div>
+        <div class="item"><span class="n">05</span><strong>도구</strong> — CSM 도구 3개 + 간단 역할.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

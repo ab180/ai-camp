@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S17 USB-C 비유</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col-head { display: flex; flex-direction: column; gap: 3pt; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+  .bullets { display: flex; flex-direction: column; gap: 6pt; }
+  .bullet { font-size: 10pt; line-height: 1.55; padding-left: 12pt; position: relative; }
+  .col.cream .bullet { color: #42332a; }
+  .col.terra .bullet { color: #f5e4d4; }
+  .bullet::before { content: '·'; position: absolute; left: 2pt; top: -2pt; font-weight: 700; font-size: 13pt; }
+  .col.cream .bullet::before { color: #b45a34; }
+  .col.terra .bullet::before { color: #f2cdb4; }
+  .bullet strong { font-weight: 600; }
+  .col.cream .bullet strong { color: #2b2520; }
+  .col.terra .bullet strong { color: #fff; }
+  .closing { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">비유</div>
+  <div class="h-large">핸드폰마다 다른 충전기에서 — <em>USB-C 하나로</em></div>
+  <div class="rule"></div>
+  <div class="intro">MCP가 왜 등장했는지는 USB-C 이전 상황과 정확히 닮았다. 표준 포트가 없을 때와 있을 때의 차이.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="col-head">
+        <div class="tag">Before · 표준 포트 없음</div>
+        <h3>도구별 별도 연동 지옥</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="bullets">
+        <div class="bullet">도구 A는 A 전용 <strong>API 연동 코드</strong></div>
+        <div class="bullet">도구 B는 B 전용 <strong>SDK</strong></div>
+        <div class="bullet">새 AI가 나오면 전부 <strong>다시 연동</strong></div>
+        <div class="bullet">회사마다 같은 짓을 반복 — 중복 비용</div>
+      </div>
+    </div>
+    <div class="col terra">
+      <div class="col-head">
+        <div class="tag">After · MCP 표준</div>
+        <h3>한 번 만들면 어디서든 꽂힌다</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="bullets">
+        <div class="bullet">도구가 <strong>MCP 서버 1개</strong>만 제공</div>
+        <div class="bullet">어떤 AI든 그 서버에 <strong>꽂으면 됨</strong></div>
+        <div class="bullet">AI가 바뀌어도 <strong>재연동 X</strong></div>
+        <div class="bullet">Anthropic · OpenAI · Google 모두 지원 중</div>
+      </div>
+    </div>
+  </div>
+  <div class="closing">"표준의 승자 독식"이 이미 일어나고 있다. 지금 <strong>Gmail · Notion · Slack · Salesforce 공식 MCP가 다 있다</strong>. 우리가 오늘 쓸 것들.</div>
+</body>
+</html>

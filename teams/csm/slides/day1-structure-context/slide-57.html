@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S57 내 규칙 / 팀 규칙 / 특정 폴더 규칙 — 3층으로 나눠 쓴다</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+
+  .intro { font-size: 9.5pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+
+  /* ── 메인 레이아웃: 좌(네스트) + 우(설명) ── */
+  .main { display: grid; grid-template-columns: 280pt 1fr; gap: 14pt; flex: 1; margin-top: 9pt; min-height: 0; }
+
+  /* ── 좌측: 포개진 상자 ── */
+  .nest-wrap { display: flex; flex-direction: column; justify-content: center; position: relative; }
+
+  .nest-user {
+    background: #c56a4a;
+    border-radius: 14pt;
+    padding: 11pt 12pt 11pt 12pt;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .nest-project {
+    background: #d6a882;
+    border-radius: 10pt;
+    padding: 10pt 11pt 10pt 11pt;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 7pt;
+  }
+  .nest-folder {
+    background: #ebe1d2;
+    border-radius: 8pt;
+    padding: 9pt 10pt 9pt 10pt;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 7pt;
+  }
+
+  /* 각 레이어 헤더 */
+  .nest-label {
+    font-size: 7.5pt;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2pt;
+  }
+  .nest-user > .nest-label   { color: rgba(255,255,255,0.65); }
+  .nest-project > .nest-label { color: rgba(255,255,255,0.65); }
+  .nest-folder > .nest-label  { color: #a0917e; }
+
+  .nest-title {
+    font-size: 13.5pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .nest-user > .nest-title   { color: #fff; }
+  .nest-project > .nest-title { color: #fff; }
+  .nest-folder > .nest-title  { color: #2b2520; }
+
+  .nest-sub {
+    font-size: 8pt;
+    margin-top: 1.5pt;
+    line-height: 1.3;
+  }
+  .nest-user > .nest-sub   { color: rgba(255,255,255,0.75); }
+  .nest-project > .nest-sub { color: rgba(255,255,255,0.75); }
+  .nest-folder > .nest-sub  { color: #7d6b5a; }
+
+  /* 범위 포함 표시 */
+  .nest-user > .nest-scope-tag {
+    display: inline-block;
+    margin-top: 5pt;
+    font-size: 7pt;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    background: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.9);
+    padding: 2pt 7pt;
+    border-radius: 99pt;
+    align-self: flex-start;
+  }
+  .nest-project > .nest-scope-tag {
+    display: inline-block;
+    margin-top: 4pt;
+    font-size: 7pt;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    background: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.9);
+    padding: 2pt 7pt;
+    border-radius: 99pt;
+    align-self: flex-start;
+  }
+  .nest-folder > .nest-scope-tag {
+    display: inline-block;
+    margin-top: 3pt;
+    font-size: 7pt;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    background: #d4c4ac;
+    color: #5a4a3a;
+    padding: 2pt 7pt;
+    border-radius: 99pt;
+    align-self: flex-start;
+  }
+
+  /* ── 우측: 3개 상세 카드 ── */
+  .detail-col { display: flex; flex-direction: column; gap: 6pt; }
+
+  .dcard {
+    border-radius: 9pt;
+    padding: 8pt 11pt;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6pt 10pt;
+    align-items: start;
+    flex: 1;
+  }
+  .dcard.u { background: rgba(197,106,74,0.12); border-left: 3pt solid #c56a4a; }
+  .dcard.p { background: rgba(197,106,74,0.07); border-left: 3pt solid #d6a882; }
+  .dcard.f { background: #ebe1d2; border-left: 3pt solid #d4c4ac; }
+
+  .dcard-head { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 7pt; }
+  .dcard-name {
+    font-size: 11pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #2b2520;
+  }
+  .dcard-path {
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 7.5pt;
+    background: #f5ede2;
+    padding: 1pt 5pt;
+    border-radius: 3pt;
+    color: #5a4a3a;
+  }
+
+  .dcard-section { display: flex; flex-direction: column; gap: 2pt; }
+  .dcard-section .slabel {
+    font-size: 6.5pt;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #a0917e;
+    margin-bottom: 1pt;
+  }
+  .dcard-section .sval {
+    font-size: 8.5pt;
+    line-height: 1.4;
+    color: #42332a;
+  }
+  .dcard-section .sval strong { color: #b45a34; font-weight: 600; }
+  .dcard-section .sval code {
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 7.5pt;
+    background: #f5ede2;
+    padding: 0 3pt;
+    border-radius: 3pt;
+    color: #5a4a3a;
+  }
+
+  /* ── 하단: override 규칙 + closing ── */
+  .bottom { margin-top: 7pt; display: grid; grid-template-columns: 1fr 1.4fr; gap: 8pt; flex-shrink: 0; }
+
+  .override-box {
+    background: #d8c4a6;
+    border-radius: 9pt;
+    padding: 7pt 12pt;
+    display: flex;
+    align-items: center;
+    gap: 10pt;
+  }
+  .override-label {
+    font-size: 7pt;
+    letter-spacing: 0.2em;
+    color: #7d6a48;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .override-content { font-size: 8.5pt; line-height: 1.45; color: #2b2520; }
+  .override-content strong { color: #b45a34; font-weight: 600; }
+
+  /* 우선순위 시각화 */
+  .priority-vis {
+    display: flex;
+    align-items: center;
+    gap: 4pt;
+    margin-top: 4pt;
+  }
+  .pv-item {
+    font-size: 7.5pt;
+    font-weight: 600;
+    padding: 2pt 6pt;
+    border-radius: 4pt;
+    color: #fff;
+  }
+  .pv-item.u { background: #c56a4a; }
+  .pv-item.p { background: #d6a882; }
+  .pv-item.f { background: #8a7558; }
+  .pv-arrow { font-size: 7pt; color: #a0917e; }
+  .pv-win { font-size: 7pt; color: #b45a34; font-weight: 700; margin-left: 3pt; }
+
+  .closing {
+    background: #c56a4a;
+    color: #f7efe4;
+    border-radius: 9pt;
+    padding: 7pt 14pt;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+  }
+  .closing strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Best Practices · Bonus</div>
+  <div class="h-large">내 규칙 / 팀 규칙 / 특정 폴더 규칙 — <em>3층으로 나눠 쓴다</em></div>
+  <div class="rule"></div>
+  <div class="intro">혼자 쓸 때는 한 파일로 충분. 팀이 함께 쓰면 <strong>내 취향</strong>과 <strong>팀 약속</strong>이 섞여 부딪친다. Claude Code는 <strong>세 단계로 자동 분리</strong>해 충돌을 막는다.</div>
+
+  <div class="main">
+    <!-- 좌: 포개진 상자 -->
+    <div class="nest-wrap">
+      <!-- User: 가장 바깥 -->
+      <div class="nest-user">
+        <span class="nest-label">내 규칙</span>
+        <span class="nest-title">나 혼자만 쓰는 규칙</span>
+        <span class="nest-sub">~/.claude/CLAUDE.md</span>
+        <span class="nest-scope-tag">내 모든 프로젝트에 적용</span>
+
+        <!-- Project: 그 안 -->
+        <div class="nest-project">
+          <span class="nest-label">팀 규칙</span>
+          <span class="nest-title">같이 일하는 사람 모두에게</span>
+          <span class="nest-sub">프로젝트/CLAUDE.md · Git 공유</span>
+          <span class="nest-scope-tag">이 프로젝트 팀원 전체에 적용</span>
+
+          <!-- Folder: 가장 안쪽 -->
+          <div class="nest-folder">
+            <span class="nest-label">폴더 규칙</span>
+            <span class="nest-title">특정 폴더에서만</span>
+            <span class="nest-sub">프로젝트/특정폴더/CLAUDE.md</span>
+            <span class="nest-scope-tag">이 폴더 작업 시에만 적용</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 우: 상세 카드 3개 -->
+    <div class="detail-col">
+      <div class="dcard u">
+        <div class="dcard-head">
+          <span class="dcard-name">내 규칙</span>
+          <code class="dcard-path">~/.claude/CLAUDE.md</code>
+        </div>
+        <div class="dcard-section">
+          <span class="slabel">적용 범위</span>
+          <span class="sval"><strong>내 모든 프로젝트</strong>에 공통. 팀원에게 공유되지 않는다.</span>
+        </div>
+        <div class="dcard-section">
+          <span class="slabel">예시</span>
+          <span class="sval">"이모지 안 씀", "<strong>한글 주석</strong> 선호"</span>
+        </div>
+      </div>
+
+      <div class="dcard p">
+        <div class="dcard-head">
+          <span class="dcard-name">팀 규칙</span>
+          <code class="dcard-path">프로젝트/CLAUDE.md</code>
+        </div>
+        <div class="dcard-section">
+          <span class="slabel">적용 범위</span>
+          <span class="sval">이 프로젝트를 <strong>작업하는 모두</strong>에게. Git으로 팀 공유.</span>
+        </div>
+        <div class="dcard-section">
+          <span class="slabel">예시</span>
+          <span class="sval">"이 프로젝트는 <strong>snake_case</strong>", "테스트 80% 이상"</span>
+        </div>
+      </div>
+
+      <div class="dcard f">
+        <div class="dcard-head">
+          <span class="dcard-name">폴더 규칙</span>
+          <code class="dcard-path">폴더/CLAUDE.md</code>
+        </div>
+        <div class="dcard-section">
+          <span class="slabel">적용 범위</span>
+          <span class="sval"><strong>이 폴더</strong>에서 작업할 때만 자동으로 로드.</span>
+        </div>
+        <div class="dcard-section">
+          <span class="slabel">예시</span>
+          <span class="sval"><code>customers/acme/CLAUDE.md</code> — ACME 고객 폴더에서만</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="override-box">
+      <div class="override-label">덮어쓰기</div>
+      <div class="override-content">
+        <strong>좁은 범위가 넓은 범위를 이긴다</strong><br>
+        <div class="priority-vis">
+          <span class="pv-item u">내 규칙</span>
+          <span class="pv-arrow">&#8249;</span>
+          <span class="pv-item p">팀 규칙</span>
+          <span class="pv-arrow">&#8249;</span>
+          <span class="pv-item f">폴더 규칙</span>
+          <span class="pv-win">우선순위 높음</span>
+        </div>
+        예) 내 규칙 "camelCase" / 팀 규칙 "snake_case" → 이 프로젝트는 <strong>snake_case 적용</strong>
+      </div>
+    </div>
+    <div class="closing">
+      3층 구조가 <strong>개인 취향과 팀 약속의 충돌</strong>을 막는다. 오늘 만든 CLAUDE.md는 <strong>팀 규칙 계층</strong>이라고 생각하면 된다.
+    </div>
+  </div>
+</body>
+</html>

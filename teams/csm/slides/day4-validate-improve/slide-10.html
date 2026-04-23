@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S10 까다로운 고객 개념</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; gap: 12pt; }
+  .h-large { font-size: 26pt; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 8pt; flex: 1; }
+  .card { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .card .n { font-size: 10pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .card h3 { font-size: 15pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
+  .card p { font-size: 11pt; color: #42332a; line-height: 1.55; }
+  .card p strong { color: #2b2520; font-weight: 600; }
+  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; max-width: 640pt; }
+  .foot strong { color: #b45a34; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="eyebrow">B1 · 원리 2 · 에이전트 개념</div>
+    <div class="h-large">&ldquo;까다로운 고객&rdquo; &mdash; 페르소나 역할을 맡은 AI</div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div class="n">1. 페르소나</div>
+      <h3>어떤 고객인가</h3>
+      <p>시니어 PM · 구매 의사결정자 · <strong>3년차 사용자</strong>. 기대 수준 · 바쁘기 · 의사소통 톤까지 명시.</p>
+    </div>
+    <div class="card">
+      <div class="n">2. 채점 기준</div>
+      <h3>무엇을 볼 것인가</h3>
+      <p>결정사항 명시 · 다음 액션 · <strong>책임자/기한</strong> · 오해 소지 · 톤 적절성. 5~7개 항목.</p>
+    </div>
+    <div class="card">
+      <div class="n">3. 출력 포맷</div>
+      <h3>어떻게 답할 것인가</h3>
+      <p><strong>지적 &rarr; 근거 &rarr; 제안</strong> 3단 구조. 근거는 본문 인용. 제안은 한 문장.</p>
+    </div>
+  </div>
+  <div class="foot">에이전트 = &ldquo;이런 역할로, 이런 기준으로, 이런 포맷으로 답하라&rdquo;를 <strong>한 번에 박아둔 AI</strong>. 호출만 하면 동일 관점으로 반복 검토된다.</div>
+</body>
+</html>

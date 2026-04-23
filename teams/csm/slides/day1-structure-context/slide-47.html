@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S35 문제 정의 · 개념</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; min-height: 0; }
+  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.3; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col ul { margin-top: 9pt; display: flex; flex-direction: column; gap: 7pt; list-style: none; }
+  .col li { font-size: 10pt; line-height: 1.5; padding-left: 12pt; position: relative; }
+  .col.cream li { color: #42332a; }
+  .col.terra li { color: #f5e4d4; }
+  .col li::before { content: ""; position: absolute; left: 0; top: 7pt; width: 5pt; height: 5pt; border-radius: 50%; }
+  .col.cream li::before { background: #a0917e; }
+  .col.terra li::before { background: #f2cdb4; }
+  .col li strong { font-weight: 600; }
+  .col.cream li strong { color: #b45a34; }
+  .col.terra li strong { color: #fff; }
+  .closing { margin-top: 10pt; padding: 8pt 14pt; border-radius: 10pt; background: #ebe1d2; color: #42332a; font-size: 9.5pt; line-height: 1.5; letter-spacing: 0.01em; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">문제 정의 · 개념</div>
+  <div class="h-large">"AI가 왜 안 하지?"를 <em>넘길 수 있는 모양으로</em></div>
+  <div class="rule"></div>
+  <div class="intro">before/after로 <strong>맥락 한 장의 효과</strong>를 눈으로 봤다. 다음은 여기에 <strong>어떤 문제를 올릴지</strong>를 또렷하게 정의할 차례다. "AI가 왜 안 하지?"가 공허해지지 않으려면 넘길 문제의 모양이 있어야 한다.</div>
+  <div class="wrap">
+    <div class="col cream">
+      <div class="tag">구조화하지 않으면</div>
+      <h3>"고객 대응 도와줘" 수준의 지시</h3>
+      <ul>
+        <li>AI에게 막연히 던짐 → <strong>일반 템플릿</strong>만 돌아온다</li>
+        <li>맥락을 쓰다 말고 생각나는대로 끼워 넣음 → 결과마다 달라진다</li>
+        <li>"왜 안 되지?" 반복만 하며 시간 소모</li>
+        <li>결국 AI가 아니라 <strong>내가 방향이 없다는 증거</strong></li>
+      </ul>
+    </div>
+    <div class="col terra">
+      <div class="tag">체계적으로 정의하면</div>
+      <h3>한 장에 문제·상황·목표를 명시</h3>
+      <ul>
+        <li>문제 이름·현재 상황·원하는 결과가 한 장에 <strong>명시</strong></li>
+        <li>AI에 넘길 때 같은 정의가 <strong>같은 결과</strong>를 만든다 (재현성)</li>
+        <li>팀과 공유·검토 가능 — 머릿속 추측이 아니라 <strong>문서</strong></li>
+        <li>Day 3 Deep Interview는 이 구조 위에서 질문을 더 깊이 파고든다</li>
+      </ul>
+    </div>
+  </div>
+  <div class="closing">AI는 질문이 명확한 만큼만 또렷하게 답한다. <strong>질문의 모양을 먼저 만든다.</strong></div>
+</body>
+</html>

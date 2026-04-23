@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S26 before/after 대조</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; flex: 1; margin-top: 12pt; }
+  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; }
+  .col:not(.terra) { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .tag { font-size: 10pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col:not(.terra) .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 17pt; font-weight: 600; margin-top: 4pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .col:not(.terra) h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col .points { margin-top: 10pt; display: flex; flex-direction: column; gap: 8pt; }
+  .col .point { display: flex; gap: 8pt; align-items: flex-start; }
+  .col .point .box { width: 12pt; height: 12pt; border: 1.5pt solid; border-radius: 3pt; flex-shrink: 0; margin-top: 3pt; }
+  .col:not(.terra) .point .box { border-color: #b45a34; }
+  .col.terra .point .box { border-color: #f5e4d4; }
+  .col .point .label { font-size: 10.5pt; font-weight: 600; line-height: 1.35; }
+  .col:not(.terra) .point .label { color: #2b2520; }
+  .col.terra .point .label { color: #fff; }
+  .col .point .desc { font-size: 9.5pt; line-height: 1.5; margin-top: 2pt; font-weight: 400; }
+  .col:not(.terra) .point .desc { color: #5a4a3d; }
+  .col.terra .point .desc { color: #f5e4d4; }
+  .closing { margin-top: 10pt; padding: 10pt 16pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.6; color: #42332a; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">관찰</div>
+  <div class="h-large">무엇이 <em>달라졌나</em></div>
+  <div class="rule"></div>
+  <div class="intro">오전에 본 결과와 방금 결과를 <strong>나란히 놓고</strong> 네 포인트를 본다. 주관적 "좋아 보인다" 아니라 체크리스트.</div>
+  <div class="compare">
+    <div class="col">
+      <div class="tag">Before · CLAUDE.md 없음</div>
+      <h3>맥락 없음 — 일반 템플릿</h3>
+      <div class="points">
+        <div class="point"><div class="box"></div><div><div class="label">톤</div><div class="desc">형식적 영문 번역투 · "We are excited..."</div></div></div>
+        <div class="point"><div class="box"></div><div><div class="label">금지어</div><div class="desc">"반드시" "100% 보장" 같은 단정 그대로 등장</div></div></div>
+        <div class="point"><div class="box"></div><div><div class="label">고객 맥락</div><div class="desc">엔터프라이즈·QBR 언급 없음 — 모든 고객 동일</div></div></div>
+        <div class="point"><div class="box"></div><div><div class="label">고칠 부분</div><div class="desc">거의 전체 — 뼈대부터 다시 써야</div></div></div>
+      </div>
+    </div>
+    <div class="col terra">
+      <div class="tag">After · CLAUDE.md 있음</div>
+      <h3>맥락 있음 — 내 기본값 반영</h3>
+      <div class="points">
+        <div class="point"><div class="box"></div><div><div class="label">톤</div><div class="desc">짧고 따뜻 · 다음 액션 마지막 줄</div></div></div>
+        <div class="point"><div class="box"></div><div><div class="label">금지어</div><div class="desc">약속 단정 · 내부 변명 톤 자동으로 빠짐</div></div></div>
+        <div class="point"><div class="box"></div><div><div class="label">고객 맥락</div><div class="desc">엔터프라이즈 · 연 라이선스 · 분기 QBR 자동 반영</div></div></div>
+        <div class="point"><div class="box"></div><div><div class="label">고칠 부분</div><div class="desc">표면 수정 몇 줄 — 보내도 되겠다 수준</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="closing">이 차이는 <strong>방금 30분 동안 한 일</strong>의 결과. 내일부터 모든 리캡이 이 기본값 위에서 시작한다.</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S19 3번 반복 규칙</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .pane { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
+  .pane.bad { background: #ebe1d2; }
+  .pane.good { background: #c56a4a; color: #f7efe4; }
+  .pane .label { font-size: 10pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .pane.bad .label { color: #a0917e; }
+  .pane.good .label { color: #f2cdb4; }
+  .pane h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
+  .pane.bad h3 { color: #2b2520; }
+  .pane.good h3 { color: #fff; }
+  .pane ul { font-size: 11pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
+  .pane.bad ul { color: #42332a; }
+  .pane.good ul { color: #f5e4d4; }
+  .pane ul li::marker { color: #b45a34; }
+  .pane.good ul li::marker { color: #f2cdb4; }
+  .pane code { font-family: 'SF Mono', 'Menlo', monospace; font-size: 10pt; background: rgba(0,0,0,0.06); padding: 1pt 4pt; border-radius: 3pt; }
+  .pane.good code { background: rgba(255,255,255,0.15); color: #fff; }
+  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot strong { color: #b45a34; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">규칙 · Compound의 실전 룰</div>
+  <div class="h-large">3번 반복되는 지적은 <em>스킬 자리</em></div>
+  <div class="rule"></div>
+  <div class="intro">한 번 · 두 번은 우연일 수 있다. 세 번 반복되면 내 작업 루틴에서 구조적으로 빠지는 자리다. 그 자리를 스킬 · rules에 박는다.</div>
+  <div class="panes">
+    <div class="pane bad">
+      <div class="label">&times; 흔한 함정</div>
+      <h3>그때그때 채팅으로 고침</h3>
+      <ul>
+        <li>&ldquo;한국어로 답해줘&rdquo; 매 세션 반복</li>
+        <li>피드백 받고도 스킬은 안 고침</li>
+        <li>다음 번에 <strong>똑같은 실수</strong></li>
+        <li>5분 아끼려고 매번 같은 5분 쓴다</li>
+      </ul>
+    </div>
+    <div class="pane good">
+      <div class="label">&radic; Compound 방식</div>
+      <h3>한 번 되먹이면 끝</h3>
+      <ul>
+        <li>지적 3번 &rarr; <code>CLAUDE.md</code> 한 줄</li>
+        <li>스킬 템플릿 고정 섹션 추가</li>
+        <li>에이전트 프롬프트에 rubric 추가</li>
+        <li>다음부터 <strong>자동 적용</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot">오늘 B1 피드백 메모를 <strong>버리지 말고</strong> 주말에 한 번 열어본다. 3번 반복되는 것 1개만 골라 되먹이면 2주 후 스킬이 달라져 있다.</div>
+</body>
+</html>

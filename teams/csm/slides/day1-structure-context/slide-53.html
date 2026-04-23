@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S52 섹션 구성은 시간과 함께 진화한다</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .stages { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; flex: 1; margin-top: 10pt; min-height: 0; }
+  .stage { padding: 11pt 13pt; border-radius: 12pt; display: flex; flex-direction: column; overflow: hidden; }
+  .stage.s1 { background: #ebe1d2; }
+  .stage.s2 { background: #d8c4a6; }
+  .stage.s3 { background: #c56a4a; color: #f7efe4; }
+  .stage .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .stage.s1 .tag { color: #a0917e; }
+  .stage.s2 .tag { color: #7d6a48; }
+  .stage.s3 .tag { color: #f2cdb4; }
+  .stage h3 { font-size: 13pt; font-weight: 600; margin-top: 3pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .stage.s1 h3, .stage.s2 h3 { color: #2b2520; }
+  .stage.s3 h3 { color: #fff; }
+  .stage h3 .sub { display: block; font-size: 8.5pt; font-weight: 500; letter-spacing: 0.02em; margin-top: 2pt; }
+  .stage.s1 h3 .sub { color: #7d6b5a; }
+  .stage.s2 h3 .sub { color: #6d5b3d; }
+  .stage.s3 h3 .sub { color: #f2cdb4; }
+  .stage ul { list-style: none; margin-top: 8pt; display: flex; flex-direction: column; gap: 4pt; }
+  .stage li { font-size: 9pt; line-height: 15pt; padding-left: 10pt; position: relative; padding-top: 2pt; padding-bottom: 2pt; }
+  .stage.s1 li, .stage.s2 li { color: #42332a; }
+  .stage.s3 li { color: #f5e4d4; }
+  .stage li::before { content: '·'; position: absolute; left: 2pt; top: -2pt; font-weight: 700; font-size: 11pt; }
+  .stage.s1 li::before, .stage.s2 li::before { color: #b45a34; }
+  .stage.s3 li::before { color: #f2cdb4; }
+  .stage li strong { font-weight: 600; }
+  .stage.s1 li strong, .stage.s2 li strong { color: #b45a34; }
+  .stage.s3 li strong { color: #fff; }
+  .closing { margin-top: 8pt; padding: 7pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; flex-shrink: 0; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Best Practices · 2/5</div>
+  <div class="h-large">시간이 지나면 <em>모양이 바뀐다</em></div>
+  <div class="rule"></div>
+  <div class="intro">같은 CLAUDE.md도 오늘·2주 뒤·3개월 뒤 모양이 다르다. 완성된 템플릿이 아니라 <strong>쓰면서 자라는 문서</strong>다.</div>
+  <div class="stages">
+    <div class="stage s1">
+      <div class="tag">오늘</div>
+      <h3>처음 쓴 초안<span class="sub">기본 6개 섹션</span></h3>
+      <ul>
+        <li>우리 팀이 누구인지</li>
+        <li>내가 담당하는 고객</li>
+        <li>쓰는 말투 · 피하는 말투</li>
+        <li>쓰면 안 되는 단어 + <strong>왜</strong></li>
+        <li>자주 하는 일 흐름</li>
+        <li>쓰는 도구들</li>
+      </ul>
+    </div>
+    <div class="stage s2">
+      <div class="tag">2주 뒤</div>
+      <h3>실무에서 생긴 것들 추가<span class="sub">+4 섹션</span></h3>
+      <ul>
+        <li>중요한 결정 기록</li>
+        <li>자주 치는 명령어</li>
+        <li>문제 생겼을 때 점검 순서</li>
+        <li>새 팀원에게 알려줄 것</li>
+      </ul>
+    </div>
+    <div class="stage s3">
+      <div class="tag">3개월 뒤</div>
+      <h3>다른 파일로 옮긴다<span class="sub">CLAUDE.md가 200줄 넘을 때</span></h3>
+      <ul>
+        <li>규칙은 <strong>.claude/rules/</strong> 폴더로 이동</li>
+        <li>업무 문서는 <strong>docs/</strong> 폴더로 이동</li>
+        <li>CLAUDE.md에는 <strong>목차·안내</strong>만 남긴다</li>
+        <li>팀 저장소에 함께 관리</li>
+      </ul>
+    </div>
+  </div>
+  <div class="closing">합격 기준 — <strong>새 팀원이 이 파일만 읽고 업무를 시작</strong>할 수 있으면 OK.</div>
+</body>
+</html>

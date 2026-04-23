@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S22 첫날 vs 마지막날</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .pane { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
+  .pane.d1 { background: #ebe1d2; }
+  .pane.d4 { background: #c56a4a; color: #f7efe4; }
+  .pane .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .pane.d1 .tag { color: #a0917e; }
+  .pane.d4 .tag { color: #f2cdb4; }
+  .pane h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
+  .pane.d1 h3 { color: #2b2520; }
+  .pane.d4 h3 { color: #fff; }
+  .pane ul { font-size: 11pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
+  .pane.d1 ul { color: #42332a; }
+  .pane.d4 ul { color: #f5e4d4; }
+  .pane ul li::marker { color: #b45a34; }
+  .pane.d4 ul li::marker { color: #f2cdb4; }
+  .pane ul li strong { font-weight: 600; }
+  .pane.d1 ul li strong { color: #2b2520; }
+  .pane.d4 ul li strong { color: #fff; }
+  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot strong { color: #b45a34; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">비교 프레임 · 짝꿍 대화 인풋</div>
+  <div class="h-large">첫날 올린 것 vs <em>오늘</em> 내 결과물</div>
+  <div class="rule"></div>
+  <div class="intro">Day 1 첫 시간에 각자 올린 &ldquo;내가 해결하고 싶은 문제&rdquo; 노트가 있다. 그걸 지금 다시 읽으면서 오늘까지 만든 결과물과 비교한다.</div>
+  <div class="panes">
+    <div class="pane d1">
+      <div class="tag">Day 1 &mdash; 첫 초안</div>
+      <h3>처음 썼을 때</h3>
+      <ul>
+        <li>문제가 <strong>한 문장</strong>으로 안 잡혔다</li>
+        <li>&ldquo;대충 이런 느낌&rdquo; 수준의 기대치</li>
+        <li>어느 도구에서 시작할지 몰랐다</li>
+        <li>AI에게 시키는 범위가 <strong>너무 컸다</strong></li>
+      </ul>
+    </div>
+    <div class="pane d4">
+      <div class="tag">Day 4 &mdash; 오늘 결과물</div>
+      <h3>지금 가진 것</h3>
+      <ul>
+        <li>CLAUDE.md에 적어둔 <strong>고정 맥락</strong></li>
+        <li>MCP 1개 이상 연결 상태</li>
+        <li>동작하는 <strong>스킬 1개</strong></li>
+        <li>까다로운 고객 피드백 1건</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot">짝꿍에게 3분씩 <strong>&ldquo;내가 이만큼 바뀌었다&rdquo;</strong>를 읽어준다. 듣는 쪽은 X 축 하나를 같이 골라준다.</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S35 PR 워크플로우</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .pane { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
+  .pane.x { background: #ebe1d2; }
+  .pane.o { background: #c56a4a; color: #f7efe4; }
+  .pane .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .pane.x .tag { color: #a0917e; }
+  .pane.o .tag { color: #f2cdb4; }
+  .pane h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
+  .pane.x h3 { color: #2b2520; }
+  .pane.o h3 { color: #fff; }
+  .pane ul { font-size: 11pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
+  .pane.x ul { color: #42332a; }
+  .pane.o ul { color: #f5e4d4; }
+  .pane ul li::marker { color: #b45a34; }
+  .pane.o ul li::marker { color: #f2cdb4; }
+  .pane ul li strong { font-weight: 600; }
+  .pane.x ul li strong { color: #2b2520; }
+  .pane.o ul li strong { color: #fff; }
+  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot strong { color: #b45a34; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">PR 워크플로우 &mdash; 왜 브랜치와 PR을 쓰나</div>
+  <div class="h-large">main에 <em>바로 박지 않는다</em></div>
+  <div class="rule"></div>
+  <div class="intro">팀 repo는 공용 공간. 내 수정이 다른 사람의 스킬과 충돌할 수 있다. 브랜치 &rarr; PR &rarr; 리뷰 &rarr; merge 순서가 <strong>안전망</strong>이자 <strong>학습 루프</strong>.</div>
+  <div class="panes">
+    <div class="pane x">
+      <div class="tag">&times; 이렇게 하면</div>
+      <h3>main에 바로 push</h3>
+      <ul>
+        <li>내 변경이 다른 스킬을 깬다</li>
+        <li>팀원이 모르게 바뀜 &rarr; <strong>놀람</strong></li>
+        <li>되돌리기 어렵다</li>
+        <li>&ldquo;내가 뭘 바꿨지?&rdquo; 기록이 사라진다</li>
+      </ul>
+    </div>
+    <div class="pane o">
+      <div class="tag">&radic; PR 워크플로우</div>
+      <h3>브랜치 &rarr; PR &rarr; merge</h3>
+      <ul>
+        <li>내 브랜치에서 <strong>자유롭게 실험</strong></li>
+        <li>PR로 &ldquo;이렇게 바꿔봤는데 봐줘&rdquo;</li>
+        <li>리뷰어가 1명 더 보니 <strong>검증</strong>된다</li>
+        <li>변경 기록이 남는다 &mdash; Compound 자산</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot">PR은 리뷰 받는 수단이 아니라 <strong>기록 · 커뮤니케이션 · 검증이 한 번에</strong> 되는 포맷. 축 5 검증의 팀 버전이다.</div>
+</body>
+</html>

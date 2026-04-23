@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S11 KTX vs 택시 (STEP 5/5)</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .step-badge {
+    position: absolute;
+    top: 10pt;
+    right: 16pt;
+    font-size: 8.5pt;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #a0917e;
+    padding: 3pt 9pt;
+    border: 1px solid #d4c4ac;
+    border-radius: 20pt;
+    white-space: nowrap;
+  }
+  .step-badge strong { color: #b45a34; font-weight: 700; }
+
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .col { padding: 12pt 15pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+
+  .col-head { display: flex; flex-direction: column; gap: 3pt; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 14pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+
+  .block { display: flex; flex-direction: column; gap: 3pt; }
+  .block-label { font-size: 8.5pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .block-label { color: #b45a34; }
+  .col.terra .block-label { color: #f2cdb4; }
+  .block-body { font-size: 9.5pt; line-height: 1.6; }
+  .col.cream .block-body { color: #42332a; }
+  .col.terra .block-body { color: #f5e4d4; }
+  .col.cream .block-body strong { color: #2b2520; font-weight: 600; }
+  .col.terra .block-body strong { color: #fff; font-weight: 600; }
+
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+
+  .closing { margin-top: 8pt; padding: 7pt 13pt; background: #ebe1d2; border-radius: 8pt; font-size: 10pt; line-height: 1.5; color: #42332a; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="step-badge">STEP <strong>5</strong> / 5</div>
+  <div class="eyebrow">왜 써야</div>
+  <div class="h-large">왜 <em>"지금 AI"</em>가 구조적 답인가</div>
+  <div class="rule"></div>
+  <div class="intro">서울-부산을 택시로 가는 것과 KTX로 가는 것의 차이가, CSM의 두 접근 방식과 정확히 같다.</div>
+
+  <div class="compare">
+    <div class="col cream">
+      <div class="col-head">
+        <div class="tag">지금까지의 방식</div>
+        <h3>택시 — 즉시 출발, 매번 반복</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="block">
+        <div class="block-label">비유</div>
+        <div class="block-body">즉시 탈 수 있다. 대기 없음. 근데 장거리라서 중간에 기사 교대 · 연료 충전 · 화장실 · 결제가 반복된다. 목적지 설명도 구간마다 <strong>다시 해야 한다.</strong></div>
+      </div>
+      <div class="block">
+        <div class="block-label">비용 구조</div>
+        <div class="block-body">미터기가 이동 거리에 완전 비례. <strong>같은 경로를 15번 가면 비용도 15배 그대로.</strong> 구조 자체가 반복을 허용하지 않는다.</div>
+      </div>
+      <div class="block">
+        <div class="block-label">CSM 업무 매핑</div>
+        <div class="block-body">고객 1명마다 Salesforce 훑기 · Slack 검색 · Notion 뒤지기 · 톤 맞춰 초안 쓰기. <strong>고객 15명 → 그대로 15배.</strong> 주니어가 합류해도 동일 절차 반복.</div>
+      </div>
+    </div>
+
+    <div class="col terra">
+      <div class="col-head">
+        <div class="tag">AI 기반 방식</div>
+        <h3>KTX — 셋업 후 논스톱 복리</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="block">
+        <div class="block-label">비유</div>
+        <div class="block-body">티켓 예매 · 역까지 이동 · 출발 시각 대기 — <strong>셋업이 있다.</strong> 그것만 보면 택시보다 느려 보인다. 그런데 탑승 후 서울-부산 <strong>2시간 20분 논스톱.</strong> 중간 멈춤 0.</div>
+      </div>
+      <div class="block">
+        <div class="block-label">비용 구조</div>
+        <div class="block-body">승객 1명이든 400명이든 운행 비용은 거의 같다. <strong>한계비용이 낮다.</strong> 같은 경로를 반복할수록 KTX의 이득이 복리로 커진다.</div>
+      </div>
+      <div class="block">
+        <div class="block-label">CSM 업무 매핑</div>
+        <div class="block-body">담당 고객 맥락 · 톤 · 금지어 · QBR 체크리스트를 <strong>CLAUDE.md에 한 번 정의한다</strong> (오늘 120분의 주작업). 이후 고객 1명당 5~10분. 고객 15명이어도 셋업은 여전히 <strong>한 번.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing">"AI가 빠르다"가 아니라 <strong>"셋업 후 한 사람당 비용이 일정하다"</strong>가 정확한 표현. 오늘 120분은 이 셋업을 완성한다.</div>
+</body>
+</html>

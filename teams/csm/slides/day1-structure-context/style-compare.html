@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 스타일 비교 — Bento Grid vs Sage Professional</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Pretendard', system-ui, sans-serif; background: #1a1a1a; padding: 40px; color: #eee; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  .hint { font-size: 13px; opacity: 0.6; margin-bottom: 32px; }
+  .group { margin-bottom: 48px; }
+  .group-label { font-size: 14px; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #444; }
+  .slide-row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .slide-wrap { flex: 1 1 600px; min-width: 500px; }
+  .slide-tag { font-size: 12px; opacity: 0.65; margin-bottom: 8px; font-family: 'SF Mono', monospace; }
+  .slide {
+    width: 100%; aspect-ratio: 16/9;
+    position: relative; overflow: hidden;
+    border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  /* ========== BENTO GRID ========== */
+  .bento { background: #0a0a0a; color: #fff; font-family: -apple-system, 'SF Pro Display', sans-serif; padding: 40px; }
+  .bento-cover {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 12px;
+    height: 100%;
+  }
+  .bento-cover .b-main { grid-column: 1; grid-row: 1/4; background: #1c1c1e; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+  .bento-cover .b-main .eyebrow { font-size: 11px; letter-spacing: 0.3em; opacity: 0.5; }
+  .bento-cover .b-main .title { font-size: 46px; font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
+  .bento-cover .b-main .sub { font-size: 14px; opacity: 0.6; }
+  .bento-cover .b-2 { grid-column: 2; grid-row: 1/3; background: linear-gradient(135deg,#ff6b35,#f7931e); border-radius: 16px; padding: 20px; font-size: 12px; font-weight: 600; }
+  .bento-cover .b-2 .num { font-size: 38px; font-weight: 800; line-height: 1; }
+  .bento-cover .b-3 { grid-column: 3; grid-row: 1; background: #2d2d30; border-radius: 16px; padding: 16px; font-size: 10px; opacity: 0.75; }
+  .bento-cover .b-4 { grid-column: 3; grid-row: 2; background: #1c1c1e; border-radius: 16px; padding: 16px; font-size: 11px; font-weight: 600; display: flex; align-items: center; }
+  .bento-cover .b-5 { grid-column: 2/4; grid-row: 3; background: #1c1c1e; border-radius: 16px; padding: 14px 20px; font-size: 10px; opacity: 0.55; letter-spacing: 0.2em; display: flex; align-items: center; }
+
+  .bento-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 12px;
+    height: 100%;
+  }
+  .bento-content .b-head { grid-column: 1/4; padding: 8px 4px; }
+  .bento-content .b-head .eyebrow { font-size: 10px; letter-spacing: 0.3em; opacity: 0.45; }
+  .bento-content .b-head .h { font-size: 28px; font-weight: 700; margin-top: 4px; letter-spacing: -0.01em; }
+  .bento-content .card { background: #1c1c1e; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; }
+  .bento-content .card .num { font-size: 42px; font-weight: 800; opacity: 0.2; }
+  .bento-content .card .h3 { font-size: 17px; font-weight: 700; }
+  .bento-content .card .desc { font-size: 11px; line-height: 1.5; opacity: 0.65; }
+  .bento-content .card.accent { background: linear-gradient(135deg,#ff6b35,#f7931e); color: #111; }
+  .bento-content .card.accent .num { opacity: 0.25; color: #111; }
+  .bento-content .card.accent .desc { opacity: 0.85; }
+
+  /* ========== SAGE PROFESSIONAL ========== */
+  .sage { background: #f3f1ea; color: #1f2a24; font-family: 'Georgia', 'Pretendard', serif; padding: 56px 64px; }
+  .sage-cover { height: 100%; display: grid; grid-template-columns: 2fr 1fr; gap: 28px; }
+  .sage-cover .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .sage-cover .left .eyebrow { font-size: 11px; letter-spacing: 0.3em; color: #6b7a6e; text-transform: uppercase; }
+  .sage-cover .left .title { font-size: 48px; font-weight: 400; line-height: 1.1; color: #1f2a24; letter-spacing: -0.015em; }
+  .sage-cover .left .title em { font-style: normal; color: #5a6f5c; }
+  .sage-cover .left .meta { font-size: 13px; color: #6b7a6e; border-top: 1px solid #c9cfc1; padding-top: 14px; letter-spacing: 0.05em; }
+  .sage-cover .right { display: grid; grid-template-rows: 1fr 1fr; gap: 14px; }
+  .sage-cover .right .stat-card { background: #ffffff; border: 1px solid #d9dfd1; border-radius: 4px; padding: 18px 22px; }
+  .sage-cover .right .stat-card .num { font-size: 32px; font-weight: 400; color: #5a6f5c; letter-spacing: -0.02em; }
+  .sage-cover .right .stat-card .label { font-size: 11px; color: #6b7a6e; margin-top: 6px; letter-spacing: 0.1em; }
+  .sage-cover .right .stat-card.olive { background: #5a6f5c; color: #f3f1ea; border-color: #5a6f5c; }
+  .sage-cover .right .stat-card.olive .num { color: #fff; }
+  .sage-cover .right .stat-card.olive .label { color: #cfd6c4; }
+
+  .sage-content { height: 100%; display: flex; flex-direction: column; }
+  .sage-content .eyebrow { font-size: 10px; letter-spacing: 0.3em; color: #6b7a6e; }
+  .sage-content .h { font-size: 30px; font-weight: 400; color: #1f2a24; margin-top: 6px; letter-spacing: -0.01em; }
+  .sage-content .h em { font-style: normal; color: #5a6f5c; }
+  .sage-content .rule { width: 48px; height: 2px; background: #5a6f5c; margin-top: 12px; margin-bottom: 22px; }
+  .sage-content .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; flex: 1; }
+  .sage-content .col { background: #ffffff; border: 1px solid #d9dfd1; border-radius: 4px; padding: 22px; display: flex; flex-direction: column; }
+  .sage-content .col .tag { font-size: 10px; letter-spacing: 0.2em; color: #6b7a6e; }
+  .sage-content .col .h3 { font-size: 18px; font-weight: 400; color: #1f2a24; margin-top: 8px; }
+  .sage-content .col .desc { font-size: 11px; line-height: 1.6; color: #42504a; margin-top: 10px; }
+  .sage-content .col .spacer { flex: 1; }
+  .sage-content .col .foot { font-size: 10px; color: #8a9690; letter-spacing: 0.05em; border-top: 1px solid #eaeee3; padding-top: 8px; }
+
+  /* ========== WARM NEUTRAL ========== */
+  .warm { background: #f5ede2; color: #3a2f26; font-family: -apple-system, 'Pretendard', system-ui, sans-serif; padding: 48px 56px; }
+  .warm-cover { height: 100%; display: grid; grid-template-columns: 1.6fr 1fr; gap: 22px; }
+  .warm-cover .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .warm-cover .left .eyebrow { font-size: 11px; letter-spacing: 0.25em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .warm-cover .left .title { font-size: 44px; font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #2b2520; }
+  .warm-cover .left .title em { font-style: normal; color: #7d6b5a; font-weight: 400; font-size: 26px; display: block; margin-top: 10px; }
+  .warm-cover .left .meta { font-size: 12px; color: #8a7d6d; padding-top: 14px; border-top: 1px dashed #d4c4ac; letter-spacing: 0.08em; }
+  .warm-cover .right { display: grid; grid-template-rows: 1fr 1fr; gap: 14px; }
+  .warm-cover .right .card { background: #ebe1d2; border-radius: 20px; padding: 20px 22px; display: flex; flex-direction: column; justify-content: center; }
+  .warm-cover .right .card.terra { background: #c56a4a; color: #f7efe4; }
+  .warm-cover .right .card .num { font-size: 32px; font-weight: 500; letter-spacing: -0.02em; color: #2b2520; }
+  .warm-cover .right .card.terra .num { color: #fff; }
+  .warm-cover .right .card .label { font-size: 11px; color: #8a7d6d; margin-top: 6px; letter-spacing: 0.1em; }
+  .warm-cover .right .card.terra .label { color: #f2cdb4; }
+
+  .warm-content { height: 100%; display: flex; flex-direction: column; }
+  .warm-content .eyebrow { font-size: 10px; letter-spacing: 0.3em; color: #b45a34; font-weight: 600; }
+  .warm-content .h { font-size: 28px; font-weight: 500; color: #2b2520; margin-top: 6px; letter-spacing: -0.01em; }
+  .warm-content .h em { font-style: normal; color: #b45a34; }
+  .warm-content .rule { width: 46px; height: 3px; border-radius: 3px; background: #c56a4a; margin: 12px 0 22px; }
+  .warm-content .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; flex: 1; }
+  .warm-content .col { background: #ebe1d2; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; }
+  .warm-content .col.terra { background: #c56a4a; color: #f7efe4; }
+  .warm-content .col .tag { font-size: 10px; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
+  .warm-content .col.terra .tag { color: #f2cdb4; }
+  .warm-content .col .h3 { font-size: 18px; font-weight: 600; color: #2b2520; margin-top: 8px; }
+  .warm-content .col.terra .h3 { color: #f7efe4; }
+  .warm-content .col .desc { font-size: 11px; line-height: 1.65; color: #5a4d40; margin-top: 10px; }
+  .warm-content .col.terra .desc { color: #f5e4d4; }
+  .warm-content .col .spacer { flex: 1; }
+  .warm-content .col .foot { font-size: 10px; color: #a0917e; letter-spacing: 0.05em; border-top: 1px dashed #d4c4ac; padding-top: 8px; }
+  .warm-content .col.terra .foot { color: #f2cdb4; border-top: 1px dashed rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<h1>Day 1 · 두 스타일 비교</h1>
+<p class="hint">같은 Day 1 콘텐츠(Cover / 3막 요약)를 두 스타일로. 왼쪽=Bento Grid, 오른쪽=Sage Professional</p>
+
+<div class="group">
+  <div class="group-label">① 커버 슬라이드 (Day 1 · 뼈대 깔기)</div>
+  <div class="slide-row">
+
+    <div class="slide-wrap">
+      <div class="slide-tag">Bento Grid / cover</div>
+      <div class="slide bento">
+        <div class="bento-cover">
+          <div class="b-main">
+            <div class="eyebrow">AI CAMP 3기 · DAY 1</div>
+            <div>
+              <div class="title">뼈대 깔기<br><span style="font-size:30px;font-weight:400;opacity:0.7">— CLAUDE.md로 AI에게 내 업무를 알려주기</span></div>
+            </div>
+            <div class="sub">축 1 (구조) + 축 2 (맥락) · 120분</div>
+          </div>
+          <div class="b-2">
+            <div style="font-size:10px;letter-spacing:0.2em;opacity:0.8">6축 프레임</div>
+            <div class="num">1<span style="font-size:14px;opacity:0.7">·2</span></div>
+            <div style="font-size:11px;opacity:0.85">오늘의 축</div>
+          </div>
+          <div class="b-3">하네스 6축 프레임 · CSM 특화 워크플로우 · 비개발자 1기</div>
+          <div class="b-4">120분 · 6 블록</div>
+          <div class="b-5">AB180 · CS GROUP · 2026.04</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-wrap">
+      <div class="slide-tag">Sage Professional / cover</div>
+      <div class="slide sage">
+        <div class="sage-cover">
+          <div class="left">
+            <div class="eyebrow">AI Camp 3기 — Day 1</div>
+            <div class="title">뼈대 깔기<br><em>CLAUDE.md로 AI에게 내 업무를 알려주기</em></div>
+            <div class="meta">AB180 · CS Group · 2026.04 · 120분</div>
+          </div>
+          <div class="right">
+            <div class="stat-card olive">
+              <div class="num">1 · 2</div>
+              <div class="label">오늘의 축 · 구조 + 맥락</div>
+            </div>
+            <div class="stat-card">
+              <div class="num">6</div>
+              <div class="label">블록 · 120분</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="group">
+  <div class="group-label">② 3막 "왜" 요약 슬라이드</div>
+  <div class="slide-row">
+
+    <div class="slide-wrap">
+      <div class="slide-tag">Bento Grid / 3 cards</div>
+      <div class="slide bento">
+        <div class="bento-content">
+          <div class="b-head">
+            <div class="eyebrow">INTRO · 12분</div>
+            <div class="h">왜 AI를 써야 하는가 — 세 가지 각도</div>
+          </div>
+          <div class="card">
+            <div class="num">01</div>
+            <div class="h3">왜 써야</div>
+            <div class="desc">이메일 3분의 환상, KTX처럼 셋업 비용이 크지만 복리로 회수되는 도구</div>
+          </div>
+          <div class="card accent">
+            <div class="num">02</div>
+            <div class="h3">왜 배워야</div>
+            <div class="desc">"역시 AI는 여기까지야" 대신 "내가 최적화 못했다" — 디버깅 마인드셋 + 맥락의 두께</div>
+          </div>
+          <div class="card">
+            <div class="num">03</div>
+            <div class="h3">왜 리더가 직접</div>
+            <div class="desc">AX 꼭짓점 — 리더의 10배 확신 체험이 조직 재설계의 전제</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-wrap">
+      <div class="slide-tag">Sage Professional / 3 cards</div>
+      <div class="slide sage">
+        <div class="sage-content">
+          <div class="eyebrow">Intro · 12분</div>
+          <div class="h">왜 AI를 써야 하는가 — <em>세 가지 각도</em></div>
+          <div class="rule"></div>
+          <div class="cols">
+            <div class="col">
+              <div class="tag">01 · 도구</div>
+              <div class="h3">왜 써야</div>
+              <div class="desc">이메일 3분의 환상. KTX처럼 셋업 비용은 크지만 복리로 회수되는 도구.</div>
+              <div class="spacer"></div>
+              <div class="foot">이메일 · KTX 비유</div>
+            </div>
+            <div class="col">
+              <div class="tag">02 · 학습</div>
+              <div class="h3">왜 배워야</div>
+              <div class="desc">"역시 AI는 여기까지야" 대신 "내가 최적화 못했다" — 디버깅 마인드셋과 맥락의 두께.</div>
+              <div class="spacer"></div>
+              <div class="foot">디버깅 · 복리</div>
+            </div>
+            <div class="col">
+              <div class="tag">03 · 리더</div>
+              <div class="h3">왜 리더가 직접</div>
+              <div class="desc">AX 꼭짓점 — 리더 본인의 10배 확신 체험이 조직 재설계의 전제.</div>
+              <div class="spacer"></div>
+              <div class="foot">AX · bottleneck</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="group">
+  <div class="group-label">③ Warm Neutral — 커버 + 3막 (추천)</div>
+  <div class="slide-row">
+
+    <div class="slide-wrap">
+      <div class="slide-tag">Warm Neutral / cover</div>
+      <div class="slide warm">
+        <div class="warm-cover">
+          <div class="left">
+            <div class="eyebrow">AI Camp 3기 · Day 1</div>
+            <div>
+              <div class="title">뼈대 깔기<em>CLAUDE.md로 AI에게 내 업무를 알려주기</em></div>
+            </div>
+            <div class="meta">AB180 · CS Group · 2026.04 · 120분</div>
+          </div>
+          <div class="right">
+            <div class="card terra">
+              <div class="num">1 · 2</div>
+              <div class="label">오늘의 축 · 구조 + 맥락</div>
+            </div>
+            <div class="card">
+              <div class="num">6</div>
+              <div class="label">블록 · 120분</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-wrap">
+      <div class="slide-tag">Warm Neutral / 3 cards</div>
+      <div class="slide warm">
+        <div class="warm-content">
+          <div class="eyebrow">Intro · 12분</div>
+          <div class="h">왜 AI를 써야 하는가 — <em>세 가지 각도</em></div>
+          <div class="rule"></div>
+          <div class="cols">
+            <div class="col">
+              <div class="tag">01 · 도구</div>
+              <div class="h3">왜 써야</div>
+              <div class="desc">이메일 3분의 환상. KTX처럼 셋업 비용은 크지만 복리로 회수되는 도구.</div>
+              <div class="spacer"></div>
+              <div class="foot">이메일 · KTX 비유</div>
+            </div>
+            <div class="col terra">
+              <div class="tag">02 · 학습</div>
+              <div class="h3">왜 배워야</div>
+              <div class="desc">"역시 AI는 여기까지야" 대신 "내가 최적화 못했다" — 디버깅 마인드셋과 맥락의 두께.</div>
+              <div class="spacer"></div>
+              <div class="foot">디버깅 · 복리</div>
+            </div>
+            <div class="col">
+              <div class="tag">03 · 리더</div>
+              <div class="h3">왜 리더가 직접</div>
+              <div class="desc">AX 꼭짓점 — 리더 본인의 10배 확신 체험이 조직 재설계의 전제.</div>
+              <div class="spacer"></div>
+              <div class="foot">AX · bottleneck</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

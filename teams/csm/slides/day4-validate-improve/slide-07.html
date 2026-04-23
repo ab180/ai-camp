@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S07 오늘 하루 흐름</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; gap: 14pt; }
+  .h-large { font-size: 26pt; }
+  .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12pt; align-items: stretch; margin-top: 8pt; }
+  .node { background: #ebe1d2; border-radius: 14pt; padding: 18pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .node.hl { background: #c56a4a; color: #f7efe4; }
+  .node .n { font-size: 10pt; letter-spacing: 0.25em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
+  .node.hl .n { color: #f2cdb4; }
+  .node h3 { font-size: 16pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.22; }
+  .node.hl h3 { color: #fff; }
+  .node p { font-size: 11pt; color: #42332a; line-height: 1.5; }
+  .node.hl p { color: #f5e4d4; }
+  .arrow { display: flex; align-items: center; justify-content: center; color: #b45a34; font-size: 24pt; font-weight: 500; }
+  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; margin-top: auto; max-width: 640pt; }
+  .foot strong { color: #b45a34; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="eyebrow">오늘 하루 흐름</div>
+    <div class="h-large">원리 체감 &rarr; 자가진단 &rarr; 팀 공유</div>
+  </div>
+  <div class="flow">
+    <div class="node">
+      <div class="n">B1 · 30 min</div>
+      <h3>다른 관점을<br>체감한다</h3>
+      <p>까다로운 고객 에이전트가 내 결과를 읽는다. 참가자는 자기 결과물 넣고 읽기만.</p>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="node">
+      <div class="n">B2 · 20 min</div>
+      <h3>약한 축을<br>집어낸다</h3>
+      <p>Compound 원리 + 6축 O/X 체크리스트. 첫날 vs 마지막날을 짝꿍과 비교.</p>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="node hl">
+      <div class="n">B3 · 50 min</div>
+      <h3>팀 자산으로<br>남긴다</h3>
+      <p>내 스킬 1개를 팀 repo에 올리고 PR로 공유. 오늘 끝나면 팀 자산 +1.</p>
+    </div>
+  </div>
+  <div class="foot">핵심은 <strong>스킬 재작성이 아니라 관점 교체</strong>. Day 3에서 만든 것을 그대로 들고 오늘의 세 가지 렌즈에 통과시킨다.</div>
+</body>
+</html>

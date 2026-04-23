@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S55 피해야 할 5가지 패턴</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 9.5pt; line-height: 1.45; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .items { display: flex; flex-direction: column; gap: 3.5pt; flex: 1; margin-top: 6pt; min-height: 0; }
+  .item { display: grid; grid-template-columns: 22pt 0.95fr 1.3fr 1.1fr; gap: 8pt; padding: 4.5pt 10pt; background: #ebe1d2; border-radius: 8pt; align-items: center; }
+  .item .mark { font-size: 14pt; font-weight: 300; color: #8a3a2a; text-align: center; letter-spacing: -0.02em; line-height: 1; }
+  .item .t { font-size: 9.5pt; line-height: 1.3; color: #2b2520; font-weight: 600; }
+  .item .t strong { color: #b45a34; }
+  .item .d, .item .f { font-size: 8pt; line-height: 1.4; color: #42332a; padding-left: 8pt; border-left: 2pt solid #d4c4ac; }
+  .item .d strong, .item .f strong { color: #b45a34; font-weight: 600; }
+  .item .label { font-size: 7pt; letter-spacing: 0.16em; color: #a0917e; font-weight: 600; text-transform: uppercase; display: block; margin-bottom: 1pt; }
+  .item .f .label { color: #8a5a3a; }
+  .closing { margin-top: 6pt; padding: 7pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 9pt; line-height: 1.5; flex-shrink: 0; }
+  .closing strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Best Practices · 5/5</div>
+  <div class="h-large">피해야 할 <em>5가지 패턴</em></div>
+  <div class="rule"></div>
+  <div class="intro">CLAUDE.md가 망가지는 경로는 제한적이다. 아래 다섯 중 하나라도 신호가 보이면 <strong>즉시 손질</strong>해야 복리가 꺼지지 않는다.</div>
+  <div class="items">
+    <div class="item">
+      <div class="mark">X</div>
+      <div class="t"><strong>500줄+ CLAUDE.md</strong></div>
+      <div class="d"><span class="label">실제로 벌어지는 일</span>"리캡 써줘" 하면 전과 다르게 엉뚱한 답. 읽을 게 너무 많아 앞부분만 보거나 <strong>중요 규칙을 놓친다</strong>.</div>
+      <div class="f"><span class="label">대처법</span>자주 안 쓰는 규칙부터 <strong>.claude/rules/</strong>로 옮긴다. 변하는 정보는 아예 빼낸다.</div>
+    </div>
+    <div class="item">
+      <div class="mark">X</div>
+      <div class="t"><strong>변하는 정보</strong>를 담기</div>
+      <div class="d"><span class="label">실제로 벌어지는 일</span>'이번 분기 OKR'을 적어뒀는데 다음 분기 업데이트 안 함. AI가 <strong>오래된 OKR 기준</strong>으로 답한다.</div>
+      <div class="f"><span class="label">대처법</span>변하는 정보는 CLAUDE.md가 아닌 <strong>Notion·Slack에 두고 MCP로 연결</strong> (Day 2).</div>
+    </div>
+    <div class="item">
+      <div class="mark">X</div>
+      <div class="t"><strong>이유 없는 금지어</strong></div>
+      <div class="d"><span class="label">실제로 벌어지는 일</span>"'반드시' 쓰지 마"만 적어둠. AI는 어떤 상황에서 <strong>그냥 "반드시 ~"를 생성</strong>한다. 왜 금지인지 모르니까.</div>
+      <div class="f"><span class="label">대처법</span>"'반드시' 금지 — <strong>고객 기대치를 과하게 만들어 분쟁 위험</strong>" 이유를 같이 적는다.</div>
+    </div>
+    <div class="item">
+      <div class="mark">X</div>
+      <div class="t"><strong>개인 선호</strong> + 팀 규칙 섞기</div>
+      <div class="d"><span class="label">실제로 벌어지는 일</span>"나는 이모지 안 씀 + 우리 팀은 snake_case"를 섞어 적음. 팀원에게 공유했더니 <strong>이모지 금지에 당황</strong>.</div>
+      <div class="f"><span class="label">대처법</span><strong>User / Project 계층</strong>을 나눠 쓴다 (다음 슬라이드).</div>
+    </div>
+    <div class="item">
+      <div class="mark">X</div>
+      <div class="t">안 쓰는 규칙 <strong>누적</strong></div>
+      <div class="d"><span class="label">실제로 벌어지는 일</span>몇 달 지나니 안 쓰는 프로젝트·예전 고객사 규칙이 쌓임. AI가 <strong>옛 규칙을 여전히 따른다</strong>.</div>
+      <div class="f"><span class="label">대처법</span>월 1회 AI에게 CLAUDE.md 보여주고 <strong>"지금 안 쓰는 항목 정리"</strong> 요청.</div>
+    </div>
+  </div>
+  <div class="closing">복잡해지고 있다면 <strong>뭔가 잘못된 신호</strong>. 더 넣을 자리가 아니라 <strong>덜어낼 자리</strong>를 찾는다. — Anthropic</div>
+</body>
+</html>

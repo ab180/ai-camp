@@ -1,3 +1,4 @@
+<!-- 업데이트: 2026-04-22 · teams/ 구조로 재편 (slides/, templates/, .claude/skills/, guides/ → teams/csm/ 하위 이동) -->
 ---
 title: AI Camp 3기 전면 재편 — Design Doc
 date: 2026-04-20
@@ -28,42 +29,44 @@ SSOT 출처:
 
 ## 3. Repo 구조
 
+> 업데이트: 2026-04-22 · teams/ 구조로 재편. slides/, templates/, .claude/skills/, guides/ → teams/csm/ 하위로 이동.
+
 ```
 ab180/ai-camp/
-├── README.md                          # 6축 태그 + 참가자 시작 가이드
-├── slides/                            # grab 산출물
-│   ├── day1-structure-context/        # 축 1·2 살짝
-│   │   ├── slide-outline.md
-│   │   ├── slide-01.html ~ slide-NN.html
-│   │   └── export/day1.pdf
-│   ├── day2-context/                  # 축 2
-│   ├── day3-plan-execute/             # 축 3·4
-│   └── day4-validate-improve/         # 축 5·6
-├── guides/                            # 발표자 가이드 MD
-│   ├── day1_guide.md
-│   ├── day2_guide.md
-│   ├── day3_guide.md
-│   └── day4_guide.md
-├── .claude/
-│   └── skills/                        # 참가자용 인터랙티브 복습 스킬
-│       ├── day1-structure-context/
-│       ├── day2-context/
-│       ├── day3-plan-execute/
-│       └── day4-validate-improve/
-├── templates/                         # 운영진 사전 제작 스킬 템플릿 (0.5→1 수정 대상)
-│   ├── recap-mail/
-│   ├── inquiry-response/
-│   ├── meeting-note-summary/
-│   └── subagent-example/
+├── README.md                          # 팀 구조 + 참가자 시작 가이드
+├── teams/
+│   ├── csm/                           # CS Group 전용
+│   │   ├── README.md
+│   │   ├── slides/                    # grab 산출물
+│   │   │   ├── day1-structure-context/  # 축 1·2 살짝
+│   │   │   ├── day2-context/            # 축 2
+│   │   │   ├── day3-plan-execute/       # 축 3·4
+│   │   │   └── day4-validate-improve/   # 축 5·6
+│   │   ├── templates/                 # 운영진 사전 제작 스킬 템플릿 (0.5→1 수정 대상)
+│   │   │   ├── recap-mail/
+│   │   │   ├── inquiry-response/
+│   │   │   ├── meeting-note-summary/
+│   │   │   └── subagent-example/
+│   │   ├── .claude/skills/            # 참가자용 인터랙티브 복습 스킬
+│   │   │   ├── day1-structure-context/
+│   │   │   ├── day2-context/
+│   │   │   ├── day3-plan-execute/
+│   │   │   └── day4-validate-improve/
+│   │   └── guides/                    # 발표자 가이드 MD
+│   └── (sales/ 등 추가 예정)
+├── shared/                            # 팀 무관 공통 자산 (참고용)
+│   └── README.md
 ├── sop/                               # 운영진 운영 매뉴얼
 │   ├── validator-agent-script.md      # "까다로운 고객" 에이전트 시연
 │   ├── 6axes-self-assessment.md       # Day 4 O/X 체크리스트
 │   └── pre-camp-checklist.md
-└── archive/
-    └── camp-1-2/                      # 1·2기 자산 보존
-        ├── original-pdfs/
-        ├── lecture-guides/
-        └── legacy-skills/
+├── docs/plans/                        # Design Doc·계획
+├── archive/
+│   └── camp-1-2/                      # 1·2기 자산 보존
+│       ├── original-pdfs/
+│       ├── lecture-guides/
+│       └── legacy-skills/
+└── bin/setup.sh                       # 팀별 부분 clone 스크립트
 ```
 
 ## 4. 하네스 6축 매핑

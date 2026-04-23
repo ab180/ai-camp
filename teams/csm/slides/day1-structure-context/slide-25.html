@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S25 온보딩 문서 비유</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .card { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .card.terra { background: #c56a4a; color: #f7efe4; }
+  .card .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
+  .card.terra .tag { color: #f2cdb4; }
+  .card h3 { font-size: 13.5pt; font-weight: 600; color: #2b2520; margin-top: 4pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .card.terra h3 { color: #fff; }
+  .card h3 strong { color: #b45a34; }
+  .card.terra h3 strong { color: #fff; }
+  .card ul { list-style: none; padding: 0; margin-top: 8pt; flex: 1; }
+  .card li { font-size: 9.5pt; line-height: 1.5; color: #42332a; padding: 4pt 0 4pt 14pt; position: relative; border-bottom: 1px dashed #d4c4ac; }
+  .card.terra li { color: #f5e4d4; border-bottom: 1px dashed rgba(255,255,255,0.25); }
+  .card li:last-child { border-bottom: none; }
+  .card li::before { content: "–"; color: #a0917e; position: absolute; left: 2pt; top: 4pt; font-weight: 600; }
+  .card.terra li::before { color: #f2cdb4; }
+  .card li strong { color: #b45a34; }
+  .card.terra li strong { color: #fff; }
+  .card li .left { font-weight: 600; color: #2b2520; }
+  .card li .arrow { color: #a0917e; margin: 0 4pt; font-weight: 400; }
+  .card li .right { color: #7d6b5a; }
+  .closing { margin-top: 10pt; padding: 8pt 14pt; border-radius: 8pt; background: #ebe1d2; color: #7d6b5a; font-size: 9pt; line-height: 1.5; letter-spacing: 0.01em; text-align: center; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">비유로 한 번에</div>
+  <div class="h-large">CLAUDE.md = AI 신입사원에게 주는 <em>온보딩 문서</em></div>
+  <div class="rule"></div>
+  <div class="intro">AI는 매 대화마다 우리 팀이 처음이다. 신입사원이 첫 출근한 날 아무것도 모르는 상태로 일을 시작하는 것과 같다. <strong>온보딩 문서 한 장이 그 차이를 만든다.</strong></div>
+  <div class="wrap">
+    <div class="card">
+      <div class="tag">이건 똑같다</div>
+      <h3>신입 온보딩과 <strong>똑같이 먹히는</strong> 부분</h3>
+      <ul>
+        <li><span class="left">매 대화마다 "처음"인 AI</span><span class="arrow">↔</span><span class="right">매번 새로 오는 신입사원</span></li>
+        <li><span class="left">CLAUDE.md 표준 섹션</span><span class="arrow">↔</span><span class="right">온보딩 문서 표준 섹션 (팀·담당 고객·톤·금지어·도구)</span></li>
+        <li><span class="left">반복 설명 제거</span><span class="arrow">↔</span><span class="right">1:1 인수인계 대신 문서 한 번</span></li>
+        <li><span class="left">초안 → 6개월에 걸쳐 성장</span><span class="arrow">↔</span><span class="right">팀 피드백 반영해 지속 개정</span></li>
+        <li><span class="left">User / Project / Folder 계층</span><span class="arrow">↔</span><span class="right">전사 / 팀 / 특정 프로젝트 온보딩 문서</span></li>
+        <li><span class="left">금지어에 "왜" 포함</span><span class="arrow">↔</span><span class="right">신입에게도 이유 없이 금지하면 안 지킨다</span></li>
+      </ul>
+    </div>
+    <div class="card terra">
+      <div class="tag">이건 다르다</div>
+      <h3>사람 신입과 <strong>다르게 써야</strong> 하는 부분</h3>
+      <ul>
+        <li>AI는 <strong>눈치를 못 본다</strong> — 신입은 옆 사람 일하는 걸 보고 따라 하지만, AI는 문서에 적힌 대로만 한다</li>
+        <li>그래서 사람용 온보딩보다 <strong>훨씬 더 자세히·명확하게</strong> 쓴다 ("알아서 잘"이 안 통한다)</li>
+        <li>자주 바뀌는 정보(이번 주 수치·최근 캠페인 등)는 담지 않는다 — Day 2에서 <strong>MCP로 실시간 연결</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="closing">비유를 한 번만 기억해도 <strong>나머지 모든 규칙이 이 위에서 설명된다.</strong></div>
+</body>
+</html>

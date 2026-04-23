@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S36 PR 작성 UI</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .pr { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .pr .ubar { font-size: 9pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 6pt; }
+  .pr .title-box { font-size: 13pt; font-weight: 600; color: #2b2520; border: 1px solid #d4c4ac; border-radius: 6pt; padding: 8pt 10pt; }
+  .pr .title-box em { font-style: normal; color: #c56a4a; }
+  .pr .body-box { background: #f5ede2; border-radius: 6pt; padding: 10pt 12pt; font-size: 10pt; color: #2b2520; line-height: 1.55; font-family: 'SF Mono', Menlo, monospace; white-space: pre-wrap; }
+  .pr .body-box b { color: #c56a4a; font-weight: 600; }
+  .pr .submit { background: #c56a4a; color: #fff; font-size: 10pt; font-weight: 600; padding: 6pt 14pt; border-radius: 5pt; align-self: flex-start; }
+  .tip { background: #ebe1d2; border-radius: 10pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .tip h4 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .tip ul { font-size: 10.5pt; line-height: 1.6; color: #42332a; padding-left: 14pt; margin: 0; }
+  .tip ul li::marker { color: #b45a34; }
+  .tip ul li strong { color: #2b2520; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">PR 작성 UI &mdash; 이 정도면 충분</div>
+  <div class="h-large">타이틀 1줄 · 본문 <em>3섹션</em></div>
+  <div class="rule"></div>
+  <div class="intro">GitHub &rarr; Pull requests &rarr; New. 아래 포맷만 지키면 리뷰어가 1분 안에 본다.</div>
+  <div class="panes">
+    <div class="pr">
+      <div class="ubar">github.com &mdash; New Pull Request</div>
+      <div class="title-box"><em>[add]</em> recap-mail 스킬</div>
+      <div class="body-box"><b>## 무엇을</b>
+CSM 미팅 리캡 메일 초안 스킬 추가.
+
+<b>## 왜</b>
+Day 3에서 만들었고 B1 에이전트 피드백으로
+결정사항 &middot; 기한 섹션 강화함.
+
+<b>## 축 태그</b>
+3 (계획) + 4 (실행)
+
+<b>## 리뷰 포인트</b>
+- SKILL.md when 필드가 명확한지
+- 기한 형식이 팀 템플릿과 맞는지</div>
+      <div class="submit">Create pull request</div>
+    </div>
+    <div class="tip">
+      <h4>PR 작성 팁</h4>
+      <ul>
+        <li>타이틀은 <strong>[add] / [fix] / [update]</strong> 프리픽스</li>
+        <li>본문은 <strong>무엇 · 왜 · 축 · 리뷰 포인트</strong> 4개</li>
+        <li>스크린샷은 있으면 좋고 없어도 무방</li>
+        <li>Reviewer 1명 지정 (짝꿍 or 운영진)</li>
+        <li>&ldquo;<strong>Create draft</strong>&rdquo; 기능도 가능 &mdash; 초안 상태로 올리고 이어 작업</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

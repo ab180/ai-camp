@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S02 전체 커리큘럼</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .days { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8pt; margin-top: 8pt; }
+  .day { padding: 10pt 12pt 9pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .day.terra { background: #c56a4a; color: #f7efe4; }
+  .day .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; color: #a0917e; }
+  .day.terra .tag { color: #f2cdb4; }
+  .day h3 { font-size: 13.5pt; font-weight: 600; color: #2b2520; margin-top: 3pt; letter-spacing: -0.005em; line-height: 1.22; }
+  .day.terra h3 { color: #fff; }
+  .day .topic { font-size: 9.5pt; line-height: 1.45; color: #42332a; margin-top: 6pt; }
+  .day.terra .topic { color: #f5e4d4; }
+  .day .topic strong { color: #2b2520; }
+  .day.terra .topic strong { color: #fff; }
+  .day .deliv { font-size: 8.5pt; line-height: 1.4; color: #7d6b5a; margin-top: 6pt; padding-top: 5pt; border-top: 1px dashed #d4c4ac; letter-spacing: 0.01em; }
+  .day.terra .deliv { color: #f2cdb4; border-top-color: rgba(255,255,255,0.25); }
+  .day .deliv .lbl { font-size: 7.5pt; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase; color: #b45a34; display: block; margin-bottom: 2pt; }
+  .day.terra .deliv .lbl { color: #f2cdb4; }
+
+  /* 6축 dot 인디케이터 */
+  .axes-wrap { margin-top: 7pt; padding-top: 6pt; border-top: 1px dashed #d4c4ac; }
+  .day.terra .axes-wrap { border-top-color: rgba(255,255,255,0.25); }
+  .axes-map { display: flex; gap: 4pt; align-items: center; }
+  .ax { width: 16pt; height: 16pt; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 7.5pt; font-weight: 600; border: 1pt solid #d4c4ac; color: #a0917e; background: transparent; font-family: 'SF Mono', 'Menlo', monospace; flex-shrink: 0; }
+  .ax.active { background: #c56a4a; color: #fff; border-color: #c56a4a; }
+  .ax.partial { background: transparent; color: #b45a34; border-color: #c56a4a; border-style: dashed; }
+  /* terra 배경 색 반전 */
+  .day.terra .ax { border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.55); }
+  .day.terra .ax.active { background: #fff; color: #c56a4a; border-color: #fff; }
+  .day.terra .ax.partial { background: transparent; color: #fff; border-color: #fff; border-style: dashed; }
+  .ax-labels { display: flex; gap: 4pt; margin-top: 3pt; font-size: 7pt; color: #a0917e; font-family: 'SF Mono', monospace; }
+  .ax-labels span { width: 16pt; text-align: center; }
+  .day.terra .ax-labels span { color: rgba(255,255,255,0.6); }
+
+  .timeline { display: grid; grid-template-columns: 1.6fr 0.3fr 1fr 0.3fr 0.85fr; gap: 6pt; margin-top: 8pt; align-items: stretch; }
+  .phase { padding: 10pt 14pt; border-radius: 10pt; background: #ebe1d2; display: flex; flex-direction: column; justify-content: center; }
+  .phase.terra { background: #c56a4a; color: #f7efe4; }
+  .phase .ph-tag { font-size: 8pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; color: #a0917e; }
+  .phase.terra .ph-tag { color: #f2cdb4; }
+  .phase .ph-name { font-size: 11pt; font-weight: 600; color: #2b2520; margin-top: 3pt; letter-spacing: -0.005em; }
+  .phase.terra .ph-name { color: #fff; }
+  .phase .ph-sub { font-size: 8.5pt; color: #7d6b5a; margin-top: 3pt; line-height: 1.4; }
+  .phase.terra .ph-sub { color: #f5e4d4; }
+  .arrow { display: flex; align-items: center; justify-content: center; color: #c56a4a; font-size: 18pt; font-weight: 300; }
+
+  .foot { margin-top: 7pt; padding-top: 6pt; border-top: 1px dashed #d4c4ac; font-size: 9.5pt; color: #7d6b5a; letter-spacing: 0.02em; display: flex; justify-content: space-between; gap: 10pt; }
+  .foot strong { color: #b45a34; }
+  .foot .schedule { color: #a0917e; font-size: 8.5pt; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">전체 커리큘럼</div>
+  <div class="h-large">4일 집중 · 2주 프로젝트 · <em>발표회</em></div>
+  <div class="rule"></div>
+  <div class="intro">캠프는 수업 4일에서 끝나지 않는다. 하루에 한 축씩 쌓고, 뒤이은 <strong>2주의 복리</strong>가 실제 업무 안에서 결과를 만든다.</div>
+  <div class="days">
+    <div class="day terra">
+      <div class="tag">Day 1</div>
+      <h3>CLAUDE.md</h3>
+      <div class="topic">내 CSM 맥락을 <strong>구조화</strong>한다</div>
+      <div class="deliv"><span class="lbl">산출물</span>내 CSM 맥락이 담긴 CLAUDE.md</div>
+      <div class="axes-wrap">
+        <div class="axes-map">
+          <span class="ax active">1</span><span class="ax partial">2</span><span class="ax">3</span><span class="ax">4</span><span class="ax">5</span><span class="ax">6</span>
+        </div>
+        <div class="ax-labels"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="tag">Day 2</div>
+      <h3>MCP</h3>
+      <div class="topic">내 도구를 <strong>연결</strong>한다</div>
+      <div class="deliv"><span class="lbl">산출물</span>CSM 실무 도구 MCP 연결 1개 이상</div>
+      <div class="axes-wrap">
+        <div class="axes-map">
+          <span class="ax">1</span><span class="ax active">2</span><span class="ax partial">3</span><span class="ax">4</span><span class="ax">5</span><span class="ax">6</span>
+        </div>
+        <div class="ax-labels"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="tag">Day 3</div>
+      <h3>Skill</h3>
+      <div class="topic">내 고통점을 <strong>해결</strong>하는 스킬</div>
+      <div class="deliv"><span class="lbl">산출물</span>동작하는 스킬 1개 (템플릿 수정본 OK)</div>
+      <div class="axes-wrap">
+        <div class="axes-map">
+          <span class="ax">1</span><span class="ax">2</span><span class="ax active">3</span><span class="ax active">4</span><span class="ax">5</span><span class="ax">6</span>
+        </div>
+        <div class="ax-labels"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="tag">Day 4</div>
+      <h3>System</h3>
+      <div class="topic">검증으로 <strong>계속 나아지는</strong> 루프</div>
+      <div class="deliv"><span class="lbl">산출물</span>6축 자가진단 + 팀 repo 업로드 + 2주 목표</div>
+      <div class="axes-wrap">
+        <div class="axes-map">
+          <span class="ax">1</span><span class="ax">2</span><span class="ax">3</span><span class="ax">4</span><span class="ax active">5</span><span class="ax active">6</span>
+        </div>
+        <div class="ax-labels"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="phase terra">
+      <div class="ph-tag">Phase 1 · 4일 집중</div>
+      <div class="ph-name">수업 — Day 1 ~ 4</div>
+      <div class="ph-sub">매일 120분. 하루 1축씩 몸으로 쌓는다.</div>
+    </div>
+    <div class="arrow">&rsaquo;</div>
+    <div class="phase">
+      <div class="ph-tag">Phase 2 · 2주</div>
+      <div class="ph-name">프로젝트</div>
+      <div class="ph-sub">각자 실무에 적용. 개선 사이클 최소 1회.</div>
+    </div>
+    <div class="arrow">&rsaquo;</div>
+    <div class="phase">
+      <div class="ph-tag">Phase 3</div>
+      <div class="ph-name">발표회</div>
+      <div class="ph-sub">"별로였던 것 / 좋았던 것" 회고.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>캠프는 1일차 오전이 아니라 <strong>2주 뒤 발표회까지</strong>.</div>
+    <div class="schedule">매일 120분 · Day TBD</div>
+  </div>
+</body>
+</html>

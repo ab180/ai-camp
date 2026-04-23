@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S12 실습 2 결과 관찰</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .points { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 10pt; }
+  .point { padding: 12pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .point .tag { font-size: 9.5pt; letter-spacing: 0.2em; font-weight: 600; color: #a0917e; text-transform: uppercase; }
+  .point .lead { font-size: 13pt; font-weight: 600; color: #2b2520; margin-top: 4pt; line-height: 1.25; letter-spacing: -0.005em; }
+  .point .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 6pt; }
+  .point .body strong { color: #b45a34; }
+  .point .sample { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; background: rgba(197,106,74,0.08); color: #5a4d40; padding: 5pt 7pt; border-radius: 6pt; margin-top: 6pt; line-height: 1.45; }
+  .closing { margin-top: 8pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
+  .closing strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실습 2</div>
+  <div class="h-large">생성된 초안을 그대로 본다 · <em>고치지 않는다</em></div>
+  <div class="rule"></div>
+  <div class="intro">결과가 마음에 안 들어도 <strong>수정하지 않고 읽기만</strong>. 이 기본값이 왜 이렇게 나왔는지는 다음 슬라이드에서 갈린다. 아래 세 가지 패턴이 거의 예외 없이 나타난다.</div>
+  <div class="points">
+    <div class="point">
+      <div class="tag">포인트 1</div>
+      <div class="lead">일반 SaaS 리캡 구조</div>
+      <div class="body">인사 → 지난 미팅 요약 → 다음 스텝. <strong>어느 고객사에나 똑같이 쓸 수 있는 뼈대</strong>라 "쓸 만해 보이지만 내 것 같지 않다".</div>
+      <div class="sample">Hi 샘플 A 팀, thanks for<br>the great meeting. Here's a recap...</div>
+    </div>
+    <div class="point">
+      <div class="tag">포인트 2</div>
+      <div class="lead">팀 용어·톤·금지어 미반영</div>
+      <div class="body">번역투, "We are excited to..." 같은 <strong>마케팅 과장</strong>, 고객 앞 내부 변명 톤 — 우리 팀이 실제 쓰는 말이 아니다.</div>
+      <div class="sample">We truly appreciate your<br>continued partnership...</div>
+    </div>
+    <div class="point">
+      <div class="tag">포인트 3</div>
+      <div class="lead">담당 고객 맥락 전무</div>
+      <div class="body">연 라이선스·분기 QBR·이벤트 트래킹 오차 같은 <strong>샘플 A의 구체 상황이 하나도 없다</strong>. 모든 고객을 동일 템플릿 취급.</div>
+      <div class="sample">Next step: Let's schedule a<br>follow-up call next week.</div>
+    </div>
+  </div>
+  <div class="closing">각자 내적으로 한 번 판단 — <strong>"이거 내가 그냥 보내도 될까?"</strong> 답이 "아니다"라면, 왜 아닌지가 다음 장의 주제다.</div>
+</body>
+</html>
