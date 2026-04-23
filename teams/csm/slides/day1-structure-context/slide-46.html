@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S34 의도된 불편함</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .card { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .card .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
+  .card h3 { font-size: 14pt; font-weight: 600; color: #2b2520; margin-top: 4pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .card h3 strong { color: #b45a34; }
+  .card ul { list-style: none; padding: 0; margin-top: 10pt; flex: 1; }
+  .card li { font-size: 10pt; line-height: 1.55; color: #42332a; padding: 4pt 0 4pt 16pt; position: relative; border-bottom: 1px dashed #d4c4ac; }
+  .card li:last-child { border-bottom: none; }
+  .card li::before { content: "–"; color: #a0917e; position: absolute; left: 2pt; top: 4pt; font-weight: 600; }
+  .card li strong { color: #b45a34; }
+  .card li .when { font-size: 8.5pt; letter-spacing: 0.14em; font-weight: 700; text-transform: uppercase; color: #b45a34; display: inline-block; margin-right: 4pt; }
+  .closing { margin-top: 12pt; padding: 10pt 16pt; border-radius: 10pt; background: #c56a4a; color: #f7efe4; font-size: 10.5pt; line-height: 1.55; letter-spacing: 0.01em; }
+  .closing strong { color: #fff; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">의도된 불편함</div>
+  <div class="h-large">오늘 일부러 빠뜨린 두 가지 — <em>문제 정의 · 검증</em></div>
+  <div class="rule"></div>
+  <div class="intro">7기능 지형도에서 봤듯 Claude Code에는 훨씬 많은 기능이 있다. 하지만 오늘은 <strong>일부러 두 가지를 뺐다</strong> — 문제 정의(계획 · 축 3)와 검증(축 5). 그 답답함이 다음 블록 · Day 3 · Day 4의 입구가 된다.</div>
+  <div class="wrap">
+    <div class="card">
+      <div class="tag">빠진 것 1 · 문제 정의 (축 3)</div>
+      <h3>"해줘"로 바로 시작한다</h3>
+      <ul>
+        <li>오늘은 요청을 바로 시키고, AI가 질문으로 되묻기(<strong>AskUserQuestion</strong>)만 활용한다</li>
+        <li><span class="when">Day 3</span><strong>Deep Interview</strong>로 "무엇을 · 어떤 순서로 · 왜"까지 구체화</li>
+        <li>실제로 풀고 싶은 문제를 <strong>스펙으로 변환</strong>하는 훈련은 Day 3에서</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="tag">빠진 것 2 · 검증 (축 5)</div>
+      <h3>결과를 내가 눈으로만 본다</h3>
+      <ul>
+        <li>오늘은 AI 결과물을 내가 직접 확인하고 넘어간다</li>
+        <li><span class="when">Day 4</span><strong>까다로운 고객 에이전트</strong>가 내 메일 · 초안을 다른 관점으로 점검한다</li>
+        <li><strong>Generator ≠ Evaluator</strong> — 만든 사람(AI)과 검증하는 사람을 분리</li>
+      </ul>
+    </div>
+  </div>
+  <div class="closing">오늘 이 두 가지가 없어서 느껴질 답답함이 <strong>Day 3 · 4의 입구</strong>다. 그 감각을 기억해두자.</div>
+</body>
+</html>

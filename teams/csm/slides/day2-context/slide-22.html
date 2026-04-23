@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S28 Troubleshooting 3가지</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 7pt; flex: 1; margin-top: 12pt; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
+  .row.hi { background: #c56a4a; color: #f7efe4; }
+  .row .cell { display: flex; flex-direction: column; gap: 3pt; }
+  .row .label { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .row:not(.hi) .label { color: #b45a34; }
+  .row.hi .label { color: #f2cdb4; }
+  .row .content { font-size: 10.5pt; line-height: 1.5; }
+  .row:not(.hi) .content { color: #2b2520; }
+  .row.hi .content { color: #fff; }
+  .row .content strong { font-weight: 600; }
+  .row:not(.hi) .content strong { color: #b45a34; }
+  .row.hi .content strong { color: #fff; }
+  .row .content code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(197,106,74,0.12); padding: 1pt 5pt; border-radius: 4pt; }
+  .row:not(.hi) .content code { color: #b45a34; }
+  .row.hi .content code { background: rgba(255,255,255,0.18); color: #fff; }
+  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Troubleshooting</div>
+  <div class="h-large">이 3가지 중 하나면 <em>바로 해결된다</em></div>
+  <div class="rule"></div>
+  <div class="intro">MCP 연결 실패 패턴의 90%는 아래 3가지 중 하나. 증상을 보고 <strong>바로 찾아 적용</strong> 가능하도록 정리.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="cell">
+        <div class="label">증상</div>
+        <div class="content"><code>/mcp</code>가 <strong>서버 없음</strong>이라 응답</div>
+      </div>
+      <div class="cell">
+        <div class="label">원인</div>
+        <div class="content">Claude Code 세션이 <strong>연결 전</strong>에 시작됐음</div>
+      </div>
+      <div class="cell">
+        <div class="label">해결</div>
+        <div class="content">세션 끄고 <strong>다시 실행</strong>. 30초 안에 해결.</div>
+      </div>
+    </div>
+    <div class="row hi">
+      <div class="cell">
+        <div class="label">증상</div>
+        <div class="content">Connect 눌러도 <strong>OAuth 창이 안 뜸</strong></div>
+      </div>
+      <div class="cell">
+        <div class="label">원인</div>
+        <div class="content">브라우저 <strong>팝업 차단</strong> · 광고 차단 확장</div>
+      </div>
+      <div class="cell">
+        <div class="label">해결</div>
+        <div class="content">주소창 옆 팝업 아이콘 → <strong>허용</strong> → 재시도</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <div class="label">증상</div>
+        <div class="content">권한 승인 후에도 <strong>scope 0</strong></div>
+      </div>
+      <div class="cell">
+        <div class="label">원인</div>
+        <div class="content">Google Workspace <strong>관리자 정책</strong> 제한</div>
+      </div>
+      <div class="cell">
+        <div class="label">해결</div>
+        <div class="content">운영진 공유 · <strong>계정 관리자 승인</strong> 요청</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">15분 안에 안 되면 <strong>다른 도구로 전환</strong>. 오늘 산출물은 "1개 연결"이지 특정 도구 아님 — 시도했다는 것 자체가 학습.</div>
+</body>
+</html>

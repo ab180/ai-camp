@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S01 Cover</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: grid; grid-template-columns: 1.75fr 1fr; gap: 24pt; }
+  .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .mark { display: flex; align-items: center; gap: 8pt; }
+  .mark .dot { width: 10pt; height: 10pt; border-radius: 999pt; background: #c56a4a; }
+  .mark .label { font-size: 10pt; letter-spacing: 0.3em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .subline { font-size: 13pt; color: #7d6b5a; font-family: 'SF Mono', 'Menlo', monospace; letter-spacing: -0.005em; border-top: 1px dashed #d4c4ac; padding-top: 10pt; }
+  .right { display: flex; flex-direction: column; justify-content: flex-end; gap: 12pt; }
+  .right .card { padding: 22pt 22pt; }
+  .right .card .lead { font-size: 10pt; letter-spacing: 0.2em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .right .card .axes { font-size: 28pt; font-weight: 500; color: #fff; letter-spacing: -0.02em; line-height: 1.1; margin-top: 8pt; }
+  .right .card .desc { font-size: 11pt; color: #f5e4d4; margin-top: 10pt; line-height: 1.55; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="mark"><span class="dot"></span><span class="label">Day 2</span></div>
+    <div>
+      <div class="title" style="font-size: 48pt;">내 도구를<br>연결하기</div>
+      <div class="title-sub" style="font-size: 20pt; margin-top: 14pt;">MCP = Context Bridge</div>
+    </div>
+    <div class="subline">어제는 "우리 팀이 처음" 문제를 CLAUDE.md로 해결했다. 오늘은 "지금 이 순간의 맥락"이 AI 손에 닿게 만든다.</div>
+  </div>
+  <div class="right">
+    <div class="card terra">
+      <div class="lead">오늘의 축</div>
+      <div class="axes">2 맥락<br><span style="font-size: 20pt; opacity: 0.9;">+ 3 계획</span></div>
+      <div class="desc">MCP로 변하는 맥락을 연결하고, Day 3 계획으로 가는 길을 살짝 연다.</div>
+    </div>
+  </div>
+</body>
+</html>

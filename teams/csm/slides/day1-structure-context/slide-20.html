@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S11 실습 1 스킬 받아오기</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .cmds { display: flex; flex-direction: column; gap: 8pt; margin-top: 12pt; flex: 1; }
+  .cmd { background: #ebe1d2; border-radius: 10pt; padding: 10pt 14pt; display: grid; grid-template-columns: 28pt 1fr; gap: 12pt; align-items: center; }
+  .cmd.hilite { background: #c56a4a; color: #f7efe4; }
+  .cmd .no { font-size: 10pt; letter-spacing: 0.2em; font-weight: 600; color: #a0917e; }
+  .cmd.hilite .no { color: #f2cdb4; }
+  .cmd .main { display: grid; grid-template-columns: 1.1fr 1fr; gap: 14pt; align-items: center; }
+  .cmd .code { font-family: 'SF Mono', Menlo, monospace; font-size: 12pt; background: rgba(197,106,74,0.1); color: #2b2520; padding: 6pt 10pt; border-radius: 6pt; letter-spacing: -0.01em; }
+  .cmd.hilite .code { background: rgba(255,255,255,0.18); color: #fff; }
+  .cmd .desc { font-size: 10.5pt; line-height: 1.5; color: #42332a; }
+  .cmd.hilite .desc { color: #f5e4d4; }
+  .cmd .desc strong { color: #b45a34; }
+  .cmd.hilite .desc strong { color: #fff; }
+  .foot { margin-top: 10pt; padding: 6pt 0 0 0; font-size: 10pt; color: #7d6b5a; border-top: 1px dashed #d4c4ac; line-height: 1.6; }
+  .foot strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실습 1</div>
+  <div class="h-large">스킬 <em>받아오기</em></div>
+  <div class="rule"></div>
+  <div class="intro">4단계를 순서대로 따라간다. 명령어를 이해하려 하지 말고 <strong>일단 돌려보고</strong> 뒤에 관찰한다. 터미널은 운영진이 사전 준비한 로그인·권한 상태.</div>
+  <div class="cmds">
+    <div class="cmd">
+      <div class="no">01</div>
+      <div class="main">
+        <div class="code">git clone &lt;repo-url&gt;</div>
+        <div class="desc">운영진이 준비한 공용 repo를 <strong>내 로컬로 복제</strong>. Slack에 공유된 URL을 그대로 붙여넣는다.</div>
+      </div>
+    </div>
+    <div class="cmd">
+      <div class="no">02</div>
+      <div class="main">
+        <div class="code">cd &lt;repo&gt;</div>
+        <div class="desc">클론된 폴더로 이동. Claude Code는 <strong>현재 폴더 기준</strong>으로 스킬·CLAUDE.md를 읽는다.</div>
+      </div>
+    </div>
+    <div class="cmd">
+      <div class="no">03</div>
+      <div class="main">
+        <div class="code">claude</div>
+        <div class="desc">Claude Code 세션 시작. 터미널 안에서 대화 인터페이스가 열린다. 여기부터가 "AI와 일하는 자리".</div>
+      </div>
+    </div>
+    <div class="cmd hilite">
+      <div class="no">04</div>
+      <div class="main">
+        <div class="code">"리캡 메일 초안 써줘 — 고객사: 샘플 A"</div>
+        <div class="desc">스킬 호출. 이 한 줄이<br><strong>공용 스킬 + 샘플 A 데이터</strong>를 묶어 초안을 만든다.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

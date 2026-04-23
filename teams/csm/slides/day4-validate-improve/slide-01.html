@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S01 Cover</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: grid; grid-template-columns: 1.75fr 1fr; gap: 24pt; }
+  .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .mark { display: flex; align-items: center; gap: 8pt; }
+  .mark .dot { width: 10pt; height: 10pt; border-radius: 999pt; background: #c56a4a; }
+  .mark .label { font-size: 10pt; letter-spacing: 0.3em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .subline { font-size: 13pt; color: #7d6b5a; font-family: 'SF Mono', 'Menlo', monospace; letter-spacing: -0.005em; border-top: 1px dashed #d4c4ac; padding-top: 10pt; }
+  .right { display: flex; flex-direction: column; justify-content: flex-end; gap: 12pt; }
+  .right .card { padding: 22pt 22pt; }
+  .right .card .lead { font-size: 10pt; letter-spacing: 0.2em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .right .card .axes { font-size: 28pt; font-weight: 500; color: #fff; letter-spacing: -0.02em; line-height: 1.1; margin-top: 8pt; }
+  .right .card .desc { font-size: 11pt; color: #f5e4d4; margin-top: 10pt; line-height: 1.55; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="mark"><span class="dot"></span><span class="label">Day 4</span></div>
+    <div>
+      <div class="title" style="font-size: 48pt;">계속 나아지는<br>시스템</div>
+      <div class="title-sub" style="font-size: 20pt; margin-top: 14pt;">검증 · 개선 · 팀 공유</div>
+    </div>
+    <div class="subline">3일간 만든 스킬을 "다른 관점"에 넘기고, 팀 자산으로 남긴다.</div>
+  </div>
+  <div class="right">
+    <div class="card terra">
+      <div class="lead">오늘의 축</div>
+      <div class="axes">5 검증<br><span style="font-size: 20pt; opacity: 0.9;">+ 6 개선</span></div>
+      <div class="desc">Generator ≠ Evaluator. 쓰면서 고치면 복리로 쌓인다.</div>
+    </div>
+  </div>
+</body>
+</html>

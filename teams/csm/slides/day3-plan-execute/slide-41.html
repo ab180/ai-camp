@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 3 · S41 Skill Creator 개념</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 2pt; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
+  .example { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .example strong { color: #b45a34; }
+  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 3pt; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">개념</div>
+  <div class="h-large">Skill Creator = <em>스킬을 채점</em>하고 다듬는 에이전트</div>
+  <div class="rule"></div>
+  <div class="intro">내가 만든 스킬을 입력하면 <strong>구조 · description 명확성 · 예시 품질</strong>을 항목별로 점검하고 수정안을 제시한다. Day 4 검증 축의 예고.</div>
+  <div class="concept">
+    <div class="label">오늘 목적</div>
+    <div class="def">"점수"가 아니라 <em>"어느 가정이 안 보이는가"</em> 한 가지만</div>
+  </div>
+  <div class="rows">
+    <div class="cell">
+      <div class="label">왜 필요</div>
+      <h3>"나만 아는 가정" 제거</h3>
+      <div class="body">내가 쓴 스킬은 <strong>내 머릿속 문맥</strong>이 암묵적으로 들어가 있다. 다른 관점이 한 번 훑어야 팀이 쓸 수 있음.</div>
+    </div>
+    <div class="cell">
+      <div class="label">Day 4 예고</div>
+      <h3>검증(축 5) 첫 체감</h3>
+      <div class="body"><strong>Generator ≠ Evaluator</strong>. 내가 만든 걸 내가 평가하면 사각지대 생김. 다른 에이전트가 <strong>다른 관점</strong>을 준다.</div>
+    </div>
+  </div>
+  <div class="example"><span class="tag">오늘의 감각</span>리포트를 "통과하려" 말고 "<strong>내가 못 봤던 것</strong>"을 발견하려고 읽기. 한 문장이라도 챙기면 성공.</div>
+</body>
+</html>

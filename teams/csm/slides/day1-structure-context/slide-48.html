@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S36 문제 정의 5단 템플릿</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
+
+  .tmpl { padding: 11pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 7pt; min-width: 0; }
+  .tmpl .tag { font-size: 9pt; letter-spacing: 0.22em; color: #a0917e; font-weight: 700; text-transform: uppercase; }
+  .row { display: grid; grid-template-columns: 92pt 1fr; gap: 10pt; align-items: start; padding: 5pt 0; border-top: 1px dashed #d4c4ac; }
+  .row:first-of-type { border-top: none; padding-top: 3pt; }
+  .row .label { display: flex; align-items: baseline; gap: 6pt; }
+  .row .num { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; color: #c56a4a; font-weight: 600; }
+  .row .name { font-size: 11pt; font-weight: 600; color: #b45a34; letter-spacing: -0.005em; line-height: 1.2; }
+  .row .pattern { font-family: 'SF Mono', 'Menlo', monospace; font-size: 9pt; line-height: 1.5; color: #42332a; }
+  .row .pattern .blank { color: #b45a34; font-weight: 600; }
+  .row .hint { display: block; font-family: 'Pretendard', sans-serif; font-size: 8.5pt; color: #7d6b5a; margin-top: 2pt; }
+
+  .guide { padding: 12pt 14pt; border-radius: 12pt; background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; }
+  .guide .tag { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .guide h4 { font-size: 13pt; font-weight: 600; color: #fff; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.3; }
+  .guide .body { margin-top: 10pt; display: flex; flex-direction: column; gap: 7pt; font-size: 9.5pt; line-height: 1.5; color: #f5e4d4; }
+  .guide .body .line { padding-left: 14pt; position: relative; }
+  .guide .body .line::before { content: ""; position: absolute; left: 0; top: 6pt; width: 5pt; height: 5pt; border-radius: 50%; background: #f2cdb4; }
+  .guide .body strong { color: #fff; }
+  .guide .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 10pt 0; }
+  .guide .equation { font-size: 10pt; color: #fff; line-height: 1.5; font-weight: 500; letter-spacing: 0.01em; }
+  .guide .equation span { color: #f2cdb4; font-weight: 400; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">문제 정의 · 템플릿</div>
+  <div class="h-large">한 장에 <em>5개 문장만</em></div>
+  <div class="rule"></div>
+  <div class="intro">복잡한 문서가 아니다. <strong>다섯 문장</strong>이면 AI가 알아들을 만큼 구체가 된다.</div>
+  <div class="wrap">
+    <div class="tmpl">
+      <div class="tag">5단 템플릿</div>
+      <div class="row">
+        <div class="label"><span class="num">01</span><span class="name">문제 이름</span></div>
+        <div class="pattern">이 문제를 한 문장으로 부르면?
+          <span class="hint">예: "월요일 아침 고객 리캡 메일 작성"</span></div>
+      </div>
+      <div class="row">
+        <div class="label"><span class="num">02</span><span class="name">현재 상황</span></div>
+        <div class="pattern">"지금은 <span class="blank">______</span> 하고 있다"</div>
+      </div>
+      <div class="row">
+        <div class="label"><span class="num">03</span><span class="name">문제점</span></div>
+        <div class="pattern">"그래서 <span class="blank">______</span> 가 힘들다 / 오래 걸린다 / 놓치기 쉽다"</div>
+      </div>
+      <div class="row">
+        <div class="label"><span class="num">04</span><span class="name">원하는 결과</span></div>
+        <div class="pattern">"<span class="blank">______</span> 하면 좋겠다"</div>
+      </div>
+      <div class="row">
+        <div class="label"><span class="num">05</span><span class="name">예상 효과</span></div>
+        <div class="pattern">"그러면 <span class="blank">______</span> 할 수 있다"</div>
+      </div>
+    </div>
+    <div class="guide">
+      <div class="tag">왜 5개인가</div>
+      <h4>질문의 최소 해상도</h4>
+      <div class="body">
+        <div class="line"><strong>3개 이하</strong> — AI가 여전히 추측해야 한다</div>
+        <div class="line"><strong>7개 이상</strong> — 쓰기가 힘들어서 포기한다</div>
+        <div class="line"><strong>5개</strong> — AI가 알아들을 최소 단위</div>
+      </div>
+      <div class="divider"></div>
+      <div class="equation">이름 + 상황 + 고통 + 목표 + 효과 <span>= 5</span></div>
+    </div>
+  </div>
+</body>
+</html>

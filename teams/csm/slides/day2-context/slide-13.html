@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S13 도구별 담당 질문 (STEP 2/2)</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .step-badge {
+    position: absolute; top: 10pt; right: 16pt;
+    font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;
+    color: #a0917e; padding: 3pt 9pt; border: 1px solid #d4c4ac; border-radius: 20pt;
+    white-space: nowrap;
+  }
+  .step-badge strong { color: #b45a34; font-weight: 700; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 6pt; flex: 1; margin-top: 10pt; }
+  .row { display: grid; grid-template-columns: 1.3fr 20pt 0.85fr; gap: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 9pt; align-items: center; }
+  .row.key { background: #c56a4a; color: #f7efe4; }
+  .row .q { font-size: 11pt; font-weight: 500; color: #2b2520; letter-spacing: -0.003em; line-height: 1.35; }
+  .row.key .q { color: #fff; }
+  .row .q::before { content: "\201C"; color: #b45a34; margin-right: 2pt; }
+  .row .q::after { content: "\201D"; color: #b45a34; margin-left: 2pt; }
+  .row.key .q::before, .row.key .q::after { color: #f2cdb4; }
+  .row .arrow { font-size: 14pt; color: #c56a4a; font-weight: 300; text-align: center; }
+  .row.key .arrow { color: #fff; opacity: 0.7; }
+  .row .tools { display: flex; gap: 5pt; flex-wrap: wrap; align-items: center; }
+  .row .tname { font-size: 9.5pt; font-weight: 700; padding: 2.5pt 8pt; background: #fff; border-radius: 999pt; color: #b45a34; letter-spacing: -0.005em; }
+  .row.key .tname { background: #fff; color: #c56a4a; }
+  .row .tname.sub { background: rgba(255,255,255,0.85); color: #7d6b5a; font-weight: 500; }
+  .row.key .tname.sub { background: rgba(255,255,255,0.85); color: #c56a4a; opacity: 0.8; }
+  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="step-badge">STEP <strong>2</strong> / 2</div>
+  <div class="eyebrow">질문 매핑</div>
+  <div class="h-large">CSM이 하루에 떠올리는 질문 · <em>어디서 답이 나오나</em></div>
+  <div class="rule"></div>
+  <div class="intro">실무에서 자주 나오는 질문 5개를 <strong>도구와 짝지어본다</strong>. AI가 이 질문에 답하려면 각 도구에 직접 닿아야 한다.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="q">이 고객 계약 언제 끝나?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Salesforce</span></div>
+    </div>
+    <div class="row">
+      <div class="q">지난 문의가 뭐였지?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Plain</span><span class="tname sub">Gmail</span></div>
+    </div>
+    <div class="row">
+      <div class="q">체크업 미팅 언제 잡혔지? 어젠다 뭐야?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Notion</span><span class="tname sub">Gmail</span></div>
+    </div>
+    <div class="row key">
+      <div class="q">팀에서 이 고객 관련 오늘 무슨 결정 났지?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Slack</span></div>
+    </div>
+    <div class="row">
+      <div class="q">이번 달 활성 이벤트 추이?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Sheets</span></div>
+    </div>
+  </div>
+  <div class="foot">이 중 <strong>한 질문에라도 "AI가 바로 답하게"</strong> 하려면 — 해당 도구에 MCP를 꽂아야 한다. 다음 블록 주제.</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S12 프롬프트 2</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .prompt { margin-top: 10pt; padding: 16pt 18pt; background: #2b2520; border-radius: 12pt; flex: 1; overflow: hidden; }
+  .prompt .plabel { font-size: 9pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
+  .prompt pre { font-size: 10.5pt; line-height: 1.6; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 8pt; white-space: pre-wrap; }
+  .prompt pre b { color: #f2cdb4; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">B1 · 프롬프트 공개 2/2</div>
+  <div class="h-large"><em>피드백 포맷 &mdash; 지적 · 근거 · 제안</em></div>
+  <div class="rule"></div>
+  <div class="intro">에이전트가 내는 답 형식을 강제한다. 두루뭉술한 &ldquo;좀 더 명확히&rdquo; 류를 차단하고, <strong>본문 인용 기반 지적</strong>만 허용한다.</div>
+  <div class="prompt">
+    <div class="plabel">prompt part 2 &mdash; output format</div>
+    <pre><b>output:</b>
+  채점표를 먼저 낸다 (rubric 5개, 각 O / X).
+
+  X 항목마다 아래 3줄로 답한다.
+    <b>지적:</b> 무엇이 부족한가 (한 문장)
+    <b>근거:</b> 본문 어디 때문인가 (직접 인용, 10단어 이내)
+    <b>제안:</b> 어떻게 고치면 되는가 (한 문장)
+
+  마지막에 한 줄 총평.
+    예) &quot;결정사항은 명확하나, 기한 3건이 누락.&quot;
+
+<b>금지:</b>
+  - &quot;좀 더 명확히&quot; &quot;가독성 개선&quot; 같은 추상 지적
+  - 근거 없이 칭찬
+  - 본문에 없는 사실 가정</pre>
+  </div>
+  <div class="foot">포맷이 있어야 피드백을 <strong>스킬 개선 인풋</strong>으로 바로 쓸 수 있다 &mdash; 3번 반복되는 지적은 Day 3 스킬 템플릿에 박는다.</div>
+</body>
+</html>

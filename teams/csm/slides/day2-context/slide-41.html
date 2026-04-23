@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S43 PR · Merge 개념 (STEP 2/2)</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .step-badge {
+    position: absolute; top: 10pt; right: 16pt;
+    font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;
+    color: #a0917e; padding: 3pt 9pt; border: 1px solid #d4c4ac; border-radius: 20pt;
+    white-space: nowrap;
+  }
+  .step-badge strong { color: #b45a34; font-weight: 700; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col-head { display: flex; flex-direction: column; gap: 3pt; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+  .bullets { display: flex; flex-direction: column; gap: 6pt; }
+  .bullet { font-size: 10pt; line-height: 1.55; padding-left: 12pt; position: relative; }
+  .col.cream .bullet { color: #42332a; }
+  .col.terra .bullet { color: #f5e4d4; }
+  .bullet::before { content: '·'; position: absolute; left: 2pt; top: -2pt; font-weight: 700; font-size: 13pt; }
+  .col.cream .bullet::before { color: #b45a34; }
+  .col.terra .bullet::before { color: #f2cdb4; }
+  .bullet strong { font-weight: 600; }
+  .col.cream .bullet strong { color: #2b2520; }
+  .col.terra .bullet strong { color: #fff; }
+  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="step-badge">STEP <strong>2</strong> / 2</div>
+  <div class="eyebrow">PR</div>
+  <div class="h-large">PR = <em>"내 수정을 합쳐줘"</em>라는 쪽지</div>
+  <div class="rule"></div>
+  <div class="intro">PR(Pull Request)은 Github <strong>웹 UI에서 만든다</strong>. 터미널에서도 가능하지만 오늘은 웹 중심. 개념을 두 관점으로.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="col-head">
+        <div class="tag">PR이 담는 것</div>
+        <h3>무엇·왜·누가 볼지</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="bullets">
+        <div class="bullet">무엇이 바뀌었나 — <strong>diff 자동 생성</strong>. 추가·삭제 줄 컬러 표시.</div>
+        <div class="bullet">왜 바꿨나 — 설명 <strong>본문 작성</strong>. "고객 B 맥락을 추가했다" 한 줄이면 충분.</div>
+        <div class="bullet">누가 리뷰할지 — <strong>Reviewers 지정</strong>. 짝꿍 or 팀장.</div>
+      </div>
+    </div>
+    <div class="col terra">
+      <div class="col-head">
+        <div class="tag">Merge까지 가는 길</div>
+        <h3>리뷰 → 수정 → 승인 → merge</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="bullets">
+        <div class="bullet">리뷰어가 <strong>코멘트</strong>를 남김 — 수정 요청 · 질문 · 승인.</div>
+        <div class="bullet">수정 요청 있으면 같은 브랜치에 <strong>또 커밋</strong>하면 PR에 자동 반영.</div>
+        <div class="bullet">승인되면 <strong>merge</strong> — 팀 repo에 반영 완료.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">코드가 아니라 <strong>CLAUDE.md 문단 추가</strong>여도 같은 흐름이다. CSM 입장에서 PR은 "팀원에게 내 편집안 검토 부탁"하는 공식 쪽지.</div>
+</body>
+</html>

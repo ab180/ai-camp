@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S31 고객사 X 선정</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .criteria { display: flex; flex-direction: column; gap: 9pt; flex: 1; margin-top: 14pt; }
+  .crit { display: grid; grid-template-columns: 120pt 1fr; gap: 16pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
+  .crit.hi { background: #c56a4a; color: #f7efe4; }
+  .crit .tag { font-size: 10pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
+  .crit.hi .tag { color: #f2cdb4; }
+  .crit .body { font-size: 12pt; line-height: 1.5; color: #2b2520; font-weight: 500; letter-spacing: -0.003em; }
+  .crit.hi .body { color: #fff; }
+  .crit .body strong { color: #b45a34; font-weight: 700; }
+  .crit.hi .body strong { color: #fff; }
+  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실습 · 2분</div>
+  <div class="h-large">실습용 고객사 <em>1개 고르기</em></div>
+  <div class="rule"></div>
+  <div class="intro">"어디 집중할지" 정하는 2분. 고객 선정 기준 세 가지만 따져서 <strong>1명</strong> 픽.</div>
+  <div class="criteria">
+    <div class="crit">
+      <div class="tag">기준 1 · 최근성</div>
+      <div class="body">지금 담당 중이고 <strong>지난 2주 내 접점</strong>이 있었던 고객 — 최근 맥락이 있어야 MCP 수집에 재료가 있다.</div>
+    </div>
+    <div class="crit hi">
+      <div class="tag">기준 2 · 공유 안전성</div>
+      <div class="body">너무 민감한 고객은 <strong>피한다</strong>. 짝꿍 공유 부담이 크면 관찰이 얕아진다.</div>
+    </div>
+    <div class="crit">
+      <div class="tag">기준 3 · 맥락 분산</div>
+      <div class="body">맥락이 <strong>최소 2개 도구</strong>에 있어야 함 — SFDC + Notion 정도의 분산. 한 도구에만 있으면 Context Sync 효과 낮음.</div>
+    </div>
+  </div>
+  <div class="foot">못 고르겠으면 운영진이 <strong>샘플 고객</strong> 제공. 고른 뒤 짝꿍에게 이름만 간단 공유 — 비교하기 편함.</div>
+</body>
+</html>

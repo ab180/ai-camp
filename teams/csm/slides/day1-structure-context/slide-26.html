@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S16 /init 으로 초안</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14pt; flex: 1; margin-top: 14pt; }
+  .cmd { padding: 18pt 22pt; border-radius: 14pt; background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; }
+  .cmd .tag { font-size: 10pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .cmd .code { font-family: 'SF Mono', Menlo, monospace; font-size: 24pt; font-weight: 500; color: #fff; margin-top: 8pt; letter-spacing: -0.01em; }
+  .cmd .desc { font-size: 11pt; line-height: 1.65; color: #f5e4d4; margin-top: 10pt; }
+  .cmd .list { margin-top: 12pt; display: flex; flex-direction: column; gap: 7pt; }
+  .cmd .item { font-size: 10.5pt; line-height: 1.5; color: #f5e4d4; padding-left: 14pt; position: relative; }
+  .cmd .item::before { content: ""; position: absolute; left: 0; top: 7pt; width: 6pt; height: 6pt; border-radius: 50%; background: #f2cdb4; }
+  .cmd .item strong { color: #fff; font-weight: 600; }
+  .note { padding: 16pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .note .tag { font-size: 10pt; letter-spacing: 0.22em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
+  .note h4 { font-size: 13pt; font-weight: 600; color: #2b2520; margin-top: 6pt; line-height: 1.35; }
+  .note .body { font-size: 10.5pt; line-height: 1.65; color: #42332a; margin-top: 8pt; }
+  .note .body strong { color: #b45a34; }
+  .note .body code { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; background: rgba(197,106,74,0.12); color: #b45a34; padding: 1pt 5pt; border-radius: 4pt; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실습 · 자동 초안</div>
+  <div class="h-large">CLAUDE.md, <em>0에서 쓰지 않는다</em></div>
+  <div class="rule"></div>
+  <div class="intro">빈 파일을 열고 "뭐부터 쓰지…" 고민하지 않는다. <strong>/init</strong> 한 줄이면 Claude가 내 repo를 읽어 CLAUDE.md 초안을 자동으로 만들어 준다. 기본값이 어떻게 생겼나 <strong>먼저 본 다음</strong> 내 손으로 고친다.</div>
+  <div class="wrap">
+    <div class="cmd">
+      <div class="tag">Command</div>
+      <div class="code">/init</div>
+      <div class="desc">Claude Code가 이 명령 한 번으로 하는 일</div>
+      <div class="list">
+        <div class="item"><strong>Scan</strong> — 내 repo 구조·README·주요 파일을 훑는다</div>
+        <div class="item"><strong>Draft</strong> — 그 정보로 CLAUDE.md 초안을 생성한다</div>
+        <div class="item"><strong>Save</strong> — 프로젝트 루트에 파일로 저장한다</div>
+      </div>
+    </div>
+    <div class="note">
+      <div class="tag">주의</div>
+      <h4>/init 결과는 출발점이다.</h4>
+      <div class="body"><code>/init</code>이 만든 초안을 그대로 쓰겠다는 뜻이 아니다. AI가 "기본값이 이렇게 생겼어요"를 보여 주는 것일 뿐. <strong>다음 슬라이드부터 내 손으로 채운다.</strong></div>
+      <div class="body" style="margin-top: 10pt;">CLAUDE.md는 하루에 끝나는 문서가 아니라 <strong>6개월에 걸쳐 쌓아 올리는 문서</strong>. 오늘은 첫 초안을 깔러 온다.</div>
+    </div>
+  </div>
+</body>
+</html>

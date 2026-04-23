@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S30 Agent Teams</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .kicker { display: flex; align-items: center; gap: 10pt; margin-top: 2pt; }
+  .kicker .kind { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #b45a34; text-transform: uppercase; padding: 2pt 8pt; border: 1pt solid #c56a4a; border-radius: 999pt; }
+  .kicker .warn { font-size: 8.5pt; letter-spacing: 0.15em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .card { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .card.terra { background: #c56a4a; color: #f7efe4; }
+  .card .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .card:not(.terra) .label { color: #a0917e; }
+  .card.terra .label { color: #f2cdb4; }
+  .card h3 { font-size: 14pt; font-weight: 600; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .card:not(.terra) h3 { color: #2b2520; }
+  .card.terra h3 { color: #fff; }
+  .card .body { font-size: 10pt; line-height: 1.65; margin-top: 8pt; }
+  .card:not(.terra) .body { color: #42332a; }
+  .card.terra .body { color: #f5e4d4; }
+  .card .body strong { color: #b45a34; }
+  .card.terra .body strong { color: #fff; }
+  .note { margin-top: 10pt; padding: 10pt 14pt; border-radius: 10pt; background: #2b2520; color: #f5e4d4; font-size: 10pt; line-height: 1.5; }
+  .note .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #d4a88c; font-weight: 600; text-transform: uppercase; }
+  .note .body { margin-top: 3pt; }
+  .note .body strong { color: #e8a374; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">7개 기능 · 5/7</div>
+  <div class="h-large">Agent Teams · <em>팀 단위 처리 (실험적)</em></div>
+  <div class="rule"></div>
+  <div class="kicker"><span class="kind">[병렬 · 실험적]</span><span class="warn">· 비용 약 7배</span></div>
+  <div class="grid">
+    <div class="card">
+      <div class="label">정의</div>
+      <h3>N:N 협업 구조</h3>
+      <div class="body">여러 에이전트가 <strong>서로 소통하며</strong> 작업하는 구조. 설계·구현·리뷰가 동시에 오가는 팀 시뮬레이션.</div>
+    </div>
+    <div class="card">
+      <div class="label">왜 중요</div>
+      <h3>복잡 작업에만 유효</h3>
+      <div class="body">복잡한 설계·분석 작업에 적합. 단순 반복 업무엔 과잉이다. <strong>비용이 약 7배</strong>로 가성비 기준이 엄격하다.</div>
+    </div>
+    <div class="card terra">
+      <div class="label">Day 매핑</div>
+      <h3>개념만 소개</h3>
+      <div class="body">오늘은 "이런 게 있다"까지만. 실제 적용은 <strong>Day 3 이후</strong> 각자 업무 성격에 맞춰 선택한다.</div>
+    </div>
+  </div>
+  <div class="note">
+    <div class="tag">권장 기준</div>
+    <div class="body">리캡 메일 · FAQ 응답 같은 <strong>단순 작업</strong>에는 Subagent 하나로 충분. Agent Teams는 의사결정 문서 · RCA 같은 작업에만.</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S27 Skill</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .kicker { display: flex; align-items: center; gap: 10pt; margin-top: 2pt; }
+  .kicker .kind { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #b45a34; text-transform: uppercase; padding: 2pt 8pt; border: 1pt solid #c56a4a; border-radius: 999pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .card { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .card.terra { background: #c56a4a; color: #f7efe4; }
+  .card .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .card:not(.terra) .label { color: #a0917e; }
+  .card.terra .label { color: #f2cdb4; }
+  .card h3 { font-size: 14pt; font-weight: 600; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .card:not(.terra) h3 { color: #2b2520; }
+  .card.terra h3 { color: #fff; }
+  .card .body { font-size: 10pt; line-height: 1.65; margin-top: 8pt; }
+  .card:not(.terra) .body { color: #42332a; }
+  .card.terra .body { color: #f5e4d4; }
+  .card .body strong { color: #b45a34; }
+  .card.terra .body strong { color: #fff; }
+  .card code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(197,106,74,0.12); color: #b45a34; padding: 1pt 5pt; border-radius: 4pt; }
+  .card.terra code { background: rgba(255,255,255,0.18); color: #fff; }
+  .example { margin-top: 10pt; padding: 10pt 14pt; border-radius: 10pt; background: #2b2520; color: #f5e4d4; font-size: 10pt; line-height: 1.5; }
+  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #d4a88c; font-weight: 600; text-transform: uppercase; }
+  .example .body { margin-top: 3pt; }
+  .example .body strong { color: #e8a374; }
+  .example code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(232,163,116,0.18); color: #e8a374; padding: 1pt 5pt; border-radius: 4pt; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">7개 기능 · 2/7</div>
+  <div class="h-large">Skill · <em>반복 업무 레시피</em></div>
+  <div class="rule"></div>
+  <div class="kicker"><span class="kind">[필요할 때]</span></div>
+  <div class="grid">
+    <div class="card">
+      <div class="label">정의</div>
+      <h3>슬래시 명령으로 호출</h3>
+      <div class="body">특정 작업(리캡 메일·문의 응답 등)을 위한 <strong>지시 템플릿</strong>. <code>/슬래시-명령어</code> 한 줄로 호출한다.</div>
+    </div>
+    <div class="card">
+      <div class="label">왜 중요</div>
+      <h3>판단 기준을 고정</h3>
+      <div class="body">매번 프롬프트를 다시 쓰지 않는다. <strong>판단 기준</strong>을 템플릿에 고정해 팀 결과를 균일하게 만든다.</div>
+    </div>
+    <div class="card terra">
+      <div class="label">Day 매핑</div>
+      <h3>Day 3에서 직접 제작</h3>
+      <div class="body">내 반복 업무를 스킬로 옮기는 실습이 Day 3. 오늘은 CLAUDE.md라는 <strong>토대</strong>를 만든다.</div>
+    </div>
+  </div>
+  <div class="example">
+    <div class="tag">CSM 예시</div>
+    <div class="body"><code>/recap-mail</code> 실행 → 고객 A의 지난 미팅을 근거로 <strong>리캡 메일 초안</strong>을 내 톤으로 만든다.</div>
+  </div>
+</body>
+</html>

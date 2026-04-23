@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 3 · S16 실습 2/4 Deep Interview 호출</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .steps { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
+  .step { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
+  .step .n { font-size: 22pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
+  .step .cmd { display: flex; flex-direction: column; gap: 3pt; }
+  .step .code { font-size: 11pt; font-family: 'SF Mono', Menlo, monospace; color: #2b2520; background: rgba(0,0,0,0.05); padding: 4pt 8pt; border-radius: 5pt; align-self: flex-start; letter-spacing: -0.005em; }
+  .step .desc { font-size: 10pt; line-height: 1.55; color: #42332a; }
+  .step .desc strong { color: #b45a34; font-weight: 600; }
+  .note { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .note strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실습 · 10분 · 2/4</div>
+  <div class="h-large">Deep Interview 스킬 <em>호출 순서</em></div>
+  <div class="rule"></div>
+  <div class="intro">처음이라면 새 Claude Code 세션 진입. 기존 세션에서도 OK. 중요한 건 <strong>5~8개 질문에 끝까지 답하기</strong>.</div>
+  <div class="steps">
+    <div class="step">
+      <div class="n">1</div>
+      <div class="cmd">
+        <div class="code">$ claude</div>
+        <div class="desc">Claude Code 세션 진입 — <strong>새 폴더에서도 OK</strong>. 기존 프로젝트 폴더면 더 좋음.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="n">2</div>
+      <div class="cmd">
+        <div class="code">(you) 나 고객 X 리캡 메일 스킬을 만들고 싶어</div>
+        <div class="desc">문제 <strong>1줄 입력</strong>. "만들고 싶어"라는 의도를 명확히 말하기.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="n">3</div>
+      <div class="cmd">
+        <div class="code">(you) /skill deep-interview 시작해줘</div>
+        <div class="desc">Deep Interview 스킬 실행 — <strong>자동 질문</strong>이 시작됨.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="n">4</div>
+      <div class="cmd">
+        <div class="code">(Claude) 이 스킬의 독자는 누구인가요? ...</div>
+        <div class="desc">5~8개 질문에 답. <strong>모르는 건 "모른다"</strong>고 답해도 OK — 기본값 제안됨.</div>
+      </div>
+    </div>
+  </div>
+  <div class="note">첫 시도는 <strong>대답이 짧아도 OK</strong>. 목표는 완벽한 답이 아니라 <strong>스펙 문서 1장 받아내기</strong>.</div>
+</body>
+</html>

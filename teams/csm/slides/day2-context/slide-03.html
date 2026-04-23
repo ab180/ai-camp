@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S03 어제 과제 점검</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .items { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 10pt; }
+  .item { display: grid; grid-template-columns: 100pt 1fr 1.1fr; gap: 14pt; padding: 11pt 14pt; border-radius: 10pt; background: #ebe1d2; align-items: center; }
+  .item.mid { background: #e5d4b9; }
+  .item.low { background: #c56a4a; color: #f7efe4; }
+  .item .status { display: flex; flex-direction: column; gap: 2pt; }
+  .item .st-tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .item:not(.low) .st-tag { color: #b45a34; }
+  .item.low .st-tag { color: #fff; }
+  .item .st-name { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.22; }
+  .item.low .st-name { color: #fff; }
+  .item .signal { font-size: 9.5pt; line-height: 1.5; color: #42332a; }
+  .item.low .signal { color: #f5e4d4; }
+  .item .signal strong { color: #b45a34; font-weight: 600; }
+  .item.low .signal strong { color: #fff; }
+  .item .action { font-size: 9.5pt; line-height: 1.5; color: #42332a; padding-left: 12pt; border-left: 2pt solid #d4c4ac; }
+  .item.low .action { color: #f5e4d4; border-left-color: rgba(255,255,255,0.35); }
+  .item .action strong { color: #b45a34; font-weight: 600; }
+  .item.low .action strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 9pt; padding: 7pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 9pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">어제 과제 · 15분</div>
+  <div class="h-large">내 Claude에 <em>MCP 서버 1개</em>, 연결해 왔나요?</div>
+  <div class="rule"></div>
+  <div class="intro">Day 1 끝날 때 과제가 하나 있었다 — "퇴근 전 Gmail 또는 Slack MCP 중 하나를 내 Claude에 연결해 오기." 오늘 <strong>앞 15분</strong>은 각자 어디까지 왔는지 같이 점검한다. 아래 세 상태 중 <strong>지금 내 상황</strong>이 어디인지 꺼내 본다.</div>
+  <div class="items">
+    <div class="item">
+      <div class="status">
+        <div class="st-tag">Status 1</div>
+        <div class="st-name">연결 완료</div>
+      </div>
+      <div class="signal"><code>/mcp</code> 실행 시 서버 이름이 <strong>active</strong> 상태로 보인다.</div>
+      <div class="action">다음 블록 준비. <strong>짝꿍이 막혔으면 도움</strong>.</div>
+    </div>
+    <div class="item mid">
+      <div class="status">
+        <div class="st-tag">Status 2</div>
+        <div class="st-name">부분 완료</div>
+      </div>
+      <div class="signal">OAuth 창은 열렸지만 scope·토큰 확인을 못했거나 <strong>/mcp에서 안 보임</strong>.</div>
+      <div class="action">운영진과 <strong>5분 사이드 세션</strong>. 90%는 재시작으로 해결.</div>
+    </div>
+    <div class="item low">
+      <div class="status">
+        <div class="st-tag">Status 3</div>
+        <div class="st-name">막힘</div>
+      </div>
+      <div class="signal">claude.ai 접근·Gmail·Notion 계정 권한 이슈로 <strong>시작조차</strong> 못함.</div>
+      <div class="action">짝꿍 환경 붙여 같이. <strong>오늘 안에 전원 1개 연결</strong> 목표.</div>
+    </div>
+  </div>
+  <div class="foot">안 됐어도 괜찮다. <strong>어디서 막혔는지</strong>만 말해주면 된다. 막힌 지점 자체가 오늘 실습의 출발점이다.</div>
+</body>
+</html>

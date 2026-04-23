@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S34 짝꿍 공유</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .questions { display: flex; flex-direction: column; gap: 9pt; flex: 1; margin-top: 14pt; }
+  .q { display: grid; grid-template-columns: 38pt 1fr; gap: 16pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
+  .q.hi { background: #c56a4a; color: #f7efe4; }
+  .q .n { font-size: 24pt; font-weight: 500; color: #c56a4a; line-height: 1; letter-spacing: -0.02em; text-align: center; }
+  .q.hi .n { color: #fff; opacity: 0.75; }
+  .q .body { font-size: 12pt; line-height: 1.5; color: #2b2520; font-weight: 500; letter-spacing: -0.003em; }
+  .q.hi .body { color: #fff; }
+  .q .body strong { color: #b45a34; font-weight: 700; }
+  .q.hi .body strong { color: #fff; }
+  .q .body::before { content: "\201C"; color: #b45a34; margin-right: 2pt; }
+  .q .body::after { content: "\201D"; color: #b45a34; margin-left: 2pt; }
+  .q.hi .body::before, .q.hi .body::after { color: #f2cdb4; }
+  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">공유 · 3분</div>
+  <div class="h-large">짝꿍에게 <em>통합 요약 한 번 읽어주기</em></div>
+  <div class="rule"></div>
+  <div class="intro">"잘 썼는지"가 아니라 <strong>"진짜 업무에 쓸만한가"</strong>를 체감하는 시간. 3가지 질문을 서로에게.</div>
+  <div class="questions">
+    <div class="q">
+      <div class="n">1</div>
+      <div class="body">이 요약을 받고 <strong>체크업 미팅 들어갈 수 있겠다</strong> 싶나?</div>
+    </div>
+    <div class="q hi">
+      <div class="n">2</div>
+      <div class="body">어느 도구 정보가 <strong>제일 가치 있어</strong> 보였나?</div>
+    </div>
+    <div class="q">
+      <div class="n">3</div>
+      <div class="body">어떤 맥락이 빠져서 <strong>허전</strong>했나?</div>
+    </div>
+  </div>
+  <div class="foot">관점 중요: <strong>완성도 평가가 아니다</strong>. "진짜 업무에 쓸 만한가"라는 실용 감각만 체크. "X 도구가 제일 빛났다" 정도면 충분.</div>
+</body>
+</html>

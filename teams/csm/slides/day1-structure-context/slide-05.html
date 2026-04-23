@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S05 Ideal Type</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+
+  /* 4-col progression grid */
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1.08fr; gap: 7pt; flex: 1; margin-top: 10pt; }
+
+  /* Progression 색 단계: cream → cream-warm → light-terra → full-terra */
+  .col { padding: 11pt 12pt 12pt; border-radius: 12pt; display: flex; flex-direction: column; }
+  .col.c1 { background: #ebe1d2; }
+  .col.c2 { background: #e5d4b9; }
+  .col.c3 { background: #d89478; color: #fff; }
+  .col.c4 { background: #c56a4a; color: #f7efe4; box-shadow: 0 3pt 10pt rgba(181,90,52,0.22); }
+
+  .stage { font-size: 7.6pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
+  .col.c3 .stage, .col.c4 .stage { color: #fff1e0; }
+
+  .when { font-size: 7.6pt; letter-spacing: 0.05em; color: #a0917e; margin-top: 2pt; font-weight: 500; }
+  .col.c3 .when { color: #fff2e2; }
+  .col.c4 .when { color: #f2cdb4; }
+
+  .col h3 { font-size: 12.2pt; font-weight: 600; color: #2b2520; margin-top: 4pt; letter-spacing: -0.01em; line-height: 1.22; }
+  .col.c3 h3, .col.c4 h3 { color: #fff; }
+
+  .defn { font-size: 9.2pt; color: #7d6b5a; margin-top: 3pt; line-height: 1.4; letter-spacing: -0.003em; }
+  .col.c3 .defn { color: #fff4e6; }
+  .col.c4 .defn { color: #f5e4d4; }
+  .defn strong { color: #b45a34; font-weight: 600; }
+  .col.c3 .defn strong, .col.c4 .defn strong { color: #fff; }
+
+  .layers { margin-top: 9pt; padding-top: 7pt; border-top: 1px dashed #d4c4ac; flex: 1; display: flex; flex-direction: column; gap: 7pt; }
+  .col.c3 .layers, .col.c4 .layers { border-top-color: rgba(255,255,255,0.28); }
+
+  .layer { font-size: 9pt; line-height: 1.42; color: #42332a; }
+  .col.c3 .layer, .col.c4 .layer { color: #fff; }
+  .layer .lbl { font-size: 7.6pt; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase; color: #a0917e; display: block; margin-bottom: 1.5pt; }
+  .col.c3 .layer .lbl { color: #fff2e2; }
+  .col.c4 .layer .lbl { color: #f2cdb4; }
+  .layer strong { color: #b45a34; font-weight: 600; }
+  .col.c3 .layer strong, .col.c4 .layer strong { color: #fff; }
+
+  .closing { margin-top: 10pt; background: #c56a4a; color: #fff; border-radius: 10pt; padding: 9pt 18pt; text-align: center; font-size: 11pt; letter-spacing: -0.005em; line-height: 1.4; }
+  .closing strong { color: #ffe0c8; font-weight: 600; }
+  .closing em { font-style: normal; color: #ffefe0; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Ideal Type</div>
+  <div class="h-large">"일의 단위"가 바뀐다 — <em>나에서 팀으로, 조직으로</em></div>
+  <div class="rule"></div>
+  <div class="intro">4일은 한 명이 움직이기 위한 최소. 목표는 그 뒤 <strong>팀 전체가 같은 방식으로 일하는 상태</strong>다.</div>
+
+  <div class="grid">
+    <!-- BEFORE · 캠프 전 -->
+    <div class="col c1">
+      <div class="stage">Before</div>
+      <div class="when">캠프 전</div>
+      <h3>혼자 챙기는<br>CSM</h3>
+      <div class="defn">위임 없이 실행이 판단을 밀어낸다</div>
+      <div class="layers">
+        <div class="layer">
+          <span class="lbl">손</span>
+          리캡·문의·맥락 수집 <strong>전부</strong>
+        </div>
+        <div class="layer">
+          <span class="lbl">AI</span>
+          위임 거의 없음
+        </div>
+        <div class="layer">
+          <span class="lbl">판단</span>
+          실행에 밀려 <strong>뒤로 빠진다</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER 1 · 개인 -->
+    <div class="col c2">
+      <div class="stage">After 1 · 개인</div>
+      <div class="when">캠프 후 4일</div>
+      <h3>AI를 지휘하는<br>CSM 한 명</h3>
+      <div class="defn">초안은 AI, <strong>판정은 나</strong></div>
+      <div class="layers">
+        <div class="layer">
+          <span class="lbl">손</span>
+          고객 전략·중요 판단
+        </div>
+        <div class="layer">
+          <span class="lbl">AI</span>
+          리캡·문의·맥락 <strong>초안</strong>
+        </div>
+        <div class="layer">
+          <span class="lbl">판단</span>
+          "보내도 되겠다" 판정
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER 2 · 팀 내재화 -->
+    <div class="col c3">
+      <div class="stage">After 2 · 팀</div>
+      <div class="when">2주 프로젝트 · 분기</div>
+      <h3>보여주면<br>팀이 따라온다</h3>
+      <div class="defn">팀장 방식이 <strong>팀의 기본값</strong></div>
+      <div class="layers">
+        <div class="layer">
+          <span class="lbl">손</span>
+          팀 기준·공용 스킬·미니캠프
+        </div>
+        <div class="layer">
+          <span class="lbl">AI</span>
+          개인 + 팀원도 <strong>같은 방식</strong>
+        </div>
+        <div class="layer">
+          <span class="lbl">판단</span>
+          결과물 리뷰·구조 개선
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER 3 · 팀 전체 (강조) -->
+    <div class="col c4">
+      <div class="stage">After 3 · 조직</div>
+      <div class="when">캠프의 최종 목표</div>
+      <h3>CSM팀 전체가<br>AI로 움직인다</h3>
+      <div class="defn">개인이 아닌 <strong>조직의 운영 방식</strong></div>
+      <div class="layers">
+        <div class="layer">
+          <span class="lbl">손</span>
+          팀 repo·플러그인·rules 진화
+        </div>
+        <div class="layer">
+          <span class="lbl">AI</span>
+          개인·팀·<strong>신규 온보딩</strong>까지
+        </div>
+        <div class="layer">
+          <span class="lbl">판단</span>
+          전략·상위 결정·조직 설계
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing">캠프의 성공 <em>=</em> <strong>4일 뒤 나</strong> <em>+</em> <strong>2주 뒤 내 팀</strong> <em>+</em> <strong>분기 뒤 우리 조직</strong></div>
+</body>
+</html>

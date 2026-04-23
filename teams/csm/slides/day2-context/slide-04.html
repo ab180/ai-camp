@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S04 오늘 120분 구조</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .blocks { display: flex; flex-direction: column; gap: 5pt; flex: 1; margin-top: 10pt; }
+  .blk { display: grid; grid-template-columns: 52pt 60pt 1fr 1.5fr; gap: 10pt; padding: 7pt 12pt; border-radius: 9pt; background: #ebe1d2; align-items: center; }
+  .blk.key { background: #c56a4a; color: #f7efe4; }
+  .blk .bnum { font-size: 11pt; font-weight: 700; color: #b45a34; letter-spacing: 0.08em; }
+  .blk.key .bnum { color: #fff; }
+  .blk .time { font-size: 10pt; font-weight: 600; color: #2b2520; font-family: 'SF Mono', Menlo, monospace; }
+  .blk.key .time { color: #fff; }
+  .blk .topic { font-size: 11pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .blk.key .topic { color: #fff; }
+  .blk .note { font-size: 9pt; color: #42332a; line-height: 1.45; }
+  .blk.key .note { color: #f5e4d4; }
+  .blk .note strong { color: #b45a34; font-weight: 600; }
+  .blk.key .note strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">오늘 구조</div>
+  <div class="h-large">블록 7개 · <em>산출물 1개</em> · 한 번에 쌓는다</div>
+  <div class="rule"></div>
+  <div class="intro">오늘 120분은 "연결"이 중심. 앞에서 개념 쌓고, 가운데서 손으로 연결하고, 뒤에서 팀에 공유할 준비까지 <strong>이 블록 안에서 완결</strong>.</div>
+  <div class="blocks">
+    <div class="blk">
+      <div class="bnum">B1</div>
+      <div class="time">15 min</div>
+      <div class="topic">맥락의 힘</div>
+      <div class="note">같은 질문 · 다른 맥락 — 고객 A/B 비교 체감</div>
+    </div>
+    <div class="blk">
+      <div class="bnum">B2</div>
+      <div class="time">15 min</div>
+      <div class="topic">CSM 도구 맵</div>
+      <div class="note">6개 도구가 담는 맥락의 종류 — Salesforce · Plain · Notion · Gmail · Sheets · Slack</div>
+    </div>
+    <div class="blk">
+      <div class="bnum">B3</div>
+      <div class="time">20 min</div>
+      <div class="topic">MCP 딥다이브</div>
+      <div class="note">개념 + 연결 <strong>3가지 방식</strong> — 비개발자는 1번 (claude.ai) 중심</div>
+    </div>
+    <div class="blk key">
+      <div class="bnum">B4</div>
+      <div class="time">25 min</div>
+      <div class="topic">MCP 연결 실습</div>
+      <div class="note">핵심 도구 <strong>1~2개 직접</strong> — Gmail · Notion · Slack 중 선택</div>
+    </div>
+    <div class="blk key">
+      <div class="bnum">B5</div>
+      <div class="time">20 min</div>
+      <div class="topic">Context Sync</div>
+      <div class="note">고객사 X <strong>맥락 통합 수집</strong> — SFDC + Slack + Notion 요약</div>
+    </div>
+    <div class="blk">
+      <div class="bnum">B6</div>
+      <div class="time">10 min</div>
+      <div class="topic">스킬 맛보기</div>
+      <div class="note">CLAUDE.md + MCP 위에서 <strong>Day 1 스킬 재실행</strong></div>
+    </div>
+    <div class="blk">
+      <div class="bnum">B7</div>
+      <div class="time">15 min</div>
+      <div class="topic">Git / Github</div>
+      <div class="note">push · commit · pull · merge · PR — 비개발자 맞춤 <strong>최소 세트</strong></div>
+    </div>
+  </div>
+  <div class="foot">오늘 산출물 = <strong>CSM 실무 도구 MCP 1개 이상 연결 + 고객사 X 통합 요약 1건</strong>.</div>
+</body>
+</html>

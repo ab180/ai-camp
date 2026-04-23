@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S02 4일의 여정</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; gap: 14pt; }
+  .h-large { font-size: 26pt; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10pt; margin-top: 8pt; }
+  .col { background: #ebe1d2; border-radius: 14pt; padding: 14pt 14pt; display: flex; flex-direction: column; gap: 6pt; }
+  .col.now { background: #c56a4a; color: #f7efe4; }
+  .col .day { font-size: 10pt; letter-spacing: 0.25em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
+  .col.now .day { color: #f2cdb4; }
+  .col .what { font-size: 16pt; font-weight: 500; color: #2b2520; letter-spacing: -0.01em; line-height: 1.2; }
+  .col.now .what { color: #fff; }
+  .col .axes { font-size: 10pt; color: #7d6b5a; letter-spacing: 0.05em; }
+  .col.now .axes { color: #f5e4d4; }
+  .col .line { font-size: 11pt; color: #4b3f35; line-height: 1.45; margin-top: 2pt; }
+  .col.now .line { color: #fff; }
+  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.5; border-top: 1px dashed #d4c4ac; padding-top: 10pt; margin-top: auto; }
+  .foot em { color: #b45a34; font-style: normal; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="eyebrow">4일의 여정</div>
+    <div class="h-large">어제까지 만든 것 · 오늘 쌓는 것</div>
+  </div>
+  <div class="grid">
+    <div class="col">
+      <div class="day">Day 1</div>
+      <div class="what">내 맥락<br>구조화</div>
+      <div class="axes">축 1 · 2</div>
+      <div class="line">CLAUDE.md로 뼈대</div>
+    </div>
+    <div class="col">
+      <div class="day">Day 2</div>
+      <div class="what">내 도구<br>연결</div>
+      <div class="axes">축 2</div>
+      <div class="line">MCP로 맥락 확장</div>
+    </div>
+    <div class="col">
+      <div class="day">Day 3</div>
+      <div class="what">내 고통점<br>해결</div>
+      <div class="axes">축 3 · 4</div>
+      <div class="line">계획 · 스킬 실행</div>
+    </div>
+    <div class="col now">
+      <div class="day">Day 4 · 오늘</div>
+      <div class="what">계속<br>나아진다</div>
+      <div class="axes">축 5 · 6</div>
+      <div class="line">검증 · 개선 · 팀 공유</div>
+    </div>
+  </div>
+  <div class="foot">어제까지는 "만들기". 오늘은 만든 것을 <em>다른 관점</em>으로 보고, 남은 2주에 쓸 수 있게 <em>팀 자산</em>으로 남긴다.</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S53 .claude/rules/ — 주제별로 나눈다</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; flex: 1; margin-top: 8pt; min-height: 0; }
+  .col { padding: 10pt 12pt; border-radius: 11pt; display: flex; flex-direction: column; overflow: hidden; background: #ebe1d2; }
+  .col .tag { font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase; color: #a0917e; }
+  .col h3 { font-size: 11.5pt; font-weight: 600; margin-top: 3pt; color: #2b2520; letter-spacing: -0.005em; line-height: 1.3; }
+  .col p { font-size: 9pt; line-height: 1.5; color: #42332a; margin-top: 6pt; }
+  .col p strong { color: #b45a34; font-weight: 600; }
+  .col p .mono { font-family: 'SF Mono', 'Menlo', monospace; font-size: 8.5pt; background: #f5ede2; padding: 0 3pt; border-radius: 3pt; color: #5a4a3a; }
+  .code { margin-top: 6pt; padding: 7pt 9pt; background: #2b2520; color: #f5ede2; border-radius: 7pt; font-family: 'SF Mono', 'Menlo', monospace; font-size: 7.5pt; line-height: 1.5; white-space: pre-wrap; }
+  .code .c { color: #a0917e; }
+  .code .k { color: #e5a56a; font-weight: 600; }
+  .code .v { color: #c0d8a4; }
+  .col ul { list-style: none; margin-top: 5pt; display: flex; flex-direction: column; gap: 5pt; }
+  .col li { font-size: 8.5pt; line-height: 1.45; padding-left: 9pt; position: relative; color: #42332a; }
+  .col li::before { content: '·'; position: absolute; left: 2pt; top: -2pt; font-weight: 700; font-size: 11pt; color: #b45a34; }
+  .col li strong { color: #b45a34; font-weight: 600; }
+  .col li .path { font-family: 'SF Mono', 'Menlo', monospace; font-size: 8pt; color: #5a4a3a; background: #f5ede2; padding: 0 4pt; border-radius: 3pt; }
+  .col li .sub { display: block; font-size: 8pt; color: #7d6b5a; margin-top: 1pt; line-height: 1.4; }
+  .closing { margin-top: 7pt; padding: 7pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 9pt; line-height: 1.5; flex-shrink: 0; }
+  .closing strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Best Practices · 3/5</div>
+  <div class="h-large"><code style="font-family:'SF Mono',monospace;font-size:20pt;background:#ebe1d2;padding:2pt 8pt;border-radius:6pt;">.claude/rules/</code> — <em>주제별로 나눠둔다</em></div>
+  <div class="rule"></div>
+  <div class="intro">어떤 규칙은 매번 필요하지 않다 — 고객 A 작업할 때만, 계약서 검토할 때만 필요하다. 그런 규칙을 <strong>주제별 작은 파일</strong>로 나눠두면 AI가 해당 상황에서만 자동으로 꺼내 읽는다.</div>
+  <div class="grid">
+    <div class="col">
+      <div class="tag">① 어떻게 동작하나</div>
+      <h3>파일 위에 <strong>"언제 쓸지"</strong> 적어둔다</h3>
+      <p>규칙 파일 맨 위에 <strong>'언제 쓸지'</strong>를 적는다. 기술 용어로 <span class="mono">glob</span> — <strong>'파일 경로 패턴'</strong> 정도로 이해.</p>
+      <div class="code"><span class="c"># .claude/rules/security.md</span>
+<span class="k">glob:</span> <span class="v">**/*.sql, **/auth/**</span>
+<span class="c">  └ SQL 파일이나</span>
+<span class="c">    auth/ 폴더에서만 로드</span>
+
+- .env 파일 직접 수정 금지
+- SQL은 parameterized query만</div>
+    </div>
+    <div class="col">
+      <div class="tag">② 왜 좋은가</div>
+      <h3>해당 상황에서만 꺼내 읽는다</h3>
+      <p>AI는 <strong>auth 폴더나 SQL 파일을 건드릴 때만</strong> 이 규칙을 읽는다. 다른 작업에선 안 읽는다 — CLAUDE.md가 가벼워진다.</p>
+      <p style="margin-top:8pt;">매번 필요한 규칙은 CLAUDE.md에, <strong>가끔 필요한 규칙은 rules/</strong>에.</p>
+    </div>
+    <div class="col">
+      <div class="tag">③ CSM 예시</div>
+      <h3>고객·시즌·문서 종류로 나누기</h3>
+      <ul>
+        <li><span class="path">rules/customer-acme.md</span>
+          <span class="sub">ACME 폴더 작업할 때만 — 담당자 이름, 내부 용어, 특수 맥락</span></li>
+        <li><span class="path">rules/quarterly-review.md</span>
+          <span class="sub">QBR 폴더 작업할 때만 — QBR 작성 톤, 반드시 넣을 섹션</span></li>
+        <li><span class="path">rules/legal-safe.md</span>
+          <span class="sub">계약서 폴더 작업할 때만 — 법적 검토 체크리스트</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="closing">CLAUDE.md에는 <strong>"rules/에 이런 것들 있음"</strong> 한 줄만 써두면 된다. 내용은 각 파일에서 알아서.</div>
+</body>
+</html>

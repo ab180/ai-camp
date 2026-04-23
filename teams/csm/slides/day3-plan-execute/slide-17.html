@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 3 · S17 실습 3/4 스펙 받기</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .points { display: flex; flex-direction: column; gap: 9pt; margin-top: 10pt; flex: 1; }
+  .pt { display: grid; grid-template-columns: 120pt 1fr; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
+  .pt .label { font-size: 14pt; font-weight: 700; color: #b45a34; letter-spacing: -0.005em; }
+  .pt .body { font-size: 10.5pt; line-height: 1.6; color: #42332a; }
+  .pt .body strong { color: #2b2520; font-weight: 600; }
+  .pt .check { font-size: 9.5pt; color: #7d6b5a; margin-top: 4pt; font-family: 'SF Mono', Menlo, monospace; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실습 · 10분 · 3/4</div>
+  <div class="h-large">받은 스펙을 읽고 <em>3가지만</em> 체크</div>
+  <div class="rule"></div>
+  <div class="intro">스펙 문서가 완성도 100%일 필요 없다. 이 3개가 문서에 <strong>명시적으로 써 있는지만</strong> 확인. 허전하면 그 항목만 추가 질문.</div>
+  <div class="points">
+    <div class="pt">
+      <div class="label">독자</div>
+      <div class="body">
+        "누가 읽는가"가 <strong>한 문장</strong>으로 명시됐나.
+        <div class="check">예: "독자 = 고객사 X의 담당자 1명, 임원 회람 가능성 있음"</div>
+      </div>
+    </div>
+    <div class="pt">
+      <div class="label">입력/출력</div>
+      <div class="body">
+        <strong>재료와 결과 형태</strong>가 명시됐나. 입력은 무엇, 출력은 어떤 모양인지.
+        <div class="check">예: "입력 = 미팅 노트 URL + 고객명 · 출력 = 메일 본문 3문단"</div>
+      </div>
+    </div>
+    <div class="pt">
+      <div class="label">성공 기준</div>
+      <div class="body">
+        "이 스킬이 <strong>잘 됐다"를 판정하는 기준</strong>이 있는가. 정성 표현 X, 체크 가능한 조건 O.
+        <div class="check">예: "다음 액션 날짜 포함 · 금지어 미사용 · 3문단 이하"</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">3개 다 맞으면 <strong>다음 블록 준비 완료</strong>. 허전한 항목만 "이 부분 다시 질문해줘"로 보강.</div>
+</body>
+</html>

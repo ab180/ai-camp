@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S28 MCP</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .kicker { display: flex; align-items: center; gap: 10pt; margin-top: 2pt; }
+  .kicker .kind { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #b45a34; text-transform: uppercase; padding: 2pt 8pt; border: 1pt solid #c56a4a; border-radius: 999pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .card { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .card.terra { background: #c56a4a; color: #f7efe4; }
+  .card .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .card:not(.terra) .label { color: #a0917e; }
+  .card.terra .label { color: #f2cdb4; }
+  .card h3 { font-size: 14pt; font-weight: 600; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .card:not(.terra) h3 { color: #2b2520; }
+  .card.terra h3 { color: #fff; }
+  .card .body { font-size: 10pt; line-height: 1.65; margin-top: 8pt; }
+  .card:not(.terra) .body { color: #42332a; }
+  .card.terra .body { color: #f5e4d4; }
+  .card .body strong { color: #b45a34; }
+  .card.terra .body strong { color: #fff; }
+  .example { margin-top: 10pt; padding: 10pt 14pt; border-radius: 10pt; background: #2b2520; color: #f5e4d4; font-size: 10pt; line-height: 1.5; }
+  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #d4a88c; font-weight: 600; text-transform: uppercase; }
+  .example .body { margin-top: 3pt; }
+  .example .body strong { color: #e8a374; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">7개 기능 · 3/7</div>
+  <div class="h-large">MCP · <em>외부 도구 연결 (USB-C 비유)</em></div>
+  <div class="rule"></div>
+  <div class="kicker"><span class="kind">[필요할 때]</span></div>
+  <div class="grid">
+    <div class="card">
+      <div class="label">정의</div>
+      <h3>외부 시스템을 AI에 연결</h3>
+      <div class="body">Salesforce · Slack · Notion 같은 외부 시스템을 <strong>AI가 직접 읽게</strong> 연결하는 프로토콜. 도구 소켓의 규격이다.</div>
+    </div>
+    <div class="card">
+      <div class="label">왜 중요</div>
+      <h3>복붙을 없앤다</h3>
+      <div class="body">변하는 정보(어제 Slack · 최근 SFDC 기록)를 <strong>매번 복붙하지 않아도</strong> AI가 접근해서 최신 상태로 일한다.</div>
+    </div>
+    <div class="card terra">
+      <div class="label">Day 매핑</div>
+      <h3>Day 2에서 직접 연결</h3>
+      <div class="body">Day 2에 <strong>SFDC·Slack·Notion</strong>을 실제로 연결해 리캡 메일에 바로 활용한다.</div>
+    </div>
+  </div>
+  <div class="example">
+    <div class="tag">CSM 예시</div>
+    <div class="body">고객사 A 리캡 → SFDC <strong>최근 미팅 노트</strong> + Slack 스레드를 AI가 자동 수집해 초안에 반영.</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S29 Subagent</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .kicker { display: flex; align-items: center; gap: 10pt; margin-top: 2pt; }
+  .kicker .kind { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #b45a34; text-transform: uppercase; padding: 2pt 8pt; border: 1pt solid #c56a4a; border-radius: 999pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .card { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .card.terra { background: #c56a4a; color: #f7efe4; }
+  .card .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .card:not(.terra) .label { color: #a0917e; }
+  .card.terra .label { color: #f2cdb4; }
+  .card h3 { font-size: 14pt; font-weight: 600; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .card:not(.terra) h3 { color: #2b2520; }
+  .card.terra h3 { color: #fff; }
+  .card .body { font-size: 10pt; line-height: 1.65; margin-top: 8pt; }
+  .card:not(.terra) .body { color: #42332a; }
+  .card.terra .body { color: #f5e4d4; }
+  .card .body strong { color: #b45a34; }
+  .card.terra .body strong { color: #fff; }
+  .example { margin-top: 10pt; padding: 10pt 14pt; border-radius: 10pt; background: #2b2520; color: #f5e4d4; font-size: 10pt; line-height: 1.5; }
+  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #d4a88c; font-weight: 600; text-transform: uppercase; }
+  .example .body { margin-top: 3pt; }
+  .example .body strong { color: #e8a374; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">7개 기능 · 4/7</div>
+  <div class="h-large">Subagent · <em>독립 컨텍스트 병렬 호출</em></div>
+  <div class="rule"></div>
+  <div class="kicker"><span class="kind">[병렬 처리]</span></div>
+  <div class="grid">
+    <div class="card">
+      <div class="label">정의</div>
+      <h3>1:1 부하 파견</h3>
+      <div class="body">메인 세션과 <strong>별개의 컨텍스트</strong>로 일회성 에이전트를 띄워 조사·요약·리뷰를 맡긴다. 1:1 위임 구조.</div>
+    </div>
+    <div class="card">
+      <div class="label">왜 중요</div>
+      <h3>오염 없이 병렬로</h3>
+      <div class="body">긴 조사·리뷰 작업을 메인 대화에 <strong>맥락 오염 없이</strong> 병렬로 돌린다. 결과만 받아보면 된다.</div>
+    </div>
+    <div class="card terra">
+      <div class="label">Day 매핑</div>
+      <h3>Day 3 · 예제로 체험</h3>
+      <div class="body">Skill 실습 중 자연스럽게 <strong>Subagent로 위임</strong>하는 장면을 보여준다. 오늘은 개념만 심어둔다.</div>
+    </div>
+  </div>
+  <div class="example">
+    <div class="tag">CSM 예시</div>
+    <div class="body">리캡 메일 작성 + <strong>고객 히스토리 요약</strong>을 Subagent 2개로 나눠 병렬 실행, 메인은 검토에 집중.</div>
+  </div>
+</body>
+</html>

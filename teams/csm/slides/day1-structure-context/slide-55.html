@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S54 메모리 3층 구조 — 섞이면 오염</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .items { display: flex; flex-direction: column; gap: 7pt; flex: 1; margin-top: 9pt; min-height: 0; }
+  .item { display: grid; grid-template-columns: 140pt 1fr 1.4fr; gap: 14pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
+  .item .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 600; color: #a0917e; text-transform: uppercase; display: block; margin-bottom: 2pt; }
+  .item .name { font-size: 12pt; font-weight: 600; color: #b45a34; letter-spacing: -0.005em; line-height: 1.25; }
+  .item .name code { font-family: 'SF Mono', 'Menlo', monospace; font-size: 10pt; background: #f5ede2; padding: 1pt 5pt; border-radius: 4pt; color: #5a4a3a; }
+  .item .role { font-size: 10pt; line-height: 1.45; color: #2b2520; font-weight: 600; }
+  .item .role strong { color: #b45a34; }
+  .item .desc { font-size: 9.5pt; line-height: 1.45; color: #42332a; padding-left: 10pt; border-left: 2pt solid #d4c4ac; }
+  .item .desc strong { color: #b45a34; font-weight: 600; }
+  .closing { margin-top: 8pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 9.5pt; line-height: 1.5; flex-shrink: 0; }
+  .closing strong { color: #fff; font-weight: 700; }
+  .closing code { font-family: 'SF Mono', 'Menlo', monospace; font-size: 9pt; background: rgba(255,255,255,0.15); padding: 1pt 5pt; border-radius: 4pt; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Best Practices · 4/5</div>
+  <div class="h-large"><em>CLAUDE.md · auto-memory · agent task</em> — 섞이면 오염</div>
+  <div class="rule"></div>
+  <div class="intro">AI의 "기억"은 한 덩어리가 아니다. 성격이 다른 3층을 <strong>섞지 않는 것</strong>이 유지의 핵심.</div>
+  <div class="items">
+    <div class="item">
+      <div>
+        <span class="tag">Layer 1</span>
+        <div class="name">CLAUDE.md</div>
+      </div>
+      <div class="role"><strong>Human-curated</strong> · 변하지 않는 규칙</div>
+      <div class="desc">사람이 직접 편집 · <strong>리뷰 가능</strong> · 팀 repo에 커밋. 톤·금지어·워크플로우 같은 고정값.</div>
+    </div>
+    <div class="item">
+      <div>
+        <span class="tag">Layer 2</span>
+        <div class="name">auto-memory</div>
+      </div>
+      <div class="role"><strong>Auto-accumulated</strong> · 세션 경험치</div>
+      <div class="desc">AI가 세션에서 쌓는 기록 · 사용자 선호 · <strong>반복 실수</strong> · 자동 압축. 사람이 직접 안 쓴다.</div>
+    </div>
+    <div class="item">
+      <div>
+        <span class="tag">Layer 3</span>
+        <div class="name">Agent Task 히스토리</div>
+      </div>
+      <div class="role"><strong>Per-task</strong> · 작업 단위 지식</div>
+      <div class="desc"><strong>spec · troubleshooting · lesson learned</strong>. 다음 에이전트가 같은 삽질 안 하게.</div>
+    </div>
+  </div>
+  <div class="closing">3층이 한 파일에 섞이면 <strong>전부 오염</strong>된다. 주기적 <code>/context</code> 점검 · CLAUDE.md를 AI에게 <strong>"중복·모순 점검"</strong>시키기.</div>
+</body>
+</html>

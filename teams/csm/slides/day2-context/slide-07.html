@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S07 고객 A 맥락 (STEP 2/4)</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .step-badge {
+    position: absolute; top: 10pt; right: 16pt;
+    font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;
+    color: #a0917e; padding: 3pt 9pt; border: 1px solid #d4c4ac; border-radius: 20pt;
+    white-space: nowrap;
+  }
+  .step-badge strong { color: #b45a34; font-weight: 700; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 9pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col-head { display: flex; flex-direction: column; gap: 3pt; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+  .block { display: flex; flex-direction: column; gap: 3pt; }
+  .block-label { font-size: 8.5pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .block-label { color: #b45a34; }
+  .col.terra .block-label { color: #f2cdb4; }
+  .block-body { font-size: 9.5pt; line-height: 1.55; }
+  .col.cream .block-body { color: #42332a; }
+  .col.terra .block-body { color: #f5e4d4; }
+  .col.cream .block-body strong { color: #2b2520; font-weight: 600; }
+  .col.terra .block-body strong { color: #fff; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="step-badge">STEP <strong>2</strong> / 4</div>
+  <div class="eyebrow">고객 A · 맥락</div>
+  <div class="h-large">같은 질문 + <em>고객 A 맥락</em> = 어떤 답이 나와야 하나</div>
+  <div class="rule"></div>
+  <div class="intro">같은 프롬프트에 <strong>맥락 한 장</strong>을 얹는다. 고객 A가 누구인지 AI가 알면 답의 모양이 완전히 달라진다.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="col-head">
+        <div class="tag">고객 A · 엔터프라이즈</div>
+        <h3>연 라이선스 · 장기 파트너</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="block">
+        <div class="block-label">계약 구조</div>
+        <div class="block-body">연 단위 엔터프라이즈 라이선스 · 다음 주 <strong>체크업 미팅</strong> 예정</div>
+      </div>
+      <div class="block">
+        <div class="block-label">지난 미팅 이슈</div>
+        <div class="block-body">트래킹 <strong>오차 재확인</strong> + 리포트 커스터마이즈 요청</div>
+      </div>
+      <div class="block">
+        <div class="block-label">톤 요구</div>
+        <div class="block-body">담당자가 <strong>임원 회람 가능성</strong> 고려 · 짧고 따뜻 · 숫자는 정확하게</div>
+      </div>
+    </div>
+    <div class="col terra">
+      <div class="col-head">
+        <div class="tag">기대 답변의 모양</div>
+        <h3>지난 이슈 처리 + 체크업 미팅 리마인드</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="block">
+        <div class="block-label">오프닝</div>
+        <div class="block-body">인사 짧게 + <strong>지난 오차 이슈 처리 현황</strong>부터</div>
+      </div>
+      <div class="block">
+        <div class="block-label">본문 코어</div>
+        <div class="block-body">체크업 미팅 다음 주 리마인드 + 어젠다 <strong>1줄 미리보기</strong></div>
+      </div>
+      <div class="block">
+        <div class="block-label">다음 액션</div>
+        <div class="block-body">오차 재측정 결과 <strong>언제 공유할지</strong> 날짜 명시 1개</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

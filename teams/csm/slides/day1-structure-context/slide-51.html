@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · S28 좋은 CLAUDE.md는 어떤 모양인가</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .stages { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; flex: 1; margin-top: 10pt; min-height: 0; }
+  .stage { padding: 11pt 12pt; border-radius: 12pt; display: flex; flex-direction: column; overflow: hidden; }
+  .stage.s1 { background: #ebe1d2; }
+  .stage.s2 { background: #e0d0b8; }
+  .stage.s3 { background: #c56a4a; color: #f7efe4; }
+  .stage .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .stage.s1 .tag { color: #a0917e; }
+  .stage.s2 .tag { color: #8a7558; }
+  .stage.s3 .tag { color: #f2cdb4; }
+  .stage h3 { font-size: 13pt; font-weight: 600; margin-top: 3pt; letter-spacing: -0.005em; line-height: 1.25; }
+  .stage.s1 h3, .stage.s2 h3 { color: #2b2520; }
+  .stage.s3 h3 { color: #fff; }
+  .stage h3 .sub { display: block; font-size: 9pt; font-weight: 500; letter-spacing: 0.02em; margin-top: 2pt; }
+  .stage.s1 h3 .sub, .stage.s2 h3 .sub { color: #7d6b5a; }
+  .stage.s3 h3 .sub { color: #f2cdb4; }
+  .stage ul { list-style: none; margin-top: 8pt; display: flex; flex-direction: column; gap: 5pt; }
+  .stage li { font-size: 9.5pt; line-height: 1.4; padding-left: 10pt; position: relative; }
+  .stage.s1 li, .stage.s2 li { color: #42332a; }
+  .stage.s3 li { color: #f5e4d4; }
+  .stage li::before { content: '·'; position: absolute; left: 2pt; top: -2pt; font-weight: 700; font-size: 11pt; }
+  .stage.s1 li::before, .stage.s2 li::before { color: #b45a34; }
+  .stage.s3 li::before { color: #f2cdb4; }
+  .stage li strong { font-weight: 600; }
+  .stage.s1 li strong, .stage.s2 li strong { color: #b45a34; }
+  .stage.s3 li strong { color: #fff; }
+  .closing { margin-top: 8pt; padding: 7pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; flex-shrink: 0; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">내일 · 모레 · 6개월 뒤</div>
+  <div class="h-large">오늘 만든 건 <em>첫 초안</em> — 6개월 동안 자란다</div>
+  <div class="rule"></div>
+  <div class="intro">오늘 톤·금지어·담당 고객으로 채운 건 <strong>시작용 기본값</strong>이다. 실전에서는 쓰면서 발견한 패턴을 덧붙이고, 커지면 잘라 정리한다.</div>
+  <div class="stages">
+    <div class="stage s1">
+      <div class="tag">Stage 1</div>
+      <h3>오늘<span class="sub">안 바뀌는 기본값 먼저</span></h3>
+      <ul>
+        <li>톤·금지어·담당 고객 등 <strong>잘 안 바뀌는 맥락</strong> 우선</li>
+        <li>완벽 X, <strong>"일단 쓸 만한 초안"</strong>까지만</li>
+        <li>이 단계 없으면 뒤의 누적이 시작조차 안 된다</li>
+      </ul>
+    </div>
+    <div class="stage s2">
+      <div class="tag">Stage 2</div>
+      <h3>2주 뒤<span class="sub">반복 패턴 누적</span></h3>
+      <ul>
+        <li>실무 쓰다 발견되는 <strong>반복 패턴</strong> 추가</li>
+        <li>자주 쓰는 워크플로우 한 줄로 정리</li>
+        <li>팀 repo 공유 — <strong>팀원도 얹는 형태</strong></li>
+      </ul>
+    </div>
+    <div class="stage s3">
+      <div class="tag">Stage 3</div>
+      <h3>3개월 뒤<span class="sub">분리·이동</span></h3>
+      <ul>
+        <li>200줄 넘으면 <strong>.claude/rules/ + Skill</strong> 분리</li>
+        <li>도메인·의사결정·아키텍처를 <strong>docs/</strong>로 이동</li>
+        <li>CLAUDE.md는 지도 역할 — rules·skills·docs로 포인팅</li>
+        <li><strong>/context</strong> 주기 점검, <strong>claude-mem</strong> 활용</li>
+      </ul>
+    </div>
+  </div>
+  <div class="closing">좋은 CLAUDE.md의 기준은 <strong>"반복 설명이 얼마나 사라졌는가" · "팀이 얼마나 함께 편집 가능한가"</strong>.</div>
+</body>
+</html>
