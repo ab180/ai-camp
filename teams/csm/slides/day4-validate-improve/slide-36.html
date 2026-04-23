@@ -8,17 +8,17 @@
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .pr { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .pr .ubar { font-size: 9pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 6pt; }
-  .pr .title-box { font-size: 13pt; font-weight: 600; color: #2b2520; border: 1px solid #d4c4ac; border-radius: 6pt; padding: 8pt 10pt; }
+  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
+  .pr { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; min-height: 0; overflow: hidden; }
+  .pr .ubar { font-size: 8.5pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 5pt; }
+  .pr .title-box { font-size: 11.5pt; font-weight: 600; color: #2b2520; border: 1px solid #d4c4ac; border-radius: 6pt; padding: 6pt 8pt; }
   .pr .title-box em { font-style: normal; color: #c56a4a; }
-  .pr .body-box { background: #f5ede2; border-radius: 6pt; padding: 10pt 12pt; font-size: 10pt; color: #2b2520; line-height: 1.55; font-family: 'SF Mono', Menlo, monospace; white-space: pre-wrap; }
+  .pr .body-box { background: #f5ede2; border-radius: 6pt; padding: 8pt 10pt; font-size: 9pt; color: #2b2520; line-height: 1.45; font-family: 'SF Mono', Menlo, monospace; white-space: pre-wrap; flex: 1; min-height: 0; overflow: hidden; }
   .pr .body-box b { color: #c56a4a; font-weight: 600; }
-  .pr .submit { background: #c56a4a; color: #fff; font-size: 10pt; font-weight: 600; padding: 6pt 14pt; border-radius: 5pt; align-self: flex-start; }
-  .tip { background: #ebe1d2; border-radius: 10pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .tip h4 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .tip ul { font-size: 10.5pt; line-height: 1.6; color: #42332a; padding-left: 14pt; margin: 0; }
+  .pr .submit { background: #c56a4a; color: #fff; font-size: 9pt; font-weight: 600; padding: 5pt 12pt; border-radius: 5pt; align-self: flex-start; flex-shrink: 0; }
+  .tip { background: #ebe1d2; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
+  .tip h4 { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .tip ul { font-size: 10pt; line-height: 1.5; color: #42332a; padding-left: 12pt; margin: 0; }
   .tip ul li::marker { color: #b45a34; }
   .tip ul li strong { color: #2b2520; font-weight: 600; }
 </style>

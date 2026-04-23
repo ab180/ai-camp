@@ -2388,11 +2388,11 @@
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .prompt { margin-top: 10pt; padding: 16pt 18pt; background: #2b2520; border-radius: 12pt; flex: 1; overflow: hidden; }
+  .prompt { margin-top: 10pt; padding: 12pt 14pt; background: #2b2520; border-radius: 12pt; flex: 1; min-height: 0; overflow: hidden; }
   .prompt .plabel { font-size: 9pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
-  .prompt pre { font-size: 10.5pt; line-height: 1.6; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 8pt; white-space: pre-wrap; }
+  .prompt pre { font-size: 10pt; line-height: 1.5; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 6pt; white-space: pre-wrap; }
   .prompt pre b { color: #f2cdb4; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.5; color: #42332a; flex-shrink: 0; }
   .foot strong { color: #b45a34; }
 </style>
 </head>
@@ -3990,17 +3990,17 @@
 <title>Day 4 · S20 6축 O/X 체크리스트</title>
 <link rel=&quot;stylesheet&quot; href=&quot;./assets/warm-neutral.css&quot;>
 <style>
-  body { display: flex; flex-direction: column; gap: 10pt; padding: 22pt 30pt; }
-  .h-large { font-size: 24pt; }
-  .sheet { background: #fff; border-radius: 10pt; padding: 14pt 16pt; flex: 1; border: 1pt solid #d4c4ac; }
+  body { display: flex; flex-direction: column; gap: 7pt; padding: 22pt 30pt; }
+  .h-large { font-size: 22pt; }
+  .sheet { background: #fff; border-radius: 10pt; padding: 10pt 12pt; flex: 1; min-height: 0; overflow: hidden; border: 1pt solid #d4c4ac; }
   table { width: 100%; border-collapse: collapse; }
-  th, td { text-align: left; padding: 6pt 8pt; font-size: 10.5pt; color: #2b2520; border-bottom: 1px solid #ece2d2; vertical-align: top; }
-  th { font-size: 9pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; border-bottom: 1.5pt solid #b45a34; }
-  td.num { font-weight: 700; color: #b45a34; width: 28pt; font-family: 'SF Mono', Menlo, monospace; }
-  td.axis { font-weight: 600; color: #2b2520; width: 62pt; }
-  td.q { color: #42332a; line-height: 1.45; }
-  td.ox { width: 46pt; text-align: center; font-family: 'SF Mono', Menlo, monospace; color: #7d6b5a; font-size: 12pt; letter-spacing: 0.3em; }
-  .foot { font-size: 10pt; color: #7d6b5a; line-height: 1.5; border-top: 1px dashed #d4c4ac; padding-top: 8pt; }
+  th, td { text-align: left; padding: 4pt 6pt; font-size: 10pt; color: #2b2520; border-bottom: 1px solid #ece2d2; vertical-align: top; }
+  th { font-size: 8.5pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; border-bottom: 1.5pt solid #b45a34; }
+  td.num { font-weight: 700; color: #b45a34; width: 26pt; font-family: 'SF Mono', Menlo, monospace; }
+  td.axis { font-weight: 600; color: #2b2520; width: 58pt; }
+  td.q { color: #42332a; line-height: 1.4; }
+  td.ox { width: 42pt; text-align: center; font-family: 'SF Mono', Menlo, monospace; color: #7d6b5a; font-size: 11pt; letter-spacing: 0.3em; }
+  .foot { font-size: 9.5pt; color: #7d6b5a; line-height: 1.45; border-top: 1px dashed #d4c4ac; padding-top: 6pt; flex-shrink: 0; }
   .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
@@ -5797,18 +5797,18 @@
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .tree { background: #2b2520; border-radius: 12pt; padding: 14pt 18pt; overflow: hidden; }
-  .tree .plabel { font-size: 9pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
-  .tree pre { font-size: 10.5pt; line-height: 1.55; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 8pt; white-space: pre; }
+  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
+  .tree { background: #2b2520; border-radius: 12pt; padding: 10pt 14pt; overflow: hidden; min-height: 0; }
+  .tree .plabel { font-size: 8.5pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
+  .tree pre { font-size: 9.5pt; line-height: 1.45; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 6pt; white-space: pre; }
   .tree pre b { color: #f2cdb4; font-weight: 600; }
   .tree pre em { color: #d4a480; font-style: normal; }
-  .notes { display: flex; flex-direction: column; gap: 8pt; }
-  .note { background: #ebe1d2; border-radius: 10pt; padding: 12pt 14pt; }
-  .note .n { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .note h4 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 3pt; }
-  .note p { font-size: 10.5pt; color: #42332a; line-height: 1.55; margin-top: 3pt; }
-  .note p code { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; background: rgba(0,0,0,0.06); padding: 1pt 3pt; border-radius: 2pt; }
+  .notes { display: flex; flex-direction: column; gap: 6pt; }
+  .note { background: #ebe1d2; border-radius: 10pt; padding: 10pt 12pt; }
+  .note .n { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .note h4 { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 2pt; }
+  .note p { font-size: 10pt; color: #42332a; line-height: 1.5; margin-top: 2pt; }
+  .note p code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(0,0,0,0.06); padding: 1pt 3pt; border-radius: 2pt; }
 </style>
 </head>
 <body>
@@ -6014,21 +6014,21 @@
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .ui { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .ui .ubar { font-size: 9pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 6pt; }
-  .ui .path { font-size: 10pt; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; background: #f5ede2; padding: 5pt 8pt; border-radius: 4pt; }
-  .ui .step { display: grid; grid-template-columns: 24pt 1fr; gap: 8pt; align-items: baseline; }
-  .ui .step .num { font-size: 11pt; font-weight: 700; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; }
-  .ui .step .text { font-size: 10.5pt; color: #2b2520; line-height: 1.5; }
+  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
+  .ui { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
+  .ui .ubar { font-size: 8.5pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 5pt; }
+  .ui .path { font-size: 9.5pt; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; background: #f5ede2; padding: 4pt 7pt; border-radius: 4pt; }
+  .ui .step { display: grid; grid-template-columns: 22pt 1fr; gap: 6pt; align-items: baseline; }
+  .ui .step .num { font-size: 10.5pt; font-weight: 700; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; }
+  .ui .step .text { font-size: 10pt; color: #2b2520; line-height: 1.45; }
   .ui .step .text strong { color: #c56a4a; font-weight: 600; }
-  .ui .step .text code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: #f5ede2; padding: 1pt 4pt; border-radius: 3pt; }
-  .notes { display: flex; flex-direction: column; gap: 8pt; }
-  .note { background: #ebe1d2; border-radius: 10pt; padding: 12pt 14pt; }
-  .note .n { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .note h4 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 3pt; }
-  .note p { font-size: 10.5pt; color: #42332a; line-height: 1.55; margin-top: 3pt; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
+  .ui .step .text code { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; background: #f5ede2; padding: 1pt 4pt; border-radius: 3pt; }
+  .notes { display: flex; flex-direction: column; gap: 6pt; }
+  .note { background: #ebe1d2; border-radius: 10pt; padding: 10pt 12pt; }
+  .note .n { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .note h4 { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 2pt; }
+  .note p { font-size: 10pt; color: #42332a; line-height: 1.5; margin-top: 2pt; }
+  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.5; flex-shrink: 0; }
   .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
@@ -6626,15 +6626,17 @@
 <title>Day 4 · S33 README 예시</title>
 <link rel=&quot;stylesheet&quot; href=&quot;./assets/warm-neutral.css&quot;>
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; overflow: hidden; }
+  .h-large { font-size: 22pt; }
+  .rule { margin: 6pt 0 8pt; }
+  .intro { font-size: 10pt; line-height: 1.4; color: #42332a; margin-top: 0; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .doc { margin-top: 10pt; padding: 16pt 20pt; background: #2b2520; border-radius: 12pt; flex: 1; overflow: hidden; }
-  .doc .plabel { font-size: 9pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
-  .doc pre { font-size: 10.5pt; line-height: 1.6; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 8pt; white-space: pre-wrap; }
+  .doc { margin-top: 6pt; padding: 10pt 12pt; background: #2b2520; border-radius: 12pt; flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+  .doc .plabel { font-size: 8.5pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; flex-shrink: 0; }
+  .doc pre { font-size: 8pt; line-height: 1.3; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 4pt; white-space: pre-wrap; flex: 1; min-height: 0; overflow: hidden; max-height: 160pt; }
   .doc pre b { color: #f2cdb4; font-weight: 600; }
   .doc pre em { color: #d4a480; font-style: normal; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot { margin-top: 6pt; padding: 6pt 12pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.45; color: #42332a; flex-shrink: 0; }
   .foot strong { color: #b45a34; }
 </style>
 </head>
@@ -7235,17 +7237,17 @@
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .pr { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .pr .ubar { font-size: 9pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 6pt; }
-  .pr .title-box { font-size: 13pt; font-weight: 600; color: #2b2520; border: 1px solid #d4c4ac; border-radius: 6pt; padding: 8pt 10pt; }
+  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
+  .pr { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; min-height: 0; overflow: hidden; }
+  .pr .ubar { font-size: 8.5pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 5pt; }
+  .pr .title-box { font-size: 11.5pt; font-weight: 600; color: #2b2520; border: 1px solid #d4c4ac; border-radius: 6pt; padding: 6pt 8pt; }
   .pr .title-box em { font-style: normal; color: #c56a4a; }
-  .pr .body-box { background: #f5ede2; border-radius: 6pt; padding: 10pt 12pt; font-size: 10pt; color: #2b2520; line-height: 1.55; font-family: 'SF Mono', Menlo, monospace; white-space: pre-wrap; }
+  .pr .body-box { background: #f5ede2; border-radius: 6pt; padding: 8pt 10pt; font-size: 9pt; color: #2b2520; line-height: 1.45; font-family: 'SF Mono', Menlo, monospace; white-space: pre-wrap; flex: 1; min-height: 0; overflow: hidden; }
   .pr .body-box b { color: #c56a4a; font-weight: 600; }
-  .pr .submit { background: #c56a4a; color: #fff; font-size: 10pt; font-weight: 600; padding: 6pt 14pt; border-radius: 5pt; align-self: flex-start; }
-  .tip { background: #ebe1d2; border-radius: 10pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .tip h4 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .tip ul { font-size: 10.5pt; line-height: 1.6; color: #42332a; padding-left: 14pt; margin: 0; }
+  .pr .submit { background: #c56a4a; color: #fff; font-size: 9pt; font-weight: 600; padding: 5pt 12pt; border-radius: 5pt; align-self: flex-start; flex-shrink: 0; }
+  .tip { background: #ebe1d2; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
+  .tip h4 { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .tip ul { font-size: 10pt; line-height: 1.5; color: #42332a; padding-left: 12pt; margin: 0; }
   .tip ul li::marker { color: #b45a34; }
   .tip ul li strong { color: #2b2520; font-weight: 600; }
 </style>
@@ -9010,15 +9012,15 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .box { background: #ebe1d2; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .box h3 { font-size: 15pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .box ul { font-size: 10.5pt; line-height: 1.6; color: #42332a; padding-left: 14pt; margin: 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
+  .box { background: #ebe1d2; border-radius: 12pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 5pt; }
+  .box h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .box ul { font-size: 10pt; line-height: 1.5; color: #42332a; padding-left: 12pt; margin: 0; }
   .box ul li::marker { color: #b45a34; }
   .box ul li strong { color: #2b2520; font-weight: 600; }
-  .box ul li code { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; background: #fff; padding: 1pt 4pt; border-radius: 3pt; }
-  .box .path { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; color: #b45a34; background: #fff; padding: 6pt 10pt; border-radius: 5pt; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
+  .box ul li code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: #fff; padding: 1pt 4pt; border-radius: 3pt; }
+  .box .path { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; color: #b45a34; background: #fff; padding: 4pt 8pt; border-radius: 5pt; }
+  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.5; flex-shrink: 0; }
   .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
