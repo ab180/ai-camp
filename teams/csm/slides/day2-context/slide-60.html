@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S60 부록 클로징</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; flex: 1; margin-top: 12pt; }
+  /* Left: takeaways */
+  .left { background: #c56a4a; color: #f7efe4; border-radius: 14pt; padding: 18pt 20pt; display: flex; flex-direction: column; gap: 10pt; }
+  .left .tag { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .left h3 { font-size: 18pt; font-weight: 600; color: #fff; letter-spacing: -0.005em; line-height: 1.3; }
+  .left ol { list-style: none; counter-reset: item; display: flex; flex-direction: column; gap: 9pt; margin-top: 4pt; }
+  .left li { counter-increment: item; position: relative; padding-left: 30pt; font-size: 11pt; line-height: 1.6; color: #fff; font-weight: 500; min-height: 22pt; display: flex; align-items: center; }
+  .left li::before { content: counter(item); position: absolute; left: 0; top: -1pt; width: 20pt; height: 20pt; border-radius: 50%; background: #fff; color: #b45a34; font-size: 11pt; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .left li strong { color: #f2cdb4; font-weight: 700; }
+  .left li .kw { color: #fff; font-weight: 700; }
+  /* Right: references */
+  .right { background: #ebe1d2; color: #2b2520; border-radius: 14pt; padding: 18pt 20pt; display: flex; flex-direction: column; gap: 10pt; }
+  .right .tag { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .right h3 { font-size: 18pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.3; }
+  .right ul { list-style: none; display: flex; flex-direction: column; gap: 8pt; margin-top: 4pt; }
+  .right li { font-size: 10.5pt; line-height: 1.5; color: #42332a; padding-left: 14pt; position: relative; }
+  .right li::before { content: ""; position: absolute; left: 0; top: 6pt; width: 5pt; height: 5pt; border-radius: 50%; background: #b45a34; }
+  .right li .url { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; color: #b45a34; font-weight: 600; }
+  .right li .note { display: block; font-size: 9pt; color: #7d6b5a; margin-top: 1pt; }
+  .right li strong { color: #b45a34; font-weight: 700; }
+  .foot { margin-top: 10pt; padding: 10pt 18pt; background: #ebe1d2; border-left: 3pt solid #c56a4a; border-radius: 10pt; font-size: 11pt; line-height: 1.6; color: #42332a; text-align: center; }
+  .foot strong { color: #b45a34; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">부록 클로징 · 07</div>
+  <div class="h-large">부록에서 <em>얻어갈 3가지</em> + 원본 출처</div>
+  <div class="rule"></div>
+  <div class="intro">오늘 부록 8장은 <strong>selfish club 공유회</strong>의 git 3대 요약을 CSM 맥락으로 재구조화한 것. 더 깊게 보고 싶으면 아래 원본을.</div>
+  <div class="grid">
+    <div class="left">
+      <div class="tag">오늘 얻어갈 3가지</div>
+      <h3>이것만 가져가면 충분</h3>
+      <ol>
+        <li><span class="kw">Git ≠ GitHub</span> 멘탈 모델 — 내 컴퓨터 vs 클라우드</li>
+        <li><span class="kw">clone · branch · commit · PR</span> 4개 개념 지도</li>
+        <li>Claude Code에 <span class="kw">자연어로 협업</span>하는 구조</li>
+      </ol>
+    </div>
+    <div class="right">
+      <div class="tag">원본 참고</div>
+      <h3>더 깊게 보려면</h3>
+      <ul>
+        <li><span class="url">github.com/chaentopia/koi-git-selfish-sharing</span><span class="note">selfish club 공유회 (비개발자 대상 git 공유)</span></li>
+        <li><span class="url">docs.github.com</span><span class="note">GitHub 공식 문서 — 한국어 지원</span></li>
+        <li><span class="url">git-scm.com</span><span class="note">Git 공식 홈 · Pro Git 책 무료</span></li>
+        <li>본 부록은 <strong>AB180 CSM 캠프 맥락</strong>으로 재구조화한 요약</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot">Day 2 전체 끝. 수고하셨습니다. 내일 <strong>Day 3 (Deep Interview + 스킬 다듬기)</strong>에서 뵐게요.</div>
+</body>
+</html>

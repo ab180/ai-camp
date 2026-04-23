@@ -2,60 +2,33 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S45 축 2 자가진단</title>
+<title>Day 2 · S43 B6 섹션 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
-  .intro strong { color: #b45a34; }
-  .items { display: flex; flex-direction: column; gap: 5pt; flex: 1; margin-top: 8pt; min-height: 0; }
-  .item { display: grid; grid-template-columns: 30pt 1fr 1.1fr; gap: 10pt; padding: 6pt 12pt; background: #ebe1d2; border-radius: 9pt; align-items: center; }
-  .item .num { font-size: 16pt; font-weight: 600; color: #b45a34; text-align: center; letter-spacing: -0.02em; }
-  .item .q { font-size: 10pt; line-height: 1.4; color: #2b2520; font-weight: 500; }
-  .item .q strong { color: #b45a34; font-weight: 600; }
-  .item .q code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(197,106,74,0.12); padding: 1pt 5pt; border-radius: 4pt; color: #b45a34; }
-  .item .j { font-size: 9pt; line-height: 1.4; color: #42332a; padding-left: 10pt; border-left: 2pt solid #d4c4ac; }
-  .item .j .label { font-size: 8pt; letter-spacing: 0.18em; color: #a0917e; font-weight: 600; text-transform: uppercase; display: block; margin-bottom: 1pt; }
-  .item .j strong { color: #b45a34; font-weight: 600; }
-  .item .j .ox { font-weight: 700; }
-  .item .j .ox.o { color: #7a5a28; }
-  .item .j .ox.x { color: #8a3a2a; }
-  .foot { margin-top: 6pt; padding: 6pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 9pt; font-size: 9.5pt; line-height: 1.45; flex-shrink: 0; }
-  .foot strong { color: #fff; font-weight: 700; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 560pt; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">자가진단 · 내 맥락이 살아있나</div>
-  <div class="h-large">오늘 연결한 MCP, <em>지금 점검</em></div>
-  <div class="rule"></div>
-  <div class="intro">연결했는지 X. <strong>쓸 수 있는 상태</strong>인지 점검. 5가지 질문으로.</div>
-  <div class="items">
-    <div class="item">
-      <div class="num">1</div>
-      <div class="q"><code>/mcp</code>가 최소 <strong>1개 active</strong> 서버를 보여주는가?</div>
-      <div class="j"><span class="label">판정</span>이름 보이고 status <strong>active</strong>면 <span class="ox o">O</span>. 이름은 있지만 scope 0이면 <span class="ox x">X</span>.</div>
-    </div>
-    <div class="item">
-      <div class="num">2</div>
-      <div class="q">통합 요약이 <strong>최소 2개 도구</strong>의 정보를 섞었는가?</div>
-      <div class="j"><span class="label">판정</span>"Notion에서는..., Slack에서는..." 식으로 <strong>출처가 섞이면</strong> <span class="ox o">O</span>.</div>
-    </div>
-    <div class="item">
-      <div class="num">3</div>
-      <div class="q">어떤 맥락이 <strong>빠졌는지</strong> 말로 설명 가능한가?</div>
-      <div class="j"><span class="label">판정</span>"SFDC 쪽 OPP 단계가 안 왔다" 정도 <strong>이름 붙이면</strong> <span class="ox o">O</span>.</div>
-    </div>
-    <div class="item">
-      <div class="num">4</div>
-      <div class="q">CLAUDE.md + MCP 조합이 <strong>Day 1 단독보다</strong> 나아졌는가?</div>
-      <div class="j"><span class="label">판정</span>Stage 1 vs Stage 3 비교에서 <strong>"이 고객 전용" 느낌</strong>이면 <span class="ox o">O</span>.</div>
-    </div>
-    <div class="item">
-      <div class="num">5</div>
-      <div class="q">오늘 PR 숙제 중 <strong>내가 막히는 지점</strong>을 알겠는가?</div>
-      <div class="j"><span class="label">판정</span>"clone·commit·push·PR 중 어디"가 헷갈리는지 <strong>이름 붙이면</strong> <span class="ox o">O</span>.</div>
-    </div>
+  <div class="top">
+    <div class="block">Block 6</div>
+    <div class="time">15 min</div>
   </div>
-  <div class="foot">3개 이상 <span style="font-weight:700;">O면 축 2 0.5판 합격</span>. 나머지는 <strong>2주 프로젝트</strong>에서 채운다.</div>
+  <div class="mid">
+    <h1>Git / Github —<br>내 것을 팀에게 넘기는 법</h1>
+    <div class="sub">push · commit · pull · merge · PR. 코드가 아니라 CLAUDE.md·스킬을 팀 단위로 관리하기 위한 비개발자 맞춤 최소 세트.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">개인 산출물 → 팀 자산</div>
+    <div class="count">7 slides</div>
+  </div>
 </body>
 </html>

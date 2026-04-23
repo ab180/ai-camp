@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S30 한 번에 스킬 안 된다</title>
+<title>Day 2 · S30 통째로 시키면 스킬이 안 나온다</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -30,23 +30,23 @@
 </head>
 <body>
   <div class="eyebrow">전제</div>
-  <div class="h-large">"리캡 메일 잘 쓰기"는 <em>스킬이 안 된다</em></div>
+  <div class="h-large">"리캡 메일 잘 써줘"라고 통째로 시키면 — <em>스킬이 안 나온다</em></div>
   <div class="rule"></div>
-  <div class="intro">문제가 크면 스킬도 모호해진다. AI는 <strong>50%짜리 답</strong>을 내놓고 나머지를 내가 채우게 된다. 스킬은 <strong>작고 반복 가능한 단위</strong>여야 매번 같은 품질이 나온다.</div>
+  <div class="intro">스킬로 만들 때 <strong>이렇게 요청하면</strong> AI가 <strong>50%짜리 답</strong>만 내놓는다. 나머지는 매번 내가 채우게 됨. 스킬은 <strong>작고 반복 가능한 단위</strong>여야 매번 같은 품질이 나온다.</div>
   <div class="compare">
     <div class="col cream">
-      <div class="tag">통째로 시킨 예</div>
+      <div class="tag">이렇게 요청하면 X</div>
       <h3>"이 고객 리캡 메일 써줘"</h3>
       <div class="prompt">이 고객 리캡 메일 써줘</div>
       <div class="result"><strong>결과</strong> — 일반 SaaS 템플릿. 고객 이름만 바뀌고 내용은 매번 비슷. 결국 내가 다시 고쳐 씀.</div>
     </div>
     <div class="col terra">
-      <div class="tag">쪼갠 예</div>
+      <div class="tag">이렇게 요청하면 O</div>
       <h3>"최근 2주 미팅 액션 3개만 뽑아줘"</h3>
       <div class="prompt">고객 A Notion 페이지에서 최근 2주 미팅 노트 읽고 액션 아이템 3개 bullet으로</div>
       <div class="result"><strong>결과</strong> — 입력·출력·범위가 명확. 매번 같은 포맷으로 나옴. <strong>재사용 가능한 스킬.</strong></div>
     </div>
   </div>
-  <div class="closing">큰 문제 하나 → <strong>여러 개의 작은 Step</strong>으로 쪼개고, 그중 반복이 잦은 한 조각을 스킬로 만든다.</div>
+  <div class="closing">큰 요청 하나 → <strong>여러 개의 작은 Step</strong>으로 쪼개고, 그중 반복이 잦은 한 조각을 스킬로 만든다.</div>
 </body>
 </html>

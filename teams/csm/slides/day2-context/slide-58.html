@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S58 초보자 실수 TOP 3</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .list { display: flex; flex-direction: column; gap: 6pt; margin-top: 8pt; }
+  .row { display: grid; grid-template-columns: 42pt 56pt 1fr; gap: 12pt; align-items: center; padding: 8pt 14pt; background: #ebe1d2; border-radius: 12pt; border-left: 4pt solid #c56a4a; }
+  .row .idx { font-size: 20pt; font-weight: 700; color: #b45a34; line-height: 1; letter-spacing: -0.02em; }
+  .row .icon-wrap { display: flex; align-items: center; justify-content: center; height: 44pt; }
+  /* Icon 1: STOP sign - circle with horizontal bar */
+  .icon-stop { position: relative; width: 38pt; height: 38pt; border-radius: 50%; background: #c56a4a; display: flex; align-items: center; justify-content: center; }
+  .icon-stop::before { content: ""; width: 22pt; height: 4pt; background: #fff; border-radius: 2pt; }
+  /* Icon 2: Lock - rectangle with arc on top */
+  .icon-lock { position: relative; width: 34pt; height: 40pt; display: flex; align-items: flex-end; justify-content: center; }
+  .icon-lock .body { width: 32pt; height: 22pt; background: #c56a4a; border-radius: 4pt; position: relative; z-index: 2; }
+  .icon-lock .body::before { content: ""; position: absolute; top: 6pt; left: 50%; transform: translateX(-50%); width: 5pt; height: 8pt; background: #fff; border-radius: 2pt; }
+  .icon-lock .shackle { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 20pt; height: 22pt; border: 4pt solid #c56a4a; border-bottom: none; border-radius: 10pt 10pt 0 0; background: transparent; z-index: 1; }
+  /* Icon 3: Circular arrow - using SVG */
+  .icon-refresh { width: 38pt; height: 38pt; }
+  .row .body { display: flex; flex-direction: column; gap: 3pt; }
+  .row h3 { font-size: 12.5pt; font-weight: 700; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
+  .row h3 em { font-style: normal; color: #b45a34; }
+  .row p { font-size: 9.5pt; line-height: 1.45; color: #42332a; }
+  .row p strong { color: #b45a34; font-weight: 700; }
+  .foot { margin-top: 7pt; padding: 7pt 14pt; background: #c56a4a; color: #fff; border-radius: 10pt; font-size: 10pt; line-height: 1.5; text-align: center; font-weight: 500; }
+  .foot strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">초보자 실수 TOP 3 · 05</div>
+  <div class="h-large">대참사를 막는 <em>필수 주의사항 3</em></div>
+  <div class="rule"></div>
+  <div class="intro">Git을 처음 쓸 때 한 번쯤 밟는 지뢰들. <strong>이 3가지만 피해도</strong> 큰 사고는 없다.</div>
+  <div class="list">
+    <div class="row">
+      <div class="idx">01</div>
+      <div class="icon-wrap">
+        <div class="icon-stop"></div>
+      </div>
+      <div class="body">
+        <h3>main 브랜치에서 작업 <em>절대 금지</em></h3>
+        <p>원본 파일이 그대로 날아갈 수 있음. 항상 <strong>새 브랜치를 파서</strong> 안전하게 작업. "이 작업 시작하려고 해" → Claude에 <strong>새 브랜치 요청부터</strong>.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="idx">02</div>
+      <div class="icon-wrap">
+        <div class="icon-lock">
+          <div class="shackle"></div>
+          <div class="body"></div>
+        </div>
+      </div>
+      <div class="body">
+        <h3>비밀번호·API 키 그대로 <em>push 금지</em></h3>
+        <p>GitHub에 올라가는 순간 <strong>전 세계 공개</strong>. 해킹 위험. Claude에게 <strong>"환경변수(env)로 분리해줘"</strong> 먼저 요청. 실수로 올렸으면 즉시 키 폐기·재발급.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="idx">03</div>
+      <div class="icon-wrap">
+        <svg class="icon-refresh" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 19 5 A 14 14 0 1 1 7 15" fill="none" stroke="#c56a4a" stroke-width="4" stroke-linecap="round"/>
+          <polygon points="15,1 23,1 19,9" fill="#c56a4a"/>
+        </svg>
+      </div>
+      <div class="body">
+        <h3>pull 안 받고 옛날 버전에서 <em>작업 금지</em></h3>
+        <p>팀원이 이미 수정한 파일을 내가 또 고치면 <strong>충돌 발생</strong>. 작업 시작 전 무조건 <strong>최신 상태 pull</strong>. "지금 작업 시작하려고 해" → Claude에 pull부터.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot">이 <strong>3가지만 지켜도</strong> 대참사는 막을 수 있다.</div>
+</body>
+</html>

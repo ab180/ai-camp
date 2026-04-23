@@ -2,81 +2,72 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S28 Troubleshooting 3가지</title>
+<title>Day 2 · S22 MCP 전후 비교</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 7pt; flex: 1; margin-top: 12pt; }
-  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
-  .row.hi { background: #c56a4a; color: #f7efe4; }
-  .row .cell { display: flex; flex-direction: column; gap: 3pt; }
-  .row .label { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
-  .row:not(.hi) .label { color: #b45a34; }
-  .row.hi .label { color: #f2cdb4; }
-  .row .content { font-size: 10.5pt; line-height: 1.5; }
-  .row:not(.hi) .content { color: #2b2520; }
-  .row.hi .content { color: #fff; }
-  .row .content strong { font-weight: 600; }
-  .row:not(.hi) .content strong { color: #b45a34; }
-  .row.hi .content strong { color: #fff; }
-  .row .content code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(197,106,74,0.12); padding: 1pt 5pt; border-radius: 4pt; }
-  .row:not(.hi) .content code { color: #b45a34; }
-  .row.hi .content code { background: rgba(255,255,255,0.18); color: #fff; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .question { margin-top: 8pt; padding: 6pt 12pt; background: #ebe1d2; border-radius: 8pt; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .question .q-lbl { font-size: 8pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
+  .question .q-text { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; color: #2b2520; margin-top: 1pt; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; }
+  .col { padding: 10pt 13pt; border-radius: 11pt; display: flex; flex-direction: column; gap: 6pt; overflow: hidden; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .tag { color: #b45a34; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 11.5pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .answer { padding: 7pt 9pt; border-radius: 6pt; font-size: 9pt; line-height: 1.45; }
+  .col.cream .answer { background: #f5ede2; color: #42332a; }
+  .col.terra .answer { background: rgba(255,255,255,0.12); color: #f5e4d4; }
+  .answer .ai { font-size: 8pt; letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 2pt; }
+  .col.cream .answer .ai { color: #b45a34; }
+  .col.terra .answer .ai { color: #ffdfc9; }
+  .answer strong { font-weight: 600; }
+  .col.cream .answer strong { color: #b45a34; }
+  .col.terra .answer strong { color: #fff; }
+  .note { font-size: 8.5pt; line-height: 1.4; padding-left: 10pt; border-left: 2pt solid rgba(180,90,52,0.3); }
+  .col.cream .note { color: #42332a; border-left-color: #d4c4ac; }
+  .col.terra .note { color: #f5e4d4; border-left-color: rgba(255,255,255,0.35); }
+  .col.cream .note strong { color: #b45a34; }
+  .col.terra .note strong { color: #fff; }
+  .closing { margin-top: 7pt; padding: 6pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; flex-shrink: 0; }
+  .closing strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Troubleshooting</div>
-  <div class="h-large">이 3가지 중 하나면 <em>바로 해결된다</em></div>
+  <div class="eyebrow">방금 연결한 것의 의미</div>
+  <div class="h-large">MCP 없이 vs 있을 때 — <em>같은 질문이 전혀 다른 답</em>이 된다</div>
   <div class="rule"></div>
-  <div class="intro">MCP 연결 실패 패턴의 90%는 아래 3가지 중 하나. 증상을 보고 <strong>바로 찾아 적용</strong> 가능하도록 정리.</div>
-  <div class="rows">
-    <div class="row">
-      <div class="cell">
-        <div class="label">증상</div>
-        <div class="content"><code>/mcp</code>가 <strong>서버 없음</strong>이라 응답</div>
+  <div class="intro">방금 MCP를 연결했다. 이게 뭐가 달라지는지 한 번 비교하고 넘어간다.</div>
+  <div class="question">
+    <span class="q-lbl">동일 질문</span>
+    <div class="q-text">"고객 A, 지난주 이슈 요약해줘"</div>
+  </div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="tag">MCP 없이</div>
+      <h3>AI가 볼 수 있는 게 없음</h3>
+      <div class="answer">
+        <span class="ai">AI ▸</span>
+        "정보가 없어서 <strong>일반적으로</strong> 말씀드리면, 지난주 이슈는 보통 온보딩 지연·결제 오류 등이..."
       </div>
-      <div class="cell">
-        <div class="label">원인</div>
-        <div class="content">Claude Code 세션이 <strong>연결 전</strong>에 시작됐음</div>
-      </div>
-      <div class="cell">
-        <div class="label">해결</div>
-        <div class="content">세션 끄고 <strong>다시 실행</strong>. 30초 안에 해결.</div>
-      </div>
+      <div class="note"><strong>매번</strong> 내가 Notion 링크·Slack 스레드를 복붙해야 함. 복붙 안 한 맥락은 아예 모름.</div>
     </div>
-    <div class="row hi">
-      <div class="cell">
-        <div class="label">증상</div>
-        <div class="content">Connect 눌러도 <strong>OAuth 창이 안 뜸</strong></div>
+    <div class="col terra">
+      <div class="tag">MCP 연결 후</div>
+      <h3>도구에서 직접 읽어 답</h3>
+      <div class="answer">
+        <span class="ai">AI ▸</span>
+        "Notion 지난 미팅 노트(4/17)·Slack 이번 주 논의·SFDC 최근 활동을 확인했습니다. <strong>담당자 김지영</strong> 요청한 API 연동 지연, <strong>5/2</strong> 재미팅 잡힘..."
       </div>
-      <div class="cell">
-        <div class="label">원인</div>
-        <div class="content">브라우저 <strong>팝업 차단</strong> · 광고 차단 확장</div>
-      </div>
-      <div class="cell">
-        <div class="label">해결</div>
-        <div class="content">주소창 옆 팝업 아이콘 → <strong>허용</strong> → 재시도</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">
-        <div class="label">증상</div>
-        <div class="content">권한 승인 후에도 <strong>scope 0</strong></div>
-      </div>
-      <div class="cell">
-        <div class="label">원인</div>
-        <div class="content">Google Workspace <strong>관리자 정책</strong> 제한</div>
-      </div>
-      <div class="cell">
-        <div class="label">해결</div>
-        <div class="content">운영진 공유 · <strong>계정 관리자 승인</strong> 요청</div>
-      </div>
+      <div class="note"><strong>담당자 이름·금액·일정</strong>까지. 내가 붙여넣지 않아도 AI가 직접 읽어옴.</div>
     </div>
   </div>
-  <div class="foot">15분 안에 안 되면 <strong>다른 도구로 전환</strong>. 오늘 산출물은 "1개 연결"이지 특정 도구 아님 — 시도했다는 것 자체가 학습.</div>
+  <div class="closing">방금 그 차이가 <strong>맥락의 힘</strong>. 다음 블록 Context Sync에서 여러 MCP를 한 번에 쓴다.</div>
 </body>
 </html>

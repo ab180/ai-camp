@@ -8,21 +8,21 @@
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .ui { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .ui .ubar { font-size: 9pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 6pt; }
-  .ui .path { font-size: 10pt; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; background: #f5ede2; padding: 5pt 8pt; border-radius: 4pt; }
-  .ui .step { display: grid; grid-template-columns: 24pt 1fr; gap: 8pt; align-items: baseline; }
-  .ui .step .num { font-size: 11pt; font-weight: 700; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; }
-  .ui .step .text { font-size: 10.5pt; color: #2b2520; line-height: 1.5; }
+  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
+  .ui { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
+  .ui .ubar { font-size: 8.5pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 5pt; }
+  .ui .path { font-size: 9.5pt; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; background: #f5ede2; padding: 4pt 7pt; border-radius: 4pt; }
+  .ui .step { display: grid; grid-template-columns: 22pt 1fr; gap: 6pt; align-items: baseline; }
+  .ui .step .num { font-size: 10.5pt; font-weight: 700; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; }
+  .ui .step .text { font-size: 10pt; color: #2b2520; line-height: 1.45; }
   .ui .step .text strong { color: #c56a4a; font-weight: 600; }
-  .ui .step .text code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: #f5ede2; padding: 1pt 4pt; border-radius: 3pt; }
-  .notes { display: flex; flex-direction: column; gap: 8pt; }
-  .note { background: #ebe1d2; border-radius: 10pt; padding: 12pt 14pt; }
-  .note .n { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .note h4 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 3pt; }
-  .note p { font-size: 10.5pt; color: #42332a; line-height: 1.55; margin-top: 3pt; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
+  .ui .step .text code { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; background: #f5ede2; padding: 1pt 4pt; border-radius: 3pt; }
+  .notes { display: flex; flex-direction: column; gap: 6pt; }
+  .note { background: #ebe1d2; border-radius: 10pt; padding: 10pt 12pt; }
+  .note .n { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .note h4 { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 2pt; }
+  .note p { font-size: 10pt; color: #42332a; line-height: 1.5; margin-top: 2pt; }
+  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.5; flex-shrink: 0; }
   .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
