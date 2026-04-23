@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S59 Claude x Git 실전</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .main { display: grid; grid-template-columns: 1fr 220pt; gap: 14pt; flex: 1; margin-top: 12pt; }
+  /* Terminal mock */
+  .term { background: #2b2520; border-radius: 12pt; padding: 12pt 14pt; display: flex; flex-direction: column; gap: 8pt; position: relative; }
+  .term-head { display: flex; align-items: center; gap: 5pt; }
+  .term-head .dot { width: 8pt; height: 8pt; border-radius: 50%; }
+  .term-head .r { background: #e5706b; }
+  .term-head .y { background: #e5b84f; }
+  .term-head .g { background: #6dc36d; }
+  .term-head .lbl { font-size: 8pt; color: #7d6b5a; letter-spacing: 0.15em; font-weight: 600; margin-left: auto; text-transform: uppercase; }
+  .term-body { display: flex; flex-direction: column; gap: 7pt; font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.5; }
+  .term .user { color: #f2cdb4; }
+  .term .user .prompt { color: #6dc36d; margin-right: 5pt; font-weight: 700; }
+  .term .ai { color: #d4c4ac; padding-left: 2pt; border-left: 2pt solid #c56a4a; padding-left: 8pt; }
+  .term .ai .ai-lbl { color: #c56a4a; font-weight: 700; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 3pt; font-family: 'Pretendard', sans-serif; }
+  .term .ai .step { display: block; color: #f5e4d4; font-size: 9pt; line-height: 1.55; }
+  .term .ai .step .ok { color: #6dc36d; font-weight: 700; }
+  /* Right column cards */
+  .right { display: flex; flex-direction: column; gap: 8pt; }
+  .rcard { padding: 12pt 14pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 4pt; }
+  .rcard.claude { background: #c56a4a; color: #f7efe4; }
+  .rcard.me { background: #ebe1d2; color: #2b2520; }
+  .rcard .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .rcard.claude .tag { color: #f2cdb4; }
+  .rcard.me .tag { color: #b45a34; }
+  .rcard h4 { font-size: 12pt; font-weight: 700; letter-spacing: -0.005em; }
+  .rcard.claude h4 { color: #fff; }
+  .rcard.me h4 { color: #2b2520; }
+  .rcard ul { list-style: none; display: flex; flex-direction: column; gap: 3pt; margin-top: 2pt; }
+  .rcard li { font-size: 9.5pt; line-height: 1.5; padding-left: 10pt; position: relative; }
+  .rcard li::before { content: ""; position: absolute; left: 0; top: 6pt; width: 4pt; height: 4pt; border-radius: 50%; }
+  .rcard.claude li { color: #f5e4d4; }
+  .rcard.claude li::before { background: #f2cdb4; }
+  .rcard.me li { color: #42332a; }
+  .rcard.me li::before { background: #b45a34; }
+  .closing { margin-top: 8pt; padding: 9pt 14pt; background: #ebe1d2; color: #42332a; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; border-left: 3pt solid #c56a4a; }
+  .closing strong { color: #b45a34; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실전 팁 · 06</div>
+  <div class="h-large">Claude Code × Git — <em>자연어로 지시</em></div>
+  <div class="rule"></div>
+  <div class="intro">명령어 한 줄 안 써도 된다. <strong>원하는 결과</strong>를 한국어로 쓰면 Claude가 순서대로 실행.</div>
+  <div class="main">
+    <div class="term">
+      <div class="term-head">
+        <div class="dot r"></div>
+        <div class="dot y"></div>
+        <div class="dot g"></div>
+        <div class="lbl">claude code · terminal</div>
+      </div>
+      <div class="term-body">
+        <div class="user"><span class="prompt">&gt;</span>airbridge/ai-camp 레포 clone해서 feature/my-recap-skill 브랜치 만들고, skills/recap-mail을 내 고객 톤에 맞게 수정한 뒤 commit하고 push해줘</div>
+        <div class="ai">
+          <span class="ai-lbl">Claude 응답</span>
+          <span class="step"><span class="ok">OK</span> clone 완료 (./ai-camp 생성)</span>
+          <span class="step"><span class="ok">OK</span> feature/my-recap-skill 브랜치 생성 · 체크아웃</span>
+          <span class="step"><span class="ok">OK</span> skills/recap-mail/SKILL.md 수정 (고객 톤 반영)</span>
+          <span class="step"><span class="ok">OK</span> commit: "feat: CSM 톤 적용"</span>
+          <span class="step"><span class="ok">OK</span> push 완료 · PR 링크 생성</span>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="rcard claude">
+        <div class="tag">Claude에 맡길 것</div>
+        <ul>
+          <li>명령어 실행</li>
+          <li>파일 수정</li>
+          <li>커밋 메시지 초안</li>
+        </ul>
+      </div>
+      <div class="rcard me">
+        <div class="tag">내가 확인할 것</div>
+        <ul>
+          <li>어느 브랜치에 있는지</li>
+          <li>PR 내용 점검</li>
+          <li>머지 전 리뷰</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="closing">명령어 외울 필요 없다 — <strong>구조만 잡으면 Claude가 친다.</strong></div>
+</body>
+</html>

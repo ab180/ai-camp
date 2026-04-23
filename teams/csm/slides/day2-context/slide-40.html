@@ -2,81 +2,71 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S42 실습 흐름 (STEP 1/2)</title>
+<title>Day 2 · S40 받은 SKILL.md 열어보기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .step-badge {
-    position: absolute; top: 10pt; right: 16pt;
-    font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;
-    color: #a0917e; padding: 3pt 9pt; border: 1px solid #d4c4ac; border-radius: 20pt;
-    white-space: nowrap;
-  }
-  .step-badge strong { color: #b45a34; font-weight: 700; }
-  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .flow { display: flex; flex-direction: column; gap: 4pt; flex: 1; margin-top: 6pt; min-height: 0; }
-  .stp { display: grid; grid-template-columns: 28pt 1fr; gap: 10pt; padding: 6pt 12pt; background: #ebe1d2; border-radius: 8pt; align-items: center; }
-  .stp.hi { background: #c56a4a; color: #f7efe4; }
-  .stp .n { font-size: 14pt; font-weight: 600; color: #b45a34; line-height: 1; letter-spacing: -0.02em; text-align: center; }
-  .stp.hi .n { color: #fff; opacity: 0.75; }
-  .stp .body { display: flex; flex-direction: column; gap: 1pt; }
-  .stp .cmd { font-size: 10pt; font-weight: 700; color: #2b2520; letter-spacing: -0.003em; line-height: 1.3; font-family: 'SF Mono', Menlo, monospace; }
-  .stp.hi .cmd { color: #fff; }
-  .stp .cmd .arg { color: #7d6b5a; font-weight: 500; }
-  .stp.hi .cmd .arg { color: #f2cdb4; }
-  .stp .desc { font-size: 8.8pt; line-height: 1.4; color: #42332a; }
-  .stp.hi .desc { color: #f5e4d4; }
-  .stp .desc strong { color: #b45a34; font-weight: 600; }
-  .stp.hi .desc strong { color: #fff; font-weight: 600; }
-  .note { margin-top: 5pt; padding: 5pt 14pt; background: #ebe1d2; border-radius: 8pt; font-size: 9pt; line-height: 1.45; color: #42332a; border-left: 3pt solid #c56a4a; flex-shrink: 0; }
-  .note strong { color: #b45a34; }
-  .note code { font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; background: rgba(197,106,74,0.12); padding: 1pt 5pt; border-radius: 4pt; color: #b45a34; }
+  .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; min-height: 0; }
+  .term { background: #1a1410; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 6pt; overflow: hidden; }
+  .term .bar { display: flex; gap: 6pt; margin-bottom: 3pt; }
+  .term .bar span { width: 8pt; height: 8pt; border-radius: 50%; background: #3a2e22; }
+  .term .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
+  .term .cmd strong { color: #fff; }
+  .term .sep { border-top: 1px dashed rgba(255,255,255,0.15); margin: 3pt 0; }
+  .term .out { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.5; color: #d8c9b0; }
+  .term .out .frontmatter { color: #9cc4a0; }
+  .term .out .key { color: #f2cdb4; }
+  .term .out .val { color: #fff; }
+  .term .out .plain { color: #d8c9b0; }
+  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; }
+  .guide { display: flex; flex-direction: column; gap: 8pt; overflow: hidden; }
+  .card { padding: 10pt 13pt; border-radius: 10pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; }
+  .card.terra { background: #c56a4a; color: #f7efe4; }
+  .card .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .card:not(.terra) .tag { color: #b45a34; }
+  .card.terra .tag { color: #f2cdb4; }
+  .card h4 { font-size: 11pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
+  .card:not(.terra) h4 { color: #2b2520; }
+  .card.terra h4 { color: #fff; }
+  .card .body { font-size: 9.5pt; line-height: 1.55; }
+  .card:not(.terra) .body { color: #42332a; }
+  .card.terra .body { color: #f5e4d4; }
+  .card .body strong { font-weight: 600; }
+  .card:not(.terra) .body strong { color: #b45a34; }
+  .card.terra .body strong { color: #fff; }
+  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; border-left: 3pt solid #c56a4a; flex-shrink: 0; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="step-badge">STEP <strong>1</strong> / 2</div>
-  <div class="eyebrow">흐름 · 개인 → 팀</div>
-  <div class="h-large">내 수정을 팀에 <em>공유하는 5단계</em></div>
+  <div class="eyebrow">확인 · 2분</div>
+  <div class="h-large">Claude가 만든 <em>SKILL.md를 열어본다</em></div>
   <div class="rule"></div>
-  <div class="intro">처음 해보면 헷갈리지만 <strong>한 번만 흐름을 타면</strong> 다음부턴 익숙해진다. 5단계를 번호 순으로.</div>
-  <div class="flow">
-    <div class="stp">
-      <div class="n">1</div>
-      <div class="body">
-        <div class="cmd">git clone <span class="arg">&lt;팀 repo URL&gt;</span></div>
-        <div class="desc">처음 <strong>한 번</strong>만. 이후부터는 내 로컬에 이미 있음.</div>
-      </div>
+  <div class="intro">파일을 <strong>읽을 수 있어야</strong> 내일 고칠 수 있다. 구조가 어떻게 생겼는지 한 번 훑기.</div>
+  <div class="wrap">
+    <div class="term">
+      <div class="bar"><span></span><span></span><span></span></div>
+      <div class="cmd"><strong>you ▸</strong> cat .claude/skills/extract-meeting-actions/SKILL.md</div>
+      <div class="sep"></div>
+      <div class="out"><span class="frontmatter">---</span><br><span class="key">name:</span> <span class="val">extract-meeting-actions</span><br><span class="key">description:</span> <span class="val">고객 리캡 메일 쓰기 전 최근 미팅 액션 추출</span><br><span class="frontmatter">---</span></div>
+      <div class="out"><br><span class="plain">## When to use</span><br><span class="plain">- 고객 리캡 메일 작성 전</span><br><span class="plain">- 지난 2주 액션 아이템 정리 필요 시</span><br><br><span class="plain">## Steps</span><br><span class="plain">1. Notion 해당 고객 회의록 폴더 조회</span><br><span class="plain">2. 지정 기간 내 미팅 노트 수집</span><br><span class="plain">3. 액션 bullet 3-5개 추출 + 원문 링크</span></div>
+      <div class="meta">// 파일 1개 · 20줄 내외</div>
     </div>
-    <div class="stp">
-      <div class="n">2</div>
-      <div class="body">
-        <div class="cmd">파일 수정 (내 CLAUDE.md 섹션 추가)</div>
-        <div class="desc">평소처럼 에디터에서 편집. <strong>Git이 아직 모름</strong> — 저장만 해둔 상태.</div>
+    <div class="guide">
+      <div class="card">
+        <div class="tag">윗부분 · frontmatter</div>
+        <h4>name · description</h4>
+        <div class="body">두 줄이 <strong>트리거</strong>. Claude가 "언제 이 스킬을 쓸지" 판단하는 기준.</div>
       </div>
-    </div>
-    <div class="stp hi">
-      <div class="n">3</div>
-      <div class="body">
-        <div class="cmd">git commit -m <span class="arg">"feat: 담당 고객 B 추가"</span></div>
-        <div class="desc">수정을 <strong>스냅샷으로 박제</strong>. 메시지에 `&lt;type&gt;: &lt;설명&gt;` 형식 — feat · fix · docs 중.</div>
-      </div>
-    </div>
-    <div class="stp">
-      <div class="n">4</div>
-      <div class="body">
-        <div class="cmd">git push</div>
-        <div class="desc">내 로컬 커밋을 <strong>Github에 업로드</strong>. 이제 팀이 볼 수 있음.</div>
-      </div>
-    </div>
-    <div class="stp">
-      <div class="n">5</div>
-      <div class="body">
-        <div class="cmd">Github 웹 → PR 생성 → 팀장 리뷰 → merge</div>
-        <div class="desc">웹 UI에서 <strong>"Compare &amp; pull request"</strong> 클릭. 리뷰 끝나면 merge.</div>
+      <div class="card terra">
+        <div class="tag">아랫부분 · 본문</div>
+        <h4>When to use · Steps</h4>
+        <div class="body">실제 <strong>동작 지시</strong>. 여기가 결과 품질을 좌우. 고치고 싶으면 이 부분을 본다.</div>
       </div>
     </div>
   </div>
-  <div class="note">3번 커밋 메시지는 <code>&lt;type&gt;: &lt;설명&gt;</code> 형식. <strong>feat</strong>(새 기능) · <strong>fix</strong>(수정) · <strong>docs</strong>(문서) · <strong>refactor</strong>(구조 개선) 중.</div>
+  <div class="foot">읽을 수 있어야 <strong>내일 고칠 수 있다</strong>. 지금은 훑기만.</div>
 </body>
 </html>

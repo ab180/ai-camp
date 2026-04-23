@@ -45,9 +45,11 @@ ai-camp/
 | Day | 시간 | 축 | 테마 | 산출물 |
 |-----|------|------|------|--------|
 | **Day 1** | 120분 | 축 1(구조) + 축 2(살짝) | 뼈대 깔기 — CLAUDE.md | CSM 맥락·톤·금지어가 박힌 CLAUDE.md |
-| **Day 2** | 120분 | 축 2(맥락) | 도구로 맥락 확장 — MCP | CSM 도구 MCP 1개+ 연결 |
-| **Day 3** | 120분 | 축 3(계획) + 축 4(실행) | 템플릿 커스터마이징 | 운영진 스킬 템플릿을 내 업무로 0.5→1 수정 |
-| **Day 4** | 120분 | 축 5(검증) + 축 6(개선) | 까다로운 고객 + 6축 자가진단 | 검증 피드백 메모 + 6축 O/X + 팀 repo 업로드 |
+| **Day 2** | 120분 | 축 2(맥락) | 도구로 맥락 확장 — MCP + 내 스킬 만들기 | CSM 도구 MCP 1개+ 연결 + 내 문제 스킬 첫 초안 |
+| **Day 3** | 120분 | 축 3(계획) + 축 4(실행) | Deep Interview · 템플릿 커스터마이징 · Skill Creator | 내 맥락으로 다듬은 동작 스킬 1개 + 검증 결과 |
+| **Day 4** | 120분 | 축 5(검증) + 축 6(개선) | 까다로운 고객 + 6축 자가진단 + 팀 repo | 검증 피드백 메모 + 6축 O/X + 팀 repo 업로드 |
+
+> 캠프 종료 후: 2주 프로젝트 → **2026-05-15(금) 발표회** (회고 포맷 "좋았던 것/별로였던 것 각 2문장")
 
 ### 하네스 6축
 
@@ -74,10 +76,13 @@ ai-camp/
 |-------|------|--------|
 | A. 2기 분석 + 매트릭스 | ✅ 완료 | [Design Doc §5](docs/plans/2026-04-20-ai-camp-3rd-design.md) |
 | B. Design Doc | ✅ 완료 | [`docs/plans/2026-04-20-ai-camp-3rd-design.md`](docs/plans/2026-04-20-ai-camp-3rd-design.md) |
-| C. Repo bootstrap | ✅ 완료 | teams/ 구조 |
-| D1~D4. Day별 slides-grab | 🚧 D1 진행 중 | — |
-| E. Supporting 자산 | ⏳ 대기 | — |
-| F. README 최종 + push | ⏳ 대기 | — |
+| C. Repo bootstrap | ✅ 완료 | teams/ 구조 + bin/setup.sh |
+| D1. Day 1 slides | ✅ 완료 | `teams/csm/slides/day1-structure-context/` · 59장 |
+| D2. Day 2 slides | ✅ 완료 | `teams/csm/slides/day2-context/` · 52장 |
+| D3. Day 3 slides | ✅ 완료 | `teams/csm/slides/day3-plan-execute/` · 47장 |
+| D4. Day 4 slides | ✅ 완료 | `teams/csm/slides/day4-validate-improve/` · 45장 |
+| E. Supporting 자산 | 🚧 진행 중 | 운영진 템플릿 · 참가자 복습 스킬 4개 · 발표자 가이드 · SOP |
+| F. README + 최종 정리 | 🚧 진행 중 | 본 문서 · teams/csm/README.md |
 
 ---
 

@@ -2,27 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S47 마무리</title>
+<title>Day 2 · S45 5가지 명령어</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-  .wrap { max-width: 620pt; display: flex; flex-direction: column; align-items: center; gap: 18pt; }
-  .tag { font-size: 11pt; letter-spacing: 0.28em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .h-main { font-size: 36pt; font-weight: 500; color: #2b2520; letter-spacing: -0.01em; line-height: 1.2; }
-  .h-main em { font-style: normal; color: #b45a34; }
-  .rule-c { width: 52pt; height: 3pt; border-radius: 3pt; background: #c56a4a; }
-  .msg { font-size: 13pt; line-height: 1.7; color: #42332a; max-width: 560pt; }
-  .msg strong { color: #b45a34; font-weight: 600; }
-  .sign { font-size: 11pt; color: #7d6b5a; letter-spacing: 0.04em; margin-top: 4pt; }
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 6pt; flex: 1; margin-top: 12pt; }
+  .row { display: grid; grid-template-columns: 110pt 1fr 1.15fr; gap: 14pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 9pt; align-items: center; }
+  .row.hi { background: #c56a4a; color: #f7efe4; }
+  .row .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 11pt; font-weight: 700; color: #b45a34; letter-spacing: -0.003em; }
+  .row.hi .cmd { color: #fff; }
+  .row .def { font-size: 10.5pt; font-weight: 500; color: #2b2520; letter-spacing: -0.005em; line-height: 1.35; }
+  .row.hi .def { color: #fff; }
+  .row .when { font-size: 9.5pt; line-height: 1.45; color: #42332a; padding-left: 12pt; border-left: 2pt solid #d4c4ac; }
+  .row.hi .when { color: #f5e4d4; border-left-color: rgba(255,255,255,0.3); }
+  .row .when strong { color: #b45a34; font-weight: 600; }
+  .row.hi .when strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="tag">Day 2 · Wrap</div>
-    <div class="h-main">오늘 <em>120분</em> 수고하셨습니다</div>
-    <div class="rule-c"></div>
-    <div class="msg"><strong>연결된 MCP 1개</strong>와 <strong>고객사 X의 통합 요약 한 장</strong>을 가지고 내일 Day 3에서 만나요.</div>
-    <div class="sign">AB180 AI Camp · Day 3 → Deep Interview + 스킬 제작</div>
+  <div class="eyebrow">최소 세트</div>
+  <div class="h-large">이 <em>5개</em>면 오늘은 충분하다</div>
+  <div class="rule"></div>
+  <div class="intro">Git 명령어는 수십 개지만 — CSM 입장에서 <strong>오늘 이 5개만</strong>. 나머지(branch · rebase · stash)는 2주 프로젝트에서 자연스레.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="cmd">git clone</div>
+      <div class="def">남의 repo를 내 로컬에 복제</div>
+      <div class="when">공용 스킬을 <strong>처음 받을 때</strong>. Day 1에 이미 한 번 했음.</div>
+    </div>
+    <div class="row">
+      <div class="cmd">git pull</div>
+      <div class="def">최신 상태로 갱신</div>
+      <div class="when">팀이 수정한 걸 <strong>내 로컬에 반영</strong>할 때.</div>
+    </div>
+    <div class="row hi">
+      <div class="cmd">git commit</div>
+      <div class="def">변경사항을 "스냅샷"으로 박제</div>
+      <div class="when">오늘 내가 한 작업에 <strong>이름을 붙여 저장</strong>. 되돌릴 수 있는 단위.</div>
+    </div>
+    <div class="row hi">
+      <div class="cmd">git push</div>
+      <div class="def">내 커밋을 Github에 올림</div>
+      <div class="when"><strong>팀이 볼 수 있게</strong> 공개. 내 로컬에만 있던 게 원격에 복사.</div>
+    </div>
+    <div class="row">
+      <div class="cmd">PR (Pull Request)</div>
+      <div class="def">"내 변경을 팀 repo에 합쳐줘"</div>
+      <div class="when">Github 웹에서 생성 · 리뷰 후 <strong>merge</strong>.</div>
+    </div>
   </div>
+  <div class="foot">오늘 밤 과제는 <strong>5개 전부 써봄</strong> — 한 번 흐름을 타면 다음부턴 익숙. 바로 다음 슬라이드부터 구체 흐름.</div>
 </body>
 </html>

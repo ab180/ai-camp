@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 · S57 4개 풀어쓰기</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { background: #ebe1d2; border-radius: 12pt; padding: 12pt 16pt; display: flex; flex-direction: column; gap: 5pt; }
+  .cell .head { display: flex; align-items: center; gap: 10pt; }
+  .cell .dot { width: 14pt; height: 14pt; border-radius: 50%; flex-shrink: 0; }
+  .cell .dot.clone { background: #d4e5ec; border: 2pt solid #7ea9bd; }
+  .cell .dot.branch { background: #c56a4a; }
+  .cell .dot.commit { background: #f0d98c; border: 2pt solid #c9a83d; }
+  .cell .dot.pr { background: #c3dcc9; border: 2pt solid #6a9878; }
+  .cell h3 { font-size: 15pt; font-weight: 700; color: #2b2520; letter-spacing: -0.005em; }
+  .cell .meta { font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; color: #7d6b5a; text-transform: uppercase; margin-left: auto; }
+  .cell .def { font-size: 11pt; line-height: 1.5; color: #2b2520; font-weight: 500; }
+  .cell .def strong { color: #b45a34; font-weight: 700; }
+  .cell .examples { display: flex; flex-direction: column; gap: 3pt; margin-top: auto; padding-top: 6pt; border-top: 1px dashed #d4c4ac; }
+  .cell .ex { display: flex; gap: 7pt; font-size: 9pt; line-height: 1.5; }
+  .cell .ex .lbl { font-size: 7.5pt; letter-spacing: 0.15em; font-weight: 700; color: #b45a34; text-transform: uppercase; min-width: 44pt; padding-top: 1pt; }
+  .cell .ex .val { color: #42332a; flex: 1; }
+  .cell .ex .val code { font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; background: rgba(197,106,74,0.1); padding: 1pt 5pt; border-radius: 3pt; color: #b45a34; }
+  .cell .ex .val.claude { color: #42332a; font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">개념 지도 · 04</div>
+  <div class="h-large">4개 풀어쓰기 — <em>각 단어가 무엇인지</em></div>
+  <div class="rule"></div>
+  <div class="intro">한 장 안에 <strong>Git 명령어</strong>(작게 · 참고용)와 <strong>Claude에게 줄 자연어</strong>(크게 · 메인)를 함께. 후자가 실제로 쓰는 방식.</div>
+  <div class="grid4">
+    <div class="cell">
+      <div class="head">
+        <div class="dot clone"></div>
+        <h3>clone</h3>
+        <div class="meta">01 · 가져오기</div>
+      </div>
+      <div class="def">GitHub에 있는 집을 <strong>내 컴퓨터로 복사</strong>해서 가져오기.</div>
+      <div class="examples">
+        <div class="ex"><div class="lbl">Git</div><div class="val"><code>git clone &lt;url&gt;</code></div></div>
+        <div class="ex"><div class="lbl">Claude</div><div class="val claude">"이 레포 clone해줘"</div></div>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="head">
+        <div class="dot branch"></div>
+        <h3>branch</h3>
+        <div class="meta">02 · 평행우주</div>
+      </div>
+      <div class="def">원본은 그대로 두고 <strong>내 작업용 평행우주</strong> 만들기.</div>
+      <div class="examples">
+        <div class="ex"><div class="lbl">Git</div><div class="val"><code>git checkout -b my-feature</code></div></div>
+        <div class="ex"><div class="lbl">Claude</div><div class="val claude">"새 브랜치 파줘"</div></div>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="head">
+        <div class="dot commit"></div>
+        <h3>commit</h3>
+        <div class="meta">03 · 한 줄 저장</div>
+      </div>
+      <div class="def">여기까지 한 일을 <strong>한 줄로 적고 저장</strong>. 나중에 이 시점으로 돌아올 수 있음.</div>
+      <div class="examples">
+        <div class="ex"><div class="lbl">Git</div><div class="val"><code>git commit -m "CLAUDE.md 톤 추가"</code></div></div>
+        <div class="ex"><div class="lbl">Claude</div><div class="val claude">"커밋해줘"</div></div>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="head">
+        <div class="dot pr"></div>
+        <h3>PR</h3>
+        <div class="meta">04 · 허락 받기</div>
+      </div>
+      <div class="def">내 평행우주를 원본에 <strong>합쳐달라고 쪽지</strong> 보내기. 리뷰 받고 머지.</div>
+      <div class="examples">
+        <div class="ex"><div class="lbl">Git</div><div class="val">GitHub 웹에서 버튼</div></div>
+        <div class="ex"><div class="lbl">Claude</div><div class="val claude">"PR 올려줘"</div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

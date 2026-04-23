@@ -2,72 +2,54 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S34 스킬 스펙 템플릿</title>
+<title>Day 2 · S34 짝꿍 교환 점검</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
-  .tmpl { padding: 10pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; overflow: hidden; }
-  .tmpl .tag { font-size: 9pt; letter-spacing: 0.22em; color: #a0917e; font-weight: 700; text-transform: uppercase; }
-  .row { display: grid; grid-template-columns: 95pt 1fr; gap: 10pt; align-items: start; padding: 4pt 0; border-top: 1px dashed #d4c4ac; }
-  .row:first-of-type { border-top: none; padding-top: 2pt; }
-  .row .label { display: flex; flex-direction: column; gap: 2pt; }
-  .row .name { font-size: 10pt; font-weight: 600; color: #b45a34; letter-spacing: -0.005em; line-height: 1.2; }
-  .row .num { font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #a0917e; font-weight: 600; }
-  .row .blank { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.4; color: #42332a; }
-  .row .blank .hint { display: block; font-family: 'Pretendard', sans-serif; font-size: 8pt; color: #7d6b5a; margin-top: 2pt; }
-  .example { padding: 12pt 14pt; border-radius: 12pt; background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; overflow: hidden; }
-  .example .tag { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
-  .example h4 { font-size: 11.5pt; font-weight: 600; color: #fff; margin-top: 4pt; letter-spacing: -0.005em; line-height: 1.3; font-family: 'SF Mono', Menlo, monospace; }
-  .example .ex { margin-top: 8pt; display: flex; flex-direction: column; gap: 5pt; font-size: 9pt; line-height: 1.45; color: #f5e4d4; }
-  .example .ex .k { font-weight: 600; color: #fff; }
-  .example .ex .v { padding-left: 8pt; display: block; margin-top: 1pt; }
-  .closing { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; flex-shrink: 0; }
-  .closing strong { color: #b45a34; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 14pt; }
+  .check { padding: 16pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .check.terra { background: #c56a4a; color: #f7efe4; }
+  .check .num { font-family: 'SF Mono', Menlo, monospace; font-size: 22pt; font-weight: 600; color: #c56a4a; letter-spacing: -0.01em; }
+  .check.terra .num { color: #fff; opacity: 0.85; }
+  .check h4 { font-size: 13pt; font-weight: 600; color: #2b2520; margin-top: 8pt; letter-spacing: -0.005em; line-height: 1.28; }
+  .check.terra h4 { color: #fff; }
+  .check .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 10pt; }
+  .check.terra .body { color: #f5e4d4; }
+  .check .body strong { color: #b45a34; font-weight: 600; }
+  .check.terra .body strong { color: #fff; }
+  .check .example { margin-top: auto; padding-top: 10pt; font-size: 9pt; line-height: 1.5; color: #7d6b5a; border-top: 1px dashed #d4c4ac; font-family: 'SF Mono', Menlo, monospace; }
+  .check.terra .example { color: #f2cdb4; border-top-color: rgba(255,255,255,0.3); }
+  .foot { margin-top: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">스펙 템플릿</div>
-  <div class="h-large">빈 칸 5개 — 채우면 <em>스킬 스펙</em> 완성</div>
+  <div class="eyebrow">짝꿍 · 2분</div>
+  <div class="h-large">짝꿍 Step 읽어보기 — <em>한 번에 이해되면 합격</em></div>
   <div class="rule"></div>
-  <div class="intro">고른 Step을 아래 <strong>다섯 줄</strong>로 옮겨 적는다. 이게 Claude에게 "이 스킬 만들어줘"라고 던질 설계도다.</div>
-  <div class="wrap">
-    <div class="tmpl">
-      <div class="tag">5줄 스펙</div>
-      <div class="row">
-        <div class="label"><span class="num">01</span><span class="name">스킬 이름</span></div>
-        <div class="blank">__________________<span class="hint">영문 소문자 + 하이픈. 예: extract-meeting-actions</span></div>
-      </div>
-      <div class="row">
-        <div class="label"><span class="num">02</span><span class="name">언제 쓰나</span></div>
-        <div class="blank">__________________<span class="hint">한 문장. 예: "고객 리캡 메일 쓰기 전에"</span></div>
-      </div>
-      <div class="row">
-        <div class="label"><span class="num">03</span><span class="name">입력</span></div>
-        <div class="blank">__________________<span class="hint">예: 고객명, 기간 (일수)</span></div>
-      </div>
-      <div class="row">
-        <div class="label"><span class="num">04</span><span class="name">출력</span></div>
-        <div class="blank">__________________<span class="hint">예: 액션 아이템 bullet 3-5개</span></div>
-      </div>
-      <div class="row">
-        <div class="label"><span class="num">05</span><span class="name">사용 MCP</span></div>
-        <div class="blank">__________________<span class="hint">예: Notion MCP (회의록 페이지 접근)</span></div>
-      </div>
+  <div class="intro">본인 Step을 <strong>짝꿍에게 보여주고</strong> 세 가지만 물어본다. 읽는 사람이 한 번에 이해 못 하면 쪼개기가 덜 된 것.</div>
+  <div class="checks">
+    <div class="check">
+      <div class="num">01</div>
+      <h4>동사로 시작?</h4>
+      <div class="body">각 Step의 첫 단어가 <strong>동사</strong>인가. "추출·비교·수집·정리·확인" 같은 동작.</div>
+      <div class="example">X "미팅 노트"<br>O "미팅 노트 수집"</div>
     </div>
-    <div class="example">
-      <div class="tag">채워진 예시</div>
-      <h4>extract-meeting-actions</h4>
-      <div class="ex">
-        <div><span class="k">언제</span><span class="v">고객 리캡 메일 쓰기 전</span></div>
-        <div><span class="k">입력</span><span class="v">고객명 · 기간 (14일)</span></div>
-        <div><span class="k">출력</span><span class="v">액션 bullet 3-5개 + 원문 링크</span></div>
-        <div><span class="k">MCP</span><span class="v">Notion (고객별 회의록 폴더)</span></div>
-      </div>
+    <div class="check terra">
+      <div class="num">02</div>
+      <h4>입력 → 출력?</h4>
+      <div class="body"><strong>무엇을 넣고 무엇이 나오는지</strong> 한 줄로 짝꿍이 떠올릴 수 있나.</div>
+      <div class="example">입력: 고객명+기간<br>출력: 액션 3-5개</div>
+    </div>
+    <div class="check">
+      <div class="num">03</div>
+      <h4>반복 업무?</h4>
+      <div class="body">이번 한 번만이 아니라 <strong>매주·매달</strong> 도는 일인가. 일회성은 스킬 대상 아님.</div>
+      <div class="example">O 주 3회 리캡<br>X 올해 한 번 제안서</div>
     </div>
   </div>
-  <div class="closing">다 채우면 <strong>Claude에게 던질 준비 완료</strong>. 다음 슬라이드에서 한 줄 명령으로 실제 스킬이 만들어진다.</div>
+  <div class="foot">짝꿍이 <strong>"이게 뭐 하는 거야?"</strong> 되묻는 Step은 쪼개기가 덜 된 것. 한 번 더 다듬기.</div>
 </body>
 </html>
