@@ -20,6 +20,9 @@ jobs:
       - name: Install slides-grab
         run: npm install -g slides-grab@1.2.2
 
+      - name: Install Playwright browser (chromium only)
+        run: npx --yes playwright@latest install --with-deps chromium
+
       - name: Check required directories exist
         run: |
           set -e
