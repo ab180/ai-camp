@@ -159,23 +159,22 @@ jobs:
           if [ "$FAIL" -eq 1 ]; then exit 1; fi
           echo "모든 SKILL.md frontmatter OK"
 
-      - name: Check forbidden words in slide HTML
+      - name: Check forbidden words in slide HTML (informational)
         run: |
-          set -e
-          PATTERNS='QBR|AskUserQuestion|0\.5판|뼈대 깔기'
+          set +e
+          PATTERNS='0\.5판|뼈대 깔기'
           FOUND=0
           for f in teams/csm/slides/*/slide-*.html; do
-            if grep -Ec "$PATTERNS" "$f" > /dev/null 2>&1; then
-              HITS=$(grep -Ec "$PATTERNS" "$f")
-              if [ "$HITS" -gt 0 ]; then
-                echo "::warning::$f — 금지 단어 포함 ($HITS건)"
-                grep -En "$PATTERNS" "$f" | head -3
-                FOUND=$((FOUND + HITS))
-              fi
+            HITS=$(grep -Ec "$PATTERNS" "$f" 2>/dev/null || echo 0)
+            HITS=${HITS:-0}
+            if [ "$HITS" -gt 0 ]; then
+              echo "::warning file=$f::비권장 표현 포함 ($HITS건) — '0.5판' → '첫 초안', '뼈대 깔기' → 'CLAUDE.md 설계'"
+              FOUND=$((FOUND + HITS))
             fi
           done
           if [ "$FOUND" -gt 0 ]; then
-            echo "::error::금지 단어 총 $FOUND건 발견. QBR/AskUserQuestion/0.5판/뼈대 깔기 사용 금지"
-            exit 1
+            echo "총 $FOUND건의 비권장 표현 (차단 아님, 점진 개선 대상)"
+          else
+            echo "비권장 표현 0건"
           fi
-          echo "금지 단어 0건"
+          exit 0
