@@ -20,6 +20,17 @@ jobs:
       - name: Install slides-grab
         run: npm install -g slides-grab@1.2.2
 
+      - name: Install Korean fonts (Pretendard + Noto CJK fallback)
+        run: |
+          set -e
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+          # Pretendard variable font 설치
+          mkdir -p ~/.fonts
+          curl -sL https://github.com/orioncactus/pretendard/raw/main/packages/pretendard/dist/public/variable/PretendardVariable.ttf -o ~/.fonts/PretendardVariable.ttf || true
+          fc-cache -f
+          fc-list | grep -i pretendard | head -3 || echo "Pretendard not found, falling back to Noto"
+
       - name: Install Playwright browser (chromium only)
         run: npx --yes playwright@latest install --with-deps chromium
 
