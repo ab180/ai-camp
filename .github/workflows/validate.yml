@@ -1,0 +1,160 @@
+name: Validate slides and structure
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Slides + structure validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install slides-grab
+        run: npm install -g slides-grab@1.2.2
+
+      - name: Check required directories exist
+        run: |
+          set -e
+          MISSING=0
+          for dir in \
+            "teams/csm/slides/day1-structure-context" \
+            "teams/csm/slides/day2-context" \
+            "teams/csm/slides/day3-plan-execute" \
+            "teams/csm/slides/day4-validate-improve" \
+            "teams/csm/templates" \
+            "teams/csm/.claude/skills" \
+            "teams/csm/guides" \
+            "shared" \
+            "sop" \
+            "docs/plans" \
+            "archive/camp-1-2" \
+            "bin"; do
+            if [ ! -d "$dir" ]; then
+              echo "::error::필수 디렉토리 누락: $dir"
+              MISSING=1
+            fi
+          done
+          if [ "$MISSING" -eq 1 ]; then exit 1; fi
+          echo "모든 필수 디렉토리 존재"
+
+      - name: Check slide assets exist
+        run: |
+          set -e
+          MISSING=0
+          for day in day1-structure-context day2-context day3-plan-execute day4-validate-improve; do
+            CSS="teams/csm/slides/$day/assets/warm-neutral.css"
+            VIEWER="teams/csm/slides/$day/viewer.html"
+            if [ ! -f "$CSS" ]; then
+              echo "::error::CSS 누락: $CSS"
+              MISSING=1
+            fi
+            if [ ! -f "$VIEWER" ]; then
+              echo "::error::viewer.html 누락: $VIEWER"
+              MISSING=1
+            fi
+            # 각 Day에 slide-*.html 최소 1개 이상
+            COUNT=$(ls "teams/csm/slides/$day"/slide-*.html 2>/dev/null | wc -l | tr -d ' ')
+            if [ "$COUNT" -lt 1 ]; then
+              echo "::error::$day 에 slide-*.html 없음"
+              MISSING=1
+            else
+              echo "$day: $COUNT slides"
+            fi
+          done
+          if [ "$MISSING" -eq 1 ]; then exit 1; fi
+
+      - name: Validate all slide HTML (slides-grab validate)
+        run: |
+          set -e
+          FAIL=0
+          for day in day1-structure-context day2-context day3-plan-execute day4-validate-improve; do
+            echo ""
+            echo "=== $day ==="
+            if ! slides-grab validate --slides-dir "teams/csm/slides/$day" 2>&1 | tee /tmp/$day.log; then
+              FAIL=1
+            fi
+            # failed 또는 errors가 0이 아니면 실패
+            if grep -qE "[1-9][0-9]* failed|[1-9][0-9]* error\(s\)" /tmp/$day.log; then
+              echo "::error::$day validate 실패 또는 에러 발생"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" -eq 1 ]; then exit 1; fi
+          echo ""
+          echo "모든 Day validate passed"
+
+      - name: Build viewer (dry run — 빌드 실패 시 차단)
+        run: |
+          set -e
+          for day in day1-structure-context day2-context day3-plan-execute day4-validate-improve; do
+            echo "build-viewer: $day"
+            slides-grab build-viewer --slides-dir "teams/csm/slides/$day" > /dev/null
+            if [ ! -f "teams/csm/slides/$day/viewer.html" ]; then
+              echo "::error::$day viewer.html 생성 실패"
+              exit 1
+            fi
+          done
+          echo "모든 Day viewer 빌드 성공"
+
+      - name: Check setup.sh syntax
+        run: |
+          bash -n bin/setup.sh
+          echo "bin/setup.sh 문법 OK"
+
+      - name: Validate SKILL.md frontmatter (기존 스킬이 있을 때만)
+        run: |
+          set -e
+          FAIL=0
+          # teams/csm/.claude/skills/ 및 archive/camp-1-2/legacy-skills/ 하위 SKILL.md
+          SKILLS=$(find teams/csm/.claude/skills archive/camp-1-2/legacy-skills -name SKILL.md 2>/dev/null || true)
+          if [ -z "$SKILLS" ]; then
+            echo "SKILL.md 없음 (아직 생성 전) — skip"
+            exit 0
+          fi
+          for f in $SKILLS; do
+            # frontmatter 가 있고 name/description 둘 다 있는지 확인
+            if ! head -1 "$f" | grep -q '^---$'; then
+              echo "::error::$f frontmatter 시작 '---' 누락"
+              FAIL=1
+              continue
+            fi
+            if ! awk '/^---$/{c++; next} c==1' "$f" | grep -q '^name:'; then
+              echo "::error::$f name 필드 누락"
+              FAIL=1
+            fi
+            if ! awk '/^---$/{c++; next} c==1' "$f" | grep -q '^description:'; then
+              echo "::error::$f description 필드 누락"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" -eq 1 ]; then exit 1; fi
+          echo "모든 SKILL.md frontmatter OK"
+
+      - name: Check forbidden words in slide HTML
+        run: |
+          set -e
+          PATTERNS='QBR|AskUserQuestion|0\.5판|뼈대 깔기'
+          FOUND=0
+          for f in teams/csm/slides/*/slide-*.html; do
+            if grep -Ec "$PATTERNS" "$f" > /dev/null 2>&1; then
+              HITS=$(grep -Ec "$PATTERNS" "$f")
+              if [ "$HITS" -gt 0 ]; then
+                echo "::warning::$f — 금지 단어 포함 ($HITS건)"
+                grep -En "$PATTERNS" "$f" | head -3
+                FOUND=$((FOUND + HITS))
+              fi
+            fi
+          done
+          if [ "$FOUND" -gt 0 ]; then
+            echo "::error::금지 단어 총 $FOUND건 발견. QBR/AskUserQuestion/0.5판/뼈대 깔기 사용 금지"
+            exit 1
+          fi
+          echo "금지 단어 0건"
