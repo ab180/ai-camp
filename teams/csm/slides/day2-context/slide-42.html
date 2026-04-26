@@ -2,63 +2,73 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S42 B6 연결</title>
+<title>Day 2 · S41 첫 호출 · 70% 판단</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; flex: 1; margin-top: 14pt; }
-  .col { padding: 16pt 20pt; border-radius: 14pt; display: flex; flex-direction: column; gap: 10pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .col.cream .tag { color: #b45a34; }
-  .col.terra .tag { color: #f2cdb4; }
-  .col h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .col ul { list-style: none; display: flex; flex-direction: column; gap: 7pt; }
-  .col li { font-size: 10.5pt; line-height: 1.55; padding-left: 16pt; position: relative; }
-  .col.cream li { color: #42332a; }
-  .col.terra li { color: #f5e4d4; }
-  .col li::before { content: ""; position: absolute; left: 0; top: 7pt; width: 6pt; height: 6pt; border-radius: 50%; }
-  .col.cream li::before { background: #b45a34; }
-  .col.terra li::before { background: #f2cdb4; }
-  .col li strong { font-weight: 600; }
-  .col.cream li strong { color: #b45a34; }
-  .col.terra li strong { color: #fff; }
-  .closing { margin-top: 12pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.6; }
-  .closing strong { color: #fff; font-weight: 700; }
+  .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
+  .term { background: #1a1410; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 6pt; overflow: hidden; }
+  .term .bar { display: flex; gap: 6pt; margin-bottom: 3pt; }
+  .term .bar span { width: 8pt; height: 8pt; border-radius: 50%; background: #3a2e22; }
+  .term .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
+  .term .cmd strong { color: #fff; }
+  .term .sep { border-top: 1px dashed rgba(255,255,255,0.15); margin: 3pt 0; }
+  .term .out { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.55; color: #9cc4a0; }
+  .term .out strong { color: #fff; }
+  .term .out .bullet { color: #d8c9b0; }
+  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; }
+  .judge { display: flex; flex-direction: column; gap: 7pt; overflow: hidden; }
+  .card { padding: 9pt 12pt; border-radius: 10pt; display: flex; flex-direction: column; gap: 3pt; background: #ebe1d2; }
+  .card.terra { background: #c56a4a; color: #f7efe4; }
+  .card .tag { font-size: 8pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .card:not(.terra) .tag { color: #b45a34; }
+  .card.terra .tag { color: #f2cdb4; }
+  .card h5 { font-size: 10.5pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
+  .card:not(.terra) h5 { color: #2b2520; }
+  .card.terra h5 { color: #fff; }
+  .card .body { font-size: 9pt; line-height: 1.5; }
+  .card:not(.terra) .body { color: #42332a; }
+  .card.terra .body { color: #f5e4d4; }
+  .card .body strong { font-weight: 600; }
+  .card:not(.terra) .body strong { color: #b45a34; }
+  .card.terra .body strong { color: #fff; }
+  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; border-left: 3pt solid #c56a4a; flex-shrink: 0; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">다음 블록 연결</div>
-  <div class="h-large">내 스킬, <em>팀과 나누려면?</em></div>
+  <div class="eyebrow">검증 · 3분</div>
+  <div class="h-large">한 번 호출해보고 — <em>첫 결과는 70%면 정상</em></div>
   <div class="rule"></div>
-  <div class="intro">방금 만든 SKILL.md는 지금 <strong>내 컴퓨터에만</strong> 있다. 세션 끄고 내일 켜면 그대로 있지만, 짝꿍이나 팀원이 쓰려면 <strong>어디에 어떻게 올릴지</strong>가 필요하다.</div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="tag">지금 상태</div>
-      <h3>로컬에만 있음</h3>
-      <ul>
-        <li>오늘 <strong>내 환경</strong>에서만 작동</li>
-        <li>노트북 바뀌거나 날아가면 <strong>같이 사라짐</strong></li>
-        <li>짝꿍이 "써봐도 돼?"라고 해도 <strong>공유 수단 없음</strong></li>
-        <li>다음 버전을 만들면 <strong>어떤 게 원본인지</strong> 헷갈림</li>
-      </ul>
+  <div class="intro">스킬이 만들어졌으면 <strong>일단 한 번 돌린다</strong>. 결과를 보고 세 가지만 판단.</div>
+  <div class="wrap">
+    <div class="term">
+      <div class="bar"><span></span><span></span><span></span></div>
+      <div class="cmd"><strong>you ▸</strong> /skill extract-meeting-actions 고객=ACME 기간=14</div>
+      <div class="sep"></div>
+      <div class="out"><strong>claude ▸</strong> Notion에서 ACME 회의록 3건 확인.<br><span class="bullet">- API 연동 스펙 문서 공유 (4/14 미팅, 담당 김지영)</span><br><span class="bullet">- SSO 테스트 일정 조율 (4/18 미팅, 5/2 재확인)</span><br><span class="bullet">- 결제 리포트 포맷 확정 (4/20 논의)</span><br><br><strong>원문 링크</strong> 3개 첨부됨.</div>
+      <div class="meta">// 첫 호출 예시</div>
     </div>
-    <div class="col terra">
-      <div class="tag">다음 블록에서</div>
-      <h3>Git에 올리기</h3>
-      <ul>
-        <li>팀 repo에 <strong>commit</strong> 해서 팀 전체 공유</li>
-        <li>짝꿍이 <strong>clone</strong> 하면 즉시 같은 스킬 사용</li>
-        <li>수정 이력이 자동 기록 — <strong>어제 버전으로</strong> 돌아가기 가능</li>
-        <li>다른 팀원이 개선해 <strong>PR</strong>로 제안 가능</li>
-      </ul>
+    <div class="judge">
+      <div class="card">
+        <div class="tag">판단 01</div>
+        <h5>구조가 스펙대로?</h5>
+        <div class="body">bullet <strong>3개</strong> 요청했는데 3개 나왔나. 형태가 일정하면 O.</div>
+      </div>
+      <div class="card terra">
+        <div class="tag">판단 02</div>
+        <h5>MCP 실제 호출?</h5>
+        <div class="body">Notion·Slack 등 <strong>도구 접근 흔적</strong>이 있나. "정보 없음"이면 연결 점검.</div>
+      </div>
+      <div class="card">
+        <div class="tag">판단 03</div>
+        <h5>70% 쓸만한가?</h5>
+        <div class="body">조금 다듬으면 <strong>실제 메일에 쓸</strong> 수 있는 수준이면 합격.</div>
+      </div>
     </div>
   </div>
-  <div class="closing">다음 블록 <strong>Git / Github</strong> — 오늘 만든 스킬을 팀 자산으로 넘기는 15분.</div>
+  <div class="foot">70% 미만이면 <strong>Day 3 Deep Interview</strong>에서 다듬는다. 70% 이상이면 오늘의 승리.</div>
 </body>
 </html>

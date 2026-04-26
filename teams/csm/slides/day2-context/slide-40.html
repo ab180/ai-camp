@@ -2,71 +2,65 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S40 받은 SKILL.md 열어보기</title>
+<title>Day 2 · S39 Claude에게 스킬 만들게 시키기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; min-height: 0; }
-  .term { background: #1a1410; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 6pt; overflow: hidden; }
-  .term .bar { display: flex; gap: 6pt; margin-bottom: 3pt; }
+  .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 14pt; flex: 1; margin-top: 12pt; }
+  .term { background: #1a1410; border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 9pt; overflow: hidden; }
+  .term .bar { display: flex; gap: 6pt; margin-bottom: 2pt; }
   .term .bar span { width: 8pt; height: 8pt; border-radius: 50%; background: #3a2e22; }
-  .term .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
-  .term .cmd strong { color: #fff; }
-  .term .sep { border-top: 1px dashed rgba(255,255,255,0.15); margin: 3pt 0; }
-  .term .out { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.5; color: #d8c9b0; }
-  .term .out .frontmatter { color: #9cc4a0; }
-  .term .out .key { color: #f2cdb4; }
-  .term .out .val { color: #fff; }
-  .term .out .plain { color: #d8c9b0; }
-  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; }
-  .guide { display: flex; flex-direction: column; gap: 8pt; overflow: hidden; }
-  .card { padding: 10pt 13pt; border-radius: 10pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; }
+  .term .turn { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; }
+  .term .you { color: #f2cdb4; }
+  .term .you strong { color: #fff; }
+  .term .claude { color: #9cc4a0; }
+  .term .claude strong { color: #fff; }
+  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: 4pt; }
+  .cards { display: flex; flex-direction: column; gap: 9pt; }
+  .card { padding: 13pt 16pt; border-radius: 11pt; background: #ebe1d2; display: flex; flex-direction: column; }
   .card.terra { background: #c56a4a; color: #f7efe4; }
   .card .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
   .card:not(.terra) .tag { color: #b45a34; }
   .card.terra .tag { color: #f2cdb4; }
-  .card h4 { font-size: 11pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
+  .card h4 { font-size: 12pt; font-weight: 600; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.3; }
   .card:not(.terra) h4 { color: #2b2520; }
   .card.terra h4 { color: #fff; }
-  .card .body { font-size: 9.5pt; line-height: 1.55; }
+  .card .body { font-size: 9.5pt; line-height: 1.55; margin-top: 6pt; }
   .card:not(.terra) .body { color: #42332a; }
   .card.terra .body { color: #f5e4d4; }
-  .card .body strong { font-weight: 600; }
-  .card:not(.terra) .body strong { color: #b45a34; }
+  .card .body strong { color: #b45a34; font-weight: 600; }
   .card.terra .body strong { color: #fff; }
-  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; border-left: 3pt solid #c56a4a; flex-shrink: 0; }
-  .foot strong { color: #b45a34; }
+  .closing { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; }
+  .closing strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">확인 · 2분</div>
-  <div class="h-large">Claude가 만든 <em>SKILL.md를 열어본다</em></div>
+  <div class="eyebrow">실행 · 5분</div>
+  <div class="h-large">"이 스펙대로 스킬 만들어줘" — <em>명령 한 줄</em></div>
   <div class="rule"></div>
-  <div class="intro">파일을 <strong>읽을 수 있어야</strong> 내일 고칠 수 있다. 구조가 어떻게 생겼는지 한 번 훑기.</div>
+  <div class="intro">Claude Code 세션에서 스펙 5줄을 그대로 붙여넣고 "만들어줘"라고 한다. SKILL.md 파일이 <strong>1분 안에</strong> 생성된다.</div>
   <div class="wrap">
     <div class="term">
       <div class="bar"><span></span><span></span><span></span></div>
-      <div class="cmd"><strong>you ▸</strong> cat .claude/skills/extract-meeting-actions/SKILL.md</div>
-      <div class="sep"></div>
-      <div class="out"><span class="frontmatter">---</span><br><span class="key">name:</span> <span class="val">extract-meeting-actions</span><br><span class="key">description:</span> <span class="val">고객 리캡 메일 쓰기 전 최근 미팅 액션 추출</span><br><span class="frontmatter">---</span></div>
-      <div class="out"><br><span class="plain">## When to use</span><br><span class="plain">- 고객 리캡 메일 작성 전</span><br><span class="plain">- 지난 2주 액션 아이템 정리 필요 시</span><br><br><span class="plain">## Steps</span><br><span class="plain">1. Notion 해당 고객 회의록 폴더 조회</span><br><span class="plain">2. 지정 기간 내 미팅 노트 수집</span><br><span class="plain">3. 액션 bullet 3-5개 추출 + 원문 링크</span></div>
-      <div class="meta">// 파일 1개 · 20줄 내외</div>
+      <div class="turn you"><strong>you ▸</strong> .claude/skills/extract-meeting-actions/SKILL.md<br>만들어줘. 스펙:<br>- 언제: 고객 리캡 메일 쓰기 전<br>- 입력: 고객명, 기간(일수)<br>- 출력: 액션 bullet 3-5개 + 원문 링크<br>- MCP: Notion</div>
+      <div class="turn claude"><strong>claude ▸</strong> SKILL.md 작성 완료.<br>사용법: /skill extract-meeting-actions<br>예) /skill extract-meeting-actions 고객=ACME 기간=14</div>
+      <div class="meta">// Claude Code 세션 예시</div>
     </div>
-    <div class="guide">
+    <div class="cards">
       <div class="card">
-        <div class="tag">윗부분 · frontmatter</div>
-        <h4>name · description</h4>
-        <div class="body">두 줄이 <strong>트리거</strong>. Claude가 "언제 이 스킬을 쓸지" 판단하는 기준.</div>
+        <div class="tag">Claude가 만드는 것</div>
+        <h4>파일 1개 · 예시 호출</h4>
+        <div class="body"><strong>SKILL.md</strong> 한 장. 내부에 스펙·호출 예시·MCP 사용법이 자동으로 적힌다.</div>
       </div>
       <div class="card terra">
-        <div class="tag">아랫부분 · 본문</div>
-        <h4>When to use · Steps</h4>
-        <div class="body">실제 <strong>동작 지시</strong>. 여기가 결과 품질을 좌우. 고치고 싶으면 이 부분을 본다.</div>
+        <div class="tag">내가 할 일</div>
+        <h4>읽기 · 한 번 돌려보기</h4>
+        <div class="body">파일 열어 <strong>내용 한 번 훑기</strong> + 예시대로 <strong>한 번 실행</strong>. 결과 품질 판단.</div>
       </div>
     </div>
   </div>
-  <div class="foot">읽을 수 있어야 <strong>내일 고칠 수 있다</strong>. 지금은 훑기만.</div>
+  <div class="closing">첫 실행 결과는 <strong>70%만 쓸만하면 정상</strong>. 스킬 다듬기는 내일(Day 3)에서 Clarify·AskUserQuestion으로.</div>
 </body>
 </html>

@@ -2,33 +2,35 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S41 첫 호출 · 70% 판단</title>
+<title>Day 2 · S40 받은 SKILL.md 열어보기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
+  .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; min-height: 0; }
   .term { background: #1a1410; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 6pt; overflow: hidden; }
   .term .bar { display: flex; gap: 6pt; margin-bottom: 3pt; }
   .term .bar span { width: 8pt; height: 8pt; border-radius: 50%; background: #3a2e22; }
   .term .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
   .term .cmd strong { color: #fff; }
   .term .sep { border-top: 1px dashed rgba(255,255,255,0.15); margin: 3pt 0; }
-  .term .out { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.55; color: #9cc4a0; }
-  .term .out strong { color: #fff; }
-  .term .out .bullet { color: #d8c9b0; }
+  .term .out { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.5; color: #d8c9b0; }
+  .term .out .frontmatter { color: #9cc4a0; }
+  .term .out .key { color: #f2cdb4; }
+  .term .out .val { color: #fff; }
+  .term .out .plain { color: #d8c9b0; }
   .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; }
-  .judge { display: flex; flex-direction: column; gap: 7pt; overflow: hidden; }
-  .card { padding: 9pt 12pt; border-radius: 10pt; display: flex; flex-direction: column; gap: 3pt; background: #ebe1d2; }
+  .guide { display: flex; flex-direction: column; gap: 8pt; overflow: hidden; }
+  .card { padding: 10pt 13pt; border-radius: 10pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; }
   .card.terra { background: #c56a4a; color: #f7efe4; }
-  .card .tag { font-size: 8pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .card .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
   .card:not(.terra) .tag { color: #b45a34; }
   .card.terra .tag { color: #f2cdb4; }
-  .card h5 { font-size: 10.5pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
-  .card:not(.terra) h5 { color: #2b2520; }
-  .card.terra h5 { color: #fff; }
-  .card .body { font-size: 9pt; line-height: 1.5; }
+  .card h4 { font-size: 11pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
+  .card:not(.terra) h4 { color: #2b2520; }
+  .card.terra h4 { color: #fff; }
+  .card .body { font-size: 9.5pt; line-height: 1.55; }
   .card:not(.terra) .body { color: #42332a; }
   .card.terra .body { color: #f5e4d4; }
   .card .body strong { font-weight: 600; }
@@ -39,36 +41,32 @@
 </style>
 </head>
 <body>
-  <div class="eyebrow">검증 · 3분</div>
-  <div class="h-large">한 번 호출해보고 — <em>첫 결과는 70%면 정상</em></div>
+  <div class="eyebrow">확인 · 2분</div>
+  <div class="h-large">Claude가 만든 <em>SKILL.md를 열어본다</em></div>
   <div class="rule"></div>
-  <div class="intro">스킬이 만들어졌으면 <strong>일단 한 번 돌린다</strong>. 결과를 보고 세 가지만 판단.</div>
+  <div class="intro">파일을 <strong>읽을 수 있어야</strong> 내일 고칠 수 있다. 구조가 어떻게 생겼는지 한 번 훑기.</div>
   <div class="wrap">
     <div class="term">
       <div class="bar"><span></span><span></span><span></span></div>
-      <div class="cmd"><strong>you ▸</strong> /skill extract-meeting-actions 고객=ACME 기간=14</div>
+      <div class="cmd"><strong>you ▸</strong> cat .claude/skills/extract-meeting-actions/SKILL.md</div>
       <div class="sep"></div>
-      <div class="out"><strong>claude ▸</strong> Notion에서 ACME 회의록 3건 확인.<br><span class="bullet">- API 연동 스펙 문서 공유 (4/14 미팅, 담당 김지영)</span><br><span class="bullet">- SSO 테스트 일정 조율 (4/18 미팅, 5/2 재확인)</span><br><span class="bullet">- 결제 리포트 포맷 확정 (4/20 논의)</span><br><br><strong>원문 링크</strong> 3개 첨부됨.</div>
-      <div class="meta">// 첫 호출 예시</div>
+      <div class="out"><span class="frontmatter">---</span><br><span class="key">name:</span> <span class="val">extract-meeting-actions</span><br><span class="key">description:</span> <span class="val">고객 리캡 메일 쓰기 전 최근 미팅 액션 추출</span><br><span class="frontmatter">---</span></div>
+      <div class="out"><br><span class="plain">## When to use</span><br><span class="plain">- 고객 리캡 메일 작성 전</span><br><span class="plain">- 지난 2주 액션 아이템 정리 필요 시</span><br><br><span class="plain">## Steps</span><br><span class="plain">1. Notion 해당 고객 회의록 폴더 조회</span><br><span class="plain">2. 지정 기간 내 미팅 노트 수집</span><br><span class="plain">3. 액션 bullet 3-5개 추출 + 원문 링크</span></div>
+      <div class="meta">// 파일 1개 · 20줄 내외</div>
     </div>
-    <div class="judge">
+    <div class="guide">
       <div class="card">
-        <div class="tag">판단 01</div>
-        <h5>구조가 스펙대로?</h5>
-        <div class="body">bullet <strong>3개</strong> 요청했는데 3개 나왔나. 형태가 일정하면 O.</div>
+        <div class="tag">윗부분 · frontmatter</div>
+        <h4>name · description</h4>
+        <div class="body">두 줄이 <strong>트리거</strong>. Claude가 "언제 이 스킬을 쓸지" 판단하는 기준.</div>
       </div>
       <div class="card terra">
-        <div class="tag">판단 02</div>
-        <h5>MCP 실제 호출?</h5>
-        <div class="body">Notion·Slack 등 <strong>도구 접근 흔적</strong>이 있나. "정보 없음"이면 연결 점검.</div>
-      </div>
-      <div class="card">
-        <div class="tag">판단 03</div>
-        <h5>70% 쓸만한가?</h5>
-        <div class="body">조금 다듬으면 <strong>실제 메일에 쓸</strong> 수 있는 수준이면 합격.</div>
+        <div class="tag">아랫부분 · 본문</div>
+        <h4>When to use · Steps</h4>
+        <div class="body">실제 <strong>동작 지시</strong>. 여기가 결과 품질을 좌우. 고치고 싶으면 이 부분을 본다.</div>
       </div>
     </div>
   </div>
-  <div class="foot">70% 미만이면 <strong>Day 3 Deep Interview</strong>에서 다듬는다. 70% 이상이면 오늘의 승리.</div>
+  <div class="foot">읽을 수 있어야 <strong>내일 고칠 수 있다</strong>. 지금은 훑기만.</div>
 </body>
 </html>

@@ -2,61 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S22 첫날 vs 마지막날</title>
+<title>Day 4 · S21 6축 해설</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .pane { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
-  .pane.d1 { background: #ebe1d2; }
-  .pane.d4 { background: #c56a4a; color: #f7efe4; }
-  .pane .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .pane.d1 .tag { color: #a0917e; }
-  .pane.d4 .tag { color: #f2cdb4; }
-  .pane h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
-  .pane.d1 h3 { color: #2b2520; }
-  .pane.d4 h3 { color: #fff; }
-  .pane ul { font-size: 11pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
-  .pane.d1 ul { color: #42332a; }
-  .pane.d4 ul { color: #f5e4d4; }
-  .pane ul li::marker { color: #b45a34; }
-  .pane.d4 ul li::marker { color: #f2cdb4; }
-  .pane ul li strong { font-weight: 600; }
-  .pane.d1 ul li strong { color: #2b2520; }
-  .pane.d4 ul li strong { color: #fff; }
-  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8pt; flex: 1; margin-top: 10pt; }
+  .card { background: #ebe1d2; border-radius: 10pt; padding: 12pt 14pt; display: flex; flex-direction: column; gap: 4pt; }
+  .card .num { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .card h4 { font-size: 14pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.2; }
+  .card p { font-size: 10pt; color: #42332a; line-height: 1.5; }
+  .card p strong { color: #2b2520; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">비교 프레임 · 짝꿍 대화 인풋</div>
-  <div class="h-large">첫날 올린 것 vs <em>오늘</em> 내 결과물</div>
+  <div class="eyebrow">축별 해설 · X 나왔을 때 뭘 해야 하나</div>
+  <div class="h-large">&ldquo;X가 제일 많은 축&rdquo; 하나를 고른다</div>
   <div class="rule"></div>
-  <div class="intro">Day 1 첫 시간에 각자 올린 &ldquo;내가 해결하고 싶은 문제&rdquo; 노트가 있다. 그걸 지금 다시 읽으면서 오늘까지 만든 결과물과 비교한다.</div>
-  <div class="panes">
-    <div class="pane d1">
-      <div class="tag">Day 1 &mdash; 첫 초안</div>
-      <h3>처음 썼을 때</h3>
-      <ul>
-        <li>문제가 <strong>한 문장</strong>으로 안 잡혔다</li>
-        <li>&ldquo;대충 이런 느낌&rdquo; 수준의 기대치</li>
-        <li>어느 도구에서 시작할지 몰랐다</li>
-        <li>AI에게 시키는 범위가 <strong>너무 컸다</strong></li>
-      </ul>
+  <div class="intro">X가 여러 개여도 괜찮다. <strong>동시에 다 잡지 않는다</strong>. 가장 많이 X 나온 한 축을 골라 2주 프로젝트의 중심축으로 쓴다.</div>
+  <div class="grid">
+    <div class="card">
+      <div class="num">축 1 · 구조</div>
+      <h4>CLAUDE.md 부족</h4>
+      <p>담당 고객 리스트 · 톤 · 금지어 중 <strong>하나를 이번 주 추가</strong>.</p>
     </div>
-    <div class="pane d4">
-      <div class="tag">Day 4 &mdash; 오늘 결과물</div>
-      <h3>지금 가진 것</h3>
-      <ul>
-        <li>CLAUDE.md에 적어둔 <strong>고정 맥락</strong></li>
-        <li>MCP 1개 이상 연결 상태</li>
-        <li>동작하는 <strong>스킬 1개</strong></li>
-        <li>까다로운 고객 피드백 1건</li>
-      </ul>
+    <div class="card">
+      <div class="num">축 2 · 맥락</div>
+      <h4>MCP 미연결</h4>
+      <p>Gmail · Notion · Slack 중 <strong>한 개</strong>라도 실제 업무에 연결.</p>
+    </div>
+    <div class="card">
+      <div class="num">축 3 · 계획</div>
+      <h4>바로 실행 습관</h4>
+      <p>큰 작업 앞에 <strong>Deep Interview 5분</strong>을 의식적으로.</p>
+    </div>
+    <div class="card">
+      <div class="num">축 4 · 실행</div>
+      <h4>스킬 미사용</h4>
+      <p>Day 3 스킬을 <strong>진짜 고객 케이스 1건</strong>에 써보기.</p>
+    </div>
+    <div class="card">
+      <div class="num">축 5 · 검증</div>
+      <h4>외부 눈 없음</h4>
+      <p>까다로운 고객 에이전트에 <strong>초안 2건</strong> 넘겨보기.</p>
+    </div>
+    <div class="card">
+      <div class="num">축 6 · 개선</div>
+      <h4>되먹임 없음</h4>
+      <p>피드백 3번 반복된 지적 1개를 <strong>rules에 추가</strong>.</p>
     </div>
   </div>
-  <div class="foot">짝꿍에게 3분씩 <strong>&ldquo;내가 이만큼 바뀌었다&rdquo;</strong>를 읽어준다. 듣는 쪽은 X 축 하나를 같이 골라준다.</div>
+  <div class="foot">2주 프로젝트의 주인공은 <strong>가장 X가 많은 축 1개</strong>. 나머지는 자연스럽게 따라온다.</div>
 </body>
 </html>

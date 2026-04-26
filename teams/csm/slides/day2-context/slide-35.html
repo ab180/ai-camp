@@ -2,49 +2,54 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S35 스킬로 만들 Step 1개 고르기</title>
+<title>Day 2 · S34 짝꿍 교환 점검</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .criteria { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 14pt; }
-  .card { padding: 16pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
-  .card .num { font-family: 'SF Mono', Menlo, monospace; font-size: 22pt; font-weight: 600; color: #c56a4a; letter-spacing: -0.01em; }
-  .card h4 { font-size: 13.5pt; font-weight: 600; color: #2b2520; margin-top: 8pt; letter-spacing: -0.005em; line-height: 1.28; }
-  .card .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 10pt; }
-  .card .body strong { color: #b45a34; }
-  .card .check { margin-top: auto; padding-top: 10pt; font-size: 9.5pt; line-height: 1.5; color: #7d6b5a; border-top: 1px dashed #d4c4ac; }
-  .card .check strong { color: #b45a34; font-weight: 600; }
-  .closing { margin-top: 12pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
-  .closing strong { color: #fff; font-weight: 700; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 14pt; }
+  .check { padding: 16pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .check.terra { background: #c56a4a; color: #f7efe4; }
+  .check .num { font-family: 'SF Mono', Menlo, monospace; font-size: 22pt; font-weight: 600; color: #c56a4a; letter-spacing: -0.01em; }
+  .check.terra .num { color: #fff; opacity: 0.85; }
+  .check h4 { font-size: 13pt; font-weight: 600; color: #2b2520; margin-top: 8pt; letter-spacing: -0.005em; line-height: 1.28; }
+  .check.terra h4 { color: #fff; }
+  .check .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 10pt; }
+  .check.terra .body { color: #f5e4d4; }
+  .check .body strong { color: #b45a34; font-weight: 600; }
+  .check.terra .body strong { color: #fff; }
+  .check .example { margin-top: auto; padding-top: 10pt; font-size: 9pt; line-height: 1.5; color: #7d6b5a; border-top: 1px dashed #d4c4ac; font-family: 'SF Mono', Menlo, monospace; }
+  .check.terra .example { color: #f2cdb4; border-top-color: rgba(255,255,255,0.3); }
+  .foot { margin-top: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">선택 기준</div>
-  <div class="h-large">이 <em>3가지 기준</em>으로 Step 하나만 고른다</div>
+  <div class="eyebrow">짝꿍 · 2분</div>
+  <div class="h-large">짝꿍 Step 읽어보기 — <em>한 번에 이해되면 합격</em></div>
   <div class="rule"></div>
-  <div class="intro">4-5개 쪼갠 Step 중 <strong>오늘 스킬로 만들 1개</strong>를 고른다. 모호하게 "제일 귀찮은 것"으로 고르지 않는다. 아래 3가지로 판단한다.</div>
-  <div class="criteria">
-    <div class="card">
+  <div class="intro">본인 Step을 <strong>짝꿍에게 보여주고</strong> 세 가지만 물어본다. 읽는 사람이 한 번에 이해 못 하면 쪼개기가 덜 된 것.</div>
+  <div class="checks">
+    <div class="check">
       <div class="num">01</div>
-      <h4>반복 빈도</h4>
-      <div class="body">주 <strong>2회 이상</strong> 반복하는 Step인가? 월 1회짜리는 스킬로 만들어도 다시 안 쓴다.</div>
-      <div class="check"><strong>체크</strong> 지난 한 주에 이 Step 몇 번 했지?</div>
+      <h4>동사로 시작?</h4>
+      <div class="body">각 Step의 첫 단어가 <strong>동사</strong>인가. "추출·비교·수집·정리·확인" 같은 동작.</div>
+      <div class="example">X "미팅 노트"<br>O "미팅 노트 수집"</div>
     </div>
-    <div class="card">
+    <div class="check terra">
       <div class="num">02</div>
-      <h4>입출력 명확</h4>
-      <div class="body">"A 넣으면 B 나옴"이 <strong>한 줄로</strong> 적히는가? 결과 모양이 매번 달라지면 스킬 안 만들어진다.</div>
-      <div class="check"><strong>체크</strong> 출력 형태를 bullet 3개·표·문장 등으로 고정할 수 있나?</div>
+      <h4>입력 → 출력?</h4>
+      <div class="body"><strong>무엇을 넣고 무엇이 나오는지</strong> 한 줄로 짝꿍이 떠올릴 수 있나.</div>
+      <div class="example">입력: 고객명+기간<br>출력: 액션 3-5개</div>
     </div>
-    <div class="card">
+    <div class="check">
       <div class="num">03</div>
-      <h4>도구 연결</h4>
-      <div class="body">필요한 정보가 <strong>연결된 MCP</strong>(SFDC·Slack·Notion·Gmail)에서 닿는가? 아직 연결 안 했으면 먼저 그 MCP부터.</div>
-      <div class="check"><strong>체크</strong> 어느 MCP를 써야 이 Step이 돌까?</div>
+      <h4>반복 업무?</h4>
+      <div class="body">이번 한 번만이 아니라 <strong>매주·매달</strong> 도는 일인가. 일회성은 스킬 대상 아님.</div>
+      <div class="example">O 주 3회 리캡<br>X 올해 한 번 제안서</div>
     </div>
   </div>
-  <div class="closing">세 가지 다 <strong>예</strong>면 오늘의 스킬. 하나라도 안 맞으면 다음 Step으로 넘어가서 재검토.</div>
+  <div class="foot">짝꿍이 <strong>"이게 뭐 하는 거야?"</strong> 되묻는 Step은 쪼개기가 덜 된 것. 한 번 더 다듬기.</div>
 </body>
 </html>

@@ -2,69 +2,35 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S45 부록</title>
+<title>Day 4 · S44 마무리</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
-  .box { background: #ebe1d2; border-radius: 12pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 5pt; }
-  .box h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .box ul { font-size: 10pt; line-height: 1.5; color: #42332a; padding-left: 12pt; margin: 0; }
-  .box ul li::marker { color: #b45a34; }
-  .box ul li strong { color: #2b2520; font-weight: 600; }
-  .box ul li code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: #fff; padding: 1pt 4pt; border-radius: 3pt; }
-  .box .path { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; color: #b45a34; background: #fff; padding: 4pt 8pt; border-radius: 5pt; }
-  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.5; flex-shrink: 0; }
-  .foot strong { color: #fff; font-weight: 700; }
+  body { background: #2b2520; color: #f5e4d4; display: flex; flex-direction: column; justify-content: space-between; padding: 40pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .label { font-size: 10pt; letter-spacing: 0.3em; color: #c56a4a; font-weight: 600; text-transform: uppercase; }
+  .top .day { font-size: 10pt; letter-spacing: 0.2em; color: rgba(245,228,212,0.5); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 22pt; }
+  .mid h1 { font-size: 44pt; font-weight: 500; color: #fff; line-height: 1.2; letter-spacing: -0.02em; }
+  .mid h1 em { font-style: normal; color: #f2cdb4; }
+  .mid .sub { font-size: 14pt; font-weight: 400; color: #d4c4ac; line-height: 1.7; max-width: 600pt; }
+  .mid .sub strong { color: #f5e4d4; font-weight: 600; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: rgba(245,228,212,0.6); letter-spacing: 0.08em; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 8pt; }
+  .bot .tag { font-size: 12pt; color: #c56a4a; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">부록 &middot; Appendix</div>
-  <div class="h-large">운영진이 배포하는 자료</div>
-  <div class="rule"></div>
-  <div class="intro">캠프 끝나고 2주 프로젝트 기간에 참고할 자료. 팀 repo 안 <strong>docs/</strong> 폴더에 모두 배포.</div>
-  <div class="grid">
-    <div class="box">
-      <h3>1. 까다로운 고객 에이전트</h3>
-      <div class="path">agents/picky-customer/AGENT.md</div>
-      <ul>
-        <li>페르소나 · rubric · 출력 포맷 <strong>전문</strong></li>
-        <li>CSM 맥락 프리셋 3종 (신규 / 운영 / 갱신)</li>
-        <li>설치: <code>/picky-customer</code> 슬래시 스킬로 바로 호출</li>
-        <li>캘리브레이션 가이드 &mdash; 너무 혹독할 때 조정법</li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>2. 6축 O/X 체크리스트</h3>
-      <div class="path">docs/6-axes-checklist.md</div>
-      <ul>
-        <li>오늘 B2에서 쓴 표 원본 (마크다운)</li>
-        <li>2주 후 재점검용 빈 양식</li>
-        <li>축별 보강 가이드 (축 1~6 각 1페이지)</li>
-        <li>본인 O/X 결과는 <strong>짝꿍에게만 공유</strong></li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>3. 팀 repo 템플릿</h3>
-      <div class="path">github.com/ab180/csm-claude-skills</div>
-      <ul>
-        <li>README · CONTRIBUTING · SKILL.md 양식</li>
-        <li>base skills 2~3개 선탑재 (리캡 메일 등)</li>
-        <li>PR 템플릿 · 리뷰 체크리스트</li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>4. MCP · Git 트러블슈팅</h3>
-      <div class="path">docs/troubleshooting.md</div>
-      <ul>
-        <li>2기 / 1기에서 자주 막혔던 지점 정리</li>
-        <li>권한 · 토큰 · <strong>OAuth 재인증</strong> 순서</li>
-        <li>막히면 공유 Slack 스레드 탭</li>
-      </ul>
-    </div>
+  <div class="top">
+    <div class="label">End of Day 4</div>
+    <div class="day">AI Camp 3기 &middot; CSM</div>
   </div>
-  <div class="foot">모든 자료는 <strong>오늘 끝나고 1시간 내</strong>로 공유 Slack 채널에 링크 고정. 질문은 그 스레드에 모은다.</div>
+  <div class="mid">
+    <h1>만든 것보다<br><em>쓰면서 고친 것</em>이<br>팀에 남는다.</h1>
+    <div class="sub">오늘 업로드한 스킬 1개가 오늘의 가치가 아니다. <strong>2주 후 내가 그걸 3번 쓰고, 1번 고쳤다는 사실</strong>이 가치다. 거기서부터 복리가 돈다.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">다음 일정 &mdash; 5/15(금) 발표회 &middot; 2주 후 회고</div>
+    <div class="tag">&#9679;</div>
+  </div>
 </body>
 </html>

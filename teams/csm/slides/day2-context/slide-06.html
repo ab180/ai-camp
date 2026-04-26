@@ -2,59 +2,33 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S06 동일 프롬프트 · 맥락 없음 (STEP 1/4)</title>
+<title>Day 2 · S05 B1 섹션 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .step-badge {
-    position: absolute; top: 10pt; right: 16pt;
-    font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;
-    color: #a0917e; padding: 3pt 9pt; border: 1px solid #d4c4ac; border-radius: 20pt;
-    white-space: nowrap;
-  }
-  .step-badge strong { color: #b45a34; font-weight: 700; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .prompt-box { margin-top: 12pt; padding: 14pt 18pt; background: #1a1410; border-radius: 10pt; display: flex; align-items: center; gap: 10pt; }
-  .prompt-box .label { font-size: 8.5pt; letter-spacing: 0.22em; color: #d4a88c; font-weight: 600; text-transform: uppercase; }
-  .prompt-box .p-text { font-family: 'SF Mono', Menlo, monospace; font-size: 12pt; color: #f5e4d4; letter-spacing: -0.005em; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .col { padding: 13pt 15pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.ghost { background: #ebe1d2; opacity: 0.45; }
-  .col .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; color: #a0917e; text-transform: uppercase; }
-  .col h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
-  .col .body { font-size: 9.8pt; line-height: 1.6; color: #42332a; }
-  .col .body strong { color: #b45a34; font-weight: 600; }
-  .col .placeholder { font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #7d6b5a; background: rgba(255,255,255,0.5); padding: 7pt 10pt; border-radius: 6pt; line-height: 1.55; }
-  .closing { margin-top: 9pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .closing strong { color: #fff; font-weight: 700; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 560pt; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="step-badge">STEP <strong>1</strong> / 4</div>
-  <div class="eyebrow">프롬프트 실험</div>
-  <div class="h-large">"리캡 메일 초안 써줘" — <em>맥락 없이 던지면?</em></div>
-  <div class="rule"></div>
-  <div class="intro">동일 프롬프트를 맥락 없이 던져본다. AI가 어떤 <strong>기본값</strong>으로 답하는지 확인.</div>
-  <div class="prompt-box">
-    <div class="label">프롬프트</div>
-    <div class="p-text">"최근 미팅 기준 리캡 메일 써줘"</div>
+  <div class="top">
+    <div class="block">Block 1</div>
+    <div class="time">15 min</div>
   </div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="tag">AI에게 주어진 것</div>
-      <h3>프롬프트 한 줄뿐</h3>
-      <div class="body">고객 이름 <strong>없음</strong> · 계약 구조 <strong>없음</strong> · 지난 달 논의 <strong>없음</strong> · 톤 지정 <strong>없음</strong>.</div>
-      <div class="body">AI가 쓸 수 있는 재료는 자기 학습 데이터의 "일반 SaaS 리캡 메일 구조"뿐.</div>
-    </div>
-    <div class="col ghost">
-      <div class="tag">예상 결과 · 다음 장에서 대조</div>
-      <h3>일반 SaaS 템플릿</h3>
-      <div class="placeholder">Hi [Customer],<br>Thanks for the great meeting.<br>Here's a recap...<br>Next step: follow-up call.</div>
-      <div class="body">어느 고객사에나 <strong>똑같이 쓸 수 있는 뼈대</strong> · "쓸 만해 보이지만 내 것 같지 않다".</div>
-    </div>
+  <div class="mid">
+    <h1>맥락의 힘 —<br>같은 질문, 다른 맥락</h1>
+    <div class="sub">"같은 말"을 두 고객에게 써보면 맥락이 답을 어떻게 바꾸는지 보인다. 다음 블록부터 MCP로 그 맥락을 실제로 연결한다.</div>
   </div>
-  <div class="closing"><strong>"쓸 만해 보이지만 내 것 같지 않다"</strong> — 이게 맥락 없는 답의 한계. 다음 두 장에서 같은 프롬프트에 맥락을 한 장씩 더한다.</div>
+  <div class="bot">
+    <div class="meta">같은 프롬프트 · 두 고객 비교</div>
+    <div class="count">5 slides</div>
+  </div>
 </body>
 </html>

@@ -2,59 +2,33 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S09 Generator 아닌 Evaluator</title>
+<title>Day 4 · S08 B1 섹션 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .col { padding: 18pt 20pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 10pt; }
-  .col.g { background: #ebe1d2; }
-  .col.e { background: #c56a4a; color: #f7efe4; }
-  .col .role { font-size: 10pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .col.g .role { color: #a0917e; }
-  .col.e .role { color: #f2cdb4; }
-  .col .name { font-size: 20pt; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
-  .col.g .name { color: #2b2520; }
-  .col.e .name { color: #fff; }
-  .col ul { font-size: 11.5pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
-  .col.g ul { color: #42332a; }
-  .col.e ul { color: #f5e4d4; }
-  .col ul li::marker { color: #b45a34; }
-  .col.e ul li::marker { color: #f2cdb4; }
-  .col ul li strong { font-weight: 600; }
-  .col.g ul li strong { color: #2b2520; }
-  .col.e ul li strong { color: #fff; }
-  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 560pt; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">원리 1 · 역할 분리</div>
-  <div class="h-large">만든 쪽과 <em>점검하는 쪽</em>은 다른 역할</div>
-  <div class="rule"></div>
-  <div class="intro">AI에게 동일 세션에서 &ldquo;네가 쓴 초안 네가 검토해줘&rdquo;라고 하면 대부분 <strong>칭찬 위주</strong>가 된다. 자기 결과에 편향이 있다. 사람도 같다.</div>
-  <div class="compare">
-    <div class="col g">
-      <div class="role">Generator · 만드는 쪽</div>
-      <div class="name">내 스킬이 만든 초안</div>
-      <ul>
-        <li>나한테는 <strong>그럴듯</strong>해 보인다</li>
-        <li>맥락이 머릿속에 이미 있다</li>
-        <li>빈 자리를 내가 메운다</li>
-      </ul>
-    </div>
-    <div class="col e">
-      <div class="role">Evaluator · 점검하는 쪽</div>
-      <div class="name">별도 에이전트가 읽음</div>
-      <ul>
-        <li>고객 <strong>페르소나</strong>로 읽는다</li>
-        <li>채점 기준이 명시돼 있다</li>
-        <li>지적 · 근거 · 제안을 포맷으로 낸다</li>
-      </ul>
-    </div>
+  <div class="top">
+    <div class="block">Block 1 · 축 5 검증</div>
+    <div class="time">30 min</div>
   </div>
-  <div class="foot">규칙 — <strong>만든 쪽과 점검하는 쪽이 같으면 검증이 아니라 자기 확신</strong>. 세션을 나누거나 별도 스킬을 쓴다.</div>
+  <div class="mid">
+    <h1>까다로운 고객이<br>내 초안을 읽는다</h1>
+    <div class="sub">운영진이 &ldquo;까다로운 고객&rdquo; 에이전트를 시연한다. 참가자는 자기 Day 3 결과물을 넣고, 피드백을 읽기만 한다. 호출 허들 없이 원리만 체감.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">Generator &ne; Evaluator · 다른 관점이 내 맥락을 드러낸다</div>
+    <div class="count">9 slides</div>
+  </div>
 </body>
 </html>

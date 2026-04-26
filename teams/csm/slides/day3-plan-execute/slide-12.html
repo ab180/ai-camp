@@ -2,28 +2,44 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S12 Ouroboros 한 줄</title>
+<title>Day 3 · S11 Clarify 개념 2/2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; justify-content: center; }
-  .wrap { max-width: 620pt; display: flex; flex-direction: column; gap: 16pt; }
-  .tag { font-size: 11pt; letter-spacing: 0.28em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .h-main { font-size: 34pt; font-weight: 500; color: #2b2520; letter-spacing: -0.01em; line-height: 1.25; }
-  .h-main em { font-style: normal; color: #b45a34; }
-  .rule-c { width: 52pt; height: 3pt; border-radius: 3pt; background: #c56a4a; }
-  .msg { font-size: 13pt; line-height: 1.7; color: #42332a; max-width: 600pt; }
-  .msg strong { color: #b45a34; font-weight: 600; }
-  .accent { margin-top: 6pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; font-size: 12pt; line-height: 1.6; max-width: 600pt; }
-  .accent strong { color: #fff; font-weight: 700; }
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
+  .row { display: grid; grid-template-columns: 1fr auto 1.4fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
+  .row .before { font-size: 11pt; font-weight: 500; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; line-height: 1.4; }
+  .row .arrow { font-size: 14pt; color: #b45a34; font-weight: 700; }
+  .row .after { font-size: 10.5pt; line-height: 1.55; color: #2b2520; }
+  .row .after strong { color: #b45a34; font-weight: 600; }
+  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
+  .closing strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="tag">비유</div>
-    <div class="h-main">오늘 만드는 스킬 =<br><em>내일의 나</em>를 위한 단축키</div>
-    <div class="rule-c"></div>
-    <div class="msg">Clarify를 매번 손으로 하면 피곤하다. 스킬이 내 손을 대신 잡고 <strong>Clarify 질문부터 처리</strong>해준다. 쓸수록 더 잘 쓰이고, 잘 쓰일수록 더 자주 쓰게 된다.</div>
-    <div class="accent">Ouroboros — 내가 만든 게 나를 더 빠르게 만들고, 그 속도가 다시 더 좋은 스킬을 만든다.</div>
+  <div class="eyebrow">개념 · 2/2</div>
+  <div class="h-large">같은 요청, <em>Clarify 전 vs 후</em></div>
+  <div class="rule"></div>
+  <div class="intro">아래 3개는 CSM이 자주 쓰는 요청. 왼쪽은 <strong>바로 실행</strong>한 결과, 오른쪽은 Clarify로 한 겹 다듬은 뒤의 스펙.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="before">"이탈 위험 리포트 써줘"</div>
+      <div class="arrow">→</div>
+      <div class="after"><strong>독자</strong> = 영업팀장 · <strong>핵심 질문 3개</strong> = 언제·왜·어떻게 · <strong>결론 먼저</strong> 포맷</div>
+    </div>
+    <div class="row">
+      <div class="before">"리캡 메일 초안 줘"</div>
+      <div class="arrow">→</div>
+      <div class="after"><strong>상대</strong> = 담당자 1명 · <strong>회의 유형</strong> = 체크업 미팅 · <strong>결정사항 강조</strong> 여부 = Yes</div>
+    </div>
+    <div class="row">
+      <div class="before">"문의 답변 드래프트"</div>
+      <div class="arrow">→</div>
+      <div class="after"><strong>톤</strong> = 실무자 대상 기술 · <strong>회피 표현</strong> = "죄송합니다 단독" · <strong>CTA</strong> 포함</div>
+    </div>
   </div>
+  <div class="closing">Clarify 없는 스킬은 <strong>빠르게 틀린 답</strong>을 만든다. 같은 3초의 질문이 30분의 재작업을 막는다.</div>
 </body>
 </html>

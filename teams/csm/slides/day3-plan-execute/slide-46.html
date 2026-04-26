@@ -2,54 +2,44 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S46 Day 4 예고</title>
+<title>Day 3 · S45 오늘 돌아보기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .col { padding: 16pt 20pt; border-radius: 14pt; display: flex; flex-direction: column; gap: 10pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .col .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .col.cream .label { color: #b45a34; }
-  .col.terra .label { color: #f2cdb4; }
-  .col h3 { font-size: 15pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .col .item { font-size: 10.5pt; line-height: 1.55; padding: 5pt 0; border-top: 1px dashed; }
-  .col.cream .item { border-color: rgba(0,0,0,0.1); color: #42332a; }
-  .col.terra .item { border-color: rgba(255,255,255,0.18); color: #f5e4d4; }
-  .col .item:first-of-type { border-top: none; }
-  .col .item strong { font-weight: 600; }
-  .col.cream .item strong { color: #b45a34; }
-  .col.terra .item strong { color: #fff; }
-  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
-  .closing strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 10pt; margin-top: 12pt; flex: 1; justify-content: center; }
+  .row { display: grid; grid-template-columns: 1fr 24pt 1fr; gap: 14pt; padding: 16pt 22pt; background: #ebe1d2; border-radius: 14pt; align-items: center; }
+  .row .before { font-size: 12pt; color: #7d6b5a; font-style: italic; line-height: 1.4; }
+  .row .arrow { font-size: 16pt; color: #c56a4a; font-weight: 700; text-align: center; }
+  .row .after { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.4; }
+  .row .after strong { color: #b45a34; }
+  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; text-align: center; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">내일 준비물</div>
-  <div class="h-large">Day 4 · <em>검증(축 5) + 개선(축 6) + 팀 공유</em></div>
+  <div class="eyebrow">오늘 돌아보기 · 3가지 감각</div>
+  <div class="h-large">오늘 바뀐 <em>내 3가지</em></div>
   <div class="rule"></div>
-  <div class="intro">오늘 만든 스킬을 <strong>"다른 관점"</strong>으로 보는 하루. 오늘 밤 15분은 Skill Creator 수정안 1개 반영 + Day 4 재료 메모 1줄.</div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="label">Day 4 미리보기</div>
-      <h3>검증 · 개선 · 공유</h3>
-      <div class="item"><strong>축 5 · 검증</strong> — "까다로운 고객" 에이전트 시연</div>
-      <div class="item"><strong>축 6 · 개선</strong> — Build → Use → Notice → Fix</div>
-      <div class="item"><strong>GitHub · PR</strong> 기반 팀 공유 워크플로우</div>
+  <div class="intro">오늘 120분이 끝나면 AI 쓰는 방식이 3군데에서 달라져 있다. 체감이 안 난다면 필수 3개 자가진단부터 다시.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="before">"바로 시켰다"</div>
+      <div class="arrow">→</div>
+      <div class="after"><strong>묻고 시킨다</strong> — Clarify · Deep Interview</div>
     </div>
-    <div class="col terra">
-      <div class="label">오늘 밤 준비 · 15분</div>
-      <h3>2가지만</h3>
-      <div class="item"><strong>1.</strong> Skill Creator 리포트에서 수정안 <strong>1개 반영</strong></div>
-      <div class="item"><strong>2.</strong> Day 4 재료 메모 — "누구에게 <strong>내 스킬을 읽혀</strong> 보고 싶은가"</div>
-      <div class="item">못 하면 내일 블록 직전 10분으로 OK</div>
+    <div class="row">
+      <div class="before">"매번 설명했다"</div>
+      <div class="arrow">→</div>
+      <div class="after"><strong>스킬이 대신한다</strong> — 운영진 베이스 커스터마이징</div>
+    </div>
+    <div class="row">
+      <div class="before">"내가 점검했다"</div>
+      <div class="arrow">→</div>
+      <div class="after"><strong>다른 에이전트가 점검한다</strong> — Skill Creator 첫 체감</div>
     </div>
   </div>
-  <div class="closing">오늘 <strong>"돌아가는 상태"</strong>가 Day 4의 출발점. 완벽 아니라 작동이 핵심.</div>
+  <div class="foot">세 가지가 <strong>복리로 쌓이면</strong> 내일의 나는 더 빠르다 — Ouroboros.</div>
 </body>
 </html>

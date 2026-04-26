@@ -2,59 +2,33 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S16 CSM 도구 6개 한눈에</title>
+<title>Day 2 · S15 B3 섹션 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 9pt; flex: 1; margin-top: 10pt; }
-  .tool { padding: 12pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
-  .tool .name { font-size: 14pt; font-weight: 700; color: #2b2520; letter-spacing: -0.01em; }
-  .tool .role { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .tool .ctx { font-size: 9.5pt; line-height: 1.5; color: #42332a; margin-top: 3pt; padding-top: 6pt; border-top: 1px dashed #d4c4ac; }
-  .tool .ctx strong { color: #2b2520; font-weight: 600; }
-  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 560pt; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">지형도</div>
-  <div class="h-large">CSM 일상을 <em>6개 도구</em>가 나눠 담고 있다</div>
-  <div class="rule"></div>
-  <div class="intro">한 명의 CSM이 하루에 만지는 도구 6개. 각자 다른 종류의 맥락을 담는다. <strong>합쳐야 고객이 보인다.</strong></div>
-  <div class="grid">
-    <div class="tool">
-      <div class="role">고객 기록 · 파이프라인</div>
-      <div class="name">Salesforce</div>
-      <div class="ctx">계약 단계 · 담당 영업 · OPP 상태 · <strong>누가 어디까지 왔나</strong>의 공식 기록</div>
-    </div>
-    <div class="tool">
-      <div class="role">문의 · 티켓</div>
-      <div class="name">Plain</div>
-      <div class="ctx">들어온 질문 · 답변 히스토리 · <strong>우선순위와 담당자</strong></div>
-    </div>
-    <div class="tool">
-      <div class="role">미팅 노트 · 문서</div>
-      <div class="name">Notion</div>
-      <div class="ctx">합의사항 · 로드맵 · <strong>내부 운영 자료</strong> · 체크업 미팅 준비물</div>
-    </div>
-    <div class="tool">
-      <div class="role">커뮤니케이션</div>
-      <div class="name">Gmail</div>
-      <div class="ctx">고객 메일 스레드 · 첨부 · <strong>시간순 대화 기록</strong></div>
-    </div>
-    <div class="tool">
-      <div class="role">리포트 · 대시보드</div>
-      <div class="name">Sheets</div>
-      <div class="ctx">지표 · 수치 · <strong>주기 집계</strong> · 이번 달 활성 이벤트</div>
-    </div>
-    <div class="tool">
-      <div class="role">실시간 협업</div>
-      <div class="name">Slack</div>
-      <div class="ctx">오늘의 맥락 · 빠른 결정 · <strong>내부 논의 흔적</strong></div>
-    </div>
+  <div class="top">
+    <div class="block">Block 3</div>
+    <div class="time">45 min</div>
   </div>
-  <div class="foot">이 중 어느 <strong>하나도 전부가 아니다</strong>. 합쳐야 고객이 보인다 — 다음 두 장에서 성격·질문 매핑으로 쪼갠다.</div>
+  <div class="mid">
+    <h1>CSM 도구 맵 —<br>6개 도구 + MCP 연결 실습</h1>
+    <div class="sub">이제 도구를 본다 — 6개 도구가 각자 어떤 맥락을 담고, 어느 것이 MCP로 AI에 연결 가능한지. 지형도 파악 뒤 핵심 1~2개 직접 연결.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">도구 맵 5장 + 실습은 S20 이후</div>
+    <div class="count">5 slides</div>
+  </div>
 </body>
 </html>

@@ -2,44 +2,48 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S25 고객사 X 선정</title>
+<title>Day 2 · S24 통합 수집 개념</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .criteria { display: flex; flex-direction: column; gap: 9pt; flex: 1; margin-top: 14pt; }
-  .crit { display: grid; grid-template-columns: 120pt 1fr; gap: 16pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
-  .crit.hi { background: #c56a4a; color: #f7efe4; }
-  .crit .tag { font-size: 10pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
-  .crit.hi .tag { color: #f2cdb4; }
-  .crit .body { font-size: 12pt; line-height: 1.5; color: #2b2520; font-weight: 500; letter-spacing: -0.003em; }
-  .crit.hi .body { color: #fff; }
-  .crit .body strong { color: #b45a34; font-weight: 700; }
-  .crit.hi .body strong { color: #fff; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .foot strong { color: #b45a34; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
+  .example { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .example strong { color: #b45a34; }
+  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 3pt; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · 2분</div>
-  <div class="h-large">실습용 고객사 <em>1개 고르기</em></div>
+  <div class="eyebrow">개념</div>
+  <div class="h-large">한 도구만 보면 <em>고객의 절반만 보인다</em></div>
   <div class="rule"></div>
-  <div class="intro">"어디 집중할지" 정하는 2분. 고객 선정 기준 세 가지만 따져서 <strong>1명</strong> 픽.</div>
-  <div class="criteria">
-    <div class="crit">
-      <div class="tag">기준 1 · 최근성</div>
-      <div class="body">지금 담당 중이고 <strong>지난 2주 내 접점</strong>이 있었던 고객 — 최근 맥락이 있어야 MCP 수집에 재료가 있다.</div>
+  <div class="intro">Context Sync는 특별한 기능이 아니다. <strong>여러 MCP가 하나의 질문을 병렬로 읽고 합친 답</strong>을 주는 사용 방식이다.</div>
+  <div class="concept">
+    <div class="label">정의</div>
+    <div class="def">"고객 A 현재 상황"을 물으면 — SFDC · Slack · Notion이 <em>각자 자기 조각</em>을 준다</div>
+  </div>
+  <div class="rows">
+    <div class="cell">
+      <div class="label">왜 중요</div>
+      <h3>한 도구만 본 답은 반쪽이다</h3>
+      <div class="body">SFDC만 보면 <strong>"계약 상태"</strong>만 안다. Slack만 보면 <strong>"오늘 분위기"</strong>만 안다. 합쳐야 "지금 이 고객의 실제 상태"가 보인다.</div>
     </div>
-    <div class="crit hi">
-      <div class="tag">기준 2 · 공유 안전성</div>
-      <div class="body">너무 민감한 고객은 <strong>피한다</strong>. 짝꿍 공유 부담이 크면 관찰이 얕아진다.</div>
-    </div>
-    <div class="crit">
-      <div class="tag">기준 3 · 맥락 분산</div>
-      <div class="body">맥락이 <strong>최소 2개 도구</strong>에 있어야 함 — SFDC + Notion 정도의 분산. 한 도구에만 있으면 Context Sync 효과 낮음.</div>
+    <div class="cell">
+      <div class="label">CSM 예시</div>
+      <h3>"체크업 미팅 준비 요약" 한 요청</h3>
+      <div class="body">SFDC <strong>계약 단계</strong> + Notion <strong>지난 체크업 노트</strong> + Slack <strong>이번 주 논의</strong>가 한 답으로 자동 결합.</div>
     </div>
   </div>
-  <div class="foot">못 고르겠으면 운영진이 <strong>샘플 고객</strong> 제공. 고른 뒤 짝꿍에게 이름만 간단 공유 — 비교하기 편함.</div>
+  <div class="example"><span class="tag">다음 장부터</span>고객사 X 선정 → 통합 프롬프트 작성 → 결과 관찰 → 짝꿍 공유. <strong>15분 실습</strong>으로 진행.</div>
 </body>
 </html>

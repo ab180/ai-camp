@@ -2,41 +2,43 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S11 프롬프트 1</title>
+<title>Day 4 · S10 까다로운 고객 개념</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .prompt { margin-top: 10pt; padding: 16pt 18pt; background: #2b2520; border-radius: 12pt; flex: 1; overflow: hidden; }
-  .prompt .plabel { font-size: 9pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
-  .prompt pre { font-size: 10.5pt; line-height: 1.6; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 8pt; white-space: pre-wrap; }
-  .prompt pre b { color: #f2cdb4; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; }
+  body { display: flex; flex-direction: column; gap: 12pt; }
+  .h-large { font-size: 26pt; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 8pt; flex: 1; }
+  .card { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .card .n { font-size: 10pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .card h3 { font-size: 15pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
+  .card p { font-size: 11pt; color: #42332a; line-height: 1.55; }
+  .card p strong { color: #2b2520; font-weight: 600; }
+  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; max-width: 640pt; }
+  .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">B1 · 프롬프트 공개 1/2</div>
-  <div class="h-large"><em>페르소나 · 톤 · 채점 기준</em></div>
-  <div class="rule"></div>
-  <div class="intro">운영진이 쓰는 까다로운 고객 에이전트의 앞부분. 누가 읽는지 · 어떤 기준으로 읽는지가 여기서 결정된다.</div>
-  <div class="prompt">
-    <div class="plabel">prompt part 1 — persona &amp; rubric</div>
-    <pre><b>role:</b> 너는 Airbridge를 3년째 쓰는 시니어 프로덕트 매니저다.
-       구매 결정을 최종 승인하는 위치에 있다.
-       하루 30개 메일을 읽고, 숫자와 결정사항만 본다.
-
-<b>tone:</b> 직설적. 칭찬 금지. 빠진 것을 먼저 짚는다.
-       근거 없이 &quot;좋아 보임&quot;은 쓰지 않는다.
-
-<b>rubric:</b> 아래 5가지로 채점한다 (각 O / X).
-  1. 이 메일의 결정사항이 한 문장으로 보이는가
-  2. 다음 액션에 책임자와 기한이 있는가
-  3. 고객이 물은 질문이 빠짐없이 답해졌는가
-  4. 오해 소지가 있는 표현이 있는가 (애매 · 과장)
-  5. 톤이 이 고객 관계 단계에 맞는가</pre>
+  <div>
+    <div class="eyebrow">B1 · 원리 2 · 에이전트 개념</div>
+    <div class="h-large">&ldquo;까다로운 고객&rdquo; &mdash; 페르소나 역할을 맡은 AI</div>
   </div>
-  <div class="foot">운영진이 <strong>사전 캘리브레이션</strong>한다 — 너무 혹독하면 좌절, 너무 순하면 무의미. 3년차 PM 톤에 맞춘다.</div>
+  <div class="row">
+    <div class="card">
+      <div class="n">1. 페르소나</div>
+      <h3>어떤 고객인가</h3>
+      <p>시니어 PM · 구매 의사결정자 · <strong>3년차 사용자</strong>. 기대 수준 · 바쁘기 · 의사소통 톤까지 명시.</p>
+    </div>
+    <div class="card">
+      <div class="n">2. 채점 기준</div>
+      <h3>무엇을 볼 것인가</h3>
+      <p>결정사항 명시 · 다음 액션 · <strong>책임자/기한</strong> · 오해 소지 · 톤 적절성. 5~7개 항목.</p>
+    </div>
+    <div class="card">
+      <div class="n">3. 출력 포맷</div>
+      <h3>어떻게 답할 것인가</h3>
+      <p><strong>지적 &rarr; 근거 &rarr; 제안</strong> 3단 구조. 근거는 본문 인용. 제안은 한 문장.</p>
+    </div>
+  </div>
+  <div class="foot">에이전트 = &ldquo;이런 역할로, 이런 기준으로, 이런 포맷으로 답하라&rdquo;를 <strong>한 번에 박아둔 AI</strong>. 호출만 하면 동일 관점으로 반복 검토된다.</div>
 </body>
 </html>

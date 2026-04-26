@@ -2,67 +2,34 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S54 Git vs GitHub</title>
+<title>Day 2 · S53 부록 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
-  .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; margin-top: 12pt; }
-  .col { padding: 14pt 18pt; border-radius: 14pt; display: flex; flex-direction: column; gap: 7pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .col.cream .tag { color: #b45a34; }
-  .col.terra .tag { color: #f2cdb4; }
-  .col h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .col .def { font-size: 10.5pt; line-height: 1.5; font-weight: 500; }
-  .col.cream .def { color: #2b2520; }
-  .col.terra .def { color: #fff; }
-  .col .def strong { color: #b45a34; font-weight: 700; }
-  .col.terra .def strong { color: #fff; }
-  .col ul { list-style: none; display: flex; flex-direction: column; gap: 6pt; margin-top: 2pt; }
-  .col li { font-size: 9.5pt; line-height: 1.5; padding-left: 13pt; position: relative; }
-  .col.cream li { color: #42332a; }
-  .col.terra li { color: #f5e4d4; }
-  .col li::before { content: ""; position: absolute; left: 0; top: 6pt; width: 5pt; height: 5pt; border-radius: 50%; }
-  .col.cream li::before { background: #b45a34; }
-  .col.terra li::before { background: #f2cdb4; }
-  .closing { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; color: #42332a; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; border-left: 3pt solid #c56a4a; }
-  .closing strong { color: #b45a34; font-weight: 700; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 38pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid .sub { font-size: 14pt; font-weight: 400; color: #f5e4d4; line-height: 1.6; max-width: 580pt; }
+  .mid .sub strong { color: #fff; font-weight: 600; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 10.5pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">멘탈 모델 · 01</div>
-  <div class="h-large">Git ≠ GitHub, <em>다른 것이다</em></div>
-  <div class="rule"></div>
-  <div class="intro">비슷하게 들려도 전혀 다른 두 가지. 헷갈리면 대화가 꼬인다. <strong>어디에서 돌아가는지</strong>로 구분하면 쉽다.</div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="tag">Git</div>
-      <h3>내 컴퓨터에서 돌아가는 버전 관리 프로그램</h3>
-      <div class="def">터미널에서 실행하는 <strong>프로그램</strong>.</div>
-      <ul>
-        <li>내 컴퓨터 안에서만 작동</li>
-        <li>로컬 파일 변경을 스냅샷으로 추적</li>
-        <li>터미널 명령어로 조작 (`git ...`)</li>
-        <li>인터넷 없어도 동작</li>
-      </ul>
-    </div>
-    <div class="col terra">
-      <div class="tag">GitHub</div>
-      <h3>Git으로 관리한 파일을 올려두는 인터넷 공간</h3>
-      <div class="def">브라우저에서 접속하는 <strong>클라우드 서비스</strong>.</div>
-      <ul>
-        <li>웹 주소가 있는 서버 (github.com)</li>
-        <li>팀원이 볼 수 있도록 파일 저장·공유</li>
-        <li>PR·이슈·리뷰 같은 협업 기능</li>
-        <li>인터넷 필수</li>
-      </ul>
-    </div>
+  <div class="top">
+    <div class="block">Appendix</div>
+    <div class="time">참고용 · 부록</div>
   </div>
-  <div class="closing">Git은 내 컴퓨터에서 돌아가고, GitHub은 클라우드 — <strong>다른 것. 둘 다 필요.</strong></div>
+  <div class="mid">
+    <h1>Git/GitHub,<br>한 번 더 정리하고 가자</h1>
+    <div class="sub">본 블록에서 명령어 실습은 끝. 부록에서는 <strong>멘탈 모델 · 개념 지도 · 초보 실수</strong>를 빠르게 한 바퀴. selfish club 공유회(koi-git-selfish-sharing) 내용을 CSM 맥락으로 압축.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">8 slides · 비개발자 눈높이 · 원본 참고 링크는 마지막 장</div>
+    <div class="count">S53–S60</div>
+  </div>
 </body>
 </html>

@@ -2,63 +2,67 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S30 권한 관리 Collaborator</title>
+<title>Day 4 · S29 repo 구조 트리</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
-  .ui { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
-  .ui .ubar { font-size: 8.5pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 5pt; }
-  .ui .path { font-size: 9.5pt; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; background: #f5ede2; padding: 4pt 7pt; border-radius: 4pt; }
-  .ui .step { display: grid; grid-template-columns: 22pt 1fr; gap: 6pt; align-items: baseline; }
-  .ui .step .num { font-size: 10.5pt; font-weight: 700; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; }
-  .ui .step .text { font-size: 10pt; color: #2b2520; line-height: 1.45; }
-  .ui .step .text strong { color: #c56a4a; font-weight: 600; }
-  .ui .step .text code { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; background: #f5ede2; padding: 1pt 4pt; border-radius: 3pt; }
+  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
+  .tree { background: #2b2520; border-radius: 12pt; padding: 10pt 14pt; overflow: hidden; min-height: 0; }
+  .tree .plabel { font-size: 8.5pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
+  .tree pre { font-size: 9.5pt; line-height: 1.45; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 6pt; white-space: pre; }
+  .tree pre b { color: #f2cdb4; font-weight: 600; }
+  .tree pre em { color: #d4a480; font-style: normal; }
   .notes { display: flex; flex-direction: column; gap: 6pt; }
   .note { background: #ebe1d2; border-radius: 10pt; padding: 10pt 12pt; }
   .note .n { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
   .note h4 { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 2pt; }
   .note p { font-size: 10pt; color: #42332a; line-height: 1.5; margin-top: 2pt; }
-  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.5; flex-shrink: 0; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .note p code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(0,0,0,0.06); padding: 1pt 3pt; border-radius: 2pt; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">권한 관리 1/2 &mdash; Collaborator 추가</div>
-  <div class="h-large">UI만 써도 <em>팀 12명</em>을 다 붙일 수 있다</div>
+  <div class="eyebrow">팀 repo 구조 예시 &mdash; CSM 그룹</div>
+  <div class="h-large">폴더 구조는 <em>단순</em>하게</div>
   <div class="rule"></div>
-  <div class="intro">GitHub UI에서 Settings &rarr; Collaborators. 명령어 없이, 초대 이메일 한 번으로 된다.</div>
+  <div class="intro">복잡한 분류 체계를 만들지 않는다. <strong>skills/</strong> 한 폴더, 스킬마다 README 1개.</div>
   <div class="panes">
-    <div class="ui">
-      <div class="ubar">GitHub &mdash; Repo UI</div>
-      <div class="path">Settings / Collaborators / Add people</div>
-      <div class="step"><div class="num">1</div><div class="text">Repo 상단 <strong>Settings</strong> 탭 클릭</div></div>
-      <div class="step"><div class="num">2</div><div class="text">좌측 메뉴 <strong>Collaborators</strong></div></div>
-      <div class="step"><div class="num">3</div><div class="text"><code>Add people</code> &mdash; 팀원 GitHub ID 또는 email 입력</div></div>
-      <div class="step"><div class="num">4</div><div class="text">Role 선택 &rarr; Invite</div></div>
-      <div class="step"><div class="num">5</div><div class="text">초대받은 사람이 <strong>Accept</strong> 하면 끝</div></div>
+    <div class="tree">
+      <div class="plabel">github.com/ab180/csm-claude-skills</div>
+      <pre>csm-claude-skills/
+<b>&#9500;&#9472;&#9472;</b> README.md            <em># 이 레포는 뭐?</em>
+<b>&#9500;&#9472;&#9472;</b> CONTRIBUTING.md      <em># PR 방법 3줄</em>
+<b>&#9500;&#9472;&#9472;</b> skills/
+<b>&#9474;</b>   <b>&#9500;&#9472;&#9472;</b> recap-mail/
+<b>&#9474;</b>   <b>&#9474;</b>   <b>&#9500;&#9472;&#9472;</b> SKILL.md      <em># 6축 태그</em>
+<b>&#9474;</b>   <b>&#9474;</b>   <b>&#9492;&#9472;&#9472;</b> prompt.md
+<b>&#9474;</b>   <b>&#9500;&#9472;&#9472;</b> inquiry-reply/
+<b>&#9474;</b>   <b>&#9474;</b>   <b>&#9500;&#9472;&#9472;</b> SKILL.md
+<b>&#9474;</b>   <b>&#9474;</b>   <b>&#9492;&#9472;&#9472;</b> prompt.md
+<b>&#9474;</b>   <b>&#9492;&#9472;&#9472;</b> meeting-note/
+<b>&#9474;</b>       <b>&#9492;&#9472;&#9472;</b> ...
+<b>&#9492;&#9472;&#9472;</b> agents/
+    <b>&#9492;&#9472;&#9472;</b> picky-customer/ <em># 까다로운 고객</em>
+        <b>&#9492;&#9472;&#9472;</b> AGENT.md</pre>
     </div>
     <div class="notes">
       <div class="note">
-        <div class="n">사전 조건</div>
-        <h4>ab180 GitHub 조직 계정</h4>
-        <p>팀원 모두 회사 GitHub 계정이 있는지 먼저 확인. 없으면 운영진에 요청.</p>
+        <div class="n">skills/</div>
+        <h4>각자 만든 스킬</h4>
+        <p>개인 이름 폴더가 아니라 <strong>기능 이름</strong>으로. 검색 가능성 우선.</p>
       </div>
       <div class="note">
-        <div class="n">실전 팁</div>
-        <h4>팀별 Team 만들기</h4>
-        <p>12명을 1명씩 추가하는 대신 <strong>Team</strong> 하나 만들고 한 번에 묶는 게 빠르다.</p>
+        <div class="n">agents/</div>
+        <h4>역할 기반 에이전트</h4>
+        <p>B1의 <code>picky-customer</code>처럼 <strong>검증 · 리뷰</strong> 역할.</p>
       </div>
       <div class="note">
-        <div class="n">주의</div>
-        <h4>Public vs Private</h4>
-        <p>민감 정보(고객명 · 도메인)가 들어가면 <strong>Private</strong>. 기본은 Private 권장.</p>
+        <div class="n">SKILL.md</div>
+        <h4>각 스킬의 설명서</h4>
+        <p>6축 태그 · 언제 쓰나 · 예시 &mdash; <strong>1장</strong>이면 충분.</p>
       </div>
     </div>
   </div>
-  <div class="foot">실제 UI 캡처는 운영진이 보여준다. 슬라이드는 <strong>어떤 경로 · 어떤 순서</strong>만 기억하면 된다.</div>
 </body>
 </html>

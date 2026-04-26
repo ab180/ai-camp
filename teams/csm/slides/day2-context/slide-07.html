@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S07 고객 A 맥락 (STEP 2/4)</title>
+<title>Day 2 · S06 동일 프롬프트 · 맥락 없음 (STEP 1/4)</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -15,75 +15,46 @@
   .step-badge strong { color: #b45a34; font-weight: 700; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 9pt; }
+  .prompt-box { margin-top: 12pt; padding: 14pt 18pt; background: #1a1410; border-radius: 10pt; display: flex; align-items: center; gap: 10pt; }
+  .prompt-box .label { font-size: 8.5pt; letter-spacing: 0.22em; color: #d4a88c; font-weight: 600; text-transform: uppercase; }
+  .prompt-box .p-text { font-family: 'SF Mono', Menlo, monospace; font-size: 12pt; color: #f5e4d4; letter-spacing: -0.005em; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .col { padding: 13pt 15pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
   .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .col-head { display: flex; flex-direction: column; gap: 3pt; }
-  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
-  .col.cream .tag { color: #a0917e; }
-  .col.terra .tag { color: #f2cdb4; }
-  .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
-  .col.terra .divider { background: rgba(255,255,255,0.18); }
-  .block { display: flex; flex-direction: column; gap: 3pt; }
-  .block-label { font-size: 8.5pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; }
-  .col.cream .block-label { color: #b45a34; }
-  .col.terra .block-label { color: #f2cdb4; }
-  .block-body { font-size: 9.5pt; line-height: 1.55; }
-  .col.cream .block-body { color: #42332a; }
-  .col.terra .block-body { color: #f5e4d4; }
-  .col.cream .block-body strong { color: #2b2520; font-weight: 600; }
-  .col.terra .block-body strong { color: #fff; font-weight: 600; }
+  .col.ghost { background: #ebe1d2; opacity: 0.45; }
+  .col .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; color: #a0917e; text-transform: uppercase; }
+  .col h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .col .body { font-size: 9.8pt; line-height: 1.6; color: #42332a; }
+  .col .body strong { color: #b45a34; font-weight: 600; }
+  .col .placeholder { font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #7d6b5a; background: rgba(255,255,255,0.5); padding: 7pt 10pt; border-radius: 6pt; line-height: 1.55; }
+  .closing { margin-top: 9pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .closing strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="step-badge">STEP <strong>2</strong> / 4</div>
-  <div class="eyebrow">고객 A · 맥락</div>
-  <div class="h-large">같은 질문 + <em>고객 A 맥락</em> = 어떤 답이 나와야 하나</div>
+  <div class="step-badge">STEP <strong>1</strong> / 4</div>
+  <div class="eyebrow">프롬프트 실험</div>
+  <div class="h-large">"리캡 메일 초안 써줘" — <em>맥락 없이 던지면?</em></div>
   <div class="rule"></div>
-  <div class="intro">같은 프롬프트에 <strong>고객 A의 맥락 한 장</strong>을 더한다. 고객이 누구인지 AI가 알면 답이 완전히 달라진다.</div>
+  <div class="intro">동일 프롬프트를 맥락 없이 던져본다. AI가 어떤 <strong>기본값</strong>으로 답하는지 확인.</div>
+  <div class="prompt-box">
+    <div class="label">프롬프트</div>
+    <div class="p-text">"최근 미팅 기준 리캡 메일 써줘"</div>
+  </div>
   <div class="compare">
     <div class="col cream">
-      <div class="col-head">
-        <div class="tag">고객 A · 엔터프라이즈</div>
-        <h3>연 라이선스 · 장기 파트너</h3>
-      </div>
-      <div class="divider"></div>
-      <div class="block">
-        <div class="block-label">계약 구조</div>
-        <div class="block-body">연 단위 엔터프라이즈 라이선스 · 다음 주 <strong>체크업 미팅</strong> 예정</div>
-      </div>
-      <div class="block">
-        <div class="block-label">지난 미팅 이슈</div>
-        <div class="block-body">트래킹 <strong>오차 재확인</strong> + 리포트 커스터마이즈 요청</div>
-      </div>
-      <div class="block">
-        <div class="block-label">톤 요구</div>
-        <div class="block-body">담당자가 <strong>임원 회람 가능성</strong> 고려 · 짧고 따뜻 · 숫자는 정확하게</div>
-      </div>
+      <div class="tag">AI에게 주어진 것</div>
+      <h3>프롬프트 한 줄뿐</h3>
+      <div class="body">고객 이름 <strong>없음</strong> · 계약 구조 <strong>없음</strong> · 지난 달 논의 <strong>없음</strong> · 톤 지정 <strong>없음</strong>.</div>
+      <div class="body">AI가 쓸 수 있는 재료는 자기 학습 데이터의 "일반 SaaS 리캡 메일 구조"뿐.</div>
     </div>
-    <div class="col terra">
-      <div class="col-head">
-        <div class="tag">기대 답변의 모양</div>
-        <h3>지난 이슈 처리 + 체크업 미팅 리마인드</h3>
-      </div>
-      <div class="divider"></div>
-      <div class="block">
-        <div class="block-label">오프닝</div>
-        <div class="block-body">인사 짧게 + <strong>지난 오차 이슈 처리 현황</strong>부터</div>
-      </div>
-      <div class="block">
-        <div class="block-label">본문 코어</div>
-        <div class="block-body">체크업 미팅 다음 주 리마인드 + 어젠다 <strong>1줄 미리보기</strong></div>
-      </div>
-      <div class="block">
-        <div class="block-label">다음 액션</div>
-        <div class="block-body">오차 재측정 결과 <strong>언제 공유할지</strong> 날짜 명시 1개</div>
-      </div>
+    <div class="col ghost">
+      <div class="tag">예상 결과 · 다음 장에서 대조</div>
+      <h3>일반 SaaS 템플릿</h3>
+      <div class="placeholder">Hi [Customer],<br>Thanks for the great meeting.<br>Here's a recap...<br>Next step: follow-up call.</div>
+      <div class="body">어느 고객사에나 <strong>똑같이 쓸 수 있는 뼈대</strong> · "쓸 만해 보이지만 내 것 같지 않다".</div>
     </div>
   </div>
+  <div class="closing"><strong>"쓸 만해 보이지만 내 것 같지 않다"</strong> — 이게 맥락 없는 답의 한계. 다음 두 장에서 같은 프롬프트에 맥락을 한 장씩 더한다.</div>
 </body>
 </html>

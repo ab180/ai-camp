@@ -2,55 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S07 짝꿍 공유 질문 3개</title>
+<title>Day 3 · S06 왜 답답함부터</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 9pt; margin-top: 10pt; flex: 1; }
-  .row { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .row.key { background: #c56a4a; color: #f7efe4; }
-  .row .n { font-size: 24pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .row.key .n { color: #fff; }
-  .row .q { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.4; }
-  .row.key .q { color: #fff; }
-  .row .q em { font-style: normal; color: #b45a34; }
-  .row.key .q em { color: #ffdfc9; }
-  .row .hint { font-size: 9.5pt; color: #7d6b5a; line-height: 1.5; margin-top: 4pt; }
-  .row.key .hint { color: #f2cdb4; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 16pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">짝꿍 공유 · 12분</div>
-  <div class="h-large">짝꿍에게 <em>이 3가지만</em></div>
+  <div class="eyebrow">개념</div>
+  <div class="h-large">답답함이 <em>스킬의 재료</em>다</div>
   <div class="rule"></div>
-  <div class="intro">답을 바로 못 내도 OK. 답을 만드는 작업은 다음 블록 Deep Interview가 대신한다. 지금은 <strong>재료를 표면에 꺼내는 것</strong>이 역할.</div>
+  <div class="intro">"잘 안 됐던 순간"은 계획·실행 축에서 <strong>부족했던 지점</strong>. 그걸 먼저 언어로 바꿔야 스킬이 생긴다. 기분 풀기 X, 패턴 건지기 O.</div>
+  <div class="concept">
+    <div class="label">오늘 B0의 목적</div>
+    <div class="def">답답함을 <em>지우기</em>가 아니라 <em>이름 붙이기</em></div>
+  </div>
   <div class="rows">
-    <div class="row">
-      <div class="n">1</div>
-      <div>
-        <div class="q">Day 1-2에서 <em>"이건 다시 해야 했다"</em> 순간 1개</div>
-        <div class="hint">가장 최근 것, 가장 선명한 것부터. 예: "리캡 메일 톤이 고객 A에 안 맞아서 3번 다시 썼다"</div>
-      </div>
+    <div class="cell">
+      <div class="label">관점 1 · 반복</div>
+      <h3>한 번만 있었나, 3번 이상 있었나</h3>
+      <div class="body">반복되는 답답함만 <strong>스킬 후보</strong>. 일회성은 그냥 이번만 잘하면 끝.</div>
     </div>
-    <div class="row">
-      <div class="n">2</div>
-      <div>
-        <div class="q">그때 내가 AI에게 <em>뭘 덜 설명했는가</em></div>
-        <div class="hint">고객의 어떤 맥락 · 어떤 톤 · 어떤 규칙. 빠진 항목을 구체적으로.</div>
-      </div>
+    <div class="cell">
+      <div class="label">관점 2 · 구체성</div>
+      <h3>"애매하게 별로"인가, "X가 없었다"인가</h3>
+      <div class="body">"그냥 별로"는 스킬로 못 만든다. <strong>"다음 액션 날짜가 빠졌다"</strong>처럼 항목이 나와야.</div>
     </div>
-    <div class="row key">
-      <div class="n">3</div>
-      <div>
-        <div class="q">그걸 매번 설명하지 않으려면 <em>어디에 담겨</em> 있어야 하는가</div>
-        <div class="hint">CLAUDE.md에 · 스킬에 · 둘 다. 고정이면 CLAUDE.md, 절차면 스킬.</div>
-      </div>
+    <div class="cell">
+      <div class="label">관점 3 · 내 손</div>
+      <h3>지금 내가 수동으로 하고 있나</h3>
+      <div class="body">수동 작업이 있는 단계가 <strong>자동화 후보</strong>. 내 손이 안 움직이면 스킬이 해결할 게 없다.</div>
     </div>
   </div>
-  <div class="foot">3번 질문의 답이 오늘 만들 <strong>스킬의 좌표</strong>. 정답 고르기 X, 감각 잡기 O.</div>
 </body>
 </html>

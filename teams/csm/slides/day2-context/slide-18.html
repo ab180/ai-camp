@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S18 도구별 담당 질문 (STEP 2/2)</title>
+<title>Day 2 · S17 도구별 맥락 성격 (STEP 1/2)</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -15,58 +15,71 @@
   .step-badge strong { color: #b45a34; font-weight: 700; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 6pt; flex: 1; margin-top: 10pt; }
-  .row { display: grid; grid-template-columns: 1.3fr 20pt 0.85fr; gap: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 9pt; align-items: center; }
-  .row.key { background: #c56a4a; color: #f7efe4; }
-  .row .q { font-size: 11pt; font-weight: 500; color: #2b2520; letter-spacing: -0.003em; line-height: 1.35; }
-  .row.key .q { color: #fff; }
-  .row .q::before { content: "\201C"; color: #b45a34; margin-right: 2pt; }
-  .row .q::after { content: "\201D"; color: #b45a34; margin-left: 2pt; }
-  .row.key .q::before, .row.key .q::after { color: #f2cdb4; }
-  .row .arrow { font-size: 14pt; color: #c56a4a; font-weight: 300; text-align: center; }
-  .row.key .arrow { color: #fff; opacity: 0.7; }
-  .row .tools { display: flex; gap: 5pt; flex-wrap: wrap; align-items: center; }
-  .row .tname { font-size: 9.5pt; font-weight: 700; padding: 2.5pt 8pt; background: #fff; border-radius: 999pt; color: #b45a34; letter-spacing: -0.005em; }
-  .row.key .tname { background: #fff; color: #c56a4a; }
-  .row .tname.sub { background: rgba(255,255,255,0.85); color: #7d6b5a; font-weight: 500; }
-  .row.key .tname.sub { background: rgba(255,255,255,0.85); color: #c56a4a; opacity: 0.8; }
-  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 9pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col-head { display: flex; flex-direction: column; gap: 3pt; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+  .item-row { display: flex; justify-content: space-between; align-items: center; gap: 10pt; padding: 6pt 10pt; background: rgba(255,255,255,0.45); border-radius: 7pt; }
+  .col.terra .item-row { background: rgba(255,255,255,0.12); }
+  .item-row .tname { font-size: 11pt; font-weight: 700; color: #2b2520; letter-spacing: -0.005em; }
+  .col.terra .item-row .tname { color: #fff; }
+  .item-row .tctx { font-size: 9pt; color: #42332a; line-height: 1.4; text-align: right; }
+  .col.terra .item-row .tctx { color: #f5e4d4; }
+  .closing { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; }
+  .closing strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="step-badge">STEP <strong>2</strong> / 2</div>
-  <div class="eyebrow">질문 매핑</div>
-  <div class="h-large">CSM이 하루에 떠올리는 질문 · <em>어디서 답이 나오나</em></div>
+  <div class="step-badge">STEP <strong>1</strong> / 2</div>
+  <div class="eyebrow">성격</div>
+  <div class="h-large">어떤 맥락은 고정, 어떤 맥락은 <em>5분 단위로 바뀐다</em></div>
   <div class="rule"></div>
-  <div class="intro">실무에서 자주 나오는 질문 5개를 <strong>도구와 짝지어본다</strong>. AI가 이 질문에 답하려면 각 도구에 직접 닿아야 한다.</div>
-  <div class="rows">
-    <div class="row">
-      <div class="q">이 고객 계약 언제 끝나?</div>
-      <div class="arrow">&rsaquo;</div>
-      <div class="tools"><span class="tname">Salesforce</span></div>
+  <div class="intro">도구를 "담는 맥락의 변화 속도"로 구분하면 <strong>MCP로 무엇을 먼저 연결할지</strong> 감이 잡힌다.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="col-head">
+        <div class="tag">느린 맥락 · 주/월 단위</div>
+        <h3>참고용 — 자주 안 바뀌는 도구</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="item-row">
+        <div class="tname">Salesforce</div>
+        <div class="tctx">계약 단계 · OPP 단계<br>주 단위로 갱신</div>
+      </div>
+      <div class="item-row">
+        <div class="tname">Notion</div>
+        <div class="tctx">로드맵 · 운영 문서<br>월 단위로 업데이트</div>
+      </div>
     </div>
-    <div class="row">
-      <div class="q">지난 문의가 뭐였지?</div>
-      <div class="arrow">&rsaquo;</div>
-      <div class="tools"><span class="tname">Plain</span><span class="tname sub">Gmail</span></div>
-    </div>
-    <div class="row">
-      <div class="q">체크업 미팅 언제 잡혔지? 어젠다 뭐야?</div>
-      <div class="arrow">&rsaquo;</div>
-      <div class="tools"><span class="tname">Notion</span><span class="tname sub">Gmail</span></div>
-    </div>
-    <div class="row key">
-      <div class="q">팀에서 이 고객 관련 오늘 무슨 결정 났지?</div>
-      <div class="arrow">&rsaquo;</div>
-      <div class="tools"><span class="tname">Slack</span></div>
-    </div>
-    <div class="row">
-      <div class="q">이번 달 활성 이벤트 추이?</div>
-      <div class="arrow">&rsaquo;</div>
-      <div class="tools"><span class="tname">Sheets</span></div>
+    <div class="col terra">
+      <div class="col-head">
+        <div class="tag">빠른 맥락 · 일/시간 단위</div>
+        <h3>여기가 MCP의 핵심 자리</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="item-row">
+        <div class="tname">Slack</div>
+        <div class="tctx">오늘의 결정<br>5분 단위로 바뀜</div>
+      </div>
+      <div class="item-row">
+        <div class="tname">Gmail</div>
+        <div class="tctx">방금 온 메일<br>분 단위로 들어옴</div>
+      </div>
+      <div class="item-row">
+        <div class="tname">Plain</div>
+        <div class="tctx">새 문의 · 티켓 상태<br>시간 단위로 바뀜</div>
+      </div>
     </div>
   </div>
-  <div class="foot">이 중 <strong>한 질문에라도 "AI가 바로 답하게"</strong> 하려면 — 해당 도구에 MCP를 꽂아야 한다. 다음 블록 주제.</div>
+  <div class="closing"><strong>빠른 맥락</strong>이 CLAUDE.md에 안 담기는 이유 — 매번 바뀌니까. 그래서 MCP로 <strong>작업 시점에 직접 읽게</strong> 해야 한다.</div>
 </body>
 </html>

@@ -2,58 +2,41 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S37 실습 예제</title>
+<title>Day 3 · S36 CSM Subagent 용도</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .steps { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
-  .step { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .step .n { font-size: 22pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .step .cmd { display: flex; flex-direction: column; gap: 3pt; }
-  .step .code { font-size: 10.5pt; font-family: 'SF Mono', Menlo, monospace; color: #2b2520; background: rgba(0,0,0,0.05); padding: 4pt 8pt; border-radius: 5pt; align-self: flex-start; letter-spacing: -0.005em; }
-  .step .desc { font-size: 10pt; line-height: 1.55; color: #42332a; }
-  .step .desc strong { color: #b45a34; font-weight: 600; }
-  .note { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .note strong { color: #fff; font-weight: 700; }
+  .rows { display: flex; flex-direction: column; gap: 9pt; margin-top: 10pt; flex: 1; }
+  .row { display: grid; grid-template-columns: 170pt 1fr; gap: 16pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
+  .row .label { font-size: 14pt; font-weight: 700; color: #b45a34; letter-spacing: -0.005em; line-height: 1.3; }
+  .row .parallels { font-size: 10.5pt; line-height: 1.6; color: #42332a; }
+  .row .parallels strong { color: #2b2520; font-weight: 600; }
+  .row .parallels .plus { color: #c56a4a; font-weight: 700; padding: 0 4pt; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · 5분</div>
-  <div class="h-large">운영진 <em>예제 스킬</em> 실행</div>
+  <div class="eyebrow">사용처</div>
+  <div class="h-large">CSM에서 <em>Subagent가 빛나는 곳</em></div>
   <div class="rule"></div>
-  <div class="intro">운영진이 준비한 Subagent 예제 하나 돌려보기. 결과 품질보다 "<strong>병렬 호출이 실제로 됐는가</strong>"를 로그에서 본다.</div>
-  <div class="steps">
-    <div class="step">
-      <div class="n">1</div>
-      <div class="cmd">
-        <div class="code">$ git clone &lt;운영진 repo&gt;/recap-mail-parallel skills/</div>
-        <div class="desc">예제 스킬 <strong>로컬 복제</strong>.</div>
-      </div>
+  <div class="intro">공통점은 "<strong>여러 곳에서 동시에 끌어와야</strong> 답이 완성되는 작업". 서로 결과를 안 참조하는 것이 조건.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="label">리캡 메일 생성</div>
+      <div class="parallels"><strong>히스토리 요약</strong><span class="plus">+</span><strong>다음 액션 초안</strong><span class="plus">+</span><strong>톤 체크</strong> 병렬</div>
     </div>
-    <div class="step">
-      <div class="n">2</div>
-      <div class="cmd">
-        <div class="code">$ cat skills/recap-mail-parallel/SKILL.md</div>
-        <div class="desc">상단에 <strong>"Subagent 2개 동시 호출"</strong> 선언 확인.</div>
-      </div>
+    <div class="row">
+      <div class="label">문의 답변</div>
+      <div class="parallels"><strong>과거 답변 검색</strong><span class="plus">+</span><strong>관련 문서 조회</strong><span class="plus">+</span><strong>답변 초안</strong> 병렬</div>
     </div>
-    <div class="step">
-      <div class="n">3</div>
-      <div class="cmd">
-        <div class="code">(you) /skill recap-mail-parallel 고객 X</div>
-        <div class="desc">실행 — 메인이 Subagent 2개를 <strong>병렬로 띄운다</strong>.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="n">4</div>
-      <div class="cmd">
-        <div class="code">(Claude) Launching 2 subagents in parallel...</div>
-        <div class="desc">Subagent 로그 확인 — <strong>시간 스탬프가 겹치면</strong> 병렬 성공.</div>
-      </div>
+    <div class="row">
+      <div class="label">체크업 미팅 준비</div>
+      <div class="parallels"><strong>지표 요약</strong><span class="plus">+</span><strong>지난 아젠다</strong><span class="plus">+</span><strong>팀 Slack 논의</strong> 병렬</div>
     </div>
   </div>
-  <div class="note">결과 내용은 덤. 오늘 관찰 포인트는 <strong>"병렬이 보이는가"</strong>만.</div>
+  <div class="foot">내가 평소 "끝나길 기다리면서 딴 일 하던" 패턴 = <strong>Subagent 후보</strong>.</div>
 </body>
 </html>

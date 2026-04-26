@@ -2,58 +2,51 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S16 실습 2/4 Deep Interview 호출</title>
+<title>Day 3 · S15 실습 1/4 문제 고르기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .steps { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
-  .step { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .step .n { font-size: 22pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .step .cmd { display: flex; flex-direction: column; gap: 3pt; }
-  .step .code { font-size: 11pt; font-family: 'SF Mono', Menlo, monospace; color: #2b2520; background: rgba(0,0,0,0.05); padding: 4pt 8pt; border-radius: 5pt; align-self: flex-start; letter-spacing: -0.005em; }
-  .step .desc { font-size: 10pt; line-height: 1.55; color: #42332a; }
-  .step .desc strong { color: #b45a34; font-weight: 600; }
-  .note { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .note strong { color: #fff; font-weight: 700; }
+  .mission { margin-top: 10pt; padding: 16pt 20pt; background: #c56a4a; color: #f7efe4; border-radius: 14pt; }
+  .mission .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .mission h2 { font-size: 18pt; font-weight: 600; color: #fff; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.3; }
+  .criteria { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 12pt; flex: 1; }
+  .cri { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
+  .cri .label { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .cri h3 { font-size: 12.5pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.3; }
+  .cri .body { font-size: 9.8pt; line-height: 1.55; color: #42332a; }
+  .cri .body strong { color: #b45a34; font-weight: 600; }
+  .fallback { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .fallback strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · 10분 · 2/4</div>
-  <div class="h-large">Deep Interview 스킬 <em>호출 순서</em></div>
+  <div class="eyebrow">실습 · 5분 · 1/4</div>
+  <div class="h-large">Day 2에서 느낀 <em>답답함 1개</em> 고르기</div>
   <div class="rule"></div>
-  <div class="intro">처음이라면 새 Claude Code 세션 진입. 기존 세션에서도 OK. 중요한 건 <strong>5~8개 질문에 끝까지 답하기</strong>.</div>
-  <div class="steps">
-    <div class="step">
-      <div class="n">1</div>
-      <div class="cmd">
-        <div class="code">$ claude</div>
-        <div class="desc">Claude Code 세션 진입 — <strong>새 폴더에서도 OK</strong>. 기존 프로젝트 폴더면 더 좋음.</div>
-      </div>
+  <div class="intro">B0에서 짝꿍과 공유한 것 중 하나. 아래 3개 조건에 모두 걸리는 것으로. 안 걸리는 것은 오늘 재료 아님.</div>
+  <div class="mission">
+    <div class="label">오늘의 미션</div>
+    <h2>"반복될 것 · 내 손이 움직임 · 설명해도 내 것 같지 않은 것"</h2>
+  </div>
+  <div class="criteria">
+    <div class="cri">
+      <div class="label">조건 1 · 반복</div>
+      <h3>월 1회 이상 생길 법한 일</h3>
+      <div class="body">일회성 이벤트는 스킬 후보 아님. <strong>다음 주에도 또</strong> 할 일.</div>
     </div>
-    <div class="step">
-      <div class="n">2</div>
-      <div class="cmd">
-        <div class="code">(you) 나 고객 X 리캡 메일 스킬을 만들고 싶어</div>
-        <div class="desc">문제 <strong>1줄 입력</strong>. "만들고 싶어"라는 의도를 명확히 말하기.</div>
-      </div>
+    <div class="cri">
+      <div class="label">조건 2 · 내 손</div>
+      <h3>지금 수동 작업이 있는 단계</h3>
+      <div class="body">복붙·양식 맞추기·문장 다듬기 — <strong>손이 실제로 움직이는</strong> 부분.</div>
     </div>
-    <div class="step">
-      <div class="n">3</div>
-      <div class="cmd">
-        <div class="code">(you) /skill deep-interview 시작해줘</div>
-        <div class="desc">Deep Interview 스킬 실행 — <strong>자동 질문</strong>이 시작됨.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="n">4</div>
-      <div class="cmd">
-        <div class="code">(Claude) 이 스킬의 독자는 누구인가요? ...</div>
-        <div class="desc">5~8개 질문에 답. <strong>모르는 건 "모른다"</strong>고 답해도 OK — 기본값 제안됨.</div>
-      </div>
+    <div class="cri">
+      <div class="label">조건 3 · 내 것</div>
+      <h3>AI가 흉내는 내지만 내 것 같지 않음</h3>
+      <div class="body">"쓸만해 보이지만 <strong>고객 맥락이 빈</strong>" 상태. Day 2 B1에서 느낀 감각.</div>
     </div>
   </div>
-  <div class="note">첫 시도는 <strong>대답이 짧아도 OK</strong>. 목표는 완벽한 답이 아니라 <strong>스펙 문서 1장 받아내기</strong>.</div>
+  <div class="fallback"><strong>못 고르겠으면</strong> 운영진 샘플 3개 중 — 리캡 메일 / 문의 답변 / 체크업 미팅 자료. 고른 뒤 <strong>짝꿍에게 이름만</strong> 알려주기.</div>
 </body>
 </html>

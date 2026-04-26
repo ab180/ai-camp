@@ -2,43 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S10 까다로운 고객 개념</title>
+<title>Day 4 · S09 Generator 아닌 Evaluator</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; gap: 12pt; }
-  .h-large { font-size: 26pt; }
-  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 8pt; flex: 1; }
-  .card { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .card .n { font-size: 10pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .card h3 { font-size: 15pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
-  .card p { font-size: 11pt; color: #42332a; line-height: 1.55; }
-  .card p strong { color: #2b2520; font-weight: 600; }
-  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; max-width: 640pt; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .col { padding: 18pt 20pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 10pt; }
+  .col.g { background: #ebe1d2; }
+  .col.e { background: #c56a4a; color: #f7efe4; }
+  .col .role { font-size: 10pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.g .role { color: #a0917e; }
+  .col.e .role { color: #f2cdb4; }
+  .col .name { font-size: 20pt; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+  .col.g .name { color: #2b2520; }
+  .col.e .name { color: #fff; }
+  .col ul { font-size: 11.5pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
+  .col.g ul { color: #42332a; }
+  .col.e ul { color: #f5e4d4; }
+  .col ul li::marker { color: #b45a34; }
+  .col.e ul li::marker { color: #f2cdb4; }
+  .col ul li strong { font-weight: 600; }
+  .col.g ul li strong { color: #2b2520; }
+  .col.e ul li strong { color: #fff; }
+  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div>
-    <div class="eyebrow">B1 · 원리 2 · 에이전트 개념</div>
-    <div class="h-large">&ldquo;까다로운 고객&rdquo; &mdash; 페르소나 역할을 맡은 AI</div>
+  <div class="eyebrow">원리 1 · 역할 분리</div>
+  <div class="h-large">만든 쪽과 <em>점검하는 쪽</em>은 다른 역할</div>
+  <div class="rule"></div>
+  <div class="intro">AI에게 동일 세션에서 &ldquo;네가 쓴 초안 네가 검토해줘&rdquo;라고 하면 대부분 <strong>칭찬 위주</strong>가 된다. 자기 결과에 편향이 있다. 사람도 같다.</div>
+  <div class="compare">
+    <div class="col g">
+      <div class="role">Generator · 만드는 쪽</div>
+      <div class="name">내 스킬이 만든 초안</div>
+      <ul>
+        <li>나한테는 <strong>그럴듯</strong>해 보인다</li>
+        <li>맥락이 머릿속에 이미 있다</li>
+        <li>빈 자리를 내가 메운다</li>
+      </ul>
+    </div>
+    <div class="col e">
+      <div class="role">Evaluator · 점검하는 쪽</div>
+      <div class="name">별도 에이전트가 읽음</div>
+      <ul>
+        <li>고객 <strong>페르소나</strong>로 읽는다</li>
+        <li>채점 기준이 명시돼 있다</li>
+        <li>지적 · 근거 · 제안을 포맷으로 낸다</li>
+      </ul>
+    </div>
   </div>
-  <div class="row">
-    <div class="card">
-      <div class="n">1. 페르소나</div>
-      <h3>어떤 고객인가</h3>
-      <p>시니어 PM · 구매 의사결정자 · <strong>3년차 사용자</strong>. 기대 수준 · 바쁘기 · 의사소통 톤까지 명시.</p>
-    </div>
-    <div class="card">
-      <div class="n">2. 채점 기준</div>
-      <h3>무엇을 볼 것인가</h3>
-      <p>결정사항 명시 · 다음 액션 · <strong>책임자/기한</strong> · 오해 소지 · 톤 적절성. 5~7개 항목.</p>
-    </div>
-    <div class="card">
-      <div class="n">3. 출력 포맷</div>
-      <h3>어떻게 답할 것인가</h3>
-      <p><strong>지적 &rarr; 근거 &rarr; 제안</strong> 3단 구조. 근거는 본문 인용. 제안은 한 문장.</p>
-    </div>
-  </div>
-  <div class="foot">에이전트 = &ldquo;이런 역할로, 이런 기준으로, 이런 포맷으로 답하라&rdquo;를 <strong>한 번에 박아둔 AI</strong>. 호출만 하면 동일 관점으로 반복 검토된다.</div>
+  <div class="foot">규칙 — <strong>만든 쪽과 점검하는 쪽이 같으면 검증이 아니라 자기 확신</strong>. 세션을 나누거나 별도 스킬을 쓴다.</div>
 </body>
 </html>

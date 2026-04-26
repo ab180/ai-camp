@@ -2,50 +2,56 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S29 실습 3/5 결과 관찰</title>
+<title>Day 3 · S28 실습 2/5 수정 30분</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .points { display: flex; flex-direction: column; gap: 9pt; margin-top: 10pt; flex: 1; }
-  .pt { display: grid; grid-template-columns: 110pt 1fr; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .pt .label { font-size: 14pt; font-weight: 700; color: #b45a34; letter-spacing: -0.005em; }
-  .pt .body { font-size: 10.5pt; line-height: 1.6; color: #42332a; }
-  .pt .body strong { color: #2b2520; font-weight: 600; }
-  .pt .check { font-size: 9.5pt; color: #7d6b5a; margin-top: 4pt; display: block; }
-  .note { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .note strong { color: #fff; font-weight: 700; }
+  .checklist { margin-top: 10pt; padding: 16pt 20pt; background: #c56a4a; color: #f7efe4; border-radius: 14pt; flex: 1; display: flex; flex-direction: column; gap: 9pt; }
+  .checklist .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .checklist h2 { font-size: 18pt; font-weight: 600; color: #fff; margin-top: 3pt; letter-spacing: -0.005em; }
+  .items { display: flex; flex-direction: column; gap: 7pt; margin-top: 8pt; }
+  .item { display: grid; grid-template-columns: 24pt 1fr; gap: 12pt; padding: 10pt 14pt; background: rgba(255,255,255,0.1); border-radius: 10pt; align-items: center; }
+  .item .box { width: 18pt; height: 18pt; border: 2pt solid #f2cdb4; border-radius: 4pt; }
+  .item .txt { font-size: 11pt; line-height: 1.5; color: #fff; letter-spacing: -0.005em; }
+  .item .txt strong { color: #ffdfc9; font-weight: 700; }
+  .item .txt em { font-style: normal; color: #f2cdb4; font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">관찰 · 10분 · 3/5</div>
-  <div class="h-large">나온 초안 <em>3가지만</em> 체크</div>
+  <div class="eyebrow">실습 · 30분 · 2/5</div>
+  <div class="h-large"><em>3요소</em> 순서대로 손대기</div>
   <div class="rule"></div>
-  <div class="intro">결과물을 고치려 하지 말고 <strong>관찰만</strong>. 이 3개 중 어디가 약한지 이름 붙이면 다음 블록 Skill Creator 입력이 된다.</div>
-  <div class="points">
-    <div class="pt">
-      <div class="label">톤</div>
-      <div class="body">
-        내 <strong>고객군에 쓸만한가</strong>. 임원 회람 가능성이 있다면 결론이 먼저 와 있는가.
-        <span class="check">판정: 첫 줄이 결론이면 O · 인사말 길면 X</span>
+  <div class="intro">한 번에 완벽 X. "<strong>돌아가는 상태</strong>"가 오늘의 기준. 3요소를 다 반영했는지만 체크.</div>
+  <div class="checklist">
+    <div class="label">실습 체크리스트 · 30분</div>
+    <h2>5개 항목을 순서대로</h2>
+    <div class="items">
+      <div class="item">
+        <div class="box"></div>
+        <div class="txt"><strong>담당 고객</strong> — <em>SKILL.md</em>의 "입력" 섹션 수정. CLAUDE.md 참조 한 줄도 OK.</div>
       </div>
-    </div>
-    <div class="pt">
-      <div class="label">정확성</div>
-      <div class="body">
-        <strong>고객 맥락이 반영</strong>됐는가. MCP 호출이 <strong>실제로 됐나</strong> (로그에서 확인).
-        <span class="check">판정: "지난 주 논의된 오차 이슈"가 구체 문장으로 등장하면 O</span>
+      <div class="item">
+        <div class="box"></div>
+        <div class="txt"><strong>톤</strong> — <em>rules/tone.md</em> 치환. 예시 문장 1-2개 같이.</div>
       </div>
-    </div>
-    <div class="pt">
-      <div class="label">빠진 것</div>
-      <div class="body">
-        <strong>필수 키워드</strong>(다음 액션 · 담당자 · 링크) 중 누락이 있나.
-        <span class="check">판정: 3개 모두 있으면 O · 하나라도 빠지면 required.md 재확인</span>
+      <div class="item">
+        <div class="box"></div>
+        <div class="txt"><strong>키워드</strong> — <em>rules/banned.md · rules/required.md</em> 추가. 금지 3개 · 필수 3개.</div>
+      </div>
+      <div class="item">
+        <div class="box"></div>
+        <div class="txt"><strong>한 번 실행</strong> — <em>/skill recap-mail</em> 호출 후 결과 읽기.</div>
+      </div>
+      <div class="item">
+        <div class="box"></div>
+        <div class="txt"><strong>스펙 대조</strong> — Deep Interview 스펙과 결과 비교. 격차 1개만 메모.</div>
       </div>
     </div>
   </div>
-  <div class="note">첫 실행은 <strong>70%만 쓸만하면 정상</strong>. 나머지 30%는 다음 블록 Subagent · Skill Creator에서 보강.</div>
+  <div class="foot">타이머: 25분 수정 + 5분 실행. 다 못 해도 <strong>3요소 중 2개 + 실행 1회</strong>면 다음 장 진행.</div>
 </body>
 </html>

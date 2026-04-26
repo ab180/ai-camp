@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S25 3요소 · 톤</title>
+<title>Day 3 · S24 3요소 · 담당 고객</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -21,46 +21,36 @@
   .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
   .col.cream h3 { color: #2b2520; }
   .col.terra h3 { color: #fff; }
-  .col .body { font-size: 10pt; line-height: 1.55; margin-top: 3pt; }
-  .col.cream .body { color: #42332a; }
-  .col.terra .body { color: #f5e4d4; }
-  .col .body strong { color: #b45a34; font-weight: 600; }
-  .col.terra .body strong { color: #fff; font-weight: 600; }
-  .col .sublist { font-size: 9.5pt; line-height: 1.6; margin-top: 5pt; padding-left: 12pt; }
-  .col.cream .sublist { color: #42332a; }
-  .col.terra .sublist { color: #f5e4d4; }
-  .col .sublist li { margin-bottom: 3pt; }
+  .col .code { font-size: 9.5pt; font-family: 'SF Mono', Menlo, monospace; line-height: 1.5; padding: 8pt 10pt; border-radius: 8pt; margin-top: 4pt; }
+  .col.cream .code { background: rgba(0,0,0,0.05); color: #42332a; }
+  .col.terra .code { background: rgba(0,0,0,0.2); color: #f5e4d4; }
+  .col.cream .code strong { color: #b45a34; font-weight: 600; }
+  .col.terra .code strong { color: #fff; font-weight: 600; }
   .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
   .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">수정 3요소 · 2/3</div>
-  <div class="badge"><span class="n">02</span><span class="txt">톤</span></div>
-  <div class="h-large">수정 포인트 2 — <em>톤</em></div>
+  <div class="eyebrow">수정 3요소 · 1/3</div>
+  <div class="badge"><span class="n">01</span><span class="txt">담당 고객</span></div>
+  <div class="h-large">수정 포인트 1 — <em>담당 고객</em></div>
   <div class="rule"></div>
-  <div class="intro">기본 템플릿 톤은 <strong>보수적 중립</strong>. 내 고객군에 맞춰 조정. 톤은 <code>rules/tone.md</code>에 한 문단으로, 예시 문장 1-2개 함께.</div>
+  <div class="intro">베이스 스킬은 "일반 CSM" 기본값으로 작성돼 있음. <strong>내 담당 고객군</strong>으로 치환. CLAUDE.md에 이미 있다면 그걸 참조해도 OK.</div>
   <div class="compare">
     <div class="col cream">
       <div class="label">Before · 베이스</div>
-      <h3>보수적 중립</h3>
-      <div class="body"><strong>"정중하고 간결한 비즈니스 톤"</strong> — 맞는 말이지만 <strong>구체적이지 않다</strong>. 어느 고객에게도 "딱 맞진 않은" 상태.</div>
+      <h3>일반 CSM — 출처 모호</h3>
+      <div class="code">고객사 정보는 <strong>SFDC에서 가져온다</strong>.
+고객의 업종·계약 유형은 SFDC를 참고.</div>
     </div>
     <div class="col terra">
-      <div class="label">After · 고객군별 치환</div>
-      <h3>내 고객의 톤으로</h3>
-      <div class="body">엔터프라이즈 중심이면 →</div>
-      <ul class="sublist">
-        <li><strong>임원 회람</strong> 가능성 고려 · 결론 먼저</li>
-        <li>한 문단 <strong>3줄 이하</strong> · 숫자는 반올림</li>
-      </ul>
-      <div class="body">스타트업 중심이면 →</div>
-      <ul class="sublist">
-        <li>실무자 직접 소통 · <strong>기술 용어 OK</strong></li>
-        <li>짧은 단락 · 구체 수치 그대로</li>
-      </ul>
+      <div class="label">After · 내 맥락</div>
+      <h3>우선순위 · fallback 명시</h3>
+      <div class="code">고객사 A·B·C 우선순위 순서로
+<strong>SFDC 조회</strong>, 없으면 <strong>Notion fallback</strong>.
+(CLAUDE.md 담당 고객 섹션 참조)</div>
     </div>
   </div>
-  <div class="foot">톤 문단에 <strong>예시 문장 1-2개</strong>를 같이 박으면 AI가 훨씬 잘 따라온다. "이런 느낌"이라고 보여주기.</div>
+  <div class="foot">CLAUDE.md에 이미 담당 고객이 있다면 스킬에는 <strong>"CLAUDE.md 참고"</strong> 한 줄만 적어도 충분.</div>
 </body>
 </html>

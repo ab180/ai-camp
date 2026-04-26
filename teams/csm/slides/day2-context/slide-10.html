@@ -2,33 +2,51 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S10 B2 섹션 오프너</title>
+<title>Day 2 · S09 맥락이 바꾸는 건 정답 (STEP 4/4)</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
-  .top { display: flex; justify-content: space-between; align-items: center; }
-  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
-  .mid { display: flex; flex-direction: column; gap: 18pt; }
-  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
-  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 560pt; }
-  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
-  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
-  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
+  body { display: flex; flex-direction: column; }
+  .step-badge {
+    position: absolute; top: 10pt; right: 16pt;
+    font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;
+    color: #a0917e; padding: 3pt 9pt; border: 1px solid #d4c4ac; border-radius: 20pt;
+    white-space: nowrap;
+  }
+  .step-badge strong { color: #b45a34; font-weight: 700; }
+  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 4pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .insights { display: flex; flex-direction: column; gap: 9pt; flex: 1; margin-top: 14pt; }
+  .ins { padding: 14pt 18pt; border-radius: 12pt; background: #ebe1d2; display: grid; grid-template-columns: 36pt 1fr; gap: 14pt; align-items: center; }
+  .ins.key { background: #c56a4a; color: #f7efe4; }
+  .ins .num { font-size: 24pt; font-weight: 500; color: #c56a4a; line-height: 1; letter-spacing: -0.02em; text-align: center; }
+  .ins.key .num { color: #fff; opacity: 0.75; }
+  .ins .body { font-size: 13pt; line-height: 1.5; font-weight: 500; color: #2b2520; letter-spacing: -0.005em; }
+  .ins.key .body { color: #fff; }
+  .ins .body strong { color: #b45a34; font-weight: 700; }
+  .ins.key .body strong { color: #fff; font-weight: 700; }
+  .ins .body em { font-style: normal; color: #b45a34; font-weight: 600; }
+  .ins.key .body em { color: #ffdfc9; }
 </style>
 </head>
 <body>
-  <div class="top">
-    <div class="block">Block 2</div>
-    <div class="time">15 min</div>
-  </div>
-  <div class="mid">
-    <h1>MCP —<br>AI와 도구를 잇는 표준</h1>
-    <div class="sub">맥락의 힘은 봤다. 그 맥락을 어떻게 AI에 연결하는가가 다음 질문 — MCP. 한 줄 정의 · USB-C 비유 · 3가지 연결 방식.</div>
-  </div>
-  <div class="bot">
-    <div class="meta">개념 5장 빠르게 / 실습은 B3에서</div>
-    <div class="count">5 slides</div>
+  <div class="step-badge">STEP <strong>4</strong> / 4</div>
+  <div class="eyebrow">결론</div>
+  <div class="h-large">맥락이 있어야 — <em>진짜 쓸만한 답</em>이 나온다</div>
+  <div class="rule"></div>
+  <div class="intro">같은 스킬·같은 프롬프트여도 맥락이 없으면 <strong>일반론</strong>, 맥락이 있으면 <strong>이 고객 전용의 쓸만한 답</strong>이 나온다. 차이는 AI 능력이 아니라 — AI가 무엇을 읽을 수 있는가.</div>
+  <div class="insights">
+    <div class="ins">
+      <div class="num">01</div>
+      <div class="body">정답은 프롬프트에 있지 않다. <strong>맥락에 있다.</strong></div>
+    </div>
+    <div class="ins">
+      <div class="num">02</div>
+      <div class="body">맥락은 <em>CLAUDE.md에도</em> 있지만 — 대부분은 <strong>도구 안</strong>에 있다.</div>
+    </div>
+    <div class="ins key">
+      <div class="num">03</div>
+      <div class="body">SFDC · Slack · Notion · Gmail을 AI가 직접 읽게 하려면 — <em>다음 블록부터 MCP.</em> AI가 도구에서 직접 맥락을 읽게 하는 표준.</div>
+    </div>
   </div>
 </body>
 </html>

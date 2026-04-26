@@ -114,7 +114,7 @@
     <!-- Navigation -->
     <div class="nav-bar">
       <button id="btn-prev" title="Previous (\u2190)">Prev</button>
-      <span class="slide-counter" id="counter">1 / 45</span>
+      <span class="slide-counter" id="counter">1 / 46</span>
       <button id="btn-next" title="Next (\u2192)">Next</button>
       <button class="btn-fullscreen" id="btn-fs" title="Fullscreen (F)">&#x26F6;</button>
     </div>
@@ -683,6 +683,213 @@
 })();
 </script>
 <meta charset=&quot;UTF-8&quot;>
+<title>Day 4 · S03 하네스 6축 한눈에</title>
+<link rel=&quot;stylesheet&quot; href=&quot;./assets/warm-neutral.css&quot;>
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #5a4d40; margin-top: 2pt; max-width: 620pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 10pt 14pt; border-radius: 10pt; background: #ebe1d2; }
+  .cell.terra { background: #c56a4a; color: #f7efe4; }
+  .cell .num { font-size: 10pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; }
+  .cell.terra .num { color: #f2cdb4; }
+  .cell .name { font-size: 14pt; font-weight: 600; color: #2b2520; margin-top: 2pt; letter-spacing: -0.005em; }
+  .cell.terra .name { color: #fff; }
+  .cell .def { font-size: 10pt; line-height: 1.5; color: #5a4d40; margin-top: 4pt; }
+  .cell.terra .def { color: #f5e4d4; }
+</style>
+</head>
+<body>
+  <div class=&quot;eyebrow&quot;>프레임</div>
+  <div class=&quot;h-large&quot;>AI와 함께 일하는 <em>6단계 사이클</em> <span style=&quot;font-size:12pt;font-weight:400;color:#7d6b5a;margin-left:8pt;&quot;>— 이 6단계를 반복해야 AI가 내 일처럼 일한다.</span></div>
+  <div class=&quot;rule&quot;></div>
+  <div class=&quot;grid&quot;>
+    <div class=&quot;cell&quot;>
+      <div class=&quot;num&quot;>01</div>
+      <div class=&quot;name&quot;>구조</div>
+      <div class=&quot;def&quot;>AI가 내 업무를 &quot;어디서·어떤 규칙으로&quot; 이해할 뼈대.<br>CLAUDE.md·폴더·rules — 한 번 설정하면 반복 설명이 사라진다.</div>
+    </div>
+    <div class=&quot;cell&quot;>
+      <div class=&quot;num&quot;>02</div>
+      <div class=&quot;name&quot;>맥락</div>
+      <div class=&quot;def&quot;>지금 이 작업에 필요한 &quot;변하는 정보&quot;를<br>AI가 접근하게 연결 — MCP · 외부 데이터.</div>
+    </div>
+    <div class=&quot;cell&quot;>
+      <div class=&quot;num&quot;>03</div>
+      <div class=&quot;name&quot;>계획</div>
+      <div class=&quot;def&quot;>바로 실행하지 않고 &quot;무엇을·어떤 순서로·왜&quot;를 먼저.<br>Clarify · Ouroboros로 구체화한다.</div>
+    </div>
+    <div class=&quot;cell&quot;>
+      <div class=&quot;num&quot;>04</div>
+      <div class=&quot;name&quot;>실행</div>
+      <div class=&quot;def&quot;>짠 계획대로 스킬·Subagent 호출.<br>구체화된 스펙이 있으면 실행 품질이 올라간다.</div>
+    </div>
+    <div class=&quot;cell terra&quot;>
+      <div class=&quot;num&quot;>05 · 오늘의 축</div>
+      <div class=&quot;name&quot;>검증</div>
+      <div class=&quot;def&quot;>결과를 만든 사람(AI)이 아닌 다른 관점으로 점검.<br>Generator ≠ Evaluator.</div>
+    </div>
+    <div class=&quot;cell terra&quot;>
+      <div class=&quot;num&quot;>06 · 오늘의 축</div>
+      <div class=&quot;name&quot;>개선</div>
+      <div class=&quot;def&quot;>검증에서 드러난 문제를 스킬·rules에 되먹여 다음엔 더 낫게.<br>Build → Use → Notice → Fix.</div>
+    </div>
+  </div>
+</body>
+</html>
+" sandbox="allow-same-origin"></iframe>
+        <iframe class="slide-frame" data-slide="4" srcdoc="<!DOCTYPE html>
+<html lang=&quot;ko&quot;>
+<head>
+<base href=&quot;./&quot;>
+<script>
+(() => {
+  const slideFile = &quot;slide-04.html&quot;;
+  const localAssetPrefix = &quot;./assets/&quot;;
+  const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
+  const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
+  const prefix = '[slides-grab:image]';
+
+  function describeElement(element) {
+    if (!element || element.nodeType !== Node.ELEMENT_NODE) return '';
+    if (element === document.body) return 'body';
+
+    const parts = [];
+    let current = element;
+    while (current &amp;&amp; current.nodeType === Node.ELEMENT_NODE &amp;&amp; current !== document.body) {
+      let part = current.tagName.toLowerCase();
+      if (current.id) {
+        part += '#' + current.id;
+        parts.unshift(part);
+        break;
+      }
+      if (current.classList.length > 0) {
+        part += '.' + Array.from(current.classList).slice(0, 2).join('.');
+      }
+      parts.unshift(part);
+      current = current.parentElement;
+    }
+    return 'body > ' + parts.join(' > ');
+  }
+
+  function warn(message, detail) {
+    console.warn(prefix + ' ' + slideFile + ': ' + message, detail);
+  }
+
+  function fail(message, detail) {
+    console.error(prefix + ' ' + slideFile + ': ' + message, detail);
+  }
+
+  function validateAssetSource(kind, source, { allowEmpty = true, onNoncanonical = 'warn' } = {}) {
+    const value = (source || '').trim();
+    if (!value) {
+      return allowEmpty;
+    }
+    if (value.startsWith('data:')) {
+      return true;
+    }
+    if (value.startsWith('https://')) {
+      fail('remote ' + kind + ' URL is unsupported in saved slides; download it into ./assets/<file>', { src: value });
+      return false;
+    }
+    if (value.startsWith('http://')) {
+      fail('remote http:// ' + kind + ' URL is unsupported in saved slides; download it into ./assets/<file>', { src: value });
+      return false;
+    }
+    if (absolutePathRe.test(value) || value.startsWith('/')) {
+      fail('non-portable ' + kind + ' path is unsupported', { src: value });
+      return false;
+    }
+    if (schemeRe.test(value)) {
+      fail('unsupported ' + kind + ' URL scheme in saved slides; download it into ./assets/<file>', { src: value });
+      return false;
+    }
+    if (!value.startsWith(localAssetPrefix)) {
+      const report = onNoncanonical === 'fail' ? fail : warn;
+      report('noncanonical local ' + kind + ' path should use ./assets/<file>', { src: value });
+    }
+    return true;
+  }
+
+  function getVideoSources(video) {
+    const sources = [];
+    const directSrc = (video.getAttribute('src') || '').trim();
+    if (directSrc) {
+      sources.push(directSrc);
+    }
+    for (const source of video.querySelectorAll('source[src]')) {
+      const src = (source.getAttribute('src') || '').trim();
+      if (src) {
+        sources.push(src);
+      }
+    }
+    return sources;
+  }
+
+  window.addEventListener('error', (event) => {
+    const target = event.target;
+    if (target instanceof HTMLImageElement) {
+      const src = (target.getAttribute('src') || target.currentSrc || '').trim();
+      if (!src || src.startsWith('data:')) return;
+      if (src.startsWith(localAssetPrefix)) {
+        fail('missing local asset', { src });
+        return;
+      }
+      fail('image failed to load', { src });
+      return;
+    }
+
+    if (target instanceof HTMLVideoElement) {
+      const sources = getVideoSources(target);
+      if (sources.some((src) => src.startsWith(localAssetPrefix))) {
+        fail('missing local video asset', { sources });
+        return;
+      }
+      fail('video failed to load', { sources });
+      return;
+    }
+
+    if (target instanceof HTMLSourceElement &amp;&amp; target.parentElement instanceof HTMLVideoElement) {
+      const src = (target.getAttribute('src') || '').trim();
+      if (!src) return;
+      if (src.startsWith(localAssetPrefix)) {
+        fail('missing local video asset', { src });
+        return;
+      }
+      fail('video source failed to load', { src });
+    }
+  }, true);
+
+  window.addEventListener('DOMContentLoaded', () => {
+    for (const image of document.querySelectorAll('img[src]')) {
+      const src = (image.getAttribute('src') || '').trim();
+      validateAssetSource('image', src);
+    }
+
+    for (const video of document.querySelectorAll('video')) {
+      for (const src of getVideoSources(video)) {
+        validateAssetSource('video', src);
+      }
+
+      const poster = (video.getAttribute('poster') || '').trim();
+      if (poster) {
+        validateAssetSource('image', poster);
+      }
+    }
+
+    for (const element of document.body.querySelectorAll('*')) {
+      if (element === document.body) continue;
+      const backgroundImage = window.getComputedStyle(element).backgroundImage;
+      if (!backgroundImage || backgroundImage === 'none' || !backgroundImage.includes('url(')) continue;
+      fail('non-body background-image is not supported for slide content', {
+        element: describeElement(element),
+        backgroundImage,
+      });
+    }
+  });
+})();
+</script>
+<meta charset=&quot;UTF-8&quot;>
 <title>Day 4 · S03 오늘의 문장</title>
 <link rel=&quot;stylesheet&quot; href=&quot;./assets/warm-neutral.css&quot;>
 <style>
@@ -702,13 +909,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="4" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="5" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-04.html&quot;;
+  const slideFile = &quot;slide-05.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -889,13 +1096,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="5" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="6" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-05.html&quot;;
+  const slideFile = &quot;slide-06.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -1072,13 +1279,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="6" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="7" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-06.html&quot;;
+  const slideFile = &quot;slide-07.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -1270,13 +1477,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="7" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="8" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-07.html&quot;;
+  const slideFile = &quot;slide-08.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -1469,13 +1676,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="8" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="9" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-08.html&quot;;
+  const slideFile = &quot;slide-09.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -1652,13 +1859,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="9" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="10" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-09.html&quot;;
+  const slideFile = &quot;slide-10.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -1861,13 +2068,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="10" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="11" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-10.html&quot;;
+  const slideFile = &quot;slide-11.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -2054,13 +2261,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="11" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="12" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-11.html&quot;;
+  const slideFile = &quot;slide-12.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -2245,13 +2452,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="12" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="13" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-12.html&quot;;
+  const slideFile = &quot;slide-13.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -2438,13 +2645,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="13" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="14" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-13.html&quot;;
+  const slideFile = &quot;slide-14.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -2643,13 +2850,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="14" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="15" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-14.html&quot;;
+  const slideFile = &quot;slide-15.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -2852,13 +3059,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="15" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="16" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-15.html&quot;;
+  const slideFile = &quot;slide-16.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -3061,13 +3268,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="16" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="17" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-16.html&quot;;
+  const slideFile = &quot;slide-17.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -3251,13 +3458,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="17" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="18" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-17.html&quot;;
+  const slideFile = &quot;slide-18.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -3434,13 +3641,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="18" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="19" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-18.html&quot;;
+  const slideFile = &quot;slide-19.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -3640,13 +3847,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="19" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="20" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-19.html&quot;;
+  const slideFile = &quot;slide-20.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -3850,13 +4057,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="20" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="21" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-20.html&quot;;
+  const slideFile = &quot;slide-21.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -4039,13 +4246,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="21" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="22" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-21.html&quot;;
+  const slideFile = &quot;slide-22.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -4248,13 +4455,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="22" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="23" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-22.html&quot;;
+  const slideFile = &quot;slide-23.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -4459,13 +4666,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="23" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="24" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-23.html&quot;;
+  const slideFile = &quot;slide-24.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -4665,13 +4872,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="24" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="25" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-24.html&quot;;
+  const slideFile = &quot;slide-25.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -4850,13 +5057,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="25" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="26" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-25.html&quot;;
+  const slideFile = &quot;slide-26.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -5033,13 +5240,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="26" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="27" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-26.html&quot;;
+  const slideFile = &quot;slide-27.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -5244,13 +5451,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="27" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="28" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-27.html&quot;;
+  const slideFile = &quot;slide-28.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -5443,13 +5650,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="28" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="29" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-28.html&quot;;
+  const slideFile = &quot;slide-29.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -5654,13 +5861,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="29" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="30" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-29.html&quot;;
+  const slideFile = &quot;slide-30.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -5871,13 +6078,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="30" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="31" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-30.html&quot;;
+  const slideFile = &quot;slide-31.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -6084,13 +6291,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="31" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="32" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-31.html&quot;;
+  const slideFile = &quot;slide-32.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -6288,13 +6495,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="32" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="33" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-32.html&quot;;
+  const slideFile = &quot;slide-33.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -6486,13 +6693,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="33" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="34" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-33.html&quot;;
+  const slideFile = &quot;slide-34.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -6694,13 +6901,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="34" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="35" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-34.html&quot;;
+  const slideFile = &quot;slide-35.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -6883,13 +7090,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="35" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="36" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-35.html&quot;;
+  const slideFile = &quot;slide-36.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -7094,13 +7301,13 @@
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="36" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="37" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-36.html&quot;;
+  const slideFile = &quot;slide-37.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -7305,13 +7512,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="37" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="38" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-37.html&quot;;
+  const slideFile = &quot;slide-38.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -7491,13 +7698,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="38" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="39" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-38.html&quot;;
+  const slideFile = &quot;slide-39.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -7681,13 +7888,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="39" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="40" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-39.html&quot;;
+  const slideFile = &quot;slide-40.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -7864,13 +8071,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="40" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="41" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-40.html&quot;;
+  const slideFile = &quot;slide-41.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -8077,13 +8284,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="41" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="42" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-41.html&quot;;
+  const slideFile = &quot;slide-42.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -8276,13 +8483,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="42" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="43" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-42.html&quot;;
+  const slideFile = &quot;slide-43.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -8485,13 +8692,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="43" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="44" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-43.html&quot;;
+  const slideFile = &quot;slide-44.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -8684,13 +8891,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="44" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="45" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-44.html&quot;;
+  const slideFile = &quot;slide-45.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -8869,13 +9076,13 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
-        <iframe class="slide-frame" data-slide="45" srcdoc="<!DOCTYPE html>
+        <iframe class="slide-frame" data-slide="46" srcdoc="<!DOCTYPE html>
 <html lang=&quot;ko&quot;>
 <head>
 <base href=&quot;./&quot;>
 <script>
 (() => {
-  const slideFile = &quot;slide-45.html&quot;;
+  const slideFile = &quot;slide-46.html&quot;;
   const localAssetPrefix = &quot;./assets/&quot;;
   const absolutePathRe = /^(file:\/\/|\/Users\/|\/home\/|\/var\/|\/tmp\/|\/private\/|\/Volumes\/|[A-Za-z]:[\\/]|\\\\)/i;
   const schemeRe = /^[a-z][a-z0-9+\-.]*:/i;
@@ -9093,7 +9300,7 @@ Day 3에서 만들었고 B1 에이전트 피드백으로
   </div>
 
   <script>
-    const TOTAL = 45;
+    const TOTAL = 46;
     let current = 1;
 
     const frames = document.querySelectorAll('.slide-frame');

@@ -2,54 +2,62 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S34 짝꿍 교환 점검</title>
+<title>Day 2 · S33 내 문제 쪼개기 실습</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .checks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 14pt; }
-  .check { padding: 16pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
-  .check.terra { background: #c56a4a; color: #f7efe4; }
-  .check .num { font-family: 'SF Mono', Menlo, monospace; font-size: 22pt; font-weight: 600; color: #c56a4a; letter-spacing: -0.01em; }
-  .check.terra .num { color: #fff; opacity: 0.85; }
-  .check h4 { font-size: 13pt; font-weight: 600; color: #2b2520; margin-top: 8pt; letter-spacing: -0.005em; line-height: 1.28; }
-  .check.terra h4 { color: #fff; }
-  .check .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 10pt; }
-  .check.terra .body { color: #f5e4d4; }
-  .check .body strong { color: #b45a34; font-weight: 600; }
-  .check.terra .body strong { color: #fff; }
-  .check .example { margin-top: auto; padding-top: 10pt; font-size: 9pt; line-height: 1.5; color: #7d6b5a; border-top: 1px dashed #d4c4ac; font-family: 'SF Mono', Menlo, monospace; }
-  .check.terra .example { color: #f2cdb4; border-top-color: rgba(255,255,255,0.3); }
-  .foot { margin-top: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .foot strong { color: #b45a34; }
+  .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
+  .worksheet { padding: 12pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; overflow: hidden; }
+  .worksheet .tag { font-size: 9pt; letter-spacing: 0.22em; color: #a0917e; font-weight: 700; text-transform: uppercase; }
+  .worksheet h4 { font-size: 12.5pt; font-weight: 600; color: #2b2520; margin-top: 4pt; letter-spacing: -0.005em; }
+  .worksheet .problem { margin-top: 8pt; padding: 7pt 10pt; background: #f5ede2; border-radius: 6pt; font-size: 9.5pt; color: #42332a; line-height: 1.45; }
+  .worksheet .problem strong { color: #b45a34; }
+  .worksheet .blanks { margin-top: 8pt; display: flex; flex-direction: column; gap: 3pt; }
+  .worksheet .blanks .row { display: grid; grid-template-columns: 22pt 1fr; gap: 8pt; align-items: center; padding: 3pt 0; border-bottom: 1px dashed #d4c4ac; }
+  .worksheet .blanks .row:last-child { border-bottom: none; }
+  .worksheet .blanks .num { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; color: #c56a4a; font-weight: 600; }
+  .worksheet .blanks .blank { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; color: #7d6b5a; letter-spacing: 0.02em; }
+  .tips { padding: 12pt 14pt; border-radius: 12pt; background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; overflow: hidden; }
+  .tips .tag { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .tips h4 { font-size: 12.5pt; font-weight: 600; color: #fff; margin-top: 4pt; letter-spacing: -0.005em; }
+  .tips ul { list-style: none; margin-top: 9pt; display: flex; flex-direction: column; gap: 7pt; }
+  .tips li { font-size: 9.5pt; line-height: 1.5; color: #f5e4d4; padding-left: 13pt; position: relative; }
+  .tips li::before { content: ""; position: absolute; left: 0; top: 6pt; width: 5pt; height: 5pt; border-radius: 50%; background: #f2cdb4; }
+  .tips li strong { color: #fff; font-weight: 700; }
+  .closing { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; flex-shrink: 0; }
+  .closing strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">짝꿍 · 2분</div>
-  <div class="h-large">짝꿍 Step 읽어보기 — <em>한 번에 이해되면 합격</em></div>
+  <div class="eyebrow">실습 · 5분</div>
+  <div class="h-large">내 문제 정의서, <em>지금 Step으로 쪼개기</em></div>
   <div class="rule"></div>
-  <div class="intro">본인 Step을 <strong>짝꿍에게 보여주고</strong> 세 가지만 물어본다. 읽는 사람이 한 번에 이해 못 하면 쪼개기가 덜 된 것.</div>
-  <div class="checks">
-    <div class="check">
-      <div class="num">01</div>
-      <h4>동사로 시작?</h4>
-      <div class="body">각 Step의 첫 단어가 <strong>동사</strong>인가. "추출·비교·수집·정리·확인" 같은 동작.</div>
-      <div class="example">X "미팅 노트"<br>O "미팅 노트 수집"</div>
+  <div class="intro">어제 적은 본인 <strong>문제 정의서</strong>를 꺼낸다. "문제 이름" 하나 아래에 동사로 시작하는 Step 4-5개를 적는다.</div>
+  <div class="wrap">
+    <div class="worksheet">
+      <div class="tag">워크시트</div>
+      <h4>내 문제 Step 분해</h4>
+      <div class="problem"><strong>문제 이름</strong> (어제 적은 것 그대로) — _______________________</div>
+      <div class="blanks">
+        <div class="row"><span class="num">01</span><span class="blank">_____ 한다 (동사)</span></div>
+        <div class="row"><span class="num">02</span><span class="blank">_____ 한다</span></div>
+        <div class="row"><span class="num">03</span><span class="blank">_____ 한다</span></div>
+        <div class="row"><span class="num">04</span><span class="blank">_____ 한다</span></div>
+        <div class="row"><span class="num">05</span><span class="blank">(필요하면) _____ 한다</span></div>
+      </div>
     </div>
-    <div class="check terra">
-      <div class="num">02</div>
-      <h4>입력 → 출력?</h4>
-      <div class="body"><strong>무엇을 넣고 무엇이 나오는지</strong> 한 줄로 짝꿍이 떠올릴 수 있나.</div>
-      <div class="example">입력: 고객명+기간<br>출력: 액션 3-5개</div>
-    </div>
-    <div class="check">
-      <div class="num">03</div>
-      <h4>반복 업무?</h4>
-      <div class="body">이번 한 번만이 아니라 <strong>매주·매달</strong> 도는 일인가. 일회성은 스킬 대상 아님.</div>
-      <div class="example">O 주 3회 리캡<br>X 올해 한 번 제안서</div>
+    <div class="tips">
+      <div class="tag">작성 팁 3가지</div>
+      <h4>잘 쪼갠 Step의 조건</h4>
+      <ul>
+        <li>각 Step 앞에 <strong>동사 하나</strong> — 추출·비교·정리·확인·수집 등</li>
+        <li><strong>입력과 출력</strong>을 한 줄로 — 무엇 넣고 무엇 나오나</li>
+        <li>손이 <strong>반복해서</strong> 하는 일인가 — 한 번만 하는 건 Step 아님</li>
+      </ul>
     </div>
   </div>
-  <div class="foot">짝꿍이 <strong>"이게 뭐 하는 거야?"</strong> 되묻는 Step은 쪼개기가 덜 된 것. 한 번 더 다듬기.</div>
+  <div class="closing">다 쓰면 짝꿍과 교환. <strong>"이 Step이 뭐 하는지"</strong>가 한 번에 읽히면 합격.</div>
 </body>
 </html>

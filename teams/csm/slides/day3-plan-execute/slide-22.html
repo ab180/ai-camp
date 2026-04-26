@@ -2,46 +2,58 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S22 Day 2 스킬 결합 1/2</title>
+<title>Day 3 · S21 베이스 템플릿 2/2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
-  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
-  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
-  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
-  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
-  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
-  .cell .body strong { color: #b45a34; font-weight: 600; }
-  .cell .code { font-size: 9pt; font-family: 'SF Mono', Menlo, monospace; color: #42332a; background: rgba(197,106,74,0.1); padding: 5pt 8pt; border-radius: 5pt; margin-top: 3pt; display: inline-block; }
+  .tree { margin-top: 12pt; padding: 18pt 22pt; background: #1a1410; border-radius: 14pt; color: #f5e4d4; font-family: 'SF Mono', Menlo, monospace; font-size: 10.5pt; line-height: 1.75; }
+  .tree .dim { color: #7d6b5a; }
+  .tree .hl { color: #f2cdb4; font-weight: 600; }
+  .tree .comment { color: #7d6b5a; font-style: italic; }
+  .blocks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; margin-top: 10pt; flex: 1; }
+  .b { padding: 12pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
+  .b .label { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .b h3 { font-size: 12.5pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .b .body { font-size: 9.5pt; line-height: 1.55; color: #42332a; }
+  .b .body strong { color: #b45a34; font-weight: 600; }
+  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .closing strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Day 2 결합 · 1/2</div>
-  <div class="h-large">어제 연결한 MCP가 <em>이 스킬에 어떻게</em> 쓰이나</div>
+  <div class="eyebrow">베이스 구조 · 2/2</div>
+  <div class="h-large">스킬 하나는 <em>어떻게 생겼나</em></div>
   <div class="rule"></div>
-  <div class="intro">베이스 스킬은 <strong>SKILL.md 상단</strong>에 "이 스킬은 Notion MCP · Gmail MCP를 사용한다"로 선언. 실행 시 AI가 그 도구를 <strong>자동 호출</strong>한다.</div>
-  <div class="concept">
-    <div class="label">한 줄 정의</div>
-    <div class="def">스킬 = <em>절차</em> · MCP = <em>맥락</em> · 합치면 "이 고객 전용 절차"</div>
+  <div class="intro">베이스 스킬은 <strong>세 블록</strong>으로 구성. 오늘 내가 손댈 부분은 대부분 rules/ 한 곳.</div>
+  <div class="tree">
+<span class="dim">skills/</span><span class="hl">recap-mail/</span>
+<span class="dim">├─</span> <span class="hl">SKILL.md</span>           <span class="comment">// 스킬의 정체성 · 호출 조건 · 대표 예시</span>
+<span class="dim">├─</span> <span class="hl">templates/</span>          <span class="comment">// 출력 포맷 (리캡 메일 본문 틀)</span>
+<span class="dim">│   └─</span> recap.md
+<span class="dim">└─</span> <span class="hl">rules/</span>              <span class="comment">// 톤 · 금지어 · 필수 섹션</span>
+<span class="dim">    ├─</span> tone.md
+<span class="dim">    ├─</span> banned.md
+<span class="dim">    └─</span> required.md
   </div>
-  <div class="rows">
-    <div class="cell">
-      <div class="label">선언 방식</div>
-      <h3>SKILL.md 상단 한 줄</h3>
-      <div class="body">스킬이 MCP를 쓰려면 상단에 <strong>사용 선언</strong>만 있으면 됨.</div>
-      <span class="code">uses: [notion, gmail]</span>
+  <div class="blocks">
+    <div class="b">
+      <div class="label">SKILL.md</div>
+      <h3>언제 이 스킬을 쓰나</h3>
+      <div class="body">description · 입력 · 출력 · MCP 사용 선언. <strong>1~2줄만 손봐도 OK</strong>.</div>
     </div>
-    <div class="cell">
-      <div class="label">CSM 예시</div>
-      <h3>리캡 메일 스킬 실행 시</h3>
-      <div class="body">Notion MCP에서 <strong>지난 미팅 노트</strong>를 읽고 · Gmail MCP에서 <strong>지난 메일 톤</strong>을 참고. 내가 복붙할 필요 없음.</div>
+    <div class="b">
+      <div class="label">templates/</div>
+      <h3>결과물 틀</h3>
+      <div class="body">고정 포맷(예: 리캡 메일 3문단). <strong>건드리지 말고</strong> 유지 권장.</div>
+    </div>
+    <div class="b">
+      <div class="label">rules/</div>
+      <h3>톤 · 금지 · 필수</h3>
+      <div class="body">오늘 주로 손댈 곳. <strong>여기만 잘 고쳐도</strong> 내 스킬의 70%.</div>
     </div>
   </div>
+  <div class="closing">오늘 원칙 — <strong>2개는 그대로</strong>(SKILL.md · templates/) · <strong>1개만 손대기</strong>(rules/)부터 시작.</div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S09 맥락이 바꾸는 건 정답 (STEP 4/4)</title>
+<title>Day 2 · S08 고객 B 맥락 (STEP 3/4)</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -13,39 +13,76 @@
     white-space: nowrap;
   }
   .step-badge strong { color: #b45a34; font-weight: 700; }
-  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 4pt; max-width: 640pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .insights { display: flex; flex-direction: column; gap: 9pt; flex: 1; margin-top: 14pt; }
-  .ins { padding: 14pt 18pt; border-radius: 12pt; background: #ebe1d2; display: grid; grid-template-columns: 36pt 1fr; gap: 14pt; align-items: center; }
-  .ins.key { background: #c56a4a; color: #f7efe4; }
-  .ins .num { font-size: 24pt; font-weight: 500; color: #c56a4a; line-height: 1; letter-spacing: -0.02em; text-align: center; }
-  .ins.key .num { color: #fff; opacity: 0.75; }
-  .ins .body { font-size: 13pt; line-height: 1.5; font-weight: 500; color: #2b2520; letter-spacing: -0.005em; }
-  .ins.key .body { color: #fff; }
-  .ins .body strong { color: #b45a34; font-weight: 700; }
-  .ins.key .body strong { color: #fff; font-weight: 700; }
-  .ins .body em { font-style: normal; color: #b45a34; font-weight: 600; }
-  .ins.key .body em { color: #ffdfc9; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 9pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col-head { display: flex; flex-direction: column; gap: 3pt; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .tag { color: #a0917e; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+  .block { display: flex; flex-direction: column; gap: 3pt; }
+  .block-label { font-size: 8.5pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .block-label { color: #b45a34; }
+  .col.terra .block-label { color: #f2cdb4; }
+  .block-body { font-size: 9.5pt; line-height: 1.55; }
+  .col.cream .block-body { color: #42332a; }
+  .col.terra .block-body { color: #f5e4d4; }
+  .col.cream .block-body strong { color: #2b2520; font-weight: 600; }
+  .col.terra .block-body strong { color: #fff; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="step-badge">STEP <strong>4</strong> / 4</div>
-  <div class="eyebrow">결론</div>
-  <div class="h-large">맥락이 있어야 — <em>진짜 쓸만한 답</em>이 나온다</div>
+  <div class="step-badge">STEP <strong>3</strong> / 4</div>
+  <div class="eyebrow">고객 B · 맥락</div>
+  <div class="h-large">같은 질문 + <em>고객 B 맥락</em> = 완전히 다른 답</div>
   <div class="rule"></div>
-  <div class="intro">같은 스킬·같은 프롬프트여도 맥락이 없으면 <strong>일반론</strong>, 맥락이 있으면 <strong>이 고객 전용의 쓸만한 답</strong>이 나온다. 차이는 AI 능력이 아니라 — AI가 무엇을 읽을 수 있는가.</div>
-  <div class="insights">
-    <div class="ins">
-      <div class="num">01</div>
-      <div class="body">정답은 프롬프트에 있지 않다. <strong>맥락에 있다.</strong></div>
+  <div class="intro">동일 프롬프트에 <strong>다른 맥락</strong>을 얹으면 — 같은 스킬이 완전히 다른 결과를 낸다. AI 성능의 문제가 아니라 <strong>재료의 문제</strong>.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="col-head">
+        <div class="tag">고객 B · 스타트업</div>
+        <h3>월 계약 · 온보딩 초기</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="block">
+        <div class="block-label">계약 구조</div>
+        <div class="block-body">월 계약 스타트업 · <strong>온보딩 3주차</strong> · 아직 안정화 단계</div>
+      </div>
+      <div class="block">
+        <div class="block-label">지난 미팅 이슈</div>
+        <div class="block-body">이벤트 심기 가이드 확인 + <strong>SDK 버전 이슈</strong> 재발</div>
+      </div>
+      <div class="block">
+        <div class="block-label">톤 요구</div>
+        <div class="block-body">실무자 개발자 대상 · <strong>기술 용어 OK</strong> · 짧고 직설적</div>
+      </div>
     </div>
-    <div class="ins">
-      <div class="num">02</div>
-      <div class="body">맥락은 <em>CLAUDE.md에도</em> 있지만 — 대부분은 <strong>도구 안</strong>에 있다.</div>
-    </div>
-    <div class="ins key">
-      <div class="num">03</div>
-      <div class="body">SFDC · Slack · Notion · Gmail을 AI가 직접 읽게 하려면 — <em>다음 블록부터 MCP.</em> AI가 도구에서 직접 맥락을 읽게 하는 표준.</div>
+    <div class="col terra">
+      <div class="col-head">
+        <div class="tag">기대 답변의 모양</div>
+        <h3>진행 체크 + 재발 방지 액션</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="block">
+        <div class="block-label">오프닝</div>
+        <div class="block-body">인사 가볍게 + <strong>이벤트 심기 진행 상황</strong> 1줄 체크</div>
+      </div>
+      <div class="block">
+        <div class="block-label">본문 코어</div>
+        <div class="block-body">SDK 버전 이슈 <strong>재발 방지 3줄</strong> — 버전 고정·CI 체크·릴리즈 노트</div>
+      </div>
+      <div class="block">
+        <div class="block-label">다음 액션</div>
+        <div class="block-body">온보딩 <strong>4주차 기준 활성 이벤트 3개</strong> 확정 합의</div>
+      </div>
     </div>
   </div>
 </body>
