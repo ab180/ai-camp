@@ -2,54 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S36 내가 고른 Step 적어보기</title>
+<title>Day 2 · S35 스킬로 만들 Step 1개 고르기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .worksheet { margin-top: 12pt; padding: 18pt 22pt; background: #ebe1d2; border-radius: 14pt; display: flex; flex-direction: column; gap: 10pt; flex: 1; }
-  .worksheet .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
-  .worksheet .prompt { font-size: 12pt; color: #2b2520; font-weight: 500; letter-spacing: -0.005em; }
-  .worksheet .prompt strong { color: #b45a34; font-weight: 600; }
-  .bigblank { background: #f5ede2; border: 2pt dashed #d4c4ac; border-radius: 10pt; padding: 24pt 22pt; font-family: 'SF Mono', Menlo, monospace; font-size: 13pt; color: #a0917e; text-align: center; letter-spacing: 0.02em; }
-  .checks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 4pt; }
-  .chk { padding: 10pt 12pt; border-radius: 9pt; background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; gap: 4pt; }
-  .chk .n { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #f2cdb4; }
-  .chk .q { font-size: 10pt; font-weight: 600; color: #fff; line-height: 1.35; }
-  .chk .hint { font-size: 9pt; line-height: 1.45; color: #f5e4d4; }
-  .chk .hint strong { color: #fff; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .foot strong { color: #b45a34; }
+  .criteria { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 14pt; }
+  .card { padding: 16pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
+  .card .num { font-family: 'SF Mono', Menlo, monospace; font-size: 22pt; font-weight: 600; color: #c56a4a; letter-spacing: -0.01em; }
+  .card h4 { font-size: 13.5pt; font-weight: 600; color: #2b2520; margin-top: 8pt; letter-spacing: -0.005em; line-height: 1.28; }
+  .card .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 10pt; }
+  .card .body strong { color: #b45a34; }
+  .card .check { margin-top: auto; padding-top: 10pt; font-size: 9.5pt; line-height: 1.5; color: #7d6b5a; border-top: 1px dashed #d4c4ac; }
+  .card .check strong { color: #b45a34; font-weight: 600; }
+  .closing { margin-top: 12pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
+  .closing strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">선택 · 1분</div>
-  <div class="h-large">오늘 스킬로 만들 Step <em>1개 — 한 줄로 적기</em></div>
+  <div class="eyebrow">선택 기준</div>
+  <div class="h-large">이 <em>3가지 기준</em>으로 Step 하나만 고른다</div>
   <div class="rule"></div>
-  <div class="intro">세 기준으로 고른 Step 하나를 <strong>지금 한 줄로</strong> 적어본다. 다음 슬라이드에서 이 한 줄이 스펙 5줄로 확장된다.</div>
-  <div class="worksheet">
-    <div class="tag">워크시트</div>
-    <div class="prompt">내가 고른 Step (동사로 시작) <strong>→</strong></div>
-    <div class="bigblank">_______________________________________________</div>
-    <div class="checks">
-      <div class="chk">
-        <div class="n">체크 01</div>
-        <div class="q">반복 빈도</div>
-        <div class="hint">주 <strong>2회 이상</strong> 도는 일인가?</div>
-      </div>
-      <div class="chk">
-        <div class="n">체크 02</div>
-        <div class="q">입출력 명확</div>
-        <div class="hint">A 넣으면 B 나오는 게 <strong>한 줄로</strong>?</div>
-      </div>
-      <div class="chk">
-        <div class="n">체크 03</div>
-        <div class="q">도구 연결</div>
-        <div class="hint">어떤 <strong>MCP</strong>가 필요한지 이름 붙일 수 있나?</div>
-      </div>
+  <div class="intro">4-5개 쪼갠 Step 중 <strong>오늘 스킬로 만들 1개</strong>를 고른다. 모호하게 "제일 귀찮은 것"으로 고르지 않는다. 아래 3가지로 판단한다.</div>
+  <div class="criteria">
+    <div class="card">
+      <div class="num">01</div>
+      <h4>반복 빈도</h4>
+      <div class="body">주 <strong>2회 이상</strong> 반복하는 Step인가? 월 1회짜리는 스킬로 만들어도 다시 안 쓴다.</div>
+      <div class="check"><strong>체크</strong> 지난 한 주에 이 Step 몇 번 했지?</div>
+    </div>
+    <div class="card">
+      <div class="num">02</div>
+      <h4>입출력 명확</h4>
+      <div class="body">"A 넣으면 B 나옴"이 <strong>한 줄로</strong> 적히는가? 결과 모양이 매번 달라지면 스킬 안 만들어진다.</div>
+      <div class="check"><strong>체크</strong> 출력 형태를 bullet 3개·표·문장 등으로 고정할 수 있나?</div>
+    </div>
+    <div class="card">
+      <div class="num">03</div>
+      <h4>도구 연결</h4>
+      <div class="body">필요한 정보가 <strong>연결된 MCP</strong>(SFDC·Slack·Notion·Gmail)에서 닿는가? 아직 연결 안 했으면 먼저 그 MCP부터.</div>
+      <div class="check"><strong>체크</strong> 어느 MCP를 써야 이 Step이 돌까?</div>
     </div>
   </div>
-  <div class="foot">이걸로 간다. 다음 슬라이드에서 <strong>스펙 5줄</strong>로 옮긴다.</div>
+  <div class="closing">세 가지 다 <strong>예</strong>면 오늘의 스킬. 하나라도 안 맞으면 다음 Step으로 넘어가서 재검토.</div>
 </body>
 </html>

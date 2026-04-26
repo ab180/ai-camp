@@ -2,48 +2,54 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S32 README 6축 태그</title>
+<title>Day 4 · S31 권한 관리 Role</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .form { background: #ebe1d2; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .form h3 { font-size: 14pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .field { background: #fff; border-radius: 6pt; padding: 8pt 10pt; border: 1px solid #d4c4ac; }
-  .field .lbl { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .field .val { font-size: 10.5pt; color: #2b2520; line-height: 1.5; margin-top: 3pt; font-family: 'SF Mono', Menlo, monospace; }
-  .field .val .tag { display: inline-block; background: #c56a4a; color: #fff; padding: 1pt 6pt; border-radius: 3pt; font-size: 9.5pt; margin-right: 3pt; }
-  .why { background: #c56a4a; color: #f7efe4; border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
-  .why h3 { font-size: 14pt; font-weight: 600; color: #fff; letter-spacing: -0.005em; }
-  .why p { font-size: 10.5pt; color: #f5e4d4; line-height: 1.55; }
-  .why p strong { color: #fff; font-weight: 600; }
-  .why .example { background: rgba(0,0,0,0.15); padding: 8pt 10pt; border-radius: 6pt; font-size: 10pt; color: #f5e4d4; line-height: 1.55; font-family: 'SF Mono', Menlo, monospace; }
-  .why .example b { color: #f2cdb4; font-weight: 600; }
+  .roles { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8pt; flex: 1; margin-top: 12pt; }
+  .role { background: #ebe1d2; border-radius: 10pt; padding: 12pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
+  .role.rec { background: #c56a4a; color: #f7efe4; }
+  .role .name { font-size: 12pt; font-weight: 700; color: #2b2520; letter-spacing: -0.005em; }
+  .role.rec .name { color: #fff; }
+  .role .use { font-size: 9pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
+  .role.rec .use { color: #f2cdb4; }
+  .role ul { font-size: 9.5pt; line-height: 1.55; color: #42332a; padding-left: 12pt; margin: 0; }
+  .role.rec ul { color: #f5e4d4; }
+  .role ul li::marker { color: #b45a34; }
+  .role.rec ul li::marker { color: #f2cdb4; }
+  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">README 골격 · 6축 태그</div>
-  <div class="h-large">이 4줄이면 <em>찾기 · 쓰기</em> 다 된다</div>
+  <div class="eyebrow">권한 관리 2/2 &mdash; Role 선택</div>
+  <div class="h-large">CSM 팀 기본값은 <em>Write</em></div>
   <div class="rule"></div>
-  <div class="intro">스킬 README는 1장이면 충분하다. 아래 4개 필드만 채우면 팀원이 검색하고 고를 수 있다.</div>
-  <div class="panes">
-    <div class="form">
-      <h3>SKILL.md &mdash; 필수 4필드</h3>
-      <div class="field"><div class="lbl">name</div><div class="val">recap-mail</div></div>
-      <div class="field"><div class="lbl">axes (6축 태그)</div><div class="val"><span class="tag">3</span><span class="tag">4</span> 계획 · 실행</div></div>
-      <div class="field"><div class="lbl">when (한 문장)</div><div class="val">고객 미팅 후 리캡 메일 초안이 필요할 때</div></div>
-      <div class="field"><div class="lbl">input / output</div><div class="val">입력: 미팅 노트 / 출력: 메일 초안</div></div>
+  <div class="intro">GitHub에는 5개 role이 있지만, 팀 스킬 repo에는 2~3개만 쓴다. 각자 권한을 <strong>너무 조이지 않는다</strong>.</div>
+  <div class="roles">
+    <div class="role">
+      <div class="use">1</div>
+      <div class="name">Read</div>
+      <ul><li>보기만 가능</li><li>PR 생성 &times;</li><li>외부 옵저버용</li></ul>
     </div>
-    <div class="why">
-      <h3>왜 6축 태그인가</h3>
-      <p>팀 repo가 커지면 스킬을 <strong>이름으로 찾기 어렵다</strong>. 축 기반 검색이 대안.</p>
-      <div class="example">$ grep -l &quot;axes.*5&quot; skills/**/SKILL.md
-
-<b>#&rarr; 검증 스킬만 나옴</b></div>
-      <p>&ldquo;검증 스킬 뭐 있지?&rdquo; 할 때 <strong>축 5로 묶여 있는 것</strong>을 바로 찾는다.</p>
+    <div class="role">
+      <div class="use">2</div>
+      <div class="name">Triage</div>
+      <ul><li>이슈 관리 가능</li><li>코드 수정 &times;</li><li>잘 안 씀</li></ul>
+    </div>
+    <div class="role rec">
+      <div class="use">3 · 권장</div>
+      <div class="name">Write</div>
+      <ul><li>브랜치 생성 가능</li><li>PR 생성 가능</li><li>main 직접 푸시 &times;</li><li><strong>팀원 전원 기본</strong></li></ul>
+    </div>
+    <div class="role">
+      <div class="use">4 · 팀장</div>
+      <div class="name">Admin</div>
+      <ul><li>권한 관리 가능</li><li>main push · Settings</li><li>팀장 1~2명만</li></ul>
     </div>
   </div>
+  <div class="foot">Write = &ldquo;브랜치 만들고 PR까지 자유&rdquo;. main에 바로 못 박는 것만 다르다. <strong>리뷰 문화</strong>가 이 지점에서 시작된다.</div>
 </body>
 </html>

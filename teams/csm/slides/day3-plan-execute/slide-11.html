@@ -2,44 +2,44 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S11 Clarify 개념 2/2</title>
+<title>Day 3 · S10 Clarify 개념 1/2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
-  .row { display: grid; grid-template-columns: 1fr auto 1.4fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .row .before { font-size: 11pt; font-weight: 500; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; line-height: 1.4; }
-  .row .arrow { font-size: 14pt; color: #b45a34; font-weight: 700; }
-  .row .after { font-size: 10.5pt; line-height: 1.55; color: #2b2520; }
-  .row .after strong { color: #b45a34; font-weight: 600; }
-  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
-  .closing strong { color: #fff; font-weight: 700; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 16pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 13pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">개념 · 2/2</div>
-  <div class="h-large">같은 요청, <em>Clarify 전 vs 후</em></div>
+  <div class="eyebrow">개념 · 1/2</div>
+  <div class="h-large">Clarify = <em>"원하는 것"</em>을 말로 만드는 단계</div>
   <div class="rule"></div>
-  <div class="intro">아래 3개는 CSM이 자주 쓰는 요청. 왼쪽은 <strong>바로 실행</strong>한 결과, 오른쪽은 Clarify로 한 겹 다듬은 뒤의 스펙.</div>
+  <div class="intro">AI가 바로 실행하기 전에 <strong>"정확히 무엇을 만들까"</strong>를 되묻는 절차. 질문이 많아서 느려 보이지만, 잘못된 답을 다시 만드는 시간보다 짧다.</div>
+  <div class="concept">
+    <div class="label">한 줄 정의</div>
+    <div class="def">Clarify = 실행 전에 <em>"무엇을·누구를 위해·어떤 모양"</em>을 명시</div>
+  </div>
   <div class="rows">
-    <div class="row">
-      <div class="before">"이탈 위험 리포트 써줘"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>독자</strong> = 영업팀장 · <strong>핵심 질문 3개</strong> = 언제·왜·어떻게 · <strong>결론 먼저</strong> 포맷</div>
+    <div class="cell">
+      <div class="label">왜 필요</div>
+      <h3>머릿속 이미지는 두 정답 사이를 오간다</h3>
+      <div class="body">"리포트 써줘"라고 말할 때 내 머릿속엔 <strong>2~3개 버전</strong>이 있다. 묻지 않으면 AI가 그중 하나를 무작위로 고른다.</div>
     </div>
-    <div class="row">
-      <div class="before">"리캡 메일 초안 줘"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>상대</strong> = 담당자 1명 · <strong>회의 유형</strong> = 체크업 미팅 · <strong>결정사항 강조</strong> 여부 = Yes</div>
-    </div>
-    <div class="row">
-      <div class="before">"문의 답변 드래프트"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>톤</strong> = 실무자 대상 기술 · <strong>회피 표현</strong> = "죄송합니다 단독" · <strong>CTA</strong> 포함</div>
+    <div class="cell">
+      <div class="label">CSM 예시</div>
+      <h3>"이탈 위험 리포트" · Clarify 후</h3>
+      <div class="body">독자(영업팀장), 핵심 질문 3개, 결론 먼저 — 이 3가지가 <strong>명시된 뒤에야</strong> 쓸만한 리포트가 나온다.</div>
     </div>
   </div>
-  <div class="closing">Clarify 없는 스킬은 <strong>빠르게 틀린 답</strong>을 만든다. 같은 3초의 질문이 30분의 재작업을 막는다.</div>
 </body>
 </html>

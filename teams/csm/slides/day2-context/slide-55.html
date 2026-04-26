@@ -2,103 +2,67 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S55 왜 쓰나</title>
+<title>Day 2 · S54 Git vs GitHub</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 14pt; }
-  .card3 { background: #ebe1d2; border-radius: 14pt; padding: 18pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
-  .card3 .idx { font-size: 9pt; letter-spacing: 0.25em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
-  .card3 h3 { font-size: 17pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
-  .card3 .visual { height: 48pt; display: flex; align-items: center; justify-content: center; margin: 4pt 0 2pt; }
-  .card3 .desc { font-size: 10pt; line-height: 1.55; color: #42332a; }
-  .card3 .desc strong { color: #b45a34; font-weight: 600; }
-  /* Visual 1: 타임머신 - 3 dots + line */
-  .tm { display: flex; align-items: center; gap: 6pt; }
-  .tm .dot { width: 11pt; height: 11pt; border-radius: 50%; background: #d4c4ac; }
-  .tm .dot.hi { background: #c56a4a; }
-  .tm .line { width: 14pt; height: 2pt; background: #d4c4ac; }
-  .tm .lbl { font-size: 7.5pt; color: #7d6b5a; letter-spacing: 0.05em; margin-top: 2pt; }
-  .tm-wrap { display: flex; flex-direction: column; align-items: center; gap: 4pt; }
-  .tm-lbls { display: flex; gap: 8pt; font-size: 7pt; color: #7d6b5a; letter-spacing: 0.04em; }
-  /* Visual 2: 평행우주 - branch lines */
-  .br { width: 80pt; height: 42pt; position: relative; }
-  .br::before, .br::after { content: ""; position: absolute; background: #c56a4a; border-radius: 2pt; }
-  .br::before { width: 80pt; height: 2pt; top: 20pt; left: 0; }
-  .br .bup, .br .bdn { position: absolute; width: 40pt; height: 2pt; background: #b45a34; border-radius: 2pt; left: 20pt; }
-  .br .bup { top: 8pt; transform: rotate(-15deg); transform-origin: left; }
-  .br .bdn { top: 32pt; transform: rotate(15deg); transform-origin: left; }
-  .br .nodemain { position: absolute; width: 8pt; height: 8pt; border-radius: 50%; background: #c56a4a; top: 17pt; left: 16pt; }
-  .br .nodebr1 { position: absolute; width: 7pt; height: 7pt; border-radius: 50%; background: #b45a34; top: 4pt; right: 6pt; }
-  .br .nodebr2 { position: absolute; width: 7pt; height: 7pt; border-radius: 50%; background: #b45a34; bottom: 4pt; right: 6pt; }
-  /* Visual 3: 협업 - 3 dots connected */
-  .cl { width: 78pt; height: 48pt; position: relative; }
-  .cl .person { position: absolute; width: 14pt; height: 14pt; border-radius: 50%; background: #c56a4a; border: 2pt solid #ebe1d2; }
-  .cl .p1 { top: 0; left: 32pt; }
-  .cl .p2 { bottom: 0; left: 8pt; }
-  .cl .p3 { bottom: 0; right: 8pt; }
-  .cl .center { position: absolute; top: 18pt; left: 29pt; width: 20pt; height: 20pt; border-radius: 6pt; background: #b45a34; }
-  .cl .ln1, .cl .ln2, .cl .ln3 { position: absolute; background: #d4c4ac; }
-  .cl .ln1 { width: 2pt; height: 14pt; top: 10pt; left: 38pt; }
-  .cl .ln2 { width: 22pt; height: 2pt; bottom: 12pt; left: 18pt; transform: rotate(-25deg); transform-origin: right; }
-  .cl .ln3 { width: 22pt; height: 2pt; bottom: 12pt; right: 18pt; transform: rotate(25deg); transform-origin: left; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; margin-top: 12pt; }
+  .col { padding: 14pt 18pt; border-radius: 14pt; display: flex; flex-direction: column; gap: 7pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .tag { color: #b45a34; }
+  .col.terra .tag { color: #f2cdb4; }
+  .col h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col .def { font-size: 10.5pt; line-height: 1.5; font-weight: 500; }
+  .col.cream .def { color: #2b2520; }
+  .col.terra .def { color: #fff; }
+  .col .def strong { color: #b45a34; font-weight: 700; }
+  .col.terra .def strong { color: #fff; }
+  .col ul { list-style: none; display: flex; flex-direction: column; gap: 6pt; margin-top: 2pt; }
+  .col li { font-size: 9.5pt; line-height: 1.5; padding-left: 13pt; position: relative; }
+  .col.cream li { color: #42332a; }
+  .col.terra li { color: #f5e4d4; }
+  .col li::before { content: ""; position: absolute; left: 0; top: 6pt; width: 5pt; height: 5pt; border-radius: 50%; }
+  .col.cream li::before { background: #b45a34; }
+  .col.terra li::before { background: #f2cdb4; }
+  .closing { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; color: #42332a; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; border-left: 3pt solid #c56a4a; }
+  .closing strong { color: #b45a34; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">멘탈 모델 · 02</div>
-  <div class="h-large">왜 Git/GitHub인가 — <em>3가지</em></div>
+  <div class="eyebrow">멘탈 모델 · 01</div>
+  <div class="h-large">Git ≠ GitHub, <em>다른 것이다</em></div>
   <div class="rule"></div>
-  <div class="intro">명령어 배우기 전에 <strong>왜 이걸 쓰는지</strong>만 먼저. 아래 3가지가 다다.</div>
-  <div class="grid3">
-    <div class="card3">
-      <div class="idx">01</div>
-      <h3>타임머신</h3>
-      <div class="visual">
-        <div class="tm-wrap">
-          <div class="tm">
-            <div class="dot"></div>
-            <div class="line"></div>
-            <div class="dot"></div>
-            <div class="line"></div>
-            <div class="dot hi"></div>
-          </div>
-          <div class="tm-lbls"><span>어제</span><span>오늘 아침</span><span>지금</span></div>
-        </div>
-      </div>
-      <div class="desc">어제 · 오늘 아침 · 지금 <strong>어느 시점으로든 되돌리기</strong>. "저장 안 하고 고친다"고 걱정할 필요 없음. 모든 순간이 스냅샷.</div>
+  <div class="intro">비슷하게 들려도 전혀 다른 두 가지. 헷갈리면 대화가 꼬인다. <strong>어디에서 돌아가는지</strong>로 구분하면 쉽다.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="tag">Git</div>
+      <h3>내 컴퓨터에서 돌아가는 버전 관리 프로그램</h3>
+      <div class="def">터미널에서 실행하는 <strong>프로그램</strong>.</div>
+      <ul>
+        <li>내 컴퓨터 안에서만 작동</li>
+        <li>로컬 파일 변경을 스냅샷으로 추적</li>
+        <li>터미널 명령어로 조작 (`git ...`)</li>
+        <li>인터넷 없어도 동작</li>
+      </ul>
     </div>
-    <div class="card3">
-      <div class="idx">02</div>
-      <h3>평행우주</h3>
-      <div class="visual">
-        <div class="br">
-          <div class="bup"></div>
-          <div class="bdn"></div>
-          <div class="nodemain"></div>
-          <div class="nodebr1"></div>
-          <div class="nodebr2"></div>
-        </div>
-      </div>
-      <div class="desc">원본 건드리지 않고 <strong>새 브랜치</strong>에서 안전하게 실험. 망해도 브랜치 버리면 끝. 원본은 그대로.</div>
-    </div>
-    <div class="card3">
-      <div class="idx">03</div>
-      <h3>팀 · Claude Code 협업</h3>
-      <div class="visual">
-        <div class="cl">
-          <div class="ln1"></div>
-          <div class="ln2"></div>
-          <div class="ln3"></div>
-          <div class="person p1"></div>
-          <div class="person p2"></div>
-          <div class="person p3"></div>
-          <div class="center"></div>
-        </div>
-      </div>
-      <div class="desc">내 CLAUDE.md · 스킬을 팀원이 <strong>clone해서 쓰고</strong>, 개선은 <strong>PR로 제안</strong>. 복리가 팀 단위로 돈다.</div>
+    <div class="col terra">
+      <div class="tag">GitHub</div>
+      <h3>Git으로 관리한 파일을 올려두는 인터넷 공간</h3>
+      <div class="def">브라우저에서 접속하는 <strong>클라우드 서비스</strong>.</div>
+      <ul>
+        <li>웹 주소가 있는 서버 (github.com)</li>
+        <li>팀원이 볼 수 있도록 파일 저장·공유</li>
+        <li>PR·이슈·리뷰 같은 협업 기능</li>
+        <li>인터넷 필수</li>
+      </ul>
     </div>
   </div>
+  <div class="closing">Git은 내 컴퓨터에서 돌아가고, GitHub은 클라우드 — <strong>다른 것. 둘 다 필요.</strong></div>
 </body>
 </html>

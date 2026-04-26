@@ -2,21 +2,57 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S03 오늘의 문장</title>
+<title>Day 4 · S03 하네스 6축 한눈에</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; justify-content: space-between; }
-  .quote { font-size: 38pt; font-weight: 500; color: #2b2520; line-height: 1.25; letter-spacing: -0.015em; max-width: 600pt; }
-  .quote em { font-style: normal; color: #c56a4a; }
-  .note { font-size: 14pt; color: #7d6b5a; line-height: 1.55; max-width: 560pt; }
-  .note strong { color: #2b2520; font-weight: 600; }
-  .foot-rule { font-size: 11pt; color: #a0917e; letter-spacing: 0.05em; border-top: 1px dashed #d4c4ac; padding-top: 8pt; font-family: 'SF Mono', 'Menlo', monospace; }
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #5a4d40; margin-top: 2pt; max-width: 620pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 10pt 14pt; border-radius: 10pt; background: #ebe1d2; }
+  .cell.terra { background: #c56a4a; color: #f7efe4; }
+  .cell .num { font-size: 10pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; }
+  .cell.terra .num { color: #f2cdb4; }
+  .cell .name { font-size: 14pt; font-weight: 600; color: #2b2520; margin-top: 2pt; letter-spacing: -0.005em; }
+  .cell.terra .name { color: #fff; }
+  .cell .def { font-size: 10pt; line-height: 1.5; color: #5a4d40; margin-top: 4pt; }
+  .cell.terra .def { color: #f5e4d4; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">오늘의 문장</div>
-  <div class="quote">만든 사람은 자기 결과를<br><em>공정히</em> 못 본다.</div>
-  <div class="note"><strong>Generator &ne; Evaluator.</strong> 내가 쓴 메일은 내가 읽을 때 늘 그럴듯하다. 다른 관점에 넘겨야 빠진 게 보인다.</div>
-  <div class="foot-rule">Stanford Newton — 두드리는 사람 예측 50% · 실제 정답률 2.5% (20배 과대평가)</div>
+  <div class="eyebrow">프레임</div>
+  <div class="h-large">AI와 함께 일하는 <em>6단계 사이클</em> <span style="font-size:12pt;font-weight:400;color:#7d6b5a;margin-left:8pt;">— 이 6단계를 반복해야 AI가 내 일처럼 일한다.</span></div>
+  <div class="rule"></div>
+  <div class="grid">
+    <div class="cell">
+      <div class="num">01</div>
+      <div class="name">구조</div>
+      <div class="def">AI가 내 업무를 "어디서·어떤 규칙으로" 이해할 뼈대.<br>CLAUDE.md·폴더·rules — 한 번 설정하면 반복 설명이 사라진다.</div>
+    </div>
+    <div class="cell">
+      <div class="num">02</div>
+      <div class="name">맥락</div>
+      <div class="def">지금 이 작업에 필요한 "변하는 정보"를<br>AI가 접근하게 연결 — MCP · 외부 데이터.</div>
+    </div>
+    <div class="cell">
+      <div class="num">03</div>
+      <div class="name">계획</div>
+      <div class="def">바로 실행하지 않고 "무엇을·어떤 순서로·왜"를 먼저.<br>Clarify · Ouroboros로 구체화한다.</div>
+    </div>
+    <div class="cell">
+      <div class="num">04</div>
+      <div class="name">실행</div>
+      <div class="def">짠 계획대로 스킬·Subagent 호출.<br>구체화된 스펙이 있으면 실행 품질이 올라간다.</div>
+    </div>
+    <div class="cell terra">
+      <div class="num">05 · 오늘의 축</div>
+      <div class="name">검증</div>
+      <div class="def">결과를 만든 사람(AI)이 아닌 다른 관점으로 점검.<br>Generator ≠ Evaluator.</div>
+    </div>
+    <div class="cell terra">
+      <div class="num">06 · 오늘의 축</div>
+      <div class="name">개선</div>
+      <div class="def">검증에서 드러난 문제를 스킬·rules에 되먹여 다음엔 더 낫게.<br>Build → Use → Notice → Fix.</div>
+    </div>
+  </div>
 </body>
 </html>

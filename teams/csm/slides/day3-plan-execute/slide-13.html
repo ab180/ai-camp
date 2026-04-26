@@ -2,48 +2,28 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S13 Deep Interview 스킬 1/2</title>
+<title>Day 3 · S12 Ouroboros 한 줄</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
-  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
-  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
-  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
-  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
-  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
-  .cell .body strong { color: #b45a34; font-weight: 600; }
-  .example { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .example strong { color: #b45a34; }
-  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 3pt; }
+  body { display: flex; flex-direction: column; justify-content: center; }
+  .wrap { max-width: 620pt; display: flex; flex-direction: column; gap: 16pt; }
+  .tag { font-size: 11pt; letter-spacing: 0.28em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .h-main { font-size: 34pt; font-weight: 500; color: #2b2520; letter-spacing: -0.01em; line-height: 1.25; }
+  .h-main em { font-style: normal; color: #b45a34; }
+  .rule-c { width: 52pt; height: 3pt; border-radius: 3pt; background: #c56a4a; }
+  .msg { font-size: 13pt; line-height: 1.7; color: #42332a; max-width: 600pt; }
+  .msg strong { color: #b45a34; font-weight: 600; }
+  .accent { margin-top: 6pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; font-size: 12pt; line-height: 1.6; max-width: 600pt; }
+  .accent strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Deep Interview · 1/2</div>
-  <div class="h-large">Deep Interview = <em>Clarify를 구조로 박은</em> 스킬</div>
-  <div class="rule"></div>
-  <div class="intro">Clarify를 즉흥 대화로 하면 빠뜨리는 항목이 생긴다. Deep Interview 스킬은 <strong>구조화된 질문지</strong>로 돌려 결과를 재사용 가능한 스펙 문서로 남긴다.</div>
-  <div class="concept">
-    <div class="label">한 줄 정의</div>
-    <div class="def">문제 1줄 입력 → <em>단계별 질문</em> → 스펙 문서 산출</div>
+  <div class="wrap">
+    <div class="tag">비유</div>
+    <div class="h-main">오늘 만드는 스킬 =<br><em>내일의 나</em>를 위한 단축키</div>
+    <div class="rule-c"></div>
+    <div class="msg">Clarify를 매번 손으로 하면 피곤하다. 스킬이 내 손을 대신 잡고 <strong>Clarify 질문부터 처리</strong>해준다. 쓸수록 더 잘 쓰이고, 잘 쓰일수록 더 자주 쓰게 된다.</div>
+    <div class="accent">Ouroboros — 내가 만든 게 나를 더 빠르게 만들고, 그 속도가 다시 더 좋은 스킬을 만든다.</div>
   </div>
-  <div class="rows">
-    <div class="cell">
-      <div class="label">왜 중요</div>
-      <h3>즉흥 Clarify보다 빠짐이 적다</h3>
-      <div class="body">독자·입력·출력·성공 기준 4가지를 <strong>반드시 묻는다</strong>. 내가 잊어도 스킬이 기억한다.</div>
-    </div>
-    <div class="cell">
-      <div class="label">CSM 예시</div>
-      <h3>"이 고객 이탈 위험 리포트"</h3>
-      <div class="body">주제 1줄 입력 → 독자(영업팀장) · 포맷(한 장) · 결론 구조(Top 3 위험)가 <strong>질문지 형태로</strong> 묶여 나온다.</div>
-    </div>
-  </div>
-  <div class="example"><span class="tag">재사용</span>스펙 문서는 <strong>다음 블록 스킬 커스터마이징의 입력</strong>. 일회성 대화가 아니라 <strong>자산</strong>이 남는다.</div>
 </body>
 </html>

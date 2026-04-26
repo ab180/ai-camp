@@ -2,88 +2,102 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S56 4원형 지도</title>
+<title>Day 2 · S55 왜 쓰나</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .main { display: grid; grid-template-columns: 1fr 260pt; gap: 16pt; margin-top: 10pt; }
-  /* Diagram column */
-  .diag-wrap { background: #ebe1d2; border-radius: 14pt; padding: 10pt; display: flex; align-items: center; justify-content: center; height: 240pt; }
-  .diag { position: relative; width: 270pt; height: 220pt; }
-  .circle { position: absolute; width: 78pt; height: 78pt; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1pt; text-align: center; box-shadow: 0 2pt 6pt rgba(66,51,42,0.08); }
-  .circle .num { font-size: 8pt; letter-spacing: 0.25em; font-weight: 700; opacity: 0.75; }
-  .circle .name { font-size: 12pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; }
-  .circle .ko { font-size: 8.5pt; line-height: 1.3; font-weight: 500; margin-top: 1pt; }
-  /* 4 circles at N/E/S/W */
-  .c-clone { top: 0; left: 96pt; background: #d4e5ec; color: #2b4a5a; }
-  .c-branch { top: 71pt; right: 0; background: #c56a4a; color: #fff; }
-  .c-commit { bottom: 0; left: 96pt; background: #f0d98c; color: #5a4417; }
-  .c-pr { top: 71pt; left: 0; background: #c3dcc9; color: #2b4a35; }
-  /* Cross lines - using pseudo-elements */
-  .diag::before, .diag::after {
-    content: ""; position: absolute; background: #b45a34; opacity: 0.35; border-radius: 2pt;
-  }
-  .diag::before {
-    /* vertical */
-    width: 2pt; height: 140pt; top: 39pt; left: 135pt; transform: translateX(-50%);
-  }
-  .diag::after {
-    /* horizontal */
-    width: 176pt; height: 2pt; top: 109pt; left: 135pt; transform: translateX(-50%);
-  }
-  /* Right column */
-  .right { display: flex; flex-direction: column; gap: 10pt; }
-  .right .title-mini { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
-  .right .lead { font-size: 11.5pt; line-height: 1.5; color: #2b2520; font-weight: 500; }
-  .right .lead strong { color: #b45a34; font-weight: 700; }
-  .nl-box { background: #c56a4a; color: #f7efe4; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 6pt; }
-  .nl-box .lbl { font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 700; color: #f2cdb4; text-transform: uppercase; }
-  .nl-box .quote { font-size: 10.5pt; line-height: 1.55; font-weight: 500; color: #fff; font-family: 'SF Mono', Menlo, monospace; }
-  .nl-box .quote em { font-style: normal; background: rgba(255,255,255,0.18); padding: 1pt 4pt; border-radius: 3pt; font-weight: 700; }
-  .nl-box .note { font-size: 9.5pt; line-height: 1.5; color: #f5e4d4; margin-top: 2pt; }
-  .nl-box .note strong { color: #fff; font-weight: 700; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 14pt; }
+  .card3 { background: #ebe1d2; border-radius: 14pt; padding: 18pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
+  .card3 .idx { font-size: 9pt; letter-spacing: 0.25em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
+  .card3 h3 { font-size: 17pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
+  .card3 .visual { height: 48pt; display: flex; align-items: center; justify-content: center; margin: 4pt 0 2pt; }
+  .card3 .desc { font-size: 10pt; line-height: 1.55; color: #42332a; }
+  .card3 .desc strong { color: #b45a34; font-weight: 600; }
+  /* Visual 1: 타임머신 - 3 dots + line */
+  .tm { display: flex; align-items: center; gap: 6pt; }
+  .tm .dot { width: 11pt; height: 11pt; border-radius: 50%; background: #d4c4ac; }
+  .tm .dot.hi { background: #c56a4a; }
+  .tm .line { width: 14pt; height: 2pt; background: #d4c4ac; }
+  .tm .lbl { font-size: 7.5pt; color: #7d6b5a; letter-spacing: 0.05em; margin-top: 2pt; }
+  .tm-wrap { display: flex; flex-direction: column; align-items: center; gap: 4pt; }
+  .tm-lbls { display: flex; gap: 8pt; font-size: 7pt; color: #7d6b5a; letter-spacing: 0.04em; }
+  /* Visual 2: 평행우주 - branch lines */
+  .br { width: 80pt; height: 42pt; position: relative; }
+  .br::before, .br::after { content: ""; position: absolute; background: #c56a4a; border-radius: 2pt; }
+  .br::before { width: 80pt; height: 2pt; top: 20pt; left: 0; }
+  .br .bup, .br .bdn { position: absolute; width: 40pt; height: 2pt; background: #b45a34; border-radius: 2pt; left: 20pt; }
+  .br .bup { top: 8pt; transform: rotate(-15deg); transform-origin: left; }
+  .br .bdn { top: 32pt; transform: rotate(15deg); transform-origin: left; }
+  .br .nodemain { position: absolute; width: 8pt; height: 8pt; border-radius: 50%; background: #c56a4a; top: 17pt; left: 16pt; }
+  .br .nodebr1 { position: absolute; width: 7pt; height: 7pt; border-radius: 50%; background: #b45a34; top: 4pt; right: 6pt; }
+  .br .nodebr2 { position: absolute; width: 7pt; height: 7pt; border-radius: 50%; background: #b45a34; bottom: 4pt; right: 6pt; }
+  /* Visual 3: 협업 - 3 dots connected */
+  .cl { width: 78pt; height: 48pt; position: relative; }
+  .cl .person { position: absolute; width: 14pt; height: 14pt; border-radius: 50%; background: #c56a4a; border: 2pt solid #ebe1d2; }
+  .cl .p1 { top: 0; left: 32pt; }
+  .cl .p2 { bottom: 0; left: 8pt; }
+  .cl .p3 { bottom: 0; right: 8pt; }
+  .cl .center { position: absolute; top: 18pt; left: 29pt; width: 20pt; height: 20pt; border-radius: 6pt; background: #b45a34; }
+  .cl .ln1, .cl .ln2, .cl .ln3 { position: absolute; background: #d4c4ac; }
+  .cl .ln1 { width: 2pt; height: 14pt; top: 10pt; left: 38pt; }
+  .cl .ln2 { width: 22pt; height: 2pt; bottom: 12pt; left: 18pt; transform: rotate(-25deg); transform-origin: right; }
+  .cl .ln3 { width: 22pt; height: 2pt; bottom: 12pt; right: 18pt; transform: rotate(25deg); transform-origin: left; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">개념 지도 · 03</div>
-  <div class="h-large">이 <em>4개 구조</em>만 알면 Claude에 자연어로 OK</div>
+  <div class="eyebrow">멘탈 모델 · 02</div>
+  <div class="h-large">왜 Git/GitHub인가 — <em>3가지</em></div>
   <div class="rule"></div>
-  <div class="intro">명령어는 외울 필요 없다. <strong>clone · branch · commit · PR</strong> 네 단어가 어떤 관계인지만 알면 Claude Code에 한국어로 지시 가능.</div>
-  <div class="main">
-    <div class="diag-wrap">
-      <div class="diag">
-        <div class="circle c-clone">
-          <div class="num">01</div>
-          <div class="name">clone</div>
-          <div class="ko">가져오기</div>
-        </div>
-        <div class="circle c-branch">
-          <div class="num">02</div>
-          <div class="name">branch</div>
-          <div class="ko">평행우주</div>
-        </div>
-        <div class="circle c-commit">
-          <div class="num">03</div>
-          <div class="name">commit</div>
-          <div class="ko">한 줄 저장</div>
-        </div>
-        <div class="circle c-pr">
-          <div class="num">04</div>
-          <div class="name">PR</div>
-          <div class="ko">허락 받기</div>
+  <div class="intro">명령어 배우기 전에 <strong>왜 이걸 쓰는지</strong>만 먼저. 아래 3가지가 다다.</div>
+  <div class="grid3">
+    <div class="card3">
+      <div class="idx">01</div>
+      <h3>타임머신</h3>
+      <div class="visual">
+        <div class="tm-wrap">
+          <div class="tm">
+            <div class="dot"></div>
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+            <div class="dot hi"></div>
+          </div>
+          <div class="tm-lbls"><span>어제</span><span>오늘 아침</span><span>지금</span></div>
         </div>
       </div>
+      <div class="desc">어제 · 오늘 아침 · 지금 <strong>어느 시점으로든 되돌리기</strong>. "저장 안 하고 고친다"고 걱정할 필요 없음. 모든 순간이 스냅샷.</div>
     </div>
-    <div class="right">
-      <div class="title-mini">자연어 예시</div>
-      <div class="lead">이 4개 구조만 잡히면 이런 문장으로 충분하다.</div>
-      <div class="nl-box">
-        <div class="lbl">Prompt to Claude</div>
-        <div class="quote">"이 레포 <em>clone</em>해서<br>새 <em>branch</em> 만들고<br>CLAUDE.md 수정 후<br><em>commit</em>·push, <em>PR</em> 올려줘"</div>
-        <div class="note">Claude가 알아서 <strong>순서대로 실행</strong>. 명령어 한 줄 안 써도 OK.</div>
+    <div class="card3">
+      <div class="idx">02</div>
+      <h3>평행우주</h3>
+      <div class="visual">
+        <div class="br">
+          <div class="bup"></div>
+          <div class="bdn"></div>
+          <div class="nodemain"></div>
+          <div class="nodebr1"></div>
+          <div class="nodebr2"></div>
+        </div>
       </div>
+      <div class="desc">원본 건드리지 않고 <strong>새 브랜치</strong>에서 안전하게 실험. 망해도 브랜치 버리면 끝. 원본은 그대로.</div>
+    </div>
+    <div class="card3">
+      <div class="idx">03</div>
+      <h3>팀 · Claude Code 협업</h3>
+      <div class="visual">
+        <div class="cl">
+          <div class="ln1"></div>
+          <div class="ln2"></div>
+          <div class="ln3"></div>
+          <div class="person p1"></div>
+          <div class="person p2"></div>
+          <div class="person p3"></div>
+          <div class="center"></div>
+        </div>
+      </div>
+      <div class="desc">내 CLAUDE.md · 스킬을 팀원이 <strong>clone해서 쓰고</strong>, 개선은 <strong>PR로 제안</strong>. 복리가 팀 단위로 돈다.</div>
     </div>
   </div>
 </body>

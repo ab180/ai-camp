@@ -2,33 +2,50 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S33 B3 섹션 오프너</title>
+<title>Day 3 · S32 짝꿍 점검 2/2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
-  .top { display: flex; justify-content: space-between; align-items: center; }
-  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
-  .mid { display: flex; flex-direction: column; gap: 18pt; }
-  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
-  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 580pt; }
-  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
-  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
-  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .memo { margin-top: 12pt; padding: 20pt 24pt; background: #ebe1d2; border-radius: 16pt; flex: 1; display: flex; flex-direction: column; gap: 14pt; }
+  .memo .mtop { display: flex; justify-content: space-between; align-items: center; }
+  .memo .title { font-size: 13pt; font-weight: 600; color: #b45a34; letter-spacing: 0.04em; text-transform: uppercase; }
+  .memo .stamp { font-size: 10pt; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; }
+  .memo .lines { display: flex; flex-direction: column; gap: 10pt; }
+  .memo .line { display: grid; grid-template-columns: 24pt 1fr; gap: 14pt; align-items: center; padding: 9pt 12pt; background: rgba(197,106,74,0.08); border-left: 3pt solid #c56a4a; border-radius: 0 10pt 10pt 0; }
+  .memo .n { font-size: 17pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
+  .memo .txt { font-size: 11pt; line-height: 1.55; color: #2b2520; letter-spacing: -0.005em; }
+  .memo .txt em { font-style: italic; color: #7d6b5a; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="top">
-    <div class="block">Block 3</div>
-    <div class="time">15 min</div>
+  <div class="eyebrow">기록 · 3분</div>
+  <div class="h-large">다음 반복에서 <em>고칠 것 3개</em> 메모</div>
+  <div class="rule"></div>
+  <div class="intro">짝꿍 피드백 + 내가 관찰한 것을 합쳐 <strong>3개만</strong>. 이 메모가 다음 블록 Subagent · Skill Creator의 <strong>입력</strong>이 된다.</div>
+  <div class="memo">
+    <div class="mtop">
+      <div class="title">다음 반복 메모</div>
+      <div class="stamp">skills/recap-mail · v0.5 → v0.6</div>
+    </div>
+    <div class="lines">
+      <div class="line">
+        <div class="n">1</div>
+        <div class="txt">예: "리캡 메일에 <strong>지난 주 OPP 상태</strong>를 SFDC에서 자동 삽입" <em>— 관찰: 현재 수동 붙여넣기 중</em></div>
+      </div>
+      <div class="line">
+        <div class="n">2</div>
+        <div class="txt">예: "톤 문단에 <strong>'결론 먼저' 예시</strong> 3개 추가" <em>— 짝꿍 피드백: 결론이 3번째 문단에 있었음</em></div>
+      </div>
+      <div class="line">
+        <div class="n">3</div>
+        <div class="txt">예: "문의 답변에 <strong>레퍼런스 링크 슬롯</strong> 필수화" <em>— 관찰: required.md에 '링크 1개'만 있어 위치 모호</em></div>
+      </div>
+    </div>
   </div>
-  <div class="mid">
-    <h1>Subagent —<br>동시에 여러 걸 시키는 법</h1>
-    <div class="sub">스킬 안에서 작업을 병렬로 돌려 한 답으로 합친다. 오늘은 개념 + 예제 1번 + 활용 대화. 스킬에 실제로 얹는 건 2주 프로젝트에서.</div>
-  </div>
-  <div class="bot">
-    <div class="meta">개념 · 예제 · 활용 대화</div>
-    <div class="count">7 slides</div>
-  </div>
+  <div class="foot">이 3개를 <strong>다 고칠 필요 X</strong>. Skill Creator가 자동 점검해서 우선순위 제안할 것.</div>
 </body>
 </html>

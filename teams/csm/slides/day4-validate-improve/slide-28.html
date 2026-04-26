@@ -2,61 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S28 팀 repo 원칙</title>
+<title>Day 4 · S27 왜 팀 공유</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .pane { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
-  .pane.x { background: #ebe1d2; }
-  .pane.o { background: #c56a4a; color: #f7efe4; }
-  .pane .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .pane.x .tag { color: #a0917e; }
-  .pane.o .tag { color: #f2cdb4; }
-  .pane h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
-  .pane.x h3 { color: #2b2520; }
-  .pane.o h3 { color: #fff; }
-  .pane ul { font-size: 11pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
-  .pane.x ul { color: #42332a; }
-  .pane.o ul { color: #f5e4d4; }
-  .pane ul li::marker { color: #b45a34; }
-  .pane.o ul li::marker { color: #f2cdb4; }
-  .pane ul li strong { font-weight: 600; }
-  .pane.x ul li strong { color: #2b2520; }
-  .pane.o ul li strong { color: #fff; }
-  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .card { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .card.hl { background: #c56a4a; color: #f7efe4; }
+  .card .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .card.hl .n { color: #f2cdb4; }
+  .card h3 { font-size: 16pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
+  .card.hl h3 { color: #fff; }
+  .card p { font-size: 11pt; color: #42332a; line-height: 1.55; }
+  .card.hl p { color: #f5e4d4; }
+  .card p strong { color: #2b2520; font-weight: 600; }
+  .card.hl p strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
   .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">repo 운영 원칙 &mdash; Play Store 모델</div>
-  <div class="h-large">큰 룰만 정한다 &mdash; <em>자연 선택에 맡긴다</em></div>
+  <div class="eyebrow">왜 팀 공유인가</div>
+  <div class="h-large">한 사람 개선 = <em>팀 개선</em>이 되는 조건</div>
   <div class="rule"></div>
-  <div class="intro">스킬의 품질 기준을 사전에 전부 정의하려 하면 참여가 막힌다. <strong>올릴 수 있는 조건</strong>과 <strong>찾을 수 있는 규칙</strong>만 정하고, 쓰이는 것들이 자연스럽게 살아남는다.</div>
-  <div class="panes">
-    <div class="pane x">
-      <div class="tag">&times; 하지 않는다</div>
-      <h3>중앙 큐레이션</h3>
-      <ul>
-        <li>운영진이 모든 스킬을 심사</li>
-        <li>양식이 너무 엄격하면 업로드가 끊긴다</li>
-        <li>&ldquo;완벽할 때 올리자&rdquo; &rarr; 안 올라감</li>
-        <li>결과: 팀 repo가 <strong>죽는다</strong></li>
-      </ul>
+  <div class="intro">내 노트북에만 있는 스킬은 나에게만 복리가 된다. 팀 repo에 올라가면 <strong>12명이 함께</strong> 쓰고, 고치고, 되먹인다.</div>
+  <div class="grid">
+    <div class="card">
+      <div class="n">이유 1</div>
+      <h3>팀원 1명이 고치면 전원이 개선</h3>
+      <p>&ldquo;결정사항 섹션&rdquo;을 누가 PR로 넣으면 <strong>12명 스킬</strong>이 동시에 업그레이드.</p>
     </div>
-    <div class="pane o">
-      <div class="tag">&radic; 하는 것</div>
-      <h3>최소 규칙 · 자유 등록</h3>
-      <ul>
-        <li>README 6축 태그 <strong>필수</strong></li>
-        <li>한 문장 설명 필수</li>
-        <li>PR로 올리기 (리뷰는 가벼움)</li>
-        <li>많이 쓰이는 스킬이 <strong>자연 선택</strong></li>
-      </ul>
+    <div class="card">
+      <div class="n">이유 2</div>
+      <h3>중복 제작 방지</h3>
+      <p>나만 만들기 전에 이미 비슷한 스킬이 있다. 검색 &rarr; 복사 &rarr; 수정이 맞다.</p>
+    </div>
+    <div class="card hl">
+      <div class="n">이유 3</div>
+      <h3>팀장이 알면 팀이 움직인다</h3>
+      <p>팀장의 상상력이 팀원 범위를 정한다. 팀장이 경험해야 <strong>미니캠프</strong>가 돌아간다.</p>
     </div>
   </div>
-  <div class="foot">이상적 repo = 쓸 스킬이 많은 repo. <strong>완성도보다 업로드 빈도</strong>가 장기적으로 품질을 올린다.</div>
+  <div class="foot">오늘 B3의 출발점 &mdash; <strong>&ldquo;내가 만든 걸 올리는 게 아니라, 내가 올린 걸 팀이 고치는 것이 진짜 시작&rdquo;</strong>.</div>
 </body>
 </html>

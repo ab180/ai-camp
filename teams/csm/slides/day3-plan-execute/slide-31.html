@@ -2,50 +2,52 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S31 짝꿍 점검 1/2</title>
+<title>Day 3 · S30 실습 4/5 막힐 때</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .pair { margin-top: 10pt; padding: 16pt 20pt; background: #c56a4a; color: #f7efe4; border-radius: 14pt; }
-  .pair .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .pair h2 { font-size: 18pt; font-weight: 600; color: #fff; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.3; }
-  .qs { display: flex; flex-direction: column; gap: 10pt; margin-top: 12pt; flex: 1; }
-  .q { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .q .n { font-size: 22pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .q .body { font-size: 12pt; line-height: 1.55; color: #2b2520; letter-spacing: -0.005em; }
-  .q .body em { font-style: normal; color: #b45a34; font-weight: 600; }
-  .q .body .hint { font-size: 9.5pt; color: #7d6b5a; margin-top: 4pt; display: block; font-style: italic; }
-  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
-  .closing strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
+  .row .col-title { font-size: 8.5pt; letter-spacing: 0.2em; color: #b45a34; font-weight: 700; text-transform: uppercase; margin-bottom: 3pt; }
+  .row .sym { font-size: 11pt; font-weight: 600; color: #2b2520; font-family: 'SF Mono', Menlo, monospace; line-height: 1.4; }
+  .row .cause { font-size: 10pt; color: #7d6b5a; line-height: 1.5; }
+  .row .fix { font-size: 10pt; line-height: 1.55; color: #2b2520; padding-left: 12pt; border-left: 2pt solid #c56a4a; }
+  .row .fix strong { color: #b45a34; font-weight: 600; }
+  .head { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 12pt; padding: 0 16pt; margin-top: 10pt; }
+  .head span { font-size: 8.5pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 700; text-transform: uppercase; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">짝꿍 · 5분 · 5/5</div>
-  <div class="h-large">짝꿍에게 <em>초안 1회 보여주기</em></div>
+  <div class="eyebrow">Troubleshooting · 4/5</div>
+  <div class="h-large">이 <em>3가지 중 하나</em>면 바로 해결</div>
   <div class="rule"></div>
-  <div class="intro">"이대로 쓸 수 있다" 판정은 X. 짝꿍의 역할은 "<strong>또 어디를 고칠지</strong>" 짚어주기. 칭찬 금지가 아니라 <strong>개선점이 더 유용</strong>.</div>
-  <div class="pair">
-    <div class="label">짝꿍 점검</div>
-    <h2>초안 소리내어 읽고 · 2가지만 묻기</h2>
+  <div class="intro">실습 중 막히는 지점은 거의 3패턴. 증상 보면 원인 · 해결까지 <strong>자동 매칭</strong>. 3개 다 아니면 운영진 Slack.</div>
+  <div class="head">
+    <span>증상</span>
+    <span>원인</span>
+    <span>해결</span>
   </div>
-  <div class="qs">
-    <div class="q">
-      <div class="n">1</div>
-      <div class="body">
-        "이 스킬이 매번 내줄 결과가 <em>예측 가능</em>한가?"
-        <span class="hint">같은 입력에 비슷한 출력이 나올 것 같으면 O · "랜덤 같다" 느낌이면 성공 기준 보강 신호</span>
-      </div>
+  <div class="rows">
+    <div class="row">
+      <div class="sym">스킬 호출이 안 됨</div>
+      <div class="cause">SKILL.md 상단 <strong>description</strong>이 불명확해 AI가 매칭을 못 함</div>
+      <div class="fix">"<strong>언제 쓰는 스킬인가</strong>" 한 줄 상단에 명시</div>
     </div>
-    <div class="q">
-      <div class="n">2</div>
-      <div class="body">
-        "너라면 <em>어느 문단</em>을 또 고치겠나?"
-        <span class="hint">톤 · 금지어 · 필수 키워드 중 하나. 가장 영향 큰 것 1개만.</span>
-      </div>
+    <div class="row">
+      <div class="sym">톤이 반영 안 됨</div>
+      <div class="cause"><strong>rules/tone.md</strong>가 SKILL.md에서 안 읽힘</div>
+      <div class="fix">SKILL.md에 "<strong>rules/tone.md 참조</strong>" 명시 한 줄 추가</div>
+    </div>
+    <div class="row">
+      <div class="sym">MCP가 안 불림</div>
+      <div class="cause">SKILL.md에 <strong>MCP 사용 선언 누락</strong></div>
+      <div class="fix">"이 스킬은 <strong>Notion MCP를 사용</strong>" 한 줄 추가</div>
     </div>
   </div>
-  <div class="closing">짝꿍 답변은 <strong>평가가 아니라 재료</strong>. 다음 장에서 메모로 남긴다.</div>
+  <div class="foot">15분 내 안 풀리면 <strong>다음 장으로 진행</strong> · 짝꿍과 공유 후 저녁에 보강. 블록 타임 지키기.</div>
 </body>
 </html>

@@ -2,49 +2,71 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S19 왜 도구 맵부터</title>
+<title>Day 2 · S18 도구별 담당 질문 (STEP 2/2)</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.6; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .step-badge {
+    position: absolute; top: 10pt; right: 16pt;
+    font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;
+    color: #a0917e; padding: 3pt 9pt; border: 1px solid #d4c4ac; border-radius: 20pt;
+    white-space: nowrap;
+  }
+  .step-badge strong { color: #b45a34; font-weight: 700; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .reasons { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .reason { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
-  .reason.hilite { background: #c56a4a; color: #f7efe4; }
-  .reason .num { font-size: 26pt; font-weight: 500; color: #c56a4a; line-height: 1; letter-spacing: -0.02em; }
-  .reason.hilite .num { color: #fff; opacity: 0.7; }
-  .reason .lead { font-size: 13pt; font-weight: 600; color: #2b2520; margin-top: 8pt; line-height: 1.3; letter-spacing: -0.005em; }
-  .reason.hilite .lead { color: #fff; }
-  .reason .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 8pt; }
-  .reason.hilite .body { color: #f5e4d4; }
-  .reason .body strong { color: #b45a34; font-weight: 600; }
-  .reason.hilite .body strong { color: #fff; font-weight: 600; }
-  .closing { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
-  .closing strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 6pt; flex: 1; margin-top: 10pt; }
+  .row { display: grid; grid-template-columns: 1.3fr 20pt 0.85fr; gap: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 9pt; align-items: center; }
+  .row.key { background: #c56a4a; color: #f7efe4; }
+  .row .q { font-size: 11pt; font-weight: 500; color: #2b2520; letter-spacing: -0.003em; line-height: 1.35; }
+  .row.key .q { color: #fff; }
+  .row .q::before { content: "\201C"; color: #b45a34; margin-right: 2pt; }
+  .row .q::after { content: "\201D"; color: #b45a34; margin-left: 2pt; }
+  .row.key .q::before, .row.key .q::after { color: #f2cdb4; }
+  .row .arrow { font-size: 14pt; color: #c56a4a; font-weight: 300; text-align: center; }
+  .row.key .arrow { color: #fff; opacity: 0.7; }
+  .row .tools { display: flex; gap: 5pt; flex-wrap: wrap; align-items: center; }
+  .row .tname { font-size: 9.5pt; font-weight: 700; padding: 2.5pt 8pt; background: #fff; border-radius: 999pt; color: #b45a34; letter-spacing: -0.005em; }
+  .row.key .tname { background: #fff; color: #c56a4a; }
+  .row .tname.sub { background: rgba(255,255,255,0.85); color: #7d6b5a; font-weight: 500; }
+  .row.key .tname.sub { background: rgba(255,255,255,0.85); color: #c56a4a; opacity: 0.8; }
+  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">순서</div>
-  <div class="h-large">MCP를 <em>아무거나</em> 연결하지 않는다</div>
+  <div class="step-badge">STEP <strong>2</strong> / 2</div>
+  <div class="eyebrow">질문 매핑</div>
+  <div class="h-large">CSM이 하루에 떠올리는 질문 · <em>어디서 답이 나오나</em></div>
   <div class="rule"></div>
-  <div class="intro">"일단 다 연결해야 좋은 것 아냐?"는 자주 나오는 오해. 순서와 기준 없이 붙이면 오히려 <strong>AI가 혼란</strong>스러워진다.</div>
-  <div class="reasons">
-    <div class="reason">
-      <div class="num">01</div>
-      <div class="lead">우선순위 — 질문 빈도 높은 도구 먼저</div>
-      <div class="body">내 업무에서 <strong>하루 몇 번씩 뒤지는 도구</strong> 우선. CSM은 대부분 Plain · Gmail · Slack에서 시작.</div>
+  <div class="intro">실무에서 자주 나오는 질문 5개를 <strong>도구와 짝지어본다</strong>. AI가 이 질문에 답하려면 각 도구에 직접 닿아야 한다.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="q">이 고객 계약 언제 끝나?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Salesforce</span></div>
     </div>
-    <div class="reason hilite">
-      <div class="num">02</div>
-      <div class="lead">시간 비용 — 1개당 5~15분</div>
-      <div class="body">MCP 연결은 OAuth·권한 범위 결정까지 포함해 건당 <strong>5~15분</strong>. 6개 전부 연결하면 오늘 120분의 절반이 사라진다.</div>
+    <div class="row">
+      <div class="q">지난 문의가 뭐였지?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Plain</span><span class="tname sub">Gmail</span></div>
     </div>
-    <div class="reason">
-      <div class="num">03</div>
-      <div class="lead">신호 관리 — 3개 안쪽으로 시작</div>
-      <div class="body">너무 많이 붙이면 AI가 <strong>"어디서 읽을지" 혼동</strong>. 처음엔 3개 안쪽 · 익숙해지면 단계적으로 확장.</div>
+    <div class="row">
+      <div class="q">체크업 미팅 언제 잡혔지? 어젠다 뭐야?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Notion</span><span class="tname sub">Gmail</span></div>
+    </div>
+    <div class="row key">
+      <div class="q">팀에서 이 고객 관련 오늘 무슨 결정 났지?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Slack</span></div>
+    </div>
+    <div class="row">
+      <div class="q">이번 달 활성 이벤트 추이?</div>
+      <div class="arrow">&rsaquo;</div>
+      <div class="tools"><span class="tname">Sheets</span></div>
     </div>
   </div>
-  <div class="closing">오늘 실습 범위 = <strong>핵심 1~2개</strong>. 어떤 도구를 고를지 정했으면 — 다음 블록부터 직접 MCP 연결로 들어간다.</div>
+  <div class="foot">이 중 <strong>한 질문에라도 "AI가 바로 답하게"</strong> 하려면 — 해당 도구에 MCP를 꽂아야 한다. 다음 블록 주제.</div>
 </body>
 </html>

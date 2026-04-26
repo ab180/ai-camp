@@ -2,89 +2,60 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S51 Day 3 미리보기</title>
+<title>Day 2 · S50 축 2 자가진단</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .preview { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .card-pv { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 7pt; }
-  .card-pv.cream { background: #ebe1d2; }
-  .card-pv.terra { background: #c56a4a; color: #f7efe4; }
-  .card-pv .lbl { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
-  .card-pv.cream .lbl { color: #a0917e; }
-  .card-pv.terra .lbl { color: #f2cdb4; }
-  .card-pv h3 { font-size: 15pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
-  .card-pv.cream h3 { color: #2b2520; }
-  .card-pv.terra h3 { color: #fff; }
-  .card-pv .intro-l { font-size: 10pt; line-height: 1.55; }
-  .card-pv.cream .intro-l { color: #42332a; }
-  .card-pv.terra .intro-l { color: #f5e4d4; }
-  .card-pv .intro-l strong { font-weight: 600; }
-  .card-pv.cream .intro-l strong { color: #b45a34; }
-  .card-pv.terra .intro-l strong { color: #fff; }
-  .axes-list { display: flex; flex-direction: column; gap: 6pt; padding-top: 7pt; border-top: 1px dashed #d4c4ac; margin-top: 4pt; }
-  .card-pv.terra .axes-list { border-top-color: rgba(255,255,255,0.3); }
-  .axis { display: flex; flex-direction: column; gap: 1pt; }
-  .axis .ax-lbl { font-size: 8pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .card-pv.cream .axis .ax-lbl { color: #b45a34; }
-  .card-pv.terra .axis .ax-lbl { color: #ffdfc9; }
-  .axis .ax-body { font-size: 9.5pt; line-height: 1.5; }
-  .card-pv.cream .axis .ax-body { color: #42332a; }
-  .card-pv.terra .axis .ax-body { color: #f5e4d4; }
-  .axis .ax-body strong { font-weight: 600; }
-  .card-pv.cream .axis .ax-body strong { color: #2b2520; }
-  .card-pv.terra .axis .ax-body strong { color: #fff; }
-  .footer { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .footer strong { color: #b45a34; }
+  .items { display: flex; flex-direction: column; gap: 5pt; flex: 1; margin-top: 8pt; min-height: 0; }
+  .item { display: grid; grid-template-columns: 30pt 1fr 1.1fr; gap: 10pt; padding: 6pt 12pt; background: #ebe1d2; border-radius: 9pt; align-items: center; }
+  .item .num { font-size: 16pt; font-weight: 600; color: #b45a34; text-align: center; letter-spacing: -0.02em; }
+  .item .q { font-size: 10pt; line-height: 1.4; color: #2b2520; font-weight: 500; }
+  .item .q strong { color: #b45a34; font-weight: 600; }
+  .item .q code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(197,106,74,0.12); padding: 1pt 5pt; border-radius: 4pt; color: #b45a34; }
+  .item .j { font-size: 9pt; line-height: 1.4; color: #42332a; padding-left: 10pt; border-left: 2pt solid #d4c4ac; }
+  .item .j .label { font-size: 8pt; letter-spacing: 0.18em; color: #a0917e; font-weight: 600; text-transform: uppercase; display: block; margin-bottom: 1pt; }
+  .item .j strong { color: #b45a34; font-weight: 600; }
+  .item .j .ox { font-weight: 700; }
+  .item .j .ox.o { color: #7a5a28; }
+  .item .j .ox.x { color: #8a3a2a; }
+  .foot { margin-top: 6pt; padding: 6pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 9pt; font-size: 9.5pt; line-height: 1.45; flex-shrink: 0; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">내일 준비물</div>
-  <div class="h-large">Day 3 · <em>고통점 해결 스킬</em> + 오늘 밤 PR 1개</div>
+  <div class="eyebrow">자가진단 · 내 맥락이 살아있나</div>
+  <div class="h-large">오늘 연결한 MCP, <em>지금 점검</em></div>
   <div class="rule"></div>
-  <div class="intro">내일은 "계획(축 3)"과 "실행(축 4)"을 같이 본다. 오늘 느낀 <strong>답답함이 재료</strong> — 그 감각이 Day 3의 핵심 연결고리.</div>
-  <div class="preview">
-    <div class="card-pv cream">
-      <div class="lbl">Day 3 미리보기</div>
-      <h3>고통점 해결 스킬 만들기</h3>
-      <div class="intro-l">Day 1에서 깐 구조 + Day 2의 맥락을 위에 <strong>"무엇을 할지"</strong>가 얹힌다.</div>
-      <div class="axes-list">
-        <div class="axis">
-          <div class="ax-lbl">축 3 · 계획</div>
-          <div class="ax-body"><strong>Deep Interview 스킬</strong>로 문제를 구체 스펙으로</div>
-        </div>
-        <div class="axis">
-          <div class="ax-lbl">축 4 · 실행</div>
-          <div class="ax-body"><strong>템플릿 커스터마이징</strong> · 0.5에서 1로</div>
-        </div>
-        <div class="axis">
-          <div class="ax-lbl">산출물</div>
-          <div class="ax-body">동작하는 <strong>스킬 1개</strong> + Skill Creator 검증 결과</div>
-        </div>
-      </div>
+  <div class="intro">연결했는지 X. <strong>쓸 수 있는 상태</strong>인지 점검. 5가지 질문으로.</div>
+  <div class="items">
+    <div class="item">
+      <div class="num">1</div>
+      <div class="q"><code>/mcp</code>가 최소 <strong>1개 active</strong> 서버를 보여주는가?</div>
+      <div class="j"><span class="label">판정</span>이름 보이고 status <strong>active</strong>면 <span class="ox o">O</span>. 이름은 있지만 scope 0이면 <span class="ox x">X</span>.</div>
     </div>
-    <div class="card-pv terra">
-      <div class="lbl">오늘 밤 준비 · 30분</div>
-      <h3>PR 1개 + 재료 메모</h3>
-      <div class="intro-l">두 가지만. 완벽 X — <strong>시도한 상태로</strong> 내일 아침.</div>
-      <div class="axes-list">
-        <div class="axis">
-          <div class="ax-lbl">필수</div>
-          <div class="ax-body">팀 repo에 <strong>PR 1개 올리기</strong> (담당 고객 섹션 추가)</div>
-        </div>
-        <div class="axis">
-          <div class="ax-lbl">준비</div>
-          <div class="ax-body">Day 3 재료 메모 — <strong>"내일 스킬로 만들고 싶은 반복 업무 1개"</strong></div>
-        </div>
-        <div class="axis">
-          <div class="ax-lbl">지원</div>
-          <div class="ax-body">막히면 저녁 운영진 Slack · 짝꿍 협업</div>
-        </div>
-      </div>
+    <div class="item">
+      <div class="num">2</div>
+      <div class="q">통합 요약이 <strong>최소 2개 도구</strong>의 정보를 섞었는가?</div>
+      <div class="j"><span class="label">판정</span>"Notion에서는..., Slack에서는..." 식으로 <strong>출처가 섞이면</strong> <span class="ox o">O</span>.</div>
+    </div>
+    <div class="item">
+      <div class="num">3</div>
+      <div class="q">어떤 맥락이 <strong>빠졌는지</strong> 말로 설명 가능한가?</div>
+      <div class="j"><span class="label">판정</span>"SFDC 쪽 OPP 단계가 안 왔다" 정도 <strong>이름 붙이면</strong> <span class="ox o">O</span>.</div>
+    </div>
+    <div class="item">
+      <div class="num">4</div>
+      <div class="q">CLAUDE.md + MCP 조합이 <strong>Day 1 단독보다</strong> 나아졌는가?</div>
+      <div class="j"><span class="label">판정</span>Stage 1 vs Stage 3 비교에서 <strong>"이 고객 전용" 느낌</strong>이면 <span class="ox o">O</span>.</div>
+    </div>
+    <div class="item">
+      <div class="num">5</div>
+      <div class="q">오늘 PR 숙제 중 <strong>내가 막히는 지점</strong>을 알겠는가?</div>
+      <div class="j"><span class="label">판정</span>"clone·commit·push·PR 중 어디"가 헷갈리는지 <strong>이름 붙이면</strong> <span class="ox o">O</span>.</div>
     </div>
   </div>
-  <div class="footer">Day 3는 <strong>답답함 증폭 → 해소</strong>. 오늘의 감각을 그대로 가져오세요.</div>
+  <div class="foot">3개 이상 <span style="font-weight:700;">O면 축 2 0.5판 합격</span>. 나머지는 <strong>2주 프로젝트</strong>에서 채운다.</div>
 </body>
 </html>

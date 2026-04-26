@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S26 3요소 · 키워드</title>
+<title>Day 3 · S25 3요소 · 톤</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -21,58 +21,46 @@
   .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
   .col.cream h3 { color: #2b2520; }
   .col.terra h3 { color: #fff; }
-  .col .kw-block { margin-top: 5pt; }
-  .col .kw-title { font-size: 9pt; letter-spacing: 0.15em; font-weight: 700; text-transform: uppercase; margin-bottom: 3pt; }
-  .col.cream .kw-title { color: #7d6b5a; }
-  .col.terra .kw-title { color: #f2cdb4; }
-  .col .kw-list { font-size: 10pt; line-height: 1.6; }
-  .col.cream .kw-list { color: #42332a; }
-  .col.terra .kw-list { color: #f5e4d4; }
-  .col .kw-list strong { font-weight: 600; }
-  .col.cream .kw-list strong { color: #b45a34; }
-  .col.terra .kw-list strong { color: #fff; }
-  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .closing strong { color: #b45a34; }
+  .col .body { font-size: 10pt; line-height: 1.55; margin-top: 3pt; }
+  .col.cream .body { color: #42332a; }
+  .col.terra .body { color: #f5e4d4; }
+  .col .body strong { color: #b45a34; font-weight: 600; }
+  .col.terra .body strong { color: #fff; font-weight: 600; }
+  .col .sublist { font-size: 9.5pt; line-height: 1.6; margin-top: 5pt; padding-left: 12pt; }
+  .col.cream .sublist { color: #42332a; }
+  .col.terra .sublist { color: #f5e4d4; }
+  .col .sublist li { margin-bottom: 3pt; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">수정 3요소 · 3/3</div>
-  <div class="badge"><span class="n">03</span><span class="txt">키워드</span></div>
-  <div class="h-large">수정 포인트 3 — <em>금지 · 필수 키워드</em></div>
+  <div class="eyebrow">수정 3요소 · 2/3</div>
+  <div class="badge"><span class="n">02</span><span class="txt">톤</span></div>
+  <div class="h-large">수정 포인트 2 — <em>톤</em></div>
   <div class="rule"></div>
-  <div class="intro">"쓰면 안 되는 말"과 "반드시 들어가야 할 말" — CSM에게 <strong>가장 영향 큰 3요소</strong>. 회피 표현 하나가 고객 신뢰를 좌우한다.</div>
+  <div class="intro">기본 템플릿 톤은 <strong>보수적 중립</strong>. 내 고객군에 맞춰 조정. 톤은 <code>rules/tone.md</code>에 한 문단으로, 예시 문장 1-2개 함께.</div>
   <div class="compare">
     <div class="col cream">
       <div class="label">Before · 베이스</div>
-      <h3>키워드 규칙 없음</h3>
-      <div class="kw-block">
-        <div class="kw-title">금지어</div>
-        <div class="kw-list">(정의 안 됨 — 기본 템플릿 톤에만 의존)</div>
-      </div>
-      <div class="kw-block">
-        <div class="kw-title">필수 키워드</div>
-        <div class="kw-list">(정의 안 됨)</div>
-      </div>
+      <h3>보수적 중립</h3>
+      <div class="body"><strong>"정중하고 간결한 비즈니스 톤"</strong> — 맞는 말이지만 <strong>구체적이지 않다</strong>. 어느 고객에게도 "딱 맞진 않은" 상태.</div>
     </div>
     <div class="col terra">
-      <div class="label">After · 내 맥락</div>
-      <h3>금지 · 필수 명시</h3>
-      <div class="kw-block">
-        <div class="kw-title">금지어</div>
-        <div class="kw-list">
-          · <strong>"죄송합니다"</strong> 단독 사용<br>
-          · <strong>"확인 중입니다"</strong>로 메일 마무리<br>
-          · 내부 프로젝트 코드네임 노출
-        </div>
-      </div>
-      <div class="kw-block">
-        <div class="kw-title">필수 키워드</div>
-        <div class="kw-list">
-          · <strong>다음 액션 날짜</strong> · 담당자 이름 · 관련 문서 링크 1개
-        </div>
-      </div>
+      <div class="label">After · 고객군별 치환</div>
+      <h3>내 고객의 톤으로</h3>
+      <div class="body">엔터프라이즈 중심이면 →</div>
+      <ul class="sublist">
+        <li><strong>임원 회람</strong> 가능성 고려 · 결론 먼저</li>
+        <li>한 문단 <strong>3줄 이하</strong> · 숫자는 반올림</li>
+      </ul>
+      <div class="body">스타트업 중심이면 →</div>
+      <ul class="sublist">
+        <li>실무자 직접 소통 · <strong>기술 용어 OK</strong></li>
+        <li>짧은 단락 · 구체 수치 그대로</li>
+      </ul>
     </div>
   </div>
-  <div class="closing">3요소(담당 고객 · 톤 · 키워드)만 맞추면 베이스 스킬은 <strong>내 것의 70%</strong>까지 간다. 나머지 30%는 반복 사용 후 추가.</div>
+  <div class="foot">톤 문단에 <strong>예시 문장 1-2개</strong>를 같이 박으면 AI가 훨씬 잘 따라온다. "이런 느낌"이라고 보여주기.</div>
 </body>
 </html>

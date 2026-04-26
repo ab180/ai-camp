@@ -2,44 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S45 오늘 돌아보기</title>
+<title>Day 3 · S44 자가진단</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 10pt; margin-top: 12pt; flex: 1; justify-content: center; }
-  .row { display: grid; grid-template-columns: 1fr 24pt 1fr; gap: 14pt; padding: 16pt 22pt; background: #ebe1d2; border-radius: 14pt; align-items: center; }
-  .row .before { font-size: 12pt; color: #7d6b5a; font-style: italic; line-height: 1.4; }
-  .row .arrow { font-size: 16pt; color: #c56a4a; font-weight: 700; text-align: center; }
-  .row .after { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.4; }
-  .row .after strong { color: #b45a34; }
-  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; text-align: center; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .rows { display: flex; flex-direction: column; gap: 7pt; margin-top: 10pt; flex: 1; }
+  .row { display: grid; grid-template-columns: 30pt 1fr 80pt; gap: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
+  .row.must { background: #c56a4a; color: #f7efe4; }
+  .row .n { font-size: 16pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
+  .row.must .n { color: #fff; }
+  .row .q { font-size: 10.5pt; line-height: 1.5; color: #2b2520; letter-spacing: -0.005em; }
+  .row.must .q { color: #fff; }
+  .row .q strong { color: #b45a34; font-weight: 600; }
+  .row.must .q strong { color: #ffdfc9; font-weight: 600; }
+  .row .tier { font-size: 8.5pt; letter-spacing: 0.15em; color: #7d6b5a; font-weight: 700; text-transform: uppercase; text-align: center; }
+  .row.must .tier { color: #f2cdb4; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">오늘 돌아보기 · 3가지 감각</div>
-  <div class="h-large">오늘 바뀐 <em>내 3가지</em></div>
+  <div class="eyebrow">자가진단 · 오늘 산출물</div>
+  <div class="h-large">내 스킬, <em>지금 점검</em></div>
   <div class="rule"></div>
-  <div class="intro">오늘 120분이 끝나면 AI 쓰는 방식이 3군데에서 달라져 있다. 체감이 안 난다면 필수 3개 자가진단부터 다시.</div>
+  <div class="intro">5개 중 <strong>3개 이상 O</strong>면 오늘 산출물 합격. 1·2·3번은 필수. 4·5번은 강 추천.</div>
   <div class="rows">
-    <div class="row">
-      <div class="before">"바로 시켰다"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>묻고 시킨다</strong> — Clarify · Deep Interview</div>
+    <div class="row must">
+      <div class="n">1</div>
+      <div class="q">스킬이 <strong>Deep Interview 스펙</strong>에 대응하는가 — 독자·입출력·성공 기준</div>
+      <div class="tier">필수</div>
+    </div>
+    <div class="row must">
+      <div class="n">2</div>
+      <div class="q">운영진 베이스에서 <strong>3요소(담당 고객·톤·키워드)</strong>를 내 맥락으로 바꿨나</div>
+      <div class="tier">필수</div>
+    </div>
+    <div class="row must">
+      <div class="n">3</div>
+      <div class="q">한 번 실행해서 <strong>실제 결과</strong>가 나왔나 — "돌아가는 상태"</div>
+      <div class="tier">필수</div>
     </div>
     <div class="row">
-      <div class="before">"매번 설명했다"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>스킬이 대신한다</strong> — 운영진 베이스 커스터마이징</div>
+      <div class="n">4</div>
+      <div class="q">짝꿍이 <strong>"다음에 고칠 곳"</strong>을 짚어줬나 — 메모 3개 있음</div>
+      <div class="tier">권장</div>
     </div>
     <div class="row">
-      <div class="before">"내가 점검했다"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>다른 에이전트가 점검한다</strong> — Skill Creator 첫 체감</div>
+      <div class="n">5</div>
+      <div class="q">Skill Creator 리포트를 읽고 <strong>1개 수정안</strong>을 안 상태인가</div>
+      <div class="tier">권장</div>
     </div>
   </div>
-  <div class="foot">세 가지가 <strong>복리로 쌓이면</strong> 내일의 나는 더 빠르다 — Ouroboros.</div>
+  <div class="foot">필수 3개가 O면 <strong>다음 반복 재료 확보</strong>. Day 4에서 검증·공유로 이어진다.</div>
 </body>
 </html>

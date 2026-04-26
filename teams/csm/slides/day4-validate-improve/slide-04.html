@@ -2,37 +2,21 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S04 블록 맵</title>
+<title>Day 4 · S03 오늘의 문장</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; gap: 12pt; }
-  .h-large { font-size: 26pt; }
-  table { width: 100%; border-collapse: collapse; margin-top: 4pt; }
-  th, td { text-align: left; padding: 9pt 10pt; font-size: 12pt; color: #2b2520; border-bottom: 1px solid #d4c4ac; vertical-align: top; }
-  th { font-size: 10pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; border-bottom: 2px solid #b45a34; }
-  td.block { font-weight: 600; color: #b45a34; width: 72pt; }
-  td.time { font-family: 'SF Mono', 'Menlo', monospace; color: #7d6b5a; width: 70pt; }
-  td.topic { color: #2b2520; width: 170pt; font-weight: 500; }
-  td.memo { color: #4b3f35; line-height: 1.5; }
-  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.5; margin-top: auto; padding-top: 8pt; border-top: 1px dashed #d4c4ac; }
-  .foot strong { color: #b45a34; }
+  body { display: flex; flex-direction: column; justify-content: space-between; }
+  .quote { font-size: 38pt; font-weight: 500; color: #2b2520; line-height: 1.25; letter-spacing: -0.015em; max-width: 600pt; }
+  .quote em { font-style: normal; color: #c56a4a; }
+  .note { font-size: 14pt; color: #7d6b5a; line-height: 1.55; max-width: 560pt; }
+  .note strong { color: #2b2520; font-weight: 600; }
+  .foot-rule { font-size: 11pt; color: #a0917e; letter-spacing: 0.05em; border-top: 1px dashed #d4c4ac; padding-top: 8pt; font-family: 'SF Mono', 'Menlo', monospace; }
 </style>
 </head>
 <body>
-  <div>
-    <div class="eyebrow">오늘의 블록 맵</div>
-    <div class="h-large">120분 — 검증 체감 &rarr; 자가진단 &rarr; 팀 공유</div>
-  </div>
-  <table>
-    <thead><tr><th>Block</th><th>Time</th><th>Topic</th><th>Note</th></tr></thead>
-    <tbody>
-      <tr><td class="block">B0</td><td class="time">10 min</td><td class="topic">오늘의 축 안내</td><td class="memo">어제 만든 스킬을 "다른 관점"으로 보는 하루</td></tr>
-      <tr><td class="block">B1</td><td class="time">30 min</td><td class="topic">까다로운 고객 시연</td><td class="memo">운영진 시연 · 참가자는 자기 결과물 넣고 피드백 읽기만</td></tr>
-      <tr><td class="block">B2</td><td class="time">20 min</td><td class="topic">Compound + 6축 자가진단</td><td class="memo">O/X 체크리스트 1장 · 짝꿍 대화</td></tr>
-      <tr><td class="block">B3</td><td class="time">50 min</td><td class="topic">GitHub + 팀 공유</td><td class="memo">repo 구조 · 권한 · README 6축 태그 · 스킬 업로드 · PR</td></tr>
-      <tr><td class="block">B4</td><td class="time">10 min</td><td class="topic">2주 프로젝트 + 마무리</td><td class="memo">5/15(금) 발표회 안내 · 회고 포맷</td></tr>
-    </tbody>
-  </table>
-  <div class="foot">오늘의 산출물 &mdash; <strong>검증 피드백 메모</strong> · 6축 자가진단표 · 팀 repo 업로드 1건 · 2주 프로젝트 목표</div>
+  <div class="eyebrow">오늘의 문장</div>
+  <div class="quote">만든 사람은 자기 결과를<br><em>공정히</em> 못 본다.</div>
+  <div class="note"><strong>Generator &ne; Evaluator.</strong> 내가 쓴 메일은 내가 읽을 때 늘 그럴듯하다. 다른 관점에 넘겨야 빠진 게 보인다.</div>
+  <div class="foot-rule">Stanford Newton — 두드리는 사람 예측 50% · 실제 정답률 2.5% (20배 과대평가)</div>
 </body>
 </html>

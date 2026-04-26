@@ -2,72 +2,54 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S37 스킬 스펙 템플릿</title>
+<title>Day 2 · S36 내가 고른 Step 적어보기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
-  .tmpl { padding: 10pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; overflow: hidden; }
-  .tmpl .tag { font-size: 9pt; letter-spacing: 0.22em; color: #a0917e; font-weight: 700; text-transform: uppercase; }
-  .row { display: grid; grid-template-columns: 95pt 1fr; gap: 10pt; align-items: start; padding: 4pt 0; border-top: 1px dashed #d4c4ac; }
-  .row:first-of-type { border-top: none; padding-top: 2pt; }
-  .row .label { display: flex; flex-direction: column; gap: 2pt; }
-  .row .name { font-size: 10pt; font-weight: 600; color: #b45a34; letter-spacing: -0.005em; line-height: 1.2; }
-  .row .num { font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #a0917e; font-weight: 600; }
-  .row .blank { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.4; color: #42332a; }
-  .row .blank .hint { display: block; font-family: 'Pretendard', sans-serif; font-size: 8pt; color: #7d6b5a; margin-top: 2pt; }
-  .example { padding: 12pt 14pt; border-radius: 12pt; background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; overflow: hidden; }
-  .example .tag { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
-  .example h4 { font-size: 11.5pt; font-weight: 600; color: #fff; margin-top: 4pt; letter-spacing: -0.005em; line-height: 1.3; font-family: 'SF Mono', Menlo, monospace; }
-  .example .ex { margin-top: 8pt; display: flex; flex-direction: column; gap: 5pt; font-size: 9pt; line-height: 1.45; color: #f5e4d4; }
-  .example .ex .k { font-weight: 600; color: #fff; }
-  .example .ex .v { padding-left: 8pt; display: block; margin-top: 1pt; }
-  .closing { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; flex-shrink: 0; }
-  .closing strong { color: #b45a34; }
+  .worksheet { margin-top: 12pt; padding: 18pt 22pt; background: #ebe1d2; border-radius: 14pt; display: flex; flex-direction: column; gap: 10pt; flex: 1; }
+  .worksheet .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
+  .worksheet .prompt { font-size: 12pt; color: #2b2520; font-weight: 500; letter-spacing: -0.005em; }
+  .worksheet .prompt strong { color: #b45a34; font-weight: 600; }
+  .bigblank { background: #f5ede2; border: 2pt dashed #d4c4ac; border-radius: 10pt; padding: 24pt 22pt; font-family: 'SF Mono', Menlo, monospace; font-size: 13pt; color: #a0917e; text-align: center; letter-spacing: 0.02em; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 4pt; }
+  .chk { padding: 10pt 12pt; border-radius: 9pt; background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; gap: 4pt; }
+  .chk .n { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #f2cdb4; }
+  .chk .q { font-size: 10pt; font-weight: 600; color: #fff; line-height: 1.35; }
+  .chk .hint { font-size: 9pt; line-height: 1.45; color: #f5e4d4; }
+  .chk .hint strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">스펙 템플릿</div>
-  <div class="h-large">빈 칸 5개 — 채우면 <em>스킬 스펙</em> 완성</div>
+  <div class="eyebrow">선택 · 1분</div>
+  <div class="h-large">오늘 스킬로 만들 Step <em>1개 — 한 줄로 적기</em></div>
   <div class="rule"></div>
-  <div class="intro">고른 Step을 아래 <strong>다섯 줄</strong>로 옮겨 적는다. 이게 Claude에게 "이 스킬 만들어줘"라고 던질 설계도다.</div>
-  <div class="wrap">
-    <div class="tmpl">
-      <div class="tag">5줄 스펙</div>
-      <div class="row">
-        <div class="label"><span class="num">01</span><span class="name">스킬 이름</span></div>
-        <div class="blank">__________________<span class="hint">영문 소문자 + 하이픈. 예: extract-meeting-actions</span></div>
+  <div class="intro">세 기준으로 고른 Step 하나를 <strong>지금 한 줄로</strong> 적어본다. 다음 슬라이드에서 이 한 줄이 스펙 5줄로 확장된다.</div>
+  <div class="worksheet">
+    <div class="tag">워크시트</div>
+    <div class="prompt">내가 고른 Step (동사로 시작) <strong>→</strong></div>
+    <div class="bigblank">_______________________________________________</div>
+    <div class="checks">
+      <div class="chk">
+        <div class="n">체크 01</div>
+        <div class="q">반복 빈도</div>
+        <div class="hint">주 <strong>2회 이상</strong> 도는 일인가?</div>
       </div>
-      <div class="row">
-        <div class="label"><span class="num">02</span><span class="name">언제 쓰나</span></div>
-        <div class="blank">__________________<span class="hint">한 문장. 예: "고객 리캡 메일 쓰기 전에"</span></div>
+      <div class="chk">
+        <div class="n">체크 02</div>
+        <div class="q">입출력 명확</div>
+        <div class="hint">A 넣으면 B 나오는 게 <strong>한 줄로</strong>?</div>
       </div>
-      <div class="row">
-        <div class="label"><span class="num">03</span><span class="name">입력</span></div>
-        <div class="blank">__________________<span class="hint">예: 고객명, 기간 (일수)</span></div>
-      </div>
-      <div class="row">
-        <div class="label"><span class="num">04</span><span class="name">출력</span></div>
-        <div class="blank">__________________<span class="hint">예: 액션 아이템 bullet 3-5개</span></div>
-      </div>
-      <div class="row">
-        <div class="label"><span class="num">05</span><span class="name">사용 MCP</span></div>
-        <div class="blank">__________________<span class="hint">예: Notion MCP (회의록 페이지 접근)</span></div>
-      </div>
-    </div>
-    <div class="example">
-      <div class="tag">채워진 예시</div>
-      <h4>extract-meeting-actions</h4>
-      <div class="ex">
-        <div><span class="k">언제</span><span class="v">고객 리캡 메일 쓰기 전</span></div>
-        <div><span class="k">입력</span><span class="v">고객명 · 기간 (14일)</span></div>
-        <div><span class="k">출력</span><span class="v">액션 bullet 3-5개 + 원문 링크</span></div>
-        <div><span class="k">MCP</span><span class="v">Notion (고객별 회의록 폴더)</span></div>
+      <div class="chk">
+        <div class="n">체크 03</div>
+        <div class="q">도구 연결</div>
+        <div class="hint">어떤 <strong>MCP</strong>가 필요한지 이름 붙일 수 있나?</div>
       </div>
     </div>
   </div>
-  <div class="closing">다 채우면 <strong>Claude에게 던질 준비 완료</strong>. 다음 슬라이드에서 한 줄 명령으로 실제 스킬이 만들어진다.</div>
+  <div class="foot">이걸로 간다. 다음 슬라이드에서 <strong>스펙 5줄</strong>로 옮긴다.</div>
 </body>
 </html>

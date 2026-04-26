@@ -2,41 +2,57 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S03 어제의 답답함 점검</title>
+<title>Day 3 · S03 하네스 6축 한눈에</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
-  .row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 14pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .row .feel { font-size: 11pt; font-weight: 600; color: #2b2520; line-height: 1.4; letter-spacing: -0.005em; }
-  .row .feel em { font-style: normal; color: #b45a34; }
-  .row .diag { font-size: 10.5pt; line-height: 1.55; color: #42332a; padding-left: 14pt; border-left: 2pt solid #c56a4a; }
-  .row .diag strong { color: #b45a34; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #5a4d40; margin-top: 2pt; max-width: 620pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 10pt 14pt; border-radius: 10pt; background: #ebe1d2; }
+  .cell.terra { background: #c56a4a; color: #f7efe4; }
+  .cell .num { font-size: 10pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; }
+  .cell.terra .num { color: #f2cdb4; }
+  .cell .name { font-size: 14pt; font-weight: 600; color: #2b2520; margin-top: 2pt; letter-spacing: -0.005em; }
+  .cell.terra .name { color: #fff; }
+  .cell .def { font-size: 10pt; line-height: 1.5; color: #5a4d40; margin-top: 4pt; }
+  .cell.terra .def { color: #f5e4d4; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">어제의 답답함 · 첫 15분 준비</div>
-  <div class="h-large">"이제 <em>무엇을 시킬지부터</em>"라고 느꼈다면 정상</div>
+  <div class="eyebrow">프레임</div>
+  <div class="h-large">AI와 함께 일하는 <em>6단계 사이클</em> <span style="font-size:12pt;font-weight:400;color:#7d6b5a;margin-left:8pt;">— 이 6단계를 반복해야 AI가 내 일처럼 일한다.</span></div>
   <div class="rule"></div>
-  <div class="intro">Day 2 마지막에 예고했던 그 답답함. 오늘 첫 15분이 <strong>거기서 시작한다</strong>. 아래 3가지 중 하나라도 해당되면 오늘이 그 해결.</div>
-  <div class="rows">
-    <div class="row">
-      <div class="feel">"맥락은 읽는데 결과가 <em>내 머릿속 모양</em>이 아니다"</div>
-      <div class="diag"><strong>진단</strong> — 계획(축 3) 공백. AI에게 "뭘 만들지"를 내가 명확히 말로 못 했다.</div>
+  <div class="grid">
+    <div class="cell">
+      <div class="num">01</div>
+      <div class="name">구조</div>
+      <div class="def">AI가 내 업무를 "어디서·어떤 규칙으로" 이해할 뼈대.<br>CLAUDE.md·폴더·rules — 한 번 설정하면 반복 설명이 사라진다.</div>
     </div>
-    <div class="row">
-      <div class="feel">"한 번 잘 돼도 <em>다음에 다시</em> 설명해야 한다"</div>
-      <div class="diag"><strong>진단</strong> — 실행(축 4) 공백. 재사용 가능한 단위(=스킬)가 없어 매번 0부터.</div>
+    <div class="cell">
+      <div class="num">02</div>
+      <div class="name">맥락</div>
+      <div class="def">지금 이 작업에 필요한 "변하는 정보"를<br>AI가 접근하게 연결 — MCP · 외부 데이터.</div>
     </div>
-    <div class="row">
-      <div class="feel">"내가 뭘 원하는지 <em>말로 정리</em>가 안 된다"</div>
-      <div class="diag"><strong>진단</strong> — Clarify 단계 결여. 머릿속 이미지는 두 정답 사이를 왔다 갔다 한다.</div>
+    <div class="cell terra">
+      <div class="num">03 · 오늘의 축</div>
+      <div class="name">계획</div>
+      <div class="def">바로 실행하지 않고 "무엇을·어떤 순서로·왜"를 먼저.<br>Clarify · Ouroboros로 구체화한다.</div>
+    </div>
+    <div class="cell terra">
+      <div class="num">04 · 오늘의 축</div>
+      <div class="name">실행</div>
+      <div class="def">짠 계획대로 스킬·Subagent 호출.<br>구체화된 스펙이 있으면 실행 품질이 올라간다.</div>
+    </div>
+    <div class="cell">
+      <div class="num">05</div>
+      <div class="name">검증</div>
+      <div class="def">결과를 만든 사람(AI)이 아닌 다른 관점으로 점검.<br>Generator ≠ Evaluator.</div>
+    </div>
+    <div class="cell">
+      <div class="num">06</div>
+      <div class="name">개선</div>
+      <div class="def">검증에서 드러난 문제를 스킬·rules에 되먹여 다음엔 더 낫게.<br>Build → Use → Notice → Fix.</div>
     </div>
   </div>
-  <div class="foot">오늘 B0(15분)에서 이 답답함을 <strong>짝꿍과 언어로 바꾼다</strong>. 답답함을 없애려 하지 말고 "이름 붙이기"가 먼저.</div>
 </body>
 </html>

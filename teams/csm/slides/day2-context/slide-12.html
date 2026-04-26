@@ -2,72 +2,48 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S12 USB-C 비유</title>
+<title>Day 2 · S11 MCP 한 줄 정의</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .col-head { display: flex; flex-direction: column; gap: 3pt; }
-  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
-  .col.cream .tag { color: #a0917e; }
-  .col.terra .tag { color: #f2cdb4; }
-  .col h3 { font-size: 13pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
-  .col.terra .divider { background: rgba(255,255,255,0.18); }
-  .bullets { display: flex; flex-direction: column; gap: 6pt; }
-  .bullet { font-size: 10pt; line-height: 1.55; padding-left: 12pt; position: relative; }
-  .col.cream .bullet { color: #42332a; }
-  .col.terra .bullet { color: #f5e4d4; }
-  .bullet::before { content: '·'; position: absolute; left: 2pt; top: -2pt; font-weight: 700; font-size: 13pt; }
-  .col.cream .bullet::before { color: #b45a34; }
-  .col.terra .bullet::before { color: #f2cdb4; }
-  .bullet strong { font-weight: 600; }
-  .col.cream .bullet strong { color: #2b2520; }
-  .col.terra .bullet strong { color: #fff; }
-  .closing { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .closing strong { color: #b45a34; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
+  .example { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .example strong { color: #b45a34; }
+  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 3pt; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">비유</div>
-  <div class="h-large">핸드폰마다 다른 충전기에서 — <em>USB-C 하나로</em></div>
+  <div class="eyebrow">개념</div>
+  <div class="h-large">MCP = <em>AI와 도구</em>를 잇는 표준 포트</div>
   <div class="rule"></div>
-  <div class="intro">MCP가 왜 등장했는지는 USB-C 이전 상황과 정확히 닮았다. 표준 포트가 없을 때와 있을 때의 차이.</div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="col-head">
-        <div class="tag">Before · 표준 포트 없음</div>
-        <h3>도구별 별도 연동 지옥</h3>
-      </div>
-      <div class="divider"></div>
-      <div class="bullets">
-        <div class="bullet">도구 A는 A 전용 <strong>API 연동 코드</strong></div>
-        <div class="bullet">도구 B는 B 전용 <strong>SDK</strong></div>
-        <div class="bullet">새 AI가 나오면 전부 <strong>다시 연동</strong></div>
-        <div class="bullet">회사마다 같은 짓을 반복 — 중복 비용</div>
-      </div>
+  <div class="intro">풀 네임은 <strong>Model Context Protocol</strong>. Anthropic이 2024년 공개한 <strong>AI ↔ 외부 도구 연결 표준</strong>이다. 어떤 AI든, 어떤 도구든 이 포트를 지원하면 연결된다.</div>
+  <div class="concept">
+    <div class="label">한 줄 정의</div>
+    <div class="def">"어떤 AI든, 어떤 도구든 <em>같은 포트</em>로 연결된다"</div>
+  </div>
+  <div class="rows">
+    <div class="cell">
+      <div class="label">왜 중요</div>
+      <h3>AI마다 · 도구마다 별도 연동 끝</h3>
+      <div class="body">예전엔 Claude용 Gmail 연동, ChatGPT용 Gmail 연동이 따로 필요했다. MCP 이후 한 번 만든 서버를 <strong>여러 AI가 재사용</strong>한다.</div>
     </div>
-    <div class="col terra">
-      <div class="col-head">
-        <div class="tag">After · MCP 표준</div>
-        <h3>한 번 만들면 어디서든 꽂힌다</h3>
-      </div>
-      <div class="divider"></div>
-      <div class="bullets">
-        <div class="bullet">도구가 <strong>MCP 서버 1개</strong>만 제공</div>
-        <div class="bullet">어떤 AI든 그 서버에 <strong>꽂으면 됨</strong></div>
-        <div class="bullet">AI가 바뀌어도 <strong>재연동 X</strong></div>
-        <div class="bullet">Anthropic · OpenAI · Google 모두 지원 중</div>
-      </div>
+    <div class="cell">
+      <div class="label">CSM 예시</div>
+      <h3>"지난 주 고객 A 메일 요약"이 실제로 동작</h3>
+      <div class="body">claude.ai에서 Gmail MCP를 켜면, AI가 <strong>실제로 메일을 읽어서</strong> 답한다. 이전엔 내가 메일을 복붙해줘야 답이 나왔다.</div>
     </div>
   </div>
-  <div class="closing">"표준의 승자 독식"이 이미 일어나고 있다. 지금 <strong>Gmail · Notion · Slack · Salesforce 공식 MCP가 다 있다</strong>. 우리가 오늘 쓸 것들.</div>
+  <div class="example"><span class="tag">오늘 실습 예고</span>claude.ai 웹에서 Gmail · Notion · Slack 중 <strong>1~2개</strong> 직접 연결. 다음 블록부터 손으로.</div>
 </body>
 </html>

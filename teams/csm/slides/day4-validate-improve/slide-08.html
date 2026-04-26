@@ -2,33 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S08 B1 섹션 오프너</title>
+<title>Day 4 · S07 오늘 하루 흐름</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
-  .top { display: flex; justify-content: space-between; align-items: center; }
-  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
-  .mid { display: flex; flex-direction: column; gap: 18pt; }
-  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
-  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 560pt; }
-  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
-  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
-  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
+  body { display: flex; flex-direction: column; gap: 14pt; }
+  .h-large { font-size: 26pt; }
+  .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12pt; align-items: stretch; margin-top: 8pt; }
+  .node { background: #ebe1d2; border-radius: 14pt; padding: 18pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .node.hl { background: #c56a4a; color: #f7efe4; }
+  .node .n { font-size: 10pt; letter-spacing: 0.25em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
+  .node.hl .n { color: #f2cdb4; }
+  .node h3 { font-size: 16pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.22; }
+  .node.hl h3 { color: #fff; }
+  .node p { font-size: 11pt; color: #42332a; line-height: 1.5; }
+  .node.hl p { color: #f5e4d4; }
+  .arrow { display: flex; align-items: center; justify-content: center; color: #b45a34; font-size: 24pt; font-weight: 500; }
+  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; margin-top: auto; max-width: 640pt; }
+  .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="top">
-    <div class="block">Block 1 · 축 5 검증</div>
-    <div class="time">30 min</div>
+  <div>
+    <div class="eyebrow">오늘 하루 흐름</div>
+    <div class="h-large">원리 체감 &rarr; 자가진단 &rarr; 팀 공유</div>
   </div>
-  <div class="mid">
-    <h1>까다로운 고객이<br>내 초안을 읽는다</h1>
-    <div class="sub">운영진이 &ldquo;까다로운 고객&rdquo; 에이전트를 시연한다. 참가자는 자기 Day 3 결과물을 넣고, 피드백을 읽기만 한다. 호출 허들 없이 원리만 체감.</div>
+  <div class="flow">
+    <div class="node">
+      <div class="n">B1 · 30 min</div>
+      <h3>다른 관점을<br>체감한다</h3>
+      <p>까다로운 고객 에이전트가 내 결과를 읽는다. 참가자는 자기 결과물 넣고 읽기만.</p>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="node">
+      <div class="n">B2 · 20 min</div>
+      <h3>약한 축을<br>집어낸다</h3>
+      <p>Compound 원리 + 6축 O/X 체크리스트. 첫날 vs 마지막날을 짝꿍과 비교.</p>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="node hl">
+      <div class="n">B3 · 50 min</div>
+      <h3>팀 자산으로<br>남긴다</h3>
+      <p>내 스킬 1개를 팀 repo에 올리고 PR로 공유. 오늘 끝나면 팀 자산 +1.</p>
+    </div>
   </div>
-  <div class="bot">
-    <div class="meta">Generator &ne; Evaluator · 다른 관점이 내 맥락을 드러낸다</div>
-    <div class="count">9 slides</div>
-  </div>
+  <div class="foot">핵심은 <strong>스킬 재작성이 아니라 관점 교체</strong>. Day 3에서 만든 것을 그대로 들고 오늘의 세 가지 렌즈에 통과시킨다.</div>
 </body>
 </html>

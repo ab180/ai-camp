@@ -2,65 +2,57 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S03 어제 과제 점검</title>
+<title>Day 2 · S03 하네스 6축 한눈에</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .items { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 10pt; }
-  .item { display: grid; grid-template-columns: 100pt 1fr 1.1fr; gap: 14pt; padding: 11pt 14pt; border-radius: 10pt; background: #ebe1d2; align-items: center; }
-  .item.mid { background: #e5d4b9; }
-  .item.low { background: #c56a4a; color: #f7efe4; }
-  .item .status { display: flex; flex-direction: column; gap: 2pt; }
-  .item .st-tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .item:not(.low) .st-tag { color: #b45a34; }
-  .item.low .st-tag { color: #fff; }
-  .item .st-name { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.22; }
-  .item.low .st-name { color: #fff; }
-  .item .signal { font-size: 9.5pt; line-height: 1.5; color: #42332a; }
-  .item.low .signal { color: #f5e4d4; }
-  .item .signal strong { color: #b45a34; font-weight: 600; }
-  .item.low .signal strong { color: #fff; }
-  .item .action { font-size: 9.5pt; line-height: 1.5; color: #42332a; padding-left: 12pt; border-left: 2pt solid #d4c4ac; }
-  .item.low .action { color: #f5e4d4; border-left-color: rgba(255,255,255,0.35); }
-  .item .action strong { color: #b45a34; font-weight: 600; }
-  .item.low .action strong { color: #fff; font-weight: 600; }
-  .foot { margin-top: 9pt; padding: 7pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 9pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #5a4d40; margin-top: 2pt; max-width: 620pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 10pt 14pt; border-radius: 10pt; background: #ebe1d2; }
+  .cell.terra { background: #c56a4a; color: #f7efe4; }
+  .cell .num { font-size: 10pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; }
+  .cell.terra .num { color: #f2cdb4; }
+  .cell .name { font-size: 14pt; font-weight: 600; color: #2b2520; margin-top: 2pt; letter-spacing: -0.005em; }
+  .cell.terra .name { color: #fff; }
+  .cell .def { font-size: 10pt; line-height: 1.5; color: #5a4d40; margin-top: 4pt; }
+  .cell.terra .def { color: #f5e4d4; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">어제 과제 · 15분</div>
-  <div class="h-large">내 Claude에 <em>MCP 서버 1개</em>, 연결해 왔나요?</div>
+  <div class="eyebrow">프레임</div>
+  <div class="h-large">AI와 함께 일하는 <em>6단계 사이클</em> <span style="font-size:12pt;font-weight:400;color:#7d6b5a;margin-left:8pt;">— 이 6단계를 반복해야 AI가 내 일처럼 일한다.</span></div>
   <div class="rule"></div>
-  <div class="intro">오늘 <strong>앞 15분</strong>은 사전 과제(MCP 1개 연결)가 어디까지 왔는지 같이 점검한다. 아래 세 상태 중 <strong>지금 내 상황</strong>이 어디인지 꺼내 본다.</div>
-  <div class="items">
-    <div class="item">
-      <div class="status">
-        <div class="st-tag">Status 1</div>
-        <div class="st-name">연결 완료</div>
-      </div>
-      <div class="signal"><code>/mcp</code> 실행 시 서버 이름이 <strong>active</strong> 상태로 보인다.</div>
-      <div class="action">다음 블록 준비. <strong>짝꿍이 막혔으면 도움</strong>.</div>
+  <div class="grid">
+    <div class="cell">
+      <div class="num">01</div>
+      <div class="name">구조</div>
+      <div class="def">AI가 내 업무를 "어디서·어떤 규칙으로" 이해할 뼈대.<br>CLAUDE.md·폴더·rules — 한 번 설정하면 반복 설명이 사라진다.</div>
     </div>
-    <div class="item mid">
-      <div class="status">
-        <div class="st-tag">Status 2</div>
-        <div class="st-name">부분 완료</div>
-      </div>
-      <div class="signal">OAuth 창은 열렸지만 scope·토큰 확인을 못했거나 <strong>/mcp에서 안 보임</strong>.</div>
-      <div class="action">운영진과 <strong>5분 사이드 세션</strong>. 90%는 재시작으로 해결.</div>
+    <div class="cell terra">
+      <div class="num">02 · 오늘의 축</div>
+      <div class="name">맥락</div>
+      <div class="def">지금 이 작업에 필요한 "변하는 정보"를<br>AI가 접근하게 연결 — MCP · 외부 데이터.</div>
     </div>
-    <div class="item low">
-      <div class="status">
-        <div class="st-tag">Status 3</div>
-        <div class="st-name">막힘</div>
-      </div>
-      <div class="signal">claude.ai 접근·Gmail·Notion 계정 권한 이슈로 <strong>시작조차</strong> 못함.</div>
-      <div class="action">짝꿍 환경 붙여 같이. <strong>오늘 안에 전원 1개 연결</strong> 목표.</div>
+    <div class="cell terra">
+      <div class="num">03 · 오늘의 축</div>
+      <div class="name">계획</div>
+      <div class="def">바로 실행하지 않고 "무엇을·어떤 순서로·왜"를 먼저.<br>Clarify · Ouroboros로 구체화한다.</div>
+    </div>
+    <div class="cell">
+      <div class="num">04</div>
+      <div class="name">실행</div>
+      <div class="def">짠 계획대로 스킬·Subagent 호출.<br>구체화된 스펙이 있으면 실행 품질이 올라간다.</div>
+    </div>
+    <div class="cell">
+      <div class="num">05</div>
+      <div class="name">검증</div>
+      <div class="def">결과를 만든 사람(AI)이 아닌 다른 관점으로 점검.<br>Generator ≠ Evaluator.</div>
+    </div>
+    <div class="cell">
+      <div class="num">06</div>
+      <div class="name">개선</div>
+      <div class="def">검증에서 드러난 문제를 스킬·rules에 되먹여 다음엔 더 낫게.<br>Build → Use → Notice → Fix.</div>
     </div>
   </div>
-  <div class="foot">안 됐어도 괜찮다. <strong>어디서 막혔는지</strong>만 말해주면 된다. 막힌 지점 자체가 오늘 실습의 출발점이다.</div>
 </body>
 </html>

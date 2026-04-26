@@ -2,58 +2,53 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S21 베이스 템플릿 2/2</title>
+<title>Day 3 · S20 베이스 템플릿 1/2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .tree { margin-top: 12pt; padding: 18pt 22pt; background: #1a1410; border-radius: 14pt; color: #f5e4d4; font-family: 'SF Mono', Menlo, monospace; font-size: 10.5pt; line-height: 1.75; }
-  .tree .dim { color: #7d6b5a; }
-  .tree .hl { color: #f2cdb4; font-weight: 600; }
-  .tree .comment { color: #7d6b5a; font-style: italic; }
-  .blocks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; margin-top: 10pt; flex: 1; }
-  .b { padding: 12pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
-  .b .label { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .b h3 { font-size: 12.5pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .b .body { font-size: 9.5pt; line-height: 1.55; color: #42332a; }
-  .b .body strong { color: #b45a34; font-weight: 600; }
-  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .closing strong { color: #fff; font-weight: 700; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 12pt; flex: 1; }
+  .c { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 7pt; }
+  .c .label { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .c h3 { font-size: 14pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .c .input { font-size: 9.5pt; color: #7d6b5a; line-height: 1.5; font-family: 'SF Mono', Menlo, monospace; }
+  .c .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 2pt; }
+  .c .body strong { color: #b45a34; font-weight: 600; }
+  .c .slot { font-size: 9.5pt; line-height: 1.5; color: #42332a; margin-top: 4pt; padding: 6pt 9pt; background: rgba(197,106,74,0.1); border-radius: 6pt; }
+  .c .slot strong { color: #b45a34; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">베이스 구조 · 2/2</div>
-  <div class="h-large">스킬 하나는 <em>어떻게 생겼나</em></div>
+  <div class="eyebrow">베이스 템플릿 · 1/2</div>
+  <div class="h-large">오늘 쓸 <em>베이스 스킬 3종</em></div>
   <div class="rule"></div>
-  <div class="intro">베이스 스킬은 <strong>세 블록</strong>으로 구성. 오늘 내가 손댈 부분은 대부분 rules/ 한 곳.</div>
-  <div class="tree">
-<span class="dim">skills/</span><span class="hl">recap-mail/</span>
-<span class="dim">├─</span> <span class="hl">SKILL.md</span>           <span class="comment">// 스킬의 정체성 · 호출 조건 · 대표 예시</span>
-<span class="dim">├─</span> <span class="hl">templates/</span>          <span class="comment">// 출력 포맷 (리캡 메일 본문 틀)</span>
-<span class="dim">│   └─</span> recap.md
-<span class="dim">└─</span> <span class="hl">rules/</span>              <span class="comment">// 톤 · 금지어 · 필수 섹션</span>
-<span class="dim">    ├─</span> tone.md
-<span class="dim">    ├─</span> banned.md
-<span class="dim">    └─</span> required.md
-  </div>
-  <div class="blocks">
-    <div class="b">
-      <div class="label">SKILL.md</div>
-      <h3>언제 이 스킬을 쓰나</h3>
-      <div class="body">description · 입력 · 출력 · MCP 사용 선언. <strong>1~2줄만 손봐도 OK</strong>.</div>
+  <div class="intro">운영진이 사전 제작한 CSM 핵심 3종. 수정만 해도 <strong>동작하는 수준</strong>. 1개만 골라서 시작 — 나머지는 2주 프로젝트에서.</div>
+  <div class="cards">
+    <div class="c">
+      <div class="label">베이스 1</div>
+      <h3>리캡 메일 스킬</h3>
+      <div class="input">input: 미팅 노트 URL</div>
+      <div class="body">미팅 노트 → <strong>리캡 메일 초안</strong>. 톤·CTA·다음 액션 슬롯.</div>
+      <div class="slot">수정 슬롯 <strong>3개</strong> — 담당 고객 · 톤 · 필수 키워드</div>
     </div>
-    <div class="b">
-      <div class="label">templates/</div>
-      <h3>결과물 틀</h3>
-      <div class="body">고정 포맷(예: 리캡 메일 3문단). <strong>건드리지 말고</strong> 유지 권장.</div>
+    <div class="c">
+      <div class="label">베이스 2</div>
+      <h3>문의 답변 스킬</h3>
+      <div class="input">input: 문의 본문</div>
+      <div class="body">문의 본문 → <strong>답변 초안</strong>. 회피 표현·레퍼런스 링크 슬롯.</div>
+      <div class="slot">수정 슬롯 <strong>3개</strong> — 담당 고객 · 톤 · 금지/필수</div>
     </div>
-    <div class="b">
-      <div class="label">rules/</div>
-      <h3>톤 · 금지 · 필수</h3>
-      <div class="body">오늘 주로 손댈 곳. <strong>여기만 잘 고쳐도</strong> 내 스킬의 70%.</div>
+    <div class="c">
+      <div class="label">베이스 3</div>
+      <h3>체크업 미팅 자료 스킬</h3>
+      <div class="input">input: 고객명 + 기간</div>
+      <div class="body">고객 정보 → <strong>아젠다 + 지표 요약</strong>. 지표 소스 슬롯.</div>
+      <div class="slot">수정 슬롯 <strong>3개</strong> — 담당 고객 · 톤 · 지표 소스</div>
     </div>
   </div>
-  <div class="closing">오늘 원칙 — <strong>2개는 그대로</strong>(SKILL.md · templates/) · <strong>1개만 손대기</strong>(rules/)부터 시작.</div>
+  <div class="foot">3종 중 <strong>1개만 고르기</strong>. 리캡 메일이 가장 많이 쓰이고, 수정 포인트도 명확.</div>
 </body>
 </html>

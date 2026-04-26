@@ -2,65 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S46 내 실습용 Repo 만들기</title>
+<title>Day 2 · S45 5가지 명령어</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; min-height: 0; }
-  .stp { padding: 12pt 16pt; border-radius: 11pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
-  .stp.hi { background: #c56a4a; color: #f7efe4; }
-  .stp-top { display: flex; align-items: baseline; gap: 10pt; }
-  .stp .n { font-size: 22pt; font-weight: 500; color: #c56a4a; line-height: 1; letter-spacing: -0.02em; }
-  .stp.hi .n { color: #fff; opacity: 0.75; }
-  .stp .lead { font-size: 12pt; font-weight: 600; color: #2b2520; line-height: 1.3; letter-spacing: -0.005em; }
-  .stp.hi .lead { color: #fff; }
-  .stp .body { font-size: 10pt; line-height: 1.55; color: #42332a; }
-  .stp.hi .body { color: #f5e4d4; }
-  .stp .body strong { color: #b45a34; font-weight: 600; }
-  .stp.hi .body strong { color: #fff; font-weight: 600; }
-  .stp .body code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(197,106,74,0.12); padding: 1pt 6pt; border-radius: 4pt; color: #b45a34; }
-  .stp.hi .body code { background: rgba(255,255,255,0.15); color: #fff; }
-  .tip { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; flex-shrink: 0; }
-  .tip strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 6pt; flex: 1; margin-top: 12pt; }
+  .row { display: grid; grid-template-columns: 110pt 1fr 1.15fr; gap: 14pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 9pt; align-items: center; }
+  .row.hi { background: #c56a4a; color: #f7efe4; }
+  .row .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 11pt; font-weight: 700; color: #b45a34; letter-spacing: -0.003em; }
+  .row.hi .cmd { color: #fff; }
+  .row .def { font-size: 10.5pt; font-weight: 500; color: #2b2520; letter-spacing: -0.005em; line-height: 1.35; }
+  .row.hi .def { color: #fff; }
+  .row .when { font-size: 9.5pt; line-height: 1.45; color: #42332a; padding-left: 12pt; border-left: 2pt solid #d4c4ac; }
+  .row.hi .when { color: #f5e4d4; border-left-color: rgba(255,255,255,0.3); }
+  .row .when strong { color: #b45a34; font-weight: 600; }
+  .row.hi .when strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · 5분 · GitHub 웹</div>
-  <div class="h-large">GitHub 웹에서 — <em>내 첫 Repo 만들기</em></div>
+  <div class="eyebrow">최소 세트</div>
+  <div class="h-large">이 <em>5개</em>면 오늘은 충분하다</div>
   <div class="rule"></div>
-  <div class="intro">터미널 없이 GitHub 페이지에서 <strong>클릭 4번</strong>으로 repo를 만든다. 이 repo가 오늘 저녁 과제·내일·모레 스킬을 담을 집이 된다.</div>
-  <div class="steps">
-    <div class="stp">
-      <div class="stp-top">
-        <div class="n">1</div>
-        <div class="lead">GitHub → "+" → New repository</div>
-      </div>
-      <div class="body">오른쪽 위 <strong>+ 버튼</strong> 클릭 → 드롭다운에서 "New repository" 선택.</div>
+  <div class="intro">Git 명령어는 수십 개지만 — CSM 입장에서 <strong>오늘 이 5개만</strong>. 나머지(branch · rebase · stash)는 2주 프로젝트에서 자연스레.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="cmd">git clone</div>
+      <div class="def">남의 repo를 내 로컬에 복제</div>
+      <div class="when">공용 스킬을 <strong>처음 받을 때</strong>. Day 1에 이미 한 번 했음.</div>
     </div>
-    <div class="stp hi">
-      <div class="stp-top">
-        <div class="n">2</div>
-        <div class="lead">Repository name 입력</div>
-      </div>
-      <div class="body">이름은 <code>ai-camp-practice-&lt;본인이름&gt;</code>. <strong>소문자·하이픈</strong>만 (공백·한글 X).</div>
+    <div class="row">
+      <div class="cmd">git pull</div>
+      <div class="def">최신 상태로 갱신</div>
+      <div class="when">팀이 수정한 걸 <strong>내 로컬에 반영</strong>할 때.</div>
     </div>
-    <div class="stp">
-      <div class="stp-top">
-        <div class="n">3</div>
-        <div class="lead">Private + README 체크</div>
-      </div>
-      <div class="body"><strong>Private</strong> 선택 (처음엔 안전). 그리고 <strong>"Add a README file"</strong> 체크박스 ON.</div>
+    <div class="row hi">
+      <div class="cmd">git commit</div>
+      <div class="def">변경사항을 "스냅샷"으로 박제</div>
+      <div class="when">오늘 내가 한 작업에 <strong>이름을 붙여 저장</strong>. 되돌릴 수 있는 단위.</div>
     </div>
-    <div class="stp hi">
-      <div class="stp-top">
-        <div class="n">4</div>
-        <div class="lead">Create repository</div>
-      </div>
-      <div class="body">하단 녹색 <strong>Create repository</strong> 버튼 한 번. 끝.</div>
+    <div class="row hi">
+      <div class="cmd">git push</div>
+      <div class="def">내 커밋을 Github에 올림</div>
+      <div class="when"><strong>팀이 볼 수 있게</strong> 공개. 내 로컬에만 있던 게 원격에 복사.</div>
+    </div>
+    <div class="row">
+      <div class="cmd">PR (Pull Request)</div>
+      <div class="def">"내 변경을 팀 repo에 합쳐줘"</div>
+      <div class="when">Github 웹에서 생성 · 리뷰 후 <strong>merge</strong>.</div>
     </div>
   </div>
-  <div class="tip">만들면 자동으로 <strong>main 브랜치</strong>가 생긴다. 이 repo에 이따 내 CLAUDE.md 한 섹션을 올린다 — <strong>다음 슬라이드</strong>부터 그 흐름.</div>
+  <div class="foot">오늘 밤 과제는 <strong>5개 전부 써봄</strong> — 한 번 흐름을 타면 다음부턴 익숙. 바로 다음 슬라이드부터 구체 흐름.</div>
 </body>
 </html>
