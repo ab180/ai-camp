@@ -43,11 +43,7 @@ jobs:
             "teams/csm/slides/day2-context" \
             "teams/csm/slides/day3-plan-execute" \
             "teams/csm/slides/day4-validate-improve" \
-            "teams/csm/templates" \
             "teams/csm/.claude/skills" \
-            "teams/csm/guides" \
-            "shared" \
-            "sop" \
             "docs/plans" \
             "archive/camp-1-2" \
             "bin"; do

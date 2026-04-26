@@ -16,6 +16,15 @@
   .right .card .lead { font-size: 10pt; letter-spacing: 0.2em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
   .right .card .axes { font-size: 28pt; font-weight: 500; color: #fff; letter-spacing: -0.02em; line-height: 1.1; margin-top: 8pt; }
   .right .card .desc { font-size: 11pt; color: #f5e4d4; margin-top: 10pt; line-height: 1.55; }
+  .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8pt; margin-top: 14pt; padding-top: 12pt; border-top: 1px dashed #d4c4ac; }
+  .roadmap .stage { padding: 8pt 10pt; border-radius: 8pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 2pt; opacity: 0.55; }
+  .roadmap .stage.active { background: #c56a4a; color: #f7efe4; opacity: 1; }
+  .roadmap .stage .d { font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
+  .roadmap .stage.active .d { color: #f2cdb4; }
+  .roadmap .stage .t { font-size: 10pt; font-weight: 600; color: #2b2520; line-height: 1.25; letter-spacing: -0.005em; }
+  .roadmap .stage.active .t { color: #fff; }
+  .roadmap .stage .ax { font-size: 8pt; color: #7d6b5a; margin-top: 2pt; }
+  .roadmap .stage.active .ax { color: #f5e4d4; }
 </style>
 </head>
 <body>
@@ -26,12 +35,18 @@
       <div class="title-sub" style="font-size: 20pt; margin-top: 14pt;">MCP = Context Bridge</div>
     </div>
     <div class="subline">어제는 "우리 팀이 처음" 문제를 CLAUDE.md로 해결했다. 오늘은 "지금 이 순간의 맥락"이 AI 손에 닿게 만든다.</div>
+    <div class="roadmap">
+      <div class="stage"><span class="d">Day 1</span><span class="t">CLAUDE.md</span><span class="ax">축 1·2</span></div>
+      <div class="stage active"><span class="d">Day 2 · 오늘</span><span class="t">MCP 연결</span><span class="ax">축 2·3</span></div>
+      <div class="stage"><span class="d">Day 3</span><span class="t">스킬 제작</span><span class="ax">축 3·4</span></div>
+      <div class="stage"><span class="d">Day 4</span><span class="t">검증·시스템</span><span class="ax">축 5·6</span></div>
+    </div>
   </div>
   <div class="right">
     <div class="card terra">
       <div class="lead">오늘의 축</div>
       <div class="axes">2 맥락<br><span style="font-size: 20pt; opacity: 0.9;">+ 3 계획</span></div>
-      <div class="desc">MCP로 변하는 맥락을 연결하고, Day 3 계획으로 가는 길을 살짝 연다.</div>
+      <div class="desc">MCP로 매번 바뀌는 맥락을 AI에 연결하고, Day 3 계획으로 가는 길을 연다.</div>
     </div>
   </div>
 </body>

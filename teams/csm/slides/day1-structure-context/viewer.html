@@ -288,6 +288,15 @@
   .right .card .lead { font-size: 10pt; letter-spacing: 0.2em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
   .right .card .axes { font-size: 28pt; font-weight: 500; color: #fff; letter-spacing: -0.02em; line-height: 1.1; margin-top: 8pt; }
   .right .card .desc { font-size: 11pt; color: #f5e4d4; margin-top: 10pt; line-height: 1.55; }
+  .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8pt; margin-top: 14pt; padding-top: 12pt; border-top: 1px dashed #d4c4ac; }
+  .roadmap .stage { padding: 8pt 10pt; border-radius: 8pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 2pt; opacity: 0.55; }
+  .roadmap .stage.active { background: #c56a4a; color: #f7efe4; opacity: 1; }
+  .roadmap .stage .d { font-size: 8.5pt; letter-spacing: 0.2em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
+  .roadmap .stage.active .d { color: #f2cdb4; }
+  .roadmap .stage .t { font-size: 10pt; font-weight: 600; color: #2b2520; line-height: 1.25; letter-spacing: -0.005em; }
+  .roadmap .stage.active .t { color: #fff; }
+  .roadmap .stage .ax { font-size: 8pt; color: #7d6b5a; margin-top: 2pt; }
+  .roadmap .stage.active .ax { color: #f5e4d4; }
 </style>
 </head>
 <body>
@@ -298,6 +307,12 @@
       <div class=&quot;title-sub&quot; style=&quot;font-size: 20pt; margin-top: 14pt;&quot;>CLAUDE.md = Context Design</div>
     </div>
     <div class=&quot;subline&quot;>오늘 120분 · AI가 매번 &quot;우리 팀이 처음&quot;인 상태를 &quot;기본값을 아는 상태&quot;로 바꾼다.</div>
+    <div class=&quot;roadmap&quot;>
+      <div class=&quot;stage active&quot;><span class=&quot;d&quot;>Day 1 · 오늘</span><span class=&quot;t&quot;>CLAUDE.md</span><span class=&quot;ax&quot;>축 1·2</span></div>
+      <div class=&quot;stage&quot;><span class=&quot;d&quot;>Day 2</span><span class=&quot;t&quot;>MCP 연결</span><span class=&quot;ax&quot;>축 2·3</span></div>
+      <div class=&quot;stage&quot;><span class=&quot;d&quot;>Day 3</span><span class=&quot;t&quot;>스킬 제작</span><span class=&quot;ax&quot;>축 3·4</span></div>
+      <div class=&quot;stage&quot;><span class=&quot;d&quot;>Day 4</span><span class=&quot;t&quot;>검증·시스템</span><span class=&quot;ax&quot;>축 5·6</span></div>
+    </div>
   </div>
   <div class=&quot;right&quot;>
     <div class=&quot;card terra&quot;>
