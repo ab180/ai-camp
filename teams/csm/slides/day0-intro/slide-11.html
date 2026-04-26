@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · I11 그래서 4일</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .roadmap { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10pt; margin-top: 22pt; }
+  .day { padding: 16pt 14pt; border-radius: 10pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 7pt; }
+  .day.terra { background: #c56a4a; color: #f7efe4; }
+  .day .lbl { font-size: 9pt; letter-spacing: 0.2em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
+  .day.terra .lbl { color: #ffd9bf; }
+  .day h4 { font-size: 15pt; font-weight: 700; color: #2b2520; line-height: 1.2; }
+  .day.terra h4 { color: #fff; }
+  .day .sub { font-size: 9.5pt; line-height: 1.35; color: #b45a34; font-weight: 700; }
+  .day.terra .sub { color: #ffd9bf; }
+  .day .desc { font-size: 10pt; line-height: 1.4; color: #7d6b5a; }
+  .day.terra .desc { color: #f5e4d4; }
+  .closing { margin-top: 16pt; padding: 16pt 20pt; background: #2b2520; border-radius: 10pt; color: #f5e4d4; display: flex; flex-direction: column; gap: 6pt; }
+  .closing .head { font-size: 11pt; font-weight: 700; color: #ffd9bf; letter-spacing: 0.05em; }
+  .closing .body-text { font-size: 14pt; line-height: 1.4; color: #fff; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">다음 4일</div>
+  <div class="h-large">내 <em>OS 환경</em>을 짓는 4일</div>
+  <div class="rule"></div>
+
+  <div class="roadmap">
+    <div class="day terra">
+      <div class="lbl">Day 1 · 오늘</div>
+      <h4>맥락 파일</h4>
+      <div class="sub">CLAUDE.md</div>
+      <div class="desc">머릿속을 처음으로 푸는 작업.</div>
+    </div>
+    <div class="day">
+      <div class="lbl">Day 2</div>
+      <h4>외부 연결</h4>
+      <div class="sub">MCP</div>
+      <div class="desc">변하는 정보를 AI에 직접 잇는다.</div>
+    </div>
+    <div class="day">
+      <div class="lbl">Day 3</div>
+      <h4>반복 도구</h4>
+      <div class="sub">Skill</div>
+      <div class="desc">자주 하는 일을 한 번에 호출.</div>
+    </div>
+    <div class="day">
+      <div class="lbl">Day 4</div>
+      <h4>자동 루프</h4>
+      <div class="sub">System</div>
+      <div class="desc">검토·개선이 자동으로 돈다.</div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <div class="head">잠시 후, 본편 시작</div>
+    <div class="body-text">방금이 <em>왜 / 무엇</em>이었다면, 본편은 <em>어떻게</em>.</div>
+  </div>
+</body>
+</html>

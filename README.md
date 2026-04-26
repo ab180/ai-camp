@@ -44,6 +44,7 @@ ai-camp/
 
 | Day | 시간 | 축 | 테마 | 산출물 |
 |-----|------|------|------|--------|
+| **Day 0** | 12분 | (인트로) | AI랑 일한다는 건 — AI = OS 비유 | 본편 직전 분업 모델 3단계 공유 (12장) |
 | **Day 1** | 120분 | 축 1(구조) + 축 2(살짝) | 뼈대 깔기 — CLAUDE.md | CSM 맥락·톤·금지어가 박힌 CLAUDE.md |
 | **Day 2** | 120분 | 축 2(맥락) | 도구로 맥락 확장 — MCP + 내 스킬 만들기 | CSM 도구 MCP 1개+ 연결 + 내 문제 스킬 첫 초안 |
 | **Day 3** | 120분 | 축 3(계획) + 축 4(실행) | Deep Interview · 템플릿 커스터마이징 · Skill Creator | 내 맥락으로 다듬은 동작 스킬 1개 + 검증 결과 |
@@ -77,6 +78,7 @@ ai-camp/
 | A. 2기 분석 + 매트릭스 | ✅ 완료 | [Design Doc §5](docs/plans/2026-04-20-ai-camp-3rd-design.md) |
 | B. Design Doc | ✅ 완료 | [`docs/plans/2026-04-20-ai-camp-3rd-design.md`](docs/plans/2026-04-20-ai-camp-3rd-design.md) |
 | C. Repo bootstrap | ✅ 완료 | teams/ 구조 + bin/setup.sh |
+| D0. Day 0 intro | ✅ 완료 | `teams/csm/slides/day0-intro/` · 12장 (AI = OS 비유) |
 | D1. Day 1 slides | ✅ 완료 | `teams/csm/slides/day1-structure-context/` · 59장 |
 | D2. Day 2 slides | ✅ 완료 | `teams/csm/slides/day2-context/` · 52장 |
 | D3. Day 3 slides | ✅ 완료 | `teams/csm/slides/day3-plan-execute/` · 47장 |
