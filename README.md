@@ -29,10 +29,8 @@ claude
 ```
 ai-camp/
 ├── teams/
-│   ├── csm/              CS Group 전용 (슬라이드·스킬·템플릿·가이드)
+│   ├── csm/              CS Group 전용 (슬라이드 · 스킬 · 학습용 템플릿)
 │   └── (sales/ 등 추가 예정)
-├── shared/               팀 무관 공통 자산 (참고용)
-├── sop/                  운영진 운영 매뉴얼
 ├── docs/                 Design Doc · 계획
 ├── archive/camp-1-2/     1·2기 자산 (읽기 전용)
 └── bin/setup.sh          팀별 부분 clone 스크립트

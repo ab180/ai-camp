@@ -2,59 +2,48 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S11 CSM 도구 6개 한눈에</title>
+<title>Day 2 · S11 MCP 한 줄 정의</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 9pt; flex: 1; margin-top: 10pt; }
-  .tool { padding: 12pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
-  .tool .name { font-size: 14pt; font-weight: 700; color: #2b2520; letter-spacing: -0.01em; }
-  .tool .role { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .tool .ctx { font-size: 9.5pt; line-height: 1.5; color: #42332a; margin-top: 3pt; padding-top: 6pt; border-top: 1px dashed #d4c4ac; }
-  .tool .ctx strong { color: #2b2520; font-weight: 600; }
-  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
+  .example { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .example strong { color: #b45a34; }
+  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 3pt; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">지형도</div>
-  <div class="h-large">CSM 일상을 <em>6개 도구</em>가 나눠 담고 있다</div>
+  <div class="eyebrow">개념</div>
+  <div class="h-large">MCP = <em>AI와 도구</em>를 잇는 표준 포트</div>
   <div class="rule"></div>
-  <div class="intro">한 명의 CSM이 하루에 만지는 도구 6개. 각자 다른 종류의 맥락을 담는다. <strong>합쳐야 고객이 보인다.</strong></div>
-  <div class="grid">
-    <div class="tool">
-      <div class="role">고객 기록 · 파이프라인</div>
-      <div class="name">Salesforce</div>
-      <div class="ctx">계약 단계 · 담당 영업 · OPP 상태 · <strong>누가 어디까지 왔나</strong>의 공식 기록</div>
+  <div class="intro">풀 네임은 <strong>Model Context Protocol</strong>. Anthropic이 2024년 공개한 <strong>AI ↔ 외부 도구 연결 표준</strong>이다. 어떤 AI든, 어떤 도구든 이 포트를 지원하면 연결된다.</div>
+  <div class="concept">
+    <div class="label">한 줄 정의</div>
+    <div class="def">"어떤 AI든, 어떤 도구든 <em>같은 포트</em>로 연결된다"</div>
+  </div>
+  <div class="rows">
+    <div class="cell">
+      <div class="label">왜 중요</div>
+      <h3>AI마다 · 도구마다 별도 연동 끝</h3>
+      <div class="body">예전엔 Claude용 Gmail 연동, ChatGPT용 Gmail 연동이 따로 필요했다. MCP 이후 한 번 만든 서버를 <strong>여러 AI가 재사용</strong>한다.</div>
     </div>
-    <div class="tool">
-      <div class="role">문의 · 티켓</div>
-      <div class="name">Plain</div>
-      <div class="ctx">들어온 질문 · 답변 히스토리 · <strong>우선순위와 담당자</strong></div>
-    </div>
-    <div class="tool">
-      <div class="role">미팅 노트 · 문서</div>
-      <div class="name">Notion</div>
-      <div class="ctx">합의사항 · 로드맵 · <strong>내부 운영 자료</strong> · 체크업 미팅 준비물</div>
-    </div>
-    <div class="tool">
-      <div class="role">커뮤니케이션</div>
-      <div class="name">Gmail</div>
-      <div class="ctx">고객 메일 스레드 · 첨부 · <strong>시간순 대화 기록</strong></div>
-    </div>
-    <div class="tool">
-      <div class="role">리포트 · 대시보드</div>
-      <div class="name">Sheets</div>
-      <div class="ctx">지표 · 수치 · <strong>주기 집계</strong> · 이번 달 활성 이벤트</div>
-    </div>
-    <div class="tool">
-      <div class="role">실시간 협업</div>
-      <div class="name">Slack</div>
-      <div class="ctx">오늘의 맥락 · 빠른 결정 · <strong>내부 논의 흔적</strong></div>
+    <div class="cell">
+      <div class="label">CSM 예시</div>
+      <h3>"지난 주 고객 A 메일 요약"이 실제로 동작</h3>
+      <div class="body">claude.ai에서 Gmail MCP를 켜면, AI가 <strong>실제로 메일을 읽어서</strong> 답한다. 이전엔 내가 메일을 복붙해줘야 답이 나왔다.</div>
     </div>
   </div>
-  <div class="foot">이 중 어느 <strong>하나도 전부가 아니다</strong>. 합쳐야 고객이 보인다 — 다음 두 장에서 성격·질문 매핑으로 쪼갠다.</div>
+  <div class="example"><span class="tag">오늘 실습 예고</span>claude.ai 웹에서 Gmail · Notion · Slack 중 <strong>1~2개</strong> 직접 연결. 다음 블록부터 손으로.</div>
 </body>
 </html>

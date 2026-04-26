@@ -53,12 +53,9 @@ slides/
 teams/csm/
 ├── README.md               (본 문서)
 ├── slides/                 Day별 발표 슬라이드 (HTML + viewer)
-├── templates/              운영진 사전 제작 스킬 (리캡 메일·문의 답변·미팅 노트 요약·Subagent 예제)
-│                           · Day 3에서 내 업무 맥락으로 수정 (0.5 → 1)
-├── .claude/skills/         내 스킬 작업 공간
-│                           · Day 2 B6에서 첫 스킬 생성
-│                           · day1~4 참가자용 인터랙티브 복습 스킬 포함
-└── guides/                 Day별 발표자 가이드 MD
+└── .claude/skills/         학습 스킬 자동 로드 위치
+                            · reply-csm — 환경(CLAUDE.md/MCP)에 따라 답이 달라지는 학습 스킬
+                            · 캠프 진행 중 / 후에 `cd teams/csm && claude` 후 `/reply-csm` 호출
 ```
 
 ---
@@ -84,7 +81,5 @@ teams/csm/
 
 ## 참고
 
-- 공통 자산: `../../shared/`
-- 운영진 매뉴얼: `../../sop/`
 - 1·2기 기록: `../../archive/camp-1-2/`
 - **3기 Notion 커리큘럼**: https://www.notion.so/ab180/Ai-3-343a69a82507809d9248f71daebaef3a
