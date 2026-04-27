@@ -2,50 +2,46 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S18 실습 4/4 짝꿍 점검</title>
+<title>Day 3 · S19 Day 2 스킬 결합 1/2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .pair { margin-top: 10pt; padding: 16pt 20pt; background: #c56a4a; color: #f7efe4; border-radius: 14pt; }
-  .pair .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .pair h2 { font-size: 18pt; font-weight: 600; color: #fff; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.3; }
-  .qs { display: flex; flex-direction: column; gap: 10pt; margin-top: 12pt; flex: 1; }
-  .q { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .q .n { font-size: 22pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .q .body { font-size: 12pt; line-height: 1.55; color: #2b2520; letter-spacing: -0.005em; }
-  .q .body em { font-style: normal; color: #b45a34; font-weight: 600; }
-  .q .body .hint { font-size: 9.5pt; color: #7d6b5a; margin-top: 4pt; display: block; }
-  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
-  .closing strong { color: #b45a34; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
+  .cell .code { font-size: 9pt; font-family: 'SF Mono', Menlo, monospace; color: #42332a; background: rgba(197,106,74,0.1); padding: 5pt 8pt; border-radius: 5pt; margin-top: 3pt; display: inline-block; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">짝꿍 · 5분 · 4/4</div>
-  <div class="h-large">짝꿍에게 <em>스펙 한 번 읽어주기</em></div>
+  <div class="eyebrow">Day 2 결합 · 1/2</div>
+  <div class="h-large">어제 연결한 MCP가 <em>이 스킬에 어떻게</em> 쓰이나</div>
   <div class="rule"></div>
-  <div class="intro">완성도 평가 X. "<strong>빠진 항목이 보이나</strong>"만 체크. 설명하면서 내가 더 또렷해지는 효과가 진짜 목적.</div>
-  <div class="pair">
-    <div class="label">짝꿍 점검</div>
-    <h2>스펙 한 번 소리내어 읽고 · 2가지만 묻기</h2>
+  <div class="intro">베이스 스킬은 <strong>SKILL.md 상단</strong>에 "이 스킬은 Notion MCP · Gmail MCP를 사용한다"로 선언. 실행 시 AI가 그 도구를 <strong>자동 호출</strong>한다.</div>
+  <div class="concept">
+    <div class="label">한 줄 정의</div>
+    <div class="def">스킬 = <em>절차</em> · MCP = <em>맥락</em> · 합치면 "이 고객 전용 절차"</div>
   </div>
-  <div class="qs">
-    <div class="q">
-      <div class="n">1</div>
-      <div class="body">
-        "이 스펙만 보고 스킬이 <em>어떤 결과</em>를 낼지 그려지나?"
-        <span class="hint">구체 결과물 형태가 머릿속에 그려지면 O. 안 그려지면 출력 항목 보강.</span>
-      </div>
+  <div class="rows">
+    <div class="cell">
+      <div class="label">선언 방식</div>
+      <h3>SKILL.md 상단 한 줄</h3>
+      <div class="body">스킬이 MCP를 쓰려면 상단에 <strong>사용 선언</strong>만 있으면 됨.</div>
+      <span class="code">uses: [notion, gmail]</span>
     </div>
-    <div class="q">
-      <div class="n">2</div>
-      <div class="body">
-        "빠진 항목 <em>1개만</em> 짚어주기"
-        <span class="hint">완벽 말고 1개. 대개는 "성공 기준" 또는 "금지어"가 빠진다.</span>
-      </div>
+    <div class="cell">
+      <div class="label">CSM 예시</div>
+      <h3>리캡 메일 스킬 실행 시</h3>
+      <div class="body">Notion MCP에서 <strong>지난 미팅 노트</strong>를 읽고 · Gmail MCP에서 <strong>지난 메일 톤</strong>을 참고. 내가 복붙할 필요 없음.</div>
     </div>
   </div>
-  <div class="closing">완벽 X. 다음 블록에서 운영진 베이스에 이 스펙을 얹으면 <strong>초안이 만들어진다</strong>.</div>
 </body>
 </html>

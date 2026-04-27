@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S35 Subagent vs 순차</title>
+<title>Day 3 · S36 Day 4 예고</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -15,47 +15,41 @@
   .col .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
   .col.cream .label { color: #b45a34; }
   .col.terra .label { color: #f2cdb4; }
-  .col h3 { font-size: 14pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
+  .col h3 { font-size: 15pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
   .col.cream h3 { color: #2b2520; }
   .col.terra h3 { color: #fff; }
-  .flow { display: flex; flex-direction: column; gap: 5pt; margin-top: 4pt; }
-  .flow .step { font-size: 10.5pt; line-height: 1.5; padding: 6pt 10pt; border-radius: 6pt; font-family: 'SF Mono', Menlo, monospace; }
-  .col.cream .flow .step { background: rgba(0,0,0,0.06); color: #42332a; }
-  .col.terra .flow .step { background: rgba(0,0,0,0.2); color: #f5e4d4; }
-  .col .total { font-size: 13pt; font-weight: 700; margin-top: 5pt; }
-  .col.cream .total { color: #b45a34; }
-  .col.terra .total { color: #fff; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .foot strong { color: #b45a34; }
+  .col .item { font-size: 10.5pt; line-height: 1.55; padding: 5pt 0; border-top: 1px dashed; }
+  .col.cream .item { border-color: rgba(0,0,0,0.1); color: #42332a; }
+  .col.terra .item { border-color: rgba(255,255,255,0.18); color: #f5e4d4; }
+  .col .item:first-of-type { border-top: none; }
+  .col .item strong { font-weight: 600; }
+  .col.cream .item strong { color: #b45a34; }
+  .col.terra .item strong { color: #fff; }
+  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
+  .closing strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">비교</div>
-  <div class="h-large">같은 작업, <em>순차 vs 병렬</em></div>
+  <div class="eyebrow">내일 준비물</div>
+  <div class="h-large">Day 4 · <em>검증(축 5) + 개선(축 6) + 팀 공유</em></div>
   <div class="rule"></div>
-  <div class="intro">리캡 메일 작성 시나리오. 오른쪽이 Subagent로 병렬화. 차이는 단순히 시간이 아니라 <strong>내가 기다리는 시간이 반으로</strong>.</div>
+  <div class="intro">오늘 만든 스킬을 <strong>"다른 관점"</strong>으로 보는 하루. 오늘 밤 15분은 Skill Creator 수정안 1개 반영 + Day 4 재료 메모 1줄.</div>
   <div class="compare">
     <div class="col cream">
-      <div class="label">Before · 순차</div>
-      <h3>하나씩 차례로</h3>
-      <div class="flow">
-        <div class="step">[1] 고객 히스토리 요약 ···· 30s</div>
-        <div class="step">[2] 메일 톤 분석 ········· 30s</div>
-        <div class="step">[3] 리캡 메일 작성 ······· 30s</div>
-      </div>
-      <div class="total">총 90초 소요</div>
+      <div class="label">Day 4 미리보기</div>
+      <h3>검증 · 개선 · 공유</h3>
+      <div class="item"><strong>축 5 · 검증</strong> — "까다로운 고객" 에이전트 시연</div>
+      <div class="item"><strong>축 6 · 개선</strong> — Build → Use → Notice → Fix</div>
+      <div class="item"><strong>GitHub · PR</strong> 기반 팀 공유 워크플로우</div>
     </div>
     <div class="col terra">
-      <div class="label">After · Subagent 병렬</div>
-      <h3>가능한 건 동시에</h3>
-      <div class="flow">
-        <div class="step">[1] 히스토리 + [2] 톤 ···· 30s (동시)</div>
-        <div class="step">   (두 Subagent가 병렬로)</div>
-        <div class="step">[3] 리캡 메일 작성 ······· 30s</div>
-      </div>
-      <div class="total">총 60초 — 30초 절약</div>
+      <div class="label">오늘 밤 준비 · 15분</div>
+      <h3>2가지만</h3>
+      <div class="item"><strong>1.</strong> Skill Creator 리포트에서 수정안 <strong>1개 반영</strong></div>
+      <div class="item"><strong>2.</strong> Day 4 재료 메모 — "누구에게 <strong>내 스킬을 읽혀</strong> 보고 싶은가"</div>
+      <div class="item">못 하면 내일 블록 직전 10분으로 OK</div>
     </div>
   </div>
-  <div class="foot">체감 차이는 40초가 아니라 <strong>"기다리는 동안 다른 걸 할 여유가 생김"</strong>. 하루 10번 쓰면 5분씩 복리로.</div>
+  <div class="closing">오늘 <strong>"돌아가는 상태"</strong>가 Day 4의 출발점. 완벽 아니라 작동이 핵심.</div>
 </body>
 </html>

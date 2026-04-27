@@ -2,52 +2,36 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S30 실습 4/5 막힐 때</title>
+<title>Day 3 · S31 Subagent 호출 흐름</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
-  .row { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .row .col-title { font-size: 8.5pt; letter-spacing: 0.2em; color: #b45a34; font-weight: 700; text-transform: uppercase; margin-bottom: 3pt; }
-  .row .sym { font-size: 11pt; font-weight: 600; color: #2b2520; font-family: 'SF Mono', Menlo, monospace; line-height: 1.4; }
-  .row .cause { font-size: 10pt; color: #7d6b5a; line-height: 1.5; }
-  .row .fix { font-size: 10pt; line-height: 1.55; color: #2b2520; padding-left: 12pt; border-left: 2pt solid #c56a4a; }
-  .row .fix strong { color: #b45a34; font-weight: 600; }
-  .head { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 12pt; padding: 0 16pt; margin-top: 10pt; }
-  .head span { font-size: 8.5pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 700; text-transform: uppercase; }
+  .term { background: #1f1813; color: #f5e4d4; padding: 16pt 20pt; border-radius: 12pt; flex: 1; margin-top: 12pt; font-family: 'SF Mono', Menlo, monospace; font-size: 10.5pt; line-height: 1.65; display: flex; flex-direction: column; gap: 6pt; }
+  .term .lbl { font-size: 8.5pt; letter-spacing: 0.22em; color: #c56a4a; font-weight: 600; text-transform: uppercase; font-family: inherit; }
+  .turn { display: grid; grid-template-columns: 36pt 1fr; gap: 10pt; align-items: flex-start; }
+  .who { font-weight: 700; font-size: 9.5pt; padding-top: 1pt; }
+  .who.u { color: #f2cdb4; }
+  .who.c { color: #88c9a6; }
+  .line { color: #f5e4d4; line-height: 1.6; }
+  .line em { font-style: normal; color: #ffdfc9; }
+  .line strong { color: #fff; font-weight: 600; }
   .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
   .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Troubleshooting · 4/5</div>
-  <div class="h-large">이 <em>3가지 중 하나</em>면 바로 해결</div>
+  <div class="eyebrow">실습 · 5분</div>
+  <div class="h-large">Subagent <em>한 번 호출</em>해보기</div>
   <div class="rule"></div>
-  <div class="intro">실습 중 막히는 지점은 거의 3패턴. 증상 보면 원인 · 해결까지 <strong>자동 매칭</strong>. 3개 다 아니면 운영진 Slack.</div>
-  <div class="head">
-    <span>증상</span>
-    <span>원인</span>
-    <span>해결</span>
+  <div class="intro">별도 repo 받지 않는다. <strong>Claude Code에 직접 요청</strong>하면 Subagent를 띄워준다. 결과 품질보다 <strong>"병렬이 실제로 됐는가"</strong>를 로그에서 본다.</div>
+  <div class="term">
+    <div class="lbl">한 번 따라치기 — 자기 입력으로</div>
+    <div class="turn"><span class="who u">YOU</span><span class="line">고객 X에 대해 <strong>2가지를 동시에</strong> 해줘. (1) 최근 3개월 미팅 노트 요약, (2) 최근 3개월 메일 스레드 핵심 이슈 추출. <em>Subagent 2개로 병렬</em> 실행해줘.</span></div>
+    <div class="turn"><span class="who c">CC</span><span class="line">Subagent 2개를 병렬로 띄웁니다... <strong>[Subagent A] 미팅 노트 요약 시작</strong> · <strong>[Subagent B] 메일 스레드 분석 시작</strong></span></div>
+    <div class="turn"><span class="who c">CC</span><span class="line">[Subagent A] 완료 (12초) · [Subagent B] 완료 (15초). 메인이 두 결과를 합쳐 <strong>고객 X 한 페이지 요약</strong> 출력합니다...</span></div>
   </div>
-  <div class="rows">
-    <div class="row">
-      <div class="sym">스킬 호출이 안 됨</div>
-      <div class="cause">SKILL.md 상단 <strong>description</strong>이 불명확해 AI가 매칭을 못 함</div>
-      <div class="fix">"<strong>언제 쓰는 스킬인가</strong>" 한 줄 상단에 명시</div>
-    </div>
-    <div class="row">
-      <div class="sym">톤이 반영 안 됨</div>
-      <div class="cause"><strong>rules/tone.md</strong>가 SKILL.md에서 안 읽힘</div>
-      <div class="fix">SKILL.md에 "<strong>rules/tone.md 참조</strong>" 명시 한 줄 추가</div>
-    </div>
-    <div class="row">
-      <div class="sym">MCP가 안 불림</div>
-      <div class="cause">SKILL.md에 <strong>MCP 사용 선언 누락</strong></div>
-      <div class="fix">"이 스킬은 <strong>Notion MCP를 사용</strong>" 한 줄 추가</div>
-    </div>
-  </div>
-  <div class="foot">15분 내 안 풀리면 <strong>다음 장으로 진행</strong> · 짝꿍과 공유 후 저녁에 보강. 블록 타임 지키기.</div>
+  <div class="foot">관찰: 두 Subagent 시작 로그가 <strong>거의 동시에</strong> 떴는가. 그게 병렬. 결과가 어색해도 OK — 오늘은 "할 줄 안다"까지.</div>
 </body>
 </html>
