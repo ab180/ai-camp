@@ -2,58 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S27 실습 1/5 베이스 고르기</title>
+<title>Day 3 · S28 Subagent 개념</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .steps { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
-  .step { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .step .n { font-size: 22pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .step .cmd { display: flex; flex-direction: column; gap: 3pt; }
-  .step .code { font-size: 10.5pt; font-family: 'SF Mono', Menlo, monospace; color: #2b2520; background: rgba(0,0,0,0.05); padding: 4pt 8pt; border-radius: 5pt; align-self: flex-start; letter-spacing: -0.005em; }
-  .step .desc { font-size: 10pt; line-height: 1.55; color: #42332a; }
-  .step .desc strong { color: #b45a34; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 2pt; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · 5분 · 1/5</div>
-  <div class="h-large">베이스 <em>1개 선택</em> + 로컬 복제</div>
+  <div class="eyebrow">개념 · 2분</div>
+  <div class="h-large">Subagent = <em>한 번에 여러 에이전트</em> 병렬 호출</div>
   <div class="rule"></div>
-  <div class="intro">지금부터 <strong>30분은 손으로만</strong>. 먼저 베이스 고르고, 파일 열고, Day 2 CLAUDE.md를 옆에 띄워둔다.</div>
-  <div class="steps">
-    <div class="step">
-      <div class="n">1</div>
-      <div class="cmd">
-        <div class="code">$ 운영진 repo에서 3종 중 1개 선택</div>
-        <div class="desc"><strong>리캡 메일 권장</strong> — 가장 많이 쓰이고 수정 포인트가 명확.</div>
-      </div>
+  <div class="intro">메인 AI가 Subagent를 <strong>일회성으로 여러 개 띄워</strong> 각자 독립 작업을 시키고 결과를 모은다. 순차로 3번 호출하던 걸 <strong>거의 한 번에</strong> 처리.</div>
+  <div class="concept">
+    <div class="label">한 줄 정의</div>
+    <div class="def">일회용 작업자를 <em>동시에 여러 명 띄운다</em> — 결과는 메인이 합친다</div>
+  </div>
+  <div class="rows">
+    <div class="cell">
+      <div class="label">왜 "일회성"</div>
+      <h3>대화 맥락 안 이어받음</h3>
+      <div class="body">Subagent는 <strong>그 작업에만 집중</strong>. 메인 대화의 다른 맥락에 오염되지 않음.</div>
     </div>
-    <div class="step">
-      <div class="n">2</div>
-      <div class="cmd">
-        <div class="code">$ cp -r base/recap-mail skills/recap-mail</div>
-        <div class="desc">내 프로젝트 폴더 <strong>skills/&lt;이름&gt;/</strong>에 복사.</div>
-      </div>
+    <div class="cell">
+      <div class="label">왜 "병렬"</div>
+      <h3>순차 3회 → 시간 1배</h3>
+      <div class="body">3개 독립 작업을 순차로 하면 시간 3배. 병렬이면 <strong>거의 1배</strong>. 내가 기다리는 시간이 줄어든다.</div>
     </div>
-    <div class="step">
-      <div class="n">3</div>
-      <div class="cmd">
-        <div class="code">$ code skills/recap-mail/{SKILL.md,templates,rules}</div>
-        <div class="desc">에디터에 3개 열기 — <strong>SKILL.md · templates/ · rules/</strong>.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="n">4</div>
-      <div class="cmd">
-        <div class="code">$ code CLAUDE.md</div>
-        <div class="desc">Day 1에 쓴 CLAUDE.md를 <strong>옆에 띄워두기</strong> — 레퍼런스로.</div>
-      </div>
+    <div class="cell">
+      <div class="label">언제 쓰나</div>
+      <h3>독립 작업 2개 이상</h3>
+      <div class="body">서로 <strong>결과를 안 참조</strong>하는 작업 2개 이상. 한쪽이 끝나야 다음이 가능하면 병렬 불가.</div>
     </div>
   </div>
-  <div class="foot">준비 끝나면 다음 장으로 — 3요소 순서대로 30분 집중.</div>
 </body>
 </html>

@@ -2,46 +2,48 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S22 Day 2 스킬 결합 1/2</title>
+<title>Day 3 · S23 B2 3단계 SKILL.md 검토 + 한 번 호출</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
-  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
-  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
-  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
-  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
-  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
-  .cell .body strong { color: #b45a34; font-weight: 600; }
-  .cell .code { font-size: 9pt; font-family: 'SF Mono', Menlo, monospace; color: #42332a; background: rgba(197,106,74,0.1); padding: 5pt 8pt; border-radius: 5pt; margin-top: 3pt; display: inline-block; }
+  .points { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 12pt; flex: 1; }
+  .point { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .point .lbl { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .point h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.3; }
+  .point .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 2pt; }
+  .point .body strong { color: #b45a34; font-weight: 600; }
+  .point .ex { font-size: 9pt; line-height: 1.5; color: #7d6b5a; padding: 6pt 8pt; background: rgba(197,106,74,0.08); border-radius: 6pt; margin-top: 4pt; font-family: 'SF Mono', Menlo, monospace; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Day 2 결합 · 1/2</div>
-  <div class="h-large">어제 연결한 MCP가 <em>이 스킬에 어떻게</em> 쓰이나</div>
+  <div class="eyebrow">B2 · 3단계 · 10분</div>
+  <div class="h-large">SKILL.md 다시 읽으며 <em>검토</em> + 한 번 호출</div>
   <div class="rule"></div>
-  <div class="intro">베이스 스킬은 <strong>SKILL.md 상단</strong>에 "이 스킬은 Notion MCP · Gmail MCP를 사용한다"로 선언. 실행 시 AI가 그 도구를 <strong>자동 호출</strong>한다.</div>
-  <div class="concept">
-    <div class="label">한 줄 정의</div>
-    <div class="def">스킬 = <em>절차</em> · MCP = <em>맥락</em> · 합치면 "이 고객 전용 절차"</div>
-  </div>
-  <div class="rows">
-    <div class="cell">
-      <div class="label">선언 방식</div>
-      <h3>SKILL.md 상단 한 줄</h3>
-      <div class="body">스킬이 MCP를 쓰려면 상단에 <strong>사용 선언</strong>만 있으면 됨.</div>
-      <span class="code">uses: [notion, gmail]</span>
+  <div class="intro">호출 결과 비교가 핵심 아니다. <strong>내용 자체가 명확한가</strong>를 본다. 한 번 호출해 작동만 확인하고 끝낸다 — 결과는 여전히 70-80%일 수 있고 그건 정상.</div>
+  <div class="points">
+    <div class="point">
+      <div class="lbl">검토 1</div>
+      <h3>어제 빠진 게 들어왔나</h3>
+      <div class="body">B1 단서 메모 항목이 SKILL.md 어딘가에 <strong>실제 텍스트</strong>로 적혔는지 한 줄씩 대조.</div>
+      <div class="ex">단서: 톤=사무·존댓말<br>SKILL.md: ## 톤 — 사무·존댓말</div>
     </div>
-    <div class="cell">
-      <div class="label">CSM 예시</div>
-      <h3>리캡 메일 스킬 실행 시</h3>
-      <div class="body">Notion MCP에서 <strong>지난 미팅 노트</strong>를 읽고 · Gmail MCP에서 <strong>지난 메일 톤</strong>을 참고. 내가 복붙할 필요 없음.</div>
+    <div class="point">
+      <div class="lbl">검토 2</div>
+      <h3>표현이 명확한가</h3>
+      <div class="body">"적절히", "잘" 같은 모호한 표현이 남아 있나. <strong>판단 기준</strong>이 단정형으로 적혔나.</div>
+      <div class="ex">X: "적절히 답변"<br>O: "3문장 이내, 영업 협의 후"</div>
+    </div>
+    <div class="point">
+      <div class="lbl">검토 3</div>
+      <h3>새로 빠진 게 보이나</h3>
+      <div class="body">읽다가 "이 부분도 적어야겠다" 떠오른 항목 메모. <strong>다음 라운드 단서</strong>로.</div>
+      <div class="ex">새 단서:<br>"고객 이름 표기 규칙"</div>
     </div>
   </div>
+  <div class="foot">검토 끝나면 <code style="font-family:Menlo,monospace;">/skill &lt;내스킬&gt;</code> 한 번 호출해 작동만 확인. <strong>"내용대로 동작했는가"</strong>가 기준 — 결과 품질은 다음 라운드에서.</div>
 </body>
 </html>
