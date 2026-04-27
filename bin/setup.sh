@@ -108,7 +108,9 @@ if [ ${#SKIPPED[@]} -gt 0 ]; then
   echo "     → 덮어쓰려면 해당 디렉토리 직접 제거 후 setup.sh 재실행"
 fi
 
-ALL_SKILLS=("${LINKED[@]}" "${RELINKED[@]}")
+# set -u 환경에서 빈 배열 전개는 unbound variable 에러를 발생시킴
+# bash 4.4+의 ${arr[@]+"${arr[@]}"} 패턴으로 빈 배열 안전하게 전개
+ALL_SKILLS=(${LINKED[@]+"${LINKED[@]}"} ${RELINKED[@]+"${RELINKED[@]}"})
 if [ ${#ALL_SKILLS[@]} -gt 0 ]; then
   echo ""
   echo "📍 Claude Code에서 호출 가능한 스킬:"
