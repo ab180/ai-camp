@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S41 첫 호출 · 70% 판단</title>
+<title>Day 2 · S41 실제 호출 · 70% 판단</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -12,13 +12,15 @@
   .term { background: #1a1410; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 6pt; overflow: hidden; }
   .term .bar { display: flex; gap: 6pt; margin-bottom: 3pt; }
   .term .bar span { width: 8pt; height: 8pt; border-radius: 50%; background: #3a2e22; }
-  .term .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
-  .term .cmd strong { color: #fff; }
+  .term .you { font-family: 'Pretendard', 'SF Mono', sans-serif; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
+  .term .you strong { color: #fff; }
+  .term .you .ph { color: #c56a4a; font-weight: 600; }
   .term .sep { border-top: 1px dashed rgba(255,255,255,0.15); margin: 3pt 0; }
   .term .out { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.55; color: #9cc4a0; }
   .term .out strong { color: #fff; }
   .term .out .bullet { color: #d8c9b0; }
-  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; }
+  .term .out .ph { color: #f2cdb4; font-weight: 600; }
+  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; font-family: 'SF Mono', Menlo, monospace; }
   .judge { display: flex; flex-direction: column; gap: 7pt; overflow: hidden; }
   .card { padding: 9pt 12pt; border-radius: 10pt; display: flex; flex-direction: column; gap: 3pt; background: #ebe1d2; }
   .card.terra { background: #c56a4a; color: #f7efe4; }
@@ -40,35 +42,35 @@
 </head>
 <body>
   <div class="eyebrow">검증 · 3분</div>
-  <div class="h-large">한 번 호출해보고 — <em>첫 결과는 70%면 정상</em></div>
+  <div class="h-large">실제로 한 번 돌려본다 — <em>첫 결과는 70%면 정상</em></div>
   <div class="rule"></div>
-  <div class="intro">스킬이 만들어졌으면 <strong>일단 한 번 돌린다</strong>. 결과를 보고 세 가지만 판단.</div>
+  <div class="intro">앞에서 <strong>고른 고객</strong>으로 — 한 번 돌려보라고 부탁한다. 결과 보고 <strong>세 가지만 판단</strong>.</div>
   <div class="wrap">
     <div class="term">
       <div class="bar"><span></span><span></span><span></span></div>
-      <div class="cmd"><strong>you ▸</strong> /skill extract-meeting-actions 고객=ACME 기간=14</div>
+      <div class="you"><strong>나 ▸</strong> 방금 만든 스킬로 <span class="ph">[내가 고른 고객]</span> <span class="ph">[기간]</span>치 한 번 돌려줘</div>
       <div class="sep"></div>
-      <div class="out"><strong>claude ▸</strong> Notion에서 ACME 회의록 3건 확인.<br><span class="bullet">- API 연동 스펙 문서 공유 (4/14 미팅, 담당 김지영)</span><br><span class="bullet">- SSO 테스트 일정 조율 (4/18 미팅, 5/2 재확인)</span><br><span class="bullet">- 결제 리포트 포맷 확정 (4/20 논의)</span><br><br><strong>원문 링크</strong> 3개 첨부됨.</div>
-      <div class="meta">// 첫 호출 예시</div>
+      <div class="out"><strong>Claude ▸</strong> Notion에서 <span class="ph">[고객]</span> 회의록 N건 확인.<br><span class="bullet">- (액션 1)</span><br><span class="bullet">- (액션 2)</span><br><span class="bullet">- (액션 3)</span><br><br><strong>원문 링크</strong> 함께 첨부.</div>
+      <div class="meta">// CLAUDE.md 톤이 결과 표현에도 묻어남</div>
     </div>
     <div class="judge">
       <div class="card">
         <div class="tag">판단 01</div>
-        <h5>구조가 스펙대로?</h5>
-        <div class="body">bullet <strong>3개</strong> 요청했는데 3개 나왔나. 형태가 일정하면 O.</div>
+        <h5>구조가 의도대로?</h5>
+        <div class="body">bullet <strong>3-5개</strong> 부탁했는데 그 형태로 나왔나. 일정하면 O.</div>
       </div>
       <div class="card terra">
         <div class="tag">판단 02</div>
         <h5>MCP 실제 호출?</h5>
-        <div class="body">Notion·Slack 등 <strong>도구 접근 흔적</strong>이 있나. "정보 없음"이면 연결 점검.</div>
+        <div class="body">Notion·Slack 등 <strong>도구 접근 흔적</strong> 있나. "정보 없음"이면 연결 점검.</div>
       </div>
       <div class="card">
         <div class="tag">판단 03</div>
         <h5>70% 쓸만한가?</h5>
-        <div class="body">조금 다듬으면 <strong>실제 메일에 쓸</strong> 수 있는 수준이면 합격.</div>
+        <div class="body">조금 다듬으면 <strong>실제 메일에 쓸</strong> 수준이면 합격.</div>
       </div>
     </div>
   </div>
-  <div class="foot">70% 미만이면 <strong>Day 3 Deep Interview</strong>에서 다듬는다. 70% 이상이면 오늘의 승리.</div>
+  <div class="foot">70%가 정상. <strong>"왜 100%가 아닌가"</strong>를 한 줄 메모해두면 — 그게 내일(Day 3) 다듬기 인풋이 된다.</div>
 </body>
 </html>
