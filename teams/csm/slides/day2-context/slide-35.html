@@ -8,48 +8,49 @@
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .checks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 14pt; }
-  .check { padding: 16pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; }
-  .check.terra { background: #c56a4a; color: #f7efe4; }
-  .check .num { font-family: 'SF Mono', Menlo, monospace; font-size: 22pt; font-weight: 600; color: #c56a4a; letter-spacing: -0.01em; }
-  .check.terra .num { color: #fff; opacity: 0.85; }
-  .check h4 { font-size: 13pt; font-weight: 600; color: #2b2520; margin-top: 8pt; letter-spacing: -0.005em; line-height: 1.28; }
-  .check.terra h4 { color: #fff; }
-  .check .body { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 10pt; }
-  .check.terra .body { color: #f5e4d4; }
-  .check .body strong { color: #b45a34; font-weight: 600; }
-  .check.terra .body strong { color: #fff; }
-  .check .example { margin-top: auto; padding-top: 10pt; font-size: 9pt; line-height: 1.5; color: #7d6b5a; border-top: 1px dashed #d4c4ac; font-family: 'SF Mono', Menlo, monospace; }
-  .check.terra .example { color: #f2cdb4; border-top-color: rgba(255,255,255,0.3); }
+  .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16pt; flex: 1; margin-top: 14pt; }
+  .question { padding: 22pt 26pt; border-radius: 14pt; background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; gap: 12pt; }
+  .question .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #f2cdb4; }
+  .question h3 { font-size: 18pt; font-weight: 600; color: #fff; line-height: 1.3; letter-spacing: -0.01em; }
+  .question h3 em { font-style: normal; color: #f2cdb4; }
+  .question .body { font-size: 11pt; line-height: 1.6; color: #f5e4d4; }
+  .question .body strong { color: #fff; font-weight: 600; }
+  .question .example { background: rgba(255,255,255,0.15); border-radius: 8pt; padding: 10pt 14pt; font-size: 10pt; line-height: 1.55; color: #fff; font-family: 'SF Mono', Menlo, monospace; margin-top: auto; }
+  .why { display: flex; flex-direction: column; gap: 10pt; }
+  .card { padding: 14pt 18pt; border-radius: 11pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; }
+  .card .tag { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
+  .card h4 { font-size: 12pt; font-weight: 600; color: #2b2520; margin-top: 3pt; line-height: 1.3; letter-spacing: -0.005em; }
+  .card .body { font-size: 9.5pt; line-height: 1.55; color: #42332a; }
+  .card .body strong { color: #b45a34; font-weight: 600; }
   .foot { margin-top: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
   .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
   <div class="eyebrow">짝꿍 · 2분</div>
-  <div class="h-large">짝꿍 Step 읽어보기 — <em>한 번에 이해되면 합격</em></div>
+  <div class="h-large">짝꿍에게 한 가지만 — <em>입력 → 출력 떠오르나?</em></div>
   <div class="rule"></div>
-  <div class="intro">본인 Step을 <strong>짝꿍에게 보여주고</strong> 세 가지만 물어본다. 읽는 사람이 한 번에 이해 못 하면 쪼개기가 덜 된 것.</div>
-  <div class="checks">
-    <div class="check">
-      <div class="num">01</div>
-      <h4>동사로 시작?</h4>
-      <div class="body">각 Step의 첫 단어가 <strong>동사</strong>인가. "추출·비교·수집·정리·확인" 같은 동작.</div>
-      <div class="example">X "미팅 노트"<br>O "미팅 노트 수집"</div>
+  <div class="intro">본인이 쪼갠 Step을 짝꿍에게 보여주고 <strong>딱 하나만</strong> 묻는다. 한 번에 입출력이 떠오르면 합격.</div>
+  <div class="wrap">
+    <div class="question">
+      <div class="tag">유일한 질문</div>
+      <h3>"이 Step에 <em>뭘 넣고 뭐가 나오는지</em> 한 번에 떠올라?"</h3>
+      <div class="body">짝꿍이 1초 망설이면 — <strong>쪼개기가 덜 된 것</strong>. Step 이름·설명을 한 번 더 다듬는다.</div>
+      <div class="example">입력: 고객명 + 기간(14일)<br>출력: 액션 bullet 3-5개 + 원문 링크</div>
     </div>
-    <div class="check terra">
-      <div class="num">02</div>
-      <h4>입력 → 출력?</h4>
-      <div class="body"><strong>무엇을 넣고 무엇이 나오는지</strong> 한 줄로 짝꿍이 떠올릴 수 있나.</div>
-      <div class="example">입력: 고객명+기간<br>출력: 액션 3-5개</div>
-    </div>
-    <div class="check">
-      <div class="num">03</div>
-      <h4>반복 업무?</h4>
-      <div class="body">이번 한 번만이 아니라 <strong>매주·매달</strong> 도는 일인가. 일회성은 스킬 대상 아님.</div>
-      <div class="example">O 주 3회 리캡<br>X 올해 한 번 제안서</div>
+    <div class="why">
+      <div class="card">
+        <div class="tag">왜 입출력만 보나</div>
+        <h4>나머지는 Day 3 컨텐츠</h4>
+        <div class="body">반복 빈도·도구 명칭은 <strong>이미 앞에서 골랐고</strong>, "동사로 시작" 같은 형식은 내일 Clarify에서 다듬는다.</div>
+      </div>
+      <div class="card">
+        <div class="tag">한 가지 효과</div>
+        <h4>짝꿍 = 외부 시각</h4>
+        <div class="body">본인 머릿속엔 다 명확해 보이지만 — <strong>다른 사람이 1초에 못 잡으면</strong> Claude도 못 잡는다.</div>
+      </div>
     </div>
   </div>
-  <div class="foot">짝꿍이 <strong>"이게 뭐 하는 거야?"</strong> 되묻는 Step은 쪼개기가 덜 된 것. 한 번 더 다듬기.</div>
+  <div class="foot">한 번에 안 떠오르면 — <strong>Step 이름을 더 구체적으로</strong> 다시 적는다. 그리고 다음 — 자연어로 풀어 부탁하는 단계.</div>
 </body>
 </html>

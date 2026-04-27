@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S39 Claude에게 스킬 만들게 시키기</title>
+<title>Day 2 · S39 자연어로 스킬 부탁하기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -12,12 +12,12 @@
   .term { background: #1a1410; border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 9pt; overflow: hidden; }
   .term .bar { display: flex; gap: 6pt; margin-bottom: 2pt; }
   .term .bar span { width: 8pt; height: 8pt; border-radius: 50%; background: #3a2e22; }
-  .term .turn { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; }
+  .term .turn { font-family: 'Pretendard', 'SF Mono', sans-serif; font-size: 10pt; line-height: 1.6; }
   .term .you { color: #f2cdb4; }
   .term .you strong { color: #fff; }
   .term .claude { color: #9cc4a0; }
   .term .claude strong { color: #fff; }
-  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: 4pt; }
+  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: 4pt; font-family: 'SF Mono', Menlo, monospace; }
   .cards { display: flex; flex-direction: column; gap: 9pt; }
   .card { padding: 13pt 16pt; border-radius: 11pt; background: #ebe1d2; display: flex; flex-direction: column; }
   .card.terra { background: #c56a4a; color: #f7efe4; }
@@ -38,29 +38,29 @@
 </head>
 <body>
   <div class="eyebrow">실행 · 5분</div>
-  <div class="h-large">"이 스펙대로 스킬 만들어줘" — <em>명령 한 줄</em></div>
+  <div class="h-large">"이런 일 해주는 스킬 만들어줘" — <em>그냥 말로</em></div>
   <div class="rule"></div>
-  <div class="intro">Claude Code 세션에서 스펙 5줄을 그대로 붙여넣고 "만들어줘"라고 한다. SKILL.md 파일이 <strong>1분 안에</strong> 생성된다.</div>
+  <div class="intro">정해진 형식 없다. <strong>본인 머릿속 일을 말로 풀어서</strong> 던지면 된다. 한 줄도 OK, 길게 풀어 써도 OK.</div>
   <div class="wrap">
     <div class="term">
       <div class="bar"><span></span><span></span><span></span></div>
-      <div class="turn you"><strong>you ▸</strong> .claude/skills/extract-meeting-actions/SKILL.md<br>만들어줘. 스펙:<br>- 언제: 고객 리캡 메일 쓰기 전<br>- 입력: 고객명, 기간(일수)<br>- 출력: 액션 bullet 3-5개 + 원문 링크<br>- MCP: Notion</div>
-      <div class="turn claude"><strong>claude ▸</strong> SKILL.md 작성 완료.<br>사용법: /skill extract-meeting-actions<br>예) /skill extract-meeting-actions 고객=ACME 기간=14</div>
-      <div class="meta">// Claude Code 세션 예시</div>
+      <div class="turn you"><strong>나 ▸</strong> 미팅 노트에서 액션 아이템 뽑는 스킬 하나 만들어줘. 고객명이랑 기간 알려주면 Notion 회의록 뒤져서 액션 3-5개 정리해주는 거. 원문 링크도 같이 달아줬으면 해.</div>
+      <div class="turn claude"><strong>Claude ▸</strong> 알겠습니다. extract-meeting-actions 스킬을 만들었어요. 한 번 호출해보시려면 고객명·기간 알려주세요.</div>
+      <div class="meta">// 예시 — 본인이 고른 Step·고객·도구로 바꿔 부탁</div>
     </div>
     <div class="cards">
       <div class="card">
-        <div class="tag">Claude가 만드는 것</div>
-        <h4>파일 1개 · 예시 호출</h4>
-        <div class="body"><strong>SKILL.md</strong> 한 장. 내부에 스펙·호출 예시·MCP 사용법이 자동으로 적힌다.</div>
+        <div class="tag">중요한 것</div>
+        <h4>형식 아닌 — 의도</h4>
+        <div class="body">"언제 쓸지 · 뭘 넣고 · 뭐가 나올지" <strong>의도만 명확</strong>하면 Claude가 알아서 파일 만든다.</div>
       </div>
       <div class="card terra">
-        <div class="tag">내가 할 일</div>
-        <h4>읽기 · 한 번 돌려보기</h4>
-        <div class="body">파일 열어 <strong>내용 한 번 훑기</strong> + 예시대로 <strong>한 번 실행</strong>. 결과 품질 판단.</div>
+        <div class="tag">동시에 일어나는 일</div>
+        <h4>어제 CLAUDE.md도 함께</h4>
+        <div class="body">Day 1에 만든 <strong>CLAUDE.md</strong>가 같은 폴더에 있으면 — Claude가 <strong>스킬 만들 때도 그 톤·금지어를 반영</strong>한다.</div>
       </div>
     </div>
   </div>
-  <div class="closing">첫 실행 결과는 <strong>70%만 쓸만하면 정상</strong>. 스킬 다듬기는 내일(Day 3)에서 Clarify·Skill Creator로.</div>
+  <div class="closing">"스펙 잘 적어야 한다"는 건 <strong>Day 3 컨텐츠</strong>. 오늘은 일단 — <strong>본인 케이스를 자연어로</strong> 한 번 던져본다.</div>
 </body>
 </html>

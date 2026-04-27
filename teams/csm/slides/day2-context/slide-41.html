@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S40 받은 SKILL.md 열어보기</title>
+<title>Day 2 · S40 만든 스킬 열어보기</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
@@ -12,15 +12,15 @@
   .term { background: #1a1410; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 6pt; overflow: hidden; }
   .term .bar { display: flex; gap: 6pt; margin-bottom: 3pt; }
   .term .bar span { width: 8pt; height: 8pt; border-radius: 50%; background: #3a2e22; }
-  .term .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
-  .term .cmd strong { color: #fff; }
+  .term .you { font-family: 'Pretendard', 'SF Mono', sans-serif; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
+  .term .you strong { color: #fff; }
   .term .sep { border-top: 1px dashed rgba(255,255,255,0.15); margin: 3pt 0; }
   .term .out { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.5; color: #d8c9b0; }
   .term .out .frontmatter { color: #9cc4a0; }
   .term .out .key { color: #f2cdb4; }
   .term .out .val { color: #fff; }
   .term .out .plain { color: #d8c9b0; }
-  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; }
+  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; font-family: 'SF Mono', Menlo, monospace; }
   .guide { display: flex; flex-direction: column; gap: 8pt; overflow: hidden; }
   .card { padding: 10pt 13pt; border-radius: 10pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; }
   .card.terra { background: #c56a4a; color: #f7efe4; }
@@ -42,31 +42,31 @@
 </head>
 <body>
   <div class="eyebrow">확인 · 2분</div>
-  <div class="h-large">Claude가 만든 <em>SKILL.md를 열어본다</em></div>
+  <div class="h-large">만든 스킬 파일을 <em>한 번 열어본다</em></div>
   <div class="rule"></div>
-  <div class="intro">파일을 <strong>읽을 수 있어야</strong> 내일 고칠 수 있다. 구조가 어떻게 생겼는지 한 번 훑기.</div>
+  <div class="intro">파일을 <strong>읽을 수 있어야</strong> 내일 고칠 수 있다. Claude에게 "방금 만든 스킬 파일 열어서 보여줘"라고 부탁하면 됨.</div>
   <div class="wrap">
     <div class="term">
       <div class="bar"><span></span><span></span><span></span></div>
-      <div class="cmd"><strong>you ▸</strong> cat .claude/skills/extract-meeting-actions/SKILL.md</div>
+      <div class="you"><strong>나 ▸</strong> 방금 만든 스킬 파일 열어서 보여줘</div>
       <div class="sep"></div>
-      <div class="out"><span class="frontmatter">---</span><br><span class="key">name:</span> <span class="val">extract-meeting-actions</span><br><span class="key">description:</span> <span class="val">고객 리캡 메일 쓰기 전 최근 미팅 액션 추출</span><br><span class="frontmatter">---</span></div>
-      <div class="out"><br><span class="plain">## When to use</span><br><span class="plain">- 고객 리캡 메일 작성 전</span><br><span class="plain">- 지난 2주 액션 아이템 정리 필요 시</span><br><br><span class="plain">## Steps</span><br><span class="plain">1. Notion 해당 고객 회의록 폴더 조회</span><br><span class="plain">2. 지정 기간 내 미팅 노트 수집</span><br><span class="plain">3. 액션 bullet 3-5개 추출 + 원문 링크</span></div>
-      <div class="meta">// 파일 1개 · 20줄 내외</div>
+      <div class="out"><span class="frontmatter">---</span><br><span class="key">name:</span> <span class="val">[내가 부탁한 스킬 이름]</span><br><span class="key">description:</span> <span class="val">[Claude가 의도를 정리한 한 줄]</span><br><span class="frontmatter">---</span></div>
+      <div class="out"><br><span class="plain">## When to use</span><br><span class="plain">- (언제 쓰는지 — 내가 말한 트리거)</span><br><br><span class="plain">## Steps</span><br><span class="plain">1. (도구에서 정보 가져오기)</span><br><span class="plain">2. (내가 말한 입력으로 처리)</span><br><span class="plain">3. (내가 말한 출력 형태로 정리)</span></div>
+      <div class="meta">// 예시 구조 — 본인이 부탁한 내용대로 채워짐</div>
     </div>
     <div class="guide">
       <div class="card">
-        <div class="tag">윗부분 · frontmatter</div>
+        <div class="tag">윗부분</div>
         <h4>name · description</h4>
         <div class="body">두 줄이 <strong>트리거</strong>. Claude가 "언제 이 스킬을 쓸지" 판단하는 기준.</div>
       </div>
       <div class="card terra">
-        <div class="tag">아랫부분 · 본문</div>
+        <div class="tag">아랫부분</div>
         <h4>When to use · Steps</h4>
-        <div class="body">실제 <strong>동작 지시</strong>. 여기가 결과 품질을 좌우. 고치고 싶으면 이 부분을 본다.</div>
+        <div class="body">실제 <strong>동작 지시</strong>. 결과 품질 좌우. 고치고 싶으면 여기 본다.</div>
       </div>
     </div>
   </div>
-  <div class="foot">읽을 수 있어야 <strong>내일 고칠 수 있다</strong>. 지금은 훑기만.</div>
+  <div class="foot">읽을 수 있어야 <strong>내일 고칠 수 있다</strong>. 지금은 훑기만. 다음 — 실제로 한 번 호출해본다.</div>
 </body>
 </html>
