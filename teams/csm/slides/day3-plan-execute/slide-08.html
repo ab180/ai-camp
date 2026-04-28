@@ -2,55 +2,45 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S08 짝꿍 공유 질문 3개</title>
+<title>Day 3 · S08 짝꿍 공유 · B0</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 9pt; margin-top: 10pt; flex: 1; }
-  .row { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .row.key { background: #c56a4a; color: #f7efe4; }
-  .row .n { font-size: 24pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .row.key .n { color: #fff; }
-  .row .q { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.4; }
-  .row.key .q { color: #fff; }
-  .row .q em { font-style: normal; color: #b45a34; }
-  .row.key .q em { color: #ffdfc9; }
-  .row .hint { font-size: 9.5pt; color: #7d6b5a; line-height: 1.5; margin-top: 4pt; }
-  .row.key .hint { color: #f2cdb4; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; }
+  .qs { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 10pt; }
+  .q { display: grid; grid-template-columns: 26pt 1fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: start; }
+  .q-num { font-size: 18pt; font-weight: 700; color: #c56a4a; line-height: 1.2; }
+  .q-body { display: flex; flex-direction: column; gap: 4pt; }
+  .q-body .qt { font-size: 12pt; font-weight: 600; color: #2b2520; line-height: 1.4; letter-spacing: -0.005em; }
+  .q-body .qt em { font-style: normal; color: #b45a34; }
+  .q-body .hint { font-size: 10pt; color: #5a4d40; line-height: 1.55; }
+  .q-body .hint strong { color: #b45a34; font-weight: 600; }
+  .closing { margin-top: 10pt; padding: 10pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
+  .closing strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">짝꿍 공유 · 12분</div>
-  <div class="h-large">짝꿍에게 <em>이 3가지만</em></div>
+  <div class="eyebrow">짝꿍 공유 · 5분 · B0</div>
+  <div class="h-large">후보 목록을 짝꿍에게 보여주고 <em>케이스 #1 확정</em></div>
   <div class="rule"></div>
-  <div class="intro">답을 바로 못 내도 OK. 답을 만드는 작업은 다음 블록 Deep Interview가 대신한다. 지금은 <strong>재료를 표면에 꺼내는 것</strong>이 역할.</div>
-  <div class="rows">
-    <div class="row">
-      <div class="n">1</div>
-      <div>
-        <div class="q">어제 다시 호출한 결과의 <em>부족한 부분</em> 1개</div>
-        <div class="hint">숙제 메모에서 가장 선명한 것부터. 예: "톤이 사무적이어야 하는데 친근하게 나왔다"</div>
+  <div class="intro">본인이 케이스를 혼자 고르기 어려울 때 외부 시선이 빠르게 잡아준다. 짝꿍에게 목록을 보여주고 이것 하나만 받는다.</div>
+  <div class="qs">
+    <div class="q">
+      <div class="q-num">1</div>
+      <div class="q-body">
+        <div class="qt">이 중에서 <em>입출력이 가장 명확한 게</em> 어떤 거야?</div>
+        <div class="hint">짝꿍의 답 = 오늘 케이스 #1의 시작점. 본인이 판단하기 어려운 것을 외부 시선이 정해준다.</div>
       </div>
     </div>
-    <div class="row">
-      <div class="n">2</div>
-      <div>
-        <div class="q">머릿속에는 있었는데 <em>SKILL.md에는 안 적힌</em> 것</div>
-        <div class="hint">"평소 자동으로 하는 판단·절차 중 어제 파일에 못 옮긴 게 뭐냐". 구체적으로.</div>
-      </div>
-    </div>
-    <div class="row key">
-      <div class="n">3</div>
-      <div>
-        <div class="q">그 빠진 부분의 <em>형태</em>는 무엇인가</div>
-        <div class="hint">절차(단계 추가) · 판단 기준(if-then) · 톤(말투) · 금지 규칙(절대 X) 중 어디.</div>
+    <div class="q">
+      <div class="q-num">2</div>
+      <div class="q-body">
+        <div class="qt">케이스 #2, #3으로 이어갈 후보 <em>1개씩 정하기</em></div>
+        <div class="hint"><strong>2개로 시작해도 된다.</strong> 3개는 권장이지 최소 조건이 아니다. 케이스 #1을 먼저 돌리고 두 번째를 찾아도 된다.</div>
       </div>
     </div>
   </div>
-  <div class="foot">3번 질문의 답이 B1 Deep Interview의 <strong>출발점</strong>. 정답 고르기 X, 형태 짚기 O.</div>
+  <div class="closing">케이스가 정해지면 Claude를 지금 열지 않아도 된다. <strong>케이스를 고르는 것이 B0의 목표</strong>. 지금 바로 B1으로 넘어간다.</div>
 </body>
 </html>

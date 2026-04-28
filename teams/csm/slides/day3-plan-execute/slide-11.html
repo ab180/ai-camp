@@ -2,44 +2,56 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S11 Clarify 개념 2/2</title>
+<title>Day 3 · S11 케이스1 실습 · B1</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 8pt; margin-top: 10pt; flex: 1; }
-  .row { display: grid; grid-template-columns: 1fr auto 1.4fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .row .before { font-size: 11pt; font-weight: 500; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; line-height: 1.4; }
-  .row .arrow { font-size: 14pt; color: #b45a34; font-weight: 700; }
-  .row .after { font-size: 10.5pt; line-height: 1.55; color: #2b2520; }
-  .row .after strong { color: #b45a34; font-weight: 600; }
-  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
-  .closing strong { color: #fff; font-weight: 700; }
+  .mission { margin-top: 8pt; padding: 10pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; }
+  .mission .mlabel { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .mission .mtitle { font-size: 13pt; font-weight: 600; color: #fff; margin-top: 4pt; line-height: 1.3; }
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; flex: 1; margin-top: 9pt; }
+  .step { padding: 9pt 12pt; border-radius: 10pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; }
+  .step .snum { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .step h3 { font-size: 12pt; font-weight: 600; color: #2b2520; line-height: 1.35; letter-spacing: -0.005em; }
+  .step .body { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .step .body strong { color: #b45a34; font-weight: 600; }
+  .note { margin-top: 7pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; }
+  .note strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">개념 · 2/2</div>
-  <div class="h-large">같은 요청, <em>Clarify 전 vs 후</em></div>
+  <div class="eyebrow">실습 · 케이스 #1 · ~15분 · B1</div>
+  <div class="h-large">첫 번째 사이클 — <em>70%를 직접 본다</em></div>
   <div class="rule"></div>
-  <div class="intro">아래 3개는 CSM이 자주 쓰는 요청. 왼쪽은 <strong>바로 실행</strong>한 결과, 오른쪽은 Clarify로 한 겹 다듬은 뒤의 스펙.</div>
-  <div class="rows">
-    <div class="row">
-      <div class="before">"이탈 위험 리포트 써줘"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>독자</strong> = 영업팀장 · <strong>핵심 질문 3개</strong> = 언제·왜·어떻게 · <strong>결론 먼저</strong> 포맷</div>
+  <div class="intro">B0에서 고른 케이스 #1로 사이클을 돌린다. <strong>완벽하게 설명하려 하지 않는다</strong>. 지금 머릿속에 있는 말 그대로 입력하는 게 맞다.</div>
+  <div class="mission">
+    <div class="mlabel">미션</div>
+    <div class="mtitle">케이스 #1을 자연어로 부탁 → SKILL.md 읽기 → Clarify → 재부탁</div>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="snum">S1 · 5분</div>
+      <h3>자연어로 부탁</h3>
+      <div class="body">지금 머릿속에 있는 말 그대로. "완벽한 프롬프트"를 쓰려 하지 않는다. 결과를 받으면 <strong>멈추고 읽는다</strong>.</div>
     </div>
-    <div class="row">
-      <div class="before">"리캡 메일 초안 줘"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>상대</strong> = 담당자 1명 · <strong>회의 유형</strong> = 체크업 미팅 · <strong>결정사항 강조</strong> 여부 = Yes</div>
+    <div class="step">
+      <div class="snum">S2 · 5분</div>
+      <h3>SKILL.md 열어서 훑기</h3>
+      <div class="body">입력값으로 어떤 항목을 받고 있는가? <strong>빠진 것이 보이는가?</strong> 보이면 메모해둔다. (아직 재부탁 X)</div>
     </div>
-    <div class="row">
-      <div class="before">"문의 답변 드래프트"</div>
-      <div class="arrow">→</div>
-      <div class="after"><strong>톤</strong> = 실무자 대상 기술 · <strong>회피 표현</strong> = "죄송합니다 단독" · <strong>CTA</strong> 포함</div>
+    <div class="step">
+      <div class="snum">S3 · 5분</div>
+      <h3>Clarify 4가지로 재질문</h3>
+      <div class="body">독자 · 포맷 · 케이스 · 톤. 이 중 <strong>답이 불명확한 항목</strong>을 구체화해달라고 요청한다.</div>
+    </div>
+    <div class="step">
+      <div class="snum">S4 · 5분</div>
+      <h3>재부탁 → 비교</h3>
+      <div class="body">채운 항목으로 다시 요청. <strong>1회 결과 vs 재부탁 결과를 나란히 읽는다</strong>. 무엇이 달라졌는가?</div>
     </div>
   </div>
-  <div class="closing">Clarify 없는 스킬은 <strong>빠르게 틀린 답</strong>을 만든다. 같은 3초의 질문이 30분의 재작업을 막는다.</div>
+  <div class="note">달라진 점을 <strong>1-2줄로 메모</strong>해둔다. 그것이 Clarify가 채운 것이다.</div>
 </body>
 </html>

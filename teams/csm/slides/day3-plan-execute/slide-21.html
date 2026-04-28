@@ -2,54 +2,56 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S21 B2 1단계 SKILL.md + 단서 나란히</title>
+<title>Day 3 · S21 Subagent CSM 실습 역할 분리 · B2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; margin-top: 12pt; flex: 1; }
-  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
-  .col.l { background: #ebe1d2; }
-  .col.r { background: #c56a4a; color: #f7efe4; }
-  .col .lbl { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
-  .col.l .lbl { color: #b45a34; }
-  .col.r .lbl { color: #f2cdb4; }
-  .col h3 { font-size: 14pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
-  .col.l h3 { color: #2b2520; }
-  .col.r h3 { color: #fff; }
-  .col .body { font-size: 10pt; line-height: 1.55; }
-  .col.l .body { color: #42332a; }
-  .col.r .body { color: #f5e4d4; }
-  .col .body strong { font-weight: 600; }
-  .col.l .body strong { color: #b45a34; }
-  .col.r .body strong { color: #fff; }
-  .col .sample { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.55; padding: 8pt 10pt; border-radius: 6pt; margin-top: 4pt; }
-  .col.l .sample { background: rgba(197,106,74,0.1); color: #5a4d40; }
-  .col.r .sample { background: rgba(255,255,255,0.15); color: #fff; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .foot strong { color: #b45a34; }
+  .mission { margin-top: 10pt; padding: 12pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .mission .mlabel { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .mission .mtitle { font-size: 15pt; font-weight: 600; color: #fff; margin-top: 5pt; line-height: 1.35; }
+  .steps { display: flex; flex-direction: column; gap: 7pt; flex: 1; margin-top: 9pt; }
+  .step { display: grid; grid-template-columns: 100pt 1fr; gap: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; align-items: start; }
+  .step .slabel { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; padding-top: 2pt; }
+  .step .sbody { font-size: 10.5pt; line-height: 1.6; color: #42332a; }
+  .step .sbody strong { color: #b45a34; font-weight: 600; }
+  .step .code { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; background: rgba(0,0,0,0.06); padding: 4pt 8pt; border-radius: 5pt; display: inline-block; margin-top: 3pt; color: #2b2520; }
+  .obs { margin-top: 6pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; }
+  .obs strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">B2 · 1단계 · 10분</div>
-  <div class="h-large">어제 SKILL.md + <em>B1 단서</em> 나란히</div>
+  <div class="eyebrow">실습 · ~15분 · B2</div>
+  <div class="h-large">역할 분리 실습 — <em>Generator + Evaluator</em></div>
   <div class="rule"></div>
-  <div class="intro">화면 좌우로 두 개를 펼친다. 어제 만든 SKILL.md는 그대로, B1에서 받은 단서 메모는 옆에. <strong>"어디부터 손볼지"</strong>만 정하고 끝낸다.</div>
-  <div class="grid">
-    <div class="col l">
-      <div class="lbl">왼쪽 화면</div>
-      <h3>어제 SKILL.md</h3>
-      <div class="body">Day 2에 만든 본인 스킬 파일. 어제 호출 결과가 70%였던 그것.</div>
-      <div class="sample">~/skills/&lt;내스킬&gt;/SKILL.md</div>
+  <div class="intro">B1에서 본인 케이스로 만든 스킬 결과를 Generator로 두고, Evaluator(까다로운 고객 페르소나)로 검토받는다.</div>
+  <div class="mission">
+    <div class="mlabel">목표</div>
+    <div class="mtitle">내가 만든 결과를 다른 시각으로 검토받아 gap을 확인한다</div>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="slabel">1단계 · 5분</div>
+      <div class="sbody">
+        <strong>Generator</strong> — B1에서 만든 스킬 결과 1건 그대로 준비<br>
+        리캡 메일 초안 / 온보딩 요약 / 문의 답변 중 결과물 1건
+      </div>
     </div>
-    <div class="col r">
-      <div class="lbl">오른쪽 화면</div>
-      <h3>B1 단서 메모</h3>
-      <div class="body">Clarify·Deep Interview에서 끌어낸 "빠진 머릿속 절차·판단" 메모. 보통 5-8개.</div>
-      <div class="sample">- 담당 고객 분기 체크업 미팅<br>- 톤: 사무·존댓말<br>- 금지: 다음 분기 약속</div>
+    <div class="step">
+      <div class="slabel">2단계 · 5분</div>
+      <div class="sbody">
+        <strong>Evaluator</strong> — Claude에게 자연어로 검토 요청<br>
+        <span class="code">"위 결과를 [담당 고객사] 담당자가 갱신을 고민 중인 상황에서 보면 어떤 반응이 나올지 짚어줘"</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="slabel">3단계 · 3분</div>
+      <div class="sbody">
+        <strong>검토 의견 메모</strong> — 어떤 부분이 부족하다고 나왔나, 내가 놓쳤던 건 무엇인가
+      </div>
     </div>
   </div>
-  <div class="foot">10분 안에 <strong>"오늘 추가할 항목 3-4개"</strong>만 동그라미. 다 못 적어도 OK — 핵심 3-4개부터.</div>
+  <div class="obs"><strong>관찰 포인트</strong>: Generator(내가 만든 것)와 Evaluator 의견 사이에 gap이 있는가? 그 gap이 역할 분리의 가치다. Day 4에서 이 gap을 채우는 것이 심화 실습이다.</div>
 </body>
 </html>

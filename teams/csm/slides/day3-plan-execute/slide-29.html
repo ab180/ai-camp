@@ -2,60 +2,51 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S29 Subagent vs 순차</title>
+<title>Day 3 · S29 오늘 돌아보기 3가지</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .col { padding: 16pt 20pt; border-radius: 14pt; display: flex; flex-direction: column; gap: 10pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .col .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .col.cream .label { color: #b45a34; }
-  .col.terra .label { color: #f2cdb4; }
-  .col h3 { font-size: 14pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .flow { display: flex; flex-direction: column; gap: 5pt; margin-top: 4pt; }
-  .flow .step { font-size: 10.5pt; line-height: 1.5; padding: 6pt 10pt; border-radius: 6pt; font-family: 'SF Mono', Menlo, monospace; }
-  .col.cream .flow .step { background: rgba(0,0,0,0.06); color: #42332a; }
-  .col.terra .flow .step { background: rgba(0,0,0,0.2); color: #f5e4d4; }
-  .col .total { font-size: 13pt; font-weight: 700; margin-top: 5pt; }
-  .col.cream .total { color: #b45a34; }
-  .col.terra .total { color: #fff; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .foot strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 9pt; flex: 1; margin-top: 10pt; }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
+  .row .left { display: flex; flex-direction: column; gap: 4pt; }
+  .row .left .before { font-size: 10pt; color: #7d6b5a; text-decoration: line-through; }
+  .row .left .after { font-size: 12.5pt; font-weight: 600; color: #2b2520; line-height: 1.4; letter-spacing: -0.005em; }
+  .row .left .after em { font-style: normal; color: #b45a34; }
+  .row .tag { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; background: rgba(197,106,74,0.1); padding: 4pt 8pt; border-radius: 6pt; white-space: nowrap; }
+  .foot { margin-top: 10pt; padding: 10pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">비교</div>
-  <div class="h-large">같은 작업, <em>순차 vs 병렬</em></div>
+  <div class="eyebrow">오늘 돌아보기</div>
+  <div class="h-large">오늘 바뀐 <em>3가지 감각</em></div>
   <div class="rule"></div>
-  <div class="intro">리캡 메일 작성 시나리오. 오른쪽이 Subagent로 병렬화. 차이는 단순히 시간이 아니라 <strong>내가 기다리는 시간이 반으로</strong>.</div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="label">Before · 순차</div>
-      <h3>하나씩 차례로</h3>
-      <div class="flow">
-        <div class="step">[1] 고객 히스토리 요약 ···· 30s</div>
-        <div class="step">[2] 메일 톤 분석 ········· 30s</div>
-        <div class="step">[3] 리캡 메일 작성 ······· 30s</div>
+  <div class="intro">오늘이 끝날 때 이 3가지가 머릿속에 남아 있으면 Day 3의 목표를 달성한 것이다.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="left">
+        <div class="before">"운영진 케이스를 구경했다"</div>
+        <div class="after"><em>내 업무로 직접 돌렸다</em> — 암묵지가 보이기 시작했다</div>
       </div>
-      <div class="total">총 90초 소요</div>
+      <div class="tag">B0 · B1</div>
     </div>
-    <div class="col terra">
-      <div class="label">After · Subagent 병렬</div>
-      <h3>가능한 건 동시에</h3>
-      <div class="flow">
-        <div class="step">[1] 히스토리 + [2] 톤 ···· 30s (동시)</div>
-        <div class="step">   (두 Subagent가 병렬로)</div>
-        <div class="step">[3] 리캡 메일 작성 ······· 30s</div>
+    <div class="row">
+      <div class="left">
+        <div class="before">"사이클은 한 번으로 충분하다"</div>
+        <div class="after"><em>반복할수록 70 → 90%</em>로 올라간다 — 한 번에 100%는 없다</div>
       </div>
-      <div class="total">총 60초 — 30초 절약</div>
+      <div class="tag">B1 핵심</div>
+    </div>
+    <div class="row">
+      <div class="left">
+        <div class="before">"AI는 하나씩 순서대로 쓴다"</div>
+        <div class="after">Subagent <em>3패턴</em>으로 병렬·역할 분리·컨텍스트 보호가 가능하다</div>
+      </div>
+      <div class="tag">B2</div>
     </div>
   </div>
-  <div class="foot">체감 차이는 40초가 아니라 <strong>"기다리는 동안 다른 걸 할 여유가 생김"</strong>. 하루 10번 쓰면 5분씩 복리로.</div>
+  <div class="foot">세 가지가 복리로 쌓이면 내일의 나는 더 빠르다. <strong>오늘 만든 회고 1줄이 Day 4 검증의 시작점.</strong></div>
 </body>
 </html>
