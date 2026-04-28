@@ -2,75 +2,67 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 2 · S41 실제 호출 · 70% 판단</title>
+<title>Day 2 · S41 Clarify — 다시 묻는다</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
-  .term { background: #1a1410; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 6pt; overflow: hidden; }
-  .term .bar { display: flex; gap: 6pt; margin-bottom: 3pt; }
-  .term .bar span { width: 8pt; height: 8pt; border-radius: 50%; background: #3a2e22; }
-  .term .you { font-family: 'Pretendard', 'SF Mono', sans-serif; font-size: 9.5pt; line-height: 1.55; color: #f2cdb4; }
+  .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; min-height: 0; }
+  .questions { padding: 12pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 4pt; overflow: hidden; }
+  .questions .tag { font-size: 8pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; color: #b45a34; margin-bottom: 2pt; }
+  .q { display: grid; grid-template-columns: 20pt 1fr; gap: 7pt; align-items: start; padding: 5pt 0; border-top: 1px dashed #d4c4ac; }
+  .q:first-of-type { border-top: none; padding-top: 1pt; }
+  .q .num { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; font-weight: 700; color: #c56a4a; }
+  .q .body { font-size: 9pt; line-height: 1.4; color: #42332a; }
+  .q .lbl { font-weight: 600; color: #b45a34; font-size: 9.5pt; }
+  .q .ex { color: #7d6b5a; font-size: 8.5pt; font-style: italic; }
+  .term { background: #1a1410; border-radius: 12pt; padding: 12pt 14pt; display: flex; flex-direction: column; gap: 5pt; overflow: hidden; }
+  .term .bar { display: flex; gap: 6pt; margin-bottom: 2pt; }
+  .term .bar span { width: 7pt; height: 7pt; border-radius: 50%; background: #3a2e22; }
+  .term .you { font-family: 'Pretendard', 'SF Mono', sans-serif; font-size: 9pt; line-height: 1.5; color: #f2cdb4; }
   .term .you strong { color: #fff; }
-  .term .you .ph { color: #c56a4a; font-weight: 600; }
-  .term .sep { border-top: 1px dashed rgba(255,255,255,0.15); margin: 3pt 0; }
-  .term .out { font-family: 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.55; color: #9cc4a0; }
-  .term .out strong { color: #fff; }
-  .term .out .bullet { color: #d8c9b0; }
-  .term .out .ph { color: #f2cdb4; font-weight: 600; }
-  .term .meta { color: #7d6b5a; font-size: 8.5pt; margin-top: auto; padding-top: 4pt; font-family: 'SF Mono', Menlo, monospace; }
-  .judge { display: flex; flex-direction: column; gap: 7pt; overflow: hidden; }
-  .card { padding: 9pt 12pt; border-radius: 10pt; display: flex; flex-direction: column; gap: 3pt; background: #ebe1d2; }
-  .card.terra { background: #c56a4a; color: #f7efe4; }
-  .card .tag { font-size: 8pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .card:not(.terra) .tag { color: #b45a34; }
-  .card.terra .tag { color: #f2cdb4; }
-  .card h5 { font-size: 10.5pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
-  .card:not(.terra) h5 { color: #2b2520; }
-  .card.terra h5 { color: #fff; }
-  .card .body { font-size: 9pt; line-height: 1.5; }
-  .card:not(.terra) .body { color: #42332a; }
-  .card.terra .body { color: #f5e4d4; }
-  .card .body strong { font-weight: 600; }
-  .card:not(.terra) .body strong { color: #b45a34; }
-  .card.terra .body strong { color: #fff; }
-  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; border-left: 3pt solid #c56a4a; flex-shrink: 0; }
+  .term .sep { border-top: 1px dashed rgba(255,255,255,0.15); margin: 2pt 0; }
+  .term .claude { font-family: 'Pretendard', 'SF Mono', sans-serif; font-size: 9pt; line-height: 1.5; color: #9cc4a0; }
+  .term .claude strong { color: #fff; }
+  .term .meta { color: #7d6b5a; font-size: 8pt; margin-top: auto; padding-top: 3pt; font-family: 'SF Mono', Menlo, monospace; }
+  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; border-left: 3pt solid #c56a4a; }
   .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">검증 · 3분</div>
-  <div class="h-large">실제로 한 번 돌려본다 — <em>첫 결과는 70%면 정상</em></div>
+  <div class="eyebrow">다시 묻기 · 5분</div>
+  <div class="h-large">쓰지 말고 — <em>4가지를 다시 묻는다 (Clarify)</em></div>
   <div class="rule"></div>
-  <div class="intro">앞에서 <strong>고른 고객</strong>으로 — 한 번 돌려보라고 부탁한다. 결과 보고 <strong>세 가지만 판단</strong>.</div>
+  <div class="intro">읽었으면 바로 호출하지 않는다. Claude에게 "이 스킬, <strong>4가지만 다시 짚어줘</strong>"라고 부탁 — 머릿속 의도와 적힌 내용 사이 빈 칸을 발견.</div>
   <div class="wrap">
+    <div class="questions">
+      <div class="tag">Deep Interview · 4가지</div>
+      <div class="q">
+        <div class="num">01</div>
+        <div class="body"><span class="lbl">독자</span> — 결과를 받는 사람. <span class="ex">본인 / 고객 / 팀 리드</span></div>
+      </div>
+      <div class="q">
+        <div class="num">02</div>
+        <div class="body"><span class="lbl">입력</span> — 매번 바뀌는 값. <span class="ex">고객명·기간·이슈 종류</span></div>
+      </div>
+      <div class="q">
+        <div class="num">03</div>
+        <div class="body"><span class="lbl">출력</span> — 형태·길이·필수 항목. <span class="ex">bullet 3-5개 + 원문 + 다음 액션</span></div>
+      </div>
+      <div class="q">
+        <div class="num">04</div>
+        <div class="body"><span class="lbl">성공 기준</span> — "이게 100" 한 줄. <span class="ex">메일에 그대로 붙여 보낼 수 있다</span></div>
+      </div>
+    </div>
     <div class="term">
       <div class="bar"><span></span><span></span><span></span></div>
-      <div class="you"><strong>나 ▸</strong> 방금 만든 스킬로 <span class="ph">[내가 고른 고객]</span> <span class="ph">[기간]</span>치 한 번 돌려줘</div>
+      <div class="you"><strong>나 ▸</strong> 호출하기 전에 4가지(독자·입력·출력·성공 기준)만 나한테 다시 물어줘</div>
       <div class="sep"></div>
-      <div class="out"><strong>Claude ▸</strong> Notion에서 <span class="ph">[고객]</span> 회의록 N건 확인.<br><span class="bullet">- (액션 1)</span><br><span class="bullet">- (액션 2)</span><br><span class="bullet">- (액션 3)</span><br><br><strong>원문 링크</strong> 함께 첨부.</div>
-      <div class="meta">// CLAUDE.md 톤이 결과 표현에도 묻어남</div>
-    </div>
-    <div class="judge">
-      <div class="card">
-        <div class="tag">판단 01</div>
-        <h5>구조가 의도대로?</h5>
-        <div class="body">bullet <strong>3-5개</strong> 부탁했는데 그 형태로 나왔나. 일정하면 O.</div>
-      </div>
-      <div class="card terra">
-        <div class="tag">판단 02</div>
-        <h5>MCP 실제 호출?</h5>
-        <div class="body">Notion·Slack 등 <strong>도구 접근 흔적</strong> 있나. "정보 없음"이면 연결 점검.</div>
-      </div>
-      <div class="card">
-        <div class="tag">판단 03</div>
-        <h5>70% 쓸만한가?</h5>
-        <div class="body">조금 다듬으면 <strong>실제 메일에 쓸</strong> 수준이면 합격.</div>
-      </div>
+      <div class="claude"><strong>Claude ▸</strong> 네, 짚어볼게요.<br>1. 독자: 본인인가요, 고객인가요?<br>2. 입력: 고객명·기간 외에 더 있나요?<br>3. 출력: bullet 외 다음 액션 날짜도?<br>4. 성공 기준: "그대로 붙일 수 있다"가 기준인가요?</div>
+      <div class="meta">// AskUserQuestion 패턴 — 한 번에 4질문</div>
     </div>
   </div>
-  <div class="foot">70%가 정상. <strong>"왜 100%가 아닌가"</strong>를 한 줄 메모해두면 — 그게 내일(Day 3) 다듬기 인풋이 된다.</div>
+  <div class="foot">답을 정리하면서 <strong>처음에 빠뜨린 항목</strong>을 발견. 다음 — 답을 모아 한 문단으로 다시 부탁.</div>
 </body>
 </html>
