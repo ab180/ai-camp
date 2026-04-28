@@ -2,50 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S16 실습 3/4 스펙 받기</title>
+<title>Day 3 · S16 Subagent 개념 · B2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .points { display: flex; flex-direction: column; gap: 9pt; margin-top: 10pt; flex: 1; }
-  .pt { display: grid; grid-template-columns: 120pt 1fr; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .pt .label { font-size: 14pt; font-weight: 700; color: #b45a34; letter-spacing: -0.005em; }
-  .pt .body { font-size: 10.5pt; line-height: 1.6; color: #42332a; }
-  .pt .body strong { color: #2b2520; font-weight: 600; }
-  .pt .check { font-size: 9.5pt; color: #7d6b5a; margin-top: 4pt; font-family: 'SF Mono', Menlo, monospace; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .chars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .char { padding: 12pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
+  .char .clabel { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .char h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .char .body { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .char .body strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · 10분 · 3/4</div>
-  <div class="h-large">받은 스펙을 읽고 <em>3가지만</em> 체크</div>
+  <div class="eyebrow">개념 · B2</div>
+  <div class="h-large">Subagent = <em>독립 AI를 호출해 일을 맡긴다</em></div>
   <div class="rule"></div>
-  <div class="intro">스펙 문서가 완성도 100%일 필요 없다. 이 3개가 문서에 <strong>명시적으로 써 있는지만</strong> 확인. 허전하면 그 항목만 추가 질문.</div>
-  <div class="points">
-    <div class="pt">
-      <div class="label">독자</div>
-      <div class="body">
-        "누가 읽는가"가 <strong>한 문장</strong>으로 명시됐나.
-        <div class="check">예: "독자 = 고객사 X의 담당자 1명, 임원 회람 가능성 있음"</div>
-      </div>
+  <div class="intro">내가 직접 모든 고객 상태를 하나씩 확인하는 대신, AI가 알바 N명을 동시에 띄워서 각자 1명씩 맡긴다. N명이 동시에 작업하고, <strong>나에게는 완성된 요약만 올라온다</strong>.</div>
+  <div class="concept">
+    <div class="label">한 줄 정의</div>
+    <div class="def">메인 AI가 <em>독립 AI를 일회성으로 호출</em> — 작업 맡기고 결과만 받는다</div>
+  </div>
+  <div class="chars">
+    <div class="char">
+      <div class="clabel">특성 1</div>
+      <h3>독립 컨텍스트</h3>
+      <div class="body">메인 대화 내용을 이어받지 않는다. <strong>필요한 정보는 명시적으로 전달</strong>해야 한다.</div>
     </div>
-    <div class="pt">
-      <div class="label">입력/출력</div>
-      <div class="body">
-        <strong>재료와 결과 형태</strong>가 명시됐나. 입력은 무엇, 출력은 어떤 모양인지.
-        <div class="check">예: "입력 = 미팅 노트 URL + 고객명 · 출력 = 메일 본문 3문단"</div>
-      </div>
+    <div class="char">
+      <div class="clabel">특성 2</div>
+      <h3>병렬 처리 가능</h3>
+      <div class="body">동시에 N개 작업 가능. <strong>순차 대비 시간 단축</strong>. 토큰 비용은 N배.</div>
     </div>
-    <div class="pt">
-      <div class="label">성공 기준</div>
-      <div class="body">
-        "이 스킬이 <strong>잘 됐다"를 판정하는 기준</strong>이 있는가. 정성 표현 X, 체크 가능한 조건 O.
-        <div class="check">예: "다음 액션 날짜 포함 · 금지어 미사용 · 3문단 이하"</div>
-      </div>
+    <div class="char">
+      <div class="clabel">특성 3</div>
+      <h3>결과만 반환</h3>
+      <div class="body">작업 과정은 메인 컨텍스트에 없음. <strong>결과 3줄만</strong> 받아서 다음 작업 진행.</div>
     </div>
   </div>
-  <div class="foot">3개 다 맞으면 <strong>다음 블록 준비 완료</strong>. 허전한 항목만 "이 부분 다시 질문해줘"로 보강.</div>
 </body>
 </html>

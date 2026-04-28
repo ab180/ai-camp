@@ -2,37 +2,50 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S22 B2 2단계 Claude Code와 대화하며 다듬기</title>
+<title>Day 3 · S22 Subagent CSM 사용처 · B2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .term { background: #1f1813; color: #f5e4d4; padding: 16pt 20pt; border-radius: 12pt; flex: 1; margin-top: 12pt; font-family: 'SF Mono', Menlo, monospace; font-size: 10.5pt; line-height: 1.65; display: flex; flex-direction: column; gap: 7pt; }
-  .term .lbl { font-size: 8.5pt; letter-spacing: 0.22em; color: #c56a4a; font-weight: 600; text-transform: uppercase; font-family: inherit; }
-  .turn { display: grid; grid-template-columns: 36pt 1fr; gap: 10pt; align-items: flex-start; }
-  .who { font-weight: 700; font-size: 9.5pt; padding-top: 1pt; }
-  .who.u { color: #f2cdb4; }
-  .who.c { color: #88c9a6; }
-  .line { color: #f5e4d4; line-height: 1.6; }
-  .line em { font-style: normal; color: #ffdfc9; }
-  .line strong { color: #fff; font-weight: 600; }
+  .cases { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 10pt; }
+  .case { display: grid; grid-template-columns: 160pt 1fr; gap: 14pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: start; }
+  .case .ctitle { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .case .cbody { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .case .cbody strong { color: #b45a34; font-weight: 600; }
+  .case .pat { display: inline-block; font-size: 8.5pt; letter-spacing: 0.15em; color: #b45a34; font-weight: 700; text-transform: uppercase; margin-bottom: 4pt; background: rgba(197,106,74,0.12); padding: 2pt 6pt; border-radius: 4pt; }
   .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
   .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">B2 · 2단계 · 30분</div>
-  <div class="h-large">Claude Code와 <em>대화하며</em> SKILL.md 다듬기</div>
+  <div class="eyebrow">사용처 · B2</div>
+  <div class="h-large">CSM 업무에서 <em>Subagent가 빛나는 곳</em></div>
   <div class="rule"></div>
-  <div class="intro">혼자 Edit으로 박지 말 것. <strong>"이 항목 추가하고 싶은데 표현은 어떻게"</strong> 식으로 같이 풀어 적는다. 사람이 결정, AI가 표현·구조 잡는다.</div>
-  <div class="term">
-    <div class="lbl">대화 흐름 예시</div>
-    <div class="turn"><span class="who u">YOU</span><span class="line">SKILL.md에 "분기 체크업 미팅 시 다음 분기 약속을 절대 못 박는다"는 <em>판단 기준</em>을 추가하고 싶어. <strong>어떤 섹션·어떤 표현</strong>이 좋을까?</span></div>
-    <div class="turn"><span class="who c">CC</span><span class="line">"## 절대 금지"에 두는 게 일반적이에요. 톤은 "~하지 않는다" 단정형. 아래 표현 어때요? <strong>"다음 분기 일정·약속을 임의로 명시하지 않는다. 영업 협의 후 결정."</strong></span></div>
-    <div class="turn"><span class="who u">YOU</span><span class="line">좋아. 영업 협의도 추가해줘. 그리고 <em>"고객이 먼저 묻는 경우"</em>는 예외인데 그건 어떻게 적지?</span></div>
-    <div class="turn"><span class="who c">CC</span><span class="line">예외는 같은 섹션 하단에 "## 예외" 추가해서 분리하는 게 깔끔해요. <strong>"고객이 먼저 일정을 묻는 경우, 영업과 슬랙 DM 후 답변."</strong></span></div>
+  <div class="intro">공통점 = "여러 곳에서 동시에 끌어와야" 답이 완성되거나, <strong>내가 만든 것을 다른 시각으로 봐야</strong> 하는 작업.</div>
+  <div class="cases">
+    <div class="case">
+      <div>
+        <div class="pat">패턴 1 병렬</div>
+        <div class="ctitle">미팅 리캡 마감일</div>
+      </div>
+      <div class="cbody">매주 금요일 오후 5건 미팅 노트. 하나씩 읽으면 1시간 → <strong>Subagent 5개 동시 처리하면 15분</strong>. 히스토리 요약 + 다음 액션 + 톤 체크 병렬.</div>
+    </div>
+    <div class="case">
+      <div>
+        <div class="pat">패턴 2 역할 분리</div>
+        <div class="ctitle">갱신 리스크 고객 메일</div>
+      </div>
+      <div class="cbody">내가 쓴 초안을 내가 검토하면 놓치는 부분이 있다. <strong>"까다로운 고객 페르소나"로 이 메일을 보면 어떤 반응이 나오는지</strong> Evaluator에게 맡기면 다른 시각이 나온다.</div>
+    </div>
+    <div class="case">
+      <div>
+        <div class="pat">패턴 3 컨텍스트</div>
+        <div class="ctitle">체크업 미팅 자료 준비</div>
+      </div>
+      <div class="cbody">지난 3개월 미팅 노트 전부를 메인 AI에게 주면 컨텍스트 포화. <strong>Subagent에게 "핵심 이슈 5개와 고객 감정 변화 추이만 추출"</strong>하게 하고 결과만 받는다.</div>
+    </div>
   </div>
-  <div class="foot"><strong>30분 동안 3-4개 항목</strong>만. 한 항목당 평균 7-10분. AI에게 "이 표현 너무 빙빙 돈다 — 더 짧게" 식의 압박도 OK.</div>
+  <div class="foot">어떤 패턴이 적합한가는 상황에 따라 다르다. <strong>지금 단계에서는 "역할 분리(패턴 2)"를 실습해서 가장 즉시 체감</strong>하는 것이 목표.</div>
 </body>
 </html>

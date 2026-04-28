@@ -2,46 +2,54 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S19 Day 2 스킬 결합 1/2</title>
+<title>Day 3 · S19 패턴2 역할 분리 · B2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
-  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
-  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
-  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
-  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
-  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
-  .cell .body strong { color: #b45a34; font-weight: 600; }
-  .cell .code { font-size: 9pt; font-family: 'SF Mono', Menlo, monospace; color: #42332a; background: rgba(197,106,74,0.1); padding: 5pt 8pt; border-radius: 5pt; margin-top: 3pt; display: inline-block; }
+  .concept { margin-top: 10pt; padding: 12pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .clabel { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .cdef { font-size: 14pt; font-weight: 500; color: #fff; margin-top: 4pt; line-height: 1.4; }
+  .concept .cdef em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .flow { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10pt; align-items: center; flex: 1; margin-top: 12pt; }
+  .box { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
+  .box .blabel { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .box h3 { font-size: 13pt; font-weight: 600; color: #2b2520; line-height: 1.28; }
+  .box .body { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .box .body strong { color: #b45a34; font-weight: 600; }
+  .arrow-col { display: flex; flex-direction: column; align-items: center; gap: 4pt; }
+  .arrow-col .arr { font-size: 20pt; color: #c56a4a; }
+  .arrow-col .alabel { font-size: 9pt; color: #7d6b5a; letter-spacing: 0.1em; font-weight: 600; }
+  .csm { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .csm strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Day 2 결합 · 1/2</div>
-  <div class="h-large">어제 연결한 MCP가 <em>이 스킬에 어떻게</em> 쓰이나</div>
+  <div class="eyebrow">패턴 2 · 오늘 실습 · B2</div>
+  <div class="h-large">역할 분리 — <em>Generator ≠ Evaluator</em></div>
   <div class="rule"></div>
-  <div class="intro">베이스 스킬은 <strong>SKILL.md 상단</strong>에 "이 스킬은 Notion MCP · Gmail MCP를 사용한다"로 선언. 실행 시 AI가 그 도구를 <strong>자동 호출</strong>한다.</div>
+  <div class="intro">만든 사람은 자신의 결과에 익숙해져 <strong>빠진 부분을 보지 못한다</strong>. 검토자를 분리하면 다른 시각에서 결과를 볼 수 있다.</div>
   <div class="concept">
-    <div class="label">한 줄 정의</div>
-    <div class="def">스킬 = <em>절차</em> · MCP = <em>맥락</em> · 합치면 "이 고객 전용 절차"</div>
+    <div class="clabel">핵심 원리</div>
+    <div class="cdef">Generator가 자기 결과를 검토하면 <em>자신의 맹점을 그대로 넘어간다</em></div>
   </div>
-  <div class="rows">
-    <div class="cell">
-      <div class="label">선언 방식</div>
-      <h3>SKILL.md 상단 한 줄</h3>
-      <div class="body">스킬이 MCP를 쓰려면 상단에 <strong>사용 선언</strong>만 있으면 됨.</div>
-      <span class="code">uses: [notion, gmail]</span>
+  <div class="flow">
+    <div class="box">
+      <div class="blabel">Generator</div>
+      <h3>Subagent A — 작성자</h3>
+      <div class="body">리캡 메일 초안 작성. <strong>목표에 집중</strong>해 결과를 만들어낸다.</div>
     </div>
-    <div class="cell">
-      <div class="label">CSM 예시</div>
-      <h3>리캡 메일 스킬 실행 시</h3>
-      <div class="body">Notion MCP에서 <strong>지난 미팅 노트</strong>를 읽고 · Gmail MCP에서 <strong>지난 메일 톤</strong>을 참고. 내가 복붙할 필요 없음.</div>
+    <div class="arrow-col">
+      <div class="arr">→</div>
+      <div class="alabel">결과 전달</div>
+    </div>
+    <div class="box">
+      <div class="blabel">Evaluator</div>
+      <h3>Subagent B — 검토자</h3>
+      <div class="body">"갱신을 고민 중인 고객" 페르소나로 위 초안 검토. <strong>다른 시각</strong>에서 빠진 것 짚기.</div>
     </div>
   </div>
+  <div class="csm"><strong>CSM 적용</strong>: 내가 쓴 메일 초안을 "지난 분기 지표가 아쉬웠던 고객 담당자의 눈"으로 검토받으면 — 내가 놓쳤던 표현·누락 항목이 나온다.</div>
 </body>
 </html>

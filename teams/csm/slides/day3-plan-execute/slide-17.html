@@ -2,50 +2,53 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S17 실습 4/4 짝꿍 점검</title>
+<title>Day 3 · S17 Subagent 3패턴 개요 · B2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .pair { margin-top: 10pt; padding: 16pt 20pt; background: #c56a4a; color: #f7efe4; border-radius: 14pt; }
-  .pair .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .pair h2 { font-size: 18pt; font-weight: 600; color: #fff; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.3; }
-  .qs { display: flex; flex-direction: column; gap: 10pt; margin-top: 12pt; flex: 1; }
-  .q { display: grid; grid-template-columns: 40pt 1fr; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .q .n { font-size: 22pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .q .body { font-size: 12pt; line-height: 1.55; color: #2b2520; letter-spacing: -0.005em; }
-  .q .body em { font-style: normal; color: #b45a34; font-weight: 600; }
-  .q .body .hint { font-size: 9.5pt; color: #7d6b5a; margin-top: 4pt; display: block; }
-  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
-  .closing strong { color: #b45a34; }
+  .patterns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .pat { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .pat .plabel { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .pat h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .pat .purpose { padding: 6pt 10pt; background: #c56a4a; border-radius: 7pt; font-size: 9.5pt; color: #fff; font-weight: 600; align-self: flex-start; }
+  .pat .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
+  .pat .body strong { color: #b45a34; font-weight: 600; }
+  .pat .csm { font-size: 9.5pt; line-height: 1.55; color: #5a4d40; margin-top: 4pt; border-top: 1pt solid #d4c4ac; padding-top: 6pt; }
+  .pat .csm strong { color: #b45a34; font-weight: 600; }
+  .note { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; }
+  .note strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">짝꿍 · 5분 · 4/4</div>
-  <div class="h-large">짝꿍에게 <em>스펙 한 번 읽어주기</em></div>
+  <div class="eyebrow">개념 · B2</div>
+  <div class="h-large">Subagent <em>3패턴</em> — 목적이 다르다</div>
   <div class="rule"></div>
-  <div class="intro">완성도 평가 X. "<strong>빠진 항목이 보이나</strong>"만 체크. 설명하면서 내가 더 또렷해지는 효과가 진짜 목적.</div>
-  <div class="pair">
-    <div class="label">짝꿍 점검</div>
-    <h2>스펙 한 번 소리내어 읽고 · 2가지만 묻기</h2>
-  </div>
-  <div class="qs">
-    <div class="q">
-      <div class="n">1</div>
-      <div class="body">
-        "이 스펙만 보고 스킬이 <em>어떤 결과</em>를 낼지 그려지나?"
-        <span class="hint">구체 결과물 형태가 머릿속에 그려지면 O. 안 그려지면 출력 항목 보강.</span>
-      </div>
+  <div class="intro">3패턴은 각각 목적이 다르다. <strong>상황에 맞는 패턴</strong>을 고르는 것이 핵심. 오늘은 3가지를 알고, 역할 분리 패턴을 직접 실습한다.</div>
+  <div class="patterns">
+    <div class="pat">
+      <div class="plabel">패턴 1</div>
+      <h3>병렬 검색</h3>
+      <div class="purpose">시간 단축</div>
+      <div class="body">N개 작업을 <strong>동시에 실행</strong>. 순차 처리 대비 대기 시간을 줄인다.</div>
+      <div class="csm"><strong>CSM 예</strong>: 지난주 미팅 5건의 액션 아이템을 한 번에 추출</div>
     </div>
-    <div class="q">
-      <div class="n">2</div>
-      <div class="body">
-        "빠진 항목 <em>1개만</em> 짚어주기"
-        <span class="hint">완벽 말고 1개. 대개는 "성공 기준" 또는 "금지어"가 빠진다.</span>
-      </div>
+    <div class="pat">
+      <div class="plabel">패턴 2 · 오늘 실습</div>
+      <h3>역할 분리</h3>
+      <div class="purpose">품질 향상</div>
+      <div class="body"><strong>Generator(작성자) ≠ Evaluator(검토자)</strong>. 만든 사람은 자기 맹점을 보지 못한다.</div>
+      <div class="csm"><strong>CSM 예</strong>: 리캡 메일 초안 작성 → 까다로운 고객 페르소나로 검토</div>
+    </div>
+    <div class="pat">
+      <div class="plabel">패턴 3</div>
+      <h3>컨텍스트 보호</h3>
+      <div class="purpose">컨텍스트 절약</div>
+      <div class="body">큰 데이터를 Subagent에게 맡기고 <strong>요약만 받는다</strong>. 메인 컨텍스트가 오염되지 않는다.</div>
+      <div class="csm"><strong>CSM 예</strong>: 긴 회의록 100페이지 → 핵심 3줄만 메인에 올림</div>
     </div>
   </div>
-  <div class="closing">완벽 X. 다음 블록에서 운영진 베이스에 이 스펙을 넣으면 <strong>초안이 만들어진다</strong>.</div>
+  <div class="note">오늘 실습은 <strong>패턴 2 역할 분리</strong>. 내가 만든 결과를 다른 시각(Evaluator)으로 검토받는 가장 즉시 체감되는 패턴이다.</div>
 </body>
 </html>

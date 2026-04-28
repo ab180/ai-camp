@@ -2,41 +2,54 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S30 CSM Subagent 용도</title>
+<title>Day 3 · S30 Day 4 예고</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 9pt; margin-top: 10pt; flex: 1; }
-  .row { display: grid; grid-template-columns: 170pt 1fr; gap: 16pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .row .label { font-size: 14pt; font-weight: 700; color: #b45a34; letter-spacing: -0.005em; line-height: 1.3; }
-  .row .parallels { font-size: 10.5pt; line-height: 1.6; color: #42332a; }
-  .row .parallels strong { color: #2b2520; font-weight: 600; }
-  .row .parallels .plus { color: #c56a4a; font-weight: 700; padding: 0 4pt; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .col { padding: 16pt 20pt; border-radius: 14pt; display: flex; flex-direction: column; gap: 10pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .label { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .label { color: #b45a34; }
+  .col.terra .label { color: #f2cdb4; }
+  .col h3 { font-size: 15pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.28; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col .item { font-size: 10pt; line-height: 1.5; padding: 5pt 0; border-top: 1px dashed; }
+  .col.cream .item { border-color: rgba(0,0,0,0.1); color: #42332a; }
+  .col.terra .item { border-color: rgba(255,255,255,0.18); color: #f5e4d4; }
+  .col .item:first-of-type { border-top: none; }
+  .col .item strong { font-weight: 600; }
+  .col.cream .item strong { color: #b45a34; }
+  .col.terra .item strong { color: #fff; }
+  .closing { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
+  .closing strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">사용처</div>
-  <div class="h-large">CSM에서 <em>Subagent가 빛나는 곳</em></div>
+  <div class="eyebrow">내일 준비물</div>
+  <div class="h-large">Day 4 · <em>검증(축 5) + 개선(축 6) + 팀 공유</em></div>
   <div class="rule"></div>
-  <div class="intro">공통점은 "<strong>여러 곳에서 동시에 끌어와야</strong> 답이 완성되는 작업". 서로 결과를 안 참조하는 것이 조건.</div>
-  <div class="rows">
-    <div class="row">
-      <div class="label">리캡 메일 생성</div>
-      <div class="parallels"><strong>히스토리 요약</strong><span class="plus">+</span><strong>다음 액션 초안</strong><span class="plus">+</span><strong>톤 체크</strong> 병렬</div>
+  <div class="intro">오늘 만든 스킬을 <strong>"다른 관점"</strong>으로 보는 하루. 오늘 회고 1줄이 Day 4 검증의 첫 번째 테스트 케이스가 된다.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="label">Day 4 미리보기</div>
+      <h3>검증 · 개선 · 팀 공유</h3>
+      <div class="item"><strong>축 5 · 검증</strong> — 역할 분리 심화: 까다로운 고객 에이전트로 검증</div>
+      <div class="item"><strong>축 6 · 개선</strong> — Compound 사이클: 검증 결과를 SKILL.md에 자동 반영</div>
+      <div class="item"><strong>팀 repo PR</strong> — 개인 스킬을 팀 공유 자산으로 올리기</div>
     </div>
-    <div class="row">
-      <div class="label">문의 답변</div>
-      <div class="parallels"><strong>과거 답변 검색</strong><span class="plus">+</span><strong>관련 문서 조회</strong><span class="plus">+</span><strong>답변 초안</strong> 병렬</div>
-    </div>
-    <div class="row">
-      <div class="label">체크업 미팅 준비</div>
-      <div class="parallels"><strong>지표 요약</strong><span class="plus">+</span><strong>지난 아젠다</strong><span class="plus">+</span><strong>팀 Slack 논의</strong> 병렬</div>
+    <div class="col terra">
+      <div class="label">오늘 밤 준비 · 15분</div>
+      <h3>2가지만</h3>
+      <div class="item"><strong>1.</strong> 오늘 회고 1줄을 SKILL.md 하단 <strong>"## 회고" 섹션에 날짜와 함께 기록</strong></div>
+      <div class="item"><strong>2.</strong> Day 4 재료 메모 — "누구에게 내 스킬을 읽혀보고 싶은가"</div>
+      <div class="item">못 하면 내일 블록 직전 10분으로 OK</div>
     </div>
   </div>
-  <div class="foot">내가 평소 "끝나길 기다리면서 딴 일 하던" 패턴 = <strong>Subagent 후보</strong>.</div>
+  <div class="closing">오늘 <strong>"세 번째 PR + 회고 1줄"</strong>이 Day 4의 출발점. 완벽 아니라 작동이 핵심.</div>
 </body>
 </html>

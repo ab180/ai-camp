@@ -2,48 +2,46 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S12 Deep Interview 스킬 1/2</title>
+<title>Day 3 · S12 케이스2 반복 + 패턴 · B1</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
-  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
-  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
-  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .cell { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
-  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
-  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
-  .cell .body strong { color: #b45a34; font-weight: 600; }
-  .example { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .example strong { color: #b45a34; }
-  .example .tag { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 3pt; }
+  .mission { margin-top: 10pt; padding: 12pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .mission .mlabel { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .mission .mtitle { font-size: 15pt; font-weight: 600; color: #fff; margin-top: 5pt; line-height: 1.35; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .col { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .col .clabel { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .col h3 { font-size: 13pt; font-weight: 600; color: #2b2520; line-height: 1.28; letter-spacing: -0.005em; }
+  .col .body { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .col .body strong { color: #b45a34; font-weight: 600; }
+  .checkpoint { margin-top: 10pt; padding: 10pt 16pt; background: #ebe1d2; border-radius: 10pt; border-left: 3pt solid #c56a4a; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
+  .checkpoint strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Deep Interview · 1/2</div>
-  <div class="h-large">Deep Interview = <em>Clarify를 구조로 박은</em> 스킬</div>
+  <div class="eyebrow">실습 · 케이스 #2 · ~15분 · B1</div>
+  <div class="h-large">두 번째 사이클 — <em>패턴이 보이기 시작한다</em></div>
   <div class="rule"></div>
-  <div class="intro">Clarify를 즉흥 대화로 하면 빠뜨리는 항목이 생긴다. Deep Interview 스킬은 <strong>구조화된 질문지</strong>로 돌려 결과를 재사용 가능한 스펙 문서로 남긴다.</div>
-  <div class="concept">
-    <div class="label">한 줄 정의</div>
-    <div class="def">문제 1줄 입력 → <em>단계별 질문</em> → 스펙 문서 산출</div>
+  <div class="intro">케이스 #2로 같은 흐름을 반복한다. 이번에는 <strong>케이스 #1에서 빠졌던 항목이 여기서도 빠지는가</strong>를 확인한다. 겹치면 그것이 패턴이다.</div>
+  <div class="mission">
+    <div class="mlabel">미션</div>
+    <div class="mtitle">케이스 #2로 동일한 4단계 반복 — 케이스 #1 메모와 비교하면서</div>
   </div>
-  <div class="rows">
-    <div class="cell">
-      <div class="label">왜 중요</div>
-      <h3>즉흥 Clarify보다 빠짐이 적다</h3>
-      <div class="body">독자·입력·출력·성공 기준 4가지를 <strong>반드시 묻는다</strong>. 내가 잊어도 스킬이 기억한다.</div>
+  <div class="compare">
+    <div class="col">
+      <div class="clabel">케이스 예시 A</div>
+      <h3>리캡 메일 → 온보딩 현황 요약</h3>
+      <div class="body">케이스 #1에서 "출력 형태"가 빠졌다면, 케이스 #2에서도 <strong>"출력 길이"가 빠지는지</strong> 확인. 겹치면 패턴이다.</div>
     </div>
-    <div class="cell">
-      <div class="label">CSM 예시</div>
-      <h3>"이 고객 이탈 위험 리포트"</h3>
-      <div class="body">주제 1줄 입력 → 독자(영업팀장) · 포맷(한 장) · 결론 구조(Top 3 위험)가 <strong>질문지 형태로</strong> 묶여 나온다.</div>
+    <div class="col">
+      <div class="clabel">체크 포인트</div>
+      <h3>케이스 #1, #2에서 공통으로 빠진 항목</h3>
+      <div class="body">겹치는 항목 = <strong>내가 머릿속으로는 알고 있지만 글로는 꺼내지 않는 것 — 내 암묵지</strong>. 메모장에 한 줄로 적는다.</div>
     </div>
   </div>
-  <div class="example"><span class="tag">재사용</span>스펙 문서는 <strong>다음 블록 스킬 커스터마이징의 입력</strong>. 일회성 대화가 아니라 <strong>자산</strong>이 남는다.</div>
+  <div class="checkpoint"><strong>체크포인트 문장:</strong> "나는 항상 [___]를 빠뜨린다" — 케이스 #1, #2를 돌리고 나서 이 빈칸을 채울 수 있으면 오늘 B1 핵심을 달성한 것이다.</div>
 </body>
 </html>

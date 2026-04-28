@@ -2,50 +2,68 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S26 짝꿍 점검 2/2</title>
+<title>Day 3 · S26 세 번째 PR · B3</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .memo { margin-top: 12pt; padding: 20pt 24pt; background: #ebe1d2; border-radius: 16pt; flex: 1; display: flex; flex-direction: column; gap: 14pt; }
-  .memo .mtop { display: flex; justify-content: space-between; align-items: center; }
-  .memo .title { font-size: 13pt; font-weight: 600; color: #b45a34; letter-spacing: 0.04em; text-transform: uppercase; }
-  .memo .stamp { font-size: 10pt; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; }
-  .memo .lines { display: flex; flex-direction: column; gap: 10pt; }
-  .memo .line { display: grid; grid-template-columns: 24pt 1fr; gap: 14pt; align-items: center; padding: 9pt 12pt; background: rgba(197,106,74,0.08); border-left: 3pt solid #c56a4a; border-radius: 0 10pt 10pt 0; }
-  .memo .n { font-size: 17pt; font-weight: 700; color: #b45a34; line-height: 1; text-align: center; }
-  .memo .txt { font-size: 11pt; line-height: 1.55; color: #2b2520; letter-spacing: -0.005em; }
-  .memo .txt em { font-style: italic; color: #7d6b5a; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .gitlog { margin-top: 10pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; }
+  .gitlog .gltitle { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; margin-bottom: 8pt; }
+  .gitlog .commits { display: flex; flex-direction: column; gap: 6pt; }
+  .gitlog .commit { padding: 8pt 12pt; border-radius: 8pt; display: flex; gap: 12pt; align-items: center; }
+  .gitlog .commit.today { background: #c56a4a; }
+  .gitlog .commit.past { background: rgba(0,0,0,0.06); }
+  .gitlog .commit .day { font-size: 9pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; min-width: 70pt; }
+  .gitlog .commit.today .day { color: #f2cdb4; }
+  .gitlog .commit.past .day { color: #a0917e; }
+  .gitlog .commit .msg { font-size: 11pt; font-family: 'SF Mono', Menlo, monospace; }
+  .gitlog .commit.today .msg { color: #fff; }
+  .gitlog .commit.past .msg { color: #2b2520; }
+  .steps { display: flex; flex-direction: column; gap: 7pt; flex: 1; margin-top: 10pt; }
+  .step { display: grid; grid-template-columns: 90pt 1fr; gap: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; align-items: start; }
+  .step .slabel { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; padding-top: 2pt; }
+  .step .sbody { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .step .sbody strong { color: #b45a34; font-weight: 600; }
+  .step .code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(0,0,0,0.06); padding: 3pt 6pt; border-radius: 4pt; display: inline-block; margin-top: 3pt; color: #2b2520; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">기록 · 3분</div>
-  <div class="h-large">다음 반복에서 <em>고칠 것 3개</em> 메모</div>
+  <div class="eyebrow">실습 · B3</div>
+  <div class="h-large">git log 3개 — <em>3일간 변화량</em>이 보인다</div>
   <div class="rule"></div>
-  <div class="intro">짝꿍 피드백 + 내가 관찰한 것을 합쳐 <strong>3개만</strong>. 이 메모가 다음 블록 Subagent · Skill Creator의 <strong>입력</strong>이 된다.</div>
-  <div class="memo">
-    <div class="mtop">
-      <div class="title">다음 반복 메모</div>
-      <div class="stamp">skills/recap-mail · v0.5 → v0.6</div>
-    </div>
-    <div class="lines">
-      <div class="line">
-        <div class="n">1</div>
-        <div class="txt">예: "리캡 메일에 <strong>지난 주 OPP 상태</strong>를 SFDC에서 자동 삽입" <em>— 관찰: 현재 수동 붙여넣기 중</em></div>
+  <div class="intro">오늘 변경분을 commit하고 PR로 올린다. <strong>코드가 없어도 된다</strong>. SKILL.md 한 줄 변경도 commit이다.</div>
+  <div class="gitlog">
+    <div class="gltitle">git log — 타임라인</div>
+    <div class="commits">
+      <div class="commit today">
+        <div class="day">오늘 · Day 3</div>
+        <div class="msg">refine: [스킬 이름] - 업무 적용 후 보완</div>
       </div>
-      <div class="line">
-        <div class="n">2</div>
-        <div class="txt">예: "톤 문단에 <strong>'결론 먼저' 예시</strong> 3개 추가" <em>— 짝꿍 피드백: 결론이 3번째 문단에 있었음</em></div>
+      <div class="commit past">
+        <div class="day">어제 · Day 2</div>
+        <div class="msg">refine: [스킬 이름] - Day 2 Clarify 반영</div>
       </div>
-      <div class="line">
-        <div class="n">3</div>
-        <div class="txt">예: "문의 답변에 <strong>레퍼런스 링크 슬롯</strong> 필수화" <em>— 관찰: required.md에 '링크 1개'만 있어 위치 모호</em></div>
+      <div class="commit past">
+        <div class="day">Day 1</div>
+        <div class="msg">feat: CLAUDE.md 초안</div>
       </div>
     </div>
   </div>
-  <div class="foot">이 3개를 <strong>다 고칠 필요 X</strong>. Skill Creator가 자동 점검해서 우선순위 제안할 것.</div>
+  <div class="steps">
+    <div class="step">
+      <div class="slabel">1단계 · 5분</div>
+      <div class="sbody">
+        <strong>commit</strong><br>
+        <span class="code">git add SKILL.md && git commit -m "refine: [스킬 이름] - 무엇을 보완"</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="slabel">2단계 · 3분</div>
+      <div class="sbody">
+        <strong>PR 생성</strong> — 리뷰어: 어제 짝꿍. PR 본문에 (1)오늘 적용한 업무 (2)가장 크게 바뀐 부분 (3)아직 미완성 부분 3가지를 짧게 적는다.
+      </div>
+    </div>
+  </div>
 </body>
 </html>

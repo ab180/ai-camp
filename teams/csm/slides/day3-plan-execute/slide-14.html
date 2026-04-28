@@ -2,51 +2,52 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S14 실습 1/4 문제 고르기</title>
+<title>Day 3 · S14 짝꿍 공유 · B1</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .mission { margin-top: 10pt; padding: 16pt 20pt; background: #c56a4a; color: #f7efe4; border-radius: 14pt; }
-  .mission .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .mission h2 { font-size: 18pt; font-weight: 600; color: #fff; margin-top: 5pt; letter-spacing: -0.005em; line-height: 1.3; }
-  .criteria { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 12pt; flex: 1; }
-  .cri { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
-  .cri .label { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .cri h3 { font-size: 12.5pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.3; }
-  .cri .body { font-size: 9.8pt; line-height: 1.55; color: #42332a; }
-  .cri .body strong { color: #b45a34; font-weight: 600; }
-  .fallback { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .fallback strong { color: #b45a34; }
+  .qs { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 10pt; }
+  .q { display: grid; grid-template-columns: 26pt 1fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: start; }
+  .q-num { font-size: 18pt; font-weight: 700; color: #c56a4a; line-height: 1.2; }
+  .q-body { display: flex; flex-direction: column; gap: 4pt; }
+  .q-body .qt { font-size: 12pt; font-weight: 600; color: #2b2520; line-height: 1.4; letter-spacing: -0.005em; }
+  .q-body .qt em { font-style: normal; color: #b45a34; }
+  .q-body .hint { font-size: 10pt; color: #5a4d40; line-height: 1.55; }
+  .q-body .hint strong { color: #b45a34; font-weight: 600; }
+  .closing { margin-top: 10pt; padding: 10pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
+  .closing strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · 5분 · 1/4</div>
-  <div class="h-large">Day 2에서 느낀 <em>답답함 1개</em> 고르기</div>
+  <div class="eyebrow">짝꿍 공유 · 5분 · B1</div>
+  <div class="h-large">사이클 결과를 짝꿍에게 <em>보여주고 패턴 확인</em></div>
   <div class="rule"></div>
-  <div class="intro">B0에서 짝꿍과 공유한 것 중 하나. 아래 3개 조건에 모두 걸리는 것으로. 안 걸리는 것은 오늘 재료 아님.</div>
-  <div class="mission">
-    <div class="label">오늘의 미션</div>
-    <h2>"반복될 것 · 내 손이 움직임 · 설명해도 내 것 같지 않은 것"</h2>
+  <div class="intro">짝꿍에게 케이스 #1, #2 결과를 보여주고 아래 질문을 받는다. 짝꿍의 시선이 <strong>내가 보지 못한 패턴</strong>을 잡아준다.</div>
+  <div class="qs">
+    <div class="q">
+      <div class="q-num">1</div>
+      <div class="q-body">
+        <div class="qt">케이스 #1, #2에서 <em>공통으로 빠진 항목</em>이 뭔지 외부 시선으로 봐줘</div>
+        <div class="hint">내가 못 보는 패턴을 짝꿍이 먼저 볼 수 있다. "이 항목이 둘 다 빠졌네"가 나오면 그것이 암묵지다.</div>
+      </div>
+    </div>
+    <div class="q">
+      <div class="q-num">2</div>
+      <div class="q-body">
+        <div class="qt">Clarify 후 재부탁 결과, <em>어느 부분이 달라졌나</em></div>
+        <div class="hint"><strong>달라진 부분이 Clarify가 채운 것</strong>이다. 짝꿍 눈에 가장 크게 달라진 부분 1개를 짚어달라고 한다.</div>
+      </div>
+    </div>
+    <div class="q">
+      <div class="q-num">3</div>
+      <div class="q-body">
+        <div class="qt">짝꿍의 케이스에서 <em>내가 몰랐던 것</em> 1개 메모</div>
+        <div class="hint">짝꿍의 SKILL.md에서 "이건 나도 넣어야겠다"는 항목 1개. 나중에 내 케이스에 참고할 수 있다.</div>
+      </div>
+    </div>
   </div>
-  <div class="criteria">
-    <div class="cri">
-      <div class="label">조건 1 · 반복</div>
-      <h3>월 1회 이상 생길 법한 일</h3>
-      <div class="body">일회성 이벤트는 스킬 후보 아님. <strong>다음 주에도 또</strong> 할 일.</div>
-    </div>
-    <div class="cri">
-      <div class="label">조건 2 · 내 손</div>
-      <h3>지금 수동 작업이 있는 단계</h3>
-      <div class="body">복붙·양식 맞추기·문장 다듬기 — <strong>손이 실제로 움직이는</strong> 부분.</div>
-    </div>
-    <div class="cri">
-      <div class="label">조건 3 · 내 것</div>
-      <h3>AI가 흉내는 내지만 내 것 같지 않음</h3>
-      <div class="body">"쓸만해 보이지만 <strong>고객 맥락이 빈</strong>" 상태. Day 2 B1에서 느낀 감각.</div>
-    </div>
-  </div>
-  <div class="fallback"><strong>못 고르겠으면</strong> 운영진 샘플 3개 중 — 리캡 메일 / 문의 답변 / 체크업 미팅 자료. 고른 뒤 <strong>짝꿍에게 이름만</strong> 알려주기.</div>
+  <div class="closing">공유가 끝나면 <strong>암묵지 1줄("나는 항상 ___를 빠뜨린다")</strong>을 확정하고 B2로 넘어간다.</div>
 </body>
 </html>
