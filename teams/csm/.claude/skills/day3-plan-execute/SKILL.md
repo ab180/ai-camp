@@ -1,9 +1,9 @@
 ---
 name: day3-plan-execute
-description: AI Camp 3기 CSM Day 3 자가학습용 인터랙티브 스킬. Day 2 1사이클을 본인 업무에 2-3회 반복 적용 + Subagent 본격(병렬·역할·컨텍스트). "3일차", "Day 3", "본인 적용", "Subagent", "사이클 반복" 요청에 사용.
+description: AI Camp 3기 CSM Day 3 자가학습용 인터랙티브 스킬. 어제 만든 스킬 짝꿍 점검 → 본인 업무 사이클 반복 → Subagent 본격 → Git/PR 협업 한 사이클. "3일차", "Day 3", "본인 적용", "Subagent", "사이클 반복", "PR 머지" 요청에 사용.
 ---
 
-# Day 3: 본인 업무에 1사이클 적용 + Subagent 본격
+# Day 3: 어제 스킬 점검 → 본인 업무 사이클 반복 + Subagent + Git/PR 협업
 
 이 스킬이 호출되면 아래 **STOP PROTOCOL**을 반드시 따른다.
 
@@ -15,14 +15,15 @@ description: AI Camp 3기 CSM Day 3 자가학습용 인터랙티브 스킬. Day 
 
 | 용어 | 설명 |
 |------|------|
-| **1사이클** | Day 2에서 본 흐름 — 작성 → 읽기 → Clarify → 재작성. 한 번 돌리면 70%, 두 번 90%, 세 번 95% |
-| **본인 케이스** | 본인 반복 업무 중 스킬로 만들 만한 후보. Day 2에서 1개 골랐다면 오늘 추가 2개 |
+| **어제 스킬** | Day 2에서 만든 본인 SKILL.md. 어제 밤 PR 1개로 올림 |
+| **짝꿍 점검** | 어제 만든 스킬을 짝꿍이 입력자 입장에서 한 번 호출해보고 빠진 점을 메모. 사람 버전 Generator vs Evaluator 분리 |
+| **1사이클** | Day 2에서 본 흐름 — 자연어 부탁 → SKILL.md 읽기 → Clarify 4가지 → 재부탁 |
+| **본인 케이스** | 본인 반복 업무 중 스킬화 가능한 후보. 오늘 케이스 1·2·(3) 순차 실행 |
 | **70 → 90% 체감** | 같은 사이클을 반복할수록 결과 품질이 단계적으로 올라가는 것을 직접 본다 |
-| **Subagent** | 메인 AI가 독립 AI를 호출. 자체 컨텍스트 가지고 작업 → 결과만 메인에 돌려줌 |
-| **병렬 검색** | Subagent 패턴 1 — N개 작업을 동시 실행해 시간 단축 (예: 고객 5명 동시 상태 조회) |
-| **역할 분리** | Subagent 패턴 2 — 작성자 + 검토자 분리 (Generator ≠ Evaluator) |
-| **컨텍스트 보호** | Subagent 패턴 3 — 큰 결과를 처리해도 메인 AI 컨텍스트 안 더럽힘 |
-| **세 번째 PR** | 어제 두 번째 PR에 이어 본인 사이클 반복 결과를 추가 commit |
+| **Subagent** | 메인 AI가 독립 AI를 호출. 자체 컨텍스트로 작업 → 결과만 메인에 돌려줌 |
+| **3패턴** | 병렬 검색(시간) · 역할 분리(품질) · 컨텍스트 보호(메인 정리) |
+| **스킬 체이닝** | 스킬 A의 출력이 스킬 B의 입력이 되는 순차 연결. Subagent(한 작업 분리)와 다른 축. B2 보너스 개념 |
+| **Git/PR 협업 한 사이클** | 어제 PR 받기 → 코멘트 답 → 수정 commit/push → 머지 → pull로 동기화. 어제는 "올리기"까지, 오늘은 "한 바퀴" |
 
 ---
 
@@ -84,22 +85,27 @@ description: AI Camp 3기 CSM Day 3 자가학습용 인터랙티브 스킬. Day 
 
 | Block | 주제 | 예상 시간 |
 |-------|------|-----------|
-| B0 | Day 2 1사이클 복기 + 본인 케이스 2-3개 정하기 | ~10분 |
-| B1 | 사이클 반복 적용 — 케이스 1 → 2 → 3 (70→90% 체감) | ~50분 |
-| B2 | Subagent 본격 — 3패턴 + CSM 실습 | ~40분 |
-| B3 | 세 번째 PR + 짝꿍 공유 + 회고 | ~15분 |
-| **합계** | | **~115분** |
+| B0 | 어제 만든 스킬 짝꿍 점검 | ~15분 |
+| B1 | 본인 케이스 사이클 반복 (1·2·(3)) | ~40분 |
+| B2 | Subagent 본격 — 3패턴 + 역할 분리 실습 | ~35분 |
+| B3 | Git/PR 협업 한 사이클 — 코멘트·머지·pull | ~20분 |
+| B4 | 1줄 회고 + Day 4 예고 | ~10분 |
+| **합계** | | **~120분** |
 
-> B1(반복 적용)이 핵심 체감 블록, B2(Subagent)가 새 도구 도입 블록.
+> B0가 B2 역할 분리의 사람 버전 예고가 된다.
+> B1이 본인 업무 적용 핵심 체감 블록.
+> B2가 새 도구 도입 블록.
+> B3가 어제 "올리기"에 더해 협업 한 바퀴를 완주하는 블록.
 
 ---
 
 ## 블록 특수 규칙
 
-- **Block B0 (Day 2 복기 + 케이스 정하기)**: QUIZ가 없다. Phase A에서 1사이클 복기 + 본인 케이스 2-3개 후보 적기 안내 → Stop. 완료 확인 후 B1.
-- **Block B1 (사이클 반복 적용)**: Phase A에서 사이클 흐름 재안내 + 본인 케이스 1·2·3 순차 실행 안내 → Stop. Phase B에서 퀴즈 (반복으로 무엇이 달라지나).
-- **Block B2 (Subagent 본격)**: Phase A에서 Subagent 3패턴 설명 + 한 패턴(역할 분리) 실습 안내 → Stop. Phase B에서 퀴즈 (3패턴 차이).
-- **Block B3 (세 번째 PR + 회고)**: QUIZ가 없다. Phase A에서 PR 절차 + 짝꿍 공유 + 회고 1줄 안내 → Stop.
+- **Block B0 (어제 스킬 짝꿍 점검)**: QUIZ가 없다. Phase A에서 짝꿍 점검 절차 안내 → Stop. 완료 확인 후 B1.
+- **Block B1 (사이클 반복 적용)**: Phase A에서 케이스 정하기 + 사이클 흐름 + 케이스 1·2·(3) 순차 실행 안내 → Stop. Phase B에서 퀴즈 (반복으로 무엇이 달라지나).
+- **Block B2 (Subagent 본격)**: Phase A에서 Subagent 3패턴 + 역할 분리 실습(B0과 연결) 안내 → Stop. Phase B에서 퀴즈 (3패턴 차이).
+- **Block B3 (Git/PR 협업 한 사이클)**: Phase A에서 코멘트 받기 → 수정 commit → 머지 → pull 절차 안내 → Stop. Phase B에서 퀴즈 (어제 vs 오늘 차이).
+- **Block B4 (회고 + Day 4 예고)**: QUIZ가 없다. Phase A에서 1줄 회고 + Day 4 미리보기 → Stop.
 
 ---
 
@@ -107,10 +113,11 @@ description: AI Camp 3기 CSM Day 3 자가학습용 인터랙티브 스킬. Day 
 
 | 블록 | 파일 | 주제 |
 |------|------|------|
-| B0 | `references/block-b0-day2-recap-cases.md` | Day 2 1사이클 복기 + 본인 케이스 2-3개 정하기 |
+| B0 | `references/block-b0-pair-skill-review.md` | 어제 만든 스킬 짝꿍 점검 |
 | B1 | `references/block-b1-cycle-applied.md` | 본인 업무에 사이클 반복 적용 (70→90% 체감) |
-| B2 | `references/block-b2-subagent-deep.md` | Subagent 3패턴 + CSM 실습 |
-| B3 | `references/block-b3-third-pr-retro.md` | 세 번째 PR + 짝꿍 공유 + 회고 |
+| B2 | `references/block-b2-subagent-deep.md` | Subagent 3패턴 + 역할 분리 실습 |
+| B3 | `references/block-b3-git-pr-collab-cycle.md` | Git/PR 협업 한 사이클 (코멘트·머지·pull) |
+| B4 | `references/block-b4-retro-day4-preview.md` | 1줄 회고 + Day 4 예고 |
 
 ---
 
@@ -120,7 +127,10 @@ description: AI Camp 3기 CSM Day 3 자가학습용 인터랙티브 스킬. Day 
 - "다음", "skip", 블록 이름으로 이동한다
 - 각 블록 시작 시 진행 상태를 표시한다: `📍 Day 3 진행: [Block B{N}] — 블록 제목`
 - 모든 응답은 **한국어**로 한다
-- **중요**: B1에서 "한 번 돌리고 끝"이 아니라 "**반복으로 품질이 올라가는 체감**"이 핵심임을 강조
+- **중요**:
+  - B0에서 "외부 시선이 본인 맹점을 잡는다"는 감각을 만들어 B2 역할 분리로 자연스럽게 연결
+  - B1에서 "한 번 돌리고 끝"이 아니라 "**반복으로 품질이 올라가는 체감**"이 핵심
+  - B3에서 어제 PR을 머지까지 완주 — "외웠다 → 굴러간다"
 
 ---
 
@@ -130,21 +140,23 @@ description: AI Camp 3기 CSM Day 3 자가학습용 인터랙티브 스킬. Day 
 
 | Block | 주제 | 내용 |
 |-------|------|------|
-| B0 | Day 2 복기 + 케이스 정하기 | 1사이클 다시 보고 본인 케이스 2-3개 |
-| B1 | 사이클 반복 적용 | 본인 업무로 사이클 1→2→3회, 70→90% 체감 |
-| B2 | Subagent 본격 | 3패턴(병렬·역할·컨텍스트) + CSM 실습 |
-| B3 | 세 번째 PR + 회고 | PR + 짝꿍 공유 + 1줄 회고 |
+| B0 | 어제 스킬 짝꿍 점검 | 어제 만든 스킬을 짝꿍이 한 번 호출 + 빠진 점 메모 |
+| B1 | 사이클 반복 적용 | 본인 케이스 1·2·(3) 순차 실행, 70→90% 체감 |
+| B2 | Subagent 본격 | 3패턴(병렬·역할·컨텍스트) + 역할 분리 실습 |
+| B3 | Git/PR 협업 한 사이클 | 코멘트 → 수정 → 머지 → pull |
+| B4 | 회고 + Day 4 예고 | 1줄 회고 + 내일 미리보기 |
 
 ```json
 AskUserQuestion({
   "questions": [{
-    "question": "Day 3: 본인 업무 적용 + Subagent 본격\n\n어디서부터 시작할까요?",
+    "question": "Day 3: 어제 스킬 점검 → 본인 적용 + Subagent + 협업 한 사이클\n\n어디서부터 시작할까요?",
     "header": "시작 블록",
     "options": [
-      {"label": "처음부터 (B0)", "description": "Day 2 복기 + 케이스 정하기 (추천)"},
-      {"label": "사이클 적용 (B1)", "description": "본인 업무로 사이클 반복"},
-      {"label": "Subagent (B2)", "description": "3패턴 본격 + CSM 실습"},
-      {"label": "PR + 회고 (B3)", "description": "세 번째 PR + 짝꿍 공유"}
+      {"label": "처음부터 (B0)", "description": "어제 스킬 짝꿍 점검 (추천)"},
+      {"label": "사이클 적용 (B1)", "description": "본인 업무 케이스 반복"},
+      {"label": "Subagent (B2)", "description": "3패턴 + 역할 분리 실습"},
+      {"label": "Git/PR (B3)", "description": "협업 한 사이클"},
+      {"label": "회고 (B4)", "description": "1줄 회고 + Day 4"}
     ],
     "multiSelect": false
   }]
@@ -161,17 +173,19 @@ AskUserQuestion({
 
 | 개념 | 핵심 |
 |------|------|
-| 1사이클 반복 | 같은 흐름을 반복할수록 70 → 90 → 95% — 품질은 한 번에 안 옴 |
+| 어제 스킬 짝꿍 점검 | 만든 사람은 자기 맹점을 못 본다 — 외부 시선이 빠르게 잡아준다 |
+| 1사이클 반복 | 같은 흐름을 반복할수록 70 → 90% — 한 번에 100% 안 옴 |
 | 본인 케이스 적용 | 운영진 예시 X, 내 업무 케이스 — 그래야 진짜 익힌다 |
-| Subagent · 병렬 | N개 작업 동시 실행 — 시간 단축 |
-| Subagent · 역할 분리 | 작성자 + 검토자 (Generator ≠ Evaluator) |
-| Subagent · 컨텍스트 보호 | 큰 결과 처리해도 메인 AI 컨텍스트 안 더럽힘 |
-| 세 번째 PR | git log 3개 commit = 어제 → 오늘 변화량 누적 시각화 |
+| Subagent · 3패턴 | 병렬(시간) / 역할 분리(품질) / 컨텍스트 보호(메인 정리) |
+| 역할 분리 = B0의 AI 버전 | B0에서 짝꿍이 한 일을 Evaluator Subagent가 한다 |
+| Git/PR 협업 한 사이클 | 올리기 → 받기 → 수정 → 머지 → pull. 5단계 다 굴러간다 |
 
 ### 오늘의 산출물
+- 어제 스킬 + 짝꿍 점검 메모
 - 본인 케이스 사이클 적용 결과 (2-3건)
-- Subagent 한 번 호출 (역할 분리 패턴)
-- 세 번째 PR (어제 짝꿍이 리뷰어)
+- Subagent 역할 분리 1회 호출 결과
+- 어제 PR 머지 완료 + 오늘 새 PR (선택)
+- 1줄 회고
 
 ### 내일 준비물
 **Day 4: 검증 + 개선** — 까다로운 고객 검증 + Compound 사이클 + 팀 repo PR.

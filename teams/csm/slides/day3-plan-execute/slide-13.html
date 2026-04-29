@@ -2,78 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S13 케이스3 선택 + Day2 비교 · B1</title>
+<title>Day 3 · S13 70%의 의미</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .col .clabel { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
-  .col.cream .clabel { color: #a0917e; }
-  .col.terra .clabel { color: #f2cdb4; }
-  .col h3 { font-size: 13pt; font-weight: 600; line-height: 1.28; letter-spacing: -0.005em; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
-  .col.terra .divider { background: rgba(255,255,255,0.18); }
-  .point { display: flex; flex-direction: column; gap: 2pt; }
-  .point-label { font-size: 8.5pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; }
-  .col.cream .point-label { color: #b45a34; }
-  .col.terra .point-label { color: #f2cdb4; }
-  .point-body { font-size: 10pt; line-height: 1.55; }
-  .col.cream .point-body { color: #42332a; }
-  .col.terra .point-body { color: #f5e4d4; }
-  .col.cream .point-body strong { color: #2b2520; font-weight: 600; }
-  .col.terra .point-body strong { color: #fff; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .table { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .cell { padding: 12pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
+  .cell .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .cell h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .cell .body { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .cell .body strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · 케이스 #3(선택) + Day 2 비교 · B1</div>
-  <div class="h-large">시간 되면 한 번 더 — <em>속도가 올라가는 것을 확인</em></div>
+  <div class="eyebrow">개념 · B1</div>
+  <div class="h-large">70%는 실패가 아니다 — <em>의도된 출발점</em>이다</div>
   <div class="rule"></div>
-  <div class="intro">케이스 #3는 선택이다. 시간이 남으면 같은 흐름으로 한 번 더 돌린다. 중요한 것은 <strong>케이스 #1보다 빨라지는가</strong>를 체감하는 것이다.</div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="clabel">Day 2 · 어제</div>
-      <h3>운영진 케이스 · 구경</h3>
-      <div class="divider"></div>
-      <div class="point">
-        <div class="point-label">역할</div>
-        <div class="point-body">사이클이 돌아가는 것을 <strong>옆에서 봤다</strong></div>
-      </div>
-      <div class="point">
-        <div class="point-label">목표</div>
-        <div class="point-body">흐름 파악 — "이런 게 있구나"</div>
-      </div>
-      <div class="point">
-        <div class="point-label">반복</div>
-        <div class="point-body"><strong>1회</strong> 시연</div>
-      </div>
+  <div class="intro">처음 자연어로 부탁할 때 70%가 나오는 이유는 "내가 정확히 뭘 원하는지"가 아직 <strong>글로 안 나온 상태</strong>이기 때문이다. 70%를 보면서 빠진 것을 알게 되고, 그것이 Clarify의 재료가 된다.</div>
+  <div class="concept">
+    <div class="label">핵심 원리</div>
+    <div class="def">70%를 보면 <em>"여기가 빠졌다"</em>를 알 수 있다 — 그것이 Clarify의 재료다</div>
+  </div>
+  <div class="table">
+    <div class="cell">
+      <div class="label">1회 결과 (70%)</div>
+      <h3>자연어 부탁 → 첫 결과</h3>
+      <div class="body"><strong>의도된 좌절</strong>. 70%가 나와야 90%로 가는 방향이 보인다. 낮은 게 문제가 아니다.</div>
     </div>
-    <div class="col terra">
-      <div class="clabel">Day 3 · 오늘</div>
-      <h3>본인 케이스 · 직접 실행</h3>
-      <div class="divider"></div>
-      <div class="point">
-        <div class="point-label">역할</div>
-        <div class="point-body"><strong>내 손으로</strong> 사이클을 직접 돌렸다</div>
-      </div>
-      <div class="point">
-        <div class="point-label">목표</div>
-        <div class="point-body">암묵지 식별 — "내가 항상 이걸 빠뜨렸구나"</div>
-      </div>
-      <div class="point">
-        <div class="point-label">반복</div>
-        <div class="point-body"><strong>2-3회</strong> — 처음보다 빨라지는 체감</div>
-      </div>
+    <div class="cell">
+      <div class="label">Clarify 후 (90%)</div>
+      <h3>빠진 항목 채워 재부탁</h3>
+      <div class="body">Clarify 단계가 <strong>70 → 90% 간격을 채운다</strong>. 빠진 것을 명시하면 결과가 달라진다.</div>
+    </div>
+    <div class="cell">
+      <div class="label">반복 후 체감</div>
+      <h3>처음부터 더 많이 포함</h3>
+      <div class="body">케이스 #2, #3을 돌릴수록 <strong>첫 부탁 품질이 올라간다</strong>. 그게 오늘 가져가는 것.</div>
     </div>
   </div>
-  <div class="foot">케이스 #1보다 첫 부탁 결과가 <strong>80-85%에 가까워지면</strong> 사이클이 익어가고 있는 것이다. 그것이 오늘 B1의 성공 기준.</div>
 </body>
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 3 · S32 새 PR (선택) + 머지 후 git log</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 9.8pt; line-height: 1.45; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .terminal { margin-top: 9pt; padding: 10pt 14pt; background: #1a1410; color: #f5e4d4; border-radius: 10pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; line-height: 1.55; }
+  .terminal .pmt { color: #c56a4a; }
+  .terminal .cmd { color: #f5e4d4; }
+  .terminal .cmt { color: #7d6b5a; font-style: italic; }
+  .terminal .key { color: #f2cdb4; font-weight: 700; }
+  .terminal .line { white-space: nowrap; overflow: hidden; }
+  .gitlog { margin-top: 9pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; }
+  .gitlog .gltitle { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; margin-bottom: 5pt; }
+  .gitlog .commits { display: flex; flex-direction: column; gap: 4pt; }
+  .gitlog .commit { padding: 5pt 10pt; border-radius: 6pt; display: flex; gap: 12pt; align-items: center; }
+  .gitlog .commit.today { background: #c56a4a; }
+  .gitlog .commit.past { background: rgba(0,0,0,0.06); }
+  .gitlog .commit .day { font-size: 8.5pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; min-width: 80pt; }
+  .gitlog .commit.today .day { color: #f2cdb4; }
+  .gitlog .commit.past .day { color: #a0917e; }
+  .gitlog .commit .msg { font-size: 9pt; font-family: 'SF Mono', Menlo, monospace; }
+  .gitlog .commit.today .msg { color: #fff; }
+  .gitlog .commit.past .msg { color: #2b2520; }
+  .foot { margin-top: 8pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 9.8pt; line-height: 1.45; }
+  .foot strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">실습 · 옵션 · B3</div>
+  <div class="h-large">새 PR 1개(선택) — <em>git log 3개</em>가 변화량</div>
+  <div class="rule"></div>
+  <div class="intro">시간이 남으면 새 브랜치로 PR 한 번 더. 핵심은 <strong>머지 후 본인 git log 3개 commit 누적</strong> — 어제 → 오늘 변화량 시각화.</div>
+  <div class="terminal">
+    <div class="line"><span class="pmt">$</span> <span class="cmd">git checkout -b day3-cycle-pattern</span>&nbsp;&nbsp;<span class="cmt"># 새 브랜치</span></div>
+    <div class="line"><span class="pmt">$</span> <span class="cmd">vi members/&lt;이름&gt;.md</span>&nbsp;&nbsp;<span class="cmt"># Day 3 패턴 1줄 추가</span></div>
+    <div class="line"><span class="pmt">$</span> <span class="cmd">git add . &amp;&amp; git commit -m <span class="key">"feat: Day 3 사이클 패턴"</span></span></div>
+    <div class="line"><span class="pmt">$</span> <span class="cmd">git push -u origin day3-cycle-pattern</span></div>
+    <div class="line"><span class="cmt"># GitHub 웹에서 PR 생성 → 짝꿍 리뷰어 지정 → 머지</span></div>
+  </div>
+  <div class="gitlog">
+    <div class="gltitle">머지 후 git log — 3일 누적</div>
+    <div class="commits">
+      <div class="commit today">
+        <div class="day">오늘 · Day 3</div>
+        <div class="msg">feat: Day 3 사이클 패턴 + 짝꿍 점검 반영</div>
+      </div>
+      <div class="commit past">
+        <div class="day">어제 · Day 2</div>
+        <div class="msg">refine: SKILL.md - Day 2 Clarify 반영</div>
+      </div>
+      <div class="commit past">
+        <div class="day">Day 1</div>
+        <div class="msg">feat: CLAUDE.md 초안</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">본인 git log <strong>3개 commit = 어제 → 오늘 변화량 누적 시각화</strong>. "내가 3일 동안 무엇을 바꿨는지"가 한눈에 보인다.</div>
+</body>
+</html>

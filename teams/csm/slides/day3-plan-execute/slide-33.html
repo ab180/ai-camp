@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 3 · S33 1줄 회고 + Day 4 예고</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 9.8pt; line-height: 1.45; color: #42332a; margin-top: 2pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 9pt; }
+  .col { padding: 12pt 14pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 7pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .clabel { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .clabel { color: #b45a34; }
+  .col.terra .clabel { color: #f2cdb4; }
+  .col h3 { font-size: 12.5pt; font-weight: 600; line-height: 1.3; letter-spacing: -0.005em; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col h3 em { font-style: normal; }
+  .col.cream h3 em { color: #b45a34; }
+  .col.terra h3 em { color: #ffdfc9; }
+  .form { padding: 9pt 12pt; background: rgba(255,255,255,0.4); border-radius: 7pt; display: flex; flex-direction: column; gap: 3pt; }
+  .form .line { font-size: 9.8pt; color: #2b2520; line-height: 1.4; }
+  .form .line em { font-style: normal; color: #b45a34; font-weight: 600; }
+  .item-row { display: grid; grid-template-columns: 70pt 1fr; gap: 8pt; padding: 4pt 0; border-top: 1px dashed rgba(255,255,255,0.18); align-items: start; }
+  .item-row:first-of-type { border-top: none; padding-top: 0; }
+  .item-row .ilabel { font-size: 8.2pt; letter-spacing: 0.15em; font-weight: 700; text-transform: uppercase; color: #f2cdb4; padding-top: 2pt; }
+  .item-row .ibody { font-size: 9.5pt; line-height: 1.4; color: #f5e4d4; }
+  .item-row .ibody strong { color: #fff; font-weight: 600; }
+  .note { padding: 7pt 10pt; background: rgba(0,0,0,0.06); border-radius: 6pt; font-size: 9pt; color: #5a4d40; line-height: 1.45; margin-top: 3pt; }
+  .note strong { color: #b45a34; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">회고 + Day 4 · ~10분 · B4</div>
+  <div class="h-large">1줄 회고 — <em>오늘의 빠뜨림 = 내일의 첫 검증 케이스</em></div>
+  <div class="rule"></div>
+  <div class="intro">하루 동안 사이클을 돌리며 자주 수정한 항목 = 본인 암묵지. <strong>1줄로 SKILL.md ## 회고에 기록</strong>하면 Day 4 검증 첫 케이스가 된다.</div>
+  <div class="grid">
+    <div class="col cream">
+      <div class="clabel">회고 형식</div>
+      <h3>SKILL.md <em>## 회고</em>에 기록</h3>
+      <div class="form">
+        <div class="line">오늘 가장 자주 빠뜨린 항목: <em>[항목명]</em></div>
+        <div class="line">이유: <em>[당연하다고 여겨 명시 안 함]</em></div>
+        <div class="line">다음 수정 방향: <em>[한 줄]</em></div>
+      </div>
+      <div class="note">예: "고객 이름을 3번 수정 → <strong>입력 섹션에 명시 조건 추가</strong>" / "톤 매번 달라짐 → <strong>rules/tone.md에 예시 2개</strong> 추가"</div>
+    </div>
+    <div class="col terra">
+      <div class="clabel">Day 4 미리보기</div>
+      <h3>검증 + Compound + 팀 repo</h3>
+      <div class="item-row">
+        <div class="ilabel">축 5 검증</div>
+        <div class="ibody">검증 심화 — <strong>까다로운 고객 페르소나</strong>로 결과 검증</div>
+      </div>
+      <div class="item-row">
+        <div class="ilabel">축 6 개선</div>
+        <div class="ibody"><strong>Compound 사이클</strong> — 검증 결과를 SKILL.md에 자동 반영</div>
+      </div>
+      <div class="item-row">
+        <div class="ilabel">자가진단</div>
+        <div class="ibody">6축 자가진단 — 본인의 약한 축 찾기</div>
+      </div>
+      <div class="item-row">
+        <div class="ilabel">팀 공유</div>
+        <div class="ibody">팀 repo PR — 개인 스킬을 <strong>팀 공유 자산</strong>으로</div>
+      </div>
+      <div class="item-row">
+        <div class="ilabel">입력</div>
+        <div class="ibody"><strong>오늘 회고 1줄</strong>이 Day 4 첫 검증 케이스</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

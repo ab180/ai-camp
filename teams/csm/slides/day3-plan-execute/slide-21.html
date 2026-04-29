@@ -2,56 +2,63 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S21 Subagent CSM 실습 역할 분리 · B2</title>
+<title>Day 3 · S21 패턴 1 병렬 검색</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .mission { margin-top: 10pt; padding: 12pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
-  .mission .mlabel { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .mission .mtitle { font-size: 15pt; font-weight: 600; color: #fff; margin-top: 5pt; line-height: 1.35; }
-  .steps { display: flex; flex-direction: column; gap: 7pt; flex: 1; margin-top: 9pt; }
-  .step { display: grid; grid-template-columns: 100pt 1fr; gap: 12pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; align-items: start; }
-  .step .slabel { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; padding-top: 2pt; }
-  .step .sbody { font-size: 10.5pt; line-height: 1.6; color: #42332a; }
-  .step .sbody strong { color: #b45a34; font-weight: 600; }
-  .step .code { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; background: rgba(0,0,0,0.06); padding: 4pt 8pt; border-radius: 5pt; display: inline-block; margin-top: 3pt; color: #2b2520; }
-  .obs { margin-top: 6pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; }
-  .obs strong { color: #b45a34; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; }
+  .col { padding: 12pt 14pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 6pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .clabel { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .clabel { color: #a0917e; }
+  .col.terra .clabel { color: #f2cdb4; }
+  .col h3 { font-size: 14pt; font-weight: 600; line-height: 1.28; letter-spacing: -0.005em; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+  .item { font-size: 10.5pt; line-height: 1.55; }
+  .col.cream .item { color: #42332a; }
+  .col.terra .item { color: #f5e4d4; }
+  .col.cream .item strong { color: #2b2520; font-weight: 600; }
+  .col.terra .item strong { color: #fff; font-weight: 600; }
+  .result { margin-top: 6pt; padding: 7pt 12pt; border-radius: 8pt; font-size: 11pt; font-weight: 600; }
+  .col.cream .result { background: rgba(0,0,0,0.08); color: #2b2520; }
+  .col.terra .result { background: rgba(255,255,255,0.15); color: #fff; }
+  .foot { margin-top: 7pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · ~15분 · B2</div>
-  <div class="h-large">역할 분리 실습 — <em>Generator + Evaluator</em></div>
+  <div class="eyebrow">패턴 1 · B2</div>
+  <div class="h-large">병렬 검색 — <em>N개를 동시에 실행</em>해 시간 단축</div>
   <div class="rule"></div>
-  <div class="intro">B1에서 본인 케이스로 만든 스킬 결과를 Generator로 두고, Evaluator(까다로운 고객 페르소나)로 검토받는다.</div>
-  <div class="mission">
-    <div class="mlabel">목표</div>
-    <div class="mtitle">내가 만든 결과를 다른 시각으로 검토받아 gap을 확인한다</div>
-  </div>
-  <div class="steps">
-    <div class="step">
-      <div class="slabel">1단계 · 5분</div>
-      <div class="sbody">
-        <strong>Generator</strong> — B1에서 만든 스킬 결과 1건 그대로 준비<br>
-        리캡 메일 초안 / 온보딩 요약 / 문의 답변 중 결과물 1건
-      </div>
+  <div class="intro">같은 작업을 하나씩 순서대로 하는 대신, Subagent N개가 <strong>동시에 처리</strong>하고 결과만 메인에 올린다.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="clabel">순차 처리 · Before</div>
+      <h3>하나씩 차례로</h3>
+      <div class="divider"></div>
+      <div class="item">고객 A 상태 점검 <strong>(30초)</strong></div>
+      <div class="item">→ 고객 B 상태 점검 <strong>(30초)</strong></div>
+      <div class="item">→ 고객 C 상태 점검 <strong>(30초)</strong></div>
+      <div class="item">→ 고객 D 상태 점검 <strong>(30초)</strong></div>
+      <div class="item">→ 고객 E 상태 점검 <strong>(30초)</strong></div>
+      <div class="result">총 150초</div>
     </div>
-    <div class="step">
-      <div class="slabel">2단계 · 5분</div>
-      <div class="sbody">
-        <strong>Evaluator</strong> — Claude에게 자연어로 검토 요청<br>
-        <span class="code">"위 결과를 [담당 고객사] 담당자가 갱신을 고민 중인 상황에서 보면 어떤 반응이 나올지 짚어줘"</span>
-      </div>
-    </div>
-    <div class="step">
-      <div class="slabel">3단계 · 3분</div>
-      <div class="sbody">
-        <strong>검토 의견 메모</strong> — 어떤 부분이 부족하다고 나왔나, 내가 놓쳤던 건 무엇인가
-      </div>
+    <div class="col terra">
+      <div class="clabel">병렬 처리 · After</div>
+      <h3>Subagent 5개 동시</h3>
+      <div class="divider"></div>
+      <div class="item">A·B·C·D·E 점검 <strong>동시 실행 (30초)</strong></div>
+      <div class="item">↓ (모두 완료 후)</div>
+      <div class="item"><strong>5건 결과 취합</strong></div>
+      <div class="result">총 30초 — 5배 단축</div>
     </div>
   </div>
-  <div class="obs"><strong>관찰 포인트</strong>: Generator(내가 만든 것)와 Evaluator 의견 사이에 gap이 있는가? 그 gap이 역할 분리의 가치다. Day 4에서 이 gap을 채우는 것이 심화 실습이다.</div>
+  <div class="foot"><strong>CSM 사례</strong>: "지난주 미팅 5건의 액션 아이템을 한 번에 추출해줘" — 5건을 동시에 처리해 대기 시간 없이 완성.</div>
 </body>
 </html>

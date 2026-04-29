@@ -2,51 +2,68 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S29 오늘 돌아보기 3가지</title>
+<title>Day 3 · S29 어제 vs 오늘 차이표</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .rows { display: flex; flex-direction: column; gap: 9pt; flex: 1; margin-top: 10pt; }
-  .row { display: grid; grid-template-columns: 1fr auto; gap: 14pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
-  .row .left { display: flex; flex-direction: column; gap: 4pt; }
-  .row .left .before { font-size: 10pt; color: #7d6b5a; text-decoration: line-through; }
-  .row .left .after { font-size: 12.5pt; font-weight: 600; color: #2b2520; line-height: 1.4; letter-spacing: -0.005em; }
-  .row .left .after em { font-style: normal; color: #b45a34; }
-  .row .tag { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; background: rgba(197,106,74,0.1); padding: 4pt 8pt; border-radius: 6pt; white-space: nowrap; }
-  .foot { margin-top: 10pt; padding: 10pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
+  .table { display: grid; grid-template-columns: 110pt 1fr 70pt 70pt; gap: 0; flex: 1; margin-top: 10pt; border-radius: 10pt; overflow: hidden; background: #ebe1d2; }
+  .th, .td { padding: 6pt 12pt; font-size: 9.5pt; line-height: 1.45; display: flex; align-items: center; }
+  .th { background: #c56a4a; color: #fff; font-weight: 700; letter-spacing: 0.05em; font-size: 9pt; text-transform: uppercase; }
+  .td { color: #42332a; border-top: 1px solid rgba(0,0,0,0.07); }
+  .td.step { font-weight: 600; color: #2b2520; }
+  .td.detail { color: #42332a; }
+  .td.detail strong { color: #b45a34; font-weight: 600; }
+  .td.mark { justify-content: center; font-weight: 700; }
+  .td.yes { color: #2e7d4f; }
+  .td.dash { color: #b8a890; }
+  .td.new { color: #b45a34; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.5; }
   .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">오늘 돌아보기</div>
-  <div class="h-large">오늘 바뀐 <em>3가지 감각</em></div>
+  <div class="eyebrow">어제 vs 오늘 · B3</div>
+  <div class="h-large">어제는 <em>'올리기'</em>까지 — 오늘은 <em>'머지+pull'</em>까지 한 바퀴</div>
   <div class="rule"></div>
-  <div class="intro">오늘이 끝날 때 이 3가지가 머릿속에 남아 있으면 Day 3의 목표를 달성한 것이다.</div>
-  <div class="rows">
-    <div class="row">
-      <div class="left">
-        <div class="before">"운영진 케이스를 구경했다"</div>
-        <div class="after"><em>내 업무로 직접 돌렸다</em> — 암묵지가 보이기 시작했다</div>
-      </div>
-      <div class="tag">B0 · B1</div>
-    </div>
-    <div class="row">
-      <div class="left">
-        <div class="before">"사이클은 한 번으로 충분하다"</div>
-        <div class="after"><em>반복할수록 70 → 90%</em>로 올라간다 — 한 번에 100%는 없다</div>
-      </div>
-      <div class="tag">B1 핵심</div>
-    </div>
-    <div class="row">
-      <div class="left">
-        <div class="before">"AI는 하나씩 순서대로 쓴다"</div>
-        <div class="after">Subagent <em>3패턴</em>으로 병렬·역할 분리·컨텍스트 보호가 가능하다</div>
-      </div>
-      <div class="tag">B2</div>
-    </div>
+  <div class="intro">PR 사이클은 5단계 + 동기화. 어제 첫 두 단계만 했다. 오늘 나머지 3단계를 <strong>직접 굴려봐야 "알겠다"</strong>가 온다.</div>
+  <div class="table">
+    <div class="th">단계</div>
+    <div class="th">하는 일</div>
+    <div class="th">어제</div>
+    <div class="th">오늘</div>
+
+    <div class="td step">1. clone</div>
+    <div class="td detail">팀 repo를 본인 컴퓨터로 가져온다</div>
+    <div class="td mark yes">O</div>
+    <div class="td mark dash">-</div>
+
+    <div class="td step">2. 파일 수정</div>
+    <div class="td detail">SKILL.md 수정 + <strong>코멘트 받고 답하기</strong> (오늘)</div>
+    <div class="td mark yes">O</div>
+    <div class="td mark new">+ 코멘트</div>
+
+    <div class="td step">3. commit</div>
+    <div class="td detail">변경분 메시지와 함께 저장</div>
+    <div class="td mark yes">O</div>
+    <div class="td mark yes">O</div>
+
+    <div class="td step">4. push</div>
+    <div class="td detail">원격 repo로 올림 — <strong>같은 PR 자동 업데이트</strong></div>
+    <div class="td mark yes">O</div>
+    <div class="td mark new">+ 자동 갱신</div>
+
+    <div class="td step">5. PR 머지</div>
+    <div class="td detail">PR 생성 → 짝꿍 승인 → <strong>squash merge</strong></div>
+    <div class="td mark dash">PR 생성</div>
+    <div class="td mark new">+ 머지</div>
+
+    <div class="td step">6. pull</div>
+    <div class="td detail">main에서 <strong>git pull로 동기화</strong> (오늘 신규)</div>
+    <div class="td mark dash">-</div>
+    <div class="td mark new">신규 O</div>
   </div>
-  <div class="foot">세 가지가 복리로 쌓이면 내일의 나는 더 빠르다. <strong>오늘 만든 회고 1줄이 Day 4 검증의 시작점.</strong></div>
+  <div class="foot">5단계 다 굴러봐야 <strong>"이제 알겠다"</strong> — 머지+pull이 빠지면 "내 변경이 main에 들어갔다"는 체감이 안 온다.</div>
 </body>
 </html>
