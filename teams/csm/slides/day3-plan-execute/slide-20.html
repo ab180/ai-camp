@@ -2,77 +2,53 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S20 패턴3 컨텍스트 보호 · B2</title>
+<title>Day 3 · S20 Subagent 3패턴 개요</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; }
-  .col { padding: 11pt 14pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 6pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .col .clabel { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
-  .col.cream .clabel { color: #a0917e; }
-  .col.terra .clabel { color: #f2cdb4; }
-  .col h3 { font-size: 14pt; font-weight: 600; line-height: 1.28; letter-spacing: -0.005em; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
-  .col.terra .divider { background: rgba(255,255,255,0.18); }
-  .item { font-size: 10.5pt; line-height: 1.6; }
-  .col.cream .item { color: #42332a; }
-  .col.terra .item { color: #f5e4d4; }
-  .col.cream .item strong { color: #b45a34; font-weight: 600; }
-  .col.terra .item strong { color: #fff; font-weight: 600; }
-  .summary { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8pt; margin-top: 7pt; }
-  .sum-cell { padding: 7pt 10pt; border-radius: 8pt; background: #ebe1d2; text-align: center; }
-  .sum-cell .sh { font-size: 10.5pt; font-weight: 600; color: #2b2520; }
-  .sum-cell .sp { font-size: 9pt; color: #7d6b5a; margin-top: 1pt; }
-  .sum-cell .sv { font-size: 9.5pt; font-weight: 600; color: #b45a34; margin-top: 2pt; }
+  .patterns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .pat { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
+  .pat .plabel { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .pat h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .pat .purpose { padding: 6pt 10pt; background: #c56a4a; border-radius: 7pt; font-size: 9.5pt; color: #fff; font-weight: 600; align-self: flex-start; }
+  .pat .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
+  .pat .body strong { color: #b45a34; font-weight: 600; }
+  .pat .csm { font-size: 9.5pt; line-height: 1.55; color: #5a4d40; margin-top: 4pt; border-top: 1pt solid #d4c4ac; padding-top: 6pt; }
+  .pat .csm strong { color: #b45a34; font-weight: 600; }
+  .note { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; }
+  .note strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">패턴 3 · B2</div>
-  <div class="h-large">컨텍스트 보호 — <em>큰 결과를 Subagent에 맡기고</em> 요약만 받는다</div>
+  <div class="eyebrow">개념 · B2</div>
+  <div class="h-large">Subagent <em>3패턴</em> — 목적이 다르다</div>
   <div class="rule"></div>
-  <div class="intro">메인 AI가 100페이지 자료를 직접 읽으면 컨텍스트 창이 꽉 찬다. <strong>Subagent에게 맡기면 핵심 3줄만 올라온다</strong>.</div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="clabel">직접 처리 · Before</div>
-      <h3>메인 AI가 100페이지 직접 읽기</h3>
-      <div class="divider"></div>
-      <div class="item">회의록 100페이지 전체 로드</div>
-      <div class="item">→ <strong>컨텍스트 창 포화</strong></div>
-      <div class="item">→ 이후 대화에서 이전 내용 잊어버림</div>
-      <div class="item">→ 다음 작업 품질 저하</div>
+  <div class="intro">3패턴은 각각 목적이 다르다. <strong>상황에 맞는 패턴</strong>을 고르는 것이 핵심. 오늘은 3가지를 알고, 역할 분리 패턴을 직접 실습한다.</div>
+  <div class="patterns">
+    <div class="pat">
+      <div class="plabel">패턴 1</div>
+      <h3>병렬 검색</h3>
+      <div class="purpose">시간 단축</div>
+      <div class="body">N개 작업을 <strong>동시에 실행</strong>. 순차 처리 대비 대기 시간을 줄인다.</div>
+      <div class="csm"><strong>CSM 예</strong>: 지난주 미팅 5건의 액션 아이템을 한 번에 추출</div>
     </div>
-    <div class="col terra">
-      <div class="clabel">컨텍스트 보호 · After</div>
-      <h3>Subagent에게 분석 맡기기</h3>
-      <div class="divider"></div>
-      <div class="item">Subagent: 회의록 100페이지 분석</div>
-      <div class="item">↓ <strong>핵심 3줄만 메인에 반환</strong></div>
-      <div class="item">메인 AI: 요약 3줄로 다음 작업 진행</div>
-      <div class="item">→ 컨텍스트 여유 유지</div>
+    <div class="pat">
+      <div class="plabel">패턴 2 · 오늘 실습</div>
+      <h3>역할 분리</h3>
+      <div class="purpose">품질 향상</div>
+      <div class="body"><strong>Generator(작성자) ≠ Evaluator(검토자)</strong>. 만든 사람은 자기 맹점을 보지 못한다.</div>
+      <div class="csm"><strong>CSM 예</strong>: 리캡 메일 초안 작성 → 까다로운 고객 페르소나로 검토</div>
     </div>
-  </div>
-  <div class="summary">
-    <div class="sum-cell">
-      <div class="sh">패턴 1</div>
-      <div class="sp">병렬 검색</div>
-      <div class="sv">시간 단축</div>
-    </div>
-    <div class="sum-cell">
-      <div class="sh">패턴 2</div>
-      <div class="sp">역할 분리</div>
-      <div class="sv">품질 향상</div>
-    </div>
-    <div class="sum-cell">
-      <div class="sh">패턴 3</div>
-      <div class="sp">컨텍스트 보호</div>
-      <div class="sv">컨텍스트 절약</div>
+    <div class="pat">
+      <div class="plabel">패턴 3</div>
+      <h3>컨텍스트 보호</h3>
+      <div class="purpose">컨텍스트 절약</div>
+      <div class="body">큰 데이터를 Subagent에게 맡기고 <strong>요약만 받는다</strong>. 메인 컨텍스트가 오염되지 않는다.</div>
+      <div class="csm"><strong>CSM 예</strong>: 긴 회의록 100페이지 → 핵심 3줄만 메인에 올림</div>
     </div>
   </div>
+  <div class="note">오늘 실습은 <strong>패턴 2 역할 분리</strong>. 내가 만든 결과를 다른 시각(Evaluator)으로 검토받는 가장 즉시 체감되는 패턴이다.</div>
 </body>
 </html>

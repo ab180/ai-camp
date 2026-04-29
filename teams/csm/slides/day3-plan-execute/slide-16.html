@@ -2,49 +2,79 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S16 Subagent 개념 · B2</title>
+<title>Day 3 · S16 케이스 #3 (선택) + 패턴 추출</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
-  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
-  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
-  .chars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .char { padding: 12pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
-  .char .clabel { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .char h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
-  .char .body { font-size: 10pt; line-height: 1.6; color: #42332a; }
-  .char .body strong { color: #b45a34; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .col { padding: 14pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 8pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .clabel { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .clabel { color: #a0917e; }
+  .col.terra .clabel { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; line-height: 1.3; letter-spacing: -0.005em; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col h3 em { font-style: normal; }
+  .col.cream h3 em { color: #b45a34; }
+  .col.terra h3 em { color: #ffdfc9; }
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+  .item { display: flex; flex-direction: column; gap: 2pt; }
+  .item-label { font-size: 8.5pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .item-label { color: #b45a34; }
+  .col.terra .item-label { color: #f2cdb4; }
+  .item-body { font-size: 10pt; line-height: 1.55; }
+  .col.cream .item-body { color: #42332a; }
+  .col.terra .item-body { color: #f5e4d4; }
+  .col.cream .item-body strong { color: #b45a34; font-weight: 600; }
+  .col.terra .item-body strong { color: #fff; font-weight: 600; }
+  .pattern-card { padding: 9pt 13pt; background: rgba(255,255,255,0.15); border-radius: 8pt; font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; color: #fff; line-height: 1.5; }
+  .pattern-card em { font-style: normal; color: #ffdfc9; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">개념 · B2</div>
-  <div class="h-large">Subagent = <em>독립 AI를 호출해 일을 맡긴다</em></div>
+  <div class="eyebrow">실습 · 케이스 #3(선택) + 패턴 · B1</div>
+  <div class="h-large">시간 되면 한 번 더 — <em>패턴 1줄 추출</em></div>
   <div class="rule"></div>
-  <div class="intro">내가 직접 모든 고객 상태를 하나씩 확인하는 대신, AI가 알바 N명을 동시에 띄워서 각자 1명씩 맡긴다. N명이 동시에 작업하고, <strong>나에게는 완성된 요약만 올라온다</strong>.</div>
-  <div class="concept">
-    <div class="label">한 줄 정의</div>
-    <div class="def">메인 AI가 <em>독립 AI를 일회성으로 호출</em> — 작업 맡기고 결과만 받는다</div>
+  <div class="intro">케이스 #3는 선택. 시간이 남으면 같은 흐름으로 한 번 더 돌린다. 중요한 건 <strong>변화 신호 확인 + 본인 패턴 1줄 추출</strong>.</div>
+  <div class="grid">
+    <div class="col cream">
+      <div class="clabel">변화 신호</div>
+      <h3>처음 부탁부터 <em>80-85%</em></h3>
+      <div class="divider"></div>
+      <div class="item">
+        <div class="item-label">신호 1</div>
+        <div class="item-body">자연어 부탁이 <strong>처음부터 더 자세해진다</strong> — 항상 빠뜨리던 항목을 첫 부탁에 포함.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">신호 2</div>
+        <div class="item-body">Clarify로 보완할 항목이 <strong>3개 → 1-2개</strong>로 줄어듦.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">신호 3</div>
+        <div class="item-body">"항상 빠뜨리는 항목"이 <strong>구체적으로 한 줄</strong>로 떠오름.</div>
+      </div>
+    </div>
+    <div class="col terra">
+      <div class="clabel">패턴 1줄 추출</div>
+      <h3>SKILL.md <em>## 회고</em> 후보</h3>
+      <div class="divider"></div>
+      <div class="item">
+        <div class="item-label">형식</div>
+        <div class="pattern-card">"나는 항상 <em>[항목]</em>을 빠뜨린다 → SKILL.md <em>[섹션]</em>에 추가"</div>
+      </div>
+      <div class="item">
+        <div class="item-label">예시</div>
+        <div class="item-body">"고객 이름 매번 보완 — <strong>입력 섹션에 명시 조건</strong> 추가" / "톤 매번 달라짐 — <strong>rules/tone.md에 예시 2개</strong> 추가"</div>
+      </div>
+    </div>
   </div>
-  <div class="chars">
-    <div class="char">
-      <div class="clabel">특성 1</div>
-      <h3>독립 컨텍스트</h3>
-      <div class="body">메인 대화 내용을 이어받지 않는다. <strong>필요한 정보는 명시적으로 전달</strong>해야 한다.</div>
-    </div>
-    <div class="char">
-      <div class="clabel">특성 2</div>
-      <h3>병렬 처리 가능</h3>
-      <div class="body">동시에 N개 작업 가능. <strong>순차 대비 시간 단축</strong>. 토큰 비용은 N배.</div>
-    </div>
-    <div class="char">
-      <div class="clabel">특성 3</div>
-      <h3>결과만 반환</h3>
-      <div class="body">작업 과정은 메인 컨텍스트에 없음. <strong>결과 3줄만</strong> 받아서 다음 작업 진행.</div>
-    </div>
-  </div>
+  <div class="foot">이 1줄이 SKILL.md <strong>## 회고 섹션 후보</strong>이고, B4 회고에서 다시 꺼낸다. 케이스 #3까지 못 갔어도 #1·#2 공통 항목으로 충분.</div>
 </body>
 </html>

@@ -2,63 +2,33 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S18 패턴1 병렬 검색 · B2</title>
+<title>Day 3 · S18 B2 섹션 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; }
-  .col { padding: 12pt 14pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 6pt; }
-  .col.cream { background: #ebe1d2; }
-  .col.terra { background: #c56a4a; color: #f7efe4; }
-  .col .clabel { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
-  .col.cream .clabel { color: #a0917e; }
-  .col.terra .clabel { color: #f2cdb4; }
-  .col h3 { font-size: 14pt; font-weight: 600; line-height: 1.28; letter-spacing: -0.005em; }
-  .col.cream h3 { color: #2b2520; }
-  .col.terra h3 { color: #fff; }
-  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
-  .col.terra .divider { background: rgba(255,255,255,0.18); }
-  .item { font-size: 10.5pt; line-height: 1.55; }
-  .col.cream .item { color: #42332a; }
-  .col.terra .item { color: #f5e4d4; }
-  .col.cream .item strong { color: #2b2520; font-weight: 600; }
-  .col.terra .item strong { color: #fff; font-weight: 600; }
-  .result { margin-top: 6pt; padding: 7pt 12pt; border-radius: 8pt; font-size: 11pt; font-weight: 600; }
-  .col.cream .result { background: rgba(0,0,0,0.08); color: #2b2520; }
-  .col.terra .result { background: rgba(255,255,255,0.15); color: #fff; }
-  .foot { margin-top: 7pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 8pt; font-size: 9.5pt; line-height: 1.5; color: #42332a; }
-  .foot strong { color: #b45a34; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 580pt; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">패턴 1 · B2</div>
-  <div class="h-large">병렬 검색 — <em>N개를 동시에 실행</em>해 시간 단축</div>
-  <div class="rule"></div>
-  <div class="intro">같은 작업을 하나씩 순서대로 하는 대신, Subagent N개가 <strong>동시에 처리</strong>하고 결과만 메인에 올린다.</div>
-  <div class="compare">
-    <div class="col cream">
-      <div class="clabel">순차 처리 · Before</div>
-      <h3>하나씩 차례로</h3>
-      <div class="divider"></div>
-      <div class="item">고객 A 상태 점검 <strong>(30초)</strong></div>
-      <div class="item">→ 고객 B 상태 점검 <strong>(30초)</strong></div>
-      <div class="item">→ 고객 C 상태 점검 <strong>(30초)</strong></div>
-      <div class="item">→ 고객 D 상태 점검 <strong>(30초)</strong></div>
-      <div class="item">→ 고객 E 상태 점검 <strong>(30초)</strong></div>
-      <div class="result">총 150초</div>
-    </div>
-    <div class="col terra">
-      <div class="clabel">병렬 처리 · After</div>
-      <h3>Subagent 5개 동시</h3>
-      <div class="divider"></div>
-      <div class="item">A·B·C·D·E 점검 <strong>동시 실행 (30초)</strong></div>
-      <div class="item">↓ (모두 완료 후)</div>
-      <div class="item"><strong>5건 결과 취합</strong></div>
-      <div class="result">총 30초 — 5배 단축</div>
-    </div>
+  <div class="top">
+    <div class="block">Block 2</div>
+    <div class="time">~35 min</div>
   </div>
-  <div class="foot"><strong>CSM 사례</strong>: "지난주 미팅 5건의 액션 아이템을 한 번에 추출해줘" — 5건을 동시에 처리해 대기 시간 없이 완성.</div>
+  <div class="mid">
+    <h1>Subagent 본격 —<br>3패턴 + CSM 실습</h1>
+    <div class="sub">메인 AI가 독립 AI를 호출해 일을 맡기고 결과만 받는다. 3패턴의 차이를 알고, 역할 분리 패턴을 직접 실습한다.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">병렬 검색 · 역할 분리 · 컨텍스트 보호</div>
+    <div class="count">9 slides</div>
+  </div>
 </body>
 </html>

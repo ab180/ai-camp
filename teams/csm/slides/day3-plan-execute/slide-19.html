@@ -2,54 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S19 패턴2 역할 분리 · B2</title>
+<title>Day 3 · S19 Subagent 개념</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .concept { margin-top: 10pt; padding: 12pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
-  .concept .clabel { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .concept .cdef { font-size: 14pt; font-weight: 500; color: #fff; margin-top: 4pt; line-height: 1.4; }
-  .concept .cdef em { font-style: normal; color: #ffdfc9; font-weight: 700; }
-  .flow { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10pt; align-items: center; flex: 1; margin-top: 12pt; }
-  .box { padding: 14pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
-  .box .blabel { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .box h3 { font-size: 13pt; font-weight: 600; color: #2b2520; line-height: 1.28; }
-  .box .body { font-size: 10pt; line-height: 1.6; color: #42332a; }
-  .box .body strong { color: #b45a34; font-weight: 600; }
-  .arrow-col { display: flex; flex-direction: column; align-items: center; gap: 4pt; }
-  .arrow-col .arr { font-size: 20pt; color: #c56a4a; }
-  .arrow-col .alabel { font-size: 9pt; color: #7d6b5a; letter-spacing: 0.1em; font-weight: 600; }
-  .csm { margin-top: 10pt; padding: 9pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.55; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .csm strong { color: #b45a34; }
+  .concept { margin-top: 10pt; padding: 14pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .concept .label { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .concept .def { font-size: 15pt; font-weight: 500; color: #fff; margin-top: 5pt; line-height: 1.4; letter-spacing: -0.005em; }
+  .concept .def em { font-style: normal; color: #ffdfc9; font-weight: 700; }
+  .chars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .char { padding: 12pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; }
+  .char .clabel { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
+  .char h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
+  .char .body { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .char .body strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">패턴 2 · 오늘 실습 · B2</div>
-  <div class="h-large">역할 분리 — <em>Generator ≠ Evaluator</em></div>
+  <div class="eyebrow">개념 · B2</div>
+  <div class="h-large">Subagent = <em>독립 AI를 호출해 일을 맡긴다</em></div>
   <div class="rule"></div>
-  <div class="intro">만든 사람은 자신의 결과에 익숙해져 <strong>빠진 부분을 보지 못한다</strong>. 검토자를 분리하면 다른 시각에서 결과를 볼 수 있다.</div>
+  <div class="intro">내가 직접 모든 고객 상태를 하나씩 확인하는 대신, AI가 알바 N명을 동시에 띄워서 각자 1명씩 맡긴다. N명이 동시에 작업하고, <strong>나에게는 완성된 요약만 올라온다</strong>.</div>
   <div class="concept">
-    <div class="clabel">핵심 원리</div>
-    <div class="cdef">Generator가 자기 결과를 검토하면 <em>자신의 맹점을 그대로 넘어간다</em></div>
+    <div class="label">한 줄 정의</div>
+    <div class="def">메인 AI가 <em>독립 AI를 일회성으로 호출</em> — 작업 맡기고 결과만 받는다</div>
   </div>
-  <div class="flow">
-    <div class="box">
-      <div class="blabel">Generator</div>
-      <h3>Subagent A — 작성자</h3>
-      <div class="body">리캡 메일 초안 작성. <strong>목표에 집중</strong>해 결과를 만들어낸다.</div>
+  <div class="chars">
+    <div class="char">
+      <div class="clabel">특성 1</div>
+      <h3>독립 컨텍스트</h3>
+      <div class="body">메인 대화 내용을 이어받지 않는다. <strong>필요한 정보는 명시적으로 전달</strong>해야 한다.</div>
     </div>
-    <div class="arrow-col">
-      <div class="arr">→</div>
-      <div class="alabel">결과 전달</div>
+    <div class="char">
+      <div class="clabel">특성 2</div>
+      <h3>병렬 처리 가능</h3>
+      <div class="body">동시에 N개 작업 가능. <strong>순차 대비 시간 단축</strong>. 토큰 비용은 N배.</div>
     </div>
-    <div class="box">
-      <div class="blabel">Evaluator</div>
-      <h3>Subagent B — 검토자</h3>
-      <div class="body">"갱신을 고민 중인 고객" 페르소나로 위 초안 검토. <strong>다른 시각</strong>에서 빠진 것 짚기.</div>
+    <div class="char">
+      <div class="clabel">특성 3</div>
+      <h3>결과만 반환</h3>
+      <div class="body">작업 과정은 메인 컨텍스트에 없음. <strong>결과 3줄만</strong> 받아서 다음 작업 진행.</div>
     </div>
   </div>
-  <div class="csm"><strong>CSM 적용</strong>: 내가 쓴 메일 초안을 "지난 분기 지표가 아쉬웠던 고객 담당자의 눈"으로 검토받으면 — 내가 놓쳤던 표현·누락 항목이 나온다.</div>
 </body>
 </html>

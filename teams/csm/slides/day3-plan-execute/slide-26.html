@@ -2,68 +2,80 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S26 세 번째 PR · B3</title>
+<title>Day 3 · S26 주의점 3가지 + 짝꿍 활용 대화</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .gitlog { margin-top: 10pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; }
-  .gitlog .gltitle { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; margin-bottom: 8pt; }
-  .gitlog .commits { display: flex; flex-direction: column; gap: 6pt; }
-  .gitlog .commit { padding: 8pt 12pt; border-radius: 8pt; display: flex; gap: 12pt; align-items: center; }
-  .gitlog .commit.today { background: #c56a4a; }
-  .gitlog .commit.past { background: rgba(0,0,0,0.06); }
-  .gitlog .commit .day { font-size: 9pt; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; min-width: 70pt; }
-  .gitlog .commit.today .day { color: #f2cdb4; }
-  .gitlog .commit.past .day { color: #a0917e; }
-  .gitlog .commit .msg { font-size: 11pt; font-family: 'SF Mono', Menlo, monospace; }
-  .gitlog .commit.today .msg { color: #fff; }
-  .gitlog .commit.past .msg { color: #2b2520; }
-  .steps { display: flex; flex-direction: column; gap: 7pt; flex: 1; margin-top: 10pt; }
-  .step { display: grid; grid-template-columns: 90pt 1fr; gap: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; align-items: start; }
-  .step .slabel { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; padding-top: 2pt; }
-  .step .sbody { font-size: 10pt; line-height: 1.6; color: #42332a; }
-  .step .sbody strong { color: #b45a34; font-weight: 600; }
-  .step .code { font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; background: rgba(0,0,0,0.06); padding: 3pt 6pt; border-radius: 4pt; display: inline-block; margin-top: 3pt; color: #2b2520; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .col { padding: 12pt 14pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 7pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .clabel { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .clabel { color: #b45a34; }
+  .col.terra .clabel { color: #f2cdb4; }
+  .col h3 { font-size: 12pt; font-weight: 600; line-height: 1.3; letter-spacing: -0.005em; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col h3 em { font-style: normal; }
+  .col.cream h3 em { color: #b45a34; }
+  .col.terra h3 em { color: #ffdfc9; }
+  .row { display: grid; grid-template-columns: 60pt 1fr; gap: 10pt; align-items: start; padding-top: 5pt; border-top: 1px dashed; }
+  .col.cream .row { border-color: rgba(0,0,0,0.1); }
+  .col.terra .row { border-color: rgba(255,255,255,0.18); }
+  .row:first-of-type { border-top: none; padding-top: 0; }
+  .row .rlabel { font-size: 8.5pt; letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase; padding-top: 1pt; }
+  .col.cream .row .rlabel { color: #b45a34; }
+  .col.terra .row .rlabel { color: #f2cdb4; }
+  .row .rbody { font-size: 9.5pt; line-height: 1.5; }
+  .col.cream .row .rbody { color: #42332a; }
+  .col.terra .row .rbody { color: #f5e4d4; }
+  .col.cream .row .rbody strong { color: #b45a34; font-weight: 600; }
+  .col.terra .row .rbody strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 9.8pt; line-height: 1.5; color: #42332a; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 · B3</div>
-  <div class="h-large">git log 3개 — <em>3일간 변화량</em>이 보인다</div>
+  <div class="eyebrow">주의점 + 짝꿍 대화 · 5분 · B2</div>
+  <div class="h-large">쓰기 전에 <em>3가지 주의</em> + 짝꿍과 후보 찾기</div>
   <div class="rule"></div>
-  <div class="intro">오늘 변경분을 commit하고 PR로 올린다. <strong>코드가 없어도 된다</strong>. SKILL.md 한 줄 변경도 commit이다.</div>
-  <div class="gitlog">
-    <div class="gltitle">git log — 타임라인</div>
-    <div class="commits">
-      <div class="commit today">
-        <div class="day">오늘 · Day 3</div>
-        <div class="msg">refine: [스킬 이름] - 업무 적용 후 보완</div>
+  <div class="intro">Subagent는 강력하지만 잘못 쓰면 손해. 알고 쓰는 것과 모르고 쓰는 것은 결과가 다르다. 동시에, 짝꿍과 함께 우리 업무에 적용할 후보를 찾아둔다.</div>
+  <div class="grid">
+    <div class="col cream">
+      <div class="clabel">주의점 3가지</div>
+      <h3>알고 써야 손해 안 본다</h3>
+      <div class="row">
+        <div class="rlabel">주의 1</div>
+        <div class="rbody"><strong>맥락 공유 X</strong> — Subagent는 메인 대화를 보지 못한다. 필요한 맥락은 입력에 명시.</div>
       </div>
-      <div class="commit past">
-        <div class="day">어제 · Day 2</div>
-        <div class="msg">refine: [스킬 이름] - Day 2 Clarify 반영</div>
+      <div class="row">
+        <div class="rlabel">주의 2</div>
+        <div class="rbody"><strong>비용 증폭</strong> — Subagent N개 = 토큰 약 N배. 짧은 작업엔 직접이 효율적.</div>
       </div>
-      <div class="commit past">
-        <div class="day">Day 1</div>
-        <div class="msg">feat: CLAUDE.md 초안</div>
+      <div class="row">
+        <div class="rlabel">주의 3</div>
+        <div class="rbody"><strong>결과 합치기 책임</strong> — Subagent도 환각 위험 동일. 검증 없이 사용 금지.</div>
+      </div>
+    </div>
+    <div class="col terra">
+      <div class="clabel">짝꿍과 5분 대화</div>
+      <h3>우리 업무 어디에 <em>쓰면 좋을까</em></h3>
+      <div class="row">
+        <div class="rlabel">후보 1</div>
+        <div class="rbody">지금 <strong>순차로 하는데 병렬로</strong> 돌리면 좋을 것 (패턴 1).</div>
+      </div>
+      <div class="row">
+        <div class="rlabel">후보 2</div>
+        <div class="rbody">한 번에 <strong>3곳 이상</strong>에서 정보 모아야 하는 작업 — Notion+Slack+SFDC 등.</div>
+      </div>
+      <div class="row">
+        <div class="rlabel">후보 3</div>
+        <div class="rbody">"끝나길 <strong>기다리며 딴 일</strong>" 패턴 — 기다림 시간 = 병렬 가능 신호.</div>
       </div>
     </div>
   </div>
-  <div class="steps">
-    <div class="step">
-      <div class="slabel">1단계 · 5분</div>
-      <div class="sbody">
-        <strong>commit</strong><br>
-        <span class="code">git add SKILL.md && git commit -m "refine: [스킬 이름] - 무엇을 보완"</span>
-      </div>
-    </div>
-    <div class="step">
-      <div class="slabel">2단계 · 3분</div>
-      <div class="sbody">
-        <strong>PR 생성</strong> — 리뷰어: 어제 짝꿍. PR 본문에 (1)오늘 적용한 업무 (2)가장 크게 바뀐 부분 (3)아직 미완성 부분 3가지를 짧게 적는다.
-      </div>
-    </div>
-  </div>
+  <div class="foot">지금 단계에서는 <strong>"개념 알고 역할 분리 1번 체험 + 후보 3개 메모"</strong>가 목표. 실제 도입은 다음 사이클에서.</div>
 </body>
 </html>

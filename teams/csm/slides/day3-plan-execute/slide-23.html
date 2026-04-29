@@ -2,53 +2,77 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S23 Subagent 주의점 3가지 · B2</title>
+<title>Day 3 · S23 패턴 3 컨텍스트 보호</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .warnings { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 10pt; }
-  .warn { display: grid; grid-template-columns: 130pt 1fr; gap: 14pt; padding: 12pt 16pt; border-radius: 12pt; align-items: center; }
-  .warn.w1 { background: #ebe1d2; }
-  .warn.w2 { background: #ebe1d2; }
-  .warn.w3 { background: #ebe1d2; }
-  .warn .wlabel { font-size: 9pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .warn .wtitle { font-size: 13pt; font-weight: 700; color: #2b2520; margin-top: 3pt; line-height: 1.28; }
-  .warn .wbody { font-size: 10pt; line-height: 1.6; color: #42332a; }
-  .warn .wbody strong { color: #b45a34; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; }
+  .col { padding: 11pt 14pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 6pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .clabel { font-size: 9pt; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+  .col.cream .clabel { color: #a0917e; }
+  .col.terra .clabel { color: #f2cdb4; }
+  .col h3 { font-size: 14pt; font-weight: 600; line-height: 1.28; letter-spacing: -0.005em; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); }
+  .col.terra .divider { background: rgba(255,255,255,0.18); }
+  .item { font-size: 10.5pt; line-height: 1.6; }
+  .col.cream .item { color: #42332a; }
+  .col.terra .item { color: #f5e4d4; }
+  .col.cream .item strong { color: #b45a34; font-weight: 600; }
+  .col.terra .item strong { color: #fff; font-weight: 600; }
+  .summary { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8pt; margin-top: 7pt; }
+  .sum-cell { padding: 7pt 10pt; border-radius: 8pt; background: #ebe1d2; text-align: center; }
+  .sum-cell .sh { font-size: 10.5pt; font-weight: 600; color: #2b2520; }
+  .sum-cell .sp { font-size: 9pt; color: #7d6b5a; margin-top: 1pt; }
+  .sum-cell .sv { font-size: 9.5pt; font-weight: 600; color: #b45a34; margin-top: 2pt; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">주의점 · 3가지 · B2</div>
-  <div class="h-large">쓰기 전에 <em>3가지만</em> 알아두기</div>
+  <div class="eyebrow">패턴 3 · B2</div>
+  <div class="h-large">컨텍스트 보호 — <em>큰 결과를 Subagent에 맡기고</em> 요약만 받는다</div>
   <div class="rule"></div>
-  <div class="intro">Subagent는 강력하지만 잘못 쓰면 오히려 손해다. 이 3가지를 알고 쓰는 것과 모르고 쓰는 것은 결과가 다르다.</div>
-  <div class="warnings">
-    <div class="warn w1">
-      <div>
-        <div class="wlabel">주의 1</div>
-        <div class="wtitle">맥락 공유 X</div>
-      </div>
-      <div class="wbody">Subagent는 <strong>메인 대화를 보지 못한다</strong>. "지금까지 우리가 얘기한 내용 기반으로"라고 해도 Subagent는 모른다. 필요한 맥락은 <strong>입력에 명시적으로 포함</strong>해야 한다.</div>
+  <div class="intro">메인 AI가 100페이지 자료를 직접 읽으면 컨텍스트 창이 꽉 찬다. <strong>Subagent에게 맡기면 핵심 3줄만 올라온다</strong>.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="clabel">직접 처리 · Before</div>
+      <h3>메인 AI가 100페이지 직접 읽기</h3>
+      <div class="divider"></div>
+      <div class="item">회의록 100페이지 전체 로드</div>
+      <div class="item">→ <strong>컨텍스트 창 포화</strong></div>
+      <div class="item">→ 이후 대화에서 이전 내용 잊어버림</div>
+      <div class="item">→ 다음 작업 품질 저하</div>
     </div>
-    <div class="warn w2">
-      <div>
-        <div class="wlabel">주의 2</div>
-        <div class="wtitle">비용 증폭</div>
-      </div>
-      <div class="wbody">병렬 호출 = 토큰 합산. <strong>Subagent N개 = 비용 약 N배</strong>. 짧고 단순한 작업에는 Subagent 없이 직접 처리가 오히려 효율적이다. 정말 병렬로 해야 이득인지 먼저 판단한다.</div>
-    </div>
-    <div class="warn w3">
-      <div>
-        <div class="wlabel">주의 3</div>
-        <div class="wtitle">결과 합치기 책임</div>
-      </div>
-      <div class="wbody">각 Subagent 결과를 메인 AI가 합쳐야 한다. <strong>"Subagent가 했으니 검증 없이 사용해도 된다"</strong>는 착각이 가장 위험. Subagent도 환각 위험 동일.</div>
+    <div class="col terra">
+      <div class="clabel">컨텍스트 보호 · After</div>
+      <h3>Subagent에게 분석 맡기기</h3>
+      <div class="divider"></div>
+      <div class="item">Subagent: 회의록 100페이지 분석</div>
+      <div class="item">↓ <strong>핵심 3줄만 메인에 반환</strong></div>
+      <div class="item">메인 AI: 요약 3줄로 다음 작업 진행</div>
+      <div class="item">→ 컨텍스트 여유 유지</div>
     </div>
   </div>
-  <div class="foot">지금은 <strong>"개념 알고 역할 분리 1번 체험"</strong>이 목표. 스킬에 실제로 추가하는 건 2주 프로젝트에서.</div>
+  <div class="summary">
+    <div class="sum-cell">
+      <div class="sh">패턴 1</div>
+      <div class="sp">병렬 검색</div>
+      <div class="sv">시간 단축</div>
+    </div>
+    <div class="sum-cell">
+      <div class="sh">패턴 2</div>
+      <div class="sp">역할 분리</div>
+      <div class="sv">품질 향상</div>
+    </div>
+    <div class="sum-cell">
+      <div class="sh">패턴 3</div>
+      <div class="sp">컨텍스트 보호</div>
+      <div class="sv">컨텍스트 절약</div>
+    </div>
+  </div>
 </body>
 </html>

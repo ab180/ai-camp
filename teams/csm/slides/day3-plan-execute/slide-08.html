@@ -2,45 +2,65 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S08 짝꿍 공유 · B0</title>
+<title>Day 3 · S08 짝꿍 호출 흐름 4단계</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .qs { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 10pt; }
-  .q { display: grid; grid-template-columns: 26pt 1fr; gap: 12pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: start; }
-  .q-num { font-size: 18pt; font-weight: 700; color: #c56a4a; line-height: 1.2; }
-  .q-body { display: flex; flex-direction: column; gap: 4pt; }
-  .q-body .qt { font-size: 12pt; font-weight: 600; color: #2b2520; line-height: 1.4; letter-spacing: -0.005em; }
-  .q-body .qt em { font-style: normal; color: #b45a34; }
-  .q-body .hint { font-size: 10pt; color: #5a4d40; line-height: 1.55; }
-  .q-body .hint strong { color: #b45a34; font-weight: 600; }
-  .closing { margin-top: 10pt; padding: 10pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10.5pt; line-height: 1.55; }
-  .closing strong { color: #fff; font-weight: 700; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9pt; flex: 1; margin-top: 12pt; }
+  .step { padding: 13pt 14pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; position: relative; }
+  .step.active { background: #c56a4a; }
+  .step-num { font-size: 10pt; letter-spacing: 0.2em; color: #b45a34; font-weight: 700; }
+  .step.active .step-num { color: #f2cdb4; }
+  .step h3 { font-size: 12.5pt; font-weight: 600; color: #2b2520; line-height: 1.32; letter-spacing: -0.005em; }
+  .step.active h3 { color: #fff; }
+  .step .body { font-size: 9.7pt; line-height: 1.55; color: #42332a; margin-top: 2pt; }
+  .step.active .body { color: #f5e4d4; }
+  .step .body strong { color: #b45a34; font-weight: 600; }
+  .step.active .body strong { color: #fff; }
+  .step .time { font-size: 9pt; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; margin-top: 2pt; }
+  .step.active .time { color: #f2cdb4; }
+  .arrow { position: absolute; right: -8pt; top: 50%; transform: translateY(-50%); font-size: 14pt; color: #c56a4a; z-index: 1; }
+  .step:last-child .arrow { display: none; }
+  .foot { margin-top: 12pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">짝꿍 공유 · 5분 · B0</div>
-  <div class="h-large">후보 목록을 짝꿍에게 보여주고 <em>케이스 #1 확정</em></div>
+  <div class="eyebrow">실습 흐름 · ~12분 · B0</div>
+  <div class="h-large">짝꿍 호출 — <em>4단계</em>로 한 바퀴</div>
   <div class="rule"></div>
-  <div class="intro">본인이 케이스를 혼자 고르기 어려울 때 외부 시선이 빠르게 잡아준다. 짝꿍에게 목록을 보여주고 이것 하나만 받는다.</div>
-  <div class="qs">
-    <div class="q">
-      <div class="q-num">1</div>
-      <div class="q-body">
-        <div class="qt">이 중에서 <em>입출력이 가장 명확한 게</em> 어떤 거야?</div>
-        <div class="hint">짝꿍의 답 = 오늘 케이스 #1의 시작점. 본인이 판단하기 어려운 것을 외부 시선이 정해준다.</div>
-      </div>
+  <div class="intro">너무 길게 할 필요 없다. <strong>SKILL.md만 교환하고 한 번 호출, 메모 1-2줄</strong>이면 충분하다. 이 메모를 B1 사이클의 인풋으로 가져간다.</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">S1</div>
+      <h3>SKILL.md 교환</h3>
+      <div class="body">Slack DM 또는 GitHub 링크로 짝꿍에게 전달.</div>
+      <div class="time">~2분</div>
+      <div class="arrow">→</div>
     </div>
-    <div class="q">
-      <div class="q-num">2</div>
-      <div class="q-body">
-        <div class="qt">케이스 #2, #3으로 이어갈 후보 <em>1개씩 정하기</em></div>
-        <div class="hint"><strong>2개로 시작해도 된다.</strong> 3개는 권장이지 최소 조건이 아니다. 케이스 #1을 먼저 돌리고 두 번째를 찾아도 된다.</div>
-      </div>
+    <div class="step active">
+      <div class="step-num">S2 · 핵심</div>
+      <h3>짝꿍이 입력자로 한 번 호출</h3>
+      <div class="body">짝꿍이 <strong>본인 도메인 모르는 사람 시점</strong>으로 입력 → 결과 받기.</div>
+      <div class="time">~5분</div>
+      <div class="arrow">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">S3</div>
+      <h3>빈틈 메모 1-2줄</h3>
+      <div class="body">서로 양방향. <strong>"이걸 어떻게 줘?"가 막힌 지점</strong>이 핵심 신호.</div>
+      <div class="time">~3분</div>
+      <div class="arrow">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">S4</div>
+      <h3>메모를 B1 인풋으로</h3>
+      <div class="body">메모를 옆에 두고 본인 케이스 #1을 시작 — <strong>처음부터 의식</strong>.</div>
+      <div class="time">~2분</div>
     </div>
   </div>
-  <div class="closing">케이스가 정해지면 Claude를 지금 열지 않아도 된다. <strong>케이스를 고르는 것이 B0의 목표</strong>. 지금 바로 B1으로 넘어간다.</div>
+  <div class="foot">짝꿍 호출이 끝나면 메모는 두 가지 — <strong>본인 SKILL.md의 빈틈 + 짝꿍 SKILL.md에서 가져갈 1개</strong>.</div>
 </body>
 </html>

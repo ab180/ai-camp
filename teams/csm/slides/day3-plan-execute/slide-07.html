@@ -2,64 +2,74 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S07 케이스 후보 고르는 기준</title>
+<title>Day 3 · S07 짝꿍이 확인하는 3가지</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .criteria { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .crit { padding: 13pt 15pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 6pt; }
-  .crit .label { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 600; text-transform: uppercase; }
-  .crit h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.28; }
-  .crit .body { font-size: 10pt; line-height: 1.6; color: #42332a; margin-top: 2pt; }
-  .crit .body strong { color: #b45a34; font-weight: 600; }
-  .examples { margin-top: 12pt; padding: 12pt 16pt; background: #c56a4a; border-radius: 12pt; }
-  .examples .ex-title { font-size: 9pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; margin-bottom: 7pt; }
-  .ex-list { display: flex; gap: 10pt; }
-  .ex-item { flex: 1; padding: 8pt 12pt; background: rgba(255,255,255,0.12); border-radius: 8pt; }
-  .ex-item .ex-name { font-size: 11pt; font-weight: 600; color: #fff; }
-  .ex-item .ex-io { font-size: 9.5pt; color: #f5e4d4; margin-top: 3pt; line-height: 1.5; }
+  .rows { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 12pt; }
+  .row { display: grid; grid-template-columns: 110pt 1fr; gap: 14pt; padding: 12pt 16pt; background: #ebe1d2; border-radius: 12pt; align-items: center; }
+  .row .rlabel { display: flex; flex-direction: column; gap: 2pt; }
+  .row .rnum { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .row .rtitle { font-size: 13pt; font-weight: 700; color: #2b2520; line-height: 1.28; letter-spacing: -0.005em; }
+  .row .rbody { font-size: 10pt; line-height: 1.6; color: #42332a; }
+  .row .rbody strong { color: #b45a34; font-weight: 600; }
+  .row .rcheck { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 4pt; }
+  .row .ck { padding: 5pt 9pt; border-radius: 6pt; font-size: 9.5pt; }
+  .row .ck.good { background: rgba(197,106,74,0.12); color: #2b2520; }
+  .row .ck.bad { background: rgba(0,0,0,0.06); color: #7d6b5a; }
+  .row .ck strong { color: #b45a34; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">실습 준비 · B0</div>
-  <div class="h-large">본인 케이스 후보를 <em>3가지 기준</em>으로 고른다</div>
+  <div class="eyebrow">짝꿍 체크리스트 · B0</div>
+  <div class="h-large">짝꿍이 확인하는 <em>3가지</em></div>
   <div class="rule"></div>
-  <div class="intro">사이클을 돌릴 케이스는 "잘 하기 위한 것"이 아니라 <strong>"반복 패턴을 발견하기 위한 것"</strong>이다. 완벽한 케이스가 필요하지 않다.</div>
-  <div class="criteria">
-    <div class="crit">
-      <div class="label">기준 A · 반복 빈도</div>
-      <h3>주 2회 이상 하는 작업인가</h3>
-      <div class="body">가끔 하는 것보다 <strong>자주 하는 것</strong>이 스킬로 만들 가치가 있다. 반복이 없으면 패턴도 없다.</div>
+  <div class="intro">짝꿍이 본인 SKILL.md를 받아 한 번 호출해본다. 이때 짝꿍이 보는 것은 결과 품질이 아니라 <strong>"이걸 어떻게 줘야 하지?"가 막히는 지점</strong>이다.</div>
+  <div class="rows">
+    <div class="row">
+      <div class="rlabel">
+        <div class="rnum">체크 1</div>
+        <div class="rtitle">입력값 가이드 명확?</div>
+      </div>
+      <div class="rbody">
+        SKILL.md를 보고 <strong>"무엇을 줘야 하는지"</strong>가 한 번에 떠오르는가?
+        <div class="rcheck">
+          <div class="ck good"><strong>O</strong> "미팅 제목·날짜·참석자·메모 4개 줘"</div>
+          <div class="ck bad"><strong>X</strong> "미팅 정보 적당히 줘"</div>
+        </div>
+      </div>
     </div>
-    <div class="crit">
-      <div class="label">기준 B · 입출력</div>
-      <h3>"~를 주면 ~가 나온다"로 설명 가능한가</h3>
-      <div class="body">막연한 것은 케이스로 정하기 어렵다. <strong>한 줄로 입출력이 떠오르는 것</strong>이 먼저다.</div>
+    <div class="row">
+      <div class="rlabel">
+        <div class="rnum">체크 2</div>
+        <div class="rtitle">출력 형태 정해짐?</div>
+      </div>
+      <div class="rbody">
+        결과가 <strong>매번 같은 형식</strong>으로 나오는가? 짝꿍이 두 번 호출해서 형식이 달라지면 가이드 부족.
+        <div class="rcheck">
+          <div class="ck good"><strong>O</strong> "불릿 5개, 단문, 마지막에 다음 액션"</div>
+          <div class="ck bad"><strong>X</strong> 한 번은 불릿, 한 번은 줄글</div>
+        </div>
+      </div>
     </div>
-    <div class="crit">
-      <div class="label">기준 C · MCP 활용</div>
-      <h3>Notion · Slack · 캘린더 중 하나라도 연결 가능한가</h3>
-      <div class="body">MCP로 정보를 끌어올 수 있으면 <strong>AI가 더 잘 도울 수 있다</strong>. 연결 없어도 되지만 있으면 더 좋다.</div>
+    <div class="row">
+      <div class="rlabel">
+        <div class="rnum">체크 3</div>
+        <div class="rtitle">빠진 항목?</div>
+      </div>
+      <div class="rbody">
+        <strong>당연히 있어야 하는데 없는 것</strong>. 짝꿍이 "이건 왜 결과에 안 나와?"라고 묻는 부분 = 본인의 암묵지.
+        <div class="rcheck">
+          <div class="ck good"><strong>O</strong> 다음 액션 담당자, 마감일</div>
+          <div class="ck bad"><strong>X</strong> 결과에 빠져도 본인은 못 알아챔</div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="examples">
-    <div class="ex-title">참고 예시 — 내 것으로 바꿔서 사용</div>
-    <div class="ex-list">
-      <div class="ex-item">
-        <div class="ex-name">리캡 메일</div>
-        <div class="ex-io">미팅 메모 → 리캡 메일 초안</div>
-      </div>
-      <div class="ex-item">
-        <div class="ex-name">온보딩 현황 요약</div>
-        <div class="ex-io">담당 고객 목록 → 진행률 요약</div>
-      </div>
-      <div class="ex-item">
-        <div class="ex-name">문의 답변 초안</div>
-        <div class="ex-io">고객 문의 내용 → 답변 초안</div>
-      </div>
-    </div>
-  </div>
+  <div class="foot">본인 도메인을 모르는 짝꿍일수록 더 빨리 잡는다. <strong>"이거 어떻게 줘?"가 막히는 게 핵심 신호</strong>.</div>
 </body>
 </html>
