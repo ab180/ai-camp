@@ -2,68 +2,33 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S28 어제 vs 오늘 차이표</title>
+<title>Day 3 · S28 B3 섹션 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
-  .intro strong { color: #b45a34; }
-  .table { display: grid; grid-template-columns: 110pt 1fr 70pt 70pt; gap: 0; flex: 1; margin-top: 10pt; border-radius: 10pt; overflow: hidden; background: #ebe1d2; }
-  .th, .td { padding: 6pt 12pt; font-size: 9.5pt; line-height: 1.45; display: flex; align-items: center; }
-  .th { background: #c56a4a; color: #fff; font-weight: 700; letter-spacing: 0.05em; font-size: 9pt; text-transform: uppercase; }
-  .td { color: #42332a; border-top: 1px solid rgba(0,0,0,0.07); }
-  .td.step { font-weight: 600; color: #2b2520; }
-  .td.detail { color: #42332a; }
-  .td.detail strong { color: #b45a34; font-weight: 600; }
-  .td.mark { justify-content: center; font-weight: 700; }
-  .td.yes { color: #2e7d4f; }
-  .td.dash { color: #b8a890; }
-  .td.new { color: #b45a34; }
-  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.5; }
-  .foot strong { color: #fff; font-weight: 700; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 580pt; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">어제 vs 오늘 · B3</div>
-  <div class="h-large">어제는 <em>'올리기'</em>까지 — 오늘은 <em>'머지+pull'</em>까지 한 바퀴</div>
-  <div class="rule"></div>
-  <div class="intro">PR 사이클은 5단계 + 동기화. 어제 첫 두 단계만 했다. 오늘 나머지 3단계를 <strong>직접 굴려봐야 "알겠다"</strong>가 온다.</div>
-  <div class="table">
-    <div class="th">단계</div>
-    <div class="th">하는 일</div>
-    <div class="th">어제</div>
-    <div class="th">오늘</div>
-
-    <div class="td step">1. clone</div>
-    <div class="td detail">팀 repo를 본인 컴퓨터로 가져온다</div>
-    <div class="td mark yes">O</div>
-    <div class="td mark dash">-</div>
-
-    <div class="td step">2. 파일 수정</div>
-    <div class="td detail">SKILL.md 수정 + <strong>코멘트 받고 답하기</strong> (오늘)</div>
-    <div class="td mark yes">O</div>
-    <div class="td mark new">+ 코멘트</div>
-
-    <div class="td step">3. commit</div>
-    <div class="td detail">변경분 메시지와 함께 저장</div>
-    <div class="td mark yes">O</div>
-    <div class="td mark yes">O</div>
-
-    <div class="td step">4. push</div>
-    <div class="td detail">원격 repo로 올림 — <strong>같은 PR 자동 업데이트</strong></div>
-    <div class="td mark yes">O</div>
-    <div class="td mark new">+ 자동 갱신</div>
-
-    <div class="td step">5. PR 머지</div>
-    <div class="td detail">PR 생성 → 짝꿍 승인 → <strong>squash merge</strong></div>
-    <div class="td mark dash">PR 생성</div>
-    <div class="td mark new">+ 머지</div>
-
-    <div class="td step">6. pull</div>
-    <div class="td detail">main에서 <strong>git pull로 동기화</strong> (오늘 신규)</div>
-    <div class="td mark dash">-</div>
-    <div class="td mark new">신규 O</div>
+  <div class="top">
+    <div class="block">Block 3</div>
+    <div class="time">~20 min</div>
   </div>
-  <div class="foot">5단계 다 굴러봐야 <strong>"이제 알겠다"</strong> — 머지+pull이 빠지면 "내 변경이 main에 들어갔다"는 체감이 안 온다.</div>
+  <div class="mid">
+    <h1>Git/PR 협업 —<br>어제 PR 받기 → 머지 → pull</h1>
+    <div class="sub">어제 "올리기"에 더해 <strong>한 바퀴 완주</strong>. 코멘트 받기·답하기·머지·pull까지 5단계 다 굴러봐야 "이제 알겠다"가 온다.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">코멘트 → 수정 → 푸시 → 머지 → pull</div>
+    <div class="count">5 slides</div>
+  </div>
 </body>
 </html>

@@ -2,81 +2,68 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 3 · S29 협업 사이클 다이어그램</title>
+<title>Day 3 · S29 어제 vs 오늘 차이표</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8pt; flex: 1; margin-top: 12pt; }
-  .step { padding: 11pt 12pt; border-radius: 11pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 5pt; position: relative; }
-  .step.key { background: #c56a4a; color: #f7efe4; }
-  .step .snum { font-size: 9pt; letter-spacing: 0.2em; color: #b45a34; font-weight: 700; }
-  .step.key .snum { color: #f2cdb4; }
-  .step h3 { font-size: 11pt; font-weight: 600; color: #2b2520; line-height: 1.3; letter-spacing: -0.005em; }
-  .step.key h3 { color: #fff; }
-  .step .body { font-size: 8.8pt; line-height: 1.5; color: #42332a; }
-  .step.key .body { color: #f5e4d4; }
-  .step .body strong { color: #b45a34; font-weight: 600; }
-  .step.key .body strong { color: #fff; font-weight: 600; }
-  .step .time { font-size: 8.5pt; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; }
-  .step.key .time { color: #f2cdb4; }
-  .arrow { position: absolute; right: -7pt; top: 50%; transform: translateY(-50%); font-size: 12pt; color: #c56a4a; z-index: 2; }
-  .step:last-child .arrow { display: none; }
-  .terminal { margin-top: 10pt; padding: 11pt 16pt; background: #1a1410; color: #f5e4d4; border-radius: 10pt; font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.6; }
-  .terminal .pmt { color: #c56a4a; }
-  .terminal .cmd { color: #f5e4d4; }
-  .terminal .cmt { color: #7d6b5a; }
-  .terminal .line { white-space: nowrap; }
-  .foot { margin-top: 9pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 9.8pt; line-height: 1.5; color: #42332a; border-left: 3pt solid #c56a4a; }
-  .foot strong { color: #b45a34; }
+  .table { display: grid; grid-template-columns: 110pt 1fr 70pt 70pt; gap: 0; flex: 1; margin-top: 10pt; border-radius: 10pt; overflow: hidden; background: #ebe1d2; }
+  .th, .td { padding: 6pt 12pt; font-size: 9.5pt; line-height: 1.45; display: flex; align-items: center; }
+  .th { background: #c56a4a; color: #fff; font-weight: 700; letter-spacing: 0.05em; font-size: 9pt; text-transform: uppercase; }
+  .td { color: #42332a; border-top: 1px solid rgba(0,0,0,0.07); }
+  .td.step { font-weight: 600; color: #2b2520; }
+  .td.detail { color: #42332a; }
+  .td.detail strong { color: #b45a34; font-weight: 600; }
+  .td.mark { justify-content: center; font-weight: 700; }
+  .td.yes { color: #2e7d4f; }
+  .td.dash { color: #b8a890; }
+  .td.new { color: #b45a34; }
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 10pt; line-height: 1.5; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">5단계 흐름 · B3</div>
-  <div class="h-large">협업 사이클 — <em>코멘트 → 수정 → 머지 → pull</em></div>
+  <div class="eyebrow">어제 vs 오늘 · B3</div>
+  <div class="h-large">어제는 <em>'올리기'</em>까지 — 오늘은 <em>'머지+pull'</em>까지 한 바퀴</div>
   <div class="rule"></div>
-  <div class="intro">짝꿍이 어제 PR에 코멘트를 달았다. 오늘은 <strong>그 코멘트에 답하고 수정 → 같은 PR에 푸시 → 머지 → main에서 pull</strong> 한 바퀴를 돈다.</div>
-  <div class="flow">
-    <div class="step">
-      <div class="snum">1</div>
-      <h3>짝꿍 코멘트</h3>
-      <div class="body">"출력 형태 가이드 모호" 같은 코멘트를 받음.</div>
-      <div class="time">~1분</div>
-      <div class="arrow">→</div>
-    </div>
-    <div class="step">
-      <div class="snum">2</div>
-      <h3>답 + 수정 commit</h3>
-      <div class="body">코멘트에 <strong>답글 + 파일 수정 → commit</strong></div>
-      <div class="time">~5분</div>
-      <div class="arrow">→</div>
-    </div>
-    <div class="step">
-      <div class="snum">3</div>
-      <h3>같은 PR에 push</h3>
-      <div class="body">push만으로 <strong>같은 PR 자동 갱신</strong>.</div>
-      <div class="time">~1분</div>
-      <div class="arrow">→</div>
-    </div>
-    <div class="step key">
-      <div class="snum">4 · 핵심</div>
-      <h3>승인 → squash merge</h3>
-      <div class="body">짝꿍 Approve → <strong>"Squash and merge"</strong></div>
-      <div class="time">~3분</div>
-      <div class="arrow">→</div>
-    </div>
-    <div class="step key">
-      <div class="snum">5 · 신규</div>
-      <h3>main에서 pull</h3>
-      <div class="body">로컬 main 동기화 + <strong>log 확인</strong></div>
-      <div class="time">~2분</div>
-    </div>
+  <div class="intro">PR 사이클은 5단계 + 동기화. 어제 첫 두 단계만 했다. 오늘 나머지 3단계를 <strong>직접 굴려봐야 "알겠다"</strong>가 온다.</div>
+  <div class="table">
+    <div class="th">단계</div>
+    <div class="th">하는 일</div>
+    <div class="th">어제</div>
+    <div class="th">오늘</div>
+
+    <div class="td step">1. clone</div>
+    <div class="td detail">팀 repo를 본인 컴퓨터로 가져온다</div>
+    <div class="td mark yes">O</div>
+    <div class="td mark dash">-</div>
+
+    <div class="td step">2. 파일 수정</div>
+    <div class="td detail">SKILL.md 수정 + <strong>코멘트 받고 답하기</strong> (오늘)</div>
+    <div class="td mark yes">O</div>
+    <div class="td mark new">+ 코멘트</div>
+
+    <div class="td step">3. commit</div>
+    <div class="td detail">변경분 메시지와 함께 저장</div>
+    <div class="td mark yes">O</div>
+    <div class="td mark yes">O</div>
+
+    <div class="td step">4. push</div>
+    <div class="td detail">원격 repo로 올림 — <strong>같은 PR 자동 업데이트</strong></div>
+    <div class="td mark yes">O</div>
+    <div class="td mark new">+ 자동 갱신</div>
+
+    <div class="td step">5. PR 머지</div>
+    <div class="td detail">PR 생성 → 짝꿍 승인 → <strong>squash merge</strong></div>
+    <div class="td mark dash">PR 생성</div>
+    <div class="td mark new">+ 머지</div>
+
+    <div class="td step">6. pull</div>
+    <div class="td detail">main에서 <strong>git pull로 동기화</strong> (오늘 신규)</div>
+    <div class="td mark dash">-</div>
+    <div class="td mark new">신규 O</div>
   </div>
-  <div class="terminal">
-    <div class="line"><span class="pmt">$</span> <span class="cmd">git checkout main &amp;&amp; git pull</span>&nbsp;&nbsp;<span class="cmt"># 5단계: 머지된 변경 가져오기</span></div>
-    <div class="line"><span class="pmt">$</span> <span class="cmd">git log --oneline -5</span>&nbsp;&nbsp;<span class="cmt"># 본인 commit이 main에 들어왔는지 확인</span></div>
-  </div>
-  <div class="foot">push가 이미 끝나도 <strong>머지 전엔 내 변경이 main에 없다</strong>. 머지 → pull까지 가야 "main에 내가 만든 게 있다"는 체감이 온다.</div>
+  <div class="foot">5단계 다 굴러봐야 <strong>"이제 알겠다"</strong> — 머지+pull이 빠지면 "내 변경이 main에 들어갔다"는 체감이 안 온다.</div>
 </body>
 </html>
