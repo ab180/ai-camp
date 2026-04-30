@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Q1 — 개수</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Pretendard',sans-serif;background:#222}
+  .slide{width:720pt;height:405pt;background:#0F0F0F;color:#fff;padding:30pt 40pt;display:flex;flex-direction:column;gap:14pt}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1pt solid #333;padding-bottom:12pt}
+  .head h2{font-size:22pt;font-weight:800;letter-spacing:-0.5pt}
+  .head h2 .hl{color:#00D9FF}
+  .head .eb{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#00D9FF;letter-spacing:2pt}
+  .body{display:grid;grid-template-columns:1.7fr 1fr;gap:18pt;flex:1}
+  .chart{background:#1A1A1A;border:1pt solid #333;padding:22pt;display:flex;flex-direction:column}
+  .chart-title{font-family:'JetBrains Mono',monospace;font-size:10pt;color:#B0B0B0;letter-spacing:1.5pt;margin-bottom:14pt}
+  .chart-title b{color:#fff}
+  .chart svg{width:100%;flex:1}
+  .side{display:flex;flex-direction:column;gap:12pt}
+  .stat{background:#1A1A1A;border:1pt solid #333;padding:18pt;flex:1;display:flex;flex-direction:column;justify-content:center}
+  .stat .lbl{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#B0B0B0;letter-spacing:1.5pt}
+  .stat .big{font-size:30pt;font-weight:800;letter-spacing:-1pt;line-height:1.3;margin-top:6pt}
+  .stat .big.danger{color:#FF5555}
+  .stat .big.accent{color:#00D9FF}
+  .stat p{font-size:10pt;color:#B0B0B0;line-height:1.5;margin-top:8pt}
+  .src{font-family:'JetBrains Mono',monospace;font-size:8pt;color:#666;letter-spacing:1pt;border-top:1pt solid #333;padding-top:8pt}
+</style>
+</head>
+<body>
+  <div class="slide">
+    <header class="head">
+      <h2>Q1. 작업 복잡도에 따라 <span class="hl">1 → 2-4 → 10+</span></h2>
+      <p class="eb">03 / 09 · COUNT</p>
+    </header>
+    <div class="body">
+      <div class="chart">
+        <p class="chart-title">RECOMMENDED COUNT BY <b>TASK TYPE</b> (anthropic engineering)</p>
+        <svg viewBox="0 0 480 230" preserveAspectRatio="xMidYMid meet">
+          <!-- grid -->
+          <line x1="140" y1="20" x2="140" y2="210" stroke="#333" stroke-width="0.5" stroke-dasharray="2,3"/>
+          <line x1="240" y1="20" x2="240" y2="210" stroke="#333" stroke-width="0.5" stroke-dasharray="2,3"/>
+          <line x1="340" y1="20" x2="340" y2="210" stroke="#333" stroke-width="0.5" stroke-dasharray="2,3"/>
+          <line x1="440" y1="20" x2="440" y2="210" stroke="#333" stroke-width="0.5" stroke-dasharray="2,3"/>
+
+          <!-- Row 1: simple = 1 -->
+          <text x="0" y="48" fill="#fff" font-size="11" font-family="Pretendard" font-weight="600">단순 사실 찾기</text>
+          <text x="0" y="62" fill="#888" font-size="9" font-family="JetBrains Mono">3–10 calls</text>
+          <rect x="115" y="38" width="30" height="22" fill="#fff" rx="2"/>
+          <text x="125" y="54" fill="#0F0F0F" font-size="11" font-family="JetBrains Mono" font-weight="700">1</text>
+
+          <!-- Row 2: compare 2-4 -->
+          <text x="0" y="120" fill="#fff" font-size="11" font-family="Pretendard" font-weight="600">직접 비교</text>
+          <text x="0" y="134" fill="#888" font-size="9" font-family="JetBrains Mono">10–15 calls each</text>
+          <rect x="115" y="110" width="120" height="22" fill="#00D9FF" rx="2"/>
+          <text x="170" y="126" fill="#0F0F0F" font-size="11" font-family="JetBrains Mono" font-weight="700">2 – 4</text>
+
+          <!-- Row 3: complex 10+ -->
+          <text x="0" y="192" fill="#fff" font-size="11" font-family="Pretendard" font-weight="600">복잡 리서치</text>
+          <text x="0" y="206" fill="#888" font-size="9" font-family="JetBrains Mono">병렬 분산 처리</text>
+          <rect x="115" y="182" width="320" height="22" fill="#fff" rx="2"/>
+          <text x="265" y="198" fill="#0F0F0F" font-size="11" font-family="JetBrains Mono" font-weight="700">10 +</text>
+
+          <!-- x-axis labels -->
+          <text x="115" y="225" fill="#666" font-size="8" font-family="JetBrains Mono">1</text>
+          <text x="235" y="225" fill="#666" font-size="8" font-family="JetBrains Mono">4</text>
+          <text x="335" y="225" fill="#666" font-size="8" font-family="JetBrains Mono">8</text>
+          <text x="430" y="225" fill="#666" font-size="8" font-family="JetBrains Mono">12+</text>
+        </svg>
+      </div>
+      <aside class="side">
+        <div class="stat">
+          <p class="lbl">ANTI-PATTERN</p>
+          <p class="big danger">50</p>
+          <p>단순 쿼리에 50개 spawn — 공식 실패 사례</p>
+        </div>
+        <div class="stat">
+          <p class="lbl">TOKEN COST</p>
+          <p class="big accent">15×</p>
+          <p>멀티에이전트 = 채팅 대비 15배 토큰</p>
+        </div>
+      </aside>
+    </div>
+    <p class="src">SOURCE · ANTHROPIC ENGINEERING — HOW WE BUILT OUR MULTI-AGENT RESEARCH SYSTEM</p>
+  </div>
+</body>
+</html>

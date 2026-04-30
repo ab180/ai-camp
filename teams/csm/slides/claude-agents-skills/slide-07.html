@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Q3 핵심 — Progressive Disclosure</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Pretendard',sans-serif;background:#222}
+  .slide{width:720pt;height:405pt;background:#0F0F0F;color:#fff;padding:24pt 32pt;display:flex;flex-direction:column;gap:10pt;overflow:hidden}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1pt solid #333;padding-bottom:10pt}
+  .head h2{font-size:20pt;font-weight:800;letter-spacing:-0.5pt}
+  .head h2 .hl{color:#00D9FF}
+  .head .eb{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#00D9FF;letter-spacing:2pt}
+  .analogy{font-size:11pt;color:#B0B0B0;padding:6pt 0}
+  .analogy b{color:#fff}
+  .body{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:12pt;min-height:0}
+  .stage{background:#1A1A1A;border:1pt solid #333;padding:14pt 16pt;display:flex;flex-direction:column;gap:8pt;min-height:0;overflow:hidden}
+  .stage-head{display:flex;justify-content:space-between;align-items:center}
+  .stage-head .ord{font-family:'JetBrains Mono',monospace;font-size:9pt;letter-spacing:2pt;color:#00D9FF;font-weight:700}
+  .stage-head .when{font-family:'JetBrains Mono',monospace;font-size:8pt;color:#666;letter-spacing:1pt}
+  .icon{display:flex;justify-content:center;padding:6pt 0}
+  .icon svg{width:100%;max-width:140pt;height:60pt}
+  .stage h3{font-size:13pt;font-weight:700;line-height:1.3}
+  .stage h3 .real{color:#00D9FF;font-weight:700}
+  .stage .desc{font-size:10pt;color:#B0B0B0;line-height:1.5}
+  .stage .desc b{color:#fff;font-weight:600}
+  .stage .cost{margin-top:auto;font-family:'JetBrains Mono',monospace;font-size:9pt;color:#fff;background:#252525;border:1pt solid #333;padding:4pt 8pt;letter-spacing:1pt;align-self:flex-start}
+  .stage.s1 .cost{color:#00D9FF;border-color:#00536a}
+  .footer{font-family:'Pretendard',sans-serif;font-size:11pt;color:#fff;background:#252525;border:1pt solid #00536a;padding:10pt 16pt;display:flex;align-items:center;gap:14pt}
+  .footer .key{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#00D9FF;letter-spacing:1.5pt;font-weight:700}
+  .footer p{flex:1;line-height:1.45}
+  .footer p b{color:#00D9FF;font-weight:700}
+  .src{font-family:'JetBrains Mono',monospace;font-size:8pt;color:#666;letter-spacing:1pt;text-align:right}
+</style>
+</head>
+<body>
+  <div class="slide">
+    <header class="head">
+      <h2>Q3 핵심. <span class="hl">Progressive Disclosure</span> — 필요할 때만 꺼낸다</h2>
+      <p class="eb">07 / 09 · CORE</p>
+    </header>
+    <p class="analogy">💡 <b>도서관 비유</b> — 책장에 책이 100권 있어도, 평소엔 책등(제목)만 본다. 진짜 읽어야 할 때만 한 권을 펼치고, 부록은 그때 또 따로 꺼낸다.</p>
+
+    <div class="body">
+      <!-- STAGE 1 -->
+      <article class="stage s1">
+        <div class="stage-head">
+          <span class="ord">STEP 01</span>
+          <span class="when">ALWAYS LOADED</span>
+        </div>
+        <div class="icon">
+          <svg viewBox="0 0 140 60">
+            <!-- 책장 6권 - 라벨만 -->
+            <rect x="6" y="10" width="12" height="44" fill="#252525" stroke="#444" stroke-width="0.8"/>
+            <rect x="22" y="10" width="12" height="44" fill="#252525" stroke="#444" stroke-width="0.8"/>
+            <rect x="38" y="10" width="12" height="44" fill="#252525" stroke="#444" stroke-width="0.8"/>
+            <rect x="54" y="10" width="12" height="44" fill="#252525" stroke="#444" stroke-width="0.8"/>
+            <rect x="70" y="10" width="12" height="44" fill="#00D9FF" stroke="#00D9FF"/>
+            <rect x="86" y="10" width="12" height="44" fill="#252525" stroke="#444" stroke-width="0.8"/>
+            <rect x="102" y="10" width="12" height="44" fill="#252525" stroke="#444" stroke-width="0.8"/>
+            <rect x="118" y="10" width="12" height="44" fill="#252525" stroke="#444" stroke-width="0.8"/>
+            <line x1="2" y1="56" x2="138" y2="56" stroke="#666" stroke-width="1"/>
+            <text x="76" y="44" text-anchor="middle" fill="#0F0F0F" font-size="5" font-family="JetBrains Mono" font-weight="700" transform="rotate(-90 76 44)">SKILL</text>
+          </svg>
+        </div>
+        <h3>책 제목만 본다 = <span class="real">이름 + 한 줄 설명</span></h3>
+        <p class="desc">스킬을 100개 등록해도, Claude는 평소엔 각 스킬의 <b>이름</b>과 <b>한 줄 설명</b>만 알고 있다. 본문은 안 읽는다.</p>
+        <span class="cost">≈ 거의 0 토큰</span>
+      </article>
+
+      <!-- STAGE 2 -->
+      <article class="stage s2">
+        <div class="stage-head">
+          <span class="ord">STEP 02</span>
+          <span class="when">WHEN INVOKED</span>
+        </div>
+        <div class="icon">
+          <svg viewBox="0 0 140 60">
+            <!-- 펼쳐진 책 -->
+            <path d="M 20 14 L 70 18 L 70 52 L 20 50 Z" fill="#1A1A1A" stroke="#00D9FF" stroke-width="1.2"/>
+            <path d="M 70 18 L 120 14 L 120 50 L 70 52 Z" fill="#1A1A1A" stroke="#00D9FF" stroke-width="1.2"/>
+            <line x1="70" y1="18" x2="70" y2="52" stroke="#00D9FF" stroke-width="1.2"/>
+            <line x1="28" y1="22" x2="62" y2="24" stroke="#666" stroke-width="0.8"/>
+            <line x1="28" y1="28" x2="58" y2="30" stroke="#666" stroke-width="0.8"/>
+            <line x1="28" y1="34" x2="62" y2="36" stroke="#666" stroke-width="0.8"/>
+            <line x1="28" y1="40" x2="55" y2="42" stroke="#666" stroke-width="0.8"/>
+            <line x1="78" y1="22" x2="112" y2="24" stroke="#fff" stroke-width="0.8"/>
+            <line x1="78" y1="28" x2="108" y2="30" stroke="#fff" stroke-width="0.8"/>
+            <line x1="78" y1="34" x2="112" y2="36" stroke="#fff" stroke-width="0.8"/>
+            <line x1="78" y1="40" x2="105" y2="42" stroke="#fff" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <h3>책을 펼친다 = <span class="real">SKILL.md 본문 읽기</span></h3>
+        <p class="desc">사용자 요청이 그 스킬과 관련 있다고 판단되면, Claude가 그제야 <b>본문(매뉴얼)</b>을 펼쳐 읽는다.</p>
+        <span class="cost">≈ 본문 분량만</span>
+      </article>
+
+      <!-- STAGE 3 -->
+      <article class="stage s3">
+        <div class="stage-head">
+          <span class="ord">STEP 03</span>
+          <span class="when">ON DEMAND</span>
+        </div>
+        <div class="icon">
+          <svg viewBox="0 0 140 60">
+            <!-- 펼쳐진 책 + 부록 페이지 sticking out -->
+            <rect x="34" y="14" width="50" height="40" fill="#1A1A1A" stroke="#666" stroke-width="1"/>
+            <line x1="40" y1="22" x2="78" y2="22" stroke="#666" stroke-width="0.6"/>
+            <line x1="40" y1="28" x2="74" y2="28" stroke="#666" stroke-width="0.6"/>
+            <line x1="40" y1="34" x2="78" y2="34" stroke="#666" stroke-width="0.6"/>
+            <!-- 화살표 -->
+            <line x1="86" y1="34" x2="100" y2="34" stroke="#00D9FF" stroke-width="1.2" marker-end="url(#a3)"/>
+            <!-- 부록 별도 파일 -->
+            <rect x="100" y="20" width="32" height="28" fill="#0F0F0F" stroke="#00D9FF" stroke-width="1.2"/>
+            <text x="116" y="38" text-anchor="middle" fill="#00D9FF" font-size="6" font-family="JetBrains Mono" font-weight="700">REF</text>
+            <defs>
+              <marker id="a3" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="#00D9FF"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+        <h3>부록을 꺼낸다 = <span class="real">번들 리소스 로드</span></h3>
+        <p class="desc">본문에서 "더 자세한 건 reference.md 참고"라고 가리키면, 그때야 <b>해당 파일 1개</b>만 추가로 꺼낸다.</p>
+        <span class="cost">≈ 그 파일만 (사실상 무제한 가능)</span>
+      </article>
+    </div>
+
+    <footer class="footer">
+      <span class="key">KEY</span>
+      <p>스킬을 <b>100개</b> 등록해도 평소엔 거의 <b>0 토큰</b>. Claude가 진짜 쓸 때, 그 단계만큼만 비용을 지불한다.</p>
+      <span class="src">SOURCE · ANTHROPIC ENGINEERING — AGENT SKILLS</span>
+    </footer>
+  </div>
+</body>
+</html>

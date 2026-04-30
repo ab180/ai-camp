@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Sources</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Pretendard',sans-serif;background:#222}
+  .slide{width:720pt;height:405pt;background:#0F0F0F;color:#fff;padding:24pt 32pt;display:flex;flex-direction:column;gap:10pt;overflow:hidden}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1pt solid #333;padding-bottom:12pt}
+  .head h2{font-size:22pt;font-weight:800;letter-spacing:-0.5pt}
+  .head h2 .hl{color:#00D9FF}
+  .head .eb{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#00D9FF;letter-spacing:2pt}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:10pt;flex:1;min-height:0}
+  .src-card{background:#1A1A1A;border:1pt solid #333;padding:12pt 14pt;display:flex;flex-direction:column;gap:6pt;position:relative;min-height:0;overflow:hidden}
+  .src-card.span{grid-column:1/4}
+  .src-card .meta{display:flex;justify-content:space-between;align-items:center}
+  .src-card .badge{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#00D9FF;letter-spacing:1.5pt;font-weight:700;border:1pt solid #00D9FF;padding:2pt 8pt}
+  .src-card .num{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666}
+  .src-card h3{font-size:11pt;font-weight:700;line-height:1.35;color:#fff}
+  .src-card .url{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#B0B0B0;line-height:1.5;margin-top:auto;word-break:break-all}
+  .src-card .url b{color:#00D9FF}
+  .footer{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;letter-spacing:1pt;border-top:1pt solid #333;padding-top:8pt;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+  <div class="slide">
+    <header class="head">
+      <h2><span class="hl">공식 출처</span> 5개 — 모든 인용은 1차 자료</h2>
+      <p class="eb">09 / 09 · SOURCES</p>
+    </header>
+    <div class="grid">
+      <article class="src-card">
+        <div class="meta">
+          <span class="badge">Q1 / Q1+</span>
+          <span class="num">[01]</span>
+        </div>
+        <h3>How we built our<br>multi-agent research system</h3>
+        <p class="url"><b>anthropic.com</b>/engineering/<br>multi-agent-research-system</p>
+      </article>
+      <article class="src-card">
+        <div class="meta">
+          <span class="badge">Q3 / PD</span>
+          <span class="num">[02]</span>
+        </div>
+        <h3>Equipping agents for the<br>real world with Skills</h3>
+        <p class="url"><b>anthropic.com</b>/engineering/<br>equipping-agents-...skills</p>
+      </article>
+      <article class="src-card">
+        <div class="meta">
+          <span class="badge">Q2</span>
+          <span class="num">[03]</span>
+        </div>
+        <h3>Create custom subagents</h3>
+        <p class="url"><b>code.claude.com</b>/docs/en/sub-agents</p>
+      </article>
+      <article class="src-card">
+        <div class="meta">
+          <span class="badge">Q3</span>
+          <span class="num">[04]</span>
+        </div>
+        <h3>Extend Claude with skills</h3>
+        <p class="url"><b>code.claude.com</b>/docs/en/skills</p>
+      </article>
+      <article class="src-card span">
+        <div class="meta">
+          <span class="badge">Q3 · REPO</span>
+          <span class="num">[05]</span>
+        </div>
+        <h3>anthropics/skills — 공식 GitHub 레포 (skill-creator + 공식 예시)</h3>
+        <p class="url"><b>github.com</b>/anthropics/skills</p>
+      </article>
+    </div>
+    <footer class="footer">
+      <span>END · 9 / 9</span>
+      <span>2026-04-30 · MODERN DARK</span>
+    </footer>
+  </div>
+</body>
+</html>
