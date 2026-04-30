@@ -2,21 +2,66 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S03 오늘의 문장</title>
+<title>Day 4 · S04 오늘 120분 구조</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; justify-content: space-between; }
-  .quote { font-size: 38pt; font-weight: 500; color: #2b2520; line-height: 1.25; letter-spacing: -0.015em; max-width: 600pt; }
-  .quote em { font-style: normal; color: #c56a4a; }
-  .note { font-size: 14pt; color: #7d6b5a; line-height: 1.55; max-width: 560pt; }
-  .note strong { color: #2b2520; font-weight: 600; }
-  .foot-rule { font-size: 11pt; color: #a0917e; letter-spacing: 0.05em; border-top: 1px dashed #d4c4ac; padding-top: 8pt; font-family: 'SF Mono', 'Menlo', monospace; }
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .blocks { display: flex; flex-direction: column; gap: 4pt; flex: 1; margin-top: 8pt; }
+  .blk { display: grid; grid-template-columns: 40pt 56pt 1fr 1.7fr; gap: 9pt; padding: 6pt 12pt; border-radius: 8pt; background: #ebe1d2; align-items: center; }
+  .blk.key { background: #c56a4a; color: #f7efe4; }
+  .blk .bnum { font-size: 10.5pt; font-weight: 700; color: #b45a34; letter-spacing: 0.08em; }
+  .blk.key .bnum { color: #fff; }
+  .blk .time { font-size: 9pt; font-weight: 600; color: #2b2520; font-family: 'SF Mono', Menlo, monospace; }
+  .blk.key .time { color: #fff; }
+  .blk .topic { font-size: 10.5pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.3; }
+  .blk.key .topic { color: #fff; }
+  .blk .note { font-size: 8.8pt; color: #42332a; line-height: 1.45; }
+  .blk.key .note { color: #f5e4d4; }
+  .blk .note strong { color: #b45a34; font-weight: 600; }
+  .blk.key .note strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 7pt; padding: 7pt 13pt; background: #c56a4a; color: #f7efe4; border-radius: 9pt; font-size: 9.2pt; line-height: 1.5; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">오늘의 문장</div>
-  <div class="quote">만든 사람은 자기 결과를<br><em>공정히</em> 못 본다.</div>
-  <div class="note"><strong>Generator &ne; Evaluator.</strong> 내가 쓴 메일은 내가 읽을 때 늘 그럴듯하다. 다른 관점에 넘겨야 빠진 게 보인다.</div>
-  <div class="foot-rule">Stanford Newton — 두드리는 사람 예측 50% · 실제 정답률 2.5% (20배 과대평가)</div>
+  <div class="eyebrow">오늘 구조</div>
+  <div class="h-large">블록 5개 · <em>120분 + 부록</em></div>
+  <div class="rule"></div>
+  <div class="intro">검증 도구 시연 → 본인 Compound 파이프라인 1단·2단 → 팀 repo PR까지 한 사이클. 부록 7장은 Vercel·Supabase 자율 학습.</div>
+  <div class="blocks">
+    <div class="blk">
+      <div class="bnum">B0</div>
+      <div class="time">~5 min</div>
+      <div class="topic">어제 스킬 평가 다리</div>
+      <div class="note">Day 3 짝꿍 점검 → 오늘 <strong>AI Evaluator</strong>로 한 단계 깊이</div>
+    </div>
+    <div class="blk key">
+      <div class="bnum">B1</div>
+      <div class="time">~30 min</div>
+      <div class="topic">검증 — 까다로운 고객 + Anthropic + Skill Creator</div>
+      <div class="note"><strong>Anthropic 사례 3종</strong> + 페르소나 + <strong>Skill Creator 직접 호출</strong></div>
+    </div>
+    <div class="blk key">
+      <div class="bnum">B2</div>
+      <div class="time">~25 min</div>
+      <div class="topic">Compound + wrap + 본인 파이프라인</div>
+      <div class="note">wrap 자동 Notice + <strong>본인 파이프라인 1단·2단</strong> + 6축 자가진단</div>
+    </div>
+    <div class="blk key">
+      <div class="bnum">B3</div>
+      <div class="time">~50 min</div>
+      <div class="topic">팀 repo + PR</div>
+      <div class="note">Play Store 모델 · 6축 README · <strong>오늘 1개 PR</strong>까지</div>
+    </div>
+    <div class="blk">
+      <div class="bnum">B4</div>
+      <div class="time">~10 min</div>
+      <div class="topic">1주 사이클 × 2회</div>
+      <div class="note">5/15(금) 발표 + 회고 포맷 — <strong>별로 / 좋았 각 2문장</strong></div>
+    </div>
+  </div>
+  <div class="foot">산출물 = <strong>Skill Creator 리포트 + 까다로운 고객 피드백 + 6축 자가진단 + 본인 파이프라인 1단 + 팀 PR + 회고 1줄</strong>. 부록 7장은 자율 학습.</div>
 </body>
 </html>

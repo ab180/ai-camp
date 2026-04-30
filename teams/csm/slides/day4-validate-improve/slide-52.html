@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S52 부록 2 Supabase #3 활용</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .conn { margin-top: 10pt; padding: 10pt 14pt; background: #2b2520; color: #f7efe4; border-radius: 9pt; font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; }
+  .conn .lbl { font-size: 7.8pt; letter-spacing: 0.22em; color: #ffb185; font-weight: 700; text-transform: uppercase; font-family: 'Pretendard', sans-serif; margin-bottom: 4pt; }
+  .conn span { color: #ffdfc9; }
+  .cards { margin-top: 11pt; flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; }
+  .c { padding: 11pt 13pt; background: #ebe1d2; border-radius: 9pt; display: flex; flex-direction: column; gap: 4pt; }
+  .c.terra { background: #c56a4a; color: #f7efe4; }
+  .c .n { font-size: 8pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .c.terra .n { color: #ffdfc9; }
+  .c h4 { font-size: 11.5pt; font-weight: 600; color: #2b2520; line-height: 1.3; }
+  .c.terra h4 { color: #fff; }
+  .c p { font-size: 9pt; line-height: 1.55; color: #42332a; }
+  .c.terra p { color: #f5e4d4; }
+  .c p strong { color: #b45a34; font-weight: 700; }
+  .c.terra p strong { color: #fff; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">부록 2 · Supabase · 활용</div>
+  <div class="h-large">MCP로 연결 — Claude가 <em>직접 SQL</em></div>
+  <div class="rule"></div>
+  <div class="intro">테이블이 만들어졌으면 Claude가 <strong>직접 SQL을 짜고 INSERT/SELECT</strong>한다. MCP로 한 번 연결하면 매번 본인이 옮길 필요 X.</div>
+  <div class="conn">
+    <div class="lbl">CONNECTION FLOW</div>
+    claude.ai &rarr; Settings &rarr; Integrations &rarr; <span>Supabase</span> &rarr; URL + key 입력 &rarr; <span>/mcp</span> 명령으로 확인</div>
+  <div class="cards">
+    <div class="c">
+      <div class="n">시나리오 1</div>
+      <h4>케이스 DB</h4>
+      <p>새 문의 도착 &rarr; <strong>비슷한 사례 SELECT</strong> &rarr; 답변 작성 &rarr; cases 테이블 INSERT</p>
+    </div>
+    <div class="c terra">
+      <div class="n">시나리오 2</div>
+      <h4>wrap 팀 누적</h4>
+      <p>patterns 테이블에 신호 저장 &rarr; <strong>팀 단위 Compound</strong> &rarr; 6명 신호 종합</p>
+    </div>
+    <div class="c">
+      <div class="n">시나리오 3</div>
+      <h4>스킬 실행 로그</h4>
+      <p>호출 시각 · 스킬명 · 결과 자동 기록 &rarr; <strong>어떤 스킬이 자주 쓰이나</strong> 데이터로</p>
+    </div>
+  </div>
+</body>
+</html>

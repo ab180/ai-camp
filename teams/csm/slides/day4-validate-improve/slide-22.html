@@ -2,59 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S21 6축 해설</title>
+<title>Day 4 · S22 wrap 스킬 = Notice 자동화</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8pt; flex: 1; margin-top: 10pt; }
-  .card { background: #ebe1d2; border-radius: 10pt; padding: 12pt 14pt; display: flex; flex-direction: column; gap: 4pt; }
-  .card .num { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .card h4 { font-size: 14pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.2; }
-  .card p { font-size: 10pt; color: #42332a; line-height: 1.5; }
-  .card p strong { color: #2b2520; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .flow { margin-top: 10pt; display: flex; flex-direction: column; gap: 5pt; flex: 1; }
+  .step { display: grid; grid-template-columns: 32pt 110pt 1fr; gap: 10pt; padding: 8pt 13pt; background: #ebe1d2; border-radius: 8pt; align-items: center; }
+  .step.key { background: #c56a4a; color: #f7efe4; }
+  .step .n { font-size: 12pt; font-weight: 700; color: #b45a34; }
+  .step.key .n { color: #fff; }
+  .step .name { font-size: 11pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .step.key .name { color: #fff; }
+  .step .desc { font-size: 9.5pt; color: #42332a; line-height: 1.45; }
+  .step.key .desc { color: #f5e4d4; }
+  .step .desc code { background: #fff; padding: 1pt 4pt; border-radius: 3pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.8pt; color: #2b2520; }
+  .step.key .desc code { background: rgba(255,255,255,0.18); color: #fff; }
+  .foot { margin-top: 8pt; padding: 8pt 14pt; background: #fff; border-radius: 9pt; font-size: 9.8pt; color: #42332a; line-height: 1.5; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">축별 해설 · X 나왔을 때 뭘 해야 하나</div>
-  <div class="h-large">&ldquo;X가 제일 많은 축&rdquo; 하나를 고른다</div>
+  <div class="eyebrow">B2 · 자동화 도구</div>
+  <div class="h-large">wrap = <em>매 세션 끝의 자동 Notice</em></div>
   <div class="rule"></div>
-  <div class="intro">X가 여러 개여도 괜찮다. <strong>동시에 다 잡지 않는다</strong>. 가장 많이 X 나온 한 축을 골라 2주 프로젝트의 중심축으로 쓴다.</div>
-  <div class="grid">
-    <div class="card">
-      <div class="num">축 1 · 구조</div>
-      <h4>CLAUDE.md 부족</h4>
-      <p>담당 고객 리스트 · 톤 · 금지어 중 <strong>하나를 이번 주 추가</strong>.</p>
+  <div class="intro">Compound 사이클의 Notice 단계를 사람이 매번 적기는 어렵다. <strong>wrap 스킬</strong>이 세션 끝에 자동으로 패턴을 잡아 누적한다. 본인이 의식하지 않아도 임계치 도달 시 알림.</div>
+  <div class="flow">
+    <div class="step">
+      <div class="n">1</div>
+      <div class="name">작업 요약</div>
+      <div class="desc">오늘 무엇을 했나 — 호출한 스킬 · 만든 산출물 · 막힌 지점</div>
     </div>
-    <div class="card">
-      <div class="num">축 2 · 맥락</div>
-      <h4>MCP 미연결</h4>
-      <p>Gmail · Notion · Slack 중 <strong>한 개</strong>라도 실제 업무에 연결.</p>
+    <div class="step">
+      <div class="n">2</div>
+      <div class="name">멀티에이전트 분석</div>
+      <div class="desc">반복 패턴 감지 — 같은 실수 / 같은 누락 / 같은 톤 문제</div>
     </div>
-    <div class="card">
-      <div class="num">축 3 · 계획</div>
-      <h4>바로 실행 습관</h4>
-      <p>큰 작업 앞에 <strong>Deep Interview 5분</strong>을 의식적으로.</p>
+    <div class="step key">
+      <div class="n">3</div>
+      <div class="name">신호 누적</div>
+      <div class="desc"><code>signals/compound-log.json</code>에 패턴 기록 — 시간 순으로 쌓임</div>
     </div>
-    <div class="card">
-      <div class="num">축 4 · 실행</div>
-      <h4>스킬 미사용</h4>
-      <p>Day 3 스킬을 <strong>진짜 고객 케이스 1건</strong>에 써보기.</p>
+    <div class="step key">
+      <div class="n">4</div>
+      <div class="name">임계치 알림</div>
+      <div class="desc"><strong>3회 반복</strong>에 도달하면 노티 — "이 패턴은 rules에 넣을 때입니다"</div>
     </div>
-    <div class="card">
-      <div class="num">축 5 · 검증</div>
-      <h4>외부 눈 없음</h4>
-      <p>까다로운 고객 에이전트에 <strong>초안 2건</strong> 넘겨보기.</p>
-    </div>
-    <div class="card">
-      <div class="num">축 6 · 개선</div>
-      <h4>되먹임 없음</h4>
-      <p>피드백 3번 반복된 지적 1개를 <strong>rules에 추가</strong>.</p>
+    <div class="step">
+      <div class="n">5</div>
+      <div class="name">메모리 저장</div>
+      <div class="desc">다음 세션 자동 참조 — 반복 설명 없이 누적된 신호 기반</div>
     </div>
   </div>
-  <div class="foot">2주 프로젝트의 주인공은 <strong>가장 X가 많은 축 1개</strong>. 나머지는 자연스럽게 따라온다.</div>
+  <div class="foot">wrap = <strong>자동 Notice</strong>. 본인이 의식하지 않아도 매 세션 끝에 패턴이 누적된다.</div>
 </body>
 </html>

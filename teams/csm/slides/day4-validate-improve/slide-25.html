@@ -2,35 +2,67 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S24 B2 정리</title>
+<title>Day 4 · S25 본인 Compound 파이프라인 2단</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; justify-content: space-between; }
-  .quote { font-size: 30pt; font-weight: 500; color: #2b2520; line-height: 1.3; letter-spacing: -0.015em; max-width: 620pt; }
-  .quote em { font-style: normal; color: #c56a4a; }
-  .points { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
-  .p { background: #ebe1d2; border-radius: 10pt; padding: 14pt 16pt; }
-  .p .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .p h4 { font-size: 14pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 4pt; }
-  .p p { font-size: 11pt; color: #42332a; line-height: 1.55; margin-top: 4pt; }
-  .foot-rule { font-size: 11pt; color: #a0917e; letter-spacing: 0.05em; border-top: 1px dashed #d4c4ac; padding-top: 8pt; font-family: 'SF Mono', 'Menlo', monospace; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .stages { margin-top: 10pt; flex: 1; display: flex; flex-direction: column; gap: 3pt; justify-content: center; }
+  .stage { display: grid; grid-template-columns: 26pt 1fr; gap: 10pt; padding: 7pt 14pt; border-radius: 8pt; align-items: center; }
+  .stage.cream { background: #ebe1d2; }
+  .stage.terra { background: #c56a4a; color: #f7efe4; }
+  .stage .n { font-size: 12pt; font-weight: 700; line-height: 1; }
+  .stage.cream .n { color: #b45a34; }
+  .stage.terra .n { color: #fff; }
+  .stage .body h4 { font-size: 11pt; font-weight: 600; line-height: 1.25; }
+  .stage.cream .body h4 { color: #2b2520; }
+  .stage.terra .body h4 { color: #fff; }
+  .stage .body p { font-size: 9pt; line-height: 1.4; margin-top: 2pt; }
+  .stage.cream .body p { color: #5a4d40; }
+  .stage.terra .body p { color: #f5e4d4; }
+  .stage .body code { background: #fff; padding: 1pt 5pt; border-radius: 3pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #2b2520; }
+  .stage.terra .body code { background: rgba(255,255,255,0.18); color: #fff; }
+  .arr { text-align: center; color: #b45a34; font-size: 11pt; line-height: 1; font-weight: 600; padding: 0; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">B2 정리</div>
-  <div class="quote">다 잡지 않는다. <em>X가 많은 축 1개</em>를 2주의 중심에 놓는다.</div>
-  <div class="points">
-    <div class="p">
-      <div class="n">Takeaway 1</div>
-      <h4>사이클 한 바퀴면 충분</h4>
-      <p>Compound는 크기가 아니라 빈도. 2주 동안 한 바퀴 제대로 돌리면 된다.</p>
+  <div class="eyebrow">B2 실습 · 2단</div>
+  <div class="h-large">3회 반복 신호 → <em>rules/ 자동 추가</em></div>
+  <div class="rule"></div>
+  <div class="intro">1단은 신호 누적. 2단은 <strong>임계치 도달 시 자동 반영</strong>이다. 3회 반복된 신호를 wrap이 감지하면, 본인이 한 줄 부탁만 해도 rules에 자동 추가된다.</div>
+  <div class="stages">
+    <div class="stage cream">
+      <div class="n">1</div>
+      <div class="body">
+        <h4>wrap 임계치 알림</h4>
+        <p>3회 반복 발견 — "다음 액션 날짜 누락이 3회 누적되었습니다"</p>
+      </div>
     </div>
-    <div class="p">
-      <div class="n">Takeaway 2</div>
-      <h4>O/X 표를 버리지 않는다</h4>
-      <p>2주 뒤 회고 때 같은 표를 다시 본다. 변화가 보인다.</p>
+    <div class="arr">&darr;</div>
+    <div class="stage terra">
+      <div class="n">2</div>
+      <div class="body">
+        <h4>Claude에게 한 줄</h4>
+        <p><code>이 패턴을 rules/required.md에 추가해줘</code></p>
+      </div>
+    </div>
+    <div class="arr">&darr;</div>
+    <div class="stage terra">
+      <div class="n">3</div>
+      <div class="body">
+        <h4>rules/ 자동 업데이트</h4>
+        <p>Claude가 <code>required.md</code>에 항목 추가 → commit + push 자동</p>
+      </div>
+    </div>
+    <div class="arr">&darr;</div>
+    <div class="stage cream">
+      <div class="n">4</div>
+      <div class="body">
+        <h4>다음 사이클부터 자동 적용</h4>
+        <p>같은 실수 재발 X — Compound가 한 바퀴 완성</p>
+      </div>
     </div>
   </div>
-  <div class="foot-rule">Next &mdash; B3: GitHub + 팀 공유 (50 min) &mdash; 오늘의 결과물을 팀 자산으로</div>
 </body>
 </html>

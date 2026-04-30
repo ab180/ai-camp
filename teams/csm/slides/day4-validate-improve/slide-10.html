@@ -2,59 +2,53 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S09 Generator 아닌 Evaluator</title>
+<title>Day 4 · S10 Anthropic 사례 2 — Multi-agent eval</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .col { padding: 18pt 20pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 10pt; }
-  .col.g { background: #ebe1d2; }
-  .col.e { background: #c56a4a; color: #f7efe4; }
-  .col .role { font-size: 10pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .col.g .role { color: #a0917e; }
-  .col.e .role { color: #f2cdb4; }
-  .col .name { font-size: 20pt; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
-  .col.g .name { color: #2b2520; }
-  .col.e .name { color: #fff; }
-  .col ul { font-size: 11.5pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
-  .col.g ul { color: #42332a; }
-  .col.e ul { color: #f5e4d4; }
-  .col ul li::marker { color: #b45a34; }
-  .col.e ul li::marker { color: #f2cdb4; }
-  .col ul li strong { font-weight: 600; }
-  .col.g ul li strong { color: #2b2520; }
-  .col.e ul li strong { color: #fff; }
-  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .stage { margin-top: 10pt; padding: 12pt 14pt; background: #ebe1d2; border-radius: 10pt; display: flex; flex-direction: column; align-items: center; gap: 6pt; flex: 1; }
+  .stitle { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; align-self: flex-start; }
+  .answer { padding: 8pt 18pt; background: #fff; border: 1.2px dashed #b45a34; border-radius: 8pt; font-size: 10.5pt; font-weight: 600; color: #2b2520; }
+  .arr-down { font-size: 14pt; color: #b45a34; line-height: 1; }
+  .evals { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; width: 100%; }
+  .ev { padding: 8pt 10pt; background: #c56a4a; color: #fff; border-radius: 8pt; text-align: center; }
+  .ev .role { font-size: 7.8pt; letter-spacing: 0.2em; color: #ffdfc9; font-weight: 700; text-transform: uppercase; }
+  .ev .name { font-size: 10.5pt; font-weight: 600; margin-top: 2pt; line-height: 1.3; }
+  .consensus { padding: 8pt 16pt; background: #2b2520; color: #fff; border-radius: 8pt; font-size: 10.5pt; font-weight: 600; text-align: center; }
+  .consensus em { font-style: normal; color: #ffb185; }
+
+  .foot { margin-top: 8pt; padding: 8pt 14pt; background: #fff; border-radius: 9pt; font-size: 9.5pt; color: #42332a; line-height: 1.5; border-left: 3pt solid #c56a4a; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">원리 1 · 역할 분리</div>
-  <div class="h-large">만든 쪽과 <em>점검하는 쪽</em>은 다른 역할</div>
+  <div class="eyebrow">Anthropic 검증 사례 2 / 3</div>
+  <div class="h-large">Multi-agent eval — <em>1개 답변 + N개 평가자</em></div>
   <div class="rule"></div>
-  <div class="intro">AI에게 동일 세션에서 &ldquo;네가 쓴 초안 네가 검토해줘&rdquo;라고 하면 대부분 <strong>칭찬 위주</strong>가 된다. 자기 결과에 편향이 있다. 사람도 같다.</div>
-  <div class="compare">
-    <div class="col g">
-      <div class="role">Generator · 만드는 쪽</div>
-      <div class="name">내 스킬이 만든 초안</div>
-      <ul>
-        <li>나한테는 <strong>그럴듯</strong>해 보인다</li>
-        <li>맥락이 머릿속에 이미 있다</li>
-        <li>빈 자리를 내가 메운다</li>
-      </ul>
+  <div class="intro">한 명의 평가자는 편향이 있다. <strong>여러 페르소나로 같은 답변을 평가</strong>하고, 가장 많이 지적된 항목을 우선한다. Anthropic이 내부 프롬프트 평가에 쓰는 방식.</div>
+  <div class="stage">
+    <div class="stitle">MULTI-AGENT EVAL · 1 → N → CONSENSUS</div>
+    <div class="answer">답변 1개 (본인 메일 초안)</div>
+    <div class="arr-down">&darr;</div>
+    <div class="evals">
+      <div class="ev">
+        <div class="role">평가자 A</div>
+        <div class="name">기술 페르소나</div>
+      </div>
+      <div class="ev">
+        <div class="role">평가자 B</div>
+        <div class="name">임원 페르소나</div>
+      </div>
+      <div class="ev">
+        <div class="role">평가자 C</div>
+        <div class="name">실무자 페르소나</div>
+      </div>
     </div>
-    <div class="col e">
-      <div class="role">Evaluator · 점검하는 쪽</div>
-      <div class="name">별도 에이전트가 읽음</div>
-      <ul>
-        <li>고객 <strong>페르소나</strong>로 읽는다</li>
-        <li>채점 기준이 명시돼 있다</li>
-        <li>지적 · 근거 · 제안을 포맷으로 낸다</li>
-      </ul>
-    </div>
+    <div class="arr-down">&darr;</div>
+    <div class="consensus">합의 — <em>가장 많이 지적된 항목</em>부터 반영</div>
   </div>
-  <div class="foot">규칙 — <strong>만든 쪽과 점검하는 쪽이 같으면 검증이 아니라 자기 확신</strong>. 세션을 나누거나 별도 스킬을 쓴다.</div>
+  <div class="foot">CSM 매핑 — <strong>같은 메일을 3 페르소나에 돌려</strong> 받은 피드백 중 가장 많이 지적된 항목 1개를 먼저 고친다.</div>
 </body>
 </html>

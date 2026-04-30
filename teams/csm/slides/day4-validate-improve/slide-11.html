@@ -2,43 +2,63 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S10 까다로운 고객 개념</title>
+<title>Day 4 · S11 Anthropic 사례 3 — Skill Creator</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; gap: 12pt; }
-  .h-large { font-size: 26pt; }
-  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 8pt; flex: 1; }
-  .card { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .card .n { font-size: 10pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .card h3 { font-size: 15pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
-  .card p { font-size: 11pt; color: #42332a; line-height: 1.55; }
-  .card p strong { color: #2b2520; font-weight: 600; }
-  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; max-width: 640pt; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .chain { margin-top: 14pt; padding: 18pt 14pt; background: #ebe1d2; border-radius: 10pt; display: flex; flex-direction: column; gap: 10pt; }
+  .ctitle { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .flow { display: grid; grid-template-columns: 1fr 18pt 1.1fr 18pt 1fr; align-items: center; gap: 0; }
+  .node { padding: 11pt 10pt; border-radius: 8pt; text-align: center; min-height: 56pt; display: flex; flex-direction: column; justify-content: center; }
+  .node.input, .node.output { background: #fff; border: 1.2px dashed #b45a34; color: #5a4d40; }
+  .node.skill { background: #c56a4a; color: #fff; }
+  .node .nlbl { font-size: 7.8pt; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase; opacity: 0.85; }
+  .node.skill .nlbl { color: #ffdfc9; opacity: 1; }
+  .node .nbody { font-size: 11.5pt; font-weight: 600; line-height: 1.3; margin-top: 4pt; }
+  .node .nsub { font-size: 8.8pt; color: #5a4d40; line-height: 1.4; margin-top: 3pt; font-weight: 400; }
+  .node.skill .nsub { color: #f5e4d4; }
+  .arrow { font-size: 18pt; color: #b45a34; font-weight: 600; text-align: center; line-height: 1; }
+
+  .bot { margin-top: 14pt; padding: 12pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 5pt; }
+  .bot .lbl { font-size: 8.5pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .bot h3 { font-size: 14pt; font-weight: 600; color: #fff; line-height: 1.35; }
+  .bot p { font-size: 10pt; color: #f5e4d4; line-height: 1.5; }
+  .bot p strong { color: #fff; }
 </style>
 </head>
 <body>
-  <div>
-    <div class="eyebrow">B1 · 원리 2 · 에이전트 개념</div>
-    <div class="h-large">&ldquo;까다로운 고객&rdquo; &mdash; 페르소나 역할을 맡은 AI</div>
+  <div class="eyebrow">Anthropic 검증 사례 3 / 3</div>
+  <div class="h-large">Skill Creator — <em>스킬을 검증하는 메타 스킬</em></div>
+  <div class="rule"></div>
+  <div class="intro">결과물 검증을 넘어, <strong>스킬 자체</strong>를 검증한다. SKILL.md를 입력으로 받아 부족한 항목·모호한 표현·누락된 입력을 리포트로 돌려준다.</div>
+  <div class="chain">
+    <div class="ctitle">SKILL CREATOR · META-VERIFICATION</div>
+    <div class="flow">
+      <div class="node input">
+        <div class="nlbl">입력</div>
+        <div class="nbody">본인 SKILL.md</div>
+        <div class="nsub">어제 만든 스킬 정의</div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="node skill">
+        <div class="nlbl">메타 스킬</div>
+        <div class="nbody">Skill Creator</div>
+        <div class="nsub">Anthropic 공식 검증 스킬</div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="node output">
+        <div class="nlbl">출력</div>
+        <div class="nbody">부족 · 모호 · 누락 리포트</div>
+        <div class="nsub">고칠 항목 우선순위</div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <div class="card">
-      <div class="n">1. 페르소나</div>
-      <h3>어떤 고객인가</h3>
-      <p>시니어 PM · 구매 의사결정자 · <strong>3년차 사용자</strong>. 기대 수준 · 바쁘기 · 의사소통 톤까지 명시.</p>
-    </div>
-    <div class="card">
-      <div class="n">2. 채점 기준</div>
-      <h3>무엇을 볼 것인가</h3>
-      <p>결정사항 명시 · 다음 액션 · <strong>책임자/기한</strong> · 오해 소지 · 톤 적절성. 5~7개 항목.</p>
-    </div>
-    <div class="card">
-      <div class="n">3. 출력 포맷</div>
-      <h3>어떻게 답할 것인가</h3>
-      <p><strong>지적 &rarr; 근거 &rarr; 제안</strong> 3단 구조. 근거는 본문 인용. 제안은 한 문장.</p>
-    </div>
+  <div class="bot">
+    <div class="lbl">CSM 매핑 — Notion Day 3 B4 정합</div>
+    <h3>어제 만든 스킬을 <strong>오늘 메타 스킬로 자체 검증</strong></h3>
+    <p>까다로운 고객이 결과물을 본다면, Skill Creator는 스킬 정의 자체를 본다. 두 검증의 대상이 다르므로 둘 다 돌리면 양쪽 약점이 드러난다.</p>
   </div>
-  <div class="foot">에이전트 = &ldquo;이런 역할로, 이런 기준으로, 이런 포맷으로 답하라&rdquo;를 <strong>한 번에 박아둔 AI</strong>. 호출만 하면 동일 관점으로 반복 검토된다.</div>
 </body>
 </html>

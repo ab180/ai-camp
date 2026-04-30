@@ -2,55 +2,43 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S13 시연 흐름</title>
+<title>Day 4 · S10 까다로운 고객 개념</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; gap: 12pt; }
   .h-large { font-size: 26pt; }
-  .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 8pt; align-items: stretch; margin-top: 8pt; flex: 1; }
-  .step { background: #ebe1d2; border-radius: 12pt; padding: 14pt 14pt; display: flex; flex-direction: column; gap: 6pt; }
-  .step.hl { background: #c56a4a; color: #f7efe4; }
-  .step .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .step.hl .n { color: #f2cdb4; }
-  .step h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
-  .step.hl h3 { color: #fff; }
-  .step p { font-size: 10pt; color: #42332a; line-height: 1.5; }
-  .step.hl p { color: #f5e4d4; }
-  .arrow { display: flex; align-items: center; justify-content: center; color: #b45a34; font-size: 20pt; font-weight: 500; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 8pt; flex: 1; }
+  .card { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .card .n { font-size: 10pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .card h3 { font-size: 15pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
+  .card p { font-size: 11pt; color: #42332a; line-height: 1.55; }
+  .card p strong { color: #2b2520; font-weight: 600; }
   .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; max-width: 640pt; }
   .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
   <div>
-    <div class="eyebrow">B1 · 시연 흐름</div>
-    <div class="h-large">30분 동안 이렇게 진행된다</div>
+    <div class="eyebrow">B1 · 원리 2 · 에이전트 개념</div>
+    <div class="h-large">&ldquo;까다로운 고객&rdquo; &mdash; 페르소나 역할을 맡은 AI</div>
   </div>
-  <div class="flow">
-    <div class="step">
-      <div class="n">1 · 5 min</div>
-      <h3>에이전트<br>호출 시연</h3>
-      <p>운영진이 화면 공유. 프롬프트 구조 설명.</p>
+  <div class="row">
+    <div class="card">
+      <div class="n">1. 페르소나</div>
+      <h3>어떤 고객인가</h3>
+      <p>시니어 PM · 구매 의사결정자 · <strong>3년차 사용자</strong>. 기대 수준 · 바쁘기 · 의사소통 톤까지 명시.</p>
     </div>
-    <div class="arrow">&rarr;</div>
-    <div class="step">
-      <div class="n">2 · 8 min</div>
-      <h3>참가자 결과물<br>넣기</h3>
-      <p>각자 Day 3 스킬 결과 1건을 공유 채널에 붙인다.</p>
+    <div class="card">
+      <div class="n">2. 채점 기준</div>
+      <h3>무엇을 볼 것인가</h3>
+      <p>결정사항 명시 · 다음 액션 · <strong>책임자/기한</strong> · 오해 소지 · 톤 적절성. 5~7개 항목.</p>
     </div>
-    <div class="arrow">&rarr;</div>
-    <div class="step hl">
-      <div class="n">3 · 12 min</div>
-      <h3>피드백 받고<br>읽기만</h3>
-      <p>운영진이 순차 호출. 참가자는 피드백 읽고 메모.</p>
-    </div>
-    <div class="arrow">&rarr;</div>
-    <div class="step">
-      <div class="n">4 · 5 min</div>
-      <h3>공통 패턴<br>뽑기</h3>
-      <p>반복되는 지적 1~2개 짚고 B2로.</p>
+    <div class="card">
+      <div class="n">3. 출력 포맷</div>
+      <h3>어떻게 답할 것인가</h3>
+      <p><strong>지적 &rarr; 근거 &rarr; 제안</strong> 3단 구조. 근거는 본문 인용. 제안은 한 문장.</p>
     </div>
   </div>
-  <div class="foot"><strong>참가자는 호출하지 않는다</strong>. 원리 체감이 목표. 직접 호출은 2주 프로젝트 기간에 1회 이상 해보기를 권장.</div>
+  <div class="foot">에이전트 = &ldquo;이런 역할로, 이런 기준으로, 이런 포맷으로 답하라&rdquo;를 <strong>한 번에 박아둔 AI</strong>. 호출만 하면 동일 관점으로 반복 검토된다.</div>
 </body>
 </html>

@@ -2,33 +2,65 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S17 B2 섹션 오프너</title>
+<title>Day 4 · S18 Skill Creator 호출 실습 + B1 정리</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
-  .top { display: flex; justify-content: space-between; align-items: center; }
-  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
-  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
-  .mid { display: flex; flex-direction: column; gap: 18pt; }
-  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
-  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 560pt; }
-  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
-  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
-  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.5; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 10pt; }
+  .s { padding: 9pt 12pt; background: #ebe1d2; border-radius: 9pt; display: flex; gap: 9pt; align-items: flex-start; }
+  .s .n { font-size: 14pt; font-weight: 700; color: #b45a34; line-height: 1; flex: 0 0 18pt; }
+  .s .body { flex: 1; }
+  .s .body h4 { font-size: 11pt; font-weight: 600; color: #2b2520; line-height: 1.3; }
+  .s .body p { font-size: 9pt; color: #5a4d40; line-height: 1.45; margin-top: 2pt; }
+  .s .body p code { background: #fff; padding: 1pt 4pt; border-radius: 3pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #2b2520; }
+  .summary { margin-top: 10pt; padding: 12pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 5pt; }
+  .summary .lbl { font-size: 8.5pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .summary h3 { font-size: 14pt; font-weight: 600; color: #fff; line-height: 1.35; }
+  .summary p { font-size: 9.8pt; color: #f5e4d4; line-height: 1.55; }
+  .summary p strong { color: #fff; }
 </style>
 </head>
 <body>
-  <div class="top">
-    <div class="block">Block 2 · 축 6 개선</div>
-    <div class="time">20 min</div>
+  <div class="eyebrow">B1 실습 · 5분</div>
+  <div class="h-large">본인 SKILL.md → <em>Skill Creator 한 번 돌리기</em></div>
+  <div class="rule"></div>
+  <div class="intro">눈으로만 보지 말고 한 번 호출해본다. 어제 만든 스킬 하나면 충분. <strong>가장 큰 약점 1개</strong>만 메모해서 B2로 가져간다.</div>
+  <div class="steps">
+    <div class="s">
+      <div class="n">1</div>
+      <div class="body">
+        <h4>SKILL.md 준비</h4>
+        <p>어제 Day 3에서 만든 본인 스킬 1개. 리캡 메일 / 톤 검토 등.</p>
+      </div>
+    </div>
+    <div class="s">
+      <div class="n">2</div>
+      <div class="body">
+        <h4>Claude에게 요청</h4>
+        <p><code>이 SKILL.md를 Skill Creator로 검증해줘</code></p>
+      </div>
+    </div>
+    <div class="s">
+      <div class="n">3</div>
+      <div class="body">
+        <h4>리포트 받기</h4>
+        <p>부족한 입력 / 모호한 출력 포맷 / 누락된 예외 처리.</p>
+      </div>
+    </div>
+    <div class="s">
+      <div class="n">4</div>
+      <div class="body">
+        <h4>약점 1개 메모</h4>
+        <p>가장 큰 지적 1개만 골라 메모 → B2 입력으로 가져간다.</p>
+      </div>
+    </div>
   </div>
-  <div class="mid">
-    <h1>Compound + 6축<br>자가진단</h1>
-    <div class="sub">검증 피드백을 끝내고 버리지 않는다. 반복되는 지적을 rules·스킬에 되먹이는 사이클과, 내 약한 축을 고르는 O/X 체크리스트로.</div>
-  </div>
-  <div class="bot">
-    <div class="meta">Build &rarr; Use &rarr; Notice &rarr; Fix · 복리의 기초</div>
-    <div class="count">8 slides</div>
+  <div class="summary">
+    <div class="lbl">B1 정리</div>
+    <h3>오늘 검증 = <strong>까다로운 고객(결과물) + Skill Creator(스킬)</strong></h3>
+    <p>두 도구로 양쪽 약점이 잡혔다. <strong>가장 큰 지적 1개</strong>만 B2로 가져간다 — 다 잡으려 하지 않는다.</p>
   </div>
 </body>
 </html>

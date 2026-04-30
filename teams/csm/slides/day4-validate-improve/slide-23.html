@@ -2,61 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S22 첫날 vs 마지막날</title>
+<title>Day 4 · S23 wrap + Compound 결합</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .pane { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
-  .pane.d1 { background: #ebe1d2; }
-  .pane.d4 { background: #c56a4a; color: #f7efe4; }
-  .pane .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .pane.d1 .tag { color: #a0917e; }
-  .pane.d4 .tag { color: #f2cdb4; }
-  .pane h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
-  .pane.d1 h3 { color: #2b2520; }
-  .pane.d4 h3 { color: #fff; }
-  .pane ul { font-size: 11pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
-  .pane.d1 ul { color: #42332a; }
-  .pane.d4 ul { color: #f5e4d4; }
-  .pane ul li::marker { color: #b45a34; }
-  .pane.d4 ul li::marker { color: #f2cdb4; }
-  .pane ul li strong { font-weight: 600; }
-  .pane.d1 ul li strong { color: #2b2520; }
-  .pane.d4 ul li strong { color: #fff; }
-  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
+  .col { padding: 16pt 18pt; border-radius: 10pt; display: flex; flex-direction: column; gap: 8pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .lbl { font-size: 8.5pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .lbl { color: #b45a34; }
+  .col.terra .lbl { color: #f2cdb4; }
+  .col h3 { font-size: 16pt; font-weight: 600; line-height: 1.3; letter-spacing: -0.005em; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col ul { list-style: none; display: flex; flex-direction: column; gap: 8pt; margin-top: 4pt; }
+  .col li { display: flex; gap: 8pt; align-items: flex-start; padding-top: 7pt; border-top: 1px dashed; font-size: 10.5pt; line-height: 1.45; }
+  .col.cream li { border-color: rgba(0,0,0,0.1); color: #42332a; }
+  .col.terra li { border-color: rgba(255,255,255,0.2); color: #f5e4d4; }
+  .col li:first-child { border-top: none; padding-top: 0; }
+  .col li .b { font-size: 11pt; font-weight: 700; flex: 0 0 14pt; line-height: 1.3; }
+  .col.cream li .b { color: #b45a34; }
+  .col.terra li .b { color: #ffdfc9; }
+  .col li strong { font-weight: 700; }
+  .col.cream li strong { color: #b45a34; }
+  .col.terra li strong { color: #fff; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">비교 프레임 · 짝꿍 대화 인풋</div>
-  <div class="h-large">첫날 올린 것 vs <em>오늘</em> 내 결과물</div>
+  <div class="eyebrow">B2 · 결합</div>
+  <div class="h-large">수동 사이클 → <em>자동 트리거</em></div>
   <div class="rule"></div>
-  <div class="intro">Day 1 첫 시간에 각자 올린 &ldquo;내가 해결하고 싶은 문제&rdquo; 노트가 있다. 그걸 지금 다시 읽으면서 오늘까지 만든 결과물과 비교한다.</div>
-  <div class="panes">
-    <div class="pane d1">
-      <div class="tag">Day 1 &mdash; 첫 초안</div>
-      <h3>처음 썼을 때</h3>
+  <div class="intro">Compound 사이클을 사람이 매주 따로 시간 잡아 돌리려면 잘 안 된다. <strong>wrap이 매 세션 끝에 자동으로 Notice를 적고, 임계치 도달 시 알림</strong>을 주면 인지 부담이 사라진다.</div>
+  <div class="compare">
+    <div class="col cream">
+      <div class="lbl">기존 — 수동</div>
+      <h3>매주 회고 시간을 따로 잡아야</h3>
       <ul>
-        <li>문제가 <strong>한 문장</strong>으로 안 잡혔다</li>
-        <li>&ldquo;대충 이런 느낌&rdquo; 수준의 기대치</li>
-        <li>어느 도구에서 시작할지 몰랐다</li>
-        <li>AI에게 시키는 범위가 <strong>너무 컸다</strong></li>
+        <li><span class="b">1.</span><span>매주 회고 시간 따로 — <strong>일정 잡기 어렵다</strong></span></li>
+        <li><span class="b">2.</span><span>사람이 직접 Notice 적기 — 잘 안 적힌다</span></li>
+        <li><span class="b">3.</span><span>패턴 발견은 우연 — <strong>3회 반복 알아채기 어렵다</strong></span></li>
       </ul>
     </div>
-    <div class="pane d4">
-      <div class="tag">Day 4 &mdash; 오늘 결과물</div>
-      <h3>지금 가진 것</h3>
+    <div class="col terra">
+      <div class="lbl">신규 — wrap 자동</div>
+      <h3>매 세션 끝에 자동으로</h3>
       <ul>
-        <li>CLAUDE.md에 적어둔 <strong>고정 맥락</strong></li>
-        <li>MCP 1개 이상 연결 상태</li>
-        <li>동작하는 <strong>스킬 1개</strong></li>
-        <li>까다로운 고객 피드백 1건</li>
+        <li><span class="b">1.</span><span>세션마다 자동 — <strong>따로 시간 안 잡아도 된다</strong></span></li>
+        <li><span class="b">2.</span><span>wrap이 Notice 자동 작성 — 누락 X</span></li>
+        <li><span class="b">3.</span><span>임계치 도달 시 알림 — <strong>3회 반복 자동 감지</strong></span></li>
       </ul>
     </div>
   </div>
-  <div class="foot">짝꿍에게 3분씩 <strong>&ldquo;내가 이만큼 바뀌었다&rdquo;</strong>를 읽어준다. 듣는 쪽은 X 축 하나를 같이 골라준다.</div>
 </body>
 </html>
