@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Q3 — 구조</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Pretendard',sans-serif;background:#222}
+  .slide{width:720pt;height:405pt;background:#0F0F0F;color:#fff;padding:24pt 32pt;display:flex;flex-direction:column;gap:12pt;overflow:hidden}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1pt solid #333;padding-bottom:12pt}
+  .head h2{font-size:22pt;font-weight:800;letter-spacing:-0.5pt}
+  .head h2 .hl{color:#00D9FF}
+  .head .eb{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#00D9FF;letter-spacing:2pt}
+  .body{display:grid;grid-template-columns:1.1fr 1fr;gap:14pt;flex:1}
+  .panel{background:#1A1A1A;border:1pt solid #333;padding:14pt 16pt;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+  .panel-head{font-family:'JetBrains Mono',monospace;font-size:10pt;color:#B0B0B0;letter-spacing:1.5pt;margin-bottom:12pt}
+  .panel-head b{color:#00D9FF}
+  .tree{font-family:'JetBrains Mono',monospace;font-size:10pt;line-height:1.6}
+  .tree .req{color:#00D9FF;font-weight:600}
+  .tree .name{color:#fff}
+  .tree .opt{color:#888}
+  .tree .cmt{color:#666;font-size:9pt}
+  .tree .req-tag{background:#00D9FF;color:#0F0F0F;font-size:9pt;padding:1pt 5pt;border-radius:2pt;margin-left:6pt;font-weight:700}
+  .right{display:flex;flex-direction:column;gap:12pt}
+  .yaml{background:#1A1A1A;border:1pt solid #333;padding:14pt 16pt;flex:1.2;min-height:0;overflow:hidden}
+  .yaml pre{font-family:'JetBrains Mono',monospace;font-size:9pt;line-height:1.55;background:#0F0F0F;padding:10pt;border:1pt solid #333;margin-top:6pt}
+  .yaml .k{color:#00D9FF}
+  .yaml .v{color:#fff}
+  .yaml .s{color:#666}
+  .rules{background:#252525;border:1pt solid #333;padding:10pt 14pt;flex:1;min-height:0;overflow:hidden}
+  .rules .lbl{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#00D9FF;letter-spacing:1.5pt;font-weight:700;margin-bottom:8pt}
+  .rules .row{display:flex;justify-content:space-between;align-items:baseline;padding:2pt 0;border-bottom:1pt solid #333;font-size:10pt}
+  .rules .row:last-child{border-bottom:0}
+  .rules .row .k{color:#B0B0B0}
+  .rules .row .v{font-family:'JetBrains Mono',monospace;color:#00D9FF;font-weight:700;font-size:11pt}
+  .src{font-family:'JetBrains Mono',monospace;font-size:8pt;color:#666;letter-spacing:1pt;border-top:1pt solid #333;padding-top:8pt}
+</style>
+</head>
+<body>
+  <div class="slide">
+    <header class="head">
+      <h2>Q3. 공식이 말한 <span class="hl">효율적 스킬 구조</span></h2>
+      <p class="eb">06 / 09 · STRUCTURE</p>
+    </header>
+    <div class="body">
+      <section class="panel">
+        <p class="panel-head">DIRECTORY · <b>my-skill/</b></p>
+        <pre class="tree">
+<span class="name">my-skill/</span>
+├── <span class="req">SKILL.md</span><span class="req-tag">REQUIRED</span>
+│   <span class="cmt"># 진입점 + YAML</span>
+├── <span class="opt">reference.md</span>
+│   <span class="cmt"># 필요 시 로드</span>
+├── <span class="opt">examples/</span>
+│   <span class="cmt"># 예시 자료</span>
+└── <span class="opt">scripts/</span>
+    <span class="cmt"># 실행 스크립트</span>
+</pre>
+      </section>
+      <div class="right">
+        <section class="yaml">
+          <p class="panel-head">SKILL.md · <b>최소 양식</b></p>
+<pre><span class="s">---</span>
+<span class="k">name</span>: <span class="v">my-skill</span>
+<span class="k">description</span>: <span class="v">언제 쓸지 한 줄</span>
+<span class="s">---</span>
+
+<span class="s"># 본문 — 호출 시 Claude가</span>
+<span class="s"># 따를 지시를 markdown으로</span></pre>
+        </section>
+        <section class="rules">
+          <p class="lbl">CORE RULES</p>
+          <div class="row"><span class="k">SKILL.md 권장 줄 수</span><span class="v">≤ 500</span></div>
+          <div class="row"><span class="k">description 글자 한도</span><span class="v">1,536</span></div>
+          <div class="row"><span class="k">description 첫 문장</span><span class="v">WHEN</span></div>
+        </section>
+      </div>
+    </div>
+    <p class="src">SOURCE · CLAUDE CODE DOCS — EXTEND CLAUDE WITH SKILLS</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>요약 매트릭스</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Pretendard',sans-serif;background:#222}
+  .slide{width:720pt;height:405pt;background:#0F0F0F;color:#fff;padding:30pt 40pt;display:flex;flex-direction:column;gap:14pt}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1pt solid #333;padding-bottom:12pt}
+  .head h2{font-size:22pt;font-weight:800;letter-spacing:-0.5pt}
+  .head h2 .hl{color:#00D9FF}
+  .head .eb{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#00D9FF;letter-spacing:2pt}
+  .body{flex:1;display:grid;grid-template-columns:1.3fr 1fr;gap:14pt}
+  .matrix{background:#1A1A1A;border:1pt solid #333;padding:0;display:flex;flex-direction:column}
+  .matrix-head{display:grid;grid-template-columns:60pt 1.4fr 1.6fr;background:#252525;font-family:'JetBrains Mono',monospace;font-size:9pt;color:#B0B0B0;letter-spacing:1.5pt;padding:10pt 14pt;border-bottom:1pt solid #333}
+  .matrix-row{display:grid;grid-template-columns:60pt 1.4fr 1.6fr;align-items:center;padding:14pt 14pt;border-bottom:1pt solid #252525;flex:1}
+  .matrix-row:last-child{border-bottom:0}
+  .matrix-row .qn{font-family:'JetBrains Mono',monospace;font-size:14pt;color:#00D9FF;font-weight:700}
+  .matrix-row .topic{font-size:11pt;color:#B0B0B0}
+  .matrix-row .ans{font-size:13pt;font-weight:700;color:#fff;line-height:1.4}
+  .matrix-row .ans .k{color:#00D9FF}
+  .check{background:#1A1A1A;border:1pt solid #333;padding:18pt;display:flex;flex-direction:column}
+  .check-title{font-family:'JetBrains Mono',monospace;font-size:10pt;color:#00D9FF;letter-spacing:1.5pt;margin-bottom:12pt}
+  .check ul{list-style:none;display:flex;flex-direction:column;gap:9pt}
+  .check li{display:flex;gap:10pt;align-items:flex-start;font-size:11pt;line-height:1.5;color:#fff}
+  .check .box{width:12pt;height:12pt;border:1pt solid #00D9FF;flex-shrink:0;margin-top:3pt;display:flex;align-items:center;justify-content:center;background:#0F0F0F}
+  .check li b{color:#00D9FF;font-weight:700}
+  .footer{font-family:'JetBrains Mono',monospace;font-size:9pt;color:#666;letter-spacing:1pt;border-top:1pt solid #333;padding-top:8pt;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+  <div class="slide">
+    <header class="head">
+      <h2>한 장 요약 + <span class="hl">실전 체크리스트</span></h2>
+      <p class="eb">08 / 09 · SUMMARY</p>
+    </header>
+    <div class="body">
+      <section class="matrix">
+        <div class="matrix-head">
+          <span>Q</span>
+          <span>TOPIC</span>
+          <span>ANSWER</span>
+        </div>
+        <div class="matrix-row">
+          <span class="qn">Q1</span>
+          <span class="topic">서브에이전트 개수</span>
+          <span class="ans">복잡도 따라 <span class="k">1 / 2-4 / 10+</span></span>
+        </div>
+        <div class="matrix-row">
+          <span class="qn">Q2</span>
+          <span class="topic">Nested 호출</span>
+          <span class="ans"><span class="k">불가능</span> · 메인에서 chain</span>
+        </div>
+        <div class="matrix-row">
+          <span class="qn">Q3</span>
+          <span class="topic">스킬 구조</span>
+          <span class="ans"><span class="k">SKILL.md</span> + 3단 점진 로딩</span>
+        </div>
+      </section>
+      <section class="check">
+        <p class="check-title">CHECKLIST · 실전 적용</p>
+        <ul>
+          <li><span class="box"></span><span>복잡도 모르면 <b>1개</b>로 시작 — 필요 시 늘리기</span></li>
+          <li><span class="box"></span><span>서브 안에서 또 spawn 시도 <b>금지</b></span></li>
+          <li><span class="box"></span><span>스킬은 <b>SKILL.md 한 장</b> + 나머지 파일 분리</span></li>
+          <li><span class="box"></span><span>description 첫 문장에 <b>"언제"</b> 명시</span></li>
+          <li><span class="box"></span><span>SKILL.md는 <b>500줄 이하</b>로 유지</span></li>
+        </ul>
+      </section>
+    </div>
+    <footer class="footer">
+      <span>한 줄로 — 적게 · 얕게 · 점진적으로</span>
+      <span>READY TO APPLY</span>
+    </footer>
+  </div>
+</body>
+</html>
