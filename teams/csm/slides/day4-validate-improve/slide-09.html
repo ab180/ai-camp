@@ -2,77 +2,89 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S09 Anthropic 사례 1 — Constitutional AI</title>
+<title>Day 4 · S09 검증 패턴 1 — 쓴 사람과 점검하는 사람을 나눈다</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
-  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  body { display: flex; flex-direction: column; padding: 18pt 26pt; }
+  .intro { font-size: 9.5pt; line-height: 1.4; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .chain { margin-top: 12pt; padding: 14pt 14pt 12pt; background: #ebe1d2; border-radius: 10pt; display: flex; flex-direction: column; gap: 8pt; }
-  .ctitle { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .flow { display: grid; grid-template-columns: 1fr 14pt 1fr 14pt 1fr 14pt 1fr; align-items: center; gap: 0; }
-  .node { padding: 9pt 8pt; border-radius: 8pt; text-align: center; }
-  .node.input, .node.output { background: #fff; border: 1.2px dashed #b45a34; color: #5a4d40; }
-  .node.skill { background: #c56a4a; color: #fff; }
+
+  .analogy { margin-top: 10pt; padding: 11pt 14pt; background: #fff; border-radius: 10pt; border-left: 3pt solid #c56a4a; }
+  .analogy .lbl { font-size: 8pt; letter-spacing: 0.2em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .analogy .body { font-size: 10.5pt; color: #2b2520; line-height: 1.55; margin-top: 2pt; }
+  .analogy .body strong { color: #b45a34; font-weight: 600; }
+
+  .chain { margin-top: 9pt; padding: 11pt 14pt 10pt; background: #ebe1d2; border-radius: 10pt; display: flex; flex-direction: column; gap: 7pt; }
+  .ctitle { font-size: 8pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .flow { display: grid; grid-template-columns: 1fr 14pt 1fr 14pt 1fr; align-items: center; gap: 0; }
+  .node { padding: 9pt 9pt; border-radius: 8pt; text-align: center; }
+  .node.a { background: #c56a4a; color: #fff; }
+  .node.b { background: #fff; border: 1.5px dashed #b45a34; color: #5a4d40; }
   .node .nlbl { font-size: 7.5pt; letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase; opacity: 0.85; }
-  .node.skill .nlbl { color: #ffdfc9; opacity: 1; }
+  .node.a .nlbl { color: #ffdfc9; opacity: 1; }
   .node .nbody { font-size: 10pt; font-weight: 600; line-height: 1.25; margin-top: 3pt; }
+  .node .nsub { font-size: 8.5pt; line-height: 1.4; margin-top: 2pt; opacity: 0.85; font-weight: 400; }
   .arrow { font-size: 16pt; color: #b45a34; font-weight: 600; text-align: center; line-height: 1; }
 
-  .bot { margin-top: 12pt; padding: 13pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; flex: 1; display: flex; flex-direction: column; gap: 7pt; }
-  .bot .lbl { font-size: 8.5pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
-  .bot h3 { font-size: 13pt; font-weight: 600; color: #fff; line-height: 1.3; }
-  .bot .map { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; margin-top: 3pt; }
-  .bot .m { padding-top: 6pt; border-top: 1px dashed rgba(255,255,255,0.25); }
-  .bot .m .k { font-size: 8.2pt; letter-spacing: 0.16em; color: #ffdfc9; font-weight: 700; text-transform: uppercase; }
-  .bot .m .v { font-size: 10pt; color: #fff; font-weight: 600; margin-top: 2pt; line-height: 1.35; }
-  .bot .m .v span { color: #f5e4d4; font-weight: 400; }
+  .csm { margin-top: 7pt; padding: 9pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 8pt; flex: 1; display: flex; flex-direction: column; gap: 3pt; }
+  .csm .lbl { font-size: 7.5pt; letter-spacing: 0.2em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .csm h3 { font-size: 10.5pt; font-weight: 600; color: #fff; line-height: 1.25; }
+  .csm .map { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7pt; margin-top: 2pt; }
+  .csm .m { padding-top: 3pt; border-top: 1px dashed rgba(255,255,255,0.25); }
+  .csm .m .k { font-size: 7pt; letter-spacing: 0.14em; color: #ffdfc9; font-weight: 700; text-transform: uppercase; }
+  .csm .m .v { font-size: 8.8pt; color: #fff; font-weight: 600; margin-top: 1pt; line-height: 1.25; }
+  .csm .m .v span { color: #f5e4d4; font-weight: 400; font-size: 7.5pt; display: block; margin-top: 1pt; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Anthropic 검증 사례 1 / 3</div>
-  <div class="h-large">Constitutional AI — <em>작성자 + 헌법 비평자</em></div>
+  <div class="eyebrow">검증 패턴 1 / 3 — Anthropic이 자기 모델 만들 때 쓰는 방법</div>
+  <div class="h-large">쓴 사람과 점검하는 사람을 <em>나눈다</em></div>
   <div class="rule"></div>
-  <div class="intro">Anthropic이 자기 모델을 만들 때 쓰는 검증 방식. <strong>한 모델이 답을 내고, 다른 모델이 헌법을 잣대로 비평</strong>하고, 작성자가 다시 쓴다. 우리 헌법은 rules/와 톤 가이드.</div>
+  <div class="intro">하나의 AI가 답을 내고 → <strong>다른 AI가 우리 회사 가이드를 잣대로 점검</strong> → 다시 쓴다. 같은 AI에게 다 시키지 않는다. <strong>Anthropic은 헌법(가이드)을 미리 정해놓고 그 헌법으로 점검</strong>해서 안전한 답을 만든다.</div>
+
+  <div class="analogy">
+    <div class="lbl">일상 비유</div>
+    <div class="body">"혼자 쓴 보고서를 본인이 다시 읽으면 빈틈이 안 보인다. <strong>사수가 회사 가이드라인 들고 빨간펜</strong>으로 한 번 점검하면 보인다." 같은 사람이 쓰고 점검하면 검증이 아니다.</div>
+  </div>
+
   <div class="chain">
-    <div class="ctitle">CONSTITUTIONAL AI · 4-NODE LOOP</div>
+    <div class="ctitle">3-NODE 흐름</div>
     <div class="flow">
-      <div class="node skill">
-        <div class="nlbl">1</div>
-        <div class="nbody">작성자 모델</div>
+      <div class="node a">
+        <div class="nlbl">1. 작성</div>
+        <div class="nbody">본인 스킬</div>
+        <div class="nsub">결과물 만들기</div>
       </div>
       <div class="arrow">&rarr;</div>
-      <div class="node input">
-        <div class="nlbl">2</div>
-        <div class="nbody">답변 생성</div>
+      <div class="node b">
+        <div class="nlbl">2. 점검</div>
+        <div class="nbody">까다로운 고객</div>
+        <div class="nsub">우리 가이드로 빨간펜</div>
       </div>
       <div class="arrow">&rarr;</div>
-      <div class="node skill">
-        <div class="nlbl">3</div>
-        <div class="nbody">헌법 비평자 모델</div>
-      </div>
-      <div class="arrow">&rarr;</div>
-      <div class="node output">
-        <div class="nlbl">4</div>
-        <div class="nbody">작성자 재작성</div>
+      <div class="node a">
+        <div class="nlbl">3. 다시</div>
+        <div class="nbody">본인 스킬</div>
+        <div class="nsub">지적 반영해 재작성</div>
       </div>
     </div>
   </div>
-  <div class="bot">
-    <div class="lbl">CSM 매핑</div>
-    <h3>같은 구조를 본인 메일 검증에 그대로</h3>
+
+  <div class="csm">
+    <div class="lbl">CSM 매핑 — 본인 스킬에 그대로</div>
+    <h3>본인이 어제 만든 그 스킬·그 결과물에 같은 구조</h3>
     <div class="map">
       <div class="m">
-        <div class="k">작성자</div>
-        <div class="v">본인 스킬<br><span>리캡 메일 작성 스킬</span></div>
+        <div class="k">작성</div>
+        <div class="v">본인 스킬<span>어제 사이클로 만든 그 스킬</span></div>
       </div>
       <div class="m">
-        <div class="k">비평자</div>
-        <div class="v">까다로운 고객<br><span>페르소나 에이전트</span></div>
+        <div class="k">점검</div>
+        <div class="v">까다로운 고객 페르소나<span>본인 회사 가이드 잣대</span></div>
       </div>
       <div class="m">
-        <div class="k">헌법</div>
-        <div class="v">우리 팀 rules · 톤<br><span>금지어 / 톤 가이드</span></div>
+        <div class="k">가이드</div>
+        <div class="v">우리 팀 rules · 톤<span>금지어 · 톤 가이드</span></div>
       </div>
     </div>
   </div>

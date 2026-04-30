@@ -2,67 +2,76 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S25 본인 Compound 파이프라인 2단</title>
+<title>Day 4 · S25 wrap 외에 다른 자동화 방법</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; padding: 22pt 30pt; }
-  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro { font-size: 9.8pt; line-height: 1.5; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .stages { margin-top: 10pt; flex: 1; display: flex; flex-direction: column; gap: 3pt; justify-content: center; }
-  .stage { display: grid; grid-template-columns: 26pt 1fr; gap: 10pt; padding: 7pt 14pt; border-radius: 8pt; align-items: center; }
-  .stage.cream { background: #ebe1d2; }
-  .stage.terra { background: #c56a4a; color: #f7efe4; }
-  .stage .n { font-size: 12pt; font-weight: 700; line-height: 1; }
-  .stage.cream .n { color: #b45a34; }
-  .stage.terra .n { color: #fff; }
-  .stage .body h4 { font-size: 11pt; font-weight: 600; line-height: 1.25; }
-  .stage.cream .body h4 { color: #2b2520; }
-  .stage.terra .body h4 { color: #fff; }
-  .stage .body p { font-size: 9pt; line-height: 1.4; margin-top: 2pt; }
-  .stage.cream .body p { color: #5a4d40; }
-  .stage.terra .body p { color: #f5e4d4; }
-  .stage .body code { background: #fff; padding: 1pt 5pt; border-radius: 3pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #2b2520; }
-  .stage.terra .body code { background: rgba(255,255,255,0.18); color: #fff; }
-  .arr { text-align: center; color: #b45a34; font-size: 11pt; line-height: 1; font-weight: 600; padding: 0; }
+
+  table { margin-top: 10pt; width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 7pt 9pt; font-size: 8pt; letter-spacing: 0.18em; color: #a0917e; font-weight: 700; text-transform: uppercase; border-bottom: 1.5px solid #b45a34; }
+  td { padding: 7pt 9pt; font-size: 9pt; color: #42332a; line-height: 1.45; border-bottom: 1px solid #ebe1d2; vertical-align: top; }
+  td.method { font-weight: 600; color: #b45a34; width: 110pt; }
+  td.way { width: 230pt; }
+  td.pro { color: #2b2520; }
+  td.con { color: #7d6b5a; }
+  tr.highlight td { background: #ebe1d2; }
+  tr.highlight td.method { color: #2b2520; }
+
+  .foot { margin-top: 10pt; padding: 9pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 9.8pt; line-height: 1.5; }
+  .foot strong { color: #fff; }
+  .foot em { font-style: normal; color: #ffdfc9; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">B2 실습 · 2단</div>
-  <div class="h-large">3회 반복 신호 → <em>rules/ 자동 추가</em></div>
+  <div class="eyebrow">B2 · 자동화 옵션 비교</div>
+  <div class="h-large">wrap이 유일한 답은 아니다 — <em>본인 환경에 맞는 것</em></div>
   <div class="rule"></div>
-  <div class="intro">1단은 신호 누적. 2단은 <strong>임계치 도달 시 자동 반영</strong>이다. 3회 반복된 신호를 wrap이 감지하면, 본인이 한 줄 부탁만 해도 rules에 자동 추가된다.</div>
-  <div class="stages">
-    <div class="stage cream">
-      <div class="n">1</div>
-      <div class="body">
-        <h4>wrap 임계치 알림</h4>
-        <p>3회 반복 발견 — "다음 액션 날짜 누락이 3회 누적되었습니다"</p>
-      </div>
-    </div>
-    <div class="arr">&darr;</div>
-    <div class="stage terra">
-      <div class="n">2</div>
-      <div class="body">
-        <h4>Claude에게 한 줄</h4>
-        <p><code>이 패턴을 rules/required.md에 추가해줘</code></p>
-      </div>
-    </div>
-    <div class="arr">&darr;</div>
-    <div class="stage terra">
-      <div class="n">3</div>
-      <div class="body">
-        <h4>rules/ 자동 업데이트</h4>
-        <p>Claude가 <code>required.md</code>에 항목 추가 → commit + push 자동</p>
-      </div>
-    </div>
-    <div class="arr">&darr;</div>
-    <div class="stage cream">
-      <div class="n">4</div>
-      <div class="body">
-        <h4>다음 사이클부터 자동 적용</h4>
-        <p>같은 실수 재발 X — Compound가 한 바퀴 완성</p>
-      </div>
-    </div>
-  </div>
+  <div class="intro">선택 기준 = <strong>마찰이 가장 작은 것</strong>. 매일 의식 안 하고 굴러가는 게 무엇인가. 비개발자 CSM 대부분에게는 <strong>/wrap이 가장 마찰 작다</strong> (Claude Code 안에서 끝). 다만 슬랙 리마인더 + 수동 메모 조합도 충분히 작동한다.</div>
+
+  <table>
+    <thead><tr><th>방법</th><th>어떻게</th><th>장점</th><th>단점</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="method">수동 회고 메모</td>
+        <td class="way">매 세션 후 SKILL.md `## 회고`에 1줄</td>
+        <td class="pro">도구 X, 본인 페이스</td>
+        <td class="con">잊어버림. 일주일 후 안 적음</td>
+      </tr>
+      <tr>
+        <td class="method">슬랙 리마인더</td>
+        <td class="way">매주 금요일 오후 5시 슬랙봇 알림</td>
+        <td class="pro">시간 차단·외부 자극</td>
+        <td class="con">알림 무시 가능. 적는 건 사람</td>
+      </tr>
+      <tr>
+        <td class="method">Notion DB</td>
+        <td class="way">"패턴" DB에 매일 row 1개</td>
+        <td class="pro">검색·필터·집계 자동</td>
+        <td class="con">도구 따로 열어야. 마찰</td>
+      </tr>
+      <tr>
+        <td class="method">캘린더 반복</td>
+        <td class="way">매주 금요일 30분 회고 (단독)</td>
+        <td class="pro">시간 못 빠뜨림</td>
+        <td class="con">미팅 자체가 부담</td>
+      </tr>
+      <tr>
+        <td class="method">GitHub Actions</td>
+        <td class="way">git commit 시 패턴 분석 자동</td>
+        <td class="pro">완전 자동</td>
+        <td class="con">설정 진입 장벽 (개발자 영역)</td>
+      </tr>
+      <tr class="highlight">
+        <td class="method">/wrap 스킬</td>
+        <td class="way">세션 끝에 한 번 호출</td>
+        <td class="pro">Claude Code 안에서 끝, 자동 누적</td>
+        <td class="con">설치·이해 5분 필요</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="foot">오늘은 <em>/wrap 한 번 직접 호출</em>해서 출력을 본 다음, 본인 워크플로우에 어떤 방법으로 끼울지 결정한다. 다음 두 슬라이드에서 본인 SKILL.md에 <strong>Compound 파이프라인 1단·2단을 직접 만든다</strong>.</div>
 </body>
 </html>

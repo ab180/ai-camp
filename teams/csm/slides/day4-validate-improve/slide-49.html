@@ -2,56 +2,52 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S49 부록 1 Vercel #3 활용</title>
+<title>Day 4 · S49 부록 2 Supabase #3 활용</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; padding: 22pt 30pt; }
   .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .cards { margin-top: 12pt; flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; }
-  .c { padding: 13pt 14pt; background: #ebe1d2; border-radius: 9pt; display: flex; flex-direction: column; gap: 5pt; }
+  .conn { margin-top: 10pt; padding: 10pt 14pt; background: #2b2520; color: #f7efe4; border-radius: 9pt; font-family: 'SF Mono', Menlo, monospace; font-size: 9.5pt; line-height: 1.55; }
+  .conn .lbl { font-size: 7.8pt; letter-spacing: 0.22em; color: #ffb185; font-weight: 700; text-transform: uppercase; font-family: 'Pretendard', sans-serif; margin-bottom: 4pt; }
+  .conn span { color: #ffdfc9; }
+  .cards { margin-top: 11pt; flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9pt; }
+  .c { padding: 11pt 13pt; background: #ebe1d2; border-radius: 9pt; display: flex; flex-direction: column; gap: 4pt; }
   .c.terra { background: #c56a4a; color: #f7efe4; }
   .c .n { font-size: 8pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
   .c.terra .n { color: #ffdfc9; }
-  .c h4 { font-size: 12.5pt; font-weight: 600; color: #2b2520; line-height: 1.3; }
+  .c h4 { font-size: 11.5pt; font-weight: 600; color: #2b2520; line-height: 1.3; }
   .c.terra h4 { color: #fff; }
-  .c p { font-size: 9.2pt; line-height: 1.55; }
-  .c p { color: #42332a; }
+  .c p { font-size: 9pt; line-height: 1.55; color: #42332a; }
   .c.terra p { color: #f5e4d4; }
-  .c code { background: #fff; padding: 1pt 4pt; border-radius: 3pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #2b2520; }
-  .c.terra code { background: rgba(255,255,255,0.2); color: #fff; }
-  .c .ex { padding-top: 6pt; border-top: 1px dashed; font-size: 8.8pt; line-height: 1.5; }
-  .c.cream .ex, .c .ex { border-color: rgba(0,0,0,0.12); color: #5a4d40; }
-  .c.terra .ex { border-color: rgba(255,255,255,0.22); color: #ffdfc9; }
-  .warn { margin-top: 9pt; padding: 7pt 14pt; background: #fff; border-left: 3pt solid #c56a4a; border-radius: 8pt; font-size: 9.5pt; color: #42332a; line-height: 1.5; }
-  .warn strong { color: #b45a34; }
+  .c p strong { color: #b45a34; font-weight: 700; }
+  .c.terra p strong { color: #fff; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">부록 1 · Vercel · 활용</div>
-  <div class="h-large">본인 CLAUDE.md를 <em>팀 공개 페이지</em>로</div>
+  <div class="eyebrow">부록 2 · Supabase · 활용</div>
+  <div class="h-large">MCP로 연결 — Claude가 <em>직접 SQL</em></div>
   <div class="rule"></div>
-  <div class="intro">배포가 끝났으면 무엇에 쓸까. <strong>3가지 시나리오</strong>를 본인 상황에 맞춰 골라 시작.</div>
+  <div class="intro">테이블이 만들어졌으면 Claude가 <strong>직접 SQL을 짜고 INSERT/SELECT</strong>한다. MCP로 한 번 연결하면 매번 본인이 옮길 필요 X.</div>
+  <div class="conn">
+    <div class="lbl">CONNECTION FLOW</div>
+    claude.ai &rarr; Settings &rarr; Integrations &rarr; <span>Supabase</span> &rarr; URL + key 입력 &rarr; <span>/mcp</span> 명령으로 확인</div>
   <div class="cards">
     <div class="c">
       <div class="n">시나리오 1</div>
-      <h4>신규 입사자 온보딩</h4>
-      <p>Notion 권한 안 줘도 됨. URL 1개로 CLAUDE.md · rules · 스킬 카탈로그 공유.</p>
-      <div class="ex">"이거 한 번 보고 오세요" — URL 1개</div>
+      <h4>케이스 DB</h4>
+      <p>새 문의 도착 &rarr; <strong>비슷한 사례 SELECT</strong> &rarr; 답변 작성 &rarr; cases 테이블 INSERT</p>
     </div>
     <div class="c terra">
       <div class="n">시나리오 2</div>
-      <h4>공용 스킬 카탈로그</h4>
-      <p>팀 repo README가 자동 공개 페이지로. 검색 · 링크 공유 가능.</p>
-      <div class="ex">팀 PR이 머지되면 카탈로그 자동 갱신</div>
+      <h4>wrap 팀 누적</h4>
+      <p>patterns 테이블에 신호 저장 &rarr; <strong>팀 단위 Compound</strong> &rarr; 6명 신호 종합</p>
     </div>
     <div class="c">
       <div class="n">시나리오 3</div>
-      <h4>본인 작업 방식 포트폴리오</h4>
-      <p>외부 미팅 · 전직 · 컨퍼런스. 본인 도메인 URL로 깔끔.</p>
-      <div class="ex"><code>https://yechan.vercel.app</code></div>
+      <h4>스킬 실행 로그</h4>
+      <p>호출 시각 · 스킬명 · 결과 자동 기록 &rarr; <strong>어떤 스킬이 자주 쓰이나</strong> 데이터로</p>
     </div>
   </div>
-  <div class="warn"><strong>주의</strong> — 민감 정보 (고객명 · 내부 수치 · 자격 증명) push 금지. 공개 URL은 누구나 접근.</div>
 </body>
 </html>

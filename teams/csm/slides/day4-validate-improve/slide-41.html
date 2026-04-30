@@ -2,61 +2,58 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S36 PR 작성 UI</title>
+<title>Day 4 · S33 README 예시</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; overflow: hidden; }
+  .h-large { font-size: 22pt; }
+  .rule { margin: 6pt 0 8pt; }
+  .intro { font-size: 10pt; line-height: 1.4; color: #42332a; margin-top: 0; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
-  .pr { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; min-height: 0; overflow: hidden; }
-  .pr .ubar { font-size: 8.5pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 5pt; }
-  .pr .title-box { font-size: 11.5pt; font-weight: 600; color: #2b2520; border: 1px solid #d4c4ac; border-radius: 6pt; padding: 6pt 8pt; }
-  .pr .title-box em { font-style: normal; color: #c56a4a; }
-  .pr .body-box { background: #f5ede2; border-radius: 6pt; padding: 8pt 10pt; font-size: 9pt; color: #2b2520; line-height: 1.45; font-family: 'SF Mono', Menlo, monospace; white-space: pre-wrap; flex: 1; min-height: 0; overflow: hidden; }
-  .pr .body-box b { color: #c56a4a; font-weight: 600; }
-  .pr .submit { background: #c56a4a; color: #fff; font-size: 9pt; font-weight: 600; padding: 5pt 12pt; border-radius: 5pt; align-self: flex-start; flex-shrink: 0; }
-  .tip { background: #ebe1d2; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
-  .tip h4 { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .tip ul { font-size: 10pt; line-height: 1.5; color: #42332a; padding-left: 12pt; margin: 0; }
-  .tip ul li::marker { color: #b45a34; }
-  .tip ul li strong { color: #2b2520; font-weight: 600; }
+  .doc { margin-top: 6pt; padding: 10pt 12pt; background: #2b2520; border-radius: 12pt; flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+  .doc .plabel { font-size: 8.5pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; flex-shrink: 0; }
+  .doc pre { font-size: 8pt; line-height: 1.3; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 4pt; white-space: pre-wrap; flex: 1; min-height: 0; overflow: hidden; max-height: 160pt; }
+  .doc pre b { color: #f2cdb4; font-weight: 600; }
+  .doc pre em { color: #d4a480; font-style: normal; }
+  .foot { margin-top: 6pt; padding: 6pt 12pt; background: #ebe1d2; border-radius: 10pt; font-size: 10pt; line-height: 1.45; color: #42332a; flex-shrink: 0; }
+  .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">PR 작성 UI &mdash; 이 정도면 충분</div>
-  <div class="h-large">타이틀 1줄 · 본문 <em>3섹션</em></div>
+  <div class="eyebrow">참고용 운영진 샘플 &mdash; 본인 스킬 README 작성 시 형식만 참고</div>
+  <div class="h-large">샘플 — 운영진 recap-mail 스킬 README</div>
   <div class="rule"></div>
-  <div class="intro">GitHub &rarr; Pull requests &rarr; New. 아래 포맷만 지키면 리뷰어가 1분 안에 본다.</div>
-  <div class="panes">
-    <div class="pr">
-      <div class="ubar">github.com &mdash; New Pull Request</div>
-      <div class="title-box"><em>[add]</em> recap-mail 스킬</div>
-      <div class="body-box"><b>## 무엇을</b>
-CSM 미팅 리캡 메일 초안 스킬 추가.
+  <div class="intro">아래는 <strong>운영진이 만든 참고용 샘플</strong>. 본인 README는 어제 본인이 만든 그 스킬을 기준으로 같은 양식만 빌려서 작성한다. 길게 쓰지 않는다.</div>
+  <div class="doc">
+    <div class="plabel">skills / recap-mail / SKILL.md</div>
+    <pre><b>#</b> Recap Mail &mdash; CSM 미팅 리캡 메일 초안
 
-<b>## 왜</b>
-Day 3에서 만들었고 B1 에이전트 피드백으로
-결정사항 &middot; 기한 섹션 강화함.
+<em>&gt; axes: [3, 4]  | owner: @yechan | last-update: 2026-04-23</em>
 
-<b>## 축 태그</b>
-3 (계획) + 4 (실행)
+<b>##</b> when
+고객 미팅 후 리캡 메일 초안이 필요할 때.
+특히 결정사항 &middot; 책임자 &middot; 기한을 명확히 써야 하는 경우.
 
-<b>## 리뷰 포인트</b>
-- SKILL.md when 필드가 명확한지
-- 기한 형식이 팀 템플릿과 맞는지</div>
-      <div class="submit">Create pull request</div>
-    </div>
-    <div class="tip">
-      <h4>PR 작성 팁</h4>
-      <ul>
-        <li>타이틀은 <strong>[add] / [fix] / [update]</strong> 프리픽스</li>
-        <li>본문은 <strong>무엇 · 왜 · 축 · 리뷰 포인트</strong> 4개</li>
-        <li>스크린샷은 있으면 좋고 없어도 무방</li>
-        <li>Reviewer 1명 지정 (짝꿍 or 운영진)</li>
-        <li>&ldquo;<strong>Create draft</strong>&rdquo; 기능도 가능 &mdash; 초안 상태로 올리고 이어 작업</li>
-      </ul>
-    </div>
+<b>##</b> input
+  - 미팅 노트 (Notion 또는 Slack 스레드)
+  - 참석자 리스트
+  - 고객 관계 단계 (신규 / 운영 / 갱신)
+
+<b>##</b> output
+  - 제목 (25자 이내)
+  - 결정사항 3개 이하 &middot; 한 문장씩
+  - 다음 액션 (담당자 @mention + 기한)
+  - 문의 &middot; 블로커
+
+<b>##</b> how to use
+  1. <em>/recap-mail</em> 실행
+  2. 미팅 노트 붙여넣기
+  3. 고객 관계 단계 입력
+  4. 까다로운 고객 에이전트에 검수 &rarr; 수정
+
+<b>##</b> example
+실제 리캡 메일 1건 링크 (민감 정보 제거)</pre>
   </div>
+  <div class="foot">필드가 많지 않다. <strong>when · input · output</strong> 3개만 있어도 팀원이 쓸 수 있다. 나머지는 시간 나면 채운다.</div>
 </body>
 </html>
