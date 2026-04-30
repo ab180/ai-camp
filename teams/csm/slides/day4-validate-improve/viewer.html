@@ -3153,42 +3153,60 @@
 })();
 </script>
 <meta charset=&quot;UTF-8&quot;>
-<title>Day 4 · S11 프롬프트 1</title>
+<title>Day 4 · S15 페르소나 파일 만들기 — 어디에·어떤 구조</title>
 <link rel=&quot;stylesheet&quot; href=&quot;./assets/warm-neutral.css&quot;>
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; padding: 16pt 26pt; }
+  .intro { font-size: 9.2pt; line-height: 1.4; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .prompt { margin-top: 10pt; padding: 16pt 18pt; background: #2b2520; border-radius: 12pt; flex: 1; overflow: hidden; }
-  .prompt .plabel { font-size: 9pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
-  .prompt pre { font-size: 10.5pt; line-height: 1.6; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 8pt; white-space: pre-wrap; }
-  .prompt pre b { color: #f2cdb4; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; }
+
+  .where { margin-top: 6pt; padding: 8pt 12pt; background: #ebe1d2; border-radius: 8pt; border-left: 2pt solid #c56a4a; }
+  .where .lbl { font-size: 7.5pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .where h3 { font-size: 11pt; font-weight: 600; color: #2b2520; line-height: 1.25; margin-top: 1pt; }
+  .where .path { font-family: 'SF Mono', 'Menlo', monospace; font-size: 9pt; color: #b45a34; background: #fff; padding: 3pt 7pt; border-radius: 4pt; margin-top: 3pt; display: inline-block; }
+  .where .desc { font-size: 8.5pt; color: #42332a; line-height: 1.4; margin-top: 3pt; }
+  .where .desc strong { color: #b45a34; font-weight: 600; }
+
+  .file { margin-top: 6pt; padding: 8pt 12pt; background: #2b2520; color: #f5e4d4; border-radius: 8pt; flex: 1; display: flex; flex-direction: column; gap: 3pt; }
+  .file .plabel { font-size: 7.5pt; letter-spacing: 0.2em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
+  .file pre { font-size: 7.5pt; line-height: 1.45; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 1pt; white-space: pre-wrap; }
+  .file pre b { color: #f2cdb4; font-weight: 600; }
+  .file pre em { color: #d4a480; font-style: normal; }
+  .file pre i { color: #a0917e; font-style: normal; }
+
+  .foot { margin-top: 5pt; padding: 5pt 11pt; background: #c56a4a; color: #f7efe4; border-radius: 7pt; font-size: 8.5pt; line-height: 1.35; }
+  .foot strong { color: #fff; }
 </style>
 </head>
 <body>
-  <div class=&quot;eyebrow&quot;>B1 · 프롬프트 공개 1/2</div>
-  <div class=&quot;h-large&quot;><em>페르소나 · 톤 · 채점 기준</em></div>
+  <div class=&quot;eyebrow&quot;>B1 · 페르소나 파일 만들기 1 / 2</div>
+  <div class=&quot;h-large&quot;>페르소나는 — <em>본인이 만드는 SKILL.md 한 개</em></div>
   <div class=&quot;rule&quot;></div>
-  <div class=&quot;intro&quot;>운영진이 쓰는 까다로운 고객 에이전트의 앞부분. 누가 읽는지 · 어떤 기준으로 읽는지가 여기서 결정된다.</div>
-  <div class=&quot;prompt&quot;>
-    <div class=&quot;plabel&quot;>prompt part 1 — persona &amp;amp; rubric</div>
-    <pre><b>role:</b> 너는 Airbridge를 3년째 쓰는 시니어 프로덕트 매니저다.
-       구매 결정을 최종 승인하는 위치에 있다.
-       하루 30개 메일을 읽고, 숫자와 결정사항만 본다.
+  <div class=&quot;intro&quot;>까다로운 고객 페르소나는 운영진 거 그대로 쓰지 않는다. <strong>본인 회사의 까다로운 고객 1명</strong>을 정해서 SKILL.md 1개를 새로 만든다. 어제 본인 스킬 만든 것과 같은 흐름.</div>
 
-<b>tone:</b> 직설적. 칭찬 금지. 빠진 것을 먼저 짚는다.
-       근거 없이 &amp;quot;좋아 보임&amp;quot;은 쓰지 않는다.
-
-<b>rubric:</b> 아래 5가지로 채점한다 (각 O / X).
-  1. 이 메일의 결정사항이 한 문장으로 보이는가
-  2. 다음 액션에 책임자와 기한이 있는가
-  3. 고객이 물은 질문이 빠짐없이 답해졌는가
-  4. 오해 소지가 있는 표현이 있는가 (애매 · 과장)
-  5. 톤이 이 고객 관계 단계에 맞는가</pre>
+  <div class=&quot;where&quot;>
+    <div class=&quot;lbl&quot;>파일 위치</div>
+    <h3>본인 .claude/skills 안에 새 폴더 1개</h3>
+    <div class=&quot;path&quot;>.claude/skills/persona-{이름}/SKILL.md</div>
+    <div class=&quot;desc&quot;>예: <strong>persona-enterprise-marketer/SKILL.md</strong> (엔터프라이즈 마케팅 디렉터). Claude가 자동으로 인식해서 호출 가능. 본인 다른 스킬과 같은 위치.</div>
   </div>
-  <div class=&quot;foot&quot;>운영진이 <strong>사전 캘리브레이션</strong>한다 — 너무 혹독하면 좌절, 너무 순하면 무의미. 3년차 PM 톤에 맞춘다.</div>
+
+  <div class=&quot;file&quot;>
+    <div class=&quot;plabel&quot;>.claude/skills/persona-enterprise-marketer/SKILL.md</div>
+    <pre><i>---</i>
+<b>name:</b> persona-enterprise-marketer
+<b>description:</b> 엔터프라이즈 마케팅 디렉터 페르소나. 본인 결과물 검토.
+<i>---</i>
+
+<b>#</b> 까다로운 고객 페르소나
+
+<em>본인 결과물(메일·요약·리포트)을 입력 받아 검토 의견 출력.</em>
+
+<b>##</b> 페르소나   <b>##</b> 채점 기준   <b>##</b> 출력 포맷   <b>##</b> 제약
+<i>(다음 슬라이드에서 본문 4단원 구체)</i></pre>
+  </div>
+
+  <div class=&quot;foot&quot;>위 골격이 <strong>frontmatter + 본문 4단원</strong>. 다음 슬라이드에서 본문 4단원을 채운다.</div>
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
@@ -3344,44 +3362,92 @@
 })();
 </script>
 <meta charset=&quot;UTF-8&quot;>
-<title>Day 4 · S12 프롬프트 2</title>
+<title>Day 4 · S16 페르소나 파일 만들기 — 본문 4단원 구체</title>
 <link rel=&quot;stylesheet&quot; href=&quot;./assets/warm-neutral.css&quot;>
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; padding: 14pt 24pt; overflow: hidden; }
+  .intro { font-size: 8.8pt; line-height: 1.35; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .prompt { margin-top: 10pt; padding: 12pt 14pt; background: #2b2520; border-radius: 12pt; flex: 1; min-height: 0; overflow: hidden; }
-  .prompt .plabel { font-size: 9pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
-  .prompt pre { font-size: 10pt; line-height: 1.5; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 6pt; white-space: pre-wrap; }
-  .prompt pre b { color: #f2cdb4; font-weight: 600; }
-  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.5; color: #42332a; flex-shrink: 0; }
+
+  .grid { margin-top: 5pt; display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; flex: 1; min-height: 0; }
+  .sec { padding: 6pt 10pt; border-radius: 7pt; display: flex; flex-direction: column; gap: 2pt; min-height: 0; overflow: hidden; }
+  .sec.s1 { background: #ebe1d2; }
+  .sec.s2 { background: #c56a4a; color: #f7efe4; }
+  .sec.s3 { background: #ebe1d2; }
+  .sec.s4 { background: #c56a4a; color: #f7efe4; }
+  .sec .lbl { font-size: 7.5pt; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase; }
+  .sec.s1 .lbl, .sec.s3 .lbl { color: #b45a34; }
+  .sec.s2 .lbl, .sec.s4 .lbl { color: #f2cdb4; }
+  .sec h4 { font-size: 9.5pt; font-weight: 600; line-height: 1.2; }
+  .sec.s1 h4, .sec.s3 h4 { color: #2b2520; }
+  .sec.s2 h4, .sec.s4 h4 { color: #fff; }
+  .sec .what { font-size: 7.5pt; line-height: 1.35; }
+  .sec.s1 .what, .sec.s3 .what { color: #42332a; }
+  .sec.s2 .what, .sec.s4 .what { color: #f5e4d4; }
+  .sec .what strong { font-weight: 600; }
+  .sec.s1 .what strong, .sec.s3 .what strong { color: #b45a34; }
+  .sec.s2 .what strong, .sec.s4 .what strong { color: #fff; }
+  .sec pre { font-family: 'SF Mono', 'Menlo', monospace; font-size: 6.5pt; line-height: 1.4; padding: 4pt 6pt; border-radius: 4pt; margin-top: 1pt; white-space: pre-wrap; }
+  .sec.s1 pre, .sec.s3 pre { background: #fff; color: #2b2520; }
+  .sec.s2 pre, .sec.s4 pre { background: rgba(0,0,0,0.25); color: #f5e4d4; }
+
+  .foot { margin-top: 5pt; padding: 5pt 10pt; background: #fff; border-radius: 7pt; font-size: 8pt; line-height: 1.3; color: #42332a; border-left: 2pt solid #c56a4a; }
   .foot strong { color: #b45a34; }
 </style>
 </head>
 <body>
-  <div class=&quot;eyebrow&quot;>B1 · 프롬프트 공개 2/2</div>
-  <div class=&quot;h-large&quot;><em>피드백 포맷 &amp;mdash; 지적 · 근거 · 제안</em></div>
+  <div class=&quot;eyebrow&quot;>B1 · 페르소나 파일 만들기 2 / 2 — 본문 4단원</div>
+  <div class=&quot;h-large&quot;>이 4단원만 — <em>본인 회사 맞게</em> 채운다</div>
   <div class=&quot;rule&quot;></div>
-  <div class=&quot;intro&quot;>에이전트가 내는 답 형식을 강제한다. 두루뭉술한 &amp;ldquo;좀 더 명확히&amp;rdquo; 류를 차단하고, <strong>본문 인용 기반 지적</strong>만 허용한다.</div>
-  <div class=&quot;prompt&quot;>
-    <div class=&quot;plabel&quot;>prompt part 2 &amp;mdash; output format</div>
-    <pre><b>output:</b>
-  채점표를 먼저 낸다 (rubric 5개, 각 O / X).
+  <div class=&quot;intro&quot;>아래 4단원을 SKILL.md 본문에 그대로 작성. <strong>&quot;누구·무엇을 잣대로·어떻게 출력·하지 말 것&quot;</strong> 4가지면 페르소나 검토자 완성.</div>
 
-  X 항목마다 아래 3줄로 답한다.
-    <b>지적:</b> 무엇이 부족한가 (한 문장)
-    <b>근거:</b> 본문 어디 때문인가 (직접 인용, 10단어 이내)
-    <b>제안:</b> 어떻게 고치면 되는가 (한 문장)
+  <div class=&quot;grid&quot;>
+    <div class=&quot;sec s1&quot;>
+      <div class=&quot;lbl&quot;>1. 페르소나</div>
+      <h4>누구의 시각으로 보는가</h4>
+      <div class=&quot;what&quot;>회사 규모·직책·연차·성격·민감 포인트 4-5줄.</div>
+      <pre>회사 규모: 엔터프라이즈, 3년 사용자
+직책: 마케팅 디렉터
+성격: 모호 표현, 빠진 액션,
+      과도한 약속에 민감
+톤: 정중하지만 직접적</pre>
+    </div>
 
-  마지막에 한 줄 총평.
-    예) &amp;quot;결정사항은 명확하나, 기한 3건이 누락.&amp;quot;
+    <div class=&quot;sec s2&quot;>
+      <div class=&quot;lbl&quot;>2. 채점 기준</div>
+      <h4>무엇을 잣대로 점검하는가</h4>
+      <div class=&quot;what&quot;>본인 회사 톤 가이드 + rules/ 항목과 정렬.</div>
+      <pre>- 톤: 정중함이 핵심을 묻지 않는가
+- 다음 액션: 누가/언제까지/무엇을
+- 약속 단정: &quot;확실히 됩니다&quot; 위험
+- 담당자: 후속 주체 명확한가</pre>
+    </div>
 
-<b>금지:</b>
-  - &amp;quot;좀 더 명확히&amp;quot; &amp;quot;가독성 개선&amp;quot; 같은 추상 지적
-  - 근거 없이 칭찬
-  - 본문에 없는 사실 가정</pre>
+    <div class=&quot;sec s3&quot;>
+      <div class=&quot;lbl&quot;>3. 출력 포맷</div>
+      <h4>어떤 형태로 피드백</h4>
+      <div class=&quot;what&quot;>반드시 <strong>지적·근거·제안 3단</strong>.</div>
+      <pre>## 지적 1
+[무엇이 문제인가 — 한 줄]
+**근거**: [고객 입장에서 왜]
+**제안**: [어떻게 바꾸면]
+
+## 지적 2
+...</pre>
+    </div>
+
+    <div class=&quot;sec s4&quot;>
+      <div class=&quot;lbl&quot;>4. 제약</div>
+      <h4>하지 말 것</h4>
+      <div class=&quot;what&quot;>짧고 구체적으로. <strong>피드백이 산만해지면 못 쓴다.</strong></div>
+      <pre>- 칭찬 X (시간 낭비)
+- 추측 X (입력에 없는 정보 X)
+- 5개 이상 지적 X
+  → 가장 중요한 3개만</pre>
+    </div>
   </div>
-  <div class=&quot;foot&quot;>포맷이 있어야 피드백을 <strong>스킬 개선 인풋</strong>으로 바로 쓸 수 있다 &amp;mdash; 3번 반복되는 지적은 Day 3 스킬 템플릿에 고정 섹션으로 추가한다.</div>
+
+  <div class=&quot;foot&quot;>4단원이 끝이다. 양은 짧을수록 좋다. 한 페이지 안. <strong>본인 회사 까다로운 고객 1명</strong>이 머릿속에 떠오르면 페르소나 부분만 그 사람으로 교체하면 된다.</div>
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
@@ -3537,56 +3603,72 @@
 })();
 </script>
 <meta charset=&quot;UTF-8&quot;>
-<title>Day 4 · S13 시연 흐름</title>
+<title>Day 4 · S17 페르소나로 검토 시키기 — 호출·출력·반영</title>
 <link rel=&quot;stylesheet&quot; href=&quot;./assets/warm-neutral.css&quot;>
 <style>
-  body { display: flex; flex-direction: column; gap: 12pt; }
-  .h-large { font-size: 26pt; }
-  .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 8pt; align-items: stretch; margin-top: 8pt; flex: 1; }
-  .step { background: #ebe1d2; border-radius: 12pt; padding: 14pt 14pt; display: flex; flex-direction: column; gap: 6pt; }
-  .step.hl { background: #c56a4a; color: #f7efe4; }
-  .step .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .step.hl .n { color: #f2cdb4; }
-  .step h3 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
-  .step.hl h3 { color: #fff; }
-  .step p { font-size: 10pt; color: #42332a; line-height: 1.5; }
-  .step.hl p { color: #f5e4d4; }
-  .arrow { display: flex; align-items: center; justify-content: center; color: #b45a34; font-size: 20pt; font-weight: 500; }
-  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 10pt; max-width: 640pt; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  body { display: flex; flex-direction: column; padding: 16pt 24pt; overflow: hidden; }
+  .intro { font-size: 9pt; line-height: 1.35; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+
+  .flow { margin-top: 6pt; padding: 8pt 12pt; background: #ebe1d2; border-radius: 8pt; }
+  .flow .ctitle { font-size: 8pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8pt; margin-top: 5pt; }
+  .step { padding: 8pt 10pt; background: #fff; border-radius: 8pt; }
+  .step .n { font-size: 8.5pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .step h4 { font-size: 10.5pt; font-weight: 600; color: #2b2520; line-height: 1.25; margin-top: 1pt; }
+  .step .what { font-size: 8.8pt; color: #42332a; line-height: 1.45; margin-top: 3pt; }
+  .step .what strong { color: #b45a34; font-weight: 600; }
+  .step pre { font-family: 'SF Mono', 'Menlo', monospace; font-size: 8pt; line-height: 1.4; background: #2b2520; color: #f5e4d4; padding: 5pt 7pt; border-radius: 4pt; margin-top: 4pt; white-space: pre-wrap; }
+  .step pre b { color: #f2cdb4; }
+
+  .out { margin-top: 5pt; padding: 8pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 8pt; flex: 1; display: flex; flex-direction: column; gap: 2pt; min-height: 0; }
+  .out .lbl { font-size: 7.5pt; letter-spacing: 0.2em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .out h3 { font-size: 10.5pt; font-weight: 600; color: #fff; line-height: 1.25; }
+  .out .body { font-size: 8.2pt; color: #f5e4d4; line-height: 1.4; }
+  .out .body strong { color: #fff; font-weight: 600; }
+  .out pre { font-family: 'SF Mono', 'Menlo', monospace; font-size: 7.2pt; line-height: 1.4; background: rgba(0,0,0,0.25); color: #ffdfc9; padding: 5pt 8pt; border-radius: 4pt; margin-top: 1pt; white-space: pre-wrap; }
 </style>
 </head>
 <body>
-  <div>
-    <div class=&quot;eyebrow&quot;>B1 · 시연 흐름</div>
-    <div class=&quot;h-large&quot;>30분 동안 이렇게 진행된다</div>
-  </div>
+  <div class=&quot;eyebrow&quot;>B1 · 페르소나로 검토 시키기</div>
+  <div class=&quot;h-large&quot;>자연어 한 문장 — <em>본인 결과물 → 검토 → 반영</em></div>
+  <div class=&quot;rule&quot;></div>
+  <div class=&quot;intro&quot;>페르소나 파일을 만들었으면 <strong>자연어 한 문장</strong>으로 호출. 명령어 X. Claude가 알아서 페르소나 SKILL을 적용해 검토 의견을 준다.</div>
+
   <div class=&quot;flow&quot;>
-    <div class=&quot;step&quot;>
-      <div class=&quot;n&quot;>1 · 5 min</div>
-      <h3>에이전트<br>호출 시연</h3>
-      <p>운영진이 화면 공유. 프롬프트 구조 설명.</p>
-    </div>
-    <div class=&quot;arrow&quot;>&amp;rarr;</div>
-    <div class=&quot;step&quot;>
-      <div class=&quot;n&quot;>2 · 8 min</div>
-      <h3>참가자 결과물<br>넣기</h3>
-      <p>각자 Day 3 스킬 결과 1건을 공유 채널에 붙인다.</p>
-    </div>
-    <div class=&quot;arrow&quot;>&amp;rarr;</div>
-    <div class=&quot;step hl&quot;>
-      <div class=&quot;n&quot;>3 · 12 min</div>
-      <h3>피드백 받고<br>읽기만</h3>
-      <p>운영진이 순차 호출. 참가자는 피드백 읽고 메모.</p>
-    </div>
-    <div class=&quot;arrow&quot;>&amp;rarr;</div>
-    <div class=&quot;step&quot;>
-      <div class=&quot;n&quot;>4 · 5 min</div>
-      <h3>공통 패턴<br>뽑기</h3>
-      <p>반복되는 지적 1~2개 짚고 B2로.</p>
+    <div class=&quot;ctitle&quot;>검토 시키기 — 3단계</div>
+    <div class=&quot;steps&quot;>
+      <div class=&quot;step&quot;>
+        <div class=&quot;n&quot;>Step 1 · 입력</div>
+        <h4>본인 결과물 1건 준비</h4>
+        <div class=&quot;what&quot;>어제 본인 스킬이 만든 결과물 그대로. <strong>파일 / 텍스트 / 스크린샷</strong> 어느 형태든.</div>
+      </div>
+      <div class=&quot;step&quot;>
+        <div class=&quot;n&quot;>Step 2 · 자연어 호출</div>
+        <h4>한 문장이면 끝</h4>
+        <div class=&quot;what&quot;>Claude에게 직접:</div>
+        <pre>&quot;이 결과물을
+<b>persona-enterprise-marketer</b>
+로 검토해줘&quot;</pre>
+      </div>
+      <div class=&quot;step&quot;>
+        <div class=&quot;n&quot;>Step 3 · 반영</div>
+        <h4>지적 1개만 rules/에</h4>
+        <div class=&quot;what&quot;>출력에서 <strong>가장 큰 지적 1개</strong>만 본인 rules/required.md에 추가. 5개 다 X.</div>
+      </div>
     </div>
   </div>
-  <div class=&quot;foot&quot;><strong>참가자는 호출하지 않는다</strong>. 원리 체감이 목표. 직접 호출은 2주 프로젝트 기간에 1회 이상 해보기를 권장.</div>
+
+  <div class=&quot;out&quot;>
+    <div class=&quot;lbl&quot;>출력 예시 — 페르소나 SKILL이 보내주는 형태</div>
+    <h3>지적·근거·제안 3단으로 받는다</h3>
+    <pre><b>## 지적 1</b>
+다음 액션의 기한이 명시되지 않았다
+
+<b>근거</b>: 고객 입장에서 언제까지 기다릴지 불명확. 추측으로 일정 잡으면 다음 미팅에서 어긋남.
+<b>제안</b>: &quot;이번 주 금요일까지 업데이트 드리겠습니다&quot; 형식으로 날짜 명시.</pre>
+    <div class=&quot;body&quot;>이 형태가 <strong>본인 페르소나 SKILL의 출력 포맷</strong>(S16의 4단원 #3)이 그대로 작동한 결과. 양식이 일정해서 다음 사이클에서 같은 형식으로 또 받는다.</div>
+  </div>
 </body>
 </html>
 " sandbox="allow-same-origin"></iframe>
