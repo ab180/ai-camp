@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S47 부록 1 Vercel #1</title>
+<title>Day 4 · S47 부록 2 Supabase #1</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; padding: 22pt 30pt; }
@@ -22,31 +22,31 @@
 </style>
 </head>
 <body>
-  <div class="eyebrow">부록 1 · Vercel</div>
-  <div class="h-large">GitHub repo → 공개 URL <em>5분</em></div>
+  <div class="eyebrow">부록 2 · Supabase</div>
+  <div class="h-large">팀 공용 DB + API <em>5분</em></div>
   <div class="rule"></div>
-  <div class="intro">팀 PR은 만들었다. <strong>외부 사람이 권한 없이 보게 하려면?</strong> Vercel은 GitHub repo를 자동으로 공개 URL로 배포해주는 무료 서비스. 코드 한 줄도 안 건드린다.</div>
-  <div class="def"><strong>Vercel</strong> = GitHub repo를 자동으로 공개 URL로 배포하는 서비스. push할 때마다 자동 재배포 · 무료 Hobby 플랜으로 충분.</div>
+  <div class="intro">팀 공유는 GitHub로 끝나지 않는다. <strong>실제 데이터 (케이스 · 신호 · 로그)를 함께 쌓으려면 DB</strong>가 필요. Supabase는 코드 없이 UI에서 만든다.</div>
+  <div class="def"><strong>Supabase</strong> = PostgreSQL DB + REST API + 인증을 5분 안에. UI에서 코드 한 줄 없이 테이블 생성 가능. 개인 프로젝트 무료.</div>
   <div class="reasons">
     <div class="lbl-row">왜 CSM에게 — 3가지 시나리오</div>
     <div class="rgrid">
       <div class="r">
         <div class="n">시나리오 1</div>
-        <h4>외부 공유</h4>
-        <p>고객사 · 파트너에게 본인 작업 방식 공개. Notion 권한 X.</p>
+        <h4>케이스 DB</h4>
+        <p>지난 문의 · 답변을 팀 단위로 누적. 비슷한 케이스 검색 가능.</p>
       </div>
       <div class="r">
         <div class="n">시나리오 2</div>
-        <h4>신규 입사자 온보딩</h4>
-        <p>회사 SSO 없이 URL 1개로 CLAUDE.md · 스킬 카탈로그 공유.</p>
+        <h4>wrap 신호 누적</h4>
+        <p>본인 wrap 신호를 팀 차원으로. 팀 단위 Compound 사이클.</p>
       </div>
       <div class="r">
         <div class="n">시나리오 3</div>
-        <h4>공용 스킬 카탈로그</h4>
-        <p>팀 repo README가 자동 공개 페이지로. 누구나 검색.</p>
+        <h4>스킬 실행 로그</h4>
+        <p>어떤 스킬이 자주 쓰이나 데이터로. 우선순위 결정 근거.</p>
       </div>
     </div>
   </div>
-  <div class="skip"><strong>안 쓰는 경우</strong> — 민감 정보 포함 / 사내 협업만 / 보안팀 미승인 시. 공개 URL은 누구나 접근 가능.</div>
+  <div class="skip"><strong>안 쓰는 경우</strong> — 1인 작업만 / 외부 클라우드 보안팀 미승인 / 고객 PII 저장 (별도 DPA 필요).</div>
 </body>
 </html>

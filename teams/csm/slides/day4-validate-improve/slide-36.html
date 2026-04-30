@@ -2,54 +2,54 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S31 권한 관리 Role</title>
+<title>Day 4 · S36 부록 안내</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .roles { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8pt; flex: 1; margin-top: 12pt; }
-  .role { background: #ebe1d2; border-radius: 10pt; padding: 12pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
-  .role.rec { background: #c56a4a; color: #f7efe4; }
-  .role .name { font-size: 12pt; font-weight: 700; color: #2b2520; letter-spacing: -0.005em; }
-  .role.rec .name { color: #fff; }
-  .role .use { font-size: 9pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
-  .role.rec .use { color: #f2cdb4; }
-  .role ul { font-size: 9.5pt; line-height: 1.55; color: #42332a; padding-left: 12pt; margin: 0; }
-  .role.rec ul { color: #f5e4d4; }
-  .role ul li::marker { color: #b45a34; }
-  .role.rec ul li::marker { color: #f2cdb4; }
-  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  body { background: #2b2520; color: #f5e4d4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .lbl { font-size: 10pt; letter-spacing: 0.3em; color: #d4a480; font-weight: 600; text-transform: uppercase; }
+  .top .meta { font-size: 10pt; letter-spacing: 0.2em; color: rgba(245,228,212,0.5); }
+  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.18; letter-spacing: -0.02em; }
+  .mid h1 em { font-style: normal; color: #f2cdb4; }
+  .mid .sub { font-size: 14pt; font-weight: 400; color: #d4a480; line-height: 1.55; max-width: 580pt; margin-top: 12pt; }
+
+  .bot { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10pt; }
+  .b { padding: 11pt 13pt; background: rgba(255,255,255,0.06); border-left: 2pt solid #c56a4a; border-radius: 6pt; }
+  .b .num { font-size: 8.5pt; letter-spacing: 0.22em; color: #d4a480; font-weight: 700; text-transform: uppercase; }
+  .b .ttl { font-size: 12pt; color: #fff; font-weight: 600; margin-top: 2pt; }
+  .b .desc { font-size: 9pt; color: #d4a480; margin-top: 3pt; line-height: 1.45; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">권한 관리 2/2 &mdash; Role 선택</div>
-  <div class="h-large">CSM 팀 기본값은 <em>Write</em></div>
-  <div class="rule"></div>
-  <div class="intro">GitHub에는 5개 role이 있지만, 팀 스킬 repo에는 2~3개만 쓴다. 각자 권한을 <strong>너무 조이지 않는다</strong>.</div>
-  <div class="roles">
-    <div class="role">
-      <div class="use">1</div>
-      <div class="name">Read</div>
-      <ul><li>보기만 가능</li><li>PR 생성 &times;</li><li>외부 옵저버용</li></ul>
+  <div class="top">
+    <div class="lbl">Day 4 부록 (15장)</div>
+    <div class="meta">자율 학습 — 우선순위 추천</div>
+  </div>
+  <div class="mid">
+    <h1>본 콘텐츠는 끝.<br>여기서부터는 <em>본인 페이스</em></h1>
+    <div class="sub">캠프 후 1-2주 동안 필요할 때 한 부록씩. 우선순위 = <strong>1번 Git → 2번 Vercel → 3번 Supabase</strong>. Git이 가장 즉시 쓸 일 많고, Vercel·Supabase는 본인 워크플로우 확장 시.</div>
+  </div>
+  <div class="bot">
+    <div class="b">
+      <div class="num">부록 1 · 7장</div>
+      <div class="ttl">Git / 팀 repo</div>
+      <div class="desc">팀 자산 공유 · README 6축 · PR. <strong>1주 내 추천</strong></div>
     </div>
-    <div class="role">
-      <div class="use">2</div>
-      <div class="name">Triage</div>
-      <ul><li>이슈 관리 가능</li><li>코드 수정 &times;</li><li>잘 안 씀</li></ul>
+    <div class="b">
+      <div class="num">부록 2 · 3장</div>
+      <div class="ttl">Vercel</div>
+      <div class="desc">CLAUDE.md를 공개 URL로. 신규 입사자 온보딩</div>
     </div>
-    <div class="role rec">
-      <div class="use">3 · 권장</div>
-      <div class="name">Write</div>
-      <ul><li>브랜치 생성 가능</li><li>PR 생성 가능</li><li>main 직접 푸시 &times;</li><li><strong>팀원 전원 기본</strong></li></ul>
+    <div class="b">
+      <div class="num">부록 3 · 3장</div>
+      <div class="ttl">Supabase</div>
+      <div class="desc">팀 공용 DB + Claude MCP 연결</div>
     </div>
-    <div class="role">
-      <div class="use">4 · 팀장</div>
-      <div class="name">Admin</div>
-      <ul><li>권한 관리 가능</li><li>main push · Settings</li><li>팀장 1~2명만</li></ul>
+    <div class="b">
+      <div class="num">부록 4 · 1장</div>
+      <div class="ttl">프롬프트 + 리소스</div>
+      <div class="desc">까다로운 고객 프롬프트 전문 + 공식 docs</div>
     </div>
   </div>
-  <div class="foot">Write = &ldquo;브랜치 만들고 PR까지 자유&rdquo;. main에 바로 push하지 못하는 것만 다르다. <strong>리뷰 문화</strong>가 이 지점에서 시작된다.</div>
 </body>
 </html>

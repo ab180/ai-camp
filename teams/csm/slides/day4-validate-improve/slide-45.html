@@ -2,63 +2,68 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S40 4-5월 타임라인</title>
+<title>Day 4 · S45 부록 1 Vercel #2</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; gap: 12pt; padding: 26pt 30pt; }
-  .h-large { font-size: 24pt; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; max-width: 640pt; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .timeline { margin-top: 12pt; position: relative; padding: 18pt 10pt; flex: 1; }
-  .line { position: absolute; top: 50%; left: 20pt; right: 20pt; height: 3pt; background: #d4c4ac; border-radius: 2pt; transform: translateY(-50%); }
-  .milestones { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8pt; position: relative; }
-  .ms { display: flex; flex-direction: column; align-items: center; gap: 6pt; background: #f5ede2; padding: 10pt 10pt; border-radius: 10pt; border: 1px solid #d4c4ac; }
-  .ms.now { background: #c56a4a; color: #f7efe4; border-color: transparent; }
-  .ms.big { background: #2b2520; color: #f5e4d4; border-color: transparent; }
-  .ms .date { font-size: 10pt; letter-spacing: 0.2em; color: #b45a34; font-weight: 700; text-transform: uppercase; font-family: 'SF Mono', Menlo, monospace; }
-  .ms.now .date { color: #f2cdb4; }
-  .ms.big .date { color: #c56a4a; }
-  .ms .label { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; text-align: center; line-height: 1.25; }
-  .ms.now .label { color: #fff; }
-  .ms.big .label { color: #fff; }
-  .ms .note { font-size: 9.5pt; color: #7d6b5a; text-align: center; line-height: 1.45; }
-  .ms.now .note { color: #f5e4d4; }
-  .ms.big .note { color: #d4c4ac; }
-  .foot { font-size: 11pt; color: #7d6b5a; line-height: 1.55; border-top: 1px dashed #d4c4ac; padding-top: 8pt; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  .steps { margin-top: 12pt; flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 9pt; }
+  .s { padding: 12pt 14pt; background: #ebe1d2; border-radius: 9pt; display: flex; gap: 10pt; align-items: flex-start; }
+  .s.terra { background: #c56a4a; color: #f7efe4; }
+  .s .n { font-size: 22pt; font-weight: 700; line-height: 1; flex: 0 0 28pt; }
+  .s .n { color: #b45a34; }
+  .s.terra .n { color: #fff; }
+  .s .body { flex: 1; }
+  .s .body .t { font-size: 8pt; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase; }
+  .s .body .t { color: #b45a34; }
+  .s.terra .body .t { color: #ffdfc9; }
+  .s .body h4 { font-size: 12pt; font-weight: 600; color: #2b2520; line-height: 1.25; margin-top: 2pt; }
+  .s.terra .body h4 { color: #fff; }
+  .s .body p { font-size: 9pt; color: #5a4d40; line-height: 1.5; margin-top: 4pt; }
+  .s.terra .body p { color: #f5e4d4; }
+  .s .body code { background: #fff; padding: 1pt 4pt; border-radius: 3pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #2b2520; }
+  .s.terra .body code { background: rgba(255,255,255,0.18); color: #fff; }
 </style>
 </head>
 <body>
-  <div>
-    <div class="eyebrow">4~5월 타임라인</div>
-    <div class="h-large">오늘 &rarr; 2주 프로젝트 &rarr; <em>5/15 발표회</em></div>
-  </div>
-  <div class="intro">집중 교육은 끝. 여기서 멈추면 오늘 만든 것도 2주 안에 잊힌다. 아래 3개 지점을 달력에 찍는다.</div>
-  <div class="timeline">
-    <div class="line"></div>
-    <div class="milestones">
-      <div class="ms now">
-        <div class="date">4/23 · 수</div>
-        <div class="label">오늘</div>
-        <div class="note">Day 4 종료 &middot; 팀 repo 업로드 1건</div>
+  <div class="eyebrow">부록 1 · Vercel</div>
+  <div class="h-large">5분 가이드 — <em>가입에서 배포까지</em></div>
+  <div class="rule"></div>
+  <div class="intro">실제 흐름. 회사 GitHub 계정만 있으면 <strong>5분 안에 첫 배포</strong>가 가능하다. 코드 수정 X · 명령어 X.</div>
+  <div class="steps">
+    <div class="s">
+      <div class="n">1</div>
+      <div class="body">
+        <div class="t">~ 1 min</div>
+        <h4>가입</h4>
+        <p><code>vercel.com</code> &rarr; Sign up with GitHub &rarr; <strong>Hobby 플랜 (무료)</strong> 선택</p>
       </div>
-      <div class="ms">
-        <div class="date">4/24 ~ 5/13</div>
-        <div class="label">2주 프로젝트</div>
-        <div class="note">X 축 1개를 실제 업무에서 움직인다</div>
+    </div>
+    <div class="s terra">
+      <div class="n">2</div>
+      <div class="body">
+        <div class="t">~ 2 min</div>
+        <h4>repo 연결</h4>
+        <p>대시보드 &rarr; <strong>Add New &rarr; Project</strong> &rarr; GitHub repo 선택 &rarr; Deploy 버튼</p>
       </div>
-      <div class="ms big">
-        <div class="date">5/15 · 금</div>
-        <div class="label">발표회</div>
-        <div class="note">2주 동안 뭐가 바뀌었나 공유</div>
+    </div>
+    <div class="s terra">
+      <div class="n">3</div>
+      <div class="body">
+        <div class="t">~ 1 min</div>
+        <h4>URL 받기</h4>
+        <p>30초 빌드 대기 &rarr; <code>https://repo이름-본인.vercel.app</code> 자동 발급</p>
       </div>
-      <div class="ms">
-        <div class="date">5/28 전후</div>
-        <div class="label">회고</div>
-        <div class="note">별로였던 것 / 좋았던 것 각 2문장</div>
+    </div>
+    <div class="s">
+      <div class="n">4</div>
+      <div class="body">
+        <div class="t">~ 1 min</div>
+        <h4>자동 재배포</h4>
+        <p>이후 GitHub push할 때마다 <strong>자동 재배포</strong>. 별도 명령어 X.</p>
       </div>
     </div>
   </div>
-  <div class="foot">&ldquo;2주가 길어 보인다&rdquo; 는 착각. 실제로는 <strong>일정 한 주 한 주</strong>가 빠르다. 달력에 오늘 바로 세 날짜를 찍는다.</div>
 </body>
 </html>

@@ -2,47 +2,71 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S32 README 6축 태그</title>
+<title>Day 4 · S37 부록 1 — Git/팀 repo 무엇·왜·언제</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro { font-size: 10.5pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
-  .form { background: #ebe1d2; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .form h3 { font-size: 14pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .field { background: #fff; border-radius: 6pt; padding: 8pt 10pt; border: 1px solid #d4c4ac; }
-  .field .lbl { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .field .val { font-size: 10.5pt; color: #2b2520; line-height: 1.5; margin-top: 3pt; font-family: 'SF Mono', Menlo, monospace; }
-  .field .val .tag { display: inline-block; background: #c56a4a; color: #fff; padding: 1pt 6pt; border-radius: 3pt; font-size: 9.5pt; margin-right: 3pt; }
-  .why { background: #c56a4a; color: #f7efe4; border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
-  .why h3 { font-size: 14pt; font-weight: 600; color: #fff; letter-spacing: -0.005em; }
-  .why p { font-size: 10.5pt; color: #f5e4d4; line-height: 1.55; }
-  .why p strong { color: #fff; font-weight: 600; }
-  .why .example { background: rgba(0,0,0,0.15); padding: 8pt 10pt; border-radius: 6pt; font-size: 10pt; color: #f5e4d4; line-height: 1.55; font-family: 'SF Mono', Menlo, monospace; }
-  .why .example b { color: #f2cdb4; font-weight: 600; }
+
+  .what { margin-top: 12pt; padding: 14pt 18pt; background: #ebe1d2; border-radius: 12pt; border-left: 3pt solid #c56a4a; }
+  .what .lbl { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .what h3 { font-size: 14pt; font-weight: 600; color: #2b2520; line-height: 1.3; margin-top: 3pt; }
+  .what .body { font-size: 10.5pt; color: #42332a; line-height: 1.6; margin-top: 6pt; }
+  .what .body strong { color: #b45a34; font-weight: 600; }
+
+  .grid { margin-top: 12pt; display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; flex: 1; }
+  .col { padding: 13pt 16pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 6pt; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .col .lbl { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .lbl { color: #b45a34; }
+  .col.terra .lbl { color: #f2cdb4; }
+  .col h3 { font-size: 13pt; font-weight: 600; line-height: 1.3; }
+  .col.cream h3 { color: #2b2520; }
+  .col.terra h3 { color: #fff; }
+  .col ul { list-style: none; padding: 0; margin: 4pt 0 0; display: flex; flex-direction: column; gap: 4pt; }
+  .col li { font-size: 9.8pt; line-height: 1.55; padding-left: 12pt; position: relative; }
+  .col.cream li { color: #42332a; }
+  .col.terra li { color: #f5e4d4; }
+  .col li::before { content: '·'; position: absolute; left: 0; font-weight: 700; }
+  .col.cream li::before { color: #b45a34; }
+  .col.terra li::before { color: #ffdfc9; }
+  .col li strong { font-weight: 600; }
+  .col.cream li strong { color: #b45a34; }
+  .col.terra li strong { color: #fff; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">README 골격 · 6축 태그</div>
-  <div class="h-large">이 4줄이면 <em>찾기 · 쓰기</em> 다 된다</div>
+  <div class="eyebrow">부록 1 · Git/팀 repo · 무엇·왜·언제</div>
+  <div class="h-large">본인 스킬을 — <em>팀 자산</em>으로</div>
   <div class="rule"></div>
-  <div class="intro">스킬 README는 1장이면 충분하다. 아래 4개 필드만 채우면 팀원이 검색하고 고를 수 있다.</div>
-  <div class="panes">
-    <div class="form">
-      <h3>SKILL.md &mdash; 필수 4필드</h3>
-      <div class="field"><div class="lbl">name</div><div class="val">recap-mail</div></div>
-      <div class="field"><div class="lbl">axes (6축 태그)</div><div class="val"><span class="tag">3</span><span class="tag">4</span> 계획 · 실행</div></div>
-      <div class="field"><div class="lbl">when (한 문장)</div><div class="val">고객 미팅 후 리캡 메일 초안이 필요할 때</div></div>
-      <div class="field"><div class="lbl">input / output</div><div class="val">입력: 미팅 노트 / 출력: 메일 초안</div></div>
-    </div>
-    <div class="why">
-      <h3>왜 6축 태그인가</h3>
-      <p>팀 repo가 커지면 스킬을 <strong>이름으로 찾기 어렵다</strong>. 축 기반 검색이 대안.</p>
-      <div class="example">$ grep -l &quot;axes.*5&quot; skills/**/SKILL.md
+  <div class="intro">Day 2·3에서 PR 한 사이클은 이미 돌렸다. 이 부록은 <strong>팀 단위 운영</strong>에 필요한 추가 7장 — Play Store 모델, 권한, README 6축, 업로드, PR 워크플로우.</div>
 
-<b>#&rarr; 검증 스킬만 나옴</b></div>
-      <p>&ldquo;검증 스킬 뭐 있지?&rdquo; 할 때 <strong>축 5로 묶여 있는 것</strong>을 바로 찾는다.</p>
+  <div class="what">
+    <div class="lbl">정의</div>
+    <h3>팀 repo = 우리 팀 공용 스킬·rules·CLAUDE.md 저장소</h3>
+    <div class="body">한 사람이 만든 좋은 스킬을 <strong>다른 팀원이 즉시 가져다 쓸 수 있게</strong> 하는 것이 목적. 큰 룰만 정해두고 자유 등록(Play Store 모델). 팀 단위 Compound가 가능해진다.</div>
+  </div>
+
+  <div class="grid">
+    <div class="col cream">
+      <div class="lbl">왜 부록인가</div>
+      <h3>오늘 본 콘텐츠는 본인 Compound가 우선</h3>
+      <ul>
+        <li>본인 스킬에 Compound 파이프라인 만들기가 더 시급</li>
+        <li>팀 repo 구조는 <strong>본인이 굴러가야</strong> 의미</li>
+        <li>1주차 본인 사이클 → 2주차 팀 공유로 자연스러운 순서</li>
+      </ul>
+    </div>
+    <div class="col terra">
+      <div class="lbl">언제 이 부록을 보면</div>
+      <h3>1주차 끝, 또는 팀 누군가 PR 받기 시작할 때</h3>
+      <ul>
+        <li>본인 스킬 1주 운영 후 <strong>팀에 공유하고 싶어질 때</strong></li>
+        <li>팀원 PR을 받았는데 README 양식이 없을 때</li>
+        <li>신규 입사자에게 <strong>팀 자산 한 번에</strong> 넘기고 싶을 때</li>
+      </ul>
     </div>
   </div>
 </body>

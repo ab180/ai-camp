@@ -2,37 +2,34 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S04 블록 맵</title>
+<title>Day 4 · S05 B0 섹션 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; gap: 12pt; }
-  .h-large { font-size: 26pt; }
-  table { width: 100%; border-collapse: collapse; margin-top: 4pt; }
-  th, td { text-align: left; padding: 9pt 10pt; font-size: 12pt; color: #2b2520; border-bottom: 1px solid #d4c4ac; vertical-align: top; }
-  th { font-size: 10pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; border-bottom: 2px solid #b45a34; }
-  td.block { font-weight: 600; color: #b45a34; width: 72pt; }
-  td.time { font-family: 'SF Mono', 'Menlo', monospace; color: #7d6b5a; width: 70pt; }
-  td.topic { color: #2b2520; width: 170pt; font-weight: 500; }
-  td.memo { color: #4b3f35; line-height: 1.5; }
-  .foot { font-size: 12pt; color: #7d6b5a; line-height: 1.5; margin-top: auto; padding-top: 8pt; border-top: 1px dashed #d4c4ac; }
-  .foot strong { color: #b45a34; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 38pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid h1 em { font-style: normal; color: #ffdfc9; }
+  .mid .sub { font-size: 15pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 580pt; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div>
-    <div class="eyebrow">오늘의 블록 맵</div>
-    <div class="h-large">120분 — 검증 체감 &rarr; 자가진단 &rarr; 팀 공유</div>
+  <div class="top">
+    <div class="block">Block 0</div>
+    <div class="time">~5 min</div>
   </div>
-  <table>
-    <thead><tr><th>Block</th><th>Time</th><th>Topic</th><th>Note</th></tr></thead>
-    <tbody>
-      <tr><td class="block">B0</td><td class="time">10 min</td><td class="topic">오늘의 축 안내</td><td class="memo">어제 만든 스킬을 "다른 관점"으로 보는 하루</td></tr>
-      <tr><td class="block">B1</td><td class="time">30 min</td><td class="topic">까다로운 고객 시연</td><td class="memo">운영진 시연 · 참가자는 자기 결과물 넣고 피드백 읽기만</td></tr>
-      <tr><td class="block">B2</td><td class="time">20 min</td><td class="topic">Compound + 6축 자가진단</td><td class="memo">O/X 체크리스트 1장 · 짝꿍 대화</td></tr>
-      <tr><td class="block">B3</td><td class="time">50 min</td><td class="topic">GitHub + 팀 공유</td><td class="memo">repo 구조 · 권한 · README 6축 태그 · 스킬 업로드 · PR</td></tr>
-      <tr><td class="block">B4</td><td class="time">10 min</td><td class="topic">2주 프로젝트 + 마무리</td><td class="memo">5/15(금) 발표회 안내 · 회고 포맷</td></tr>
-    </tbody>
-  </table>
-  <div class="foot">오늘의 산출물 &mdash; <strong>검증 피드백 메모</strong> · 6축 자가진단표 · 팀 repo 업로드 1건 · 2주 프로젝트 목표</div>
+  <div class="mid">
+    <h1>어제 만든 스킬을 —<br><em>다른 관점</em>으로 본다</h1>
+    <div class="sub">Day 3에서는 짝꿍이 사람으로 본인 스킬을 점검했다. 오늘은 그 자리에 AI Evaluator가 들어간다. 본인이 어제 만든 그 스킬, 본인이 어제 사이클로 돌린 그 결과물을 가지고.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">Day 3 짝꿍(사람) → Day 4 AI Evaluator</div>
+    <div class="count">B0 · 1 / 5</div>
+  </div>
 </body>
 </html>

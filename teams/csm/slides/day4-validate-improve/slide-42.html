@@ -2,36 +2,39 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S37 리뷰어 체크리스트</title>
+<title>Day 4 · S34 스킬 업로드 실습</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .check { margin-top: 10pt; background: #fff; border-radius: 10pt; padding: 14pt 18pt; border: 1pt solid #d4c4ac; flex: 1; }
-  .check .row { display: grid; grid-template-columns: 30pt 1fr 120pt; gap: 12pt; align-items: center; padding: 8pt 0; border-bottom: 1px solid #ece2d2; }
-  .check .row:last-child { border-bottom: none; }
-  .check .box { font-family: 'SF Mono', Menlo, monospace; font-size: 13pt; color: #7d6b5a; text-align: center; }
-  .check .q { font-size: 11pt; color: #2b2520; line-height: 1.5; }
-  .check .q strong { color: #b45a34; font-weight: 600; }
-  .check .q code { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; background: #f5ede2; padding: 1pt 4pt; border-radius: 3pt; }
-  .check .how { font-size: 9.5pt; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; letter-spacing: 0.02em; }
-  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
-  .foot strong { color: #fff; font-weight: 700; }
+  .steps { display: flex; flex-direction: column; gap: 6pt; flex: 1; margin-top: 10pt; }
+  .step { display: grid; grid-template-columns: 46pt 150pt 1fr; gap: 12pt; align-items: center; background: #ebe1d2; border-radius: 9pt; padding: 10pt 14pt; }
+  .step.hl { background: #c56a4a; color: #f7efe4; }
+  .step .n { font-size: 12pt; font-weight: 700; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; }
+  .step.hl .n { color: #fff; }
+  .step .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 10.5pt; font-weight: 600; color: #2b2520; }
+  .step.hl .cmd { color: #fff; }
+  .step .desc { font-size: 10.5pt; color: #42332a; line-height: 1.5; }
+  .step.hl .desc { color: #f5e4d4; }
+  .step .desc strong { color: #b45a34; font-weight: 600; }
+  .step.hl .desc strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">리뷰어 체크리스트 &mdash; 5개만 본다</div>
-  <div class="h-large">리뷰는 <em>5분 이내</em>로 끝낸다</div>
+  <div class="eyebrow">업로드 실습 · 15 min</div>
+  <div class="h-large">clone &rarr; 복사 &rarr; commit &rarr; <em>push</em></div>
   <div class="rule"></div>
-  <div class="intro">완벽함을 검사하지 않는다. <strong>팀 자산</strong>으로 쓸 수 있는 최소 조건만 확인. 나머지는 merge 후 Compound로 개선한다.</div>
-  <div class="check">
-    <div class="row"><div class="box">&#9633;</div><div class="q">1. <strong>README 6축 태그</strong>가 적혀 있는가 (<code>axes: [3, 4]</code>)</div><div class="how">SKILL.md 확인</div></div>
-    <div class="row"><div class="box">&#9633;</div><div class="q">2. <strong>when</strong>과 <strong>input/output</strong>이 한 문장 이상 있는가</div><div class="how">SKILL.md 확인</div></div>
-    <div class="row"><div class="box">&#9633;</div><div class="q">3. 스킬이 <strong>실제로 동작</strong>하는가 (리뷰어가 한 번 실행)</div><div class="how">로컬 test</div></div>
-    <div class="row"><div class="box">&#9633;</div><div class="q">4. 이미 있는 스킬과 <strong>중복</strong>은 아닌가</div><div class="how">skills/ 폴더 훑기</div></div>
-    <div class="row"><div class="box">&#9633;</div><div class="q">5. 민감 정보 (<strong>고객 실명 · 내부 도메인</strong>)가 들어가 있지 않은가</div><div class="how">diff 훑기</div></div>
+  <div class="intro">오늘 각자 <strong>스킬 1개</strong>를 팀 repo에 올린다. Claude에게 아래 5단계를 순서대로 시키면 된다.</div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div class="cmd">git clone</div><div class="desc">팀 repo를 내 노트북에 가져온다 &mdash; &ldquo;csm-claude-skills 레포를 clone해줘&rdquo;</div></div>
+    <div class="step"><div class="n">2</div><div class="cmd">cd &amp; branch</div><div class="desc">새 브랜치로 이동 &mdash; &ldquo;<strong>add-recap-mail</strong> 브랜치 만들어서 이동해줘&rdquo;</div></div>
+    <div class="step"><div class="n">3</div><div class="cmd">폴더 복사</div><div class="desc">Day 3에서 만든 내 스킬 폴더를 <strong>skills/</strong>에 복사. SKILL.md 6축 태그 확인.</div></div>
+    <div class="step hl"><div class="n">4</div><div class="cmd">commit</div><div class="desc">&ldquo;recap mail 스킬 추가&rdquo; 메시지로 commit &mdash; 세이브 포인트 1개 생성</div></div>
+    <div class="step"><div class="n">5</div><div class="cmd">push</div><div class="desc">GitHub에 올린다 &mdash; &ldquo;origin add-recap-mail으로 push해줘&rdquo;</div></div>
   </div>
-  <div class="foot">5개 모두 &radic;면 <strong>Approve &amp; merge</strong>. 1~2개 X면 comment로 &ldquo;이 부분만 고쳐주세요&rdquo;. 3개 이상 X면 draft로 돌리기.</div>
+  <div class="foot">명령어는 Claude가 실행. 참가자는 <strong>의도</strong>만 말하면 된다. 막히면 짝꿍과 화면 공유 &middot; 운영진 호출.</div>
 </body>
 </html>

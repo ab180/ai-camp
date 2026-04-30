@@ -2,49 +2,63 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S27 왜 팀 공유</title>
+<title>Day 4 · S32 5/15 공유회 안내</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; padding: 20pt 28pt; }
+  .intro { font-size: 9.5pt; line-height: 1.45; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .card { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .card.hl { background: #c56a4a; color: #f7efe4; }
-  .card .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .card.hl .n { color: #f2cdb4; }
-  .card h3 { font-size: 16pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
-  .card.hl h3 { color: #fff; }
-  .card p { font-size: 11pt; color: #42332a; line-height: 1.55; }
-  .card.hl p { color: #f5e4d4; }
-  .card p strong { color: #2b2520; font-weight: 600; }
-  .card.hl p strong { color: #fff; font-weight: 600; }
-  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+
+  .card { margin-top: 8pt; padding: 12pt 18pt; background: #c56a4a; color: #f7efe4; border-radius: 12pt; }
+  .card .lbl { font-size: 8.5pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .card h2 { font-size: 22pt; font-weight: 500; color: #fff; line-height: 1.18; letter-spacing: -0.01em; margin-top: 2pt; }
+  .card .when { font-size: 11.5pt; color: #ffdfc9; margin-top: 2pt; font-weight: 500; }
+  .card .when strong { color: #fff; font-weight: 700; }
+
+  .grid { margin-top: 8pt; display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; flex: 1; }
+  .col { padding: 9pt 13pt; background: #ebe1d2; border-radius: 10pt; display: flex; flex-direction: column; gap: 3pt; }
+  .col .lbl { font-size: 7.5pt; letter-spacing: 0.2em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .col h3 { font-size: 11pt; font-weight: 600; color: #2b2520; line-height: 1.25; }
+  .col ul { list-style: none; padding: 0; margin: 2pt 0 0; display: flex; flex-direction: column; gap: 2pt; }
+  .col li { font-size: 8.5pt; color: #42332a; line-height: 1.4; padding-left: 9pt; position: relative; }
+  .col li::before { content: '·'; position: absolute; left: 0; color: #b45a34; font-weight: 700; }
+  .col li strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">왜 팀 공유인가</div>
-  <div class="h-large">한 사람 개선 = <em>팀 개선</em>이 되는 조건</div>
+  <div class="eyebrow">B3 · 캠프 종료 후 일정</div>
+  <div class="h-large">2주 동안 본인 업무에 적용 → <em>5/15 공유회</em></div>
   <div class="rule"></div>
-  <div class="intro">내 노트북에만 있는 스킬은 나에게만 복리가 된다. 팀 repo에 올라가면 <strong>12명이 함께</strong> 쓰고, 고치고, 되먹인다.</div>
+  <div class="intro">캠프는 오늘 끝나지만 <strong>Compound 사이클은 시작</strong>. 1주 단위로 사이클 2번 돌리고 5/15에 만난다. 이 한 페이지가 공식 안내.</div>
+
+  <div class="card">
+    <div class="lbl">AI Camp 3기 · 공유회</div>
+    <h2>5월 15일 (금요일)</h2>
+    <div class="when">⏱  <strong>오후 1:30 ~ 3:00</strong> (90분)</div>
+  </div>
+
   <div class="grid">
-    <div class="card">
-      <div class="n">이유 1</div>
-      <h3>팀원 1명이 고치면 전원이 개선</h3>
-      <p>&ldquo;결정사항 섹션&rdquo;을 누가 PR로 넣으면 <strong>12명 스킬</strong>이 동시에 업그레이드.</p>
+    <div class="col">
+      <div class="lbl">공유회에서 무엇을</div>
+      <h3>본인 변화량 + 다음 분기 계획</h3>
+      <ul>
+        <li>본인 git log <strong>commit 히스토리</strong> (4개 이상 누적)</li>
+        <li>SKILL.md <strong>변천사</strong> (첫날 vs 오늘)</li>
+        <li>wrap 누적 신호 — Week 1 vs Week 2 비교</li>
+        <li>회고 — <strong>좋았던 것 / 별로였던 것 각 2문장</strong></li>
+        <li>다음 분기 본인 적용 계획 1줄</li>
+      </ul>
     </div>
-    <div class="card">
-      <div class="n">이유 2</div>
-      <h3>중복 제작 방지</h3>
-      <p>나만 만들기 전에 이미 비슷한 스킬이 있다. 검색 &rarr; 복사 &rarr; 수정이 맞다.</p>
-    </div>
-    <div class="card hl">
-      <div class="n">이유 3</div>
-      <h3>팀장이 알면 팀이 움직인다</h3>
-      <p>팀장의 상상력이 팀원 범위를 정한다. 팀장이 경험해야 <strong>미니캠프</strong>가 돌아간다.</p>
+    <div class="col">
+      <div class="lbl">발표 양식</div>
+      <h3>1인당 약 10분 + Q&A</h3>
+      <ul>
+        <li>슬라이드 5장 안 — 표지 / 변화 / 회고 / 다음 / 한 줄</li>
+        <li>스크린샷 또는 git log 캡처 환영</li>
+        <li>"잘 안 됐다"는 것이 가장 가치 있는 발표</li>
+        <li>4기 설계 인풋 — <strong>솔직 회고</strong>가 핵심</li>
+      </ul>
     </div>
   </div>
-  <div class="foot">오늘 B3의 출발점 &mdash; <strong>&ldquo;내가 만든 걸 올리는 게 아니라, 내가 올린 걸 팀이 고치는 것이 진짜 시작&rdquo;</strong>.</div>
 </body>
 </html>

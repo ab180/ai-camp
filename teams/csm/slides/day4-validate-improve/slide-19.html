@@ -2,40 +2,35 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S16 B1 정리</title>
+<title>Day 4 · S19 B2 섹션 오프너 — Compound 60분</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; justify-content: space-between; }
-  .quote { font-size: 30pt; font-weight: 500; color: #2b2520; line-height: 1.3; letter-spacing: -0.015em; max-width: 600pt; }
-  .quote em { font-style: normal; color: #c56a4a; }
-  .points { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; }
-  .p { background: #ebe1d2; border-radius: 10pt; padding: 12pt 14pt; }
-  .p .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .p h4 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 4pt; }
-  .p p { font-size: 10pt; color: #42332a; line-height: 1.55; margin-top: 4pt; }
-  .foot-rule { font-size: 11pt; color: #a0917e; letter-spacing: 0.05em; border-top: 1px dashed #d4c4ac; padding-top: 8pt; font-family: 'SF Mono', 'Menlo', monospace; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 14pt; }
+  .mid h1 { font-size: 36pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid h1 em { font-style: normal; color: #ffdfc9; }
+  .mid .sub { font-size: 14pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 600pt; }
+  .mid .sub strong { color: #fff; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; max-width: 470pt; line-height: 1.4; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">B1 정리</div>
-  <div class="quote"><em>외부 눈</em>이 내 맥락을 드러낸다 &mdash;<br>검증은 별도 관점이어야 한다.</div>
-  <div class="points">
-    <div class="p">
-      <div class="n">Takeaway 1</div>
-      <h4>역할 분리</h4>
-      <p>만드는 쪽과 점검하는 쪽이 같으면 자기 확신이 된다.</p>
-    </div>
-    <div class="p">
-      <div class="n">Takeaway 2</div>
-      <h4>기준과 포맷</h4>
-      <p>rubric · 출력 포맷이 있어야 피드백이 개선 인풋이 된다.</p>
-    </div>
-    <div class="p">
-      <div class="n">Takeaway 3</div>
-      <h4>반복 패턴</h4>
-      <p>3번 반복되는 지적은 스킬 · rules에 추가한다.</p>
-    </div>
+  <div class="top">
+    <div class="block">Block 2 · 오늘 진짜 핵심</div>
+    <div class="time">~60 min</div>
   </div>
-  <div class="foot-rule">Next &mdash; B2: Compound 사이클 + 6축 자가진단 (20 min)</div>
+  <div class="mid">
+    <h1>본인 스킬에 —<br><em>Compound 구조</em>를 직접 만든다</h1>
+    <div class="sub">Compound 사이클은 자동화 없이는 깨진다. wrap이 그 자동화의 <strong>구체 예시 한 가지</strong>. 다른 방법도 있다. 오늘은 wrap 한 번 호출해보고 <strong>본인 SKILL.md에 1단·2단 파이프라인을 직접 만들어 본다</strong>.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">Compound 4단계 → 자동화가 왜 필요한가 → wrap 무엇·왜·어떻게 → 다른 방법 → 본인 파이프라인 1·2단 직접 → 6축 자가진단</div>
+    <div class="count">B2 · 12장</div>
+  </div>
 </body>
 </html>

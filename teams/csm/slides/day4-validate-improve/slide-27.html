@@ -2,39 +2,67 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S20 6축 O/X 체크리스트</title>
+<title>Day 4 · S27 본인 Compound 파이프라인 2단</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; gap: 7pt; padding: 22pt 30pt; }
-  .h-large { font-size: 22pt; }
-  .sheet { background: #fff; border-radius: 10pt; padding: 10pt 12pt; flex: 1; min-height: 0; overflow: hidden; border: 1pt solid #d4c4ac; }
-  table { width: 100%; border-collapse: collapse; }
-  th, td { text-align: left; padding: 4pt 6pt; font-size: 10pt; color: #2b2520; border-bottom: 1px solid #ece2d2; vertical-align: top; }
-  th { font-size: 8.5pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; border-bottom: 1.5pt solid #b45a34; }
-  td.num { font-weight: 700; color: #b45a34; width: 26pt; font-family: 'SF Mono', Menlo, monospace; }
-  td.axis { font-weight: 600; color: #2b2520; width: 58pt; }
-  td.q { color: #42332a; line-height: 1.4; }
-  td.ox { width: 42pt; text-align: center; font-family: 'SF Mono', Menlo, monospace; color: #7d6b5a; font-size: 11pt; letter-spacing: 0.3em; }
-  .foot { font-size: 9.5pt; color: #7d6b5a; line-height: 1.45; border-top: 1px dashed #d4c4ac; padding-top: 6pt; flex-shrink: 0; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .stages { margin-top: 10pt; flex: 1; display: flex; flex-direction: column; gap: 3pt; justify-content: center; }
+  .stage { display: grid; grid-template-columns: 26pt 1fr; gap: 10pt; padding: 7pt 14pt; border-radius: 8pt; align-items: center; }
+  .stage.cream { background: #ebe1d2; }
+  .stage.terra { background: #c56a4a; color: #f7efe4; }
+  .stage .n { font-size: 12pt; font-weight: 700; line-height: 1; }
+  .stage.cream .n { color: #b45a34; }
+  .stage.terra .n { color: #fff; }
+  .stage .body h4 { font-size: 11pt; font-weight: 600; line-height: 1.25; }
+  .stage.cream .body h4 { color: #2b2520; }
+  .stage.terra .body h4 { color: #fff; }
+  .stage .body p { font-size: 9pt; line-height: 1.4; margin-top: 2pt; }
+  .stage.cream .body p { color: #5a4d40; }
+  .stage.terra .body p { color: #f5e4d4; }
+  .stage .body code { background: #fff; padding: 1pt 5pt; border-radius: 3pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #2b2520; }
+  .stage.terra .body code { background: rgba(255,255,255,0.18); color: #fff; }
+  .arr { text-align: center; color: #b45a34; font-size: 11pt; line-height: 1; font-weight: 600; padding: 0; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">6축 O/X 체크리스트 · 자가진단 1장</div>
-  <div class="h-large">지난 4일 내 작업에 대해 O/X 체크</div>
-  <div class="sheet">
-    <table>
-      <thead><tr><th>#</th><th>축</th><th>질문</th><th>O / X</th></tr></thead>
-      <tbody>
-        <tr><td class="num">1</td><td class="axis">구조</td><td class="q">내 CLAUDE.md에 담당 고객 · 톤 · 금지어가 적혀 있다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
-        <tr><td class="num">2</td><td class="axis">맥락</td><td class="q">MCP 1개 이상으로 SFDC · Notion · Gmail 등 실시간 데이터를 AI가 직접 읽는다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
-        <tr><td class="num">3</td><td class="axis">계획</td><td class="q">Deep Interview / Clarify로 &ldquo;독자 · 질문 · 결론 순서&rdquo;까지 구체화한 뒤 실행한다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
-        <tr><td class="num">4</td><td class="axis">실행</td><td class="q">동작하는 스킬 1개 이상을 가지고 있고, 새 작업에 그 스킬을 호출한다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
-        <tr><td class="num">5</td><td class="axis">검증</td><td class="q">내 초안을 &ldquo;다른 관점&rdquo; 에이전트에 한 번 넘겨 본 적이 있다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
-        <tr><td class="num">6</td><td class="axis">개선</td><td class="q">피드백에서 3번 반복된 지적 1개를 CLAUDE.md · 스킬에 되먹여 봤다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
-      </tbody>
-    </table>
+  <div class="eyebrow">B2 실습 · 2단</div>
+  <div class="h-large">3회 반복 신호 → <em>rules/ 자동 추가</em></div>
+  <div class="rule"></div>
+  <div class="intro">1단은 신호 누적. 2단은 <strong>임계치 도달 시 자동 반영</strong>이다. 3회 반복된 신호를 wrap이 감지하면, 본인이 한 줄 부탁만 해도 rules에 자동 추가된다.</div>
+  <div class="stages">
+    <div class="stage cream">
+      <div class="n">1</div>
+      <div class="body">
+        <h4>wrap 임계치 알림</h4>
+        <p>3회 반복 발견 — "다음 액션 날짜 누락이 3회 누적되었습니다"</p>
+      </div>
+    </div>
+    <div class="arr">&darr;</div>
+    <div class="stage terra">
+      <div class="n">2</div>
+      <div class="body">
+        <h4>Claude에게 한 줄</h4>
+        <p><code>이 패턴을 rules/required.md에 추가해줘</code></p>
+      </div>
+    </div>
+    <div class="arr">&darr;</div>
+    <div class="stage terra">
+      <div class="n">3</div>
+      <div class="body">
+        <h4>rules/ 자동 업데이트</h4>
+        <p>Claude가 <code>required.md</code>에 항목 추가 → commit + push 자동</p>
+      </div>
+    </div>
+    <div class="arr">&darr;</div>
+    <div class="stage cream">
+      <div class="n">4</div>
+      <div class="body">
+        <h4>다음 사이클부터 자동 적용</h4>
+        <p>같은 실수 재발 X — Compound가 한 바퀴 완성</p>
+      </div>
+    </div>
   </div>
-  <div class="foot"><strong>O가 4개 이상</strong>이면 충분한 첫 초안. <strong>X가 3개 이상</strong>이면 그중 한 축을 2주 프로젝트의 중심으로.</div>
 </body>
 </html>

@@ -2,63 +2,77 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S11 Anthropic 사례 3 — Skill Creator</title>
+<title>Day 4 · S11 검증 패턴 3 — 결과물이 아니라 스킬 자체를 점검</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
-  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  body { display: flex; flex-direction: column; padding: 18pt 26pt; }
+  .intro { font-size: 9.5pt; line-height: 1.4; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .chain { margin-top: 14pt; padding: 18pt 14pt; background: #ebe1d2; border-radius: 10pt; display: flex; flex-direction: column; gap: 10pt; }
-  .ctitle { font-size: 8.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .flow { display: grid; grid-template-columns: 1fr 18pt 1.1fr 18pt 1fr; align-items: center; gap: 0; }
-  .node { padding: 11pt 10pt; border-radius: 8pt; text-align: center; min-height: 56pt; display: flex; flex-direction: column; justify-content: center; }
-  .node.input, .node.output { background: #fff; border: 1.2px dashed #b45a34; color: #5a4d40; }
-  .node.skill { background: #c56a4a; color: #fff; }
-  .node .nlbl { font-size: 7.8pt; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase; opacity: 0.85; }
-  .node.skill .nlbl { color: #ffdfc9; opacity: 1; }
-  .node .nbody { font-size: 11.5pt; font-weight: 600; line-height: 1.3; margin-top: 4pt; }
-  .node .nsub { font-size: 8.8pt; color: #5a4d40; line-height: 1.4; margin-top: 3pt; font-weight: 400; }
-  .node.skill .nsub { color: #f5e4d4; }
-  .arrow { font-size: 18pt; color: #b45a34; font-weight: 600; text-align: center; line-height: 1; }
 
-  .bot { margin-top: 14pt; padding: 12pt 16pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 5pt; }
-  .bot .lbl { font-size: 8.5pt; letter-spacing: 0.22em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
-  .bot h3 { font-size: 14pt; font-weight: 600; color: #fff; line-height: 1.35; }
-  .bot p { font-size: 10pt; color: #f5e4d4; line-height: 1.5; }
-  .bot p strong { color: #fff; }
+  .analogy { margin-top: 7pt; padding: 8pt 12pt; background: #fff; border-radius: 8pt; border-left: 2pt solid #c56a4a; }
+  .analogy .lbl { font-size: 7.5pt; letter-spacing: 0.18em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .analogy .body { font-size: 9.5pt; color: #2b2520; line-height: 1.45; margin-top: 1pt; }
+  .analogy .body strong { color: #b45a34; font-weight: 600; }
+
+  .chain { margin-top: 7pt; padding: 9pt 12pt 8pt; background: #ebe1d2; border-radius: 8pt; display: flex; flex-direction: column; gap: 5pt; }
+  .ctitle { font-size: 8pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .flow { display: grid; grid-template-columns: 1fr 14pt 1fr 14pt 1fr; align-items: center; gap: 0; }
+  .node { padding: 9pt 9pt; border-radius: 8pt; text-align: center; }
+  .node.input { background: #fff; border: 1.5px dashed #b45a34; color: #5a4d40; }
+  .node.skill { background: #c56a4a; color: #fff; }
+  .node.output { background: #fff; border: 1.5px dashed #b45a34; color: #5a4d40; }
+  .node .nlbl { font-size: 7.5pt; letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase; opacity: 0.85; }
+  .node.skill .nlbl { color: #ffdfc9; opacity: 1; }
+  .node .nbody { font-size: 10pt; font-weight: 600; line-height: 1.25; margin-top: 3pt; }
+  .node .nsub { font-size: 8.5pt; line-height: 1.4; margin-top: 2pt; opacity: 0.85; font-weight: 400; }
+  .arrow { font-size: 16pt; color: #b45a34; font-weight: 600; text-align: center; line-height: 1; }
+
+  .csm { margin-top: 7pt; padding: 9pt 12pt; background: #c56a4a; color: #f7efe4; border-radius: 8pt; flex: 1; display: flex; flex-direction: column; gap: 3pt; }
+  .csm .lbl { font-size: 7.5pt; letter-spacing: 0.2em; color: #f2cdb4; font-weight: 700; text-transform: uppercase; }
+  .csm h3 { font-size: 10.5pt; font-weight: 600; color: #fff; line-height: 1.25; }
+  .csm .body { font-size: 8.8pt; color: #f5e4d4; line-height: 1.4; margin-top: 1pt; }
+  .csm .body strong { color: #fff; font-weight: 600; }
+  .csm .body em { font-style: normal; color: #ffdfc9; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Anthropic 검증 사례 3 / 3</div>
-  <div class="h-large">Skill Creator — <em>스킬을 검증하는 메타 스킬</em></div>
+  <div class="eyebrow">검증 패턴 3 / 3 — Notion Day 3 B4 정합</div>
+  <div class="h-large">결과물이 아니라 — <em>스킬 자체</em>를 점검</div>
   <div class="rule"></div>
-  <div class="intro">결과물 검증을 넘어, <strong>스킬 자체</strong>를 검증한다. SKILL.md를 입력으로 받아 부족한 항목·모호한 표현·누락된 입력을 리포트로 돌려준다.</div>
+  <div class="intro">패턴 1·2가 결과물(메일·요약 등)을 본다면, 패턴 3은 <strong>그 결과물을 만드는 스킬 자체</strong>를 점검한다. 본인이 어제 만든 SKILL.md 파일을 <strong>또 다른 스킬(Skill Creator)</strong>에 입력해 부족·모호·누락을 리포트로 받는다.</div>
+
+  <div class="analogy">
+    <div class="lbl">일상 비유</div>
+    <div class="body">"내가 만든 매뉴얼을 <strong>다른 사람이 한 번 읽고 '여기 빠졌어요' 알려주는 점검자</strong>가 있는데, 그게 사람이 아니라 또 AI야." 결과물이 아니라 매뉴얼 자체에 빈 곳이 있는지를 점검한다.</div>
+  </div>
+
   <div class="chain">
-    <div class="ctitle">SKILL CREATOR · META-VERIFICATION</div>
+    <div class="ctitle">스킬 → 메타 스킬 → 리포트</div>
     <div class="flow">
       <div class="node input">
         <div class="nlbl">입력</div>
         <div class="nbody">본인 SKILL.md</div>
-        <div class="nsub">어제 만든 스킬 정의</div>
+        <div class="nsub">어제 만든 스킬 파일</div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="node skill">
         <div class="nlbl">메타 스킬</div>
         <div class="nbody">Skill Creator</div>
-        <div class="nsub">Anthropic 공식 검증 스킬</div>
+        <div class="nsub">스킬 점검 전용 스킬</div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="node output">
         <div class="nlbl">출력</div>
-        <div class="nbody">부족 · 모호 · 누락 리포트</div>
-        <div class="nsub">고칠 항목 우선순위</div>
+        <div class="nbody">리포트</div>
+        <div class="nsub">부족·모호·누락 항목</div>
       </div>
     </div>
   </div>
-  <div class="bot">
-    <div class="lbl">CSM 매핑 — Notion Day 3 B4 정합</div>
-    <h3>어제 만든 스킬을 <strong>오늘 메타 스킬로 자체 검증</strong></h3>
-    <p>까다로운 고객이 결과물을 본다면, Skill Creator는 스킬 정의 자체를 본다. 두 검증의 대상이 다르므로 둘 다 돌리면 양쪽 약점이 드러난다.</p>
+
+  <div class="csm">
+    <div class="lbl">CSM 매핑 — 결과물 검증과 다른 차원</div>
+    <h3>까다로운 고객은 <em>결과물</em>, Skill Creator는 <em>스킬 자체</em></h3>
+    <div class="body">까다로운 고객(패턴 1·2)이 "이번 메일 톤이 이상해"라고 하면, Skill Creator(패턴 3)는 "<strong>스킬에 톤 가이드 자체가 없어서 매번 흔들려요</strong>"라고 알려준다. 한 번 결과물 고치는 것과 스킬에 박아서 영구 해결하는 것의 차이.</div>
   </div>
 </body>
 </html>
