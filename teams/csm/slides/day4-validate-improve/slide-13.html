@@ -2,43 +2,41 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S12 프롬프트 2</title>
+<title>Day 4 · S13 까다로운 고객 페르소나</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
   .intro strong { color: #b45a34; }
-  .prompt { margin-top: 10pt; padding: 12pt 14pt; background: #2b2520; border-radius: 12pt; flex: 1; min-height: 0; overflow: hidden; }
-  .prompt .plabel { font-size: 9pt; letter-spacing: 0.25em; color: #c56a4a; font-weight: 700; text-transform: uppercase; }
-  .prompt pre { font-size: 10pt; line-height: 1.5; color: #f5e4d4; font-family: 'SF Mono', 'Menlo', monospace; margin-top: 6pt; white-space: pre-wrap; }
-  .prompt pre b { color: #f2cdb4; font-weight: 600; }
-  .foot { margin-top: 8pt; padding: 7pt 12pt; background: #ebe1d2; border-radius: 10pt; font-size: 10.5pt; line-height: 1.5; color: #42332a; flex-shrink: 0; }
-  .foot strong { color: #b45a34; }
+  .rows { display: flex; flex-direction: column; gap: 8pt; flex: 1; margin-top: 12pt; }
+  .r { display: grid; grid-template-columns: 110pt 1fr; gap: 14pt; padding: 13pt 16pt; background: #ebe1d2; border-radius: 10pt; align-items: center; }
+  .r .lbl { font-size: 9.5pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .r .body { font-size: 12pt; color: #2b2520; line-height: 1.45; font-weight: 500; }
+  .r .body strong { color: #b45a34; font-weight: 700; }
+  .r .body span.sub { font-size: 9.5pt; color: #5a4d40; font-weight: 400; display: block; margin-top: 3pt; line-height: 1.5; }
+  .foot { margin-top: 10pt; padding: 8pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 9pt; font-size: 9.8pt; line-height: 1.5; }
+  .foot strong { color: #fff; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">B1 · 프롬프트 공개 2/2</div>
-  <div class="h-large"><em>피드백 포맷 &mdash; 지적 · 근거 · 제안</em></div>
+  <div class="eyebrow">B1 · 페르소나</div>
+  <div class="h-large">까다로운 고객은 <em>어떤 사람</em>인가</div>
   <div class="rule"></div>
-  <div class="intro">에이전트가 내는 답 형식을 강제한다. 두루뭉술한 &ldquo;좀 더 명확히&rdquo; 류를 차단하고, <strong>본문 인용 기반 지적</strong>만 허용한다.</div>
-  <div class="prompt">
-    <div class="plabel">prompt part 2 &mdash; output format</div>
-    <pre><b>output:</b>
-  채점표를 먼저 낸다 (rubric 5개, 각 O / X).
-
-  X 항목마다 아래 3줄로 답한다.
-    <b>지적:</b> 무엇이 부족한가 (한 문장)
-    <b>근거:</b> 본문 어디 때문인가 (직접 인용, 10단어 이내)
-    <b>제안:</b> 어떻게 고치면 되는가 (한 문장)
-
-  마지막에 한 줄 총평.
-    예) &quot;결정사항은 명확하나, 기한 3건이 누락.&quot;
-
-<b>금지:</b>
-  - &quot;좀 더 명확히&quot; &quot;가독성 개선&quot; 같은 추상 지적
-  - 근거 없이 칭찬
-  - 본문에 없는 사실 가정</pre>
+  <div class="intro">검증 에이전트가 잘 작동하려면 <strong>구체적인 페르소나</strong>가 있어야 한다. 그래야 일관된 톤·기준으로 지적이 들어온다. 본인 도메인의 진짜 까다로운 고객을 떠올려 수정 가능.</div>
+  <div class="rows">
+    <div class="r">
+      <div class="lbl">페르소나</div>
+      <div class="body">엔터프라이즈 <strong>3년차 사용자</strong> · 마케팅 디렉터<span class="sub">우리 제품을 일정 기간 써본 실무 의사결정자. 빈말 안 통한다.</span></div>
+    </div>
+    <div class="r">
+      <div class="lbl">톤</div>
+      <div class="body"><strong>정중하지만 직접적</strong> — 비꼬지 않음 · 단호함<span class="sub">감정적이지 않고 이슈 중심. "이 부분이 명확하지 않습니다" 같은 말투.</span></div>
+    </div>
+    <div class="r">
+      <div class="lbl">민감 포인트</div>
+      <div class="body"><strong>모호한 표현 / 빠진 액션 / 과도한 약속</strong><span class="sub">"검토하겠습니다" 류의 추상화 · 다음 단계 날짜 누락 · 확정 전 기능 약속.</span></div>
+    </div>
   </div>
-  <div class="foot">포맷이 있어야 피드백을 <strong>스킬 개선 인풋</strong>으로 바로 쓸 수 있다 &mdash; 3번 반복되는 지적은 Day 3 스킬 템플릿에 고정 섹션으로 추가한다.</div>
+  <div class="foot">본인 회사의 까다로운 고객 유형으로 페르소나를 수정해 사용 가능. 프롬프트 전문은 <strong>S53 부록 3</strong> 참조.</div>
 </body>
 </html>

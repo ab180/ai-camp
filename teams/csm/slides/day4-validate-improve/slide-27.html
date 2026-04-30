@@ -2,61 +2,39 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S26 Day 2 vs Day 4</title>
+<title>Day 4 · S20 6축 O/X 체크리스트</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .pane { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
-  .pane.past { background: #ebe1d2; }
-  .pane.now { background: #c56a4a; color: #f7efe4; }
-  .pane .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
-  .pane.past .tag { color: #a0917e; }
-  .pane.now .tag { color: #f2cdb4; }
-  .pane h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
-  .pane.past h3 { color: #2b2520; }
-  .pane.now h3 { color: #fff; }
-  .pane ul { font-size: 11pt; line-height: 1.6; padding-left: 14pt; margin: 0; }
-  .pane.past ul { color: #42332a; }
-  .pane.now ul { color: #f5e4d4; }
-  .pane ul li::marker { color: #b45a34; }
-  .pane.now ul li::marker { color: #f2cdb4; }
-  .pane ul li strong { font-weight: 600; }
-  .pane.past ul li strong { color: #2b2520; }
-  .pane.now ul li strong { color: #fff; }
-  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  body { display: flex; flex-direction: column; gap: 7pt; padding: 22pt 30pt; }
+  .h-large { font-size: 22pt; }
+  .sheet { background: #fff; border-radius: 10pt; padding: 10pt 12pt; flex: 1; min-height: 0; overflow: hidden; border: 1pt solid #d4c4ac; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 4pt 6pt; font-size: 10pt; color: #2b2520; border-bottom: 1px solid #ece2d2; vertical-align: top; }
+  th { font-size: 8.5pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; border-bottom: 1.5pt solid #b45a34; }
+  td.num { font-weight: 700; color: #b45a34; width: 26pt; font-family: 'SF Mono', Menlo, monospace; }
+  td.axis { font-weight: 600; color: #2b2520; width: 58pt; }
+  td.q { color: #42332a; line-height: 1.4; }
+  td.ox { width: 42pt; text-align: center; font-family: 'SF Mono', Menlo, monospace; color: #7d6b5a; font-size: 11pt; letter-spacing: 0.3em; }
+  .foot { font-size: 9.5pt; color: #7d6b5a; line-height: 1.45; border-top: 1px dashed #d4c4ac; padding-top: 6pt; flex-shrink: 0; }
   .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Day 2 이어받기 · 중복 금지</div>
-  <div class="h-large">기본 명령 &rarr; <em>팀 내재화</em></div>
-  <div class="rule"></div>
-  <div class="intro">Day 2 B7에서 이미 Git 기본을 다뤘다. 오늘은 &ldquo;명령어&rdquo;가 아니라 <strong>&ldquo;우리 팀은 어떻게 같이 쓰나&rdquo;</strong>에 초점을 맞춘다.</div>
-  <div class="panes">
-    <div class="pane past">
-      <div class="tag">Day 2 &mdash; 이미 다뤘다</div>
-      <h3>개인 단위 기본 명령</h3>
-      <ul>
-        <li><strong>push · commit · pull</strong> 개념</li>
-        <li>merge · PR이 무엇인지</li>
-        <li>내 노트북에서 GitHub로 올리기</li>
-        <li>실행 취소의 안전망</li>
-      </ul>
-    </div>
-    <div class="pane now">
-      <div class="tag">Day 4 &mdash; 오늘 새로</div>
-      <h3>팀 내재화</h3>
-      <ul>
-        <li>팀 공용 <strong>repo 구조</strong> 설계</li>
-        <li>권한 관리 (UI 기반)</li>
-        <li>README에 <strong>6축 태그</strong></li>
-        <li>PR 워크플로우로 팀원과 리뷰</li>
-      </ul>
-    </div>
+  <div class="eyebrow">6축 O/X 체크리스트 · 자가진단 1장</div>
+  <div class="h-large">지난 4일 내 작업에 대해 O/X 체크</div>
+  <div class="sheet">
+    <table>
+      <thead><tr><th>#</th><th>축</th><th>질문</th><th>O / X</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="axis">구조</td><td class="q">내 CLAUDE.md에 담당 고객 · 톤 · 금지어가 적혀 있다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
+        <tr><td class="num">2</td><td class="axis">맥락</td><td class="q">MCP 1개 이상으로 SFDC · Notion · Gmail 등 실시간 데이터를 AI가 직접 읽는다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
+        <tr><td class="num">3</td><td class="axis">계획</td><td class="q">Deep Interview / Clarify로 &ldquo;독자 · 질문 · 결론 순서&rdquo;까지 구체화한 뒤 실행한다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
+        <tr><td class="num">4</td><td class="axis">실행</td><td class="q">동작하는 스킬 1개 이상을 가지고 있고, 새 작업에 그 스킬을 호출한다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
+        <tr><td class="num">5</td><td class="axis">검증</td><td class="q">내 초안을 &ldquo;다른 관점&rdquo; 에이전트에 한 번 넘겨 본 적이 있다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
+        <tr><td class="num">6</td><td class="axis">개선</td><td class="q">피드백에서 3번 반복된 지적 1개를 CLAUDE.md · 스킬에 되먹여 봤다</td><td class="ox">&ensp; &ensp; &ensp; &ensp;</td></tr>
+      </tbody>
+    </table>
   </div>
-  <div class="foot">개념을 안다는 것과 &ldquo;우리 팀 방식으로&rdquo; 정착해 있다는 것은 다르다. 오늘 끝나면 <strong>팀 repo에 내 스킬 1개</strong>가 올라가 있다.</div>
+  <div class="foot"><strong>O가 4개 이상</strong>이면 충분한 첫 초안. <strong>X가 3개 이상</strong>이면 그중 한 축을 2주 프로젝트의 중심으로.</div>
 </body>
 </html>

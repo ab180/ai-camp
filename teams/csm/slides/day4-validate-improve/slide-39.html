@@ -2,40 +2,39 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S38 B3 정리</title>
+<title>Day 4 · S34 스킬 업로드 실습</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; justify-content: space-between; }
-  .quote { font-size: 30pt; font-weight: 500; color: #2b2520; line-height: 1.3; letter-spacing: -0.015em; max-width: 620pt; }
-  .quote em { font-style: normal; color: #c56a4a; }
-  .points { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; }
-  .p { background: #ebe1d2; border-radius: 10pt; padding: 12pt 14pt; }
-  .p .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .p h4 { font-size: 13pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; margin-top: 4pt; }
-  .p p { font-size: 10pt; color: #42332a; line-height: 1.55; margin-top: 4pt; }
-  .foot-rule { font-size: 11pt; color: #a0917e; letter-spacing: 0.05em; border-top: 1px dashed #d4c4ac; padding-top: 8pt; font-family: 'SF Mono', 'Menlo', monospace; }
+  body { display: flex; flex-direction: column; }
+  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
+  .intro strong { color: #b45a34; }
+  .steps { display: flex; flex-direction: column; gap: 6pt; flex: 1; margin-top: 10pt; }
+  .step { display: grid; grid-template-columns: 46pt 150pt 1fr; gap: 12pt; align-items: center; background: #ebe1d2; border-radius: 9pt; padding: 10pt 14pt; }
+  .step.hl { background: #c56a4a; color: #f7efe4; }
+  .step .n { font-size: 12pt; font-weight: 700; color: #b45a34; font-family: 'SF Mono', Menlo, monospace; }
+  .step.hl .n { color: #fff; }
+  .step .cmd { font-family: 'SF Mono', Menlo, monospace; font-size: 10.5pt; font-weight: 600; color: #2b2520; }
+  .step.hl .cmd { color: #fff; }
+  .step .desc { font-size: 10.5pt; color: #42332a; line-height: 1.5; }
+  .step.hl .desc { color: #f5e4d4; }
+  .step .desc strong { color: #b45a34; font-weight: 600; }
+  .step.hl .desc strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">B3 정리</div>
-  <div class="quote">오늘 <em>1개</em> 업로드 = 팀 자산 +1 &middot;<br>복리가 시작되는 지점.</div>
-  <div class="points">
-    <div class="p">
-      <div class="n">Takeaway 1</div>
-      <h4>단순한 구조</h4>
-      <p>skills/ · agents/ 2폴더. SKILL.md 4필드. 완벽함보다 업로드.</p>
-    </div>
-    <div class="p">
-      <div class="n">Takeaway 2</div>
-      <h4>PR은 검증이다</h4>
-      <p>브랜치 &rarr; PR &rarr; merge는 안전망이자 축 5의 팀 버전.</p>
-    </div>
-    <div class="p">
-      <div class="n">Takeaway 3</div>
-      <h4>리뷰 5개만</h4>
-      <p>태그 · when · 동작 · 중복 · 민감정보. 나머지는 Compound로.</p>
-    </div>
+  <div class="eyebrow">업로드 실습 · 15 min</div>
+  <div class="h-large">clone &rarr; 복사 &rarr; commit &rarr; <em>push</em></div>
+  <div class="rule"></div>
+  <div class="intro">오늘 각자 <strong>스킬 1개</strong>를 팀 repo에 올린다. Claude에게 아래 5단계를 순서대로 시키면 된다.</div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div class="cmd">git clone</div><div class="desc">팀 repo를 내 노트북에 가져온다 &mdash; &ldquo;csm-claude-skills 레포를 clone해줘&rdquo;</div></div>
+    <div class="step"><div class="n">2</div><div class="cmd">cd &amp; branch</div><div class="desc">새 브랜치로 이동 &mdash; &ldquo;<strong>add-recap-mail</strong> 브랜치 만들어서 이동해줘&rdquo;</div></div>
+    <div class="step"><div class="n">3</div><div class="cmd">폴더 복사</div><div class="desc">Day 3에서 만든 내 스킬 폴더를 <strong>skills/</strong>에 복사. SKILL.md 6축 태그 확인.</div></div>
+    <div class="step hl"><div class="n">4</div><div class="cmd">commit</div><div class="desc">&ldquo;recap mail 스킬 추가&rdquo; 메시지로 commit &mdash; 세이브 포인트 1개 생성</div></div>
+    <div class="step"><div class="n">5</div><div class="cmd">push</div><div class="desc">GitHub에 올린다 &mdash; &ldquo;origin add-recap-mail으로 push해줘&rdquo;</div></div>
   </div>
-  <div class="foot-rule">Next &mdash; B4: 2주 프로젝트 + 5/15(금) 발표회 안내 (10 min)</div>
+  <div class="foot">명령어는 Claude가 실행. 참가자는 <strong>의도</strong>만 말하면 된다. 막히면 짝꿍과 화면 공유 &middot; 운영진 호출.</div>
 </body>
 </html>

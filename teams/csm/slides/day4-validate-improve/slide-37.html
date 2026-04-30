@@ -2,60 +2,47 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S36 PR 작성 UI</title>
+<title>Day 4 · S32 README 6축 태그</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10pt; flex: 1; margin-top: 8pt; min-height: 0; overflow: hidden; }
-  .pr { background: #fff; border: 1pt solid #d4c4ac; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; min-height: 0; overflow: hidden; }
-  .pr .ubar { font-size: 8.5pt; color: #7d6b5a; letter-spacing: 0.18em; font-family: 'SF Mono', Menlo, monospace; text-transform: uppercase; border-bottom: 1px solid #ece2d2; padding-bottom: 5pt; }
-  .pr .title-box { font-size: 11.5pt; font-weight: 600; color: #2b2520; border: 1px solid #d4c4ac; border-radius: 6pt; padding: 6pt 8pt; }
-  .pr .title-box em { font-style: normal; color: #c56a4a; }
-  .pr .body-box { background: #f5ede2; border-radius: 6pt; padding: 8pt 10pt; font-size: 9pt; color: #2b2520; line-height: 1.45; font-family: 'SF Mono', Menlo, monospace; white-space: pre-wrap; flex: 1; min-height: 0; overflow: hidden; }
-  .pr .body-box b { color: #c56a4a; font-weight: 600; }
-  .pr .submit { background: #c56a4a; color: #fff; font-size: 9pt; font-weight: 600; padding: 5pt 12pt; border-radius: 5pt; align-self: flex-start; flex-shrink: 0; }
-  .tip { background: #ebe1d2; border-radius: 10pt; padding: 10pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
-  .tip h4 { font-size: 12pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
-  .tip ul { font-size: 10pt; line-height: 1.5; color: #42332a; padding-left: 12pt; margin: 0; }
-  .tip ul li::marker { color: #b45a34; }
-  .tip ul li strong { color: #2b2520; font-weight: 600; }
+  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 10pt; }
+  .form { background: #ebe1d2; border-radius: 12pt; padding: 14pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .form h3 { font-size: 14pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; }
+  .field { background: #fff; border-radius: 6pt; padding: 8pt 10pt; border: 1px solid #d4c4ac; }
+  .field .lbl { font-size: 9pt; letter-spacing: 0.22em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .field .val { font-size: 10.5pt; color: #2b2520; line-height: 1.5; margin-top: 3pt; font-family: 'SF Mono', Menlo, monospace; }
+  .field .val .tag { display: inline-block; background: #c56a4a; color: #fff; padding: 1pt 6pt; border-radius: 3pt; font-size: 9.5pt; margin-right: 3pt; }
+  .why { background: #c56a4a; color: #f7efe4; border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
+  .why h3 { font-size: 14pt; font-weight: 600; color: #fff; letter-spacing: -0.005em; }
+  .why p { font-size: 10.5pt; color: #f5e4d4; line-height: 1.55; }
+  .why p strong { color: #fff; font-weight: 600; }
+  .why .example { background: rgba(0,0,0,0.15); padding: 8pt 10pt; border-radius: 6pt; font-size: 10pt; color: #f5e4d4; line-height: 1.55; font-family: 'SF Mono', Menlo, monospace; }
+  .why .example b { color: #f2cdb4; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">PR 작성 UI &mdash; 이 정도면 충분</div>
-  <div class="h-large">타이틀 1줄 · 본문 <em>3섹션</em></div>
+  <div class="eyebrow">README 골격 · 6축 태그</div>
+  <div class="h-large">이 4줄이면 <em>찾기 · 쓰기</em> 다 된다</div>
   <div class="rule"></div>
-  <div class="intro">GitHub &rarr; Pull requests &rarr; New. 아래 포맷만 지키면 리뷰어가 1분 안에 본다.</div>
+  <div class="intro">스킬 README는 1장이면 충분하다. 아래 4개 필드만 채우면 팀원이 검색하고 고를 수 있다.</div>
   <div class="panes">
-    <div class="pr">
-      <div class="ubar">github.com &mdash; New Pull Request</div>
-      <div class="title-box"><em>[add]</em> recap-mail 스킬</div>
-      <div class="body-box"><b>## 무엇을</b>
-CSM 미팅 리캡 메일 초안 스킬 추가.
-
-<b>## 왜</b>
-Day 3에서 만들었고 B1 에이전트 피드백으로
-결정사항 &middot; 기한 섹션 강화함.
-
-<b>## 축 태그</b>
-3 (계획) + 4 (실행)
-
-<b>## 리뷰 포인트</b>
-- SKILL.md when 필드가 명확한지
-- 기한 형식이 팀 템플릿과 맞는지</div>
-      <div class="submit">Create pull request</div>
+    <div class="form">
+      <h3>SKILL.md &mdash; 필수 4필드</h3>
+      <div class="field"><div class="lbl">name</div><div class="val">recap-mail</div></div>
+      <div class="field"><div class="lbl">axes (6축 태그)</div><div class="val"><span class="tag">3</span><span class="tag">4</span> 계획 · 실행</div></div>
+      <div class="field"><div class="lbl">when (한 문장)</div><div class="val">고객 미팅 후 리캡 메일 초안이 필요할 때</div></div>
+      <div class="field"><div class="lbl">input / output</div><div class="val">입력: 미팅 노트 / 출력: 메일 초안</div></div>
     </div>
-    <div class="tip">
-      <h4>PR 작성 팁</h4>
-      <ul>
-        <li>타이틀은 <strong>[add] / [fix] / [update]</strong> 프리픽스</li>
-        <li>본문은 <strong>무엇 · 왜 · 축 · 리뷰 포인트</strong> 4개</li>
-        <li>스크린샷은 있으면 좋고 없어도 무방</li>
-        <li>Reviewer 1명 지정 (짝꿍 or 운영진)</li>
-        <li>&ldquo;<strong>Create draft</strong>&rdquo; 기능도 가능 &mdash; 초안 상태로 올리고 이어 작업</li>
-      </ul>
+    <div class="why">
+      <h3>왜 6축 태그인가</h3>
+      <p>팀 repo가 커지면 스킬을 <strong>이름으로 찾기 어렵다</strong>. 축 기반 검색이 대안.</p>
+      <div class="example">$ grep -l &quot;axes.*5&quot; skills/**/SKILL.md
+
+<b>#&rarr; 검증 스킬만 나옴</b></div>
+      <p>&ldquo;검증 스킬 뭐 있지?&rdquo; 할 때 <strong>축 5로 묶여 있는 것</strong>을 바로 찾는다.</p>
     </div>
   </div>
 </body>

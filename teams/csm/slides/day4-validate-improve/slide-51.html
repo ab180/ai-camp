@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · S51 부록 2 Supabase #2</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; padding: 22pt 30pt; }
+  .intro { font-size: 10pt; line-height: 1.55; color: #42332a; margin-top: 1pt; max-width: 660pt; }
+  .intro strong { color: #b45a34; }
+  .steps { margin-top: 12pt; flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 9pt; }
+  .s { padding: 12pt 14pt; background: #ebe1d2; border-radius: 9pt; display: flex; gap: 10pt; align-items: flex-start; }
+  .s.terra { background: #c56a4a; color: #f7efe4; }
+  .s .n { font-size: 22pt; font-weight: 700; line-height: 1; flex: 0 0 28pt; color: #b45a34; }
+  .s.terra .n { color: #fff; }
+  .s .body { flex: 1; }
+  .s .body .t { font-size: 8pt; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase; color: #b45a34; }
+  .s.terra .body .t { color: #ffdfc9; }
+  .s .body h4 { font-size: 12pt; font-weight: 600; color: #2b2520; line-height: 1.25; margin-top: 2pt; }
+  .s.terra .body h4 { color: #fff; }
+  .s .body p { font-size: 9pt; color: #5a4d40; line-height: 1.5; margin-top: 4pt; }
+  .s.terra .body p { color: #f5e4d4; }
+  .s .body code { background: #fff; padding: 1pt 4pt; border-radius: 3pt; font-family: 'SF Mono', Menlo, monospace; font-size: 8.5pt; color: #2b2520; }
+  .s.terra .body code { background: rgba(255,255,255,0.18); color: #fff; }
+  .s .body strong { color: #b45a34; font-weight: 700; }
+  .s.terra .body strong { color: #fff; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">부록 2 · Supabase</div>
+  <div class="h-large">5분 가이드 — <em>첫 테이블 만들기</em></div>
+  <div class="rule"></div>
+  <div class="intro">코드 없이 UI에서 끝낸다. <strong>가입 → 프로젝트 → 테이블 → API 키</strong> 순서. 5분 후 Claude가 SQL을 돌릴 수 있다.</div>
+  <div class="steps">
+    <div class="s">
+      <div class="n">1</div>
+      <div class="body">
+        <div class="t">~ 1 min</div>
+        <h4>가입</h4>
+        <p><code>supabase.com</code> &rarr; GitHub 가입 &rarr; <strong>Free 플랜</strong> 선택</p>
+      </div>
+    </div>
+    <div class="s terra">
+      <div class="n">2</div>
+      <div class="body">
+        <div class="t">~ 1 min</div>
+        <h4>프로젝트 생성</h4>
+        <p>New Project &rarr; 이름 · DB 비밀번호 입력 &rarr; <strong>Seoul region</strong> 선택</p>
+      </div>
+    </div>
+    <div class="s terra">
+      <div class="n">3</div>
+      <div class="body">
+        <div class="t">~ 2 min</div>
+        <h4>테이블 만들기</h4>
+        <p>Table Editor &rarr; <strong>cases 테이블</strong> &rarr; 컬럼: id · customer_type · inquiry · response · created_at</p>
+      </div>
+    </div>
+    <div class="s">
+      <div class="n">4</div>
+      <div class="body">
+        <div class="t">~ 1 min</div>
+        <h4>API 키 발급</h4>
+        <p>Project Settings &rarr; API &rarr; <strong>anon public 키</strong> 복사 (.env에만)</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

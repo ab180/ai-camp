@@ -2,49 +2,33 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S43 회고 포맷</title>
+<title>Day 4 · S39 B4 섹션 오프너</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
-  body { display: flex; flex-direction: column; }
-  .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
-  .intro strong { color: #b45a34; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; flex: 1; margin-top: 12pt; }
-  .pane { border-radius: 12pt; padding: 18pt 20pt; display: flex; flex-direction: column; gap: 10pt; }
-  .pane.minus { background: #ebe1d2; }
-  .pane.plus { background: #c56a4a; color: #f7efe4; }
-  .pane .sym { font-size: 32pt; font-weight: 500; letter-spacing: -0.02em; }
-  .pane.minus .sym { color: #b45a34; }
-  .pane.plus .sym { color: #fff; }
-  .pane h3 { font-size: 16pt; font-weight: 600; letter-spacing: -0.005em; line-height: 1.25; }
-  .pane.minus h3 { color: #2b2520; }
-  .pane.plus h3 { color: #fff; }
-  .pane .example { background: rgba(0,0,0,0.05); padding: 10pt 12pt; border-radius: 8pt; font-size: 10.5pt; line-height: 1.55; color: #42332a; font-family: 'SF Mono', Menlo, monospace; }
-  .pane.plus .example { background: rgba(0,0,0,0.15); color: #f5e4d4; }
-  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  body { background: #c56a4a; color: #f7efe4; display: flex; flex-direction: column; justify-content: space-between; padding: 38pt 44pt; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top .block { font-size: 10pt; letter-spacing: 0.3em; color: #f2cdb4; font-weight: 600; text-transform: uppercase; }
+  .top .time { font-size: 10pt; letter-spacing: 0.2em; color: rgba(247,239,228,0.6); font-weight: 500; }
+  .mid { display: flex; flex-direction: column; gap: 18pt; }
+  .mid h1 { font-size: 40pt; font-weight: 500; color: #fff; line-height: 1.22; letter-spacing: -0.02em; }
+  .mid .sub { font-size: 16pt; font-weight: 400; color: #f5e4d4; line-height: 1.55; max-width: 580pt; }
+  .bot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bot .meta { font-size: 11pt; color: #f2cdb4; letter-spacing: 0.1em; }
+  .bot .count { font-size: 14pt; color: rgba(255,255,255,0.75); font-weight: 500; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">2주 후 회고 포맷 · 5/28 전후</div>
-  <div class="h-large">4일 캠프 자체에 대한 회고 &mdash; <em>2문장씩</em></div>
-  <div class="rule"></div>
-  <div class="intro">발표회(5/15) 이후 2주 뒤, 짧은 Slack 회고 1건. 이 회고가 4기 설계의 직접 인풋이 된다.</div>
-  <div class="panes">
-    <div class="pane minus">
-      <div class="sym">&minus;</div>
-      <h3>별로였던 것 · 2문장</h3>
-      <div class="example">ex) &ldquo;Day 3 스킬 제작이 템플릿 수정
- 이어서 범위를 잡기 어려웠다. Day 4 권
- 한 관리 UI는 속도가 너무 빨랐다.&rdquo;</div>
-    </div>
-    <div class="pane plus">
-      <div class="sym">+</div>
-      <h3>좋았던 것 · 2문장</h3>
-      <div class="example">ex) &ldquo;까다로운 고객 시연이 가장
- 실용적이었다. 짝꿍 대화에서 내 X축이
- 생각보다 명확히 드러났다.&rdquo;</div>
-    </div>
+  <div class="top">
+    <div class="block">Block 4 · 마무리</div>
+    <div class="time">10 min</div>
   </div>
-  <div class="foot">길이 제한이 핵심. 2문장이어야 <strong>본질</strong>이 나온다. 길면 에두르게 된다.</div>
+  <div class="mid">
+    <h1>2주 프로젝트 &mdash;<br>5/15(금) 발표회로</h1>
+    <div class="sub">오늘 집중 4일이 끝났다. 진짜 마무리는 <strong>2주 뒤</strong>. 실제 업무에 써보고, 한 축을 움직이고, 결과를 공유한다.</div>
+  </div>
+  <div class="bot">
+    <div class="meta">4/23 오늘 &middot; 5/15 발표회 &middot; 그 뒤 2주차 회고</div>
+    <div class="count">6 slides</div>
+  </div>
 </body>
 </html>

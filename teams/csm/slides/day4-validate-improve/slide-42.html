@@ -2,49 +2,36 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S41 2주 프로젝트 미션</title>
+<title>Day 4 · S37 리뷰어 체크리스트</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .missions { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
-  .m { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
-  .m.hl { background: #c56a4a; color: #f7efe4; }
-  .m .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
-  .m.hl .n { color: #f2cdb4; }
-  .m h3 { font-size: 16pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
-  .m.hl h3 { color: #fff; }
-  .m p { font-size: 10.5pt; color: #42332a; line-height: 1.55; }
-  .m.hl p { color: #f5e4d4; }
-  .m p strong { color: #2b2520; font-weight: 600; }
-  .m.hl p strong { color: #fff; }
-  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
-  .foot strong { color: #b45a34; font-weight: 600; }
+  .check { margin-top: 10pt; background: #fff; border-radius: 10pt; padding: 14pt 18pt; border: 1pt solid #d4c4ac; flex: 1; }
+  .check .row { display: grid; grid-template-columns: 30pt 1fr 120pt; gap: 12pt; align-items: center; padding: 8pt 0; border-bottom: 1px solid #ece2d2; }
+  .check .row:last-child { border-bottom: none; }
+  .check .box { font-family: 'SF Mono', Menlo, monospace; font-size: 13pt; color: #7d6b5a; text-align: center; }
+  .check .q { font-size: 11pt; color: #2b2520; line-height: 1.5; }
+  .check .q strong { color: #b45a34; font-weight: 600; }
+  .check .q code { font-family: 'SF Mono', Menlo, monospace; font-size: 10pt; background: #f5ede2; padding: 1pt 4pt; border-radius: 3pt; }
+  .check .how { font-size: 9.5pt; color: #7d6b5a; font-family: 'SF Mono', Menlo, monospace; letter-spacing: 0.02em; }
+  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #c56a4a; color: #f7efe4; border-radius: 10pt; font-size: 11pt; line-height: 1.55; }
+  .foot strong { color: #fff; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">2주 프로젝트 · 4/24 ~ 5/13</div>
-  <div class="h-large">축 1개 선택 · <em>실무에 3회</em> · 공유</div>
+  <div class="eyebrow">리뷰어 체크리스트 &mdash; 5개만 본다</div>
+  <div class="h-large">리뷰는 <em>5분 이내</em>로 끝낸다</div>
   <div class="rule"></div>
-  <div class="intro">완성도 경쟁이 아니다. <strong>사이클 한 바퀴</strong>를 2주 안에 실제로 돌렸다는 증거만 있으면 된다.</div>
-  <div class="missions">
-    <div class="m">
-      <div class="n">미션 1 &middot; 선택</div>
-      <h3>X 축 1개 고르기</h3>
-      <p>B2 체크리스트에서 X가 가장 많은 축. <strong>오늘 결정</strong>하고 짝꿍에게 말해둔다.</p>
-    </div>
-    <div class="m hl">
-      <div class="n">미션 2 &middot; 실행</div>
-      <h3>실제 업무에 3회 이상</h3>
-      <p>스킬 / CLAUDE.md / MCP 중 무엇이든 선택한 축을 <strong>진짜 고객 케이스</strong>에 써본다.</p>
-    </div>
-    <div class="m">
-      <div class="n">미션 3 &middot; 개선</div>
-      <h3>반복 패턴 1개 되먹임</h3>
-      <p>3번 나온 지적 하나를 <strong>rules · 스킬 템플릿</strong>에 박고, PR로 팀 repo에 공유.</p>
-    </div>
+  <div class="intro">완벽함을 검사하지 않는다. <strong>팀 자산</strong>으로 쓸 수 있는 최소 조건만 확인. 나머지는 merge 후 Compound로 개선한다.</div>
+  <div class="check">
+    <div class="row"><div class="box">&#9633;</div><div class="q">1. <strong>README 6축 태그</strong>가 적혀 있는가 (<code>axes: [3, 4]</code>)</div><div class="how">SKILL.md 확인</div></div>
+    <div class="row"><div class="box">&#9633;</div><div class="q">2. <strong>when</strong>과 <strong>input/output</strong>이 한 문장 이상 있는가</div><div class="how">SKILL.md 확인</div></div>
+    <div class="row"><div class="box">&#9633;</div><div class="q">3. 스킬이 <strong>실제로 동작</strong>하는가 (리뷰어가 한 번 실행)</div><div class="how">로컬 test</div></div>
+    <div class="row"><div class="box">&#9633;</div><div class="q">4. 이미 있는 스킬과 <strong>중복</strong>은 아닌가</div><div class="how">skills/ 폴더 훑기</div></div>
+    <div class="row"><div class="box">&#9633;</div><div class="q">5. 민감 정보 (<strong>고객 실명 · 내부 도메인</strong>)가 들어가 있지 않은가</div><div class="how">diff 훑기</div></div>
   </div>
-  <div class="foot">중간 체크업 미팅은 <strong>5/7(금)</strong> 30분 예정 &mdash; 막힌 지점만 공유 (전체 보고 아님).</div>
+  <div class="foot">5개 모두 &radic;면 <strong>Approve &amp; merge</strong>. 1~2개 X면 comment로 &ldquo;이 부분만 고쳐주세요&rdquo;. 3개 이상 X면 draft로 돌리기.</div>
 </body>
 </html>

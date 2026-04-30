@@ -2,54 +2,49 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 4 · S31 권한 관리 Role</title>
+<title>Day 4 · S27 왜 팀 공유</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
   .intro { font-size: 11pt; line-height: 1.55; color: #42332a; margin-top: 2pt; max-width: 640pt; }
   .intro strong { color: #b45a34; }
-  .roles { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8pt; flex: 1; margin-top: 12pt; }
-  .role { background: #ebe1d2; border-radius: 10pt; padding: 12pt 12pt; display: flex; flex-direction: column; gap: 6pt; }
-  .role.rec { background: #c56a4a; color: #f7efe4; }
-  .role .name { font-size: 12pt; font-weight: 700; color: #2b2520; letter-spacing: -0.005em; }
-  .role.rec .name { color: #fff; }
-  .role .use { font-size: 9pt; letter-spacing: 0.2em; color: #a0917e; font-weight: 600; text-transform: uppercase; }
-  .role.rec .use { color: #f2cdb4; }
-  .role ul { font-size: 9.5pt; line-height: 1.55; color: #42332a; padding-left: 12pt; margin: 0; }
-  .role.rec ul { color: #f5e4d4; }
-  .role ul li::marker { color: #b45a34; }
-  .role.rec ul li::marker { color: #f2cdb4; }
-  .foot { margin-top: 12pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; flex: 1; margin-top: 12pt; }
+  .card { background: #ebe1d2; border-radius: 12pt; padding: 16pt 16pt; display: flex; flex-direction: column; gap: 8pt; }
+  .card.hl { background: #c56a4a; color: #f7efe4; }
+  .card .n { font-size: 9pt; letter-spacing: 0.25em; color: #b45a34; font-weight: 700; text-transform: uppercase; }
+  .card.hl .n { color: #f2cdb4; }
+  .card h3 { font-size: 16pt; font-weight: 600; color: #2b2520; letter-spacing: -0.005em; line-height: 1.25; }
+  .card.hl h3 { color: #fff; }
+  .card p { font-size: 11pt; color: #42332a; line-height: 1.55; }
+  .card.hl p { color: #f5e4d4; }
+  .card p strong { color: #2b2520; font-weight: 600; }
+  .card.hl p strong { color: #fff; font-weight: 600; }
+  .foot { margin-top: 10pt; padding: 10pt 14pt; background: #ebe1d2; border-radius: 10pt; font-size: 11pt; line-height: 1.55; color: #42332a; }
   .foot strong { color: #b45a34; font-weight: 600; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">권한 관리 2/2 &mdash; Role 선택</div>
-  <div class="h-large">CSM 팀 기본값은 <em>Write</em></div>
+  <div class="eyebrow">왜 팀 공유인가</div>
+  <div class="h-large">한 사람 개선 = <em>팀 개선</em>이 되는 조건</div>
   <div class="rule"></div>
-  <div class="intro">GitHub에는 5개 role이 있지만, 팀 스킬 repo에는 2~3개만 쓴다. 각자 권한을 <strong>너무 조이지 않는다</strong>.</div>
-  <div class="roles">
-    <div class="role">
-      <div class="use">1</div>
-      <div class="name">Read</div>
-      <ul><li>보기만 가능</li><li>PR 생성 &times;</li><li>외부 옵저버용</li></ul>
+  <div class="intro">내 노트북에만 있는 스킬은 나에게만 복리가 된다. 팀 repo에 올라가면 <strong>12명이 함께</strong> 쓰고, 고치고, 되먹인다.</div>
+  <div class="grid">
+    <div class="card">
+      <div class="n">이유 1</div>
+      <h3>팀원 1명이 고치면 전원이 개선</h3>
+      <p>&ldquo;결정사항 섹션&rdquo;을 누가 PR로 넣으면 <strong>12명 스킬</strong>이 동시에 업그레이드.</p>
     </div>
-    <div class="role">
-      <div class="use">2</div>
-      <div class="name">Triage</div>
-      <ul><li>이슈 관리 가능</li><li>코드 수정 &times;</li><li>잘 안 씀</li></ul>
+    <div class="card">
+      <div class="n">이유 2</div>
+      <h3>중복 제작 방지</h3>
+      <p>나만 만들기 전에 이미 비슷한 스킬이 있다. 검색 &rarr; 복사 &rarr; 수정이 맞다.</p>
     </div>
-    <div class="role rec">
-      <div class="use">3 · 권장</div>
-      <div class="name">Write</div>
-      <ul><li>브랜치 생성 가능</li><li>PR 생성 가능</li><li>main 직접 푸시 &times;</li><li><strong>팀원 전원 기본</strong></li></ul>
-    </div>
-    <div class="role">
-      <div class="use">4 · 팀장</div>
-      <div class="name">Admin</div>
-      <ul><li>권한 관리 가능</li><li>main push · Settings</li><li>팀장 1~2명만</li></ul>
+    <div class="card hl">
+      <div class="n">이유 3</div>
+      <h3>팀장이 알면 팀이 움직인다</h3>
+      <p>팀장의 상상력이 팀원 범위를 정한다. 팀장이 경험해야 <strong>미니캠프</strong>가 돌아간다.</p>
     </div>
   </div>
-  <div class="foot">Write = &ldquo;브랜치 만들고 PR까지 자유&rdquo;. main에 바로 push하지 못하는 것만 다르다. <strong>리뷰 문화</strong>가 이 지점에서 시작된다.</div>
+  <div class="foot">오늘 B3의 출발점 &mdash; <strong>&ldquo;내가 만든 걸 올리는 게 아니라, 내가 올린 걸 팀이 고치는 것이 진짜 시작&rdquo;</strong>.</div>
 </body>
 </html>
